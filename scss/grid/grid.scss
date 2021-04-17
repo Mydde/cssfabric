@@ -1,0 +1,177 @@
+/*
+ css_fabric flex_box system
+*/
+$CFG_GRID_CODE: 'grid';
+$CFG_GRID_SEPARATOR: '-' ;
+$CFG_GRI_HOR: 'h';
+$CFG_GRID_VERT: 'v';
+
+$h_prop: #{$CFG_GRID_CODE}#{$CFG_GRID_SEPARATOR}#{$CFG_GRI_HOR};
+$v_prop: #{$CFG_GRID_CODE}#{$CFG_GRID_SEPARATOR}#{$CFG_GRID_VERT}; 
+
+%flex {
+  display: flex;
+}
+
+.#{$h_prop} {
+  @extend %flex;
+  flex-direction: row;
+
+  & > .#{$CFG_GRID_CODE}#{$CFG_GRID_SEPARATOR}main {
+    flex: 1 1 0;
+    width: 100%;
+    max-width: 100%;
+  }
+}
+
+.#{$v_prop} {
+  @extend %flex;
+  flex-direction: column;
+
+  & > .#{$CFG_GRID_CODE}#{$CFG_GRID_SEPARATOR}main {
+    flex: 1 1 0;
+    max-height: 100%;
+  }
+}
+
+.#{$h_prop},
+.#{$v_prop}  {
+  box-sizing: border-box;
+
+  &.#{$CFG_GRID_CODE}#{$CFG_GRID_SEPARATOR}wrap#{$CFG_GRID_SEPARATOR}reverse {
+    flex-wrap: wrap-reverse;
+  }
+  &.#{$CFG_GRID_CODE}#{$CFG_GRID_SEPARATOR}wrap {
+    flex-wrap: wrap;
+  }
+
+  &.#{$CFG_GRID_CODE}#{$CFG_GRID_SEPARATOR}nowrap {
+    flex-wrap: nowrap;
+  }
+
+  & > * {
+    box-sizing: border-box;
+  }
+
+  & > *:not(.#{$CFG_GRID_CODE}#{$CFG_GRID_SEPARATOR}main) {
+    flex: 0 0 auto;
+  }
+
+  &.#{$CFG_GRID_CODE}#{$CFG_GRID_SEPARATOR}inline {
+    display: inline-flex !important;
+  }
+
+  &.#{$CFG_GRID_CODE}#{$CFG_GRID_SEPARATOR}overflow {
+    overflow: auto;
+  }
+
+  &.#{$CFG_GRID_CODE}#{$CFG_GRID_SEPARATOR}no-overflow {
+    overflow: hidden;
+  }
+
+  @for $i from 1 through 4 {
+    &.#{$CFG_GRID_CODE}#{$CFG_GRID_SEPARATOR}grow#{$CFG_GRID_SEPARATOR}#{$i} {
+      flex-grow: $i;
+    }
+    &.#{$CFG_GRID_CODE}#{$CFG_GRID_SEPARATOR}shrink#{$CFG_GRID_SEPARATOR}#{$i} {
+      flex-shrink: $i;
+    }
+  }
+}
+
+/* justify content rules */
+.#{$h_prop},
+.#{$v_prop} {
+  &.just#{$CFG_GRID_SEPARATOR}start {
+    justify-content: flex-start;
+  }
+
+  &.just#{$CFG_GRID_SEPARATOR}center {
+    justify-content: center;
+  }
+
+  &.just#{$CFG_GRID_SEPARATOR}end {
+    justify-content: flex-end;
+  }
+
+  &.just#{$CFG_GRID_SEPARATOR}between {
+    justify-content: space-between;
+  }
+
+  &.just#{$CFG_GRID_SEPARATOR}equal {
+    justify-content: space-evenly;
+  }
+}
+
+/* align-items rules */
+.#{$h_prop},
+.#{$v_prop} {
+  &.items#{$CFG_GRID_SEPARATOR}baseline {
+    align-items: baseline;
+  }
+
+  &.items#{$CFG_GRID_SEPARATOR}stretch {
+    align-items: stretch;
+  }
+
+  &.items#{$CFG_GRID_SEPARATOR}start {
+    align-items: flex-start;
+  }
+
+  &.items#{$CFG_GRID_SEPARATOR}center {
+    align-items: center;
+  }
+
+  &.items#{$CFG_GRID_SEPARATOR}end {
+    align-items: flex-end;
+  }
+}
+
+/* align-content rules */
+.#{$h_prop},
+.#{$v_prop} {
+  &.content#{$CFG_GRID_SEPARATOR}start {
+    align-content: flex-start;
+  }
+
+  &.content#{$CFG_GRID_SEPARATOR}end {
+    align-content: flex-end;
+  }
+
+  &.content#{$CFG_GRID_SEPARATOR}between {
+    align-content: space-between;
+  }
+
+  &.content#{$CFG_GRID_SEPARATOR}stretch {
+    align-content: stretch;
+  }
+
+  &.content#{$CFG_GRID_SEPARATOR}center {
+    align-content: center;
+  }
+}
+
+/* align-self rules */
+.#{$h_prop},
+.#{$v_prop} {
+  & .self {
+    &_auto {
+      align-self: auto;
+    }
+    &_start {
+      align-self: flex-start;
+    }
+    &_end {
+      align-self: flex-end;
+    }
+    &_center {
+      align-self: center;
+    }
+    &_baseline {
+      align-self: baseline;
+    }
+    &_stretch {
+      align-self: stretch;
+    }
+  }
+}

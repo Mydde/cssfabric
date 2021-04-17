@@ -1,0 +1,260 @@
+/* 
+padding, margin and border system
+*/
+.brd-t, .brd-t-1 {
+  /* border-t rule : set 0.25em size for top border.  */
+  border-top: 0.25em solid red;
+}
+.brd-t-2 {
+  /* border-t rule : set 0.5em size for top border.  */
+  border-top: 0.5em solid red;
+}
+
+.brd-b, .brd-b-1 {
+  /* border-b rule : set 0.25em size for bottom border.  */
+  border-bottom: 0.25em solid red;
+}
+.brd-b-2 {
+  /* border-b rule : set 0.5em size for bottom border.  */
+  border-bottom: 0.5em solid red;
+}
+
+.brd-l, .brd-l-1 {
+  /* border-l rule : set 0.25em size for left border.  */
+  border-left: 0.25em solid red;
+}
+.brd-l-2 {
+  /* border-l rule : set 0.5em size for left border.  */
+  border-left: 0.5em solid red;
+}
+
+.brd-r, .brd-r-1 {
+  /* border-r rule : set 0.25em size for right border.  */
+  border-right: 0.25em solid red;
+}
+.brd-r-2 {
+  /* border-r rule : set 0.5em size for right border.  */
+  border-right: 0.5em solid red;
+}
+
+.brd-all, .brd-all-1 {
+  /* border-all rule : set 0.25em size for top bottom left right border.  */
+  border-top: 0.25em solid red;
+  border-bottom: 0.25em solid red;
+  border-left: 0.25em solid red;
+  border-right: 0.25em solid red;
+}
+.brd-all-2 {
+  /* border-all rule : set 0.5em size for top bottom left right border.  */
+  border-top: 0.5em solid red;
+  border-bottom: 0.5em solid red;
+  border-left: 0.5em solid red;
+  border-right: 0.5em solid red;
+}
+
+.brd-u, .brd-u-1 {
+  /* border-u rule : set 0.25em size for bottom left right border.  */
+  border-bottom: 0.25em solid red;
+  border-left: 0.25em solid red;
+  border-right: 0.25em solid red;
+}
+.brd-u-2 {
+  /* border-u rule : set 0.5em size for bottom left right border.  */
+  border-bottom: 0.5em solid red;
+  border-left: 0.5em solid red;
+  border-right: 0.5em solid red;
+}
+
+.brd-ii, .brd-ii-1 {
+  /* border-ii rule : set 0.25em size for left right border.  */
+  border-left: 0.25em solid red;
+  border-right: 0.25em solid red;
+}
+.brd-ii-2 {
+  /* border-ii rule : set 0.5em size for left right border.  */
+  border-left: 0.5em solid red;
+  border-right: 0.5em solid red;
+}
+
+.brd-tb, .brd-tb-1 {
+  /* border-tb rule : set 0.25em size for top bottom border.  */
+  border-top: 0.25em solid red;
+  border-bottom: 0.25em solid red;
+}
+.brd-tb-2 {
+  /* border-tb rule : set 0.5em size for top bottom border.  */
+  border-top: 0.5em solid red;
+  border-bottom: 0.5em solid red;
+}
+
+.pad-t, .pad-t-1 {
+  /* padding-t rule : set 0.25em size for top padding.  */
+  padding-top: 0.25em;
+}
+.pad-t-2 {
+  /* padding-t rule : set 0.5em size for top padding.  */
+  padding-top: 0.5em;
+}
+
+.pad-b, .pad-b-1 {
+  /* padding-b rule : set 0.25em size for bottom padding.  */
+  padding-bottom: 0.25em;
+}
+.pad-b-2 {
+  /* padding-b rule : set 0.5em size for bottom padding.  */
+  padding-bottom: 0.5em;
+}
+
+.pad-l, .pad-l-1 {
+  /* padding-l rule : set 0.25em size for left padding.  */
+  padding-left: 0.25em;
+}
+.pad-l-2 {
+  /* padding-l rule : set 0.5em size for left padding.  */
+  padding-left: 0.5em;
+}
+
+.pad-r, .pad-r-1 {
+  /* padding-r rule : set 0.25em size for right padding.  */
+  padding-right: 0.25em;
+}
+.pad-r-2 {
+  /* padding-r rule : set 0.5em size for right padding.  */
+  padding-right: 0.5em;
+}
+
+.pad-all, .pad-all-1 {
+  /* padding-all rule : set 0.25em size for top bottom left right padding.  */
+  padding-top: 0.25em;
+  padding-bottom: 0.25em;
+  padding-left: 0.25em;
+  padding-right: 0.25em;
+}
+.pad-all-2 {
+  /* padding-all rule : set 0.5em size for top bottom left right padding.  */
+  padding-top: 0.5em;
+  padding-bottom: 0.5em;
+  padding-left: 0.5em;
+  padding-right: 0.5em;
+}
+
+.pad-u, .pad-u-1 {
+  /* padding-u rule : set 0.25em size for bottom left right padding.  */
+  padding-bottom: 0.25em;
+  padding-left: 0.25em;
+  padding-right: 0.25em;
+}
+.pad-u-2 {
+  /* padding-u rule : set 0.5em size for bottom left right padding.  */
+  padding-bottom: 0.5em;
+  padding-left: 0.5em;
+  padding-right: 0.5em;
+}
+
+.pad-ii, .pad-ii-1 {
+  /* padding-ii rule : set 0.25em size for left right padding.  */
+  padding-left: 0.25em;
+  padding-right: 0.25em;
+}
+.pad-ii-2 {
+  /* padding-ii rule : set 0.5em size for left right padding.  */
+  padding-left: 0.5em;
+  padding-right: 0.5em;
+}
+
+.pad-tb, .pad-tb-1 {
+  /* padding-tb rule : set 0.25em size for top bottom padding.  */
+  padding-top: 0.25em;
+  padding-bottom: 0.25em;
+}
+.pad-tb-2 {
+  /* padding-tb rule : set 0.5em size for top bottom padding.  */
+  padding-top: 0.5em;
+  padding-bottom: 0.5em;
+}
+
+.marg-t, .marg-t-1 {
+  /* margin-t rule : set 0.25em size for top margin.  */
+  margin-top: 0.25em;
+}
+.marg-t-2 {
+  /* margin-t rule : set 0.5em size for top margin.  */
+  margin-top: 0.5em;
+}
+
+.marg-b, .marg-b-1 {
+  /* margin-b rule : set 0.25em size for bottom margin.  */
+  margin-bottom: 0.25em;
+}
+.marg-b-2 {
+  /* margin-b rule : set 0.5em size for bottom margin.  */
+  margin-bottom: 0.5em;
+}
+
+.marg-l, .marg-l-1 {
+  /* margin-l rule : set 0.25em size for left margin.  */
+  margin-left: 0.25em;
+}
+.marg-l-2 {
+  /* margin-l rule : set 0.5em size for left margin.  */
+  margin-left: 0.5em;
+}
+
+.marg-r, .marg-r-1 {
+  /* margin-r rule : set 0.25em size for right margin.  */
+  margin-right: 0.25em;
+}
+.marg-r-2 {
+  /* margin-r rule : set 0.5em size for right margin.  */
+  margin-right: 0.5em;
+}
+
+.marg-all, .marg-all-1 {
+  /* margin-all rule : set 0.25em size for top bottom left right margin.  */
+  margin-top: 0.25em;
+  margin-bottom: 0.25em;
+  margin-left: 0.25em;
+  margin-right: 0.25em;
+}
+.marg-all-2 {
+  /* margin-all rule : set 0.5em size for top bottom left right margin.  */
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+  margin-left: 0.5em;
+  margin-right: 0.5em;
+}
+
+.marg-u, .marg-u-1 {
+  /* margin-u rule : set 0.25em size for bottom left right margin.  */
+  margin-bottom: 0.25em;
+  margin-left: 0.25em;
+  margin-right: 0.25em;
+}
+.marg-u-2 {
+  /* margin-u rule : set 0.5em size for bottom left right margin.  */
+  margin-bottom: 0.5em;
+  margin-left: 0.5em;
+  margin-right: 0.5em;
+}
+
+.marg-ii, .marg-ii-1 {
+  /* margin-ii rule : set 0.25em size for left right margin.  */
+  margin-left: 0.25em;
+  margin-right: 0.25em;
+}
+.marg-ii-2 {
+  /* margin-ii rule : set 0.5em size for left right margin.  */
+  margin-left: 0.5em;
+  margin-right: 0.5em;
+}
+
+.marg-tb, .marg-tb-1 {
+  /* margin-tb rule : set 0.25em size for top bottom margin.  */
+  margin-top: 0.25em;
+  margin-bottom: 0.25em;
+}
+.marg-tb-2 {
+  /* margin-tb rule : set 0.5em size for top bottom margin.  */
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+}

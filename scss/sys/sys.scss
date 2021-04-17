@@ -1,0 +1,64 @@
+
+/* 
+padding, margin and border system
+*/
+$unit: em;
+$unit_size: 0.25;
+$grid_size: 2;
+$final_rule: null;
+$css_rule: null;
+$css_props: (border: brd, padding: pad, margin: marg); 
+$grid_rules: (
+  "t": top,
+  "b": bottom,
+  "l": left,
+  "r": right,
+  "all": top bottom left right,
+  "u": bottom left right,
+  "ii": left right,
+  "tb": top bottom, 
+); 
+
+// adding {border}-{r} shorthand css rule for .{border}-{r}-1 
+@function raw_size_tag_rule($condition) {
+  @if ($condition == 1) {
+    @return "&,";
+  } @else {
+    @return "";
+  }
+}
+
+
+
+// css border rules builder
+@mixin css_border_property_builder($css_prop, $grid_key, $rule, $size_value) {
+  // concatenate "-with" to property name when property is "border"
+  $final_rule: if($css_prop== border, null, null);
+  $suffix_rule: if($css_prop== border,  solid red, null);
+
+  @each $grid_size_value in $rule {
+    #{$css_prop}-#{$grid_size_value}#{$final_rule}: $size_value $suffix_rule;  
+  } 
+}
+
+// loop trough padding margin ...
+@each $css_prop,$css_prop_short in $css_props {
+  @each $grid_key, $rule in $grid_rules {
+    // css property name
+    .#{$css_prop_short}-#{$grid_key} {
+      @for $grid_size_value from 1 through $grid_size {
+        $css_size_value: ($grid_size_value * $unit_size) + $unit;
+        // css property name is aggregated with size value $i
+        #{raw_size_tag_rule($grid_size_value)} &-#{$grid_size_value} {
+          /* #{$css_prop}-#{$grid_key} rule : set #{$css_size_value} size for #{$rule} #{$css_prop}.  */
+          @include css_border_property_builder(
+            $css_prop,
+            $grid_key,
+            $rule,
+            $css_size_value
+          );
+        }
+      }
+    }
+  }
+}

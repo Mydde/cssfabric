@@ -1,0 +1,13 @@
+
+// zIndex declaration
+
+$z_groups: a b c d e f g;
+@each $z_group in $z_groups {
+  $i: index($z_groups, $z-group);
+  @for $z_value from 0 through 9 {
+    .zI-#{$z_group}-#{$z_value} {
+      /* set zIndex value */
+      z-index: ($i * 100) + (($z_value + 1) * 10);
+    }
+  }
+}

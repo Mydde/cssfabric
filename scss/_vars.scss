@@ -1,0 +1,15 @@
+ 
+
+$test: (
+  CFG_TABLE_PREFIX: "puretable",
+  CFG_TABLE_BG_COLOR_STRIP_MAIN: #ededed,
+  CFG_TABLE_BG_COLOR_STRIP_SECOND: #f5f5f5,
+  CFG_TABLE_BORDER_COLOR_MAIN: #ededed,
+  CFG_TABLE_BORDER_COLOR_SECOND: #f5f5f5,
+);
+
+:export {
+  @each $key, $value in $test {
+    #{$key}: #{$value};
+  }
+}

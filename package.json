@@ -1,15 +1,29 @@
 {
-  "name": "cssfabric",
+  "name": "css-fabric",
   "version": "0.1.0",
   "private": true,
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start"
+    "start": "next start",
+    "watch": "npm-run-all -p -r watch-sass watch-sass-min ",
+    "watch-sass": "sass  --no-source-map --watch ./scss/:./css/core",
+    "watch-sass-min": "sass  --no-source-map --watch ./scss/:./css/min/ --style=compressed"
   },
   "dependencies": {
+    "chokidar": "^3.5.1",
+    "mini-css-extract-plugin": "^1.4.1",
     "next": "10.1.3",
     "react": "17.0.2",
-    "react-dom": "17.0.2"
+    "react-dom": "17.0.2",
+    "sass": "^1.32.8",
+    "sass-loader": "^11.0.1"
+  },
+  "devDependencies": {
+    "@types/node": "^14.14.41",
+    "@types/react": "^17.0.3",
+    "clean-css": "^5.1.2",
+    "npm-run-all": "^4.1.5",
+    "typescript": "^4.2.4"
   }
 }

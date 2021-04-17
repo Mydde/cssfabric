@@ -1,0 +1,13 @@
+
+// overflow declaration
+$overflow_props: overflow overflow-x overflow-y;
+$overflow_values: visible hidden clip scroll auto initial unset;
+
+/* css overflow rules */
+@each $overflow_prop in $overflow_props {
+    @each $overflow_value in $overflow_values {
+      .#{$overflow_prop}-#{$overflow_value} {
+        overflow: $overflow_value;
+      }
+    }
+  }
