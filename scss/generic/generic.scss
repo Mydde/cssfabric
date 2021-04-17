@@ -1,6 +1,7 @@
+@use '../_config';
 /*
- css_fabric positioning system
-*/
+ css-fabric positioning system
+*/ 
 $position_props: absolute relative static fixed sticky;
 $display_props: block none inline inline-block inline-flex table table-row
   table-cell table-column unset;

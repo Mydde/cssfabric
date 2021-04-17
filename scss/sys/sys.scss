@@ -1,4 +1,9 @@
 
+@use '../_config';
+/*
+ css-fabric padding, margin and border system
+*/ 
+
 /* 
 padding, margin and border system
 */
@@ -6,10 +11,10 @@ padding, margin and border system
 $unit: em;
 $unit_size: 0.25;
 $grid_size: 2;
-$final_rule: null;
-$css_rule: null;
+ 
+ 
 $css_props: (border: brd, padding: pad, margin: marg); 
-$grid_rules: (
+$padding_margin_border_shorthand: (
   "t": top,
   "b": bottom,
   "l": left,
@@ -44,7 +49,7 @@ $grid_rules: (
 
 // loop trough padding margin ...
 @each $css_prop,$css_prop_short in $css_props {
-  @each $grid_key, $rule in $grid_rules {
+  @each $grid_key, $rule in $padding_margin_border_shorthand {
     // css property name
     .#{$css_prop_short}-#{$grid_key} {
       @for $grid_size_value from 1 through $grid_size {

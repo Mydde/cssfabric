@@ -1,7 +1,8 @@
-/*
- css_fabric dimensions system
-*/
 @use '../_config';
+/*
+ css-fabric scales system
+*/
+
 
 // @todo general config final generation
 $CFG_HAS_DIMENSION_STRICT: false;
@@ -43,8 +44,8 @@ $scale_grid_ratios: 8 24; // for col in % // migrated
 ) {
   //
   $scale_prop_short: map-get($scale_props, $scale_prop);
-  //$property_name: if($media_query_code,#{$dimension_prop_short}-#{$media_query_code}-#{$size_code},#{$dimension_prop_short}-#{$size_code});
-  /*  dimension : "-#{$size_code}" shorthand is #{$size_value} #{$dimension_prop}*/
+  //$property_name: if($media_query_code,#{$scale_prop_short}-#{$media_query_code}-#{$size_code},#{$scale_prop_short}-#{$size_code});
+  /*  dimension : "-#{$size_code}" shorthand is #{$size_value} #{$scale_prop}*/
   $tag: if(
     $media_query_code,
     #{$scale_prop_short}-#{$media_query_code}-#{$size_code},
@@ -87,12 +88,12 @@ $scale_grid_ratios: 8 24; // for col in % // migrated
 // loop on shorthands
 @mixin play_shorthand_loop($scale_prop, $mq_size_key) {
   @each $scale_shorthand,
-    $dimensions_shorthand_value in $dimensions_shorthands
+    $scale_shorthand_value in $scale_shorthands
   {
     @include css_dimension_property_builder(
       $scale_prop,
       $scale_shorthand,
-      map-get($dimensions_shorthands, $scale_shorthand),
+      map-get($scale_shorthands, $scale_shorthand),
       $mq_size_key
     );
   }
