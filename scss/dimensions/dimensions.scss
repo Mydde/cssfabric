@@ -1,11 +1,13 @@
-/* @use '../vars' ; */
- 
-$CFG_HAS_STRICT: false;
-$CFG_HAS_MIN: false;
-$CFG_HAS_MAX: false;
 /*
  css_fabric dimensions system
 */
+@use '../vars';
+
+// @todo general config final generation
+$CFG_HAS_DIMENSION_STRICT: false;
+$CFG_HAS_DIMENSION_MIN: false;
+$CFG_HAS_DIMENSION_MAX: false;
+
 // media queries sizes, in em
 $mq_sizes: (
   sm: 35.5,
@@ -28,14 +30,14 @@ $dimensions_shorthands: (
   "tiers": 33%,
 );
 $dimensions_defined_sizes: 1, 2, 4, 8, 16, 24, 32, 48, 64, 96, 128, 256; // in em
-$dimensions_grid_ratios: 8 24; // in %
+$dimensions_grid_ratios: 8 24; // for col in %
 
 /// css dimensions rules builder
 @mixin css_dimension_property_builder(
   $dimension_prop,
   $size_code,
   $size_value,
-  $media_query_code 
+  $media_query_code
 ) {
   //
   $dimension_prop_short: map-get($dimension_props, $dimension_prop);
@@ -49,17 +51,17 @@ $dimensions_grid_ratios: 8 24; // in %
   .#{$tag} {
     #{$dimension_prop}: $size_value;
 
-    @if ($CFG_HAS_MAX) {
+    @if ($CFG_HAS_DIMENSION_MAX) {
       &-max {
         max-#{$dimension_prop}: $size_value;
       }
     }
-    @if ($CFG_HAS_MIN) {
+    @if ($CFG_HAS_DIMENSION_MIN) {
       &-min {
         min-#{$dimension_prop}: $size_value;
       }
     }
-    @if ($CFG_HAS_STRICT) {
+    @if ($CFG_HAS_DIMENSION_STRICT) {
       &-strict {
         #{$dimension_prop}: $size_value;
         max-#{$dimension_prop}: $size_value;
