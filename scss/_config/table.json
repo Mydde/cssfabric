@@ -1,5 +1,9 @@
 {
     "table": {
+        "_metadata": {
+            "title": "",
+            "description": ""
+        },
         "table_bg_color_head": "#f4f4f4",
         "table_bg_color_strip_main": "#ededed",
         "table_bg_color_strip_second": "#f5f5f5",

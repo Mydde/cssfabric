@@ -1,6 +1,9 @@
 {
-    "_box_": "",
     "box": {
+        "_metadata": {
+            "title": "",
+            "description": ""
+        },
         "box_unit": "em",
         "box_unit_size": "0.25",
         "box_sizes": 8,

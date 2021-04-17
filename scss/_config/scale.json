@@ -1,5 +1,9 @@
 {
     "scale": {
+        "_metadata": {
+            "title": "",
+            "description": ""
+        },
         "scale_size": "1em",
         "scale_props": {
             "width": "w",
@@ -31,7 +35,7 @@
             256
         ],
         "scale_grid_ratios": [
-            8, 
+            8,
             24
         ]
     }
