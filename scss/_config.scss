@@ -1,37 +1,31 @@
 $config: (
   _cfg: (
-    has_dimensions_strict: false,
-    has_dimensions_min: false,
-    has_dimensions_max: false,
-    media_quey_sizes: (
-      sm: 35.5,
-      md: 48,
-      lg: 64,
-      xl: 80,
-      xxl: 120,
-    ),
-    grid_ratios: (
-      8,
-      24,
-    ),
+    CFG_HAS_DIMENSION_STRICT: false,
+    CFG_HAS_DIMENSION_MIN: false,
+    CFG_HAS_DIMENSION_MAX: false,
     grid_class_name: grid,
-    grid_separator: "-",
+    grid_separator: '-',
     grid_hor_code: h,
     grid_vert_code: v,
     TABLE_PREFIX: table,
     TABLE_PREFIX_SHORT: tbl,
+    MEDIA_QUERY_SIZES: (
+      sm: 35.5,
+      md: 48,
+      lg: 64,
+      xl: 80,
+      xxl: 120
+    ),
+    grid_ratios: (8, 24)
   ),
   box: (
     box_unit: em,
     box_unit_size: 0.25,
-    box_sizes: (
-      2,
-      4,
-    ),
+    box_sizes: (2, 4),
     box_css_props_shorthands: (
       border: brd,
       padding: pad,
-      margin: marg,
+      margin: marg
     ),
     box_side_shorthands: (
       t: top,
@@ -41,50 +35,29 @@ $config: (
       all: top bottom left right,
       u: bottom left right,
       ii: left right,
-      tb: top bottom,
+      tb: top bottom
     ),
     box_position_props: absolute relative static fixed sticky,
-    box_display_props: block none inline inline-block inline-flex table
-      table-row table-cell table-column unset,
+    box_display_props: block none inline inline-block inline-flex table table-row table-cell table-column unset
   ),
   overflow: (
     overflow_props: overflow overflow-x overflow-y,
-    overflow_values: visible hidden clip scroll auto initial unset,
+    overflow_values: visible hidden clip scroll auto initial unset
   ),
   scale: (
     scale_size: 1em,
     scale_props: (
       width: w,
-      height: h,
+      height: h
     ),
-    scale_css_values: (
-      max-content,
-      min-content,
-      fit-content,
-    ),
+    scale_css_values: (max-content, min-content, fit-content),
     scale_shorthands: (
       full: 100%,
       mid: 50%,
       quarter: 25%,
-      tiers: 33%,
+      tiers: 33%
     ),
-    scale_defined_sizes: (
-      1,
-      2,
-      4,
-      8,
-      16,
-      24,
-      32,
-      48,
-      64,
-      96,
-      128,
-      256,
-    ),
-    scale_grid_ratios: (
-      8,
-      24,
-    ),
-  ),
+    scale_defined_sizes: (1, 2, 4, 8, 16, 24, 32, 48, 64, 96, 128, 256),
+    scale_grid_ratios: (8, 24)
+  )
 );

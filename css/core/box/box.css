@@ -1,9 +1,6 @@
 /*
  css-fabric padding, margin and border system
 */
-/* 
-padding, margin and border system
-*/
 .brd-t, .brd-t-1 {
   /* border-t rule : set 0.25em size for top border.  */
   border-top: 0.25em solid red;

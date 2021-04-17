@@ -3,6 +3,10 @@
  css-fabric for tables system
 */ 
 
+// $_cfg: map-get(config.$config, _cfg);
+
+// $_grid: map-get(config.$grid, grid);
+
 // migrated to CFG
 $TABLE_PREFIX: table;
 $TABLE_PREFIX_SHORT: tbl;

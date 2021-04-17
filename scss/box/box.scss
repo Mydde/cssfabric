@@ -1,13 +1,7 @@
 @use '../_config';
 /*
  css-fabric padding, margin and border system
-*/
-
-@debug map-get(config.$config, CFG);
-@debug map-get(config.$config, box);
-/* 
-padding, margin and border system
-*/
+*/  
 // migrated
 $box_unit: em;
 $box_unit_size: 0.25;
