@@ -4,13 +4,14 @@
 */
 
 // load scss config file
-@use '../_config';
+@use '../_utils';
 
-// load config variables ( general + scoped )
-$_cfg: map-get(config.$config, _cfg);
-$_box: map-get(config.$config, box);
-// end load config variables
+// load general config variables 
+$_cfg: utils.get_conf();
+// load local config variables
+$_box: utils.get_conf_data(box);
 
+// read variables
 $box_unit: map-get($_box, box_unit);
 $box_unit_size: map-get($_box, box_unit_size);
 $box_sizes: map-get($_box, box_sizes);
@@ -20,6 +21,7 @@ $box_side_shorthands: map-get($_box, box_border_shorthands);
 
 $box_position_props: map-get($_box, box_position_props);
 $box_display_props: map-get($_box, box_display_props);
+
 
 // adding {border}-{r} shorthand css rule for .{border}-{r}-1
 @function raw_size_tag_rule($condition) {

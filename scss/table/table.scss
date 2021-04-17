@@ -4,12 +4,14 @@
 */
 
 // load scss config file
-@use '../_config';
+@use '../_utils';
 
-// load config variables ( general + scoped )
-$_cfg: map-get(config.$config, _cfg);
-$_table: map-get(config.$config, table);
+// load general config variables 
+$_cfg: utils.get_conf();
+// load local config variables
+$_table: utils.get_conf_data(table);
 
+// read variables
 $TABLE_PREFIX: map-get($_cfg, table_class_name);
 $TABLE_PREFIX_SHORT: map-get($_cfg, table_class_name_short);
 

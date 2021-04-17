@@ -4,12 +4,14 @@
 */ 
 
 // load scss config file
-@use '../_config';
+@use '../_utils';
 
-// load config variables ( general + scoped )
-$_cfg: map-get(config.$config, _cfg); 
-// end load config variables
+// load general config variables 
+$_cfg: utils.get_conf();
+// load local config variables
+$_box: utils.get_conf_data(grid); 
 
+// read variables
 $CFG_GRID_CODE: map-get($_cfg, grid_class_name);
 $CFG_GRID_SEPARATOR: map-get($_cfg, grid_separator);
 $CFG_GRID_HOR: map-get($_cfg, grid_hor_code);

@@ -1,0 +1,21 @@
+// load scss config file
+@use '_config';
+
+@function get_conf() {
+  @return map-get(config.$config, _cfg);
+}
+
+@function get_conf_part($_module, $_part) {
+  $po: map-get(config.$config, $_module);
+
+  @return map-get($po, $_part);
+} 
+
+///@debug
+@function get_conf_data($_module) {
+  @return get_conf_part($_module, "_data");
+}
+
+@function get_conf_metadata($_module) {
+  @return get_conf_part($_module, "_metadata");
+}

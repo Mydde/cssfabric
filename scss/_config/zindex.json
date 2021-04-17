@@ -1,0 +1,11 @@
+{
+    "zindex":{
+        "_metadata":{
+            "title": "",
+            "description": ""
+        },
+        "_data":{
+            "z_groups":["a", "b", "c", "d", "e", "f", "g"]
+        }
+    }
+}

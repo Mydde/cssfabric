@@ -1,23 +1,25 @@
 /*
  css-fabric 
  overflow system
-*/ 
-@use '../_config';
+*/
 
-// load config variables ( general + scoped )
-$_cfg: map-get(config.$config, _cfg);
-$_overflow: map-get(config.$config, overflow);
-// end load config variables
+// load scss config file
+@use '../_utils';
 
-// overflow declaration // migrated
-$overflow_props:  map-get($_overflow, overflow_props);
-$overflow_values:  map-get($_overflow, overflow_values);
+// load general config variables
+$_cfg: utils.get_conf();
+// load local config variables
+$_overflow: utils.get_conf_data(overflow);
+
+// read variables
+$overflow_props: map-get($_overflow, overflow_props);
+$overflow_values: map-get($_overflow, overflow_values);
 
 /* css overflow rules */
 @each $overflow_prop in $overflow_props {
-    @each $overflow_value in $overflow_values {
-      .#{$overflow_prop}-#{$overflow_value} {
-        overflow: $overflow_value;
-      }
+  @each $overflow_value in $overflow_values {
+    .#{$overflow_prop}-#{$overflow_value} {
+      overflow: $overflow_value;
     }
   }
+}

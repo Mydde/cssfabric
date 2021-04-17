@@ -23,6 +23,28 @@ $config: (
       title: "",
       description: ""
     ),
+    _data: (
+      box_unit: em,
+      box_unit_size: 0.25,
+      box_sizes: 8,
+      box_css_props_shorthands: (
+        border: brd,
+        padding: pad,
+        margin: marg
+      ),
+      box_border_shorthands: (
+        t: top,
+        b: bottom,
+        l: left,
+        r: right,
+        all: top bottom left right,
+        u: bottom left right,
+        ii: left right,
+        tb: top bottom
+      ),
+      box_position_props: absolute relative static fixed sticky,
+      box_display_props: block none inline inline-block inline-flex table table-row table-cell table-column unset
+    ),
     box_unit: em,
     box_unit_size: 0.25,
     box_sizes: 8,
@@ -55,39 +77,54 @@ $config: (
       title: "",
       description: ""
     ),
-    overflow_props: overflow overflow-x overflow-y,
-    overflow_values: visible hidden clip scroll auto initial unset
+    _data: (
+      overflow_props: overflow overflow-x overflow-y,
+      overflow_values: visible hidden clip scroll auto initial unset
+    )
   ),
   scale: (
     _metadata: (
       title: "",
       description: ""
     ),
-    scale_size: 1em,
-    scale_props: (
-      width: w,
-      height: h
-    ),
-    scale_css_values: (max-content, min-content, fit-content),
-    scale_shorthands: (
-      full: 100%,
-      mid: 50%,
-      quarter: 25%,
-      tiers: 33%
-    ),
-    scale_defined_sizes: (1, 2, 4, 8, 16, 24, 32, 48, 64, 96, 128, 256),
-    scale_grid_ratios: (8, 24)
+    _data: (
+      scale_size: 1em,
+      scale_props: (
+        width: w,
+        height: h
+      ),
+      scale_css_values: (max-content, min-content, fit-content),
+      scale_shorthands: (
+        full: 100%,
+        mid: 50%,
+        quarter: 25%,
+        tiers: 33%
+      ),
+      scale_defined_sizes: (1, 2, 4, 8, 16, 24, 32, 48, 64, 96, 128, 256),
+      scale_grid_ratios: (8, 24)
+    )
   ),
   table: (
     _metadata: (
       title: "",
       description: ""
     ),
-    table_bg_color_head: #f4f4f4,
-    table_bg_color_strip_main: #ededed,
-    table_bg_color_strip_second: #f5f5f5,
-    table_border_color_header: #ccc,
-    table_border_color_main: #ededed,
-    table_border_color_second: #f5f5f5
+    _data: (
+      table_bg_color_head: #f4f4f4,
+      table_bg_color_strip_main: #ededed,
+      table_bg_color_strip_second: #f5f5f5,
+      table_border_color_header: #ccc,
+      table_border_color_main: #ededed,
+      table_border_color_second: #f5f5f5
+    )
+  ),
+  zindex: (
+    _metadata: (
+      title: "",
+      description: ""
+    ),
+    _data: (
+      z_groups: (a, b, c, d, e, f, g)
+    )
   )
 );
