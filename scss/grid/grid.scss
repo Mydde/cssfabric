@@ -3,11 +3,15 @@
  css-fabric grid system
 */ 
 
+$_cfg: map-get(config.$config, _cfg);
+
+// $_grid: map-get(config.$grid, grid);
+
 // migrated
-$CFG_GRID_CODE: 'grid';
-$CFG_GRID_SEPARATOR: '-' ;
-$CFG_GRID_HOR: 'h';
-$CFG_GRID_VERT: 'v';
+$CFG_GRID_CODE: map-get($_cfg, grid_class_name);
+$CFG_GRID_SEPARATOR: map-get($_cfg, grid_separator);
+$CFG_GRID_HOR: map-get($_cfg, grid_hor_code);
+$CFG_GRID_VERT: map-get($_cfg, grid_vert_code);
 
 $h_prop: #{$CFG_GRID_CODE}#{$CFG_GRID_SEPARATOR}#{$CFG_GRID_HOR};
 $v_prop: #{$CFG_GRID_CODE}#{$CFG_GRID_SEPARATOR}#{$CFG_GRID_VERT}; 
