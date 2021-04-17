@@ -1,8 +1,8 @@
-@use '../_config';
 /*
  css-fabric for tables system
 */
-
+@use '../_config';
+// load config variables ( general + scoped )
 $_cfg: map-get(config.$config, _cfg);
 $_table: map-get(config.$config, table);
 

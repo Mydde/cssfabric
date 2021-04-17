@@ -1,32 +1,24 @@
-@use '../_config';
 /*
- css-fabric padding, margin and border system
-*/  
-// migrated
-$box_unit: em;
-$box_unit_size: 0.25;
-$box_sizes: 2;
+* css-fabric 
+* padding, margin and border system
+*/
 
-$box_css_props_shorthands: (
-  border: brd,
-  padding: pad,
-  margin: marg,
-);
-$box_side_shorthands: (
-  "t": top,
-  "b": bottom,
-  "l": left,
-  "r": right,
-  "all": top bottom left right,
-  "u": bottom left right,
-  "ii": left right,
-  "tb": top bottom,
-);
+// load scss config file
+@use '../_config';
 
-// migrated
-$box_position_props: absolute relative static fixed sticky;
-$box_display_props: block none inline inline-block inline-flex table table-row
-  table-cell table-column unset;
+// load config variables ( general + scoped )
+$_cfg: map-get(config.$config, _cfg);
+$_box: map-get(config.$config, box);
+
+$box_unit: map-get($_box, box_unit);
+$box_unit_size: map-get($_box, box_unit_size);
+$box_sizes: map-get($_box, box_sizes);
+
+$box_css_props_shorthands: map-get($_box, box_css_props_shorthands);
+$box_side_shorthands: map-get($_box, box_border_shorthands);
+
+$box_position_props: map-get($_box, box_position_props);
+$box_display_props: map-get($_box, box_display_props);
 
 // adding {border}-{r} shorthand css rule for .{border}-{r}-1
 @function raw_size_tag_rule($condition) {

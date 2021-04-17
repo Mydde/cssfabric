@@ -1,8 +1,7 @@
-@use '../_config';
 /*
  css-fabric grid system
 */ 
-
+@use '../_config';
 
 
 $_cfg: map-get(config.$config, _cfg); 
