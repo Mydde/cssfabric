@@ -1,22 +1,22 @@
 {
-    "dimensions": {
-        "dimension_size": "1em",
-        "dimension_props": {
+    "scales": {
+        "scale_size": "1em",
+        "scale_props": {
             "width": "w",
             "height": "h"
         },
-        "dimensions_css_values": [
+        "scale_css_values": [
             "max-content",
             "min-content",
             "fit-content"
         ],
-        "dimensions_shorthands": {
+        "scale_shorthands": {
             "full": "100%",
             "mid": "50%",
             "quarter": "25%",
             "tiers": "33%"
         },
-        "dimensions_defined_sizes": [
+        "scale_defined_sizes": [
             1,
             2,
             4,
@@ -30,8 +30,8 @@
             128,
             256
         ],
-        "dimensions_grid_ratios": [
-            8,
+        "scale_grid_ratios": [
+            8, 
             24
         ]
     }

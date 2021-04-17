@@ -1,0 +1,20 @@
+{
+    "CFG": {
+        "CFG_HAS_DIMENSION_STRICT": false,
+        "CFG_HAS_DIMENSION_MIN": false,
+        "CFG_HAS_DIMENSION_MAX": false,
+        "CFG_GRID_CODE": "grid",
+        "CFG_GRID_SEPARATOR": "'-'",
+        "CFG_GRID_HOR": "h",
+        "CFG_GRID_VERT": "v",
+        "TABLE_PREFIX": "table",
+        "TABLE_PREFIX_SHORT": "tbl",
+        "MEDIA_QUERY_SIZES": {
+            "sm": 35.5,
+            "md": 48,
+            "lg": 64,
+            "xl": 80,
+            "xxl": 120
+        }
+    }
+}

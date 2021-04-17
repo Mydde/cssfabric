@@ -9,64 +9,65 @@ $CFG_HAS_DIMENSION_MIN: false;
 $CFG_HAS_DIMENSION_MAX: false;
 
 // media queries sizes, in em // migrated
-$media_query_sizes: (
+$MEDIA_QUERY_SIZES: (
   sm: 35.5,
   md: 48,
   lg: 64,
   xl: 80,
   xxl: 120,
 );
+
 // dimensions declaration
-$dimension_size: 1em; // migrated
-$dimension_props: (
+$scale_size: 1em; // migrated
+$scale_props: (
   width: w,
   height: h,
 ); // migrated
-$dimensions_css_values: max-content min-content fit-content; // migrated
-$dimensions_shorthands: (
+$scale_css_values: max-content min-content fit-content; // migrated
+$scale_shorthands: (
   "full": 100%,
   "mid": 50%,
   "quarter": 25%,
   "tiers": 33%,
 ); // migrated
-$dimensions_defined_sizes: 1, 2, 4, 8, 16, 24, 32, 48, 64, 96, 128, 256; // in em // migrated
-$dimensions_grid_ratios: 8 24; // for col in % // migrated
+$scale_defined_sizes: 1, 2, 4, 8, 16, 24, 32, 48, 64, 96, 128, 256; // in em // migrated
+$scale_grid_ratios: 8 24; // for col in % // migrated
 
 
 /// css dimensions rules builder
 @mixin css_dimension_property_builder(
-  $dimension_prop,
+  $scale_prop,
   $size_code,
   $size_value,
   $media_query_code
 ) {
   //
-  $dimension_prop_short: map-get($dimension_props, $dimension_prop);
+  $scale_prop_short: map-get($scale_props, $scale_prop);
   //$property_name: if($media_query_code,#{$dimension_prop_short}-#{$media_query_code}-#{$size_code},#{$dimension_prop_short}-#{$size_code});
   /*  dimension : "-#{$size_code}" shorthand is #{$size_value} #{$dimension_prop}*/
   $tag: if(
     $media_query_code,
-    #{$dimension_prop_short}-#{$media_query_code}-#{$size_code},
-    #{$dimension_prop_short}-#{$size_code}
+    #{$scale_prop_short}-#{$media_query_code}-#{$size_code},
+    #{$scale_prop_short}-#{$size_code}
   );
   .#{$tag} {
-    #{$dimension_prop}: $size_value;
+    #{$scale_prop}: $size_value;
 
     @if ($CFG_HAS_DIMENSION_MAX) {
       &-max {
-        max-#{$dimension_prop}: $size_value;
+        max-#{$scale_prop}: $size_value;
       }
     }
     @if ($CFG_HAS_DIMENSION_MIN) {
       &-min {
-        min-#{$dimension_prop}: $size_value;
+        min-#{$scale_prop}: $size_value;
       }
     }
     @if ($CFG_HAS_DIMENSION_STRICT) {
       &-strict {
-        #{$dimension_prop}: $size_value;
-        max-#{$dimension_prop}: $size_value;
-        min-#{$dimension_prop}: $size_value;
+        #{$scale_prop}: $size_value;
+        max-#{$scale_prop}: $size_value;
+        min-#{$scale_prop}: $size_value;
       }
     }
   }
@@ -75,7 +76,7 @@ $dimensions_grid_ratios: 8 24; // for col in % // migrated
 @mixin css_dimension_property_responsive_builder(
   $mq_size_key,
   $mq_size_value,
-  $dimension_prop
+  $scale_prop
 ) {
   // shorthand naked
   @media only screen and (min-width: $mq_size_value + em) {
@@ -84,52 +85,52 @@ $dimensions_grid_ratios: 8 24; // for col in % // migrated
 }
 
 // loop on shorthands
-@mixin play_shorthand_loop($dimension_prop, $mq_size_key) {
-  @each $dimensions_shorthand,
+@mixin play_shorthand_loop($scale_prop, $mq_size_key) {
+  @each $scale_shorthand,
     $dimensions_shorthand_value in $dimensions_shorthands
   {
     @include css_dimension_property_builder(
-      $dimension_prop,
-      $dimensions_shorthand,
-      map-get($dimensions_shorthands, $dimensions_shorthand),
+      $scale_prop,
+      $scale_shorthand,
+      map-get($dimensions_shorthands, $scale_shorthand),
       $mq_size_key
     );
   }
 }
 
 // loop on dimensions
-@mixin play_dimensions_loop($dimension_prop, $mq_size_key) {
+@mixin play_dimensions_loop($scale_prop, $mq_size_key) {
   // loop on dimensions
-  @each $dimension_css_value in $dimensions_css_values {
+  @each $scale_css_value in $scale_css_values {
     @include css_dimension_property_builder(
-      $dimension_prop,
-      $dimension_css_value,
-      $dimension_css_value,
+      $scale_prop,
+      $scale_css_value,
+      $scale_css_value,
       $mq_size_key
     );
   }
 }
 
 // loop on defined dimensions
-@mixin play_defined_dimensions_loop($dimension_prop, $mq_size_key) {
+@mixin play_defined_dimensions_loop($scale_prop, $mq_size_key) {
   // loop on defined dimensions
-  @each $dimensions_defined_size in $dimensions_defined_sizes {
+  @each $scale_defined_size in $scale_defined_sizes {
     @include css_dimension_property_builder(
-      $dimension_prop,
-      $dimensions_defined_size,
-      $dimensions_defined_size + em,
+      $scale_prop,
+      $scale_defined_size,
+      $scale_defined_size + em,
       $mq_size_key
     );
   }
 }
 
 // loop on ratio dimensions
-@mixin play_ratio_dimensions_loop($dimension_prop, $mq_size_key) {
+@mixin play_ratio_dimensions_loop($scale_prop, $mq_size_key) {
   // loop on ratio dimensions
-  @each $dimensions_grid_ratio in $dimensions_grid_ratios {
+  @each $dimensions_grid_ratio in $scale_grid_ratios {
     @for $z_value from 1 through $dimensions_grid_ratio {
       @include css_dimension_property_builder(
-        $dimension_prop,
+        $scale_prop,
         $z_value + "-" + $dimensions_grid_ratio,
         (($z_value / $dimensions_grid_ratio) * 100) + \%,
         $mq_size_key
@@ -139,56 +140,56 @@ $dimensions_grid_ratios: 8 24; // for col in % // migrated
 }
 
 $mq_size_key: null;
-@each $dimension_prop, $dimension_prop_short in $dimension_props {
+@each $scale_prop, $scale_prop_short in $scale_props {
   // loop on shorthands
-  @include play_shorthand_loop($dimension_prop, null);
+  @include play_shorthand_loop($scale_prop, null);
   // loop on responsive shorthands
-  @each $mq_size_key, $mq_size_value in $media_query_sizes {
+  @each $mq_size_key, $mq_size_value in $MEDIA_QUERY_SIZES {
     @include css_dimension_property_responsive_builder(
       $mq_size_key,
       $mq_size_value,
-      $dimension_prop
+      $scale_prop
     ) {
-      @include play_shorthand_loop($dimension_prop, $mq_size_key);
+      @include play_shorthand_loop($scale_prop, $mq_size_key);
     }
   }
 
   // loop on dimensions
-  @include play_dimensions_loop($dimension_prop, null);
+  @include play_dimensions_loop($scale_prop, null);
   // loop on responsive dimensions
-  @each $mq_size_key, $mq_size_value in $media_query_sizes {
+  @each $mq_size_key, $mq_size_value in $MEDIA_QUERY_SIZES {
     @include css_dimension_property_responsive_builder(
       $mq_size_key,
       $mq_size_value,
-      $dimension_prop
+      $scale_prop
     ) {
-      @include play_dimensions_loop($dimension_prop, $mq_size_key);
+      @include play_dimensions_loop($scale_prop, $mq_size_key);
     }
   }
 
   // loop on defined dimensions
-  @include play_defined_dimensions_loop($dimension_prop, null);
+  @include play_defined_dimensions_loop($scale_prop, null);
   // loop on responsive defined dimensions
-  @each $mq_size_key, $mq_size_value in $media_query_sizes {
+  @each $mq_size_key, $mq_size_value in $MEDIA_QUERY_SIZES {
     @include css_dimension_property_responsive_builder(
       $mq_size_key,
       $mq_size_value,
-      $dimension_prop
+      $scale_prop
     ) {
-      @include play_defined_dimensions_loop($dimension_prop, $mq_size_key);
+      @include play_defined_dimensions_loop($scale_prop, $mq_size_key);
     }
   }
 
   // loop on ratio dimensions
-  @include play_ratio_dimensions_loop($dimension_prop, null);
+  @include play_ratio_dimensions_loop($scale_prop, null);
   // loop on responsive ratio dimensions
-  @each $mq_size_key, $mq_size_value in $media_query_sizes {
+  @each $mq_size_key, $mq_size_value in $MEDIA_QUERY_SIZES {
     @include css_dimension_property_responsive_builder(
       $mq_size_key,
       $mq_size_value,
-      $dimension_prop
+      $scale_prop
     ) {
-      @include play_ratio_dimensions_loop($dimension_prop, $mq_size_key);
+      @include play_ratio_dimensions_loop($scale_prop, $mq_size_key);
     }
   }
 }
