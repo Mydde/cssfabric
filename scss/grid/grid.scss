@@ -1,10 +1,14 @@
 /*
- css-fabric grid system
+ css-fabric 
+ grid system
 */ 
+
+// load scss config file
 @use '../_config';
 
-
+// load config variables ( general + scoped )
 $_cfg: map-get(config.$config, _cfg); 
+// end load config variables
 
 $CFG_GRID_CODE: map-get($_cfg, grid_class_name);
 $CFG_GRID_SEPARATOR: map-get($_cfg, grid_separator);

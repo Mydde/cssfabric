@@ -1,11 +1,17 @@
-@use '../_config';
 /*
- css-fabric for zIndex system
+ css-fabric 
+ zIndex system
 */ 
+@use '../_config';
 
-// zIndex declaration
+// load config variables ( general + scoped )
+$_cfg: map-get(config.$config, _cfg);
+// end load config variables
+
+
 
 $z_groups: a b c d e f g;
+
 @each $z_group in $z_groups {
   $i: index($z_groups, $z-group);
   @for $z_value from 0 through 9 {

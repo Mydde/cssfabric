@@ -1,7 +1,11 @@
 /*
- css-fabric for tables system
+ css-fabric 
+ tables system
 */
+
+// load scss config file
 @use '../_config';
+
 // load config variables ( general + scoped )
 $_cfg: map-get(config.$config, _cfg);
 $_table: map-get(config.$config, table);

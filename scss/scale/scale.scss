@@ -1,13 +1,17 @@
 /*
- css-fabric scale  system
+ css-fabric 
+ scale  system
 */
+
+// load scss config file
 @use '../_config';
 
-
+// load config variables ( general + scoped )
 $_cfg: map-get(config.$config, _cfg);
 $_scale: map-get(config.$config, scale);
+// end load config variables
 
-// @todo general config final generation
+
 $_has_dimensions_strict: map-get($_cfg, has_dimensions_strict); 
 $_has_dimensions_min: map-get($_cfg, has_dimensions_min);
 $_has_dimensions_max: map-get($_cfg, has_dimensions_max);

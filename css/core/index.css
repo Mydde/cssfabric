@@ -1,6 +1,7 @@
 @import url("https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize");
 /*
- css-fabric scale  system
+ css-fabric 
+ scale  system
 */
 /*  dimension : "-full" shorthand is 100% width*/
 .w-full {
@@ -2150,7 +2151,8 @@
 }
 
 /*
- css-fabric for zIndex system
+ css-fabric 
+ zIndex system
 */
 .zI-a-0 {
   /* set zIndex value */
@@ -2503,7 +2505,8 @@
 }
 
 /*
- css-fabric for tables system
+ css-fabric 
+ tables system
 */
 .table {
   border-collapse: collapse;
@@ -2566,7 +2569,8 @@
 }
 
 /*
- css-fabric grid system
+ css-fabric 
+ grid system
 */
 .grid-v, .grid-h {
   display: flex;

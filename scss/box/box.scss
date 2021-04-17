@@ -9,6 +9,7 @@
 // load config variables ( general + scoped )
 $_cfg: map-get(config.$config, _cfg);
 $_box: map-get(config.$config, box);
+// end load config variables
 
 $box_unit: map-get($_box, box_unit);
 $box_unit_size: map-get($_box, box_unit_size);
