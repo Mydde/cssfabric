@@ -1,8 +1,8 @@
 {
-    "sys": {
+    "box": {
         "box_unit": "em",
         "box_unit_size": "0.25",
-        "box_sizes": 2,
+        "box_sizes": [2, 4],
         "box_css_props_shorthands": {
             "border": "brd",
             "padding": "pad",
@@ -17,6 +17,8 @@
             "u": "bottom left right",
             "ii": "left right",
             "tb": "top bottom"
-        }
+        },
+        "box_position_props": "absolute relative static fixed sticky",
+        "box_display_props": "block none inline inline-block inline-flex table table-row table-cell table-column unset"
     }
 }

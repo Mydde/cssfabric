@@ -1,6 +1,0 @@
-{
-    "generic": {
-        "position_props": "absolute relative static fixed sticky",
-        "display_props": "block none inline inline-block inline-flex table table-row table-cell table-column unset"
-    }
-}

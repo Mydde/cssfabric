@@ -3103,76 +3103,6 @@
   }
 }
 /*
- css-fabric positioning system
-*/
-/* css positioning rules */
-.absolute {
-  /* set position value to absolute*/
-  position: absolute;
-}
-
-.relative {
-  /* set position value to relative*/
-  position: relative;
-}
-
-.static {
-  /* set position value to static*/
-  position: static;
-}
-
-.fixed {
-  /* set position value to fixed*/
-  position: fixed;
-}
-
-.sticky {
-  /* set position value to sticky*/
-  position: sticky;
-}
-
-/* css display rules */
-.dsp-block {
-  display: block;
-}
-
-.dsp-none {
-  display: none;
-}
-
-.dsp-inline {
-  display: inline;
-}
-
-.dsp-inline-block {
-  display: inline-block;
-}
-
-.dsp-inline-flex {
-  display: inline-flex;
-}
-
-.dsp-table {
-  display: table;
-}
-
-.dsp-table-row {
-  display: table-row;
-}
-
-.dsp-table-cell {
-  display: table-cell;
-}
-
-.dsp-table-column {
-  display: table-column;
-}
-
-.dsp-unset {
-  display: unset;
-}
-
-/*
  css-fabric grid system
 */
 .grid-v, .grid-h {
@@ -3707,6 +3637,73 @@ padding, margin and border system
   /* margin-tb rule : set 0.5em size for top bottom margin.  */
   margin-top: 0.5em;
   margin-bottom: 0.5em;
+}
+
+/* css positioning rules */
+.absolute {
+  /* set position value to absolute*/
+  position: absolute;
+}
+
+.relative {
+  /* set position value to relative*/
+  position: relative;
+}
+
+.static {
+  /* set position value to static*/
+  position: static;
+}
+
+.fixed {
+  /* set position value to fixed*/
+  position: fixed;
+}
+
+.sticky {
+  /* set position value to sticky*/
+  position: sticky;
+}
+
+/* css display rules */
+.dsp-block {
+  display: block;
+}
+
+.dsp-none {
+  display: none;
+}
+
+.dsp-inline {
+  display: inline;
+}
+
+.dsp-inline-block {
+  display: inline-block;
+}
+
+.dsp-inline-flex {
+  display: inline-flex;
+}
+
+.dsp-table {
+  display: table;
+}
+
+.dsp-table-row {
+  display: table-row;
+}
+
+.dsp-table-cell {
+  display: table-cell;
+}
+
+.dsp-table-column {
+  display: table-column;
+}
+
+.dsp-unset {
+  display: unset;
 }
 
 /*

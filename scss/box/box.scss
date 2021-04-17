@@ -1,11 +1,10 @@
-
 @use '../_config';
 /*
  css-fabric padding, margin and border system
-*/ 
+*/
 
-@debug map-get(config.$config,CFG);
-@debug map-get(config.$config,box);
+@debug map-get(config.$config, CFG);
+@debug map-get(config.$config, box);
 /* 
 padding, margin and border system
 */
@@ -13,9 +12,12 @@ padding, margin and border system
 $box_unit: em;
 $box_unit_size: 0.25;
 $box_sizes: 2;
- 
- 
-$box_css_props_shorthands: (border: brd, padding: pad, margin: marg); 
+
+$box_css_props_shorthands: (
+  border: brd,
+  padding: pad,
+  margin: marg,
+);
 $box_side_shorthands: (
   "t": top,
   "b": bottom,
@@ -24,10 +26,15 @@ $box_side_shorthands: (
   "all": top bottom left right,
   "u": bottom left right,
   "ii": left right,
-  "tb": top bottom, 
-); 
+  "tb": top bottom,
+);
 
-// adding {border}-{r} shorthand css rule for .{border}-{r}-1 
+// migrated
+$box_position_props: absolute relative static fixed sticky;
+$box_display_props: block none inline inline-block inline-flex table table-row
+  table-cell table-column unset;
+
+// adding {border}-{r} shorthand css rule for .{border}-{r}-1
 @function raw_size_tag_rule($condition) {
   @if ($condition == 1) {
     @return "&,";
@@ -36,21 +43,19 @@ $box_side_shorthands: (
   }
 }
 
-
-
 // css border rules builder
 @mixin css_border_property_builder($css_prop, $grid_key, $rule, $size_value) {
   // concatenate "-with" to property name when property is "border"
   $final_rule: if($css_prop== border, null, null);
-  $suffix_rule: if($css_prop== border,  solid red, null);
+  $suffix_rule: if($css_prop== border, solid red, null);
 
   @each $grid_size_value in $rule {
-    #{$css_prop}-#{$grid_size_value}#{$final_rule}: $size_value $suffix_rule;  
-  } 
+    #{$css_prop}-#{$grid_size_value}#{$final_rule}: $size_value $suffix_rule;
+  }
 }
 
 // loop trough padding margin ...
-@each $css_prop,$css_prop_short in $box_css_props_shorthands {
+@each $css_prop, $css_prop_short in $box_css_props_shorthands {
   @each $grid_key, $rule in $box_side_shorthands {
     // css property name
     .#{$css_prop_short}-#{$grid_key} {
@@ -68,5 +73,20 @@ $box_side_shorthands: (
         }
       }
     }
+  }
+}
+
+/* css positioning rules */
+@each $css_prop in $box_position_props {
+  .#{$css_prop} {
+    /* set position value to #{$css_prop}*/
+    position: $css_prop;
+  }
+}
+
+/* css display rules */
+@each $display_rule, $index in $box_display_props {
+  .dsp-#{$display_rule} {
+    display: $display_rule;
   }
 }
