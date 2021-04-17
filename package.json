@@ -6,9 +6,10 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "watch": "npm-run-all -p -r watch-sass watch-sass-min ",
+    "watch": "npm-run-all -p -r watch-sass watch-sass-min watch-json2scss",
     "watch-sass": "sass  --no-source-map --watch ./scss/:./css/core",
-    "watch-sass-min": "sass  --no-source-map --watch ./scss/:./css/min/ --style=compressed"
+    "watch-sass-min": "sass  --no-source-map --watch ./scss/:./css/min/ --style=compressed",
+    "watch-json2scss": "gulp json2scss"
   },
   "dependencies": {
     "chokidar": "^3.5.1",
@@ -23,8 +24,13 @@
     "@types/node": "^14.14.41",
     "@types/react": "^17.0.3",
     "clean-css": "^5.1.2",
+    "cross-spawn": "^7.0.3",
+    "gulp": "^4.0.2",
+    "gulp-debug": "^4.0.0",
+    "gulp-util": "^3.0.8",
     "json-to-scss": "^1.6.2",
     "npm-run-all": "^4.1.5",
+    "terminal": "^0.1.4",
     "typescript": "^4.2.4"
   }
 }

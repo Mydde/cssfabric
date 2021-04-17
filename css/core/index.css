@@ -1,17 +1,8 @@
-/* @use '../vars' ; */
+@import url("https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize");
 /*
  css_fabric dimensions system
 */
 /*  dimension : "-full" shorthand is 100% width*/
-@import url("https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize");
-:export {
-  CFG_TABLE_PREFIX: puretable;
-  CFG_TABLE_BG_COLOR_STRIP_MAIN: #ededed;
-  CFG_TABLE_BG_COLOR_STRIP_SECOND: #f5f5f5;
-  CFG_TABLE_BORDER_COLOR_MAIN: #ededed;
-  CFG_TABLE_BORDER_COLOR_SECOND: #f5f5f5;
-}
-
 .w-full {
   width: 100%;
 }

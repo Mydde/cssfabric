@@ -1,7 +1,7 @@
 /*
  css_fabric dimensions system
 */
-@use '../vars';
+@use '../_config';
 
 // @todo general config final generation
 $CFG_HAS_DIMENSION_STRICT: false;
@@ -9,7 +9,7 @@ $CFG_HAS_DIMENSION_MIN: false;
 $CFG_HAS_DIMENSION_MAX: false;
 
 // media queries sizes, in em
-$mq_sizes: (
+$media_query_sizes: (
   sm: 35.5,
   md: 48,
   lg: 64,
@@ -142,7 +142,7 @@ $mq_size_key: null;
   // loop on shorthands
   @include play_shorthand_loop($dimension_prop, null);
   // loop on responsive shorthands
-  @each $mq_size_key, $mq_size_value in $mq_sizes {
+  @each $mq_size_key, $mq_size_value in $media_query_sizes {
     @include css_dimension_property_responsive_builder(
       $mq_size_key,
       $mq_size_value,
@@ -155,7 +155,7 @@ $mq_size_key: null;
   // loop on dimensions
   @include play_dimensions_loop($dimension_prop, null);
   // loop on responsive dimensions
-  @each $mq_size_key, $mq_size_value in $mq_sizes {
+  @each $mq_size_key, $mq_size_value in $media_query_sizes {
     @include css_dimension_property_responsive_builder(
       $mq_size_key,
       $mq_size_value,
@@ -168,7 +168,7 @@ $mq_size_key: null;
   // loop on defined dimensions
   @include play_defined_dimensions_loop($dimension_prop, null);
   // loop on responsive defined dimensions
-  @each $mq_size_key, $mq_size_value in $mq_sizes {
+  @each $mq_size_key, $mq_size_value in $media_query_sizes {
     @include css_dimension_property_responsive_builder(
       $mq_size_key,
       $mq_size_value,
@@ -181,7 +181,7 @@ $mq_size_key: null;
   // loop on ratio dimensions
   @include play_ratio_dimensions_loop($dimension_prop, null);
   // loop on responsive ratio dimensions
-  @each $mq_size_key, $mq_size_value in $mq_sizes {
+  @each $mq_size_key, $mq_size_value in $media_query_sizes {
     @include css_dimension_property_responsive_builder(
       $mq_size_key,
       $mq_size_value,
