@@ -1,5 +1,5 @@
 {
-    "CFG": {
+    "_cfg": {
         "CFG_HAS_DIMENSION_STRICT": false,
         "CFG_HAS_DIMENSION_MIN": false,
         "CFG_HAS_DIMENSION_MAX": false,
@@ -15,6 +15,10 @@
             "lg": 64,
             "xl": 80,
             "xxl": 120
-        }
+        },
+        "grid_ratios": [
+            8, 
+            24
+        ]
     }
 }

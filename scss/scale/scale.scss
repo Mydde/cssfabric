@@ -1,39 +1,27 @@
-@use '../_config';
 /*
- css-fabric scales system
+ css-fabric scale  system
 */
+@use '../_config';
 
+
+$_cfg: map-get(config.$config, _cfg);
+$_scale: map-get(config.$config, scale);
 
 // @todo general config final generation
-$CFG_HAS_DIMENSION_STRICT: false;
-$CFG_HAS_DIMENSION_MIN: false;
-$CFG_HAS_DIMENSION_MAX: false;
+$_has_dimensions_strict: map-get($_cfg, has_dimensions_strict); 
+$_has_dimensions_min: map-get($_cfg, has_dimensions_min);
+$_has_dimensions_max: map-get($_cfg, has_dimensions_max);
 
-// media queries sizes, in em // migrated
-$MEDIA_QUERY_SIZES: (
-  sm: 35.5,
-  md: 48,
-  lg: 64,
-  xl: 80,
-  xxl: 120,
-);
+// media queries sizes, in em  
+$_media_quey_sizes: map-get($_cfg, media_quey_sizes);
 
 // dimensions declaration
-$scale_size: 1em; // migrated
-$scale_props: (
-  width: w,
-  height: h,
-); // migrated
-$scale_css_values: max-content min-content fit-content; // migrated
-$scale_shorthands: (
-  "full": 100%,
-  "mid": 50%,
-  "quarter": 25%,
-  "tiers": 33%,
-); // migrated
-$scale_defined_sizes: 1, 2, 4, 8, 16, 24, 32, 48, 64, 96, 128, 256; // in em // migrated
-$scale_grid_ratios: 8 24; // for col in % // migrated
-
+$scale_size: map-get($_scale, scale_size);
+$scale_props: map-get($_scale, scale_props);
+$scale_css_values: map-get($_scale, scale_css_values);
+$scale_shorthands: map-get($_scale, scale_shorthands);
+$scale_defined_sizes: map-get($_scale, scale_defined_sizes);
+$scale_grid_ratios: map-get($_scale, scale_grid_ratios);
 
 /// css dimensions rules builder
 @mixin css_dimension_property_builder(
@@ -44,6 +32,7 @@ $scale_grid_ratios: 8 24; // for col in % // migrated
 ) {
   //
   $scale_prop_short: map-get($scale_props, $scale_prop);
+
   //$property_name: if($media_query_code,#{$scale_prop_short}-#{$media_query_code}-#{$size_code},#{$scale_prop_short}-#{$size_code});
   /*  dimension : "-#{$size_code}" shorthand is #{$size_value} #{$scale_prop}*/
   $tag: if(
@@ -54,17 +43,17 @@ $scale_grid_ratios: 8 24; // for col in % // migrated
   .#{$tag} {
     #{$scale_prop}: $size_value;
 
-    @if ($CFG_HAS_DIMENSION_MAX) {
+    @if ($_has_dimensions_max) {
       &-max {
         max-#{$scale_prop}: $size_value;
       }
     }
-    @if ($CFG_HAS_DIMENSION_MIN) {
+    @if ($_has_dimensions_min) {
       &-min {
         min-#{$scale_prop}: $size_value;
       }
     }
-    @if ($CFG_HAS_DIMENSION_STRICT) {
+    @if ($_has_dimensions_strict) {
       &-strict {
         #{$scale_prop}: $size_value;
         max-#{$scale_prop}: $size_value;
@@ -73,7 +62,7 @@ $scale_grid_ratios: 8 24; // for col in % // migrated
     }
   }
 }
-/// css dimensions rules builder responsive
+// css dimensions rules builder responsive
 @mixin css_dimension_property_responsive_builder(
   $mq_size_key,
   $mq_size_value,
@@ -87,9 +76,7 @@ $scale_grid_ratios: 8 24; // for col in % // migrated
 
 // loop on shorthands
 @mixin play_shorthand_loop($scale_prop, $mq_size_key) {
-  @each $scale_shorthand,
-    $scale_shorthand_value in $scale_shorthands
-  {
+  @each $scale_shorthand, $scale_shorthand_value in $scale_shorthands {
     @include css_dimension_property_builder(
       $scale_prop,
       $scale_shorthand,
@@ -145,7 +132,7 @@ $mq_size_key: null;
   // loop on shorthands
   @include play_shorthand_loop($scale_prop, null);
   // loop on responsive shorthands
-  @each $mq_size_key, $mq_size_value in $MEDIA_QUERY_SIZES {
+  @each $mq_size_key, $mq_size_value in $_media_quey_sizes {
     @include css_dimension_property_responsive_builder(
       $mq_size_key,
       $mq_size_value,
@@ -158,7 +145,7 @@ $mq_size_key: null;
   // loop on dimensions
   @include play_dimensions_loop($scale_prop, null);
   // loop on responsive dimensions
-  @each $mq_size_key, $mq_size_value in $MEDIA_QUERY_SIZES {
+  @each $mq_size_key, $mq_size_value in $_media_quey_sizes {
     @include css_dimension_property_responsive_builder(
       $mq_size_key,
       $mq_size_value,
@@ -171,7 +158,7 @@ $mq_size_key: null;
   // loop on defined dimensions
   @include play_defined_dimensions_loop($scale_prop, null);
   // loop on responsive defined dimensions
-  @each $mq_size_key, $mq_size_value in $MEDIA_QUERY_SIZES {
+  @each $mq_size_key, $mq_size_value in $_media_quey_sizes {
     @include css_dimension_property_responsive_builder(
       $mq_size_key,
       $mq_size_value,
@@ -184,7 +171,7 @@ $mq_size_key: null;
   // loop on ratio dimensions
   @include play_ratio_dimensions_loop($scale_prop, null);
   // loop on responsive ratio dimensions
-  @each $mq_size_key, $mq_size_value in $MEDIA_QUERY_SIZES {
+  @each $mq_size_key, $mq_size_value in $_media_quey_sizes {
     @include css_dimension_property_responsive_builder(
       $mq_size_key,
       $mq_size_value,
