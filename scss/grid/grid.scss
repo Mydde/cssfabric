@@ -17,8 +17,6 @@ $CFG_GRID_VERT: map-get($_cfg, grid_vert_code);
 $h_prop: #{$CFG_GRID_CODE}#{$CFG_GRID_SEPARATOR}#{$CFG_GRID_HOR};
 $v_prop: #{$CFG_GRID_CODE}#{$CFG_GRID_SEPARATOR}#{$CFG_GRID_VERT}; 
 
-@debug $CFG_GRID_CODE;
-
 %flex {
   display: flex;
 }

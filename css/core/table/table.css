@@ -20,7 +20,8 @@
 .table.tbl-layout {
   table-layout: fixed;
 }
-.table.tbl-h-line th, .table.tbl-h-line td {
+.table.tbl-h-line th,
+.table.tbl-h-line td {
   border-bottom: 1px solid #ededed;
 }
 .table.tbl-h-line:last-child {

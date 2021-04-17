@@ -7,8 +7,8 @@
         "grid_separator": "'-'",
         "grid_hor_code": "h",
         "grid_vert_code": "v",
-        "TABLE_PREFIX": "table",
-        "TABLE_PREFIX_SHORT": "tbl",
+        "table_class_name": "table",
+        "table_class_name_short": "tbl",
         "MEDIA_QUERY_SIZES": {
             "sm": 35.5,
             "md": 48,
