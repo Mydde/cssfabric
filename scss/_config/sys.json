@@ -1,14 +1,14 @@
 {
     "sys": {
-        "unit": "em",
-        "unit_size": "0.25",
-        "grid_size": 2,
-        "css_props": {
+        "box_unit": "em",
+        "box_unit_size": "0.25",
+        "box_sizes": 2,
+        "box_css_props_shorthands": {
             "border": "brd",
             "padding": "pad",
             "margin": "marg"
         },
-        "padding_margin_border_shorthand": {
+        "box_side_shorthands": {
             "t": "top",
             "b": "bottom",
             "l": "left",

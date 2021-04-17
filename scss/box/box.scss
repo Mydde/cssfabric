@@ -4,17 +4,19 @@
  css-fabric padding, margin and border system
 */ 
 
+@debug map-get(config.$config,CFG);
+@debug map-get(config.$config,box);
 /* 
 padding, margin and border system
 */
 // migrated
-$unit: em;
-$unit_size: 0.25;
-$grid_size: 2;
+$box_unit: em;
+$box_unit_size: 0.25;
+$box_sizes: 2;
  
  
-$css_props: (border: brd, padding: pad, margin: marg); 
-$padding_margin_border_shorthand: (
+$box_css_props_shorthands: (border: brd, padding: pad, margin: marg); 
+$box_side_shorthands: (
   "t": top,
   "b": bottom,
   "l": left,
@@ -48,12 +50,12 @@ $padding_margin_border_shorthand: (
 }
 
 // loop trough padding margin ...
-@each $css_prop,$css_prop_short in $css_props {
-  @each $grid_key, $rule in $padding_margin_border_shorthand {
+@each $css_prop,$css_prop_short in $box_css_props_shorthands {
+  @each $grid_key, $rule in $box_side_shorthands {
     // css property name
     .#{$css_prop_short}-#{$grid_key} {
-      @for $grid_size_value from 1 through $grid_size {
-        $css_size_value: ($grid_size_value * $unit_size) + $unit;
+      @for $grid_size_value from 1 through $box_sizes {
+        $css_size_value: ($grid_size_value * $box_unit_size) + $box_unit;
         // css property name is aggregated with size value $i
         #{raw_size_tag_rule($grid_size_value)} &-#{$grid_size_value} {
           /* #{$css_prop}-#{$grid_key} rule : set #{$css_size_value} size for #{$rule} #{$css_prop}.  */

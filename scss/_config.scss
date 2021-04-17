@@ -1,33 +1,4 @@
 $config: (
-  gui: (
-    media_query_sizes: (
-      sm: 35.5,
-      md: 48,
-      lg: 64,
-      xl: 80,
-      xxl: 120
-    )
-  ),
-  dimensions: (
-    dimension_size: 1em,
-    dimension_props: (
-      width: w,
-      height: h
-    ),
-    dimensions_css_values: (max-content, min-content, fit-content),
-    dimensions_shorthands: (
-      full: 100%,
-      mid: 50%,
-      quarter: 25%,
-      tiers: 33%
-    ),
-    dimensions_defined_sizes: (1, 2, 4, 8, 16, 24, 32, 48, 64, 96, 128, 256),
-    dimensions_grid_ratios: (8, 24)
-  ),
-  generic: (
-    position_props: absolute relative static fixed sticky,
-    display_props: block none inline inline-block inline-flex table table-row table-cell table-column unset
-  ),
   CFG: (
     CFG_HAS_DIMENSION_STRICT: false,
     CFG_HAS_DIMENSION_MIN: false,
@@ -37,24 +8,49 @@ $config: (
     CFG_GRID_HOR: h,
     CFG_GRID_VERT: v,
     TABLE_PREFIX: table,
-    TABLE_PREFIX_SHORT: tbl
+    TABLE_PREFIX_SHORT: tbl,
+    MEDIA_QUERY_SIZES: (
+      sm: 35.5,
+      md: 48,
+      lg: 64,
+      xl: 80,
+      xxl: 120
+    )
+  ),
+  generic: (
+    position_props: absolute relative static fixed sticky,
+    display_props: block none inline inline-block inline-flex table table-row table-cell table-column unset
   ),
   overflow: (
     overflow_props: overflow overflow-x overflow-y,
     overflow_values: visible hidden clip scroll auto initial unset
   ),
-  sys: (
-    unit: em,
-    unit_size: 0.25,
-    grid_size: 2,
-    final_rule: null,
-    css_rule: null,
-    css_props: (
+  scales: (
+    scale_size: 1em,
+    scale_props: (
+      width: w,
+      height: h
+    ),
+    scale_css_values: (max-content, min-content, fit-content),
+    scale_shorthands: (
+      full: 100%,
+      mid: 50%,
+      quarter: 25%,
+      tiers: 33%
+    ),
+    scale_defined_sizes: (1, 2, 4, 8, 16, 24, 32, 48, 64, 96, 128, 256),
+    scale_grid_ratios: (8, 24)
+  ),
+  box: (
+    box_unit: em,
+    box_unit_size: 0.25,
+    box_sizes: 2,
+    box_css_props_shorthands: (
       border: brd,
       padding: pad,
       margin: marg
     ),
-    grid_rules: (
+    box_side_shorthands: (
       t: top,
       b: bottom,
       l: left,
