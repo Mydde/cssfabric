@@ -1,8 +1,9 @@
-// $cool : vars.$CFG_TABLE_BG_COLOR_STRIP_MAIN;
 
-$CFG_TABLE_PREFIX: table;
-$CFG_TABLE_PREFIX_SHORT: tbl;
-$CFG_TABLE_BG_COLOR_HEAD: #f4f4f4;
+// migrated to CFG
+$TABLE_PREFIX: table;
+$TABLE_PREFIX_SHORT: tbl;
+
+$table_bg_color_head: #f4f4f4;
 $CFG_TABLE_BG_COLOR_STRIP_MAIN: #ededed;
 $CFG_TABLE_BG_COLOR_STRIP_SECOND: #f5f5f5;
 
@@ -11,7 +12,7 @@ $CFG_TABLE_BORDER_COLOR_MAIN: #ededed;
 $CFG_TABLE_BORDER_COLOR_SECOND: #f5f5f5;
 
 @mixin bg_strip($nb_strips) {
-  &.#{$CFG_TABLE_PREFIX_SHORT}-bg-strip-#{$nb_strips} {
+  &.#{$TABLE_PREFIX_SHORT}-bg-strip-#{$nb_strips} {
     @for $nb_strip from 1 through $nb_strips {
       tr:nth-child(#{$nb_strips}n + #{$nb_strip}) td {
         @if ($nb_strip == $nb_strips) {
@@ -31,7 +32,7 @@ $CFG_TABLE_BORDER_COLOR_SECOND: #f5f5f5;
  // again
 
 @mixin sticky { 
-  &.#{$CFG_TABLE_PREFIX_SHORT}-sticky {
+  &.#{$TABLE_PREFIX_SHORT}-sticky {
     position: relative;
     thead tr {
       position: static;
@@ -43,7 +44,7 @@ $CFG_TABLE_BORDER_COLOR_SECOND: #f5f5f5;
   }
 }
 
-.#{$CFG_TABLE_PREFIX} {
+.#{$TABLE_PREFIX} {
   border-collapse: collapse;
   border-spacing: 0;
 
@@ -51,8 +52,8 @@ $CFG_TABLE_BORDER_COLOR_SECOND: #f5f5f5;
     position: relative;  
   }
 
-  &.#{$CFG_TABLE_PREFIX_SHORT}-head thead tr th {
-    background-color: #{$CFG_TABLE_BG_COLOR_HEAD};
+  &.#{$TABLE_PREFIX_SHORT}-head thead tr th {
+    background-color: #{table_bg_color_head};
   }
 
   thead tr th { 
@@ -63,11 +64,11 @@ $CFG_TABLE_BORDER_COLOR_SECOND: #f5f5f5;
     padding: 0.25em;
   }
 
-  &.#{$CFG_TABLE_PREFIX_SHORT}-layout {
+  &.#{$TABLE_PREFIX_SHORT}-layout {
     table-layout: fixed;
   }
  
-  &.#{$CFG_TABLE_PREFIX_SHORT}-h-line  {
+  &.#{$TABLE_PREFIX_SHORT}-h-line  {
     th, td {
 
       border-bottom: 1px solid #{$CFG_TABLE_BORDER_COLOR_MAIN};
@@ -77,19 +78,19 @@ $CFG_TABLE_BORDER_COLOR_SECOND: #f5f5f5;
     }
   }
 
-  &.#{$CFG_TABLE_PREFIX_SHORT}-v-line tr th,
-  &.#{$CFG_TABLE_PREFIX_SHORT}-v-line tr td {
+  &.#{$TABLE_PREFIX_SHORT}-v-line tr th,
+  &.#{$TABLE_PREFIX_SHORT}-v-line tr td {
     border-right: 1px solid #{$CFG_TABLE_BORDER_COLOR_MAIN};
     &:last-child {
       border-right: none;
     }
   }
 
-  &.#{$CFG_TABLE_PREFIX_SHORT}-border {
+  &.#{$TABLE_PREFIX_SHORT}-border {
     border: 1px solid #{$CFG_TABLE_BORDER_COLOR_MAIN};
   }
 
-  &.#{$CFG_TABLE_PREFIX_SHORT}-shad {
+  &.#{$TABLE_PREFIX_SHORT}-shad {
     thead tr th {
       box-shadow: 4px 4px 8px #ccc;
       z-index: 11; 

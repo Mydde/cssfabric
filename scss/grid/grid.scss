@@ -1,12 +1,14 @@
 /*
  css_fabric flex_box system
 */
+
+// migrated
 $CFG_GRID_CODE: 'grid';
 $CFG_GRID_SEPARATOR: '-' ;
-$CFG_GRI_HOR: 'h';
+$CFG_GRID_HOR: 'h';
 $CFG_GRID_VERT: 'v';
 
-$h_prop: #{$CFG_GRID_CODE}#{$CFG_GRID_SEPARATOR}#{$CFG_GRI_HOR};
+$h_prop: #{$CFG_GRID_CODE}#{$CFG_GRID_SEPARATOR}#{$CFG_GRID_HOR};
 $v_prop: #{$CFG_GRID_CODE}#{$CFG_GRID_SEPARATOR}#{$CFG_GRID_VERT}; 
 
 %flex {

@@ -1,0 +1,38 @@
+{
+    "dimensions": {
+        "dimension_size": "1em",
+        "dimension_props": {
+            "width": "w",
+            "height": "h"
+        },
+        "dimensions_css_values": [
+            "max-content",
+            "min-content",
+            "fit-content"
+        ],
+        "dimensions_shorthands": {
+            "full": "100%",
+            "mid": "50%",
+            "quarter": "25%",
+            "tiers": "33%"
+        },
+        "dimensions_defined_sizes": [
+            1,
+            2,
+            4,
+            8,
+            16,
+            24,
+            32,
+            48,
+            64,
+            96,
+            128,
+            256
+        ],
+        "dimensions_grid_ratios": [
+            8,
+            24
+        ]
+    }
+}

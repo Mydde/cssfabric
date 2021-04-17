@@ -4061,7 +4061,7 @@ padding, margin and border system
   position: relative;
 }
 .table.tbl-head thead tr th {
-  background-color: #f4f4f4;
+  background-color: table_bg_color_head;
 }
 .table thead tr th {
   padding: 0.25em;

@@ -8,7 +8,7 @@ $CFG_HAS_DIMENSION_STRICT: false;
 $CFG_HAS_DIMENSION_MIN: false;
 $CFG_HAS_DIMENSION_MAX: false;
 
-// media queries sizes, in em
+// media queries sizes, in em // migrated
 $media_query_sizes: (
   sm: 35.5,
   md: 48,
@@ -17,20 +17,21 @@ $media_query_sizes: (
   xxl: 120,
 );
 // dimensions declaration
-$dimension_size: 1em;
+$dimension_size: 1em; // migrated
 $dimension_props: (
   width: w,
   height: h,
-);
-$dimensions_css_values: max-content min-content fit-content;
+); // migrated
+$dimensions_css_values: max-content min-content fit-content; // migrated
 $dimensions_shorthands: (
   "full": 100%,
   "mid": 50%,
   "quarter": 25%,
   "tiers": 33%,
-);
-$dimensions_defined_sizes: 1, 2, 4, 8, 16, 24, 32, 48, 64, 96, 128, 256; // in em
-$dimensions_grid_ratios: 8 24; // for col in %
+); // migrated
+$dimensions_defined_sizes: 1, 2, 4, 8, 16, 24, 32, 48, 64, 96, 128, 256; // in em // migrated
+$dimensions_grid_ratios: 8 24; // for col in % // migrated
+
 
 /// css dimensions rules builder
 @mixin css_dimension_property_builder(

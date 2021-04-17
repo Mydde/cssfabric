@@ -1,0 +1,6 @@
+{
+    "overflow": {
+        "overflow_props": "overflow overflow-x overflow-y",
+        "overflow_values": "visible hidden clip scroll auto initial unset"
+    }
+}

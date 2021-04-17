@@ -1,8 +1,68 @@
 $config: (
-  fsc: (
-    what: '-------------------------------------------',
-    again: (moscou, (
-      hiver: psssluie
-    ))
+  gui: (
+    media_query_sizes: (
+      sm: 35.5,
+      md: 48,
+      lg: 64,
+      xl: 80,
+      xxl: 120
+    )
+  ),
+  dimensions: (
+    dimension_size: 1em,
+    dimension_props: (
+      width: w,
+      height: h
+    ),
+    dimensions_css_values: (max-content, min-content, fit-content),
+    dimensions_shorthands: (
+      full: 100%,
+      mid: 50%,
+      quarter: 25%,
+      tiers: 33%
+    ),
+    dimensions_defined_sizes: (1, 2, 4, 8, 16, 24, 32, 48, 64, 96, 128, 256),
+    dimensions_grid_ratios: (8, 24)
+  ),
+  generic: (
+    position_props: absolute relative static fixed sticky,
+    display_props: block none inline inline-block inline-flex table table-row table-cell table-column unset
+  ),
+  CFG: (
+    CFG_HAS_DIMENSION_STRICT: false,
+    CFG_HAS_DIMENSION_MIN: false,
+    CFG_HAS_DIMENSION_MAX: false,
+    CFG_GRID_CODE: grid,
+    CFG_GRID_SEPARATOR: '-',
+    CFG_GRID_HOR: h,
+    CFG_GRID_VERT: v,
+    TABLE_PREFIX: table,
+    TABLE_PREFIX_SHORT: tbl
+  ),
+  overflow: (
+    overflow_props: overflow overflow-x overflow-y,
+    overflow_values: visible hidden clip scroll auto initial unset
+  ),
+  sys: (
+    unit: em,
+    unit_size: 0.25,
+    grid_size: 2,
+    final_rule: null,
+    css_rule: null,
+    css_props: (
+      border: brd,
+      padding: pad,
+      margin: marg
+    ),
+    grid_rules: (
+      t: top,
+      b: bottom,
+      l: left,
+      r: right,
+      all: top bottom left right,
+      u: bottom left right,
+      ii: left right,
+      tb: top bottom
+    )
   )
 );

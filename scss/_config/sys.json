@@ -1,0 +1,24 @@
+{
+    "sys": {
+        "unit": "em",
+        "unit_size": "0.25",
+        "grid_size": 2,
+        "final_rule": null,
+        "css_rule": null,
+        "css_props": {
+            "border": "brd",
+            "padding": "pad",
+            "margin": "marg"
+        },
+        "grid_rules": {
+            "t": "top",
+            "b": "bottom",
+            "l": "left",
+            "r": "right",
+            "all": "top bottom left right",
+            "u": "bottom left right",
+            "ii": "left right",
+            "tb": "top bottom"
+        }
+    }
+}
