@@ -1,6 +1,6 @@
 import '../../styles/globals.css'
-import '../../css-fabric/index.scss' 
-import variables from '../../css/core/index.css';
+import '../../styles/css-fabric/core/css-fabric.css' 
+import variables from '../../css-fabric/_config.scss';
 
 function MyApp({ Component, pageProps }) {
    
