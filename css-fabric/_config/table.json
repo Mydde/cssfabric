@@ -1,8 +1,8 @@
 {
     "table": {
         "_metadata": {
-            "title": "",
-            "description": ""
+            "title": "'fabric.css.table'",
+            "description": "'css-fabric table module to set different table styles'" 
         },
         "_data": {
             "table_bg_color_head": "#f4f4f4",

@@ -1,0 +1,8 @@
+{
+    "sites": {
+        "styles": {
+            "glob": "styles/css-fabric/core/css-fabric.css",
+            "dest": "style-guide"
+        }
+    }
+}

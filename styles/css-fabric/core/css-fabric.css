@@ -1,7 +1,15 @@
+/* ####################################################################
+	THIS IS A GENERATED FILE -- ANY CHANGES MADE WILL BE OVERWRITTEN
+########################################################################*/
+/**
+* @page styles CSS.FABRIC.css
+* Referecence [styles] for more details.
+* a framework you maybe can use
+**/
 @import url("https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize");
 /*
  css-fabric 
- scale  system
+ scale  system pointless
 */
 /*  dimension : "-full" shorthand is 100% width*/
 .w-full {

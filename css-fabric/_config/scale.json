@@ -1,8 +1,8 @@
 {
     "scale": {
-        "_metadata": {
-            "title": "",
-            "description": ""
+        "_metadata": { 
+            "title": "'fabric.css.scale'",
+            "description": "'css-fabric scale module to set dimensions and ratios on all html elements'" 
         },
         "_data": {
             "scale_size": "1em",

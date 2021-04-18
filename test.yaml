@@ -1,0 +1,12 @@
+variables:
+  typo-range: ["x-small", "small", "base", "large"]
+              definition
+  tiny:     
+    - 14px
+    - definition
+  medium:   16px
+            definition
+  default:  18px
+            definition
+  large:    24px
+            definition

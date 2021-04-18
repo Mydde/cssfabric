@@ -9,9 +9,11 @@
     "watch": "npm-run-all -p -r watch-sass watch-sass-min watch-json2scss",
     "watch-sass": "sass  --no-source-map --watch ./css-fabric/:./styles/css-fabric/core",
     "watch-sass-min": "sass  --no-source-map --watch ./css-fabric/:./styles/css-fabric/min/ --style=compressed",
-    "watch-json2scss": "gulp json2scss"
+    "watch-json2scss": "gulp json2scss ",
+    "watch-naked": "gulp jsonComplete"
   },
   "dependencies": {
+    "JSON": "^1.0.0",
     "chokidar": "^3.5.1",
     "mini-css-extract-plugin": "^1.4.1",
     "next": "10.1.3",
@@ -25,12 +27,17 @@
     "@types/react": "^17.0.3",
     "clean-css": "^5.1.2",
     "cross-spawn": "^7.0.3",
+    "documentjs": "^0.5.5",
     "gulp": "^4.0.2",
+    "gulp-data": "^1.3.1",
     "gulp-debug": "^4.0.0",
+    "gulp-json-modify": "^1.0.2",
+    "gulp-json-transform": "^0.4.7",
     "gulp-util": "^3.0.8",
     "json-to-scss": "^1.6.2",
     "npm-run-all": "^4.1.5",
     "terminal": "^0.1.4",
+    "through2": "^4.0.2",
     "typescript": "^4.2.4"
   }
 }

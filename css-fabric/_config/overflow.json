@@ -1,8 +1,8 @@
 {
     "overflow": {
         "_metadata": {
-            "title": "",
-            "description": ""
+            "title": "'fabric.css.overflow'",
+            "description": "'css-fabric overflow module to set overflow styles on all html elements'" 
         },
         "_data":{
             "overflow_props": "overflow overflow-x overflow-y",

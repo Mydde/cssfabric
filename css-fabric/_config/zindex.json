@@ -1,8 +1,8 @@
 {
     "zindex":{
         "_metadata":{
-            "title": "",
-            "description": ""
+            "title": "'fabric.css.zindex'",
+            "description": "'css-fabric zindex module to set z-index on all html elements'" 
         },
         "_data":{
             "z_groups":["a", "b", "c", "d", "e", "f", "g"]
