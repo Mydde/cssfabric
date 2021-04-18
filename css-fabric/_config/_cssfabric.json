@@ -9,7 +9,7 @@
         "grid_vert_code": "v",
         "table_class_name": "table",
         "table_class_name_short": "tbl",
-        "MEDIA_QUERY_SIZES": {
+        "media_quey_sizes": {
             "sm": 35.5,
             "md": 48,
             "lg": 64,

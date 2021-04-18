@@ -130,8 +130,7 @@ $scale_grid_ratios: map-get($_scale, scale_grid_ratios);
     }
   }
 }
-
-$mq_size_key: null;
+ 
 @each $scale_prop, $scale_prop_short in $scale_props {
   // loop on shorthands
   @include play_shorthand_loop($scale_prop, null);
