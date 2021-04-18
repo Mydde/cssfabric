@@ -1,5 +1,6 @@
 const gulp = require("gulp"),
   data = require("gulp-data"),
+   unescapeJs = require('unescape-js'),
   jsonTransform = require("gulp-json-transform"),
   // fabricRef = require("fabric-ref"),
   fs = require("fs"),
@@ -14,7 +15,8 @@ gulp.task("jsonComplete", function (cb) {
     .src("./css-fabric/_config/**/*.json")
     .pipe(
       jsonTransform(function (file_content, file_info) {
-        return da_callback({ file_content, file_info });
+    
+        return da_callback({ file_content: unescapeJs(file_content), file_info });
       }, "\n")
     )
     .pipe(gulp.dest("./css-fabric/_generated"));
@@ -22,7 +24,7 @@ gulp.task("jsonComplete", function (cb) {
 
 function da_callback(ard) {
   const { file_content, file_info } = ard;
-  const module_name = file_info.relative.split("\\")?.pop().split(".")?.[0];
+  const module_name = file_info.relative.split("\git status\")?.pop().split(".")?.[0];
 
   if (file_content?.[module_name]) {
     let module_conf = file_content[module_name];
