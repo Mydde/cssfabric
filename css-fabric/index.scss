@@ -1,12 +1,12 @@
  
 $module_path: modules;
 
-@import 'modules/scale/scale';
-@import 'modules/overflow/overflow';
-@import 'modules/box/box';
-@import 'modules/zindex/zindex'; 
-@import 'modules/table/table';  
-@import 'modules/grid/grid';
+@use 'modules/scale/scale';
+@use 'modules/overflow/overflow';
+@use 'modules/box/box'; 
+@use 'modules/zindex/zindex'; 
+@use 'modules/table/table';  
+@use 'modules/grid/grid'; 
   
-@import url('https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize'); 
+@import url('https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize');  
   

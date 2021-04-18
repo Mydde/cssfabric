@@ -3,11 +3,11 @@
 * padding, margin and border system
 */
 
-// load scss config file
-@use '../../_utils';
+// load scss config file 
+@use '../../_utils'; 
 // load general config variables 
 $_cfg: utils.get_conf();
-// load local config variables
+// load local config variables 
 $_box: utils.get_conf_data(box);
 
 // read variables
