@@ -22,6 +22,5 @@
   "exclude": ["node_modules"],
   "sassOptions": {
     "includePaths": ["./src", "css-fabric"],
-    "prependData": "@import \"~@css-fabric/css-fabric.scss\"; "
   }
 }
