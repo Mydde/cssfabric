@@ -1,5 +1,5 @@
 import '../../styles/globals.css'
-import '../../scss/index.scss' 
+import '../../css-fabric/index.scss' 
 import variables from '../../css/core/index.css';
 
 function MyApp({ Component, pageProps }) {

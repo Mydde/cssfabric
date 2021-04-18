@@ -21,7 +21,7 @@
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
   "exclude": ["node_modules"],
   "sassOptions": {
-    "includePaths": ["./src", "scss"],
-    "prependData": "@import \"~@scss/_vars.scss\"; "
+    "includePaths": ["./src", "css-fabric"],
+    "prependData": "@import \"~@css-fabric/css-fabric.scss\"; "
   }
 }
