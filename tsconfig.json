@@ -19,8 +19,5 @@
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
-  "exclude": ["node_modules"],
-  "sassOptions": {
-    "includePaths": ["./src", "css-fabric"],
-  }
+  "exclude": ["node_modules"]
 }
