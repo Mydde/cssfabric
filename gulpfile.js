@@ -69,21 +69,20 @@ const fabricRootDir   = './css-fabric',
  * @returns function
  */
 function task_scss2json(cb){
-  
+ 
   spawn.sync(
-    `json-to-scss ${fabricConfDir}/*.*   ${generatedDir}/_css-fabric.scss  --mo`
+    `json-to-scss ${fabricConfDir}/*.*   ${generatedDir}/_config.scss  --mo`
   );
-
   return cb();
 }
 
 function task_sass2css(cb){
   
   spawn.sync(
-    `sass  --no-source-map ${fabricModuleDir}/:${fabricStylesDir}/css-fabric/core`
+    `sass   ${fabricModuleDir}/:${fabricStylesDir}/css-fabric/core`
   );
   spawn.sync(
-    `sass  --no-source-map ${fabricModuleDir}/:${fabricStylesDir}/css-fabric/min/ --style=compressed`
+    `sass   ${fabricModuleDir}/:${fabricStylesDir}/css-fabric/min/ --style=compressed`
   );
 
   return cb();

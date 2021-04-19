@@ -38,13 +38,13 @@
 			]
 		},
 		"_docs": {
-			"box_unit": "_",
-			"box_unit_size": "_",
-			"box_sizes": "_",
-			"box_css_props_shorthands": "_",
-			"box_border_shorthands": "_",
-			"box_position_props": "_",
-			"box_display_props": "_"
+			"box_unit": "",
+			"box_unit_size": "",
+			"box_sizes": "",
+			"box_css_props_shorthands": "",
+			"box_border_shorthands": "",
+			"box_position_props": "",
+			"box_display_props": ""
 		}
 	}
 }

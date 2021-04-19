@@ -1,4 +1,4 @@
-$css-fabric: (
+$config: (
   _css-fabric-conf: (
     _metadata: (
       title: 'fabric.css.cfg',
@@ -65,13 +65,13 @@ $css-fabric: (
       box_display_props: (block, none, inline, inline-block, inline-flex, table, table-row, table-cell, table-column, unset)
     ),
     _docs: (
-      box_unit: _,
-      box_unit_size: _,
-      box_sizes: _,
-      box_css_props_shorthands: _,
-      box_border_shorthands: _,
-      box_position_props: _,
-      box_display_props: _
+      box_unit: "",
+      box_unit_size: "",
+      box_sizes: "",
+      box_css_props_shorthands: "",
+      box_border_shorthands: "",
+      box_position_props: "",
+      box_display_props: ""
     )
   ),
   grid: (
@@ -119,8 +119,7 @@ $css-fabric: (
     ),
     _docs: (
       overflow_props: "",
-      overflow_values: "",
-      overflow_propss: deleted:deleted:deleted : deleted : deleted : deleted : deleted : deleted : deleted : deleted : 
+      overflow_values: ""
     )
   ),
   scale: (

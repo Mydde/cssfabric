@@ -4,7 +4,7 @@
 */
 
 // load scss config file 
-@use '../../_utils'; 
+@use '../../_utils';  
 // load general config variables 
 $_cfg: utils.get_conf();
 // load local config variables 

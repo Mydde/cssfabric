@@ -1,5 +1,6 @@
 // load scss config file
-@use '_config';
+@use '_generated/config.scss'  ; 
+ 
 
 @function get_conf() {
   $po: map-get(config.$config, _css-fabric-conf);
@@ -17,7 +18,7 @@
 }
 
 @function get_conf_data_properties($_prop) {
- 
+  
   @return get_conf_part($_module, "_data");
 }
 

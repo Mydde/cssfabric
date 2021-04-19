@@ -6,7 +6,7 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "watch": "npm-run-all -p -r watch-sass watch-json",
+    "watch-all": "npm-run-all -p -r watch-sass watch-json",
     "watch-sass": "gulp watchSass",
     "watch-json": "gulp watchJson"
   },
