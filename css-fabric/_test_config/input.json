@@ -47,8 +47,10 @@
 			]
 		},
 		"_docs": {
-			"input_type": "",
-			"input_attr": ""
+			"input_size": "_",
+			"input_size_unit": "de red",
+			"input_type": "_",
+			"input_attr": "_"
 		}
 	}
 }

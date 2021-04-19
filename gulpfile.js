@@ -1,8 +1,8 @@
-// https://gist.github.com/torgeir/8507130
 
 const gulp          = require("gulp"),
       unescapeJs    = require("unescape-js"),
       jsonTransform = require("gulp-json-transform"),
+      cache = require('gulp-cached'),
       spawn         = require("cross-spawn");
 
 
@@ -28,14 +28,17 @@ const json_comments = (file) =>{
 
       if (!module_conf?.["_docs"]) module_conf["_docs"] = {};
       const out_docs = {};
+      let out_docs_changed = false;
       
       Object.keys(module_data).forEach((v, i, a) => {
         if (!module_conf?.["_docs"]?.[v]) {
          //  console.log({ module_data });
-          out_docs[v] = "";
+          out_docs[v] = "_";
+          out_docs_changed = true;
         }
       });
-      file_content[module_name]._docs = out_docs;
+
+      if(out_docs_changed)   file_content[module_name]._docs = Object.assign(file_content[module_name]._docs,out_docs)  ;
     }
   } else {
     console.log("module not registered or filename mismatch : " + module_name);
@@ -48,7 +51,7 @@ const json_comments = (file) =>{
 
 const fabricRootDir   = './css-fabric',
       fabricStylesDir = 'styles',
-      fabricConfDir   = `${fabricRootDir}/_config`,
+      fabricConfDir   = `${fabricRootDir}/_test_config`,
       fabricModuleDir = `${fabricRootDir}/modules`,
       generatedDir    = `${fabricRootDir}/_generated`;
 
@@ -85,12 +88,14 @@ function task_sass2css(cb){
 function task_addComments   (cb) {
    
   return gulp.src(fabricConfDir+"/**/*.json")
+        .pipe(cache(task_addComments))
         .pipe(
           jsonTransform(function (file_content, file_info) {
             return json_comments({ file_content: file_content, file_info });
           }, "\t")
         )
-        .pipe(gulp.dest('copies'))
+        .pipe(cache(task_addComments))
+        .pipe(gulp.dest(fabricConfDir))
         .on('end',()=>{return cb()});     
 } 
  

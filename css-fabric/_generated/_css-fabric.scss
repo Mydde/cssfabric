@@ -50,12 +50,26 @@ $css-fabric: (
       ),
       box_position_props: absolute relative static fixed sticky,
       box_display_props: (block, none, inline, inline-block, inline-flex, table, table-row, table-cell, table-column, unset)
+    ),
+    _docs: (
+      box_unit: _,
+      box_unit_size: _,
+      box_sizes: _,
+      box_css_props_shorthands: _,
+      box_border_shorthands: _,
+      box_position_props: _,
+      box_display_props: _,
+      et.plus: _,
+      et_plus: _
     )
   ),
   grid: (
     _metadata: (
       title: 'grid.css.box',
       description: 'css-fabric grid module'
+    ),
+    _docs: (
+      
     )
   ),
   input: (
@@ -77,8 +91,10 @@ $css-fabric: (
       input_attr: (autocomplete, autofocus, disabled, readonly, required)
     ),
     _docs: (
-      input_size_unit: 'input size in [input_size_unit]',
-      input_size: 'input size presets'
+      input_size: _,
+      input_size_unit: de red,
+      input_type: _,
+      input_attr: _
     )
   ),
   overflow: (
@@ -89,6 +105,10 @@ $css-fabric: (
     _data: (
       overflow_props: overflow overflow-x overflow-y,
       overflow_values: visible hidden clip scroll auto initial unset
+    ),
+    _docs: (
+      overflow_props: _,
+      overflow_values: _
     )
   ),
   scale: (
@@ -111,6 +131,14 @@ $css-fabric: (
       ),
       scale_defined_sizes: (1, 2, 4, 8, 16, 24, 32, 48, 64, 96, 128, 256),
       scale_grid_ratios: (8, 24)
+    ),
+    _docs: (
+      scale_size: _,
+      scale_props: _,
+      scale_css_values: _,
+      scale_shorthands: _,
+      scale_defined_sizes: _,
+      scale_grid_ratios: _
     )
   ),
   table: (
@@ -125,6 +153,14 @@ $css-fabric: (
       table_border_color_header: #ccc,
       table_border_color_main: #ededed,
       table_border_color_second: #f5f5f5
+    ),
+    _docs: (
+      table_bg_color_head: _,
+      table_bg_color_strip_main: _,
+      table_bg_color_strip_second: _,
+      table_border_color_header: _,
+      table_border_color_main: _,
+      table_border_color_second: _
     )
   ),
   zindex: (
@@ -134,6 +170,9 @@ $css-fabric: (
     ),
     _data: (
       z_groups: (a, b, c, d, e, f, g)
+    ),
+    _docs: (
+      z_groups: _
     )
   )
 );

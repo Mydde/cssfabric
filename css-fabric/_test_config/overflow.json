@@ -9,8 +9,8 @@
 			"overflow_values": "visible hidden clip scroll auto initial unset"
 		},
 		"_docs": {
-			"overflow_props": "",
-			"overflow_values": ""
+			"overflow_props": "_",
+			"overflow_values": "_"
 		}
 	}
 }

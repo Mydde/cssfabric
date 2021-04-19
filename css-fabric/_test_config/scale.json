@@ -41,12 +41,12 @@
 			]
 		},
 		"_docs": {
-			"scale_size": "",
-			"scale_props": "",
-			"scale_css_values": "",
-			"scale_shorthands": "",
-			"scale_defined_sizes": "",
-			"scale_grid_ratios": ""
+			"scale_size": "_",
+			"scale_props": "_",
+			"scale_css_values": "_",
+			"scale_shorthands": "_",
+			"scale_defined_sizes": "_",
+			"scale_grid_ratios": "_"
 		}
 	}
 }

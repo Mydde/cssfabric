@@ -7,7 +7,7 @@
     "build": "next build",
     "start": "next start",
     "watch": "npm-run-all -p -r watch-sass watch-json",
-    "watch-sass": "gulp watchSass", 
+    "watch-sass": "gulp watchSass",
     "watch-json": "gulp watchJson"
   },
   "dependencies": {
@@ -28,6 +28,7 @@
     "cross-spawn": "^7.0.3",
     "documentjs": "^0.5.5",
     "gulp": "^4.0.2",
+    "gulp-cached": "^1.1.1",
     "gulp-data": "^1.3.1",
     "gulp-debug": "^4.0.0",
     "gulp-json-modify": "^1.0.2",
