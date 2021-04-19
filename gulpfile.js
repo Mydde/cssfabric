@@ -24,7 +24,7 @@ gulp.task("jsonComplete", function (cb) {
 
 function da_callback(ard) {
   const { file_content, file_info } = ard;
-  const module_name = file_info.relative.split("\git status\")?.pop().split(".")?.[0];
+  const module_name = file_info.relative.split("\\")?.pop().split(".")?.[0];
 
   if (file_content?.[module_name]) {
     let module_conf = file_content[module_name];
