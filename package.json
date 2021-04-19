@@ -6,11 +6,9 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "watch": "npm-run-all -p -r watch-sass watch-sass-min watch-json2scss",
-    "watch-sass": "sass  --no-source-map --watch ./css-fabric/:./styles/css-fabric/core",
-    "watch-sass-min": "sass  --no-source-map --watch ./css-fabric/:./styles/css-fabric/min/ --style=compressed",
-    "watch-json2scss": "gulp json2scss ",
-    "watch-naked": "gulp watch"
+    "watch": "npm-run-all -p -r watch-sass watch-json",
+    "watch-sass": "gulp watchSass", 
+    "watch-json": "gulp watchJson"
   },
   "dependencies": {
     "JSON": "^1.0.0",

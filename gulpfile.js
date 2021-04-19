@@ -1,43 +1,39 @@
 // https://gist.github.com/torgeir/8507130
 
-const gulp = require("gulp"),
-  unescapeJs = require("unescape-js"),
-  jsonTransform = require("gulp-json-transform"),
-  spawn = require("cross-spawn");
+const gulp          = require("gulp"),
+      unescapeJs    = require("unescape-js"),
+      jsonTransform = require("gulp-json-transform"),
+      spawn         = require("cross-spawn");
+
+
 
 /**
- * add default comment key for each property
+ * 
+ * @param {File} file 
+ * @returns File
  */
-gulp.task("jsonComplete", function (cb) {
-  gulp
-    .src("./css-fabric/_config/**/*.json")
-    .pipe(
-      jsonTransform(function (file_content, file_info) {
-        return json_comments({ file_content: file_content, file_info });
-      }, "\t")
-    )
-    .pipe(gulp.dest("./css-fabric/_generated"));
+const json_comments = (file) =>{
 
-  cb();
-});
+  const { file_content, file_info } = file;
 
-function json_comments(ard) {
-  const { file_content, file_info } = ard;
   file_info.relative = unescapeJs(file_info.relative);
-  const module_name = file_info.relative.split("\\").pop().split(".")?.[0];
+  const module_name = file_info.relative.split("\\")?.pop().split(".")?.[0];
 
   if (file_content?.[module_name]) {
     let module_conf = file_content[module_name];
 
     if (module_conf) {
       const module_data = module_conf?.["_data"] || {};
-
-      console.log({ module_data });
+ 
 
       if (!module_conf?.["_docs"]) module_conf["_docs"] = {};
       const out_docs = {};
+      
       Object.keys(module_data).forEach((v, i, a) => {
-        if (!module_conf?.["_docs"]?.[v]) out_docs[v] = "";
+        if (!module_conf?.["_docs"]?.[v]) {
+         //  console.log({ module_data });
+          out_docs[v] = "";
+        }
       });
       file_content[module_name]._docs = out_docs;
     }
@@ -48,30 +44,69 @@ function json_comments(ard) {
   return { ...file_content };
 }
 
-exports.json2scss = function () {
-  gulp.watch("css-fabric/_config/*.json", sassify);
-  gulp.watch("./css-fabric/_config/**/*.json");
-};
+
+
+const fabricRootDir   = './css-fabric',
+      fabricStylesDir = 'styles',
+      fabricConfDir   = `${fabricRootDir}/_config`,
+      fabricModuleDir = `${fabricRootDir}/modules`,
+      generatedDir    = `${fabricRootDir}/_generated`;
 
 /**
- *
- * @param {gulp callback} cb
+ * add default comment key for each property
+ * @returns function
  */
-function sassify(cb) {
-  const child = spawn.sync(
-    "json-to-scss css-fabric/_config/*.*  css-fabric/_generated/_css-fabric.scss  --mo"
+function task_scss2json(cb){
+  
+  spawn.sync(
+    `json-to-scss ${fabricConfDir}/*.*   ${generatedDir}/_css-fabric.scss  --mo`
   );
+
+  return cb();
+}
+
+function task_sass2css(cb){
+  
+  spawn.sync(
+    `sass  --no-source-map ${fabricModuleDir}/:${fabricStylesDir}/css-fabric/core`
+  );
+  spawn.sync(
+    `sass  --no-source-map ${fabricModuleDir}/:${fabricStylesDir}/css-fabric/min/ --style=compressed`
+  );
+
+  return cb();
+}
+
+/**
+ * 
+ * @param {function} cb 
+ * @returns function
+ */
+function task_addComments   (cb) {
+   
+  return gulp.src(fabricConfDir+"/**/*.json")
+        .pipe(
+          jsonTransform(function (file_content, file_info) {
+            return json_comments({ file_content: file_content, file_info });
+          }, "\t")
+        )
+        .pipe(gulp.dest('copies'))
+        .on('end',()=>{return cb()});     
+} 
+ 
+function watchJsonTask(cb) { 
+  
+  gulp.watch(fabricConfDir+"/**/*.json", gulp.parallel(task_addComments,task_scss2json));
 
   cb();
 }
 
-// Watch
-gulp.task("watch", function () {
-  // Watch .json files to add description key
-  gulp.watch("./css-fabric/_config/**/*.json", function (event) {
-    console.log(
-      "File " + event.path + " was " + event.type + ", running tasks..."
-    );
-    gulp.run("jsonComplete");
-  });
-});
+function watchSassTask(cb) {   
+
+  gulp.watch("./css-fabric", task_sass2css);
+
+  cb();
+}
+
+exports.watchJson = watchJsonTask;
+exports.watchSass = watchSassTask;
