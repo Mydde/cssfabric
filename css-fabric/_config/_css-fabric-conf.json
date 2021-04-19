@@ -1,5 +1,5 @@
 {
-	"_cfg": {
+	"_css-fabric-conf": {
 		"_metadata": {
 			"title": "'fabric.css.cfg'",
 			"description": "'css-fabric global config variables'"
@@ -25,6 +25,19 @@
 				8,
 				24
 			]
+		},
+		"_docs": {
+			"CFG_HAS_DIMENSION_STRICT": "",
+			"CFG_HAS_DIMENSION_MIN": "",
+			"CFG_HAS_DIMENSION_MAX": "",
+			"grid_class_name": "",
+			"grid_separator": "",
+			"grid_hor_code": "",
+			"grid_vert_code": "",
+			"table_class_name": "",
+			"table_class_name_short": "",
+			"media_quey_sizes": "",
+			"grid_ratios": ""
 		}
 	}
 }

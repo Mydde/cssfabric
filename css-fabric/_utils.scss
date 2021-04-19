@@ -2,7 +2,7 @@
 @use '_config';
 
 @function get_conf() {
-  $po: map-get(config.$config, _cfg);
+  $po: map-get(config.$config, _css-fabric-conf);
   @return  map-get($po, "_data");
 }
 
