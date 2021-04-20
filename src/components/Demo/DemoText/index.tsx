@@ -3,6 +3,7 @@ import React from 'react';
 import { Header, SubHeader, SubSubHeader, SubHeaderH } from '../../Headers';
 import conf from 'css-fabric/_config/text.json';
 import conf_fabric from 'css-fabric/_config/_css-fabric-conf.json';
+import { cssProperties } from 'src/utils/cssProperties';
 
 interface Props {}
 
@@ -14,13 +15,19 @@ export const DemoText = (props: Props) => {
 	let conf_text_data = conf_text._data;
 	let conf_text_docs = conf_text._docs;
 
-	const tag_shorthand = conf_fabric['_css-fabric-conf']._data.text_class_name_short;
+	const tag = conf_fabric['_css-fabric-conf']._data.text_class_name;
+	const tag_shorthand =
+		conf_fabric['_css-fabric-conf']._data.text_class_name_short;
+
 	const { font_weights } = conf_text_data;
+
+	console.log(cssProperties.red({ module: 'text' }));
+	const tagProperties = cssProperties.red({ module: 'text' });
 
 	return (
 		<div>
 			<Header
-				tag={conf_text_meta.title}
+				tag={tagProperties.tag}
 				description={conf_text_meta.description}
 			/>
 			<pre>{JSON.stringify(conf_text, null, '\t')}</pre>
@@ -37,13 +44,18 @@ export const DemoText = (props: Props) => {
 					tag={'text weights'}
 					description={'voilou voilou voilou voilou'}>
 					{Object.keys(font_weights).map((key) => {
-
-const cssProperty = tag_shorthand + key;
+						const font_weight = font_weights[key];
+						const cssProperty = tag_shorthand + '-' + key;
 
 						return (
 							<div className={'grid-h'}>
-								<span className={'pad-l w-tiers'}>{key}</span>
-								<span> txt-{key}</span>
+								<span className={'pad-l w-tiers'}>
+									{font_weight}
+								</span>
+								<span className={cssProperty}>
+									{' '}
+									this text is {font_weight}
+								</span>
 							</div>
 						);
 					})}

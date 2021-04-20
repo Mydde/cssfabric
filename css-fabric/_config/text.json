@@ -11,7 +11,7 @@
 			"font_sizes_h_min_em": 0.6,
 			"font_predefined_colors": {
 				"msg": "",
-				"alert": "",
+				"alert": "red",
 				"warning": "",
 				"important": "",
 				"default": ""
@@ -25,9 +25,13 @@
 				"full": "full-width"
 			},
 			"font_weights": {
+				"100": 100,
+				"300": 400,
+				"500": 500,
+				"900": 900,
+				"light": "lighter",
 				"cap": "normal",
 				"bold": "bold",
-				"light": "lighter",
 				"bolder": "bolder"
 			},
 			"text_align": {

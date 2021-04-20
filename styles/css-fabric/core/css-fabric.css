@@ -4864,14 +4864,26 @@
   text-transform: full-width;
 }
 
+.txt-100 {
+  font-weight: 100;
+}
+.txt-300 {
+  font-weight: 400;
+}
+.txt-500 {
+  font-weight: 500;
+}
+.txt-900 {
+  font-weight: 900;
+}
+.txt-light {
+  font-weight: lighter;
+}
 .txt-cap {
   font-weight: normal;
 }
 .txt-bold {
   font-weight: bold;
-}
-.txt-light {
-  font-weight: lighter;
 }
 .txt-bolder {
   font-weight: bolder;

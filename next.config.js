@@ -8,11 +8,10 @@ module.exports = {
   },
   // If you want to configure the Sass compiler
   sassOptions: {
-    includePaths: ["scss", "node_modules", "src"].map((d) =>
+    includePaths: ["css-fabric", "node_modules", "src"].map((d) =>
       path.join(__dirname, d)
     ),
     prependData: '$env: ' + process.env.NODE_ENV + ';$CSS_FABRIC_PATH: ' + process.env.CSS_FABRIC_PATH + ';'
-    // prependData: `@use "scss/_vars.scss";`,
   },
   webpack: (config, { dev, isServer }) => {
     if (!isServer) {

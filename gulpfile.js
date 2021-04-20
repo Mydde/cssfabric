@@ -117,18 +117,18 @@ function task_addComments   (cb) {
 } 
  
 function task_try(cb){
-  let sourceFiles = [`"${generatedDir}/_config.scss"`];
+  let sourceFiles = [`${generatedDir}/_config.scss`];
  
  return gulp.src(sourceFiles)
             .pipe(sassExport({
                 fileName: '_config.json'
             }))
-            .pipe(gulp.dest('./tmp')).cb()
+            .pipe(gulp.dest('./tmp')).on('end',()=>{return cb()});   
 }
 
 function watchJsonTask(cb) { 
   
-  gulp.watch(fabricConfDir+"/**/*.json", gulp.parallel(task_addComments,task_scss2json,task_try));
+  gulp.watch(fabricConfDir+"/**/*.json", gulp.series(task_addComments,task_scss2json,/* task_try */));
 
   cb();
 }
