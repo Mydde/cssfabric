@@ -54,13 +54,16 @@ const Modulo =({props})=> {
 				<HeaderTitle tag={'css-fabric'} description={'desc'} />
 			</div>
 			<div className={'w-16 grid-v'}>
+				<ul>
 				{Object.keys(links).map((key, index) => {
-					return (
+					return (<li>
 						<Link key={key} href={`/demo_component/${key}`}>
 							<a>{`${key}`}</a>
 						</Link>
+						</li>
 					);
 				})}
+				</ul>
 			</div> 
 			<div className={'grid-main pad-all-1'}> 
 				{/* moduleTag : {moduleTag} */}

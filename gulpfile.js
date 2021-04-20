@@ -4,6 +4,7 @@ const gulp          = require("gulp"),
       jsonTransform = require("gulp-json-transform"),
       cache         = require('gulp-cached'),
       sassExport    = require('gulp-sass-export'),
+      mergeJson = require('gulp-merge-json'),
       spawn         = require("cross-spawn");
 
 /**
@@ -117,18 +118,25 @@ function task_addComments   (cb) {
 } 
  
 function task_try(cb){
-  let sourceFiles = [`${generatedDir}/_config.scss`];
- 
- return gulp.src(sourceFiles)
-            .pipe(sassExport({
-                fileName: '_config.json'
-            }))
-            .pipe(gulp.dest('./tmp')).on('end',()=>{return cb()});   
+  let sourceFiles = [`${fabricConfDir}/**/*.json`]; 
+
+  gulp.src(sourceFiles)
+  .pipe(mergeJson({ 
+    fileName: '_config.json',
+    transform: (mergedJson) => {
+      return {
+          ['css-config']: {
+              modules:   {...mergedJson}
+          }
+      };
+  }}))
+  .pipe(gulp.dest(generatedDir))
+  .on('end',()=>{return cb()});    
 }
 
 function watchJsonTask(cb) { 
   
-  gulp.watch(fabricConfDir+"/**/*.json", gulp.series(task_addComments,task_scss2json,/* task_try */));
+  gulp.watch(fabricConfDir+"/**/*.json", gulp.series(task_addComments,task_scss2json,task_try));
 
   cb();
 }
