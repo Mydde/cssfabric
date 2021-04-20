@@ -1,7 +1,8 @@
 {
 	"input": {
 		"_metadata": {
-			"title": "'fabric.css.input'",
+			"title": "input",
+			"tag": "input",
 			"description": "'css-fabric form.input module to set styles on all input elements'"
 		},
 		"_data": {

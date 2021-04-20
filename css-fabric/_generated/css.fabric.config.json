@@ -3,7 +3,8 @@
 		"modules": {
 			"box": {
 				"_metadata": {
-					"title": "'fabric.css.box'",
+					"title": "box",
+					"tag": "box",
 					"description": "'css-fabric box module to set heights, paddings and margins on all html elements'"
 				},
 				"_data": {
@@ -51,14 +52,16 @@
 			},
 			"grid": {
 				"_metadata": {
-					"title": "'grid.css.box'",
+					"title": "grid",
+					"tag": "grid",
 					"description": "'css-fabric grid module'"
 				},
 				"_docs": {}
 			},
 			"input": {
 				"_metadata": {
-					"title": "'fabric.css.input'",
+					"title": "input",
+					"tag": "input",
 					"description": "'css-fabric form.input module to set styles on all input elements'"
 				},
 				"_data": {
@@ -113,7 +116,7 @@
 			"menu": {
 				"_metadata": {
 					"title": "menu",
-					"title_tag": "'fabric.css.menu'",
+					"tag": "ul",
 					"description": "'css-fabric menu module to set menu style'"
 				},
 				"_data": {
@@ -142,7 +145,8 @@
 			},
 			"overflow": {
 				"_metadata": {
-					"title": "'fabric.css.overflow'",
+					"title": "overflow",
+					"tag": "flow",
 					"description": "'css-fabric overflow module to set overflow styles on all html elements'"
 				},
 				"_data": {
@@ -156,7 +160,8 @@
 			},
 			"scale": {
 				"_metadata": {
-					"title": "'fabric.css.scale'",
+					"title": "scale",
+					"tag": "scale",
 					"description": "'css-fabric scale module to set dimensions and ratios on all html elements'"
 				},
 				"_data": {
@@ -206,7 +211,8 @@
 			},
 			"table": {
 				"_metadata": {
-					"title": "'fabric.css.table'",
+					"title": "table",
+					"tag": "table",
 					"description": "'css-fabric table module to set different table styles'"
 				},
 				"_data": {
@@ -229,7 +235,7 @@
 			"text": {
 				"_metadata": {
 					"title": "text",
-					"title_tag": "'fabric.css.text'",
+					"tag": "txt",
 					"description": "'css-fabric text module to set text style on all html elements'"
 				},
 				"_data": {
@@ -284,7 +290,8 @@
 			},
 			"zindex": {
 				"_metadata": {
-					"title": "'fabric.css.zindex'",
+					"title": "zindex",
+					"tag": "zI",
 					"description": "'css-fabric zindex module to set z-index on all html elements'"
 				},
 				"_data": {
@@ -304,7 +311,8 @@
 			},
 			"_css-fabric-conf": {
 				"_metadata": {
-					"title": "'fabric.css.cfg'",
+					"title": "_css-fabric-conf",
+					"tag": "conf",
 					"description": "'css-fabric global config variables'"
 				},
 				"_data": {

@@ -1,7 +1,8 @@
 {
 	"box": {
 		"_metadata": {
-			"title": "'fabric.css.box'",
+			"title": "box",
+			"tag": "box",
 			"description": "'css-fabric box module to set heights, paddings and margins on all html elements'"
 		},
 		"_data": {

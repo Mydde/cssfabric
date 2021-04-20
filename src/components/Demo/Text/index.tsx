@@ -1,13 +1,13 @@
 import React from 'react';
 import { useRouter } from 'next/router'
-import { Header, SubHeader, SubSubHeader, SubHeaderH } from '../../Headers';
+import { Header, SubHeader, SubSubHeader, SubHeaderH } from 'src/components/Headers';
  
-import conf_fabric from '../../../../css-fabric/_config/_css-fabric-conf.json';
-import { cssProperties } from 'utils/cssProperties';
-import { CssFabricProperties } from 'components/CssFabricProperties';
+import conf_fabric from 'css-fabric/_generated/css.fabric.config.json';
+import { cssProperties } from 'src/utils/cssProperties';
+import { CssFabricProperties } from 'src/components/CssFabricProperties';
 
 interface Props {}
-
+ 
 const  Text =  (props: Props)=> {
 	
 	const router = useRouter()
@@ -20,19 +20,13 @@ const  Text =  (props: Props)=> {
 	let conf_text_data = tagProperties.data;
 	let conf_text_docs = tagProperties.docs;
 
-	const tag_shorthand =
-		conf_fabric['_css-fabric-conf']._data.text_class_name_short;
+	//const tag_shorthand = conf_fabric['_css-fabric-conf']._data.text_class_name_short;
 
 	const { font_weights, text_transform, text_align } = conf_text_data;
 
 
 	return (
 		<div>
-			<Header
-				title={tagProperties.title}
-				title_tag={tagProperties.title_tag}
-				description={conf_text_meta.description}
-			/>
 			{/* <pre>{JSON.stringify(conf_text, null, '\t')}</pre> */}
 			<SubHeaderH tag="" description="">
 				<SubHeader

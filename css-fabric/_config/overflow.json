@@ -1,7 +1,8 @@
 {
 	"overflow": {
 		"_metadata": {
-			"title": "'fabric.css.overflow'",
+			"title": "overflow",
+			"tag": "flow",
 			"description": "'css-fabric overflow module to set overflow styles on all html elements'"
 		},
 		"_data": {

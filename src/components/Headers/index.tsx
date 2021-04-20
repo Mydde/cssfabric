@@ -8,6 +8,12 @@ interface Props {
 	orientation?: string;
 	children?: any;
 }
+interface HeaderProps {
+	title: string; 
+	tag?: string;
+	description?: string; 
+	children?: any;
+}
 
 
 export const HeaderTitle = (props: Props) => {
@@ -26,13 +32,13 @@ export const HeaderTitle = (props: Props) => {
 	);
 };
 
-export const Header = (props: Props) => {
+export const Header = (props: HeaderProps) => {
 	return (
 		<div className={'pad-all'}>
 			<div className={'grid-h items-center pad-l-16 brd-b'}>
-				<span className={'txt-h1 pad-all '}>{props.title}</span>
+				<span className={'txt-h2 pad-all '}>{props.title}</span>
 				<span className={'txt-h4 pad-all '}>
-					{props.title_tag}
+					{props.tag}
 				</span>
 			</div>
 			<div className={'pad-all'}>

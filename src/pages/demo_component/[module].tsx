@@ -1,6 +1,10 @@
 import { useRouter } from 'next/router';
 import Link from 'next/link';
 import dynamic from 'next/dynamic';
+ 
+
+import { cssProperties } from 'src/utils/cssProperties';
+import { CssFabricProperties } from 'src/components/CssFabricProperties';
 
 import {
 	Header,
@@ -8,7 +12,7 @@ import {
 	SubSubHeader,
 	SubHeaderH,
 	HeaderTitle
-} from '../../components/Headers';
+} from 'src/components/Headers';
 
 const links = {
 	text: 'text-98',
@@ -35,13 +39,15 @@ const Modulo =({props})=> {
 
 	let moduleTag;
 	let DynamicComponent;
+	// @ts-ignore
+	const tagProperties = cssProperties.red({ module: module });
 
 	if(module != undefined ){
 		// @ts-ignore
 		moduleTag = module?.charAt(0)?.toUpperCase() + module?.slice(1) || 'Demo'; 
 	 
 		DynamicComponent = dynamic(
-		import('../../components/Demo/' + moduleTag)
+		import('src/components/Demo/' + moduleTag)
 		); 
 	}
 
@@ -66,8 +72,7 @@ const Modulo =({props})=> {
 				</ul>
 			</div> 
 			<div className={'grid-main pad-all-1'}> 
-				{/* moduleTag : {moduleTag} */}
-				<Header title={moduleTag}  description={'red'} />
+				<Header title={tagProperties.title}  tag={'fabric.css.'+tagProperties.title}  description={tagProperties.description} />
 				<DynamicComponent />
 			</div>
 		</div>

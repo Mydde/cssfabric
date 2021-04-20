@@ -122,7 +122,7 @@ function task_try(cb){
 
   gulp.src(sourceFiles)
   .pipe(mergeJson({ 
-    fileName: '_config.json',
+    fileName: 'css.fabric.config.json',
     transform: (mergedJson) => {
       return {
           ['css-config']: {

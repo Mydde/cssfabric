@@ -1,7 +1,8 @@
 {
 	"grid": {
 		"_metadata": {
-			"title": "'grid.css.box'",
+			"title": "grid",
+			"tag": "grid",
 			"description": "'css-fabric grid module'"
 		},
 		"_docs": {}

@@ -2,7 +2,7 @@
 	"menu": {
 		"_metadata": {
 			"title": "menu",
-			"title_tag": "'fabric.css.menu'",
+			"tag": "ul",
 			"description": "'css-fabric menu module to set menu style'"
 		},
 		"_data": {

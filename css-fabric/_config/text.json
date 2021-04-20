@@ -2,7 +2,7 @@
 	"text": {
 		"_metadata": {
 			"title": "text",
-			"title_tag": "'fabric.css.text'",
+			"tag": "txt",
 			"description": "'css-fabric text module to set text style on all html elements'"
 		},
 		"_data": {
