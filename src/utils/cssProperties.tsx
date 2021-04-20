@@ -1,5 +1,5 @@
-import conf from 'css-fabric/_config/text.json';
-import conf_fabric from 'css-fabric/_config/_css-fabric-conf.json';
+import conf from '../../css-fabric/_config/text.json';
+import conf_fabric from '../../css-fabric/_config/_css-fabric-conf.json';
 
 interface ICssPropertiesProps {
 	module: string;

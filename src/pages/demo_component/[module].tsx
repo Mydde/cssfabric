@@ -1,9 +1,6 @@
-import { DemoTable } from '../../components/Demo/Table';
-import { DemoText } from '../../components/Demo/Text';
-import { DemoGrid } from '../../components/Demo/Grid';
-
 import { useRouter } from 'next/router';
 import Link from 'next/link';
+import dynamic from 'next/dynamic';
 
 import {
 	Header,
@@ -22,20 +19,28 @@ const links = {
 	input: 'grid-98',
 	overflow: 'grid-98',
 	zindex: 'grid-98',
-	menu: 'grid-98',
+	menu: 'grid-98'
 };
 
-const modules = { 
-	table: <DemoTable />,
-	text: <DemoText />,
-	grid: <DemoGrid />
-};
+// const DynamicComponent = dynamic((node) => import('../../components/Demo/'))
 
-export default function Home({ isConnected }) {
+const Modulo =()=> {
+
 	const router = useRouter();
-	const { module } = router.query;
- 
-	return (
+
+	const {module} = router.query;
+
+	 console.log(  router);
+	// @ts-ignore
+	const moduleTag = module?.charAt(0)?.toUpperCase() + module?.slice(1) || 'Demo';
+
+	// const Fuse = import('components/Demo/Box');
+	/* const DynamicComponent = dynamic(
+		import('../../components/Demo/' + moduleTag)
+	); */
+	//
+
+	return ( 
 		<div className={'grid-h grid-wrap h-full'}>
 			<div className={'w-full w-sm-main h-8'}>
 				<HeaderTitle tag={'css-fabric'} description={'desc'} />
@@ -43,17 +48,24 @@ export default function Home({ isConnected }) {
 			<div className={'w-16 grid-v'}>
 				{Object.keys(links).map((key, index) => {
 					return (
-						<Link href={`/demo_component/${key}`}>
+						<Link key={key} href={`/demo_component/${key}`}>
 							<a>{`${key}`}</a>
 						</Link>
 					);
 				})}
-			</div>
+			</div> 
 			<div className={'grid-main pad-all-1'}>
-      <Header title={module} description={"red"} >
-        
-        </Header>	{modules[module]}			
+				module : {module}
+				<br />
+				moduleTag : {moduleTag}
+				<Header  description={'red'} />
+				{/* <DynamicComponent /> */}
 			</div>
 		</div>
 	);
 }
+
+export default Modulo;
+module.exports = Modulo
+
+

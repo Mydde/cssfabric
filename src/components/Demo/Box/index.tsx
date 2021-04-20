@@ -3,7 +3,9 @@ import React from 'react';
 interface Props {
 }
 
-export const DemoBox = (props: Props) => {
+const Box=(props: Props)=> {
     return null;
 };
  
+export default Box;
+module.exports = Box

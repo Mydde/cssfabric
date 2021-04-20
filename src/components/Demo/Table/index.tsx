@@ -3,7 +3,7 @@ import { Header } from '../../Headers';
 
 interface Props {}
 
-export const DemoTable = (props: Props) => {
+const Table = (props: Props) => {
 	
 	const tblNames = [
 		'tbl-border tbl-head',
@@ -54,3 +54,6 @@ export const DemoTable = (props: Props) => {
 		</div>
 	);
 };
+
+export default Table;
+module.exports = Table

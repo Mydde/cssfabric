@@ -2,13 +2,13 @@ import React from 'react';
 import { useRouter } from 'next/router'
 import { Header, SubHeader, SubSubHeader, SubHeaderH } from '../../Headers';
  
-import conf_fabric from 'css-fabric/_config/_css-fabric-conf.json';
-import { cssProperties } from 'src/utils/cssProperties';
-import { CssFabricProperties } from 'src/components/CssFabricProperties';
+import conf_fabric from '../../../../css-fabric/_config/_css-fabric-conf.json';
+import { cssProperties } from 'utils/cssProperties';
+import { CssFabricProperties } from 'components/CssFabricProperties';
 
 interface Props {}
 
-export const DemoText = (props: Props) => {
+const  Text =  (props: Props)=> {
 	
 	const router = useRouter()
 	const { pid } = router.query
@@ -96,3 +96,6 @@ export const DemoText = (props: Props) => {
 		</div>
 	);
 };
+
+export default Text;
+module.exports = Text

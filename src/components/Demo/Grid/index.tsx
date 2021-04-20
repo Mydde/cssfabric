@@ -4,7 +4,7 @@ import { Header, SubHeader } from '../../Headers';
 
 interface Props {}
 
-export const DemoGrid = (props: Props) => {
+const Grid = (props: Props) => {
 	return (
 		<div>
 			<Header tag={'Grid'} description={'red'} />
@@ -34,3 +34,6 @@ export const DemoGrid = (props: Props) => {
 		</div>
 	);
 };
+
+export default Grid;
+module.exports = Grid
