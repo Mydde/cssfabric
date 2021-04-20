@@ -37,10 +37,8 @@ export default function Home({ isConnected }) {
 				<div>456456</div>
 				<div>456456</div>
 			</div>
-			<div className={'grid-main pad-all-1'}>
-				<DemoText />
-				<DemoGrid />
-				<DemoTable />
+			<div className={'grid-main pad-all-1'}>Header
+        <Header title={"table"} description={"red"} /> 
 			</div>
 		</div>
 	);

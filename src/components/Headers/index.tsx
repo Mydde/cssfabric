@@ -1,7 +1,9 @@
 import React from 'react';
 
 interface Props {
-	tag: string;
+	tag?: string;
+	title?: string;
+	title_tag?: string;
 	description: string;
 	orientation?: string;
 	children?: any;
@@ -28,9 +30,9 @@ export const Header = (props: Props) => {
 	return (
 		<div className={'pad-all'}>
 			<div className={'grid-h items-center pad-l-16 brd-b'}>
-				<span className={'txt-h1 pad-all '}>{props.tag}</span>
+				<span className={'txt-h1 pad-all '}>{props.title}</span>
 				<span className={'txt-h4 pad-all '}>
-					{props.tag}
+					{props.title_tag}
 				</span>
 			</div>
 			<div className={'pad-all'}>

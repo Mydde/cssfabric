@@ -1,7 +1,8 @@
 {
 	"text": {
 		"_metadata": {
-			"title": "'fabric.css.text'",
+			"title": "text",
+			"title_tag": "'fabric.css.text'",
 			"description": "'css-fabric text module to set text style on all html elements'"
 		},
 		"_data": {
@@ -25,6 +26,7 @@
 				"full": "full-width"
 			},
 			"font_weights": {
+				"50": 50,
 				"100": 100,
 				"300": 400,
 				"500": 500,
@@ -48,9 +50,9 @@
 			"font_sizes_h1_em": "",
 			"font_sizes_h_min_em": "",
 			"text_ellipsis_tag": "",
-			"text_transform": "",
-			"font_weights": "",
-			"text_align": ""
+			"text_transform": "text_transform declaration",
+			"font_weights": "font_weights declaration",
+			"text_align": "text_align declaration"
 		}
 	}
 }

@@ -35,6 +35,9 @@
   text-transform: full-width;
 }
 
+.txt-50 {
+  font-weight: 50;
+}
 .txt-100 {
   font-weight: 100;
 }

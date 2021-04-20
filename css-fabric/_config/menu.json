@@ -1,0 +1,18 @@
+{
+	"menu": {
+		"_metadata": {
+			"title": "menu",
+			"title_tag": "'fabric.css.menu'",
+			"description": "'css-fabric menu module to set menu style'"
+		},
+		"_data": {
+			"orientation": {
+				"v": "vertical",
+				"h": "horizontal"
+			}
+		},
+		"_docs": {
+			"orientation": ""
+		}
+	}
+}

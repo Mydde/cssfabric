@@ -1,64 +1,54 @@
 import React from 'react';
-
+import { useRouter } from 'next/router'
 import { Header, SubHeader, SubSubHeader, SubHeaderH } from '../../Headers';
-import conf from 'css-fabric/_config/text.json';
+ 
 import conf_fabric from 'css-fabric/_config/_css-fabric-conf.json';
 import { cssProperties } from 'src/utils/cssProperties';
+import { CssFabricProperties } from 'src/components/CssFabricProperties';
 
 interface Props {}
 
 export const DemoText = (props: Props) => {
+	
+	const router = useRouter()
+	const { pid } = router.query
+
 	const fabricModule = 'text';
-	let conf_text = conf.text;
+	const tagProperties = cssProperties.red({ module: fabricModule });
 
-	let conf_text_meta = conf_text._metadata;
-	let conf_text_data = conf_text._data;
-	let conf_text_docs = conf_text._docs;
+	let conf_text_meta = tagProperties.meta;
+	let conf_text_data = tagProperties.data;
+	let conf_text_docs = tagProperties.docs;
 
-	const tag = conf_fabric['_css-fabric-conf']._data.text_class_name;
 	const tag_shorthand =
 		conf_fabric['_css-fabric-conf']._data.text_class_name_short;
 
-	const { font_weights } = conf_text_data;
+	const { font_weights, text_transform, text_align } = conf_text_data;
 
-	console.log(cssProperties.red({ module: 'text' }));
-	const tagProperties = cssProperties.red({ module: 'text' });
 
 	return (
 		<div>
 			<Header
-				tag={tagProperties.tag}
+				title={tagProperties.title}
+				title_tag={tagProperties.title_tag}
 				description={conf_text_meta.description}
 			/>
-			<pre>{JSON.stringify(conf_text, null, '\t')}</pre>
+			{/* <pre>{JSON.stringify(conf_text, null, '\t')}</pre> */}
 			<SubHeaderH tag="" description="">
 				<SubHeader
 					tag={'text alignments'}
-					description={conf_text_meta.title}
-				/>
+					description={tagProperties.docs['text_align']}>
+					<CssFabricProperties property={text_align} />
+				</SubHeader>
 				<SubHeader
 					tag={'text transforms'}
-					description={'voilou voilou voilou voilou'}
-				/>
+					description={tagProperties.docs['text_transform']}>
+					<CssFabricProperties property={text_transform} />
+				</SubHeader>
 				<SubHeader
 					tag={'text weights'}
-					description={'voilou voilou voilou voilou'}>
-					{Object.keys(font_weights).map((key) => {
-						const font_weight = font_weights[key];
-						const cssProperty = tag_shorthand + '-' + key;
-
-						return (
-							<div className={'grid-h'}>
-								<span className={'pad-l w-tiers'}>
-									{font_weight}
-								</span>
-								<span className={cssProperty}>
-									{' '}
-									this text is {font_weight}
-								</span>
-							</div>
-						);
-					})}
+					description={tagProperties.docs['font_weights']}>
+					<CssFabricProperties property={font_weights} />
 				</SubHeader>
 			</SubHeaderH>
 			<SubHeader tag={'text title H'} description={'voilou voilou'}>

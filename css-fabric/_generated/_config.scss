@@ -114,6 +114,22 @@ $config: (
       input_attr: _
     )
   ),
+  menu: (
+    _metadata: (
+      title: menu,
+      title_tag: 'fabric.css.menu',
+      description: 'css-fabric menu module to set menu style'
+    ),
+    _data: (
+      orientation: (
+        v: vertical,
+        h: horizontal
+      )
+    ),
+    _docs: (
+      orientation: ""
+    )
+  ),
   overflow: (
     _metadata: (
       title: 'fabric.css.overflow',
@@ -182,7 +198,8 @@ $config: (
   ),
   text: (
     _metadata: (
-      title: 'fabric.css.text',
+      title: text,
+      title_tag: 'fabric.css.text',
       description: 'css-fabric text module to set text style on all html elements'
     ),
     _data: (
@@ -206,6 +223,7 @@ $config: (
         full: full-width
       ),
       font_weights: (
+        50: 50,
         100: 100,
         300: 400,
         500: 500,
@@ -229,9 +247,9 @@ $config: (
       font_sizes_h1_em: "",
       font_sizes_h_min_em: "",
       text_ellipsis_tag: "",
-      text_transform: "",
-      font_weights: "",
-      text_align: ""
+      text_transform: text_transform declaration,
+      font_weights: font_weights declaration,
+      text_align: text_align declaration
     )
   ),
   zindex: (
