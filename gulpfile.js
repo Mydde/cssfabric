@@ -3,6 +3,7 @@ const gulp          = require("gulp"),
       unescapeJs    = require("unescape-js"),
       jsonTransform = require("gulp-json-transform"),
       cache         = require('gulp-cached'),
+      sassExport    = require('gulp-sass-export'),
       spawn         = require("cross-spawn");
 
 /**
@@ -80,6 +81,7 @@ function task_scss2json(cb){
   spawn.sync(
     `json-to-scss ${fabricConfDir}/*.*   ${generatedDir}/_config.scss  --mo`
   );
+
   return cb();
 }
 
@@ -103,20 +105,30 @@ function task_sass2css(cb){
 function task_addComments   (cb) {
    
   return gulp.src(fabricConfDir+"/**/*.json")
-        .pipe(cache(task_addComments))
-        .pipe(
-          jsonTransform(function (file_content, file_info) {
-            return json_comments({ file_content: file_content, file_info });
-          }, "\t")
-        )
-        .pipe(cache(task_addComments))
-        .pipe(gulp.dest(fabricConfDir))
-        .on('end',()=>{return cb()});     
+              .pipe(cache(task_addComments))
+              .pipe(
+                jsonTransform(function (file_content, file_info) {
+                  return json_comments({ file_content: file_content, file_info });
+                }, "\t")
+              )
+              .pipe(cache(task_addComments))
+              .pipe(gulp.dest(fabricConfDir))
+              .on('end',()=>{return cb()});     
 } 
  
+function task_try(cb){
+  let sourceFiles = [`"${generatedDir}/_config.scss"`];
+ 
+ return gulp.src(sourceFiles)
+            .pipe(sassExport({
+                fileName: '_config.json'
+            }))
+            .pipe(gulp.dest('./tmp')).cb()
+}
+
 function watchJsonTask(cb) { 
   
-  gulp.watch(fabricConfDir+"/**/*.json", gulp.parallel(task_addComments,task_scss2json));
+  gulp.watch(fabricConfDir+"/**/*.json", gulp.parallel(task_addComments,task_scss2json,task_try));
 
   cb();
 }

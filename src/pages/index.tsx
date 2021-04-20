@@ -17,7 +17,7 @@ export default function Home() {
         </h1>
         <p className={styles.description}>
            
-          <a  href="test">test</a> 
+          <a  href="Demo">Demo</a> 
           <br />
           <a  href="vars">vars</a> 
         </p> 

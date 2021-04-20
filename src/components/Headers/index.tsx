@@ -7,24 +7,34 @@ interface Props {
 	children?: any;
 }
 
+
+export const HeaderTitle = (props: Props) => {
+	return (
+		<div className={'pad-all  brd-b'}>
+			<div className={'grid-h items-center pad-l-16'}>
+				<span className={'txt-h1 pad-all '}>{props.tag}</span>
+				<span className={'txt-h4 pad-all '}>
+					{props.tag}
+				</span>
+			</div>
+			<div className={'pad-all'}>
+				{props.description}
+			</div>
+		</div>
+	);
+};
+
 export const Header = (props: Props) => {
 	return (
 		<div className={'pad-all'}>
 			<div className={'grid-h items-center pad-l-16 brd-b'}>
 				<span className={'txt-h1 pad-all '}>{props.tag}</span>
 				<span className={'txt-h4 pad-all '}>
-					css-fabric.{props.tag}
+					{props.tag}
 				</span>
 			</div>
 			<div className={'pad-all'}>
 				{props.description}
-				Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-				eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-				enim ad minim veniam, quis nostrud exercitation ullamco laboris
-				nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor
-				in reprehenderit in voluptate velit esse cillum dolore eu fugiat
-				nulla pariatur. Excepteur sint occaecat cupidatat non proident,
-				sunt in culpa qui officia deserunt mollit anim id est laborum.
 			</div>
 		</div>
 	);

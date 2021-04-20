@@ -1,23 +1,53 @@
 import React from 'react';
 
 import { Header, SubHeader, SubSubHeader, SubHeaderH } from '../../Headers';
+import conf from 'css-fabric/_config/text.json';
+import conf_fabric from 'css-fabric/_config/_css-fabric-conf.json';
 
 interface Props {}
 
 export const DemoText = (props: Props) => {
+	const fabricModule = 'text';
+	let conf_text = conf.text;
+
+	let conf_text_meta = conf_text._metadata;
+	let conf_text_data = conf_text._data;
+	let conf_text_docs = conf_text._docs;
+
+	const tag_shorthand = conf_fabric['_css-fabric-conf']._data.text_class_name_short;
+	const { font_weights } = conf_text_data;
+
 	return (
 		<div>
-			<Header tag={'text'} description={'red'} />
+			<Header
+				tag={conf_text_meta.title}
+				description={conf_text_meta.description}
+			/>
+			<pre>{JSON.stringify(conf_text, null, '\t')}</pre>
 			<SubHeaderH tag="" description="">
 				<SubHeader
 					tag={'text alignments'}
-					description={'voilou voilou voilou voilou'}
+					description={conf_text_meta.title}
 				/>
 				<SubHeader
 					tag={'text transforms'}
 					description={'voilou voilou voilou voilou'}
 				/>
-				<SubHeader tag={'text weights'} description={'voilou voilou voilou voilou'} />
+				<SubHeader
+					tag={'text weights'}
+					description={'voilou voilou voilou voilou'}>
+					{Object.keys(font_weights).map((key) => {
+
+const cssProperty = tag_shorthand + key;
+
+						return (
+							<div className={'grid-h'}>
+								<span className={'pad-l w-tiers'}>{key}</span>
+								<span> txt-{key}</span>
+							</div>
+						);
+					})}
+				</SubHeader>
 			</SubHeaderH>
 			<SubHeader tag={'text title H'} description={'voilou voilou'}>
 				<SubSubHeader tag={'H text'} description={'voilou voilou'}>
