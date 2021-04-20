@@ -17,6 +17,8 @@
 			"table_class_name_short": "tbl",
 			"text_class_name": "text",
 			"text_class_name_short": "txt",
+			"menu_class_name": "menu",
+			"menu_class_name_short": "ul",
 			"media_quey_sizes": {
 				"sm": 35.5,
 				"md": 48,
@@ -43,7 +45,9 @@
 			"grid_ratios": "",
 			"text_class_name_short": "",
 			"text_class_name": "",
-			"grid_class_name_short": ""
+			"grid_class_name_short": "",
+			"menu_class_name": "",
+			"menu_class_name_short": ""
 		}
 	}
 }
