@@ -24,22 +24,30 @@ const links = {
 
 // const DynamicComponent = dynamic((node) => import('../../components/Demo/'))
 
-const Modulo =()=> {
+ 
+
+const Modulo =({props})=> {
+	 
 
 	const router = useRouter();
 
 	const {module} = router.query;
 
-	 console.log(  router);
-	// @ts-ignore
-	const moduleTag = module?.charAt(0)?.toUpperCase() + module?.slice(1) || 'Demo';
+	let moduleTag;
+	let DynamicComponent;
 
-	// const Fuse = import('components/Demo/Box');
-	/* const DynamicComponent = dynamic(
+	if(module != undefined ){
+		// @ts-ignore
+		moduleTag = module?.charAt(0)?.toUpperCase() + module?.slice(1) || 'Demo'; 
+	 
+		DynamicComponent = dynamic(
 		import('../../components/Demo/' + moduleTag)
-	); */
-	//
+		); 
+	}
 
+	//
+	if(module === undefined || !moduleTag || !DynamicComponent) return null;
+	
 	return ( 
 		<div className={'grid-h grid-wrap h-full'}>
 			<div className={'w-full w-sm-main h-8'}>
@@ -54,18 +62,16 @@ const Modulo =()=> {
 					);
 				})}
 			</div> 
-			<div className={'grid-main pad-all-1'}>
-				module : {module}
-				<br />
-				moduleTag : {moduleTag}
-				<Header  description={'red'} />
-				{/* <DynamicComponent /> */}
+			<div className={'grid-main pad-all-1'}> 
+				{/* moduleTag : {moduleTag} */}
+				<Header title={moduleTag}  description={'red'} />
+				<DynamicComponent />
 			</div>
 		</div>
 	);
 }
 
 export default Modulo;
-module.exports = Modulo
+// module.exports = Modulo
 
 
