@@ -125,7 +125,7 @@ $scale_grid_ratios: map-get($_scale, scale_grid_ratios);
       @include css_dimension_property_builder(
         $scale_prop,
         $z_value + "-" + $dimensions_grid_ratio,
-        (($z_value / $dimensions_grid_ratio) * 100) + \%,
+        (($z_value / $dimensions_grid_ratio) * 100)+#{'%'},
         $mq_size_key
       );
     }

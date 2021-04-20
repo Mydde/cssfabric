@@ -5,15 +5,18 @@ $config: (
       description: 'css-fabric global config variables'
     ),
     _data: (
-      CFG_HAS_DIMENSION_STRICT: false,
-      CFG_HAS_DIMENSION_MIN: false,
-      CFG_HAS_DIMENSION_MAX: false,
+      CFG_HAS_DIMENSION_STRICT: true,
+      CFG_HAS_DIMENSION_MIN: true,
+      CFG_HAS_DIMENSION_MAX: true,
       grid_class_name: grid,
+      grid_class_name_short: grid,
       grid_separator: '-',
       grid_hor_code: h,
       grid_vert_code: v,
       table_class_name: table,
       table_class_name_short: tbl,
+      text_class_name: text,
+      text_class_name_short: txt,
       media_quey_sizes: (
         sm: 35.5,
         md: 48,
@@ -34,7 +37,10 @@ $config: (
       table_class_name: "",
       table_class_name_short: "",
       media_quey_sizes: "",
-      grid_ratios: ""
+      grid_ratios: "",
+      text_class_name_short: "",
+      text_class_name: "",
+      grid_class_name_short: ""
     )
   ),
   box: (
@@ -172,6 +178,56 @@ $config: (
       table_border_color_header: _,
       table_border_color_main: _,
       table_border_color_second: _
+    )
+  ),
+  text: (
+    _metadata: (
+      title: 'fabric.css.text',
+      description: 'css-fabric text module to set text style on all html elements'
+    ),
+    _data: (
+      font_sizes: 5,
+      font_sizes_unit: em,
+      font_sizes_h1_em: 3,
+      font_sizes_h_min_em: 0.6,
+      font_predefined_colors: (
+        msg: "",
+        alert: "",
+        warning: "",
+        important: "",
+        default: ""
+      ),
+      text_ellipsis_tag: ellipsis,
+      text_transform: (
+        cap: capitalize,
+        up: uppercase,
+        low: lowercase,
+        none: none,
+        full: full-width
+      ),
+      font_weights: (
+        cap: normal,
+        bold: bold,
+        light: lighter,
+        bolder: bolder
+      ),
+      text_align: (
+        l: left,
+        r: right,
+        c: center,
+        j: justify
+      )
+    ),
+    _docs: (
+      font_sizes: "",
+      font_sizes_unit: "",
+      font_predefined_colors: "",
+      font_sizes_h1_em: "",
+      font_sizes_h_min_em: "",
+      text_ellipsis_tag: "",
+      text_transform: "",
+      font_weights: "",
+      text_align: ""
     )
   ),
   zindex: (

@@ -35,7 +35,7 @@ $box_display_props: map-get($_box, box_display_props);
 @mixin css_border_property_builder($css_prop, $grid_key, $rule, $size_value) {
   // concatenate "-with" to property name when property is "border"
   $final_rule: if($css_prop== border, null, null);
-  $suffix_rule: if($css_prop== border, solid red, null);
+  $suffix_rule: if($css_prop== border, solid #ededed, null);
 
   @each $grid_size_value in $rule {
     #{$css_prop}-#{$grid_size_value}#{$final_rule}: $size_value $suffix_rule;
@@ -45,7 +45,7 @@ $box_display_props: map-get($_box, box_display_props);
 // loop trough padding margin ...
 @each $css_prop, $css_prop_short in $box_css_props_shorthands {
   @each $grid_key, $rule in $box_side_shorthands {
-    // css property name
+    // css property name 
     .#{$css_prop_short}-#{$grid_key} {
       @for $grid_size_value from 1 through $box_sizes {
         $css_size_value: ($grid_size_value * $box_unit_size) + $box_unit;

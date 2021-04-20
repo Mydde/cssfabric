@@ -50,7 +50,14 @@ const json_comments = (file) =>{
       })
 
       if(out_docs_changed)   file_content[module_name]._docs = Object.assign(file_content[module_name]._docs,out_docs)  ;
+    }else{
+      file_content[module_name] = {
+        "_metadata":{},
+        "_data":{},
+        "_docs":{}
+      }
     }
+
   } else {
     console.log("module not registered or filename mismatch : " + module_name);
   }

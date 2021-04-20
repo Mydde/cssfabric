@@ -5,15 +5,18 @@
 			"description": "'css-fabric global config variables'"
 		},
 		"_data": {
-			"CFG_HAS_DIMENSION_STRICT": false,
-			"CFG_HAS_DIMENSION_MIN": false,
-			"CFG_HAS_DIMENSION_MAX": false,
+			"CFG_HAS_DIMENSION_STRICT": true,
+			"CFG_HAS_DIMENSION_MIN": true,
+			"CFG_HAS_DIMENSION_MAX": true,
 			"grid_class_name": "grid",
+			"grid_class_name_short": "grid",
 			"grid_separator": "'-'",
 			"grid_hor_code": "h",
 			"grid_vert_code": "v",
 			"table_class_name": "table",
 			"table_class_name_short": "tbl",
+			"text_class_name": "text",
+			"text_class_name_short": "txt",
 			"media_quey_sizes": {
 				"sm": 35.5,
 				"md": 48,
@@ -37,7 +40,10 @@
 			"table_class_name": "",
 			"table_class_name_short": "",
 			"media_quey_sizes": "",
-			"grid_ratios": ""
+			"grid_ratios": "",
+			"text_class_name_short": "",
+			"text_class_name": "",
+			"grid_class_name_short": ""
 		}
 	}
 }

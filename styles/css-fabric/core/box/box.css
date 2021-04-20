@@ -4,322 +4,322 @@
 */
 .brd-t, .brd-t-1 {
   /* border-t rule : set 0.25em size for top border.  */
-  border-top: 0.25em solid red;
+  border-top: 0.25em solid #ededed;
 }
 .brd-t-2 {
   /* border-t rule : set 0.5em size for top border.  */
-  border-top: 0.5em solid red;
+  border-top: 0.5em solid #ededed;
 }
 .brd-t-3 {
   /* border-t rule : set 0.75em size for top border.  */
-  border-top: 0.75em solid red;
+  border-top: 0.75em solid #ededed;
 }
 .brd-t-4 {
   /* border-t rule : set 1em size for top border.  */
-  border-top: 1em solid red;
+  border-top: 1em solid #ededed;
 }
 .brd-t-5 {
   /* border-t rule : set 1.25em size for top border.  */
-  border-top: 1.25em solid red;
+  border-top: 1.25em solid #ededed;
 }
 .brd-t-6 {
   /* border-t rule : set 1.5em size for top border.  */
-  border-top: 1.5em solid red;
+  border-top: 1.5em solid #ededed;
 }
 .brd-t-7 {
   /* border-t rule : set 1.75em size for top border.  */
-  border-top: 1.75em solid red;
+  border-top: 1.75em solid #ededed;
 }
 .brd-t-8 {
   /* border-t rule : set 2em size for top border.  */
-  border-top: 2em solid red;
+  border-top: 2em solid #ededed;
 }
 
 .brd-b, .brd-b-1 {
   /* border-b rule : set 0.25em size for bottom border.  */
-  border-bottom: 0.25em solid red;
+  border-bottom: 0.25em solid #ededed;
 }
 .brd-b-2 {
   /* border-b rule : set 0.5em size for bottom border.  */
-  border-bottom: 0.5em solid red;
+  border-bottom: 0.5em solid #ededed;
 }
 .brd-b-3 {
   /* border-b rule : set 0.75em size for bottom border.  */
-  border-bottom: 0.75em solid red;
+  border-bottom: 0.75em solid #ededed;
 }
 .brd-b-4 {
   /* border-b rule : set 1em size for bottom border.  */
-  border-bottom: 1em solid red;
+  border-bottom: 1em solid #ededed;
 }
 .brd-b-5 {
   /* border-b rule : set 1.25em size for bottom border.  */
-  border-bottom: 1.25em solid red;
+  border-bottom: 1.25em solid #ededed;
 }
 .brd-b-6 {
   /* border-b rule : set 1.5em size for bottom border.  */
-  border-bottom: 1.5em solid red;
+  border-bottom: 1.5em solid #ededed;
 }
 .brd-b-7 {
   /* border-b rule : set 1.75em size for bottom border.  */
-  border-bottom: 1.75em solid red;
+  border-bottom: 1.75em solid #ededed;
 }
 .brd-b-8 {
   /* border-b rule : set 2em size for bottom border.  */
-  border-bottom: 2em solid red;
+  border-bottom: 2em solid #ededed;
 }
 
 .brd-l, .brd-l-1 {
   /* border-l rule : set 0.25em size for left border.  */
-  border-left: 0.25em solid red;
+  border-left: 0.25em solid #ededed;
 }
 .brd-l-2 {
   /* border-l rule : set 0.5em size for left border.  */
-  border-left: 0.5em solid red;
+  border-left: 0.5em solid #ededed;
 }
 .brd-l-3 {
   /* border-l rule : set 0.75em size for left border.  */
-  border-left: 0.75em solid red;
+  border-left: 0.75em solid #ededed;
 }
 .brd-l-4 {
   /* border-l rule : set 1em size for left border.  */
-  border-left: 1em solid red;
+  border-left: 1em solid #ededed;
 }
 .brd-l-5 {
   /* border-l rule : set 1.25em size for left border.  */
-  border-left: 1.25em solid red;
+  border-left: 1.25em solid #ededed;
 }
 .brd-l-6 {
   /* border-l rule : set 1.5em size for left border.  */
-  border-left: 1.5em solid red;
+  border-left: 1.5em solid #ededed;
 }
 .brd-l-7 {
   /* border-l rule : set 1.75em size for left border.  */
-  border-left: 1.75em solid red;
+  border-left: 1.75em solid #ededed;
 }
 .brd-l-8 {
   /* border-l rule : set 2em size for left border.  */
-  border-left: 2em solid red;
+  border-left: 2em solid #ededed;
 }
 
 .brd-r, .brd-r-1 {
   /* border-r rule : set 0.25em size for right border.  */
-  border-right: 0.25em solid red;
+  border-right: 0.25em solid #ededed;
 }
 .brd-r-2 {
   /* border-r rule : set 0.5em size for right border.  */
-  border-right: 0.5em solid red;
+  border-right: 0.5em solid #ededed;
 }
 .brd-r-3 {
   /* border-r rule : set 0.75em size for right border.  */
-  border-right: 0.75em solid red;
+  border-right: 0.75em solid #ededed;
 }
 .brd-r-4 {
   /* border-r rule : set 1em size for right border.  */
-  border-right: 1em solid red;
+  border-right: 1em solid #ededed;
 }
 .brd-r-5 {
   /* border-r rule : set 1.25em size for right border.  */
-  border-right: 1.25em solid red;
+  border-right: 1.25em solid #ededed;
 }
 .brd-r-6 {
   /* border-r rule : set 1.5em size for right border.  */
-  border-right: 1.5em solid red;
+  border-right: 1.5em solid #ededed;
 }
 .brd-r-7 {
   /* border-r rule : set 1.75em size for right border.  */
-  border-right: 1.75em solid red;
+  border-right: 1.75em solid #ededed;
 }
 .brd-r-8 {
   /* border-r rule : set 2em size for right border.  */
-  border-right: 2em solid red;
+  border-right: 2em solid #ededed;
 }
 
 .brd-all, .brd-all-1 {
   /* border-all rule : set 0.25em size for top bottom left right border.  */
-  border-top: 0.25em solid red;
-  border-bottom: 0.25em solid red;
-  border-left: 0.25em solid red;
-  border-right: 0.25em solid red;
+  border-top: 0.25em solid #ededed;
+  border-bottom: 0.25em solid #ededed;
+  border-left: 0.25em solid #ededed;
+  border-right: 0.25em solid #ededed;
 }
 .brd-all-2 {
   /* border-all rule : set 0.5em size for top bottom left right border.  */
-  border-top: 0.5em solid red;
-  border-bottom: 0.5em solid red;
-  border-left: 0.5em solid red;
-  border-right: 0.5em solid red;
+  border-top: 0.5em solid #ededed;
+  border-bottom: 0.5em solid #ededed;
+  border-left: 0.5em solid #ededed;
+  border-right: 0.5em solid #ededed;
 }
 .brd-all-3 {
   /* border-all rule : set 0.75em size for top bottom left right border.  */
-  border-top: 0.75em solid red;
-  border-bottom: 0.75em solid red;
-  border-left: 0.75em solid red;
-  border-right: 0.75em solid red;
+  border-top: 0.75em solid #ededed;
+  border-bottom: 0.75em solid #ededed;
+  border-left: 0.75em solid #ededed;
+  border-right: 0.75em solid #ededed;
 }
 .brd-all-4 {
   /* border-all rule : set 1em size for top bottom left right border.  */
-  border-top: 1em solid red;
-  border-bottom: 1em solid red;
-  border-left: 1em solid red;
-  border-right: 1em solid red;
+  border-top: 1em solid #ededed;
+  border-bottom: 1em solid #ededed;
+  border-left: 1em solid #ededed;
+  border-right: 1em solid #ededed;
 }
 .brd-all-5 {
   /* border-all rule : set 1.25em size for top bottom left right border.  */
-  border-top: 1.25em solid red;
-  border-bottom: 1.25em solid red;
-  border-left: 1.25em solid red;
-  border-right: 1.25em solid red;
+  border-top: 1.25em solid #ededed;
+  border-bottom: 1.25em solid #ededed;
+  border-left: 1.25em solid #ededed;
+  border-right: 1.25em solid #ededed;
 }
 .brd-all-6 {
   /* border-all rule : set 1.5em size for top bottom left right border.  */
-  border-top: 1.5em solid red;
-  border-bottom: 1.5em solid red;
-  border-left: 1.5em solid red;
-  border-right: 1.5em solid red;
+  border-top: 1.5em solid #ededed;
+  border-bottom: 1.5em solid #ededed;
+  border-left: 1.5em solid #ededed;
+  border-right: 1.5em solid #ededed;
 }
 .brd-all-7 {
   /* border-all rule : set 1.75em size for top bottom left right border.  */
-  border-top: 1.75em solid red;
-  border-bottom: 1.75em solid red;
-  border-left: 1.75em solid red;
-  border-right: 1.75em solid red;
+  border-top: 1.75em solid #ededed;
+  border-bottom: 1.75em solid #ededed;
+  border-left: 1.75em solid #ededed;
+  border-right: 1.75em solid #ededed;
 }
 .brd-all-8 {
   /* border-all rule : set 2em size for top bottom left right border.  */
-  border-top: 2em solid red;
-  border-bottom: 2em solid red;
-  border-left: 2em solid red;
-  border-right: 2em solid red;
+  border-top: 2em solid #ededed;
+  border-bottom: 2em solid #ededed;
+  border-left: 2em solid #ededed;
+  border-right: 2em solid #ededed;
 }
 
 .brd-u, .brd-u-1 {
   /* border-u rule : set 0.25em size for bottom left right border.  */
-  border-bottom: 0.25em solid red;
-  border-left: 0.25em solid red;
-  border-right: 0.25em solid red;
+  border-bottom: 0.25em solid #ededed;
+  border-left: 0.25em solid #ededed;
+  border-right: 0.25em solid #ededed;
 }
 .brd-u-2 {
   /* border-u rule : set 0.5em size for bottom left right border.  */
-  border-bottom: 0.5em solid red;
-  border-left: 0.5em solid red;
-  border-right: 0.5em solid red;
+  border-bottom: 0.5em solid #ededed;
+  border-left: 0.5em solid #ededed;
+  border-right: 0.5em solid #ededed;
 }
 .brd-u-3 {
   /* border-u rule : set 0.75em size for bottom left right border.  */
-  border-bottom: 0.75em solid red;
-  border-left: 0.75em solid red;
-  border-right: 0.75em solid red;
+  border-bottom: 0.75em solid #ededed;
+  border-left: 0.75em solid #ededed;
+  border-right: 0.75em solid #ededed;
 }
 .brd-u-4 {
   /* border-u rule : set 1em size for bottom left right border.  */
-  border-bottom: 1em solid red;
-  border-left: 1em solid red;
-  border-right: 1em solid red;
+  border-bottom: 1em solid #ededed;
+  border-left: 1em solid #ededed;
+  border-right: 1em solid #ededed;
 }
 .brd-u-5 {
   /* border-u rule : set 1.25em size for bottom left right border.  */
-  border-bottom: 1.25em solid red;
-  border-left: 1.25em solid red;
-  border-right: 1.25em solid red;
+  border-bottom: 1.25em solid #ededed;
+  border-left: 1.25em solid #ededed;
+  border-right: 1.25em solid #ededed;
 }
 .brd-u-6 {
   /* border-u rule : set 1.5em size for bottom left right border.  */
-  border-bottom: 1.5em solid red;
-  border-left: 1.5em solid red;
-  border-right: 1.5em solid red;
+  border-bottom: 1.5em solid #ededed;
+  border-left: 1.5em solid #ededed;
+  border-right: 1.5em solid #ededed;
 }
 .brd-u-7 {
   /* border-u rule : set 1.75em size for bottom left right border.  */
-  border-bottom: 1.75em solid red;
-  border-left: 1.75em solid red;
-  border-right: 1.75em solid red;
+  border-bottom: 1.75em solid #ededed;
+  border-left: 1.75em solid #ededed;
+  border-right: 1.75em solid #ededed;
 }
 .brd-u-8 {
   /* border-u rule : set 2em size for bottom left right border.  */
-  border-bottom: 2em solid red;
-  border-left: 2em solid red;
-  border-right: 2em solid red;
+  border-bottom: 2em solid #ededed;
+  border-left: 2em solid #ededed;
+  border-right: 2em solid #ededed;
 }
 
 .brd-ii, .brd-ii-1 {
   /* border-ii rule : set 0.25em size for left right border.  */
-  border-left: 0.25em solid red;
-  border-right: 0.25em solid red;
+  border-left: 0.25em solid #ededed;
+  border-right: 0.25em solid #ededed;
 }
 .brd-ii-2 {
   /* border-ii rule : set 0.5em size for left right border.  */
-  border-left: 0.5em solid red;
-  border-right: 0.5em solid red;
+  border-left: 0.5em solid #ededed;
+  border-right: 0.5em solid #ededed;
 }
 .brd-ii-3 {
   /* border-ii rule : set 0.75em size for left right border.  */
-  border-left: 0.75em solid red;
-  border-right: 0.75em solid red;
+  border-left: 0.75em solid #ededed;
+  border-right: 0.75em solid #ededed;
 }
 .brd-ii-4 {
   /* border-ii rule : set 1em size for left right border.  */
-  border-left: 1em solid red;
-  border-right: 1em solid red;
+  border-left: 1em solid #ededed;
+  border-right: 1em solid #ededed;
 }
 .brd-ii-5 {
   /* border-ii rule : set 1.25em size for left right border.  */
-  border-left: 1.25em solid red;
-  border-right: 1.25em solid red;
+  border-left: 1.25em solid #ededed;
+  border-right: 1.25em solid #ededed;
 }
 .brd-ii-6 {
   /* border-ii rule : set 1.5em size for left right border.  */
-  border-left: 1.5em solid red;
-  border-right: 1.5em solid red;
+  border-left: 1.5em solid #ededed;
+  border-right: 1.5em solid #ededed;
 }
 .brd-ii-7 {
   /* border-ii rule : set 1.75em size for left right border.  */
-  border-left: 1.75em solid red;
-  border-right: 1.75em solid red;
+  border-left: 1.75em solid #ededed;
+  border-right: 1.75em solid #ededed;
 }
 .brd-ii-8 {
   /* border-ii rule : set 2em size for left right border.  */
-  border-left: 2em solid red;
-  border-right: 2em solid red;
+  border-left: 2em solid #ededed;
+  border-right: 2em solid #ededed;
 }
 
 .brd-tb, .brd-tb-1 {
   /* border-tb rule : set 0.25em size for top bottom border.  */
-  border-top: 0.25em solid red;
-  border-bottom: 0.25em solid red;
+  border-top: 0.25em solid #ededed;
+  border-bottom: 0.25em solid #ededed;
 }
 .brd-tb-2 {
   /* border-tb rule : set 0.5em size for top bottom border.  */
-  border-top: 0.5em solid red;
-  border-bottom: 0.5em solid red;
+  border-top: 0.5em solid #ededed;
+  border-bottom: 0.5em solid #ededed;
 }
 .brd-tb-3 {
   /* border-tb rule : set 0.75em size for top bottom border.  */
-  border-top: 0.75em solid red;
-  border-bottom: 0.75em solid red;
+  border-top: 0.75em solid #ededed;
+  border-bottom: 0.75em solid #ededed;
 }
 .brd-tb-4 {
   /* border-tb rule : set 1em size for top bottom border.  */
-  border-top: 1em solid red;
-  border-bottom: 1em solid red;
+  border-top: 1em solid #ededed;
+  border-bottom: 1em solid #ededed;
 }
 .brd-tb-5 {
   /* border-tb rule : set 1.25em size for top bottom border.  */
-  border-top: 1.25em solid red;
-  border-bottom: 1.25em solid red;
+  border-top: 1.25em solid #ededed;
+  border-bottom: 1.25em solid #ededed;
 }
 .brd-tb-6 {
   /* border-tb rule : set 1.5em size for top bottom border.  */
-  border-top: 1.5em solid red;
-  border-bottom: 1.5em solid red;
+  border-top: 1.5em solid #ededed;
+  border-bottom: 1.5em solid #ededed;
 }
 .brd-tb-7 {
   /* border-tb rule : set 1.75em size for top bottom border.  */
-  border-top: 1.75em solid red;
-  border-bottom: 1.75em solid red;
+  border-top: 1.75em solid #ededed;
+  border-bottom: 1.75em solid #ededed;
 }
 .brd-tb-8 {
   /* border-tb rule : set 2em size for top bottom border.  */
-  border-top: 2em solid red;
-  border-bottom: 2em solid red;
+  border-top: 2em solid #ededed;
+  border-bottom: 2em solid #ededed;
 }
 
 .pad-t, .pad-t-1 {

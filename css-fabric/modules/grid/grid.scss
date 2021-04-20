@@ -71,7 +71,7 @@ $v_prop: #{$CFG_GRID_CODE}#{$CFG_GRID_SEPARATOR}#{$CFG_GRID_VERT};
   }
 
   &.#{$CFG_GRID_CODE}#{$CFG_GRID_SEPARATOR}inline {
-    display: inline-flex !important;
+    display: inline-flex;
   }
 
   &.#{$CFG_GRID_CODE}#{$CFG_GRID_SEPARATOR}overflow {
