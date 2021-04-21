@@ -5,7 +5,8 @@ const gulp = require("gulp"),
   sassExport = require("gulp-sass-export"),
   mergeJson = require("gulp-merge-json"),
   gulFileList = require("gulp-filelist"),
-  spawn = require("cross-spawn");
+  spawn = require("cross-spawn"),
+  gulpDownload = require("gulp-download-stream");
 
 /**
  *
@@ -211,6 +212,18 @@ function watchInclude(cb) {
   cb();
 }
 
+/* download(url)
+	.pipe(gulp.dest("downloads/")); */
+
+function taskDownload(cb) {
+  gulpDownload(
+    "https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
+  ).pipe(gulp.dest(  "resources/css/"  ));
+
+  cb();
+}
+
 exports.watchJson = watchJsonTask;
 exports.watchSass = watchSassTask;
 exports.watchInclude = watchInclude;
+exports.taskDownload = taskDownload;
