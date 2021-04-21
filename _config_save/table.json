@@ -1,0 +1,16 @@
+{
+    "table": {
+        "_metadata": {
+            "title": "'fabric.css.table'",
+            "description": "'css-fabric table module to set different table styles'" 
+        },
+        "_data": {
+            "table_bg_color_head": "#f4f4f4",
+            "table_bg_color_strip_main": "#ededed",
+            "table_bg_color_strip_second": "#f5f5f5",
+            "table_border_color_header": "#ccc",
+            "table_border_color_main": "#ededed",
+            "table_border_color_second": "#f5f5f5"
+        }
+    }
+}

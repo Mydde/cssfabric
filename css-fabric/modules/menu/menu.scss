@@ -1,0 +1,79 @@
+/*
+ css-fabric 
+ menu system
+*/
+
+// load scss config file
+@use '../../_utils';
+
+// load general config variables
+$_cfg: utils.get_conf();
+// load local config variables
+$_menu: utils.get_conf_data(menu);
+
+// read variables
+$menu_class_name: map-get($_cfg, menu_class_name);
+$menu_class_name_short: map-get($_cfg, menu_class_name_short);
+
+$menu_item_class_name: map-get($_menu, menu_item_class_name);
+$menu_item_class_name_short: map-get($_menu, menu_item_class_name_short);
+
+$orientations: map-get($_menu, orientations);
+$menu_item_disabled_tag: map-get($_menu, menu_item_disabled_tag);
+$menu_item_selected_tag: map-get($_menu, menu_item_selected_tag);
+
+$menu_dropdown_tag: map-get($_menu, menu_dropdown_tag);
+$menu_dropdown_open: map-get($_menu, menu_dropdown_open);
+$menu_dropdown_close: map-get($_menu, menu_dropdown_close);
+
+.#{$menu_class_name_short} {
+	&.#{$menu_class_name} {
+		@each $orientation_key, $orientation in $orientations {
+			&.test-#{$orientation_key} {
+				
+               
+
+                @if $orientation_key == h {
+                    display: flex;
+                    &-scroll{
+                        dsp: none;
+                    }
+                }
+                color: red;
+
+                & li.#{$menu_item_class_name}{
+                    dsp: none;
+                }
+
+                 
+			}
+		}
+	}
+}
+
+
+/* & li.#{$menu_item_class_name}{
+    dsp: none;
+}
+&-drop{
+    dsp: none;
+    & .#{$menu_class_name}-#{$menu_dropdown_open}{
+        dsp: none;
+        & li.#{$menu_item_class_name}, > li{
+            dsp: none;
+        }
+    }
+    & .#{$menu_class_name}-#{$menu_dropdown_close}{
+        dsp: none;
+        & li.#{$menu_item_class_name}, > li{
+            dsp: none;
+        }
+    }
+}
+
+@if $orientation_key == h {
+    display: flex;
+    &-scroll{
+        dsp: none;
+    }
+} */

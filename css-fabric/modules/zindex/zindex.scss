@@ -1,0 +1,26 @@
+/*
+ css-fabric 
+ zIndex system
+*/ 
+
+// load scss config file
+@use '../../_utils';
+
+// load general config variables 
+$_cfg: utils.get_conf();
+// load local config variables
+$_zindex: utils.get_conf_data(zindex);
+
+// read variables
+$z_groups: map-get($_zindex, z_groups);
+ 
+
+@each $z_group in $z_groups {
+  $i: index($z_groups, $z-group);
+  @for $z_value from 0 through 9 {
+    .zI-#{$z_group}-#{$z_value} {
+      /* set zIndex value */
+      z-index: ($i * 100) + (($z_value + 1) * 10);
+    }
+  }
+}

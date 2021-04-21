@@ -1,0 +1,127 @@
+/*
+ css-fabric 
+ tables system
+*/
+
+// load scss config file
+@use '../../_utils';
+
+// load general config variables 
+$_cfg: utils.get_conf();
+// load local config variables
+$_table: utils.get_conf_data(table);
+
+// read variables
+$TABLE_PREFIX: map-get($_cfg, table_class_name);
+$TABLE_PREFIX_SHORT: map-get($_cfg, table_class_name_short);
+
+$table_bg_color_head: map-get($_table, table_bg_color_head);
+$table_bg_color_strip_main: map-get($_table, table_bg_color_strip_main);
+$table_bg_color_strip_second: map-get($_table, table_bg_color_strip_second);
+
+$table_border_color_header: map-get($_table, table_border_color_header);
+$table_border_color_main: map-get($_table, table_border_color_main);
+$table_border_color_second: map-get($_table, table_border_color_second);
+
+@mixin bg_strip($nb_strips) {
+  &.#{$TABLE_PREFIX_SHORT}-bg-strip-#{$nb_strips} {
+    @for $nb_strip from 1 through $nb_strips {
+      tr:nth-child(#{$nb_strips}n + #{$nb_strip}) td {
+        @if ($nb_strip == $nb_strips) {
+          background-color: #{$table_bg_color_strip_main}; //#{$CFG_TABLE_BG_COLOR_STRIP_MAIN};
+        }
+        @if (
+          $nb_strips%2 ==
+            1 and
+            $nb_strip%2 ==
+            0 and
+            $nb_strips >
+            2 and
+            $nb_strip !=
+            $nb_strips
+        ) {
+          // border-bottom: 10px solid black;
+        }
+      }
+    }
+  }
+}
+
+// try
+// again
+
+@mixin sticky {
+  &.#{$TABLE_PREFIX_SHORT}-sticky {
+    position: relative;
+    thead tr {
+      position: static;
+      th {
+        position: sticky;
+        top: 0;
+      }
+    }
+  }
+}
+
+.#{$TABLE_PREFIX} {
+  border-collapse: collapse;
+  border-spacing: 0;
+
+  thead {
+    position: relative;
+  }
+
+  &.#{$TABLE_PREFIX_SHORT}-head thead tr th {
+    background-color: #{table_bg_color_head};
+  }
+
+  thead tr th {
+    padding: 0.25em;
+  }
+
+  tbody tr td {
+    padding: 0.25em;
+  }
+
+  &.#{$TABLE_PREFIX_SHORT}-layout {
+    table-layout: fixed;
+  }
+
+  &.#{$TABLE_PREFIX_SHORT}-h-line {
+    th,
+    td {
+      border-bottom: 1px solid #{$table_border_color_main};
+    }
+    &:last-child {
+      border-bottom: none;
+    }
+  }
+
+  &.#{$TABLE_PREFIX_SHORT}-v-line tr th,
+  &.#{$TABLE_PREFIX_SHORT}-v-line tr td {
+    border-right: 1px solid #{$table_border_color_main};
+    &:last-child {
+      border-right: none;
+    }
+  }
+
+  &.#{$TABLE_PREFIX_SHORT}-border {
+    border: 1px solid #{$table_border_color_main};
+  }
+
+  &.#{$TABLE_PREFIX_SHORT}-shad {
+    thead tr th {
+      box-shadow: 4px 4px 8px #ccc;
+      z-index: 11;
+      &:last-child {
+        box-shadow: 4px 4px 8px #ccc;
+        z-index: -1;
+      }
+    }
+  }
+
+  @include bg_strip(2);
+  @include bg_strip(5);
+
+  @include sticky;
+}

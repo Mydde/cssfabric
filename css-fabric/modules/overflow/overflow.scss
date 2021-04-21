@@ -1,0 +1,26 @@
+/*
+ css-fabric 
+ overflow system
+*/
+
+// load scss config file
+@use '../../_utils';
+
+// load general config variables
+$_cfg: utils.get_conf();
+// load local config variables
+$_overflow: utils.get_conf_data(overflow);
+
+// read variables
+$overflow_props: map-get($_overflow, overflow_props);
+$overflow_values: map-get($_overflow, overflow_values);
+
+/* css overflow rules */
+@each $overflow_prop in $overflow_props {
+
+  @each $overflow_value in $overflow_values {
+    .#{$overflow_prop}-#{$overflow_value} {
+      overflow: $overflow_value; 
+    }
+  }
+}
