@@ -14,10 +14,10 @@ interface ICssProperties {
 }
 
 export const fabricModuleProperties = {
-  red: (props: ICssPropertiesProps): ICssProperties => {
+  getModuleConf: (props: ICssPropertiesProps): ICssProperties => {
     const fabricModule = props.module;
 
-    const moduleConf = conf_fabric["css-config"].modules[fabricModule];
+    const moduleConf = conf_fabric["css-config"]?.modules?.[fabricModule] || {};
 
     const meta = moduleConf._metadata;
     const data = moduleConf._data;
@@ -27,9 +27,9 @@ export const fabricModuleProperties = {
       meta,
       data,
       docs,
-      title: meta.title,
-      tag: meta.tag,
-      description: meta.description,
+      title: meta?.title || fabricModule,
+      tag: meta?.tag|| fabricModule,
+      description: meta?.description|| fabricModule,
     };
   },
 };

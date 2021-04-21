@@ -34,7 +34,7 @@ const Modulo = ({ props }) => {
   let moduleTag;
   let DynamicComponent;
   // @ts-ignore
-  const tagProperties = fabricModuleProperties.red({ module: module });
+  const tagProperties = fabricModuleProperties.getModuleConf({ module: module });
 
   if (module != undefined) {
     // @ts-ignore

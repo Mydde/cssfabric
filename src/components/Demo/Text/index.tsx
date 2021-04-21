@@ -14,7 +14,7 @@ const  Text =  (props: Props)=> {
 	const { pid } = router.query
 
 	const fabricModule = 'text';
-	const tagProperties = fabricModuleProperties.red({ module: fabricModule });
+	const tagProperties = fabricModuleProperties.getModuleConf({ module: fabricModule });
 
 	let conf_text_meta = tagProperties.meta;
 	let conf_text_data = tagProperties.data;
