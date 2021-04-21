@@ -5,21 +5,21 @@
 
 // load scss config file 
 @use '../../_utils';  
-// load general config variables 
-$_cfg: utils.get_conf();
+// load general config variables  
+$_cfg: utils.get_conf(); 
 // load local config variables 
-$_box: utils.get_conf_data(box);
-
+$_box: utils.get_conf_data(box); 
+ 
 // read variables
-$box_unit: map-get($_box, box_unit);
-$box_unit_size: map-get($_box, box_unit_size);
-$box_sizes: map-get($_box, box_sizes);
-
+$box_unit: map-get($_box, box_unit);       
+$box_unit_size: map-get($_box, box_unit_size);  
+$box_sizes: map-get($_box, box_sizes);   
+ 
 $box_css_props_shorthands: map-get($_box, box_css_props_shorthands);
 $box_side_shorthands: map-get($_box, box_border_shorthands);
 
 $box_position_props: map-get($_box, box_position_props);
-$box_display_props: map-get($_box, box_display_props);
+$box_display_props: map-get($_box, box_display_props);   
 
 
 // adding {border}-{r} shorthand css rule for .{border}-{r}-1
@@ -27,9 +27,9 @@ $box_display_props: map-get($_box, box_display_props);
   @if ($condition == 1) {
     @return "&,";
   } @else {
-    @return "";
-  }
-}
+    @return ""; 
+  }    
+}    
 
 // css border rules builder
 @mixin css_border_property_builder($css_prop, $grid_key, $rule, $size_value) {
@@ -37,11 +37,11 @@ $box_display_props: map-get($_box, box_display_props);
   $final_rule: if($css_prop== border, null, null);
   $suffix_rule: if($css_prop== border, solid #ededed, null);
 
-  @each $grid_size_value in $rule {
+  @each $grid_size_value in $rule { 
     #{$css_prop}-#{$grid_size_value}#{$final_rule}: $size_value $suffix_rule;
   }
-}
-
+} 
+ 
 // loop trough padding margin ...
 @each $css_prop, $css_prop_short in $box_css_props_shorthands {
   @each $grid_key, $rule in $box_side_shorthands {
