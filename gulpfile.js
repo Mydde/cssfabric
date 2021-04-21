@@ -74,8 +74,7 @@ const json_comments = (file) => {
 function fsf(filePath) {
   let module = filePath.substring(filePath.lastIndexOf("/") + 1);
   return (
-   " @use '../modules/"+module+"/"+module+"';" +   "\r\n"
-    // filePath.substring(filePath.lastIndexOf("/") + 1) + ": " + filePath + "\r\n"
+   " @use '../modules/"+module+"/"+module+"';" +   "\r\n" 
   );
 }
 
