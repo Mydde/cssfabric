@@ -19,15 +19,14 @@ const  Text =  (props: Props)=> {
 	let conf_text_meta = tagProperties.meta;
 	let conf_text_data = tagProperties.data;
 	let conf_text_docs = tagProperties.docs;
-
-	//const tag_shorthand = conf_fabric['_css-fabric-conf']._data.text_class_name_short;
+ 
 
 	const { font_weights, text_transform, text_align } = conf_text_data;
 
 
 	return (
 		<div>
-			{/* <pre>{JSON.stringify(conf_text, null, '\t')}</pre> */}
+			{/* <pre>{JSON.stringify(conf_text, null, '\t')}</pre> */} 
 			<SubHeaderH tag="" description="">
 				<SubHeader
 					tag={'text alignments'}
