@@ -1,54 +1,57 @@
 {
-    "input": {
-        "_metadata": {
-            "title": "'fabric.css.input'",
-            "description": "'css-fabric form.input module to set styles on all input elements'"
-        },
-        "_data": {
-            "input_size_unit": "em",
-            "input_size": {
-                "tiny": 1,
-                "medium": 4,
-                "default": 8,
-                "large": 10,
-                "full": "100%",
-                "custom": 10
-            },
-            "input_type": [
-                "button",
-                "checkbox",
-                "color",
-                "date",
-                "datetime-local",
-                "email",
-                "file",
-                "hidden",
-                "image",
-                "month", 
-                "number",
-                "password",
-                "Note",
-                "radio",
-                "range",
-                "reset",
-                "search",
-                "submit",
-                "tel",
-                "text",
-                "time",
-                "url"
-            ],
-            "input_attr":[
-                "autocomplete",
-                "autofocus",
-                "disabled",
-                "readonly",
-                "required"
-            ]
-        },
-        "_docs": {
-            "input_size_unit": "'input size in [input_size_unit]'",
-            "input_size": "'input size presets'"
-        }
-    }
+	"input": {
+		"_metadata": {
+			"title": "input",
+			"tag": "input",
+			"description": "'css-fabric form.input module to set styles on all input elements'"
+		},
+		"_data": {
+			"input_size_unit": "em",
+			"input_size": {
+				"tiny": 1,
+				"medium": 4,
+				"default": 8,
+				"large": 10,
+				"full": "100%",
+				"custom": 10
+			},
+			"input_type": [
+				"button",
+				"checkbox",
+				"color",
+				"date",
+				"datetime-local",
+				"email",
+				"file",
+				"hidden",
+				"image",
+				"month",
+				"number",
+				"password",
+				"Note",
+				"radio",
+				"range",
+				"reset",
+				"search",
+				"submit",
+				"tel",
+				"text",
+				"time",
+				"url"
+			],
+			"input_attr": [
+				"autocomplete",
+				"autofocus",
+				"disabled",
+				"readonly",
+				"required"
+			]
+		},
+		"_docs": {
+			"input_size_unit": "'input size in [input_size_unit]'",
+			"input_size": "'input size presets'",
+			"input_type": "_",
+			"input_attr": "_"
+		}
+	}
 }

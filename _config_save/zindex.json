@@ -1,11 +1,23 @@
 {
-    "zindex":{
-        "_metadata":{
-            "title": "'fabric.css.zindex'",
-            "description": "'css-fabric zindex module to set z-index on all html elements'" 
-        },
-        "_data":{
-            "z_groups":["a", "b", "c", "d", "e", "f", "g"]
-        }
-    }
+	"zindex": {
+		"_metadata": {
+			"title": "zindex",
+			"tag": "zI",
+			"description": "'css-fabric zindex module to set z-index on all html elements'"
+		},
+		"_data": {
+			"z_groups": [
+				"a",
+				"b",
+				"c",
+				"d",
+				"e",
+				"f",
+				"g"
+			]
+		},
+		"_docs": {
+			"z_groups": "_"
+		}
+	}
 }

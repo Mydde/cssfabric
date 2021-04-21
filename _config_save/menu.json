@@ -1,0 +1,32 @@
+{
+	"menu": {
+		"_metadata": {
+			"title": "menu",
+			"tag": "ul",
+			"description": "'css-fabric menu module to set menu style'"
+		},
+		"_data": {
+			"orientations": {
+				"v": "vertical",
+				"h": "horizontal"
+			},
+			"menu_item_class_name": "menu-item",
+			"menu_item_class_name_short": "li",
+			"menu_item_disabled_tag": "disabled",
+			"menu_item_selected_tag": "selected",
+			"menu_dropdown_tag": "drop",
+			"menu_dropdown_open": "open",
+			"menu_dropdown_close": "close"
+		},
+		"_docs": {
+			"menu_item_class_name": "",
+			"menu_item_class_name_short": "",
+			"menu_dropdown_tag": "",
+			"menu_item_disabled_tag": "",
+			"menu_item_selected_tag": "",
+			"orientations": "",
+			"menu_dropdown_open": "",
+			"menu_dropdown_close": ""
+		}
+	}
+}

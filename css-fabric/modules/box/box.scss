@@ -8,7 +8,7 @@
 // load general config variables  
 $_cfg: utils.get_conf(); 
 // load local config variables 
-$_box: utils.get_conf_data(box);  
+$_box: utils.get_conf_data(box);   
  
 // read variables
 $box_unit: map-get($_box, box_unit);       

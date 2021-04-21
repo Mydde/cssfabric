@@ -1,8 +1,8 @@
+@import url("https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize");
 /*
 * css-fabric 
 * padding, margin and border system
 */
-@import url("https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize");
 .brd-t, .brd-t-1 {
   /* border-t rule : set 0.25em size for top border.  */
   border-top: 0.25em solid #ededed;
@@ -1421,6 +1421,56 @@
 
 /*
  css-fabric 
+ menu system
+*/
+.ul.menu.test-v {
+  color: red;
+}
+
+.ul.menu.test-v li.menu-item {
+  dsp: none;
+}
+
+.ul.menu.test-h {
+  display: flex;
+  color: red;
+}
+
+.ul.menu.test-h-scroll {
+  dsp: none;
+}
+
+.ul.menu.test-h li.menu-item {
+  dsp: none;
+}
+
+/* & li.menu-item{
+    dsp: none;
+}
+&-drop{
+    dsp: none;
+    & .menu-open{
+        dsp: none;
+        & li.menu-item, > li{
+            dsp: none;
+        }
+    }
+    & .menu-close{
+        dsp: none;
+        & li.menu-item, > li{
+            dsp: none;
+        }
+    }
+}
+
+@if $orientation_key == h {
+    display: flex;
+    &-scroll{
+        dsp: none;
+    }
+} */
+/*
+ css-fabric 
  overflow system
 */
 /* css overflow rules */
@@ -1508,56 +1558,6 @@
   overflow: unset;
 }
 
-/*
- css-fabric 
- menu system
-*/
-.ul.menu.test-v {
-  color: red;
-}
-
-.ul.menu.test-v li.menu-item {
-  dsp: none;
-}
-
-.ul.menu.test-h {
-  display: flex;
-  color: red;
-}
-
-.ul.menu.test-h-scroll {
-  dsp: none;
-}
-
-.ul.menu.test-h li.menu-item {
-  dsp: none;
-}
-
-/* & li.menu-item{
-    dsp: none;
-}
-&-drop{
-    dsp: none;
-    & .menu-open{
-        dsp: none;
-        & li.menu-item, > li{
-            dsp: none;
-        }
-    }
-    & .menu-close{
-        dsp: none;
-        & li.menu-item, > li{
-            dsp: none;
-        }
-    }
-}
-
-@if $orientation_key == h {
-    display: flex;
-    &-scroll{
-        dsp: none;
-    }
-} */
 /*
  css-fabric 
  scale  system pointless
@@ -5193,13 +5193,5 @@
   /* set zIndex value */
   z-index: 800;
 }
-
-/* @use '../modules/scale/scale';
-@use '../modules/overflow/overflow';
-@use '../modules/box/box'; 
-@use '../modules/zindex/zindex'; 
-@use '../modules/table/table';   
-@use '../modules/grid/grid';       
-@use '../modules/text/text';    */
 
 /*# sourceMappingURL=css-fabric.css.map */

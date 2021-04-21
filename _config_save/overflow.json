@@ -1,12 +1,17 @@
 {
-    "overflow": {
-        "_metadata": {
-            "title": "'fabric.css.overflow'",
-            "description": "'css-fabric overflow module to set overflow styles on all html elements'" 
-        },
-        "_data":{
-            "overflow_props": "overflow overflow-x overflow-y",
-            "overflow_values": "visible hidden clip scroll auto initial unset"
-        }
-    }
+	"overflow": {
+		"_metadata": {
+			"title": "overflow",
+			"tag": "flow",
+			"description": "'css-fabric overflow module to set overflow styles on all html elements'"
+		},
+		"_data": {
+			"overflow_props": "overflow overflow-x overflow-y",
+			"overflow_values": "visible hidden clip scroll auto initial unset"
+		},
+		"_docs": {
+			"overflow_props": "",
+			"overflow_values": ""
+		}
+	}
 }

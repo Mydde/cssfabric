@@ -5,6 +5,7 @@
 			"tag": "grid",
 			"description": "'css-fabric grid module'"
 		},
-		"_docs": {}
+		"_docs": {},
+		"_data": {}
 	}
 }

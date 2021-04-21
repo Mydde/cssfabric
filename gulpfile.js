@@ -13,7 +13,7 @@ const gulp = require("gulp"),
  * @returns File
  */
 const json_comments = (file) => {
-  const { file_content, file_info } = file;
+  let { file_content, file_info } = file;
 
   file_info.relative = unescapeJs(file_info.relative);
   const module_name = file_info.relative.split("\\")?.pop().split(".")?.[0];
@@ -21,18 +21,28 @@ const json_comments = (file) => {
   if (file_content?.[module_name]) {
     let module_conf = file_content[module_name];
 
-    if (module_conf) {
-      const module_data = module_conf?.["_data"] || {};
-      const module_docs = module_conf?.["_docs"] || {};
+    if (module_conf && !module_conf?.["_metadata"])
+      module_conf["_metadata"] = {};
+    if (module_conf && !module_conf?.["_data"]) module_conf["_data"] = {};
+    if (module_conf && !module_conf?.["_docs"]) module_conf["_docs"] = {};
 
-      if (!module_conf?.["_docs"]) module_conf["_docs"] = {};
+    const module_out = {};
+
+    if (module_conf) {
+      const module_metadata = (module_out["_metadata"] =
+        module_conf?.["_metadata"] || {});
+      const module_data = (module_out["_data"] = module_conf?.["_data"] || {});
+      const module_docs = (module_out["_docs"] = module_conf?.["_docs"] || {});
 
       const out_docs = {};
       let out_docs_changed = false;
 
+      /**
+       * loop on _data keys, check if in _docs[]
+       */
       Object.keys(module_data).forEach((v, i, a) => {
-        if (!module_conf?.["_docs"]?.[v]) {
-          out_docs[v] = "";
+        if (!module_docs?.[v]) {
+          module_out["_docs"][v] = "";
           out_docs_changed = true;
         }
       });
@@ -42,20 +52,20 @@ const json_comments = (file) => {
         if (module_data?.[k] === undefined) {
           if (
             !Boolean(module_docs[k].length) ||
-            module_docs?.[k] !== "deleted:"
+            module_out["_docs"][k] !== "deleted"
           ) {
-            out_docs[k] = "deleted:" + module_docs[k];
+            module_out["_docs"][k] = "deleted-" + module_docs[k];
           } else {
-            (out_docs[k] = undefined), delete out_docs[k];
+            (module_out["_docs"] = undefined), delete out_docs[k];
           }
           out_docs_changed = true;
         }
       });
 
       if (out_docs_changed)
-        file_content[module_name]._docs = Object.assign(
-          file_content[module_name]._docs,
-          out_docs
+        file_content[module_name] = Object.assign(
+          file_content[module_name],
+          module_out
         );
     } else {
       file_content[module_name] = {
@@ -65,23 +75,34 @@ const json_comments = (file) => {
       };
     }
   } else {
+    file_content = {
+      [module_name]: {
+        _metadata: {},
+        _data: {},
+        _docs: {},
+      },
+    };
     console.log("module not registered or filename mismatch : " + module_name);
   }
 
   return { ...file_content };
 };
 
-function fsf(filePath) {
+/**
+ *
+ * @param {string} filePath
+ * @returns
+ */
+function fabricScssImportFile(filePath) {
   let module = filePath.substring(filePath.lastIndexOf("/") + 1);
-  return (
-   " @use '../modules/"+module+"/"+module+"';" +   "\r\n" 
-  );
+
+  return " @use '../modules/" + module + "/" + module + "';" + "\r\n";
 }
 
 const fabricRootDir = "./css-fabric",
   fabricStylesDir = "styles",
   fabricConfDir = `${fabricRootDir}/_config`,
-  fabricModuleDir = `${fabricRootDir}/modules`, 
+  fabricModuleDir = `${fabricRootDir}/modules`,
   generatedDir = `${fabricRootDir}/_generated`;
 
 /**
@@ -96,10 +117,19 @@ function task_scss2json(cb) {
   return cb();
 }
 
+/**
+ *
+ * @param {function} cb gulp callback
+ */
 function task_mergeInclude(cb) {
   gulp
     .src(fabricModuleDir + "/*/*.scss")
-    .pipe(gulFileList("css-fabric.scss-imports.scss", { destRowTemplate: fsf , removeExtensions: true }))
+    .pipe(
+      gulFileList("css-fabric.scss-imports.scss", {
+        destRowTemplate: fabricScssImportFile,
+        removeExtensions: true,
+      })
+    )
     .pipe(cache(task_mergeInclude))
     .pipe(gulp.dest(generatedDir))
     .on("end", () => {
@@ -163,7 +193,7 @@ function task_mergeConf(cb) {
 function watchJsonTask(cb) {
   gulp.watch(
     fabricConfDir + "/**/*.json",
-    gulp.series(task_addComments, task_scss2json, task_mergeConf)
+    gulp.series(task_mergeConf, task_addComments, task_scss2json)
   );
 
   cb();
