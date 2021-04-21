@@ -13,7 +13,7 @@ interface ICssProperties {
   tag: string;
 }
 
-export const cssProperties = {
+export const fabricModuleProperties = {
   red: (props: ICssPropertiesProps): ICssProperties => {
     const fabricModule = props.module;
 
@@ -34,4 +34,4 @@ export const cssProperties = {
   },
 };
 
-module.exports.cssProperties = cssProperties;
+module.exports.fabricModuleProperties = fabricModuleProperties;

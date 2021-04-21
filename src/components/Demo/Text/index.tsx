@@ -3,7 +3,7 @@ import { useRouter } from 'next/router'
 import { Header, SubHeader, SubSubHeader, SubHeaderH } from 'src/components/Headers';
  
 import conf_fabric from 'css-fabric/_generated/css.fabric.config.json';
-import { cssProperties } from 'src/utils/cssProperties';
+import { fabricModuleProperties } from '@/utils/fabricModuleProperties';
 import { CssFabricProperties } from 'src/components/CssFabricProperties';
 
 interface Props {}
@@ -14,7 +14,7 @@ const  Text =  (props: Props)=> {
 	const { pid } = router.query
 
 	const fabricModule = 'text';
-	const tagProperties = cssProperties.red({ module: fabricModule });
+	const tagProperties = fabricModuleProperties.red({ module: fabricModule });
 
 	let conf_text_meta = tagProperties.meta;
 	let conf_text_data = tagProperties.data;
