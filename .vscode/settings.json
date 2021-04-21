@@ -14,5 +14,6 @@
             "query": "author:${user} state:close repo:${owner}/${repository} sort:created-desc"
         }
     ],
-    "githubIssues.createInsertFormat": "url"
+    "githubIssues.createInsertFormat": "url",
+    "githubIssues.useBranchForIssues": "prompt"
 }

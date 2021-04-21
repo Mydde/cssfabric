@@ -1,4 +1,4 @@
-import  profile from  "css-fabric/_config/_css-fabric-conf.json";
+import  profile from  "css-fabric/_config/base.json";
 
 export default function Vars({ isConnected }) {
 
