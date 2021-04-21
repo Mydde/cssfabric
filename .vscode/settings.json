@@ -1,0 +1,18 @@
+{
+    "githubIssues.queries": [
+
+        {
+            "label": "My Issues",
+            "query": "default"
+        },
+        {
+            "label": "Created Issues",
+            "query": "author:${user} state:open repo:${owner}/${repository} sort:created-desc"
+        },
+        {
+            "label": "Closed Issues",
+            "query": "author:${user} state:close repo:${owner}/${repository} sort:created-desc"
+        }
+    ],
+    "githubIssues.createInsertFormat": "url"
+}
