@@ -1,0 +1,105 @@
+{
+	"_mock": {
+		"_metadata": {
+			"title": ""
+		},
+		"_data": {
+			"modules": {
+				"box": {
+					"html_elements": {
+						"*": {
+							"classNameKey": "",
+							"_data": "ext._data",
+							"css-rule": {
+								"padding-margin-border": {
+									"css-properties": {
+										"border": "brd",
+										"padding": "pad",
+										"margin": "marg"
+									},
+									"shorthands": {
+										"t": "top",
+										"b": "bottom",
+										"l": "left",
+										"r": "right",
+										"all": [
+											"top",
+											"bottom",
+											"left",
+											"right"
+										],
+										"u": [
+											"bottom",
+											"left",
+											"right"
+										],
+										"ii": [
+											"left",
+											"right"
+										],
+										"tb": [
+											"top ",
+											"bottom"
+										]
+									}
+								},
+								"position-properties": {
+									"css-properties": {
+										"position": "pos"
+									},
+									"shorthands": {
+										"absolute": "abs",
+										"relative": "rel",
+										"static": "stat",
+										"fixed": "fix",
+										"sticky": "sticky"
+									}
+								},
+								"display-properties": {
+									"css-properties": {
+										"position": ""
+									},
+									"shorthands": {
+										"block": "block",
+										"none": "rel",
+										"inline": "stat",
+										"table": "fix"
+									}
+								}
+							}
+						}
+					}
+				},
+				"grid": {
+					"html_elements": {
+						"*": {
+							"classNameKey": "grd"
+						}
+					}
+				},
+				"table": {
+					"html_elements": {
+						"table": {
+							"classNameKey": "tbl",
+							"_data": "ext._data"
+						}
+					}
+				},
+				"base": {},
+				"forms": {
+					"html_elements": {
+						"form": {
+							"classNameKey": "frm"
+						},
+						"input": {
+							"classNameKey": "inp"
+						}
+					}
+				}
+			}
+		},
+		"_docs": {
+			"modules": ""
+		}
+	}
+}

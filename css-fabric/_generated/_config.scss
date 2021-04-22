@@ -1,4 +1,94 @@
 $config: (
+  _mock: (
+    _metadata: (
+      title: ""
+    ),
+    _data: (
+      modules: (
+        box: (
+          html_elements: (
+            *: (
+              classNameKey: "",
+              _data: ext._data,
+              css-rule: (
+                padding-margin-border: (
+                  css-properties: (
+                    border: brd,
+                    padding: pad,
+                    margin: marg
+                  ),
+                  shorthands: (
+                    t: top,
+                    b: bottom,
+                    l: left,
+                    r: right,
+                    all: (top, bottom, left, right),
+                    u: (bottom, left, right),
+                    ii: (left, right),
+                    tb: (top , bottom)
+                  )
+                ),
+                position-properties: (
+                  css-properties: (
+                    position: pos
+                  ),
+                  shorthands: (
+                    absolute: abs,
+                    relative: rel,
+                    static: stat,
+                    fixed: fix,
+                    sticky: sticky
+                  )
+                ),
+                display-properties: (
+                  css-properties: (
+                    position: ""
+                  ),
+                  shorthands: (
+                    block: block,
+                    none: rel,
+                    inline: stat,
+                    table: fix
+                  )
+                )
+              )
+            )
+          )
+        ),
+        grid: (
+          html_elements: (
+            *: (
+              classNameKey: grd
+            )
+          )
+        ),
+        table: (
+          html_elements: (
+            table: (
+              classNameKey: tbl,
+              _data: ext._data
+            )
+          )
+        ),
+        base: (
+          
+        ),
+        forms: (
+          html_elements: (
+            form: (
+              classNameKey: frm
+            ),
+            input: (
+              classNameKey: inp
+            )
+          )
+        )
+      )
+    ),
+    _docs: (
+      modules: ""
+    )
+  ),
   animation: (
     _metadata: (
       
@@ -22,9 +112,6 @@ $config: (
       CFG_HAS_DIMENSION_MAX: true,
       grid_class_name: grid,
       grid_class_name_short: grid,
-      grid_separator: '-',
-      grid_hor_code: h,
-      grid_vert_code: v,
       table_class_name: table,
       table_class_name_short: tbl,
       text_class_name: text,
@@ -45,9 +132,9 @@ $config: (
       CFG_HAS_DIMENSION_MIN: "",
       CFG_HAS_DIMENSION_MAX: "",
       grid_class_name: "",
-      grid_separator: "",
-      grid_hor_code: "",
-      grid_vert_code: "",
+      grid_separator: deleted,
+      grid_hor_code: deleted,
+      grid_vert_code: deleted,
       table_class_name: "",
       table_class_name_short: "",
       media_quey_sizes: "",
@@ -104,10 +191,14 @@ $config: (
       description: 'css-fabric grid module'
     ),
     _docs: (
-      
+      grid_separator: "",
+      grid_hor_code: "",
+      grid_vert_code: ""
     ),
     _data: (
-      
+      grid_separator: '-',
+      grid_hor_code: h,
+      grid_vert_code: v
     )
   ),
   input: (

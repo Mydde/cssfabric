@@ -9,13 +9,13 @@
 // load general config variables 
 $_cfg: utils.get_conf();
 // load local config variables
-$_box: utils.get_conf_data(grid); 
+$_grid: utils.get_conf_data(grid); 
 
 // read variables
 $CFG_GRID_CODE: map-get($_cfg, grid_class_name);
-$CFG_GRID_SEPARATOR: map-get($_cfg, grid_separator);
-$CFG_GRID_HOR: map-get($_cfg, grid_hor_code);
-$CFG_GRID_VERT: map-get($_cfg, grid_vert_code);
+$CFG_GRID_SEPARATOR: map-get($_grid, grid_separator);
+$CFG_GRID_HOR: map-get($_grid, grid_hor_code);
+$CFG_GRID_VERT: map-get($_grid, grid_vert_code);
 
 
 

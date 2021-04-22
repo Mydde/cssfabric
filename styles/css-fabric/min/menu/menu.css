@@ -1,1 +1,19 @@
-.ul.menu.test-v{color:red}.ul.menu.test-v li.menu-item{dsp:none}.ul.menu.test-h{display:flex;color:red}.ul.menu.test-h-scroll{dsp:none}.ul.menu.test-h li.menu-item{dsp:none}/*# sourceMappingURL=menu.css.map */
+/* Error: expected ")".
+ *   ,
+ * 9 |           html_elements: (
+ *   |                           ^
+ *   '
+ *   css-fabric\_generated\_config.scss 9:27  @use
+ *   css-fabric\_utils.scss 2:1               @use
+ *   css-fabric\modules\menu\menu.scss 7:1    root stylesheet */
+
+body::before {
+  font-family: "Source Code Pro", "SF Mono", Monaco, Inconsolata, "Fira Mono",
+      "Droid Sans Mono", monospace, monospace;
+  white-space: pre;
+  display: block;
+  padding: 1em;
+  margin-bottom: 1em;
+  border-bottom: 2px solid black;
+  content: 'Error: expected ")".\a   \2577 \a 9 \2502            html_elements: (\a   \2502                            ^\a   \2575 \a   css-fabric\\_generated\\_config.scss 9:27  @use\a   css-fabric\\_utils.scss 2:1               @use\a   css-fabric\\modules\\menu\\menu.scss 7:1    root stylesheet';
+}

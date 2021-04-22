@@ -55,7 +55,7 @@ const json_comments = (file) => {
             !Boolean(module_docs[k].length) ||
             module_out["_docs"][k] !== "deleted"
           ) {
-            module_out["_docs"][k] = "deleted-" + module_docs[k];
+            module_out["_docs"][k] = "deleted" + module_docs[k];
           } else {
             (module_out["_docs"] = undefined), delete out_docs[k];
           }

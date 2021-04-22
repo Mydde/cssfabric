@@ -1,1 +1,19 @@
-.txt-h1{font-size:3em}.txt-h2{font-size:2.4em}.txt-h3{font-size:1.8em}.txt-h4{font-size:1.2em}.txt-h5{font-size:0.6em}.txt-cap{text-transform:capitalize}.txt-up{text-transform:uppercase}.txt-low{text-transform:lowercase}.txt-none{text-transform:none}.txt-full{text-transform:full-width}.txt-50{font-weight:50}.txt-100{font-weight:100}.txt-300{font-weight:400}.txt-500{font-weight:500}.txt-900{font-weight:900}.txt-light{font-weight:lighter}.txt-cap{font-weight:normal}.txt-bold{font-weight:bold}.txt-bolder{font-weight:bolder}.txt-l{text-align:left}.txt-r{text-align:right}.txt-c{text-align:center}.txt-j{text-align:justify}/*# sourceMappingURL=text.css.map */
+/* Error: expected ")".
+ *   ,
+ * 9 |           html_elements: (
+ *   |                           ^
+ *   '
+ *   css-fabric\_generated\_config.scss 9:27  @use
+ *   css-fabric\_utils.scss 2:1               @use
+ *   css-fabric\modules\text\text.scss 7:1    root stylesheet */
+
+body::before {
+  font-family: "Source Code Pro", "SF Mono", Monaco, Inconsolata, "Fira Mono",
+      "Droid Sans Mono", monospace, monospace;
+  white-space: pre;
+  display: block;
+  padding: 1em;
+  margin-bottom: 1em;
+  border-bottom: 2px solid black;
+  content: 'Error: expected ")".\a   \2577 \a 9 \2502            html_elements: (\a   \2502                            ^\a   \2575 \a   css-fabric\\_generated\\_config.scss 9:27  @use\a   css-fabric\\_utils.scss 2:1               @use\a   css-fabric\\modules\\text\\text.scss 7:1    root stylesheet';
+}
