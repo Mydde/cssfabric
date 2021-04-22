@@ -29,9 +29,9 @@ $text_align: map-get($_text, text_align);
 
 
 $scale_props: ("width":"w", "height":"h");
-$scale_grid_ratios: (8, 24); 
+$scale_grid_ratios: (8, 24);
 
- 
+
 
 /* css Hn text rules */
 $h1_size: $font_sizes_h1_em;
@@ -79,11 +79,13 @@ $ratio_max_min: $font_sizes_h1_em / $font_sizes_h_min_em;
 
 @include fabric_text($text_class_name_short);
 
+
+
 // loop on responsive ratio dimensions
 @each $mq_size_key,
 $mq_size_value in $_media_quey_sizes {
 
-    $property_key: txt-#{$mq_size_key};
+    $property_key: #{$text_class_name_short}-#{$mq_size_key};
 
     @include utils.responsive_encloser($mq_size_value) {
         @include fabric_text($property_key);

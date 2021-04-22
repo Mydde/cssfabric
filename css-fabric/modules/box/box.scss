@@ -4,77 +4,162 @@
 */
 
 // load scss config file 
-@use '../../_utils';  
+@use '../../_utils';
 // load general config variables  
-$_cfg: utils.get_conf(); 
+$_cfg: utils.get_conf();
 // load local config variables 
-$_box: utils.get_conf_data(box);   
- 
-// read variables
-$box_unit: map-get($_box, box_unit);       
-$box_unit_size: map-get($_box, box_unit_size);  
-$box_sizes: map-get($_box, box_sizes);   
- 
-$box_css_props_shorthands: map-get($_box, box_css_props_shorthands);
-$box_side_shorthands: map-get($_box, box_border_shorthands);
+$_box: utils.get_conf_data(box);
 
-$box_position_props: map-get($_box, box_position_props);
-$box_display_props: map-get($_box, box_display_props);   
+// read variables
+// media queries sizes, in em  
+$_media_quey_sizes: map-get($_cfg, media_quey_sizes);
+
+$box_unit: map-get($_box, box_unit);
+$box_unit_size: map-get($_box, box_unit_size);
+$fabric_box_sizes: map-get($_box, box_sizes);
+
+$fabric_box_pmb_shorthands: map-get($_box, box_css_props_shorthands);
+$fabric_box_pmb_side_shorthands: map-get($_box, box_border_shorthands);
+
+$fabric_box_position_props: map-get($_box, box_position_props);
+$fabric_box_display_props: map-get($_box, box_display_props);
 
 
 // adding {border}-{r} shorthand css rule for .{border}-{r}-1
 @function raw_size_tag_rule($condition) {
-  @if ($condition == 1) {
+  @if ($condition==1) {
     @return "&,";
-  } @else {
-    @return ""; 
-  }    
-}    
+  }
+
+  @else {
+    @return "";
+  }
+}
 
 // css border rules builder
-@mixin css_border_property_builder($css_prop, $grid_key, $rule, $size_value) {
+// prop : padding | margin | border
+// box_pmb_side_shorthand : pad | marg | brd
+// (top bottom left right)
+@mixin box_property_builder($fabric_box_position_prop, $box_pmb_side_shorthand, $rule, $size_value) {
   // concatenate "-with" to property name when property is "border"
-  $final_rule: if($css_prop== border, null, null);
-  $suffix_rule: if($css_prop== border, solid #ededed, null);
+  $final_rule: if($fabric_box_position_prop==border, null, null);
+  $suffix_rule: if($fabric_box_position_prop==border, solid #ededed, null);
 
-  @each $grid_size_value in $rule { 
-    #{$css_prop}-#{$grid_size_value}#{$final_rule}: $size_value $suffix_rule;
+  @each $grid_size_value in $rule {
+    #{$fabric_box_position_prop}-#{$grid_size_value}#{$final_rule}: $size_value $suffix_rule;
   }
-} 
- 
-// loop trough padding margin ...
-@each $css_prop, $css_prop_short in $box_css_props_shorthands {
-  @each $grid_key, $rule in $box_side_shorthands {
+}
+
+@mixin css_property_name($fabric_box_position_prop_short, $fabric_box_pmb_side_shorthand) {
+
+  // css property name 
+  .#{$fabric_box_position_prop_short}-#{$fabric_box_pmb_side_shorthand} {
+    @for $grid_size_value from 1 through $fabric_box_sizes {
+      $css_size_value: ($grid_size_value * $box_unit_size) + $box_unit;
+
+      // css property name is aggregated with size value $i
+      #{raw_size_tag_rule($grid_size_value)} &-#{$grid_size_value} {
+        /* #{$css_prop}-#{$grid_key} rule : set #{$css_size_value} size for #{$rule} #{$css_prop}.  */
+        @include box_property_builder($fabric_box_position_prop,
+          $fabric_box_pmb_side_shorthand,
+          $rule,
+          $css_size_value);
+      }
+    }
+  }
+}
+
+// prop : border | margin | padding
+@mixin fabric_box($fabric_box_position_prop, $fabric_box_position_prop_short) {
+
+  /**
+prop : #{$fabric_box_position_prop};
+prop_short : #{$fabric_box_position_prop_short};
+*/
+  @each $fabric_box_pmb_side_shorthand,
+  $rule in $fabric_box_pmb_side_shorthands {
+
     // css property name 
-    .#{$css_prop_short}-#{$grid_key} {
-      @for $grid_size_value from 1 through $box_sizes {
+    .#{$fabric_box_position_prop_short}-#{$fabric_box_pmb_side_shorthand} {
+      @for $grid_size_value from 1 through $fabric_box_sizes {
         $css_size_value: ($grid_size_value * $box_unit_size) + $box_unit;
+
         // css property name is aggregated with size value $i
         #{raw_size_tag_rule($grid_size_value)} &-#{$grid_size_value} {
-          /* #{$css_prop}-#{$grid_key} rule : set #{$css_size_value} size for #{$rule} #{$css_prop}.  */
-          @include css_border_property_builder(
-            $css_prop,
-            $grid_key,
+
+          @include box_property_builder($fabric_box_position_prop,
+            $fabric_box_pmb_side_shorthand,
             $rule,
-            $css_size_value
-          );
+            $css_size_value);
         }
       }
     }
   }
 }
 
-/* css positioning rules */
-@each $css_prop in $box_position_props {
-  .#{$css_prop} {
-    /* set position value to #{$css_prop}*/
-    position: $css_prop;
+@mixin fabric_pmb($box_pmb_shorthands) {
+
+  // loop trough padding margin ...
+  // fabric_box_pmb_shorthands    border:brd , margin:mrg , padding:pad
+  @each $box_position_prop_short,
+  $box_position_prop in $box_pmb_shorthands {
+
+    @include fabric_box($box_position_prop, $box_position_prop_short);
+
+    // loop on responsive ratio dimensions
+    @each $mq_size_key,
+    $mq_size_value in $_media_quey_sizes {
+
+      $prop_short_responsive: #{$box_position_prop_short}-#{$mq_size_key};
+
+      @include utils.responsive_encloser($mq_size_value) {
+        @include fabric_box($box_position_prop, $prop_short_responsive);
+      }
+    }
   }
 }
 
-/* css display rules */
-@each $display_rule, $index in $box_display_props {
-  .dsp-#{$display_rule} {
-    display: $display_rule;
+@function write_rule_value($rule_value, $unit, $rule_type) {
+
+  $computed_value: '';
+
+  @if $rule_type=='box' {
+    $computed_value: $rule_value;
+  }
+
+  @return $computed_value;
+}
+
+@mixin fabric_property_proxy($css_prop, $css_prop_short, $unit, $fabric_key_shorthands) {
+
+  @each $fabric_key_shorthand,
+  $fabric_box_prop in $fabric_key_shorthands {
+    // css property
+    $prop_re: #{$css_prop_short}-#{$fabric_key_shorthand};
+
+    .#{$prop_re} {
+      #{$css_prop}: write_rule_value($fabric_box_prop, $unit, 'box');
+    }
+  }
+
+}
+
+//  
+@mixin fabric_property($css_prop, $css_prop_short, $unit, $fabric_key_shorthands) {
+
+  @include fabric_property_proxy($css_prop, $css_prop_short, $unit, $fabric_key_shorthands);
+
+  // loop on responsive ratio dimensions
+  @each $mq_size_key,
+  $mq_size_value in $_media_quey_sizes {
+    @include utils.responsive_encloser($mq_size_value) {
+      $new_prop_short: $css_prop_short + '-'+ $mq_size_key;
+      @include fabric_property_proxy($css_prop, $new_prop_short, $unit, $fabric_key_shorthands);
+    }
   }
 }
+
+
+// @include fabric_pmb($fabric_box_pmb_shorthands);
+@include fabric_property('display', 'dsp', '', $fabric_box_display_props);
+@include fabric_property('position', 'pos', '', $fabric_box_position_props);
