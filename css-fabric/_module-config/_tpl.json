@@ -1,0 +1,26 @@
+{
+    "[module-filename]]": {
+        "_metadata": {
+            "title": ""
+        },
+        "_data": {
+            "html_elements": {
+                "*": {
+                    "classNameKey": "",
+                    "module-config-vars": {},
+                    "css-rule": {
+                        "padding-margin-border": {
+                            "css-properties": {},
+                            "shorthands": {}
+                        },
+                        "position-properties": {},
+                        "display-properties": {}
+                    }
+                }
+            },
+            "_docs": {
+                
+            }
+        }
+    }
+}
