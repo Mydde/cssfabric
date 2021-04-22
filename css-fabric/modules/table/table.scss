@@ -46,9 +46,7 @@ $table_border_color_second: map-get($_table, table_border_color_second);
     }
   }
 }
-
-// try
-// again
+ 
 
 @mixin sticky {
   &.#{$TABLE_PREFIX_SHORT}-sticky {

@@ -1,5 +1,5 @@
 {
-    "[module-filename]]": {
+    "[module-filename]": {
         "_metadata": {
             "title": ""
         },
@@ -9,12 +9,12 @@
                     "classNameKey": "",
                     "module-config-vars": {},
                     "css-rule": {
-                        "padding-margin-border": {
+                        "rule:padding-margin-border": {
                             "css-properties": {},
                             "shorthands": {}
                         },
-                        "position-properties": {},
-                        "display-properties": {}
+                        "rule:position": {},
+                        "rule:display": {}
                     }
                 }
             },

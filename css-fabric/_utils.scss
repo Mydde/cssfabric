@@ -47,3 +47,11 @@
 
   @return $split-arr;
 }
+
+// css dimensions rules builder responsive
+@mixin responsive_encloser($mq_size_value) {
+ 
+  @media only screen and (min-width: $mq_size_value + em) {
+      @content;
+  }
+}

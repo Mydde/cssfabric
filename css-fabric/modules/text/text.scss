@@ -11,8 +11,12 @@ $_cfg: utils.get_conf();
 $_text: utils.get_conf_data(text);
 
 // read variables
+// media queries sizes, in em  
+$_media_quey_sizes: map-get($_cfg, media_quey_sizes);
+//
 $text_class_name: map-get($_cfg, text_class_name);
 $text_class_name_short: map-get($_cfg, text_class_name_short);
+//
 $font_sizes: map-get($_text, font_sizes);
 $font_sizes_unit: map-get($_text, font_sizes_unit);
 $font_sizes_h1_em: map-get($_text, font_sizes_h1_em);
@@ -23,55 +27,65 @@ $font_weights: map-get($_text, font_weights);
 
 $text_align: map-get($_text, text_align);
 
-// css border rules builder
-@mixin css_border_property_builder($css_prop, $grid_key, $rule, $size_value) {
-	// concatenate "-with" to property name when property is "border"
-	$final_rule: if($css_prop== border, null, null);
-	$suffix_rule: if($css_prop== border, solid red, null);
 
-	@each $grid_size_value in $rule {
-		#{$css_prop}-#{$grid_size_value}#{$final_rule}: $size_value $suffix_rule;
-	}
-}
+$scale_props: ("width":"w", "height":"h");
+$scale_grid_ratios: (8, 24); 
+
+ 
 
 /* css Hn text rules */
 $h1_size: $font_sizes_h1_em;
 $ratio: $h1_size/$font_sizes;
 $ratio_max_min: $font_sizes_h1_em / $font_sizes_h_min_em;
 
-.#{$text_class_name_short} {
-	@for $grid_size_value from 1 through $font_sizes {
-		// 12em => 1em;
-		$size: $grid_size_value * 1;
-		$index: $font_sizes - $grid_size_value + 1;
-		$font_size: $index * $ratio;
+@mixin fabric_text($tag_short) {
 
-		&-h#{$size} {
-			font-size: $font_size+em;
-		}
-	}
+    .#{$tag_short} {
+
+        @for $grid_size_value from 1 through $font_sizes {
+            // 12em => 1em;
+            $size: $grid_size_value * 1;
+            $index: $font_sizes - $grid_size_value + 1;
+            $font_size: $index * $ratio;
+
+            &-h#{$size} {
+                font-size: $font_size+em;
+            }
+        }
+
+        @each $transform_key,
+        $transform_prop in $text_transform {
+            &-#{$transform_key} {
+                text-transform: $transform_prop;
+            }
+        }
+
+        @each $transform_key,
+        $transform_prop in $font_weights {
+            &-#{$transform_key} {
+                font-weight: $transform_prop;
+            }
+        }
+
+        @each $transform_key,
+        $transform_prop in $text_align {
+            &-#{$transform_key} {
+                text-align: $transform_prop;
+            }
+        }
+    }
 }
 
-.#{$text_class_name_short} {
-	@each $transform_key, $transform_prop in $text_transform {
-		&-#{$transform_key} {
-			text-transform: $transform_prop;
-		}
-	}
-}
 
-.#{$text_class_name_short} {
-	@each $transform_key, $transform_prop in $font_weights {
-		&-#{$transform_key} {
-			font-weight: $transform_prop;
-		}
-	}
-}
+@include fabric_text($text_class_name_short);
 
-.#{$text_class_name_short} {
-	@each $transform_key, $transform_prop in $text_align {
-		&-#{$transform_key} {
-			text-align: $transform_prop;
-		}
-	}
+// loop on responsive ratio dimensions
+@each $mq_size_key,
+$mq_size_value in $_media_quey_sizes {
+
+    $property_key: txt-#{$mq_size_key};
+
+    @include utils.responsive_encloser($mq_size_value) {
+        @include fabric_text($property_key);
+    }
 }

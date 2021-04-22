@@ -1,13 +1,17 @@
 {
-	"_mock": {
-		"_metadata": {
-			"title": ""
-		},
-		"_data": {
-			"html_elements": {
+    "_mock": {
+        "_metadata": {
+            "title": ""
+        },
+        "_data": {
+            "html_elements": {
                 "*": {
                     "classNameKey": "",
-                    "_data": "ext._data",
+                    "module-config-vars": {
+                        "box_unit": "em",
+                        "box_unit_size": "0.25",
+                        "box_sizes": 8
+                    },
                     "css-rule": {
                         "padding-margin-border": {
                             "css-properties": {
@@ -41,7 +45,7 @@
                                 ]
                             }
                         },
-                        "position-properties": {
+                        "position": {
                             "css-properties": {
                                 "position": "pos"
                             },
@@ -53,20 +57,26 @@
                                 "sticky": "sticky"
                             }
                         },
-                        "display-properties": {
+                        "display": {
                             "css-properties": {
-                                "position": ""
+                                "display": "dsp"
                             },
                             "shorthands": {
                                 "block": "block",
-                                "none": "rel",
-                                "inline": "stat",
-                                "table": "fix"
+                                "none": "none",
+                                "inline": "inline",
+                                "block-inline": "inline-block",
+                                "flex-inline": "inline-flex",
+                                "tbl": "table",
+                                "tbl-row": "table",
+                                "tbl-cell": "table",
+                                "tbl-column": "table-column",
+                                "unset": "unset"
                             }
                         }
                     }
                 }
             }
-		}
-	}
+        }
+    }
 }
