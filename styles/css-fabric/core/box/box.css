@@ -2,6 +2,128 @@
 * css-fabric 
 * padding, margin and border system
 */
+/**
+  $css_prop               : display
+  $css_prop_short         : dsp
+  $unit                   : '' | em | px
+  $fabric_key_shorthands  : (tbl  table)
+  $write_rule             : position_display | pmb
+*/
+/**
+  $css_prop               : display
+  $css_prop_short         : dsp
+  $unit                   : '' | em | px
+  $fabric_key_shorthands  : (tbl  table)
+  $write_rule             : position_display | pmb
+*/
+.brd-t, .brd-t-1 {
+  border-top: 0.125em solid #ccc;
+}
+
+.brd-b, .brd-b-1 {
+  border-bottom: 0.125em solid #ccc;
+}
+
+.brd-l, .brd-l-1 {
+  border-left: 0.125em solid #ccc;
+}
+
+.brd-r, .brd-r-1 {
+  border-right: 0.125em solid #ccc;
+}
+
+.brd-all, .brd-all-1 {
+  border: 0.125em solid #ccc;
+}
+
+.brd-u, .brd-u-1 {
+  border-bottom: 0.125em solid #ccc;
+  border-left: 0.125em solid #ccc;
+  border-right: 0.125em solid #ccc;
+}
+
+.brd-ii, .brd-ii-1 {
+  border-left: 0.125em solid #ccc;
+  border-right: 0.125em solid #ccc;
+}
+
+.brd-tb, .brd-tb-1 {
+  border-top: 0.125em solid #ccc;
+  border-bottom: 0.125em solid #ccc;
+}
+
+.pad-t, .pad-t-1 {
+  padding-top: 0.125em;
+}
+
+.pad-b, .pad-b-1 {
+  padding-bottom: 0.125em;
+}
+
+.pad-l, .pad-l-1 {
+  padding-left: 0.125em;
+}
+
+.pad-r, .pad-r-1 {
+  padding-right: 0.125em;
+}
+
+.pad-all, .pad-all-1 {
+  padding: 0.125em;
+}
+
+.pad-u, .pad-u-1 {
+  padding-bottom: 0.125em;
+  padding-left: 0.125em;
+  padding-right: 0.125em;
+}
+
+.pad-ii, .pad-ii-1 {
+  padding-left: 0.125em;
+  padding-right: 0.125em;
+}
+
+.pad-tb, .pad-tb-1 {
+  padding-top: 0.125em;
+  padding-bottom: 0.125em;
+}
+
+.marg-t, .marg-t-1 {
+  margin-top: 0.125em;
+}
+
+.marg-b, .marg-b-1 {
+  margin-bottom: 0.125em;
+}
+
+.marg-l, .marg-l-1 {
+  margin-left: 0.125em;
+}
+
+.marg-r, .marg-r-1 {
+  margin-right: 0.125em;
+}
+
+.marg-all, .marg-all-1 {
+  margin: 0.125em;
+}
+
+.marg-u, .marg-u-1 {
+  margin-bottom: 0.125em;
+  margin-left: 0.125em;
+  margin-right: 0.125em;
+}
+
+.marg-ii, .marg-ii-1 {
+  margin-left: 0.125em;
+  margin-right: 0.125em;
+}
+
+.marg-tb, .marg-tb-1 {
+  margin-top: 0.125em;
+  margin-bottom: 0.125em;
+}
+
 .dsp-block {
   display: block;
 }
