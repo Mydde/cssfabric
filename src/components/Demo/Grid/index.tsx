@@ -7,7 +7,7 @@ interface Props {}
 const Grid = (props: Props) => {
 	return (
 		<div>
-			<Header tag={'Grid'} description={'red'} />
+			<Header title={'Grid'} description={'red'} />
 			<div className={``}>
 				{[ 8, 24 ].map((value, idx) => {
 					let grid_sizes = [ ...Array(value) ];

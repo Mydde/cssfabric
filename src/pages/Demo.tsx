@@ -1,6 +1,6 @@
-import { DemoTable } from '../components/Demo/Table';
-import { DemoText } from '../components/Demo/Text';
-import { DemoGrid } from '../components/Demo/Grid';
+import Table  from '../components/Demo/Table';
+import  Text from '../components/Demo/Text';
+import Grid from '../components/Demo/Grid';
 
 import Link from 'next/link';
 
@@ -38,9 +38,9 @@ export default function Home({ isConnected }) {
 				<div>456456</div>
 			</div>
 			<div className={'grid-main pad-all-1'}>
-				<DemoText />
-				<DemoGrid />
-				<DemoTable />
+				<Text />
+				<Grid />
+				<Table />
 			</div>
 		</div>
 	);
