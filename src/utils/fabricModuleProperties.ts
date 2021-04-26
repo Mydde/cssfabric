@@ -1,4 +1,4 @@
-import conf_fabric from "css-fabric/_generated/css.fabric.config.json";
+// import conf_fabric from "css-fabric/_generated/css.fabric.config.json";
 
 interface ICssPropertiesProps {
   module: string;
