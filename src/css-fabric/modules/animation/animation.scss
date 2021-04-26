@@ -1,0 +1,11 @@
+/*
+ css-fabric 
+ grid system
+*/ 
+
+// load scss config file
+@use '../../_utils';
+// load general config variables 
+$_cfg: utils.get_conf();
+// load local config variables
+$_grid: utils.get_conf_data(animation); 

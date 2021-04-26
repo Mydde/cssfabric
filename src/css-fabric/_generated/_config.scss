@@ -35,6 +35,25 @@ $config: (
         xl: 80,
         xxl: 120
       ),
+      color_schemes_props: (
+        info: #666,
+        error: red,
+        warning: yellow,
+        discrete: #ccc,
+        success: green
+      ),
+      color_palette_props: (
+        cyan: #666,
+        purple: red,
+        red: yellow,
+        discrete: #ccc,
+        success: green
+      ),
+      color_grays: (
+        gray_start: #f4f4f4,
+        gray_end: #333333,
+        gray_steps: 9
+      ), 
       grid_ratios: (8, 24)
     ),
     _docs: (
@@ -42,9 +61,6 @@ $config: (
       CFG_HAS_DIMENSION_MIN: "",
       CFG_HAS_DIMENSION_MAX: "",
       grid_class_name: "",
-      grid_separator: deleted,
-      grid_hor_code: deleted,
-      grid_vert_code: deleted,
       table_class_name: "",
       table_class_name_short: "",
       media_quey_sizes: "",
@@ -53,7 +69,10 @@ $config: (
       text_class_name: "",
       grid_class_name_short: "",
       menu_class_name: "",
-      menu_class_name_short: ""
+      menu_class_name_short: "",
+      color_schemes_props: "",
+      color_palette_props: "",
+      color_grays: ""
     )
   ),
   box: (
