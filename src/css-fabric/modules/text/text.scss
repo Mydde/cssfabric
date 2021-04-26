@@ -16,6 +16,10 @@ $_media_quey_sizes: map-get($_cfg, media_quey_sizes);
 //
 $text_class_name: map-get($_cfg, text_class_name);
 $text_class_name_short: map-get($_cfg, text_class_name_short);
+$color_schemes: map-get($_cfg, color_schemes_props);
+$color_palette_props: map-get($_cfg, color_palette_props);
+$color_grays: map-get($_cfg, color_grays);
+
 //
 $font_sizes: map-get($_text, font_sizes);
 $font_sizes_unit: map-get($_text, font_sizes_unit);
@@ -73,9 +77,27 @@ $ratio_max_min: $font_sizes_h1_em / $font_sizes_h_min_em;
                 text-align: $transform_prop;
             }
         }
+
+        // text color_schemes
+        @each $color_key,
+        $color_prop in $color_schemes {
+            &-#{$color_key} {
+                color: $color_prop;
+            }
+        }
+
+        $gray_start: map-get($color_grays, gray_start);
+        $gray_end: map-get($color_grays, gray_end);
+        $gray_steps: map-get($color_grays, gray_steps);
+
+        @for $i from 1 through $gray_steps {
+            &-gray-#{$i*100} {
+                color: mix( $gray_end,$gray_start, $i / $gray_steps * 100%);
+            }
+        }
+
     }
 }
-
 
 @include fabric_text($text_class_name_short);
 
