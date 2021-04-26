@@ -3,10 +3,9 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "gulp task-download & next dev",
-    "build": "next build",
-    "start": "next start",
-    "watch-all": "npm-run-all -p -r watch-sass watch-json",
+    "dev": "gulp taskDownload & npm run watch-all",
+    "build": "",
+    "watch-all": "npm-run-all -p -r  watch-json watch-sass ",
     "watch-sass": "gulp watchSass",
     "watch-json": "gulp watchJson",
     "task-download": "gulp taskDownload"
