@@ -1,0 +1,7 @@
+{
+    "fabricRootDir": "./src/css-fabric",
+    "fabricConfDir": "./src/css-fabric/_config",
+    "fabricModuleDir": "./src/css-fabric/modules",
+    "generatedDir": "./src/css-fabric/_generated",
+    "fabricStylesDir": "./lib/styles"
+}
