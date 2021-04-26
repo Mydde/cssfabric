@@ -36,28 +36,24 @@ $config: (
         xxl: 120
       ),
       color_schemes_props: (
-        info: 64,
-        alert: 35.5,
-        error: 48,
-        warning: 80,
-        discrete: 120,
-        success: 120,
-        waiting: 120
+        info: #666,
+        error: red,
+        warning: yellow,
+        discrete: #ccc,
+        success: green
       ),
       color_palette_props: (
-        normal: 64,
-        alert: 35.5,
-        error: 48,
-        warning: 80,
-        discrete: 120,
-        success: 120,
-        waiting: 120
+        cyan: #666,
+        purple: red,
+        red: yellow,
+        discrete: #ccc,
+        success: green
       ),
       color_grays: (
         gray_start: #f4f4f4,
         gray_end: #333333,
         gray_steps: 9
-      ),
+      ), 
       grid_ratios: (8, 24)
     ),
     _docs: (

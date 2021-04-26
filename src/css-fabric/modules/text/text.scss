@@ -81,8 +81,33 @@ $ratio_max_min: $font_sizes_h1_em / $font_sizes_h_min_em;
         // text color_schemes
         @each $color_key,
         $color_prop in $color_schemes {
+
             &-#{$color_key} {
                 color: $color_prop;
+            }
+        }
+
+        // text color_palette_props
+        @each $color_palette_key,
+        $color_palette_prop in $color_palette_props {
+            &-#{$color_palette_key} {
+                color: $color_palette_prop;
+            }
+        }
+
+        // text shadows color_schemes
+        @each $color_key,
+        $color_prop in $color_schemes { 
+            &-shad-#{$color_key} {
+                text-shadow: 0 0 0.125em $color_prop;
+            } 
+        }
+
+        // text shadows color_palette_props
+        @each $color_palette_key,
+        $color_palette_prop in $color_palette_props {
+            &-shad-#{$color_palette_key} {
+                text-shadow: 0 0 0.125em $color_palette_prop;
             }
         }
 
@@ -92,7 +117,7 @@ $ratio_max_min: $font_sizes_h1_em / $font_sizes_h_min_em;
 
         @for $i from 1 through $gray_steps {
             &-gray-#{$i*100} {
-                color: mix( $gray_end,$gray_start, $i / $gray_steps * 100%);
+                color: mix($gray_end, $gray_start, $i / $gray_steps * 100%);
             }
         }
 

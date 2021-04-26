@@ -4298,31 +4298,83 @@ template {
 }
 
 .txt-info {
-  color: 64;
-}
-
-.txt-alert {
-  color: 35.5;
+  color: #666;
 }
 
 .txt-error {
-  color: 48;
+  color: red;
 }
 
 .txt-warning {
-  color: 80;
+  color: yellow;
 }
 
 .txt-discrete {
-  color: 120;
+  color: #ccc;
 }
 
 .txt-success {
-  color: 120;
+  color: green;
 }
 
-.txt-waiting {
-  color: 120;
+.txt-cyan {
+  color: #666;
+}
+
+.txt-purple {
+  color: red;
+}
+
+.txt-red {
+  color: yellow;
+}
+
+.txt-discrete {
+  color: #ccc;
+}
+
+.txt-success {
+  color: green;
+}
+
+.txt-shad-info {
+  text-shadow: 0 0 0.125em #666;
+}
+
+.txt-shad-error {
+  text-shadow: 0 0 0.125em red;
+}
+
+.txt-shad-warning {
+  text-shadow: 0 0 0.125em yellow;
+}
+
+.txt-shad-discrete {
+  text-shadow: 0 0 0.125em #ccc;
+}
+
+.txt-shad-success {
+  text-shadow: 0 0 0.125em green;
+}
+
+.txt-shad-cyan {
+  text-shadow: 0 0 0.125em #666;
+}
+
+.txt-shad-purple {
+  text-shadow: 0 0 0.125em red;
+}
+
+.txt-shad-red {
+  text-shadow: 0 0 0.125em yellow;
+}
+
+.txt-shad-discrete {
+  text-shadow: 0 0 0.125em #ccc;
+}
+
+.txt-shad-success {
+  text-shadow: 0 0 0.125em green;
 }
 
 .txt-gray-100 {
@@ -4455,31 +4507,83 @@ template {
   }
 
   .txt-sm-info {
-    color: 64;
-  }
-
-  .txt-sm-alert {
-    color: 35.5;
+    color: #666;
   }
 
   .txt-sm-error {
-    color: 48;
+    color: red;
   }
 
   .txt-sm-warning {
-    color: 80;
+    color: yellow;
   }
 
   .txt-sm-discrete {
-    color: 120;
+    color: #ccc;
   }
 
   .txt-sm-success {
-    color: 120;
+    color: green;
   }
 
-  .txt-sm-waiting {
-    color: 120;
+  .txt-sm-cyan {
+    color: #666;
+  }
+
+  .txt-sm-purple {
+    color: red;
+  }
+
+  .txt-sm-red {
+    color: yellow;
+  }
+
+  .txt-sm-discrete {
+    color: #ccc;
+  }
+
+  .txt-sm-success {
+    color: green;
+  }
+
+  .txt-sm-shad-info {
+    text-shadow: 0 0 0.125em #666;
+  }
+
+  .txt-sm-shad-error {
+    text-shadow: 0 0 0.125em red;
+  }
+
+  .txt-sm-shad-warning {
+    text-shadow: 0 0 0.125em yellow;
+  }
+
+  .txt-sm-shad-discrete {
+    text-shadow: 0 0 0.125em #ccc;
+  }
+
+  .txt-sm-shad-success {
+    text-shadow: 0 0 0.125em green;
+  }
+
+  .txt-sm-shad-cyan {
+    text-shadow: 0 0 0.125em #666;
+  }
+
+  .txt-sm-shad-purple {
+    text-shadow: 0 0 0.125em red;
+  }
+
+  .txt-sm-shad-red {
+    text-shadow: 0 0 0.125em yellow;
+  }
+
+  .txt-sm-shad-discrete {
+    text-shadow: 0 0 0.125em #ccc;
+  }
+
+  .txt-sm-shad-success {
+    text-shadow: 0 0 0.125em green;
   }
 
   .txt-sm-gray-100 {
@@ -4612,31 +4716,83 @@ template {
   }
 
   .txt-md-info {
-    color: 64;
-  }
-
-  .txt-md-alert {
-    color: 35.5;
+    color: #666;
   }
 
   .txt-md-error {
-    color: 48;
+    color: red;
   }
 
   .txt-md-warning {
-    color: 80;
+    color: yellow;
   }
 
   .txt-md-discrete {
-    color: 120;
+    color: #ccc;
   }
 
   .txt-md-success {
-    color: 120;
+    color: green;
   }
 
-  .txt-md-waiting {
-    color: 120;
+  .txt-md-cyan {
+    color: #666;
+  }
+
+  .txt-md-purple {
+    color: red;
+  }
+
+  .txt-md-red {
+    color: yellow;
+  }
+
+  .txt-md-discrete {
+    color: #ccc;
+  }
+
+  .txt-md-success {
+    color: green;
+  }
+
+  .txt-md-shad-info {
+    text-shadow: 0 0 0.125em #666;
+  }
+
+  .txt-md-shad-error {
+    text-shadow: 0 0 0.125em red;
+  }
+
+  .txt-md-shad-warning {
+    text-shadow: 0 0 0.125em yellow;
+  }
+
+  .txt-md-shad-discrete {
+    text-shadow: 0 0 0.125em #ccc;
+  }
+
+  .txt-md-shad-success {
+    text-shadow: 0 0 0.125em green;
+  }
+
+  .txt-md-shad-cyan {
+    text-shadow: 0 0 0.125em #666;
+  }
+
+  .txt-md-shad-purple {
+    text-shadow: 0 0 0.125em red;
+  }
+
+  .txt-md-shad-red {
+    text-shadow: 0 0 0.125em yellow;
+  }
+
+  .txt-md-shad-discrete {
+    text-shadow: 0 0 0.125em #ccc;
+  }
+
+  .txt-md-shad-success {
+    text-shadow: 0 0 0.125em green;
   }
 
   .txt-md-gray-100 {
@@ -4769,31 +4925,83 @@ template {
   }
 
   .txt-lg-info {
-    color: 64;
-  }
-
-  .txt-lg-alert {
-    color: 35.5;
+    color: #666;
   }
 
   .txt-lg-error {
-    color: 48;
+    color: red;
   }
 
   .txt-lg-warning {
-    color: 80;
+    color: yellow;
   }
 
   .txt-lg-discrete {
-    color: 120;
+    color: #ccc;
   }
 
   .txt-lg-success {
-    color: 120;
+    color: green;
   }
 
-  .txt-lg-waiting {
-    color: 120;
+  .txt-lg-cyan {
+    color: #666;
+  }
+
+  .txt-lg-purple {
+    color: red;
+  }
+
+  .txt-lg-red {
+    color: yellow;
+  }
+
+  .txt-lg-discrete {
+    color: #ccc;
+  }
+
+  .txt-lg-success {
+    color: green;
+  }
+
+  .txt-lg-shad-info {
+    text-shadow: 0 0 0.125em #666;
+  }
+
+  .txt-lg-shad-error {
+    text-shadow: 0 0 0.125em red;
+  }
+
+  .txt-lg-shad-warning {
+    text-shadow: 0 0 0.125em yellow;
+  }
+
+  .txt-lg-shad-discrete {
+    text-shadow: 0 0 0.125em #ccc;
+  }
+
+  .txt-lg-shad-success {
+    text-shadow: 0 0 0.125em green;
+  }
+
+  .txt-lg-shad-cyan {
+    text-shadow: 0 0 0.125em #666;
+  }
+
+  .txt-lg-shad-purple {
+    text-shadow: 0 0 0.125em red;
+  }
+
+  .txt-lg-shad-red {
+    text-shadow: 0 0 0.125em yellow;
+  }
+
+  .txt-lg-shad-discrete {
+    text-shadow: 0 0 0.125em #ccc;
+  }
+
+  .txt-lg-shad-success {
+    text-shadow: 0 0 0.125em green;
   }
 
   .txt-lg-gray-100 {
@@ -4926,31 +5134,83 @@ template {
   }
 
   .txt-xl-info {
-    color: 64;
-  }
-
-  .txt-xl-alert {
-    color: 35.5;
+    color: #666;
   }
 
   .txt-xl-error {
-    color: 48;
+    color: red;
   }
 
   .txt-xl-warning {
-    color: 80;
+    color: yellow;
   }
 
   .txt-xl-discrete {
-    color: 120;
+    color: #ccc;
   }
 
   .txt-xl-success {
-    color: 120;
+    color: green;
   }
 
-  .txt-xl-waiting {
-    color: 120;
+  .txt-xl-cyan {
+    color: #666;
+  }
+
+  .txt-xl-purple {
+    color: red;
+  }
+
+  .txt-xl-red {
+    color: yellow;
+  }
+
+  .txt-xl-discrete {
+    color: #ccc;
+  }
+
+  .txt-xl-success {
+    color: green;
+  }
+
+  .txt-xl-shad-info {
+    text-shadow: 0 0 0.125em #666;
+  }
+
+  .txt-xl-shad-error {
+    text-shadow: 0 0 0.125em red;
+  }
+
+  .txt-xl-shad-warning {
+    text-shadow: 0 0 0.125em yellow;
+  }
+
+  .txt-xl-shad-discrete {
+    text-shadow: 0 0 0.125em #ccc;
+  }
+
+  .txt-xl-shad-success {
+    text-shadow: 0 0 0.125em green;
+  }
+
+  .txt-xl-shad-cyan {
+    text-shadow: 0 0 0.125em #666;
+  }
+
+  .txt-xl-shad-purple {
+    text-shadow: 0 0 0.125em red;
+  }
+
+  .txt-xl-shad-red {
+    text-shadow: 0 0 0.125em yellow;
+  }
+
+  .txt-xl-shad-discrete {
+    text-shadow: 0 0 0.125em #ccc;
+  }
+
+  .txt-xl-shad-success {
+    text-shadow: 0 0 0.125em green;
   }
 
   .txt-xl-gray-100 {
@@ -5083,31 +5343,83 @@ template {
   }
 
   .txt-xxl-info {
-    color: 64;
-  }
-
-  .txt-xxl-alert {
-    color: 35.5;
+    color: #666;
   }
 
   .txt-xxl-error {
-    color: 48;
+    color: red;
   }
 
   .txt-xxl-warning {
-    color: 80;
+    color: yellow;
   }
 
   .txt-xxl-discrete {
-    color: 120;
+    color: #ccc;
   }
 
   .txt-xxl-success {
-    color: 120;
+    color: green;
   }
 
-  .txt-xxl-waiting {
-    color: 120;
+  .txt-xxl-cyan {
+    color: #666;
+  }
+
+  .txt-xxl-purple {
+    color: red;
+  }
+
+  .txt-xxl-red {
+    color: yellow;
+  }
+
+  .txt-xxl-discrete {
+    color: #ccc;
+  }
+
+  .txt-xxl-success {
+    color: green;
+  }
+
+  .txt-xxl-shad-info {
+    text-shadow: 0 0 0.125em #666;
+  }
+
+  .txt-xxl-shad-error {
+    text-shadow: 0 0 0.125em red;
+  }
+
+  .txt-xxl-shad-warning {
+    text-shadow: 0 0 0.125em yellow;
+  }
+
+  .txt-xxl-shad-discrete {
+    text-shadow: 0 0 0.125em #ccc;
+  }
+
+  .txt-xxl-shad-success {
+    text-shadow: 0 0 0.125em green;
+  }
+
+  .txt-xxl-shad-cyan {
+    text-shadow: 0 0 0.125em #666;
+  }
+
+  .txt-xxl-shad-purple {
+    text-shadow: 0 0 0.125em red;
+  }
+
+  .txt-xxl-shad-red {
+    text-shadow: 0 0 0.125em yellow;
+  }
+
+  .txt-xxl-shad-discrete {
+    text-shadow: 0 0 0.125em #ccc;
+  }
+
+  .txt-xxl-shad-success {
+    text-shadow: 0 0 0.125em green;
   }
 
   .txt-xxl-gray-100 {
