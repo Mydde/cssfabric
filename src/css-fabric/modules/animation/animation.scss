@@ -1,11 +1,118 @@
 /*
  css-fabric 
  grid system
-*/ 
+*/
 
 // load scss config file
 @use '../../_utils';
 // load general config variables 
 $_cfg: utils.get_conf();
 // load local config variables
-$_grid: utils.get_conf_data(animation); 
+$_animation: utils.get_conf_data(animation);
+
+
+
+$fabric_attention_props: map-get($_animation, attention_props);
+$fabric_in_out_props: map-get($_animation, in_out_props);
+
+@mixin keyframe ($animate_style, $Xm, $Ym, $directionX, $directionY) {
+ 
+    $moveX: if($Xm==up or $Xm == down ,'translateX','');
+    $moveY: if($Ym==up left $Ym == right ,'translateY','');
+
+    $keyX: if($directionX, #{$moveX} (#{$directionX}10px), '');
+    $keyY: if($directionY, #{$moveY} (#{$directionY}10px), '');
+
+    $keyX_1: if($directionX, #{$moveX} (#{$directionX}400px), '');
+    $keyY_2: if($directionY, #{$moveY} (#{$directionY}400px), '');
+
+    $prop: animate-#{$animate_style}-#{$Xm}-#{$Ym};
+
+    // moveX
+    @keyframes #{$prop} {
+
+        0% {
+            transform: scale(1);
+            opacity: 1;
+        }
+
+        30% {
+            transform: #{$keyX} #{$keyY} scale(0.7);
+            opacity: 0.7;
+        }
+
+        100% {
+            transform: #{$keyX_1} #{$keyY_2} scale(0.7);
+            opacity: 0.5;
+        }
+    }
+    .#{$prop} {
+        animation-name: #{$prop};
+    }
+}
+
+
+@function gyugyu($anim_dir) {
+
+    $move: '';
+    $direction: '';
+
+    @if $anim_dir==up {
+        $move: 'translateY';
+        $direction: '-';
+    }
+
+    @if $anim_dir==right {
+        $move: 'translateX';
+        $direction: '+';
+    }
+
+    @if $anim_dir==down {
+        $move: 'translateY';
+        $direction: '+';
+    }
+
+    @if $anim_dir==left {
+        $move: 'translateX';
+        $direction: '-';
+    }
+
+    @return (move:$move, direction:$direction);
+}
+
+// left right down up #{$anim_dir_more}
+
+@each $animate_style in $fabric_in_out_props {
+
+    $treated_dir: ();
+
+    @each $anim_dir in(up right down left) {
+
+        $treated_dir: append($treated_dir, $anim_dir);
+ 
+        $tag: gyugyu($anim_dir);
+
+        $move: map-get($tag, move); // 'translate' XY
+        $direction: map-get($tag, direction); // + || -
+ 
+        @include keyframe ($animate_style, $anim_dir, null, $direction, null) ;
+
+        @each $anim_dir_more in(up right down left) {
+
+            $done: index($treated_dir, $anim_dir_more);
+
+            @if $anim_dir_more !=$anim_dir and not $done { 
+
+                $move2: map-get($tag, move); // 'translate'
+                $direction2: map-get($tag, direction); // + || - 
+
+
+                /// @if $move !=$move2 { 
+
+                    @include keyframe ($animate_style, $anim_dir, $anim_dir_more, $direction, $direction2) ;
+               // }
+            }
+        }
+
+    }
+}

@@ -6,23 +6,28 @@
   border-collapse: collapse;
   border-spacing: 0;
 }
-.table thead {
+.table thead,
+.table .thead {
   position: relative;
 }
 .table.tbl-head thead tr th {
   background-color: table_bg_color_head;
 }
-.table thead tr th {
+.table thead tr th,
+.table .thead .tr .th {
   padding: 0.25em;
 }
-.table tbody tr td {
+.table tbody tr td,
+.table .tbody .tr .td {
   padding: 0.25em;
 }
 .table.tbl-layout {
   table-layout: fixed;
 }
 .table.tbl-h-line th,
-.table.tbl-h-line td {
+.table.tbl-h-line td,
+.table.tbl-h-line .th,
+.table.tbl-h-line .td {
   border-bottom: 1px solid #ededed;
 }
 .table.tbl-h-line:last-child {
@@ -54,10 +59,14 @@
 .table.tbl-sticky {
   position: relative;
 }
-.table.tbl-sticky thead tr {
+.table.tbl-sticky thead tr,
+.table.tbl-sticky .thead .tr {
   position: static;
 }
-.table.tbl-sticky thead tr th {
+.table.tbl-sticky thead tr th,
+.table.tbl-sticky thead tr .th,
+.table.tbl-sticky .thead .tr th,
+.table.tbl-sticky .thead .tr .th {
   position: sticky;
   top: 0;
 }

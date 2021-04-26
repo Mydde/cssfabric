@@ -1,7 +1,19 @@
 {
 	"animation": {
 		"_metadata": {},
-		"_data": {},
-		"_docs": {}
+		"_data": {
+			"attention_props": {},
+			"in_out_props": {
+				"bounce": {},
+				"slide": {},
+				"fade": {},
+				"back": {},
+				"zoom": {}
+			}
+		},
+		"_docs": {
+			"attention_props": "",
+			"in_out_props": ""
+		}
 	}
 }
