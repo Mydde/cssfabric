@@ -4,10 +4,30 @@ $config: (
       
     ),
     _data: (
-      
+      attention_props: (
+        
+      ),
+      in_out_props: (
+        bounce: (
+          
+        ),
+        slide: (
+          
+        ),
+        fade: (
+          
+        ),
+        back: (
+          
+        ),
+        zoom: (
+          
+        )
+      )
     ),
     _docs: (
-      
+      attention_props: "",
+      in_out_props: ""
     )
   ),
   base: (
@@ -36,24 +56,28 @@ $config: (
         xxl: 120
       ),
       color_schemes_props: (
-        info: #666,
-        error: red,
-        warning: yellow,
-        discrete: #ccc,
-        success: green
+        info: 64,
+        alert: 35.5,
+        error: 48,
+        warning: 80,
+        discrete: 120,
+        success: 120,
+        waiting: 120
       ),
       color_palette_props: (
-        cyan: #666,
-        purple: red,
-        red: yellow,
-        discrete: #ccc,
-        success: green
+        normal: 64,
+        alert: 35.5,
+        error: 48,
+        warning: 80,
+        discrete: 120,
+        success: 120,
+        waiting: 120
       ),
       color_grays: (
         gray_start: #f4f4f4,
         gray_end: #333333,
-        gray_steps: 9
-      ), 
+        gray_steps: 12
+      ),
       grid_ratios: (8, 24)
     ),
     _docs: (
