@@ -5,7 +5,7 @@
 @function get_conf() {
   $po: map-get(config.$config, base);
   @return  map-get($po, "_data");
-}
+} 
 
 @function get_conf_part($_module, $_part) {
   $po: map-get(config.$config, $_module);
