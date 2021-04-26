@@ -101,7 +101,7 @@ function fabricScssImportFile(filePath) {
 }
 
 const fabricRootDir = "./css-fabric",
-  fabricStylesDir = "styles",
+  fabricStylesDir = "./lib/styles",
   fabricConfDir = `${fabricRootDir}/_config`,
   fabricModuleDir = `${fabricRootDir}/modules`,
   generatedDir = `${fabricRootDir}/_generated`;
