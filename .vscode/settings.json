@@ -15,5 +15,8 @@
         }
     ],
     "githubIssues.createInsertFormat": "url",
-    "githubIssues.useBranchForIssues": "prompt"
+    "githubIssues.useBranchForIssues": "prompt",
+    "cSpell.words": [
+        "cssfabric"
+    ]
 }
