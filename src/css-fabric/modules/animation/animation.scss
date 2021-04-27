@@ -15,25 +15,8 @@ $_animation: utils.get_conf_data(animation);
 $fabric_attention_props: map-get($_animation, attention_props);
 $fabric_in_out_props: map-get($_animation, in_out_props);
 
-@mixin keyframe ($animate_style, $Xm, $Ym, $directionX, $directionY) {
+$vectorDirections: (up right bottom left);
 
-    $moveX: if($Xm==up or $Xm==down, 'translateX', '');
-    $moveY: if($Ym==up left $Ym==right, 'translateY', '');
-
-    $keyX: if($directionX, #{$moveX} (#{$directionX}10px), '');
-    $keyY: if($directionY, #{$moveY} (#{$directionY}10px), '');
-
-    $keyX_1: if($directionX, #{$moveX} (#{$directionX}400px), '');
-    $keyY_2: if($directionY, #{$moveY} (#{$directionY}400px), '');
-
-    $prop: animate-#{$animate_style}-#{$Xm}-#{$Ym};
-
-    // moveX
-
-    .#{$animate_style}_#{$Xm}_#{$Ym}_#{$directionX}_#{$directionY}red {
-        dsp: nopne;
-    }
-}
 
 
 // up down right left
@@ -43,7 +26,7 @@ $fabric_in_out_props: map-get($_animation, in_out_props);
     $direction: '';
 
     $model: (up:(translation:translateY, direction: '-'),
-            down:(translation:translateY, direction: '+'),
+            bottom:(translation:translateY, direction: '+'),
             right:(translation:translateX, direction: '+'),
             left:(translation:translateX, direction: '-'));
 
@@ -53,46 +36,90 @@ $fabric_in_out_props: map-get($_animation, in_out_props);
 
 }
 
+@function draw ($vectorMove, $vectorDirection, $vectorValue) {
+
+    @return (#{$vectorMove}(#{$vectorDirection}#{$vectorValue}));
+}
+
 //
 @mixin debug($family, $vector, $corner) {
 
+    $vectorMove: null;
+    $cornerMove: null;
+
     $vectorProperty: getVectorPropertyObject($vector);
-    $cornerProperty: getVectorPropertyObject($corner);
 
     $vectorMove: map-get($vectorProperty, translation); // 'translate' XY
     $vectorDirection: map-get($vectorProperty, direction); // + || -
 
-    $cornerMove: map-get($cornerProperty, translation); // 'translate' XY
-    $cornerDirection: map-get($cornerProperty, direction); // + || -
+    $val: draw($vectorMove, $vectorDirection, '10px');
 
-    .#{$family}-#{$vector}-#{$corner} {
-        display: none;
+    @if $corner {
+        $cornerProperty: getVectorPropertyObject($corner);
+
+        $cornerMove: map-get($cornerProperty, translation); // 'translate' XY
+        $cornerDirection: map-get($cornerProperty, direction); // + || -
+
+        $val: #{$val} draw($cornerMove, $cornerDirection, '10px');
+        ;
+    }
+
+    $fabricClassName:'animate-'+$family+'-'+$vector+if($corner, '-'+$corner, null);
+
+    @if $vectorMove !=$cornerMove {
+
+        @keyframes #{$fabricClassName} {
+
+            0% {
+                transform: scale(1);
+                opacity: 1;
+            }
+
+            30% {
+                transform: #{$val} scale(0.7);
+                opacity: 0.7;
+            }
+
+            100% {
+                transform: #{$val} scale(0.7);
+                opacity: 0.5;
+            }
+        }
+
+        .#{$fabricClassName} {
+            animation-name: #{$val};
+        }
     }
 }
+
 
 // left right down up #{$anim_dir_more}
 @each $animate_style in $fabric_in_out_props {
 
     $treatedDirections: ();
 
-    @each $vectorDirection in(up right down left) {
+    @each $inOut in (In Out) {
+        
+        @each $vectorDirection in $vectorDirections {
 
-        $treatedDirections: append($treatedDirections, $vectorDirection);
-        //
-        @include debug ($animate_style, $vectorDirection, 'null');
+            $treatedDirections: append($treatedDirections, $vectorDirection);
+            //
+            @include debug ($animate_style+$inOut, $vectorDirection, null);
 
-        @each $vectorCornerDirection in(up right down left) {
+            @each $vectorCornerDirection in $vectorDirections {
 
-            $alreadyDone: index($treatedDirections, $vectorCornerDirection);
+                $alreadyDone: index($treatedDirections, $vectorCornerDirection);
 
-            @if $vectorCornerDirection !=$vectorDirection and not $alreadyDone {
+                @if $vectorCornerDirection !=$vectorDirection and not $alreadyDone {
 
-                @if $vectorDirection !=$vectorCornerDirection {
-                    //
-                    @include debug ($animate_style, $vectorDirection, $vectorCornerDirection);
+                    @if $vectorDirection !=$vectorCornerDirection {
+                        //
+                        @include debug ($animate_style+$inOut, $vectorDirection, $vectorCornerDirection);
+                    }
                 }
             }
-        }
 
+        }
     }
+
 }
