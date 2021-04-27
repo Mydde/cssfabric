@@ -16,9 +16,9 @@ $fabric_attention_props: map-get($_animation, attention_props);
 $fabric_in_out_props: map-get($_animation, in_out_props);
 
 @mixin keyframe ($animate_style, $Xm, $Ym, $directionX, $directionY) {
- 
-    $moveX: if($Xm==up or $Xm == down ,'translateX','');
-    $moveY: if($Ym==up left $Ym == right ,'translateY','');
+
+    $moveX: if($Xm==up or $Xm==down, 'translateX', '');
+    $moveY: if($Ym==up left $Ym==right, 'translateY', '');
 
     $keyX: if($directionX, #{$moveX} (#{$directionX}10px), '');
     $keyY: if($directionY, #{$moveY} (#{$directionY}10px), '');
@@ -29,88 +29,68 @@ $fabric_in_out_props: map-get($_animation, in_out_props);
     $prop: animate-#{$animate_style}-#{$Xm}-#{$Ym};
 
     // moveX
-    @keyframes #{$prop} {
 
-        0% {
-            transform: scale(1);
-            opacity: 1;
-        }
-
-        30% {
-            transform: #{$keyX} #{$keyY} scale(0.7);
-            opacity: 0.7;
-        }
-
-        100% {
-            transform: #{$keyX_1} #{$keyY_2} scale(0.7);
-            opacity: 0.5;
-        }
-    }
-    .#{$prop} {
-        animation-name: #{$prop};
+    .#{$animate_style}_#{$Xm}_#{$Ym}_#{$directionX}_#{$directionY}red {
+        dsp: nopne;
     }
 }
 
 
-@function gyugyu($anim_dir) {
+// up down right left
+@function getVectorPropertyObject($vectorDirection) {
 
     $move: '';
     $direction: '';
 
-    @if $anim_dir==up {
-        $move: 'translateY';
-        $direction: '-';
-    }
+    $model: (up:(translation:translateY, direction: '-'),
+            down:(translation:translateY, direction: '+'),
+            right:(translation:translateX, direction: '+'),
+            left:(translation:translateX, direction: '-'));
 
-    @if $anim_dir==right {
-        $move: 'translateX';
-        $direction: '+';
-    }
+    $test: map-get($model, $vectorDirection);
 
-    @if $anim_dir==down {
-        $move: 'translateY';
-        $direction: '+';
-    }
+    @return (translation:map-get($test, translation), direction:map-get($test, direction));
 
-    @if $anim_dir==left {
-        $move: 'translateX';
-        $direction: '-';
-    }
+}
 
-    @return (move:$move, direction:$direction);
+//
+@mixin debug($family, $vector, $corner) {
+
+    $vectorProperty: getVectorPropertyObject($vector);
+    $cornerProperty: getVectorPropertyObject($corner);
+
+    $vectorMove: map-get($vectorProperty, translation); // 'translate' XY
+    $vectorDirection: map-get($vectorProperty, direction); // + || -
+
+    $cornerMove: map-get($cornerProperty, translation); // 'translate' XY
+    $cornerDirection: map-get($cornerProperty, direction); // + || -
+
+    .#{$family}-#{$vector}-#{$corner} {
+        display: none;
+    }
 }
 
 // left right down up #{$anim_dir_more}
-
 @each $animate_style in $fabric_in_out_props {
 
-    $treated_dir: ();
+    $treatedDirections: ();
 
-    @each $anim_dir in(up right down left) {
+    @each $vectorDirection in(up right down left) {
 
-        $treated_dir: append($treated_dir, $anim_dir);
- 
-        $tag: gyugyu($anim_dir);
+        $treatedDirections: append($treatedDirections, $vectorDirection);
+        //
+        @include debug ($animate_style, $vectorDirection, 'null');
 
-        $move: map-get($tag, move); // 'translate' XY
-        $direction: map-get($tag, direction); // + || -
- 
-        @include keyframe ($animate_style, $anim_dir, null, $direction, null) ;
+        @each $vectorCornerDirection in(up right down left) {
 
-        @each $anim_dir_more in(up right down left) {
+            $alreadyDone: index($treatedDirections, $vectorCornerDirection);
 
-            $done: index($treated_dir, $anim_dir_more);
+            @if $vectorCornerDirection !=$vectorDirection and not $alreadyDone {
 
-            @if $anim_dir_more !=$anim_dir and not $done { 
-
-                $move2: map-get($tag, move); // 'translate'
-                $direction2: map-get($tag, direction); // + || - 
-
-
-                /// @if $move !=$move2 { 
-
-                    @include keyframe ($animate_style, $anim_dir, $anim_dir_more, $direction, $direction2) ;
-               // }
+                @if $vectorDirection !=$vectorCornerDirection {
+                    //
+                    @include debug ($animate_style, $vectorDirection, $vectorCornerDirection);
+                }
             }
         }
 
