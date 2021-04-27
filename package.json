@@ -2,8 +2,9 @@
   "name": "cssfabric",
   "version": "0.1.0",
   "private": true,
+  "main": "./lib",
   "scripts": {
-    "dev": "gulp taskDownload & npm run watch-all",
+    "dev": "tsc --watch & node lib/ & gulp taskDownload & npm-run-all watch-all & tsc ",
     "build": "",
     "watch-all": "npm-run-all -p -r  watch-json watch-sass ",
     "watch-sass": "gulp watchSass",
@@ -18,7 +19,6 @@
     "unescape-js": "^1.1.4"
   },
   "devDependencies": {
-    "@types/node": "^14.14.41",
     "clean-css": "^5.1.2",
     "cross-spawn": "^7.0.3",
     "css-loader": "^5.2.4",

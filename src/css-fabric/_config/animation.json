@@ -4,10 +4,10 @@
 		"_data": {
 			"attention_props": {},
 			"in_out_props": {
+				"back": {},
 				"bounce": {},
 				"slide": {},
 				"fade": {},
-				"back": {},
 				"zoom": {}
 			}
 		},
