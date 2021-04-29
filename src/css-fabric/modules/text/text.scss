@@ -48,7 +48,7 @@ $ratio_max_min: $font_sizes_h1_em / $font_sizes_h_min_em;
 @mixin fabric_text($tag_short) {
 
     @for $grid_size_value from 1 through $font_sizes {
-        // 12em => 1em;
+        //
         $size: $grid_size_value * 1;
         $index: $font_sizes - $grid_size_value + 1;
         $font_size: $index * $ratio;

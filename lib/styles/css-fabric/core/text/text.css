@@ -12,28 +12,35 @@ h1 {
 
 .h2,
 h2 {
-  font-size: 2.4rem;
+  font-size: 2.5rem;
   line-height: 1.2;
   font-weight: 400;
 }
 
 .h3,
 h3 {
-  font-size: 1.8rem;
+  font-size: 2rem;
   line-height: 1.2;
   font-weight: 400;
 }
 
 .h4,
 h4 {
-  font-size: 1.2rem;
+  font-size: 1.5rem;
   line-height: 1.2;
   font-weight: 400;
 }
 
 .h5,
 h5 {
-  font-size: 0.6rem;
+  font-size: 1rem;
+  line-height: 1.2;
+  font-weight: 400;
+}
+
+.h6,
+h6 {
+  font-size: 0.5rem;
   line-height: 1.2;
   font-weight: 400;
 }
@@ -196,28 +203,35 @@ h1 {
 
   .h2,
 h2 {
-    font-size: 2.4rem;
+    font-size: 2.5rem;
     line-height: 1.2;
     font-weight: 400;
   }
 
   .h3,
 h3 {
-    font-size: 1.8rem;
+    font-size: 2rem;
     line-height: 1.2;
     font-weight: 400;
   }
 
   .h4,
 h4 {
-    font-size: 1.2rem;
+    font-size: 1.5rem;
     line-height: 1.2;
     font-weight: 400;
   }
 
   .h5,
 h5 {
-    font-size: 0.6rem;
+    font-size: 1rem;
+    line-height: 1.2;
+    font-weight: 400;
+  }
+
+  .h6,
+h6 {
+    font-size: 0.5rem;
     line-height: 1.2;
     font-weight: 400;
   }
@@ -380,28 +394,35 @@ h1 {
 
   .h2,
 h2 {
-    font-size: 2.4rem;
+    font-size: 2.5rem;
     line-height: 1.2;
     font-weight: 400;
   }
 
   .h3,
 h3 {
-    font-size: 1.8rem;
+    font-size: 2rem;
     line-height: 1.2;
     font-weight: 400;
   }
 
   .h4,
 h4 {
-    font-size: 1.2rem;
+    font-size: 1.5rem;
     line-height: 1.2;
     font-weight: 400;
   }
 
   .h5,
 h5 {
-    font-size: 0.6rem;
+    font-size: 1rem;
+    line-height: 1.2;
+    font-weight: 400;
+  }
+
+  .h6,
+h6 {
+    font-size: 0.5rem;
     line-height: 1.2;
     font-weight: 400;
   }
@@ -564,28 +585,35 @@ h1 {
 
   .h2,
 h2 {
-    font-size: 2.4rem;
+    font-size: 2.5rem;
     line-height: 1.2;
     font-weight: 400;
   }
 
   .h3,
 h3 {
-    font-size: 1.8rem;
+    font-size: 2rem;
     line-height: 1.2;
     font-weight: 400;
   }
 
   .h4,
 h4 {
-    font-size: 1.2rem;
+    font-size: 1.5rem;
     line-height: 1.2;
     font-weight: 400;
   }
 
   .h5,
 h5 {
-    font-size: 0.6rem;
+    font-size: 1rem;
+    line-height: 1.2;
+    font-weight: 400;
+  }
+
+  .h6,
+h6 {
+    font-size: 0.5rem;
     line-height: 1.2;
     font-weight: 400;
   }
@@ -748,28 +776,35 @@ h1 {
 
   .h2,
 h2 {
-    font-size: 2.4rem;
+    font-size: 2.5rem;
     line-height: 1.2;
     font-weight: 400;
   }
 
   .h3,
 h3 {
-    font-size: 1.8rem;
+    font-size: 2rem;
     line-height: 1.2;
     font-weight: 400;
   }
 
   .h4,
 h4 {
-    font-size: 1.2rem;
+    font-size: 1.5rem;
     line-height: 1.2;
     font-weight: 400;
   }
 
   .h5,
 h5 {
-    font-size: 0.6rem;
+    font-size: 1rem;
+    line-height: 1.2;
+    font-weight: 400;
+  }
+
+  .h6,
+h6 {
+    font-size: 0.5rem;
     line-height: 1.2;
     font-weight: 400;
   }
@@ -932,28 +967,35 @@ h1 {
 
   .h2,
 h2 {
-    font-size: 2.4rem;
+    font-size: 2.5rem;
     line-height: 1.2;
     font-weight: 400;
   }
 
   .h3,
 h3 {
-    font-size: 1.8rem;
+    font-size: 2rem;
     line-height: 1.2;
     font-weight: 400;
   }
 
   .h4,
 h4 {
-    font-size: 1.2rem;
+    font-size: 1.5rem;
     line-height: 1.2;
     font-weight: 400;
   }
 
   .h5,
 h5 {
-    font-size: 0.6rem;
+    font-size: 1rem;
+    line-height: 1.2;
+    font-weight: 400;
+  }
+
+  .h6,
+h6 {
+    font-size: 0.5rem;
     line-height: 1.2;
     font-weight: 400;
   }
