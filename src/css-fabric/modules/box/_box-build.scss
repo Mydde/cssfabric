@@ -30,8 +30,6 @@ $fabric_box_pmb_side_shorthands: map-get($_box, box_border_shorthands);
 $fabric_box_position_props: map-get($_box, box_position_props);
 $fabric_box_display_props : map-get($_box, box_display_props);
 
-
-
 // adding {border}-{r} shorthand css rule for .{border}-{r}-1
 @function raw_size_tag_rule($condition) {
     @if ($condition==1) {
