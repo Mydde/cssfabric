@@ -1,0 +1,21 @@
+/*
+ css-fabric 
+ grid-responsive system
+*/
+
+// load scss config file
+@use '../../_utils';
+@use '_build';
+
+// load general config variables 
+$_base: utils.get_conf();
+$_media_quey_sizes: map-get($_base, media_quey_sizes);
+ 
+
+// loop on responsive ratio dimensions
+@each $mq_size_key,
+$mq_size_value in $_media_quey_sizes {
+  @include utils.responsive_encloser($mq_size_value) {
+    @include build.makeGrid($mq_size_key);
+  }
+} 
