@@ -48,7 +48,7 @@ const getModuleDocs = (module?: string):IFabricConfModuleDocsPart => {
 
 export default {
   getSassConfig: getCssFile,
-  getModuleConfig,
+  getModuleConfig, 
   getModuleData, 
   getModuleMetaData,
   getModuleDocs
