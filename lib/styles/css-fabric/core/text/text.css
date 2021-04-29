@@ -3,31 +3,41 @@
 * text size and transform system
 */
 /* css Hn text rules */
-.txt-h1 {
+.h1,
+h1 {
   font-size: 3rem;
   line-height: 1.2;
   font-weight: 400;
 }
-.txt-h2 {
+
+.h2,
+h2 {
   font-size: 2.4rem;
   line-height: 1.2;
   font-weight: 400;
 }
-.txt-h3 {
+
+.h3,
+h3 {
   font-size: 1.8rem;
   line-height: 1.2;
   font-weight: 400;
 }
-.txt-h4 {
+
+.h4,
+h4 {
   font-size: 1.2rem;
   line-height: 1.2;
   font-weight: 400;
 }
-.txt-h5 {
+
+.h5,
+h5 {
   font-size: 0.6rem;
   line-height: 1.2;
   font-weight: 400;
 }
+
 .txt-cap {
   text-transform: capitalize;
 }
@@ -177,31 +187,41 @@
 }
 
 @media only screen and (min-width: 35.5em) {
-  .txt-sm-h1 {
+  .h1,
+h1 {
     font-size: 3rem;
     line-height: 1.2;
     font-weight: 400;
   }
-  .txt-sm-h2 {
+
+  .h2,
+h2 {
     font-size: 2.4rem;
     line-height: 1.2;
     font-weight: 400;
   }
-  .txt-sm-h3 {
+
+  .h3,
+h3 {
     font-size: 1.8rem;
     line-height: 1.2;
     font-weight: 400;
   }
-  .txt-sm-h4 {
+
+  .h4,
+h4 {
     font-size: 1.2rem;
     line-height: 1.2;
     font-weight: 400;
   }
-  .txt-sm-h5 {
+
+  .h5,
+h5 {
     font-size: 0.6rem;
     line-height: 1.2;
     font-weight: 400;
   }
+
   .txt-sm-cap {
     text-transform: capitalize;
   }
@@ -351,31 +371,41 @@
   }
 }
 @media only screen and (min-width: 48em) {
-  .txt-md-h1 {
+  .h1,
+h1 {
     font-size: 3rem;
     line-height: 1.2;
     font-weight: 400;
   }
-  .txt-md-h2 {
+
+  .h2,
+h2 {
     font-size: 2.4rem;
     line-height: 1.2;
     font-weight: 400;
   }
-  .txt-md-h3 {
+
+  .h3,
+h3 {
     font-size: 1.8rem;
     line-height: 1.2;
     font-weight: 400;
   }
-  .txt-md-h4 {
+
+  .h4,
+h4 {
     font-size: 1.2rem;
     line-height: 1.2;
     font-weight: 400;
   }
-  .txt-md-h5 {
+
+  .h5,
+h5 {
     font-size: 0.6rem;
     line-height: 1.2;
     font-weight: 400;
   }
+
   .txt-md-cap {
     text-transform: capitalize;
   }
@@ -525,31 +555,41 @@
   }
 }
 @media only screen and (min-width: 64em) {
-  .txt-lg-h1 {
+  .h1,
+h1 {
     font-size: 3rem;
     line-height: 1.2;
     font-weight: 400;
   }
-  .txt-lg-h2 {
+
+  .h2,
+h2 {
     font-size: 2.4rem;
     line-height: 1.2;
     font-weight: 400;
   }
-  .txt-lg-h3 {
+
+  .h3,
+h3 {
     font-size: 1.8rem;
     line-height: 1.2;
     font-weight: 400;
   }
-  .txt-lg-h4 {
+
+  .h4,
+h4 {
     font-size: 1.2rem;
     line-height: 1.2;
     font-weight: 400;
   }
-  .txt-lg-h5 {
+
+  .h5,
+h5 {
     font-size: 0.6rem;
     line-height: 1.2;
     font-weight: 400;
   }
+
   .txt-lg-cap {
     text-transform: capitalize;
   }
@@ -699,31 +739,41 @@
   }
 }
 @media only screen and (min-width: 80em) {
-  .txt-xl-h1 {
+  .h1,
+h1 {
     font-size: 3rem;
     line-height: 1.2;
     font-weight: 400;
   }
-  .txt-xl-h2 {
+
+  .h2,
+h2 {
     font-size: 2.4rem;
     line-height: 1.2;
     font-weight: 400;
   }
-  .txt-xl-h3 {
+
+  .h3,
+h3 {
     font-size: 1.8rem;
     line-height: 1.2;
     font-weight: 400;
   }
-  .txt-xl-h4 {
+
+  .h4,
+h4 {
     font-size: 1.2rem;
     line-height: 1.2;
     font-weight: 400;
   }
-  .txt-xl-h5 {
+
+  .h5,
+h5 {
     font-size: 0.6rem;
     line-height: 1.2;
     font-weight: 400;
   }
+
   .txt-xl-cap {
     text-transform: capitalize;
   }
@@ -873,31 +923,41 @@
   }
 }
 @media only screen and (min-width: 120em) {
-  .txt-xxl-h1 {
+  .h1,
+h1 {
     font-size: 3rem;
     line-height: 1.2;
     font-weight: 400;
   }
-  .txt-xxl-h2 {
+
+  .h2,
+h2 {
     font-size: 2.4rem;
     line-height: 1.2;
     font-weight: 400;
   }
-  .txt-xxl-h3 {
+
+  .h3,
+h3 {
     font-size: 1.8rem;
     line-height: 1.2;
     font-weight: 400;
   }
-  .txt-xxl-h4 {
+
+  .h4,
+h4 {
     font-size: 1.2rem;
     line-height: 1.2;
     font-weight: 400;
   }
-  .txt-xxl-h5 {
+
+  .h5,
+h5 {
     font-size: 0.6rem;
     line-height: 1.2;
     font-weight: 400;
   }
+
   .txt-xxl-cap {
     text-transform: capitalize;
   }
