@@ -97,9 +97,13 @@ const json_comments = (file) => {
  * @returns
  */
 function fabricScssImportFile(filePath) {
+
+  // name of the module, from path 
+  let module_name = filePath.substring(filePath.lastIndexOf("modules/")).replace('modules/','');
+
   let module = filePath.substring(filePath.lastIndexOf("/") + 1);
 
-  return " @use '../modules/" + module + "/" + module + "';" + "\r\n";
+  return " @use '../modules/" + module_name + "';" + "\r\n";
 }
 
 const {

@@ -152,6 +152,40 @@
 					"box_display_props": ""
 				}
 			},
+			"color": {
+				"_metadata": {
+					"title": "color",
+					"title_tag": "'its about colors'",
+					"description": "description"
+				},
+				"_data": {
+					"color_schemes_props": {
+						"info": "yellow",
+						"alert": "orange",
+						"error": "red",
+						"warning": "hsl(48, 100%, 67%)",
+						"discrete": "gray",
+						"success": "hsl(141, 71%, 48%)"
+					},
+					"color_palette_props": {
+						"normal": "#333",
+						"error": "red",
+						"warning": "hsl(48, 100%, 67%)",
+						"discrete": "gray",
+						"success": "hsl(141, 71%, 48%)"
+					},
+					"color_grays": {
+						"gray_start": "#f4f4f4",
+						"gray_end": "#333333",
+						"gray_steps": 9
+					}
+				},
+				"_docs": {
+					"color_schemes_props": "",
+					"color_palette_props": "",
+					"color_grays": ""
+				}
+			},
 			"grid": {
 				"_metadata": {
 					"title": "grid",
