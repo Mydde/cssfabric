@@ -36,6 +36,14 @@
 					"text_class_name_short": "txt",
 					"menu_class_name": "menu",
 					"menu_class_name_short": "ul",
+					"size_step": "0.25rem",
+					"sizes": {
+						"tiny": "",
+						"small": "64",
+						"medium": "120",
+						"large": "250",
+						"full": "100%"
+					},
 					"media_quey_sizes": {
 						"sm": 35.5,
 						"md": 48,
@@ -44,27 +52,24 @@
 						"xxl": 120
 					},
 					"color_schemes_props": {
-						"info": "64",
-						"alert": "35.5",
-						"error": "48",
-						"warning": "80",
-						"discrete": "120",
-						"success": "120",
-						"waiting": "120"
+						"info": "yellow",
+						"alert": "orange",
+						"error": "red",
+						"warning": "hsl(48, 100%, 67%)",
+						"discrete": "gray",
+						"success": "hsl(141, 71%, 48%)"
 					},
 					"color_palette_props": {
-						"normal": "64",
-						"alert": "35.5",
-						"error": "48",
-						"warning": "80",
-						"discrete": "120",
-						"success": "120",
-						"waiting": "120"
+						"normal": "#333",
+						"error": "red",
+						"warning": "hsl(48, 100%, 67%)",
+						"discrete": "gray",
+						"success": "hsl(141, 71%, 48%)"
 					},
 					"color_grays": {
 						"gray_start": "#f4f4f4",
 						"gray_end": "#333333",
-						"gray_steps": 12
+						"gray_steps": 9
 					},
 					"grid_ratios": [
 						8,
@@ -87,7 +92,9 @@
 					"menu_class_name_short": "",
 					"color_schemes_props": "",
 					"color_palette_props": "",
-					"color_grays": ""
+					"color_grays": "",
+					"size_step": "",
+					"sizes": ""
 				}
 			},
 			"box": {
@@ -97,9 +104,9 @@
 					"description": "'css-fabric box module to set heights, paddings and margins on all html elements'"
 				},
 				"_data": {
-					"box_unit": "em",
-					"box_unit_size": "0.125",
-					"box_sizes": 1,
+					"box_unit": "px",
+					"box_unit_size": "1",
+					"box_sizes": 32,
 					"box_css_props_shorthands": {
 						"brd": "border",
 						"pad": "padding",
@@ -387,9 +394,9 @@
 					"font_sizes_h1_em": "",
 					"font_sizes_h_min_em": "",
 					"text_ellipsis_tag": "",
-					"text_transform": "text_transform declaration",
-					"font_weights": "font_weights declaration",
-					"text_align": "text_align declaration"
+					"text_transform": "text transform declaration",
+					"font_weights": "font weights declaration",
+					"text_align": "text align declaration"
 				}
 			},
 			"zindex": {

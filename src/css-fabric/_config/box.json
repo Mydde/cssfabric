@@ -6,9 +6,9 @@
 			"description": "'css-fabric box module to set heights, paddings and margins on all html elements'"
 		},
 		"_data": {
-			"box_unit": "em",
-			"box_unit_size": "0.125",
-			"box_sizes": 1,
+			"box_unit": "px",
+			"box_unit_size": "1",
+			"box_sizes": 32,
 			"box_css_props_shorthands": {
 				"brd": "border",
 				"pad": "padding",

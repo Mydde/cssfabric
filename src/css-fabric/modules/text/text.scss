@@ -42,9 +42,12 @@ $h1_size: $font_sizes_h1_em;
 $ratio: $h1_size/$font_sizes;
 $ratio_max_min: $font_sizes_h1_em / $font_sizes_h_min_em;
 
+
+
+ 
 @mixin fabric_text($tag_short) {
 
-    .#{$tag_short} {
+    .#{$tag_short}{
 
         @for $grid_size_value from 1 through $font_sizes {
             // 12em => 1em;
@@ -52,8 +55,10 @@ $ratio_max_min: $font_sizes_h1_em / $font_sizes_h_min_em;
             $index: $font_sizes - $grid_size_value + 1;
             $font_size: $index * $ratio;
 
-            &-h#{$size} {
-                font-size: $font_size+em;
+            &-h#{$size}  {
+                font-size: $font_size+rem;
+                line-height: 1.2;
+                font-weight: 400; 
             }
         }
 
@@ -116,7 +121,7 @@ $ratio_max_min: $font_sizes_h1_em / $font_sizes_h_min_em;
         $gray_steps: map-get($color_grays, gray_steps);
 
         @for $i from 1 through $gray_steps {
-            &-gray-#{$i*100} {
+            &-gray-#{($i+1)*100} {
                 color: mix($gray_end, $gray_start, $i / $gray_steps * 100%);
             }
         }

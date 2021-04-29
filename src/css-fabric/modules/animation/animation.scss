@@ -1,9 +1,9 @@
 /*
  css-fabric 
- grid system
+ grid system 
 */
 
-// load scss config file
+// load scss config file 
 @use '../../_utils';
 // load general config variables 
 $_cfg: utils.get_conf();

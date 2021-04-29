@@ -67,6 +67,7 @@
 .table.tbl-sticky thead tr .th,
 .table.tbl-sticky .thead .tr th,
 .table.tbl-sticky .thead .tr .th {
+  background-color: #ededed;
   position: sticky;
   top: 0;
 }
