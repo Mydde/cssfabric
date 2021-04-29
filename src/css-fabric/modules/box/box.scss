@@ -179,11 +179,6 @@ $fabric_box_display_props : map-get($_box, box_display_props);
       @if $write_rule==position_display {
           @include fabric_property_proxy($_args_prox);
       }
-
-      // @if $write_rule==pmb {
-      //   no responsive for borders !
-      //   @include fabric_box($css_prop, $new_prop_short);
-      // }  
     }
   }
 }

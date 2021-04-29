@@ -85,10 +85,4 @@ $_media_quey_sizes: map-get($_cfg, media_quey_sizes);
 
 @include loop_color(null);
 
-// loop on responsive ratio dimensions
-@each $mq_size_key,
-$mq_size_value in $_media_quey_sizes {
-    @include utils.responsive_encloser($mq_size_value) {
-        @include loop_color($mq_size_key);
-    }
-}
+ 

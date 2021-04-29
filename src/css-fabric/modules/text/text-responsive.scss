@@ -1,0 +1,25 @@
+ /*
+* css-fabric 
+* text system responsive
+*/
+@use "sass:map";
+// load scss config file
+@use '../../_utils'; 
+@use 'text';
+ // load general config variables
+ $_cfg: utils.get_conf();
+
+// media queries sizes, in em  
+$_media_quey_sizes: map-get($_cfg, media_quey_sizes); 
+
+ 
+
+@each $mq_size_key,
+$mq_size_value in $_media_quey_sizes {
+
+    $property_key: #{text.$text_class_name_short}-#{$mq_size_key};
+
+    @include utils.responsive_encloser($mq_size_value) {
+        @include text.fabric_text($property_key);
+    }
+} 

@@ -132,17 +132,25 @@ $ratio_max_min: $font_sizes_h1_em / $font_sizes_h_min_em;
     }
 }
 
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin-block-start: 0 !important;
+    margin-block-end: 0 !important;
+    margin-inline-start: 0 !important;
+    margin-inline-end: 0 !important;
+}
+
+
+
+.txt-ellipsis {
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
 @include fabric_text($text_class_name_short);
 
-
-
-// loop on responsive ratio dimensions
-@each $mq_size_key,
-$mq_size_value in $_media_quey_sizes {
-
-    $property_key: #{$text_class_name_short}-#{$mq_size_key};
-
-    @include utils.responsive_encloser($mq_size_value) {
-        @include fabric_text($property_key);
-    }
-}
