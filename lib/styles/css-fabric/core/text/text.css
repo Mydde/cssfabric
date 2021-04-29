@@ -3,24 +3,11 @@
 * text size and transform system
 */
 /* css Hn text rules */
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  margin-block-start: 0 !important;
-  margin-block-end: 0 !important;
-  margin-inline-start: 0 !important;
-  margin-inline-end: 0 !important;
-}
-
-.txt-ellipsis {
-  text-overflow: ellipsis;
-  overflow: hidden;
-  white-space: nowrap;
-}
-
+/*
+* css-fabric 
+* text size and transform system
+*/
+/** cssfabric : txt*/
 .h1,
 h1 {
   font-size: 3rem;

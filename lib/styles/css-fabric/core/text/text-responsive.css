@@ -3,219 +3,12 @@
 * text size and transform system
 */
 /* css Hn text rules */
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  margin-block-start: 0 !important;
-  margin-block-end: 0 !important;
-  margin-inline-start: 0 !important;
-  margin-inline-end: 0 !important;
-}
-
-.txt-ellipsis {
-  text-overflow: ellipsis;
-  overflow: hidden;
-  white-space: nowrap;
-}
-
-.h1,
-h1 {
-  font-size: 3rem;
-  line-height: 1.2;
-  font-weight: 400;
-}
-
-.h2,
-h2 {
-  font-size: 2.5rem;
-  line-height: 1.2;
-  font-weight: 400;
-}
-
-.h3,
-h3 {
-  font-size: 2rem;
-  line-height: 1.2;
-  font-weight: 400;
-}
-
-.h4,
-h4 {
-  font-size: 1.5rem;
-  line-height: 1.2;
-  font-weight: 400;
-}
-
-.h5,
-h5 {
-  font-size: 1rem;
-  line-height: 1.2;
-  font-weight: 400;
-}
-
-.h6,
-h6 {
-  font-size: 0.5rem;
-  line-height: 1.2;
-  font-weight: 400;
-}
-
-.txt-cap {
-  text-transform: capitalize;
-}
-.txt-up {
-  text-transform: uppercase;
-}
-.txt-low {
-  text-transform: lowercase;
-}
-.txt-none {
-  text-transform: none;
-}
-.txt-full {
-  text-transform: full-width;
-}
-.txt-50 {
-  font-weight: 50;
-}
-.txt-100 {
-  font-weight: 100;
-}
-.txt-300 {
-  font-weight: 400;
-}
-.txt-500 {
-  font-weight: 500;
-}
-.txt-900 {
-  font-weight: 900;
-}
-.txt-light {
-  font-weight: lighter;
-}
-.txt-cap {
-  font-weight: normal;
-}
-.txt-bold {
-  font-weight: bold;
-}
-.txt-bolder {
-  font-weight: bolder;
-}
-.txt-l {
-  text-align: left;
-}
-.txt-r {
-  text-align: right;
-}
-.txt-c {
-  text-align: center;
-}
-.txt-j {
-  text-align: justify;
-}
-.txt-info {
-  color: yellow;
-}
-.txt-alert {
-  color: orange;
-}
-.txt-error {
-  color: red;
-}
-.txt-warning {
-  color: #ffdd57;
-}
-.txt-discrete {
-  color: gray;
-}
-.txt-success {
-  color: #23d160;
-}
-.txt-normal {
-  color: #333;
-}
-.txt-error {
-  color: red;
-}
-.txt-warning {
-  color: #ffdd57;
-}
-.txt-discrete {
-  color: gray;
-}
-.txt-success {
-  color: #23d160;
-}
-.txt-shad-info {
-  text-shadow: 0 0 0.125em yellow;
-}
-.txt-shad-alert {
-  text-shadow: 0 0 0.125em orange;
-}
-.txt-shad-error {
-  text-shadow: 0 0 0.125em red;
-}
-.txt-shad-warning {
-  text-shadow: 0 0 0.125em #ffdd57;
-}
-.txt-shad-discrete {
-  text-shadow: 0 0 0.125em gray;
-}
-.txt-shad-success {
-  text-shadow: 0 0 0.125em #23d160;
-}
-.txt-shad-normal {
-  text-shadow: 0 0 0.125em #333;
-}
-.txt-shad-error {
-  text-shadow: 0 0 0.125em red;
-}
-.txt-shad-warning {
-  text-shadow: 0 0 0.125em #ffdd57;
-}
-.txt-shad-discrete {
-  text-shadow: 0 0 0.125em gray;
-}
-.txt-shad-success {
-  text-shadow: 0 0 0.125em #23d160;
-}
-.txt-gray-200 {
-  color: #dfdfdf;
-}
-.txt-gray-300 {
-  color: #c9c9c9;
-}
-.txt-gray-400 {
-  color: #b4b4b4;
-}
-.txt-gray-500 {
-  color: #9e9e9e;
-}
-.txt-gray-600 {
-  color: #898989;
-}
-.txt-gray-700 {
-  color: #737373;
-}
-.txt-gray-800 {
-  color: #5e5e5e;
-}
-.txt-gray-900 {
-  color: #484848;
-}
-.txt-gray-1000 {
-  color: #333333;
-}
-
 /*
 * css-fabric 
 * text system responsive
 */
 @media only screen and (min-width: 35.5em) {
+  /** cssfabric : txt-sm*/
   .h1,
 h1 {
     font-size: 3rem;
@@ -407,6 +200,7 @@ h6 {
   }
 }
 @media only screen and (min-width: 48em) {
+  /** cssfabric : txt-md*/
   .h1,
 h1 {
     font-size: 3rem;
@@ -598,6 +392,7 @@ h6 {
   }
 }
 @media only screen and (min-width: 64em) {
+  /** cssfabric : txt-lg*/
   .h1,
 h1 {
     font-size: 3rem;
@@ -789,6 +584,7 @@ h6 {
   }
 }
 @media only screen and (min-width: 80em) {
+  /** cssfabric : txt-xl*/
   .h1,
 h1 {
     font-size: 3rem;
@@ -980,6 +776,7 @@ h6 {
   }
 }
 @media only screen and (min-width: 120em) {
+  /** cssfabric : txt-xxl*/
   .h1,
 h1 {
     font-size: 3rem;
