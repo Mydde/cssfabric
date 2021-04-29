@@ -8,7 +8,9 @@
  @use '../modules/grid/_build';
  @use '../modules/menu/menu';
  @use '../modules/overflow/overflow';
+ @use '../modules/scale/scale-responsive';
  @use '../modules/scale/scale';
+ @use '../modules/scale/_scale-build';
  @use '../modules/table/table';
  @use '../modules/text/text-responsive';
  @use '../modules/text/text';

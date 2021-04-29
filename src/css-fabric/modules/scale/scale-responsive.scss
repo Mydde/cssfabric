@@ -1,0 +1,21 @@
+/*
+ css-fabric 
+ scale-responsive  system pointless
+*/
+
+// load scss config file
+@use '../../_utils';
+@use '_scale-build'as build;
+ 
+// load general config variables 
+$_base: utils.get_conf();
+// media queries sizes, in rem  
+$_media_quey_sizes: map-get($_base, media_quey_sizes);
+
+// builder responsive 
+@each $mq_size_key,
+$mq_size_value in $_media_quey_sizes {
+    @include utils.responsive_encloser($mq_size_value) {
+        @include build.buildScale($mq_size_key);
+    }
+}
