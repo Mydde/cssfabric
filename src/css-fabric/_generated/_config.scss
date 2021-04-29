@@ -182,11 +182,14 @@ $config: (
         success: hsl(141, 71%, 48%)
       ),
       color_palette_props: (
-        normal: #333,
-        error: red,
-        warning: hsl(48, 100%, 67%),
-        discrete: gray,
-        success: hsl(141, 71%, 48%)
+        yellow: #ffb900,
+        orange: #d83b01,
+        red: #d13438,
+        magenta: #b4009e,
+        purple: #5c2d91,
+        green: #107c10,
+        teal: #008272,
+        blue: #0078d4
       ),
       color_grays: (
         gray_start: #f4f4f4,

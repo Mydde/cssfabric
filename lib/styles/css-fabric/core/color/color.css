@@ -25,20 +25,29 @@
   color: #23d160;
 }
 
-.color-normal {
-  color: #333;
+.color-yellow {
+  color: #ffb900;
 }
-.color-error {
-  color: red;
+.color-orange {
+  color: #d83b01;
 }
-.color-warning {
-  color: #ffdd57;
+.color-red {
+  color: #d13438;
 }
-.color-discrete {
-  color: gray;
+.color-magenta {
+  color: #b4009e;
 }
-.color-success {
-  color: #23d160;
+.color-purple {
+  color: #5c2d91;
+}
+.color-green {
+  color: #107c10;
+}
+.color-teal {
+  color: #008272;
+}
+.color-blue {
+  color: #0078d4;
 }
 
 .color-100 {
@@ -88,20 +97,29 @@
   background-color: #23d160;
 }
 
-.bg-normal {
-  background-color: #333;
+.bg-yellow {
+  background-color: #ffb900;
 }
-.bg-error {
-  background-color: red;
+.bg-orange {
+  background-color: #d83b01;
 }
-.bg-warning {
-  background-color: #ffdd57;
+.bg-red {
+  background-color: #d13438;
 }
-.bg-discrete {
-  background-color: gray;
+.bg-magenta {
+  background-color: #b4009e;
 }
-.bg-success {
-  background-color: #23d160;
+.bg-purple {
+  background-color: #5c2d91;
+}
+.bg-green {
+  background-color: #107c10;
+}
+.bg-teal {
+  background-color: #008272;
+}
+.bg-blue {
+  background-color: #0078d4;
 }
 
 .bg-100 {
@@ -163,30 +181,45 @@
   background-color: #23d160;
 }
 
-.bg-theme-normal {
+.bg-theme-yellow {
+  color: black;
+  text-shadow: 0 0 2px #ffb900;
+  background-color: #ffb900;
+}
+.bg-theme-orange {
   color: white;
-  text-shadow: 0 0 2px #333;
-  background-color: #333;
+  text-shadow: 0 0 2px #d83b01;
+  background-color: #d83b01;
 }
-.bg-theme-error {
+.bg-theme-red {
   color: white;
-  text-shadow: 0 0 2px red;
-  background-color: red;
+  text-shadow: 0 0 2px #d13438;
+  background-color: #d13438;
 }
-.bg-theme-warning {
-  color: black;
-  text-shadow: 0 0 2px #ffdd57;
-  background-color: #ffdd57;
+.bg-theme-magenta {
+  color: white;
+  text-shadow: 0 0 2px #b4009e;
+  background-color: #b4009e;
 }
-.bg-theme-discrete {
-  color: black;
-  text-shadow: 0 0 2px gray;
-  background-color: gray;
+.bg-theme-purple {
+  color: white;
+  text-shadow: 0 0 2px #5c2d91;
+  background-color: #5c2d91;
 }
-.bg-theme-success {
-  color: black;
-  text-shadow: 0 0 2px #23d160;
-  background-color: #23d160;
+.bg-theme-green {
+  color: white;
+  text-shadow: 0 0 2px #107c10;
+  background-color: #107c10;
+}
+.bg-theme-teal {
+  color: white;
+  text-shadow: 0 0 2px #008272;
+  background-color: #008272;
+}
+.bg-theme-blue {
+  color: white;
+  text-shadow: 0 0 2px #0078d4;
+  background-color: #0078d4;
 }
 
 .bg-theme-100 {
