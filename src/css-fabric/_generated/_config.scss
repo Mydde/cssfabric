@@ -116,8 +116,12 @@ $config: (
       box_unit: px,
       box_unit_size: 1,
       box_sizes: 32,
+      box_shorthands: (
+        position: pos,
+        display: dsp
+      ),
       box_css_props_shorthands: (
-        brd: border,
+        border: brd,
         pad: padding,
         marg: margin
       ),
@@ -155,6 +159,7 @@ $config: (
       box_unit: "",
       box_unit_size: "",
       box_sizes: "",
+      box_shorthands: "",
       box_css_props_shorthands: "",
       box_border_shorthands: "",
       box_position_props: "",
