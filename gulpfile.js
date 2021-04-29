@@ -6,6 +6,7 @@ const gulp = require("gulp"),
   mergeJson = require("gulp-merge-json"),
   gulFileList = require("gulp-filelist"),
   spawn = require("cross-spawn"),
+  fs = require("fs"),
   gulpDownload = require("gulp-download-stream");
 
 var fabricConfig = require("./cssfabric.json");
@@ -91,6 +92,16 @@ const json_comments = (file) => {
   return { ...file_content };
 };
 
+function fabricVarExportFile(filePath) {
+
+  // name of the module, from path 
+  let module_name = filePath.substring(filePath.lastIndexOf("modules/")).replace('modules/','');
+
+  let module = filePath.substring(filePath.lastIndexOf("/") + 1);
+
+  return " @use '../modules/" + module_name + "';" + "\r\n";
+}
+
 /**
  *
  * @param {string} filePath
@@ -104,6 +115,38 @@ function fabricScssImportFile(filePath) {
   let module = filePath.substring(filePath.lastIndexOf("/") + 1);
 
   return " @use '../modules/" + module_name + "';" + "\r\n";
+}
+
+function readVars(filePath){
+ 
+
+  const out = fs.readFileSync(filePath+".scss");
+
+  fs.readFile(filePath+".scss", "utf-8", (err, data) => {
+    console.log({data});
+  });
+
+  console.log('out',out);
+
+  return "// "+filePath+ "\r\n";
+};
+
+/**
+ * 
+ * @param {*} filePath 
+ * @returns 
+ */
+function fabricScssExportVarsFile(filePath) {
+  console.log('fabricScssExportVarsFile',filePath);
+
+  // name of the module, from path 
+  let module_name = filePath.substring(filePath.lastIndexOf("modules/")).replace('modules/','');
+
+  let module = filePath.substring(filePath.lastIndexOf("/") + 1);
+
+  // return " @use '../modules/" + module_name + "';" + "\r\n";
+
+  return readVars(filePath);
 }
 
 const {
@@ -125,6 +168,25 @@ function task_scss2json(cb) {
   );
 
   return cb();
+}
+
+// from task_mergeInclude;
+function task_varsExport(cb) {
+  console.log('task_varsExport');
+
+  gulp
+    .src(fabricModuleDir + "/*/_*-vars.scss")
+    .pipe(
+      gulFileList("app_vars.scss", {
+        destRowTemplate: fabricScssExportVarsFile,
+        removeExtensions: true,
+      })
+    )
+    .pipe(cache(task_varsExport))
+    .pipe(gulp.dest(generatedDir))
+    .on("end", () => {
+      return cb();
+    });
 }
 
 /**
@@ -210,7 +272,7 @@ function watchJsonTask(cb) {
 }
 
 function watchSassTask(cb) {
-  gulp.watch(fabricRootDir, task_sass2css);
+  gulp.watch(fabricRootDir, gulp.parallel(task_sass2css, task_varsExport));
 
   cb();
 }
@@ -236,3 +298,5 @@ exports.watchJson = watchJsonTask;
 exports.watchSass = watchSassTask;
 exports.watchInclude = watchInclude;
 exports.taskDownload = taskDownload;
+
+exports.task_varsExport = task_varsExport;

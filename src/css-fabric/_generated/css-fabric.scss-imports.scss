@@ -1,9 +1,9 @@
  @use '../modules/animation/animation';
  @use '../modules/base/base';
  @use '../modules/box/box-responsive';
- @use '../modules/box/box-vars';
  @use '../modules/box/box';
  @use '../modules/box/_box-build';
+ @use '../modules/box/_box-vars';
  @use '../modules/color/color-responsive';
  @use '../modules/color/color-vars';
  @use '../modules/color/color';
@@ -11,6 +11,7 @@
  @use '../modules/grid/grid-responsive';
  @use '../modules/grid/grid';
  @use '../modules/grid/_build';
+ @use '../modules/grid/_grid-vars';
  @use '../modules/menu/menu-responsive';
  @use '../modules/menu/menu';
  @use '../modules/menu/_menu-build';

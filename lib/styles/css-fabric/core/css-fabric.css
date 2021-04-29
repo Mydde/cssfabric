@@ -20471,10 +20471,6 @@ h6 {
     position: sticky;
   }
 }
-:root {
-  --red: 125;
-}
-
 /*
 * css-fabric 
 * box : padding, margin and border system
