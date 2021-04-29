@@ -1,0 +1,153 @@
+/*
+* css-fabric 
+* text size and transform system
+*/
+@use "sass:map";
+// load scss config file
+@use '../../_utils';
+// load general config variables
+$_cfg: utils.get_conf();
+// load local config variables
+$_base: utils.get_conf_data(base);
+
+// media queries sizes, in em  
+$_media_quey_sizes: map-get($_base, media_quey_sizes);
+
+// COLOR SCHEMES
+$color_schemes: map-get($_base, color_schemes_props);
+
+// COLOR PALETTE
+$color_palette_props: map-get($_base, color_palette_props);
+
+// GRAYS
+$color_grays: map-get($_base, color_grays);
+$gray_start: map-get($color_grays, gray_start);
+$gray_end: map-get($color_grays, gray_end);
+$gray_steps: map-get($color_grays, gray_steps);
+
+
+@mixin text-contrast($n) {
+    $color-brightness: round((red($n) * 299) + (green($n) * 587) + (blue($n) * 114) / 1000);
+    $light-color: round((red(#ffffff) * 299) + (green(#ffffff) * 587) + (blue(#ffffff) * 114) / 1000);
+
+    @if abs($color-brightness) < ($light-color/2) {
+        color: white;
+    }
+
+    @else {
+        color: black;
+    }
+}
+
+$gray_schemes: ();
+
+@for $i from 1 through $gray_steps {
+    $color: mix($gray_end, $gray_start, $i / $gray_steps * 100%);
+    $gray_schemes: map.set($gray_schemes, #{$i*100}, $color);
+}
+
+
+@mixin fabric_colors($type, $tag_short, $mq_key) {
+    $prop: '';
+
+    $property_key: #{$tag_short}+if($mq_key, -#{$mq_key}, '');
+
+    .#{$property_key} {
+
+        @each $color_key,
+        $color_prop in $type {
+
+            &-#{$color_key} {
+                @if $tag_short==color {
+                    color: $color_prop;
+                }
+
+                @if $tag_short==bg {
+                    background-color: $color_prop;
+                }
+
+                @if $tag_short=='bg-theme' {
+                    @include text-contrast($color_prop); 
+                    text-shadow: 0 0 2px $color_prop;
+                    background-color: $color_prop;
+                }
+            }
+        }
+    }
+}
+
+@mixin loop_color($mq_size_key) {
+    @each $key in color bg bg-theme {
+        @include fabric_colors($color_schemes, $key, ($mq_size_key));
+        @include fabric_colors($color_palette_props, $key, ($mq_size_key));
+        @include fabric_colors($gray_schemes, $key,($mq_size_key));
+    }
+}
+
+@include loop_color(null);
+
+// loop on responsive ratio dimensions
+@each $mq_size_key,
+$mq_size_value in $_media_quey_sizes {
+
+
+    @include utils.responsive_encloser($mq_size_value) {
+        @include loop_color($mq_size_key);
+    }
+}
+
+
+
+
+
+
+
+p {
+    margin: auto;
+}
+
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin-block-start: 0 !important;
+    margin-block-end: 0 !important;
+    margin-inline-start: 0 !important;
+    margin-inline-end: 0 !important;
+}
+
+
+
+.txt-ellipsis {
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.hover-parent {
+    .hover-show {
+        display: none;
+    }
+
+    .hover-hide {
+        display: initial;
+    }
+
+    &:hover {
+        .hover-show {
+            display: initial;
+        }
+
+        .hover-hide {
+            display: none;
+        }
+    }
+
+}
+
+.block:not(:last-child) {
+    margin-bottom: 1.5rem;
+}

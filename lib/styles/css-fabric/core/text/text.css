@@ -4,19 +4,29 @@
 */
 /* css Hn text rules */
 .txt-h1 {
-  font-size: 3em;
+  font-size: 3rem;
+  line-height: 1.2;
+  font-weight: 400;
 }
 .txt-h2 {
-  font-size: 2.4em;
+  font-size: 2.4rem;
+  line-height: 1.2;
+  font-weight: 400;
 }
 .txt-h3 {
-  font-size: 1.8em;
+  font-size: 1.8rem;
+  line-height: 1.2;
+  font-weight: 400;
 }
 .txt-h4 {
-  font-size: 1.2em;
+  font-size: 1.2rem;
+  line-height: 1.2;
+  font-weight: 400;
 }
 .txt-h5 {
-  font-size: 0.6em;
+  font-size: 0.6rem;
+  line-height: 1.2;
+  font-weight: 400;
 }
 .txt-cap {
   text-transform: capitalize;
@@ -73,141 +83,124 @@
   text-align: justify;
 }
 .txt-info {
-  color: 64;
+  color: yellow;
 }
 .txt-alert {
-  color: 35.5;
+  color: orange;
 }
 .txt-error {
-  color: 48;
+  color: red;
 }
 .txt-warning {
-  color: 80;
+  color: #ffdd57;
 }
 .txt-discrete {
-  color: 120;
+  color: gray;
 }
 .txt-success {
-  color: 120;
-}
-.txt-waiting {
-  color: 120;
+  color: #23d160;
 }
 .txt-normal {
-  color: 64;
-}
-.txt-alert {
-  color: 35.5;
+  color: #333;
 }
 .txt-error {
-  color: 48;
+  color: red;
 }
 .txt-warning {
-  color: 80;
+  color: #ffdd57;
 }
 .txt-discrete {
-  color: 120;
+  color: gray;
 }
 .txt-success {
-  color: 120;
-}
-.txt-waiting {
-  color: 120;
+  color: #23d160;
 }
 .txt-shad-info {
-  text-shadow: 0 0 0.125em 64;
+  text-shadow: 0 0 0.125em yellow;
 }
 .txt-shad-alert {
-  text-shadow: 0 0 0.125em 35.5;
+  text-shadow: 0 0 0.125em orange;
 }
 .txt-shad-error {
-  text-shadow: 0 0 0.125em 48;
+  text-shadow: 0 0 0.125em red;
 }
 .txt-shad-warning {
-  text-shadow: 0 0 0.125em 80;
+  text-shadow: 0 0 0.125em #ffdd57;
 }
 .txt-shad-discrete {
-  text-shadow: 0 0 0.125em 120;
+  text-shadow: 0 0 0.125em gray;
 }
 .txt-shad-success {
-  text-shadow: 0 0 0.125em 120;
-}
-.txt-shad-waiting {
-  text-shadow: 0 0 0.125em 120;
+  text-shadow: 0 0 0.125em #23d160;
 }
 .txt-shad-normal {
-  text-shadow: 0 0 0.125em 64;
-}
-.txt-shad-alert {
-  text-shadow: 0 0 0.125em 35.5;
+  text-shadow: 0 0 0.125em #333;
 }
 .txt-shad-error {
-  text-shadow: 0 0 0.125em 48;
+  text-shadow: 0 0 0.125em red;
 }
 .txt-shad-warning {
-  text-shadow: 0 0 0.125em 80;
+  text-shadow: 0 0 0.125em #ffdd57;
 }
 .txt-shad-discrete {
-  text-shadow: 0 0 0.125em 120;
+  text-shadow: 0 0 0.125em gray;
 }
 .txt-shad-success {
-  text-shadow: 0 0 0.125em 120;
-}
-.txt-shad-waiting {
-  text-shadow: 0 0 0.125em 120;
-}
-.txt-gray-100 {
-  color: #e4e4e4;
+  text-shadow: 0 0 0.125em #23d160;
 }
 .txt-gray-200 {
-  color: #d4d4d4;
+  color: #dfdfdf;
 }
 .txt-gray-300 {
-  color: #c4c4c4;
+  color: #c9c9c9;
 }
 .txt-gray-400 {
   color: #b4b4b4;
 }
 .txt-gray-500 {
-  color: #a4a4a4;
+  color: #9e9e9e;
 }
 .txt-gray-600 {
-  color: #949494;
+  color: #898989;
 }
 .txt-gray-700 {
-  color: #838383;
-}
-.txt-gray-800 {
   color: #737373;
 }
+.txt-gray-800 {
+  color: #5e5e5e;
+}
 .txt-gray-900 {
-  color: #636363;
+  color: #484848;
 }
 .txt-gray-1000 {
-  color: #535353;
-}
-.txt-gray-1100 {
-  color: #434343;
-}
-.txt-gray-1200 {
   color: #333333;
 }
 
 @media only screen and (min-width: 35.5em) {
   .txt-sm-h1 {
-    font-size: 3em;
+    font-size: 3rem;
+    line-height: 1.2;
+    font-weight: 400;
   }
   .txt-sm-h2 {
-    font-size: 2.4em;
+    font-size: 2.4rem;
+    line-height: 1.2;
+    font-weight: 400;
   }
   .txt-sm-h3 {
-    font-size: 1.8em;
+    font-size: 1.8rem;
+    line-height: 1.2;
+    font-weight: 400;
   }
   .txt-sm-h4 {
-    font-size: 1.2em;
+    font-size: 1.2rem;
+    line-height: 1.2;
+    font-weight: 400;
   }
   .txt-sm-h5 {
-    font-size: 0.6em;
+    font-size: 0.6rem;
+    line-height: 1.2;
+    font-weight: 400;
   }
   .txt-sm-cap {
     text-transform: capitalize;
@@ -264,141 +257,124 @@
     text-align: justify;
   }
   .txt-sm-info {
-    color: 64;
+    color: yellow;
   }
   .txt-sm-alert {
-    color: 35.5;
+    color: orange;
   }
   .txt-sm-error {
-    color: 48;
+    color: red;
   }
   .txt-sm-warning {
-    color: 80;
+    color: #ffdd57;
   }
   .txt-sm-discrete {
-    color: 120;
+    color: gray;
   }
   .txt-sm-success {
-    color: 120;
-  }
-  .txt-sm-waiting {
-    color: 120;
+    color: #23d160;
   }
   .txt-sm-normal {
-    color: 64;
-  }
-  .txt-sm-alert {
-    color: 35.5;
+    color: #333;
   }
   .txt-sm-error {
-    color: 48;
+    color: red;
   }
   .txt-sm-warning {
-    color: 80;
+    color: #ffdd57;
   }
   .txt-sm-discrete {
-    color: 120;
+    color: gray;
   }
   .txt-sm-success {
-    color: 120;
-  }
-  .txt-sm-waiting {
-    color: 120;
+    color: #23d160;
   }
   .txt-sm-shad-info {
-    text-shadow: 0 0 0.125em 64;
+    text-shadow: 0 0 0.125em yellow;
   }
   .txt-sm-shad-alert {
-    text-shadow: 0 0 0.125em 35.5;
+    text-shadow: 0 0 0.125em orange;
   }
   .txt-sm-shad-error {
-    text-shadow: 0 0 0.125em 48;
+    text-shadow: 0 0 0.125em red;
   }
   .txt-sm-shad-warning {
-    text-shadow: 0 0 0.125em 80;
+    text-shadow: 0 0 0.125em #ffdd57;
   }
   .txt-sm-shad-discrete {
-    text-shadow: 0 0 0.125em 120;
+    text-shadow: 0 0 0.125em gray;
   }
   .txt-sm-shad-success {
-    text-shadow: 0 0 0.125em 120;
-  }
-  .txt-sm-shad-waiting {
-    text-shadow: 0 0 0.125em 120;
+    text-shadow: 0 0 0.125em #23d160;
   }
   .txt-sm-shad-normal {
-    text-shadow: 0 0 0.125em 64;
-  }
-  .txt-sm-shad-alert {
-    text-shadow: 0 0 0.125em 35.5;
+    text-shadow: 0 0 0.125em #333;
   }
   .txt-sm-shad-error {
-    text-shadow: 0 0 0.125em 48;
+    text-shadow: 0 0 0.125em red;
   }
   .txt-sm-shad-warning {
-    text-shadow: 0 0 0.125em 80;
+    text-shadow: 0 0 0.125em #ffdd57;
   }
   .txt-sm-shad-discrete {
-    text-shadow: 0 0 0.125em 120;
+    text-shadow: 0 0 0.125em gray;
   }
   .txt-sm-shad-success {
-    text-shadow: 0 0 0.125em 120;
-  }
-  .txt-sm-shad-waiting {
-    text-shadow: 0 0 0.125em 120;
-  }
-  .txt-sm-gray-100 {
-    color: #e4e4e4;
+    text-shadow: 0 0 0.125em #23d160;
   }
   .txt-sm-gray-200 {
-    color: #d4d4d4;
+    color: #dfdfdf;
   }
   .txt-sm-gray-300 {
-    color: #c4c4c4;
+    color: #c9c9c9;
   }
   .txt-sm-gray-400 {
     color: #b4b4b4;
   }
   .txt-sm-gray-500 {
-    color: #a4a4a4;
+    color: #9e9e9e;
   }
   .txt-sm-gray-600 {
-    color: #949494;
+    color: #898989;
   }
   .txt-sm-gray-700 {
-    color: #838383;
-  }
-  .txt-sm-gray-800 {
     color: #737373;
   }
+  .txt-sm-gray-800 {
+    color: #5e5e5e;
+  }
   .txt-sm-gray-900 {
-    color: #636363;
+    color: #484848;
   }
   .txt-sm-gray-1000 {
-    color: #535353;
-  }
-  .txt-sm-gray-1100 {
-    color: #434343;
-  }
-  .txt-sm-gray-1200 {
     color: #333333;
   }
 }
 @media only screen and (min-width: 48em) {
   .txt-md-h1 {
-    font-size: 3em;
+    font-size: 3rem;
+    line-height: 1.2;
+    font-weight: 400;
   }
   .txt-md-h2 {
-    font-size: 2.4em;
+    font-size: 2.4rem;
+    line-height: 1.2;
+    font-weight: 400;
   }
   .txt-md-h3 {
-    font-size: 1.8em;
+    font-size: 1.8rem;
+    line-height: 1.2;
+    font-weight: 400;
   }
   .txt-md-h4 {
-    font-size: 1.2em;
+    font-size: 1.2rem;
+    line-height: 1.2;
+    font-weight: 400;
   }
   .txt-md-h5 {
-    font-size: 0.6em;
+    font-size: 0.6rem;
+    line-height: 1.2;
+    font-weight: 400;
   }
   .txt-md-cap {
     text-transform: capitalize;
@@ -455,141 +431,124 @@
     text-align: justify;
   }
   .txt-md-info {
-    color: 64;
+    color: yellow;
   }
   .txt-md-alert {
-    color: 35.5;
+    color: orange;
   }
   .txt-md-error {
-    color: 48;
+    color: red;
   }
   .txt-md-warning {
-    color: 80;
+    color: #ffdd57;
   }
   .txt-md-discrete {
-    color: 120;
+    color: gray;
   }
   .txt-md-success {
-    color: 120;
-  }
-  .txt-md-waiting {
-    color: 120;
+    color: #23d160;
   }
   .txt-md-normal {
-    color: 64;
-  }
-  .txt-md-alert {
-    color: 35.5;
+    color: #333;
   }
   .txt-md-error {
-    color: 48;
+    color: red;
   }
   .txt-md-warning {
-    color: 80;
+    color: #ffdd57;
   }
   .txt-md-discrete {
-    color: 120;
+    color: gray;
   }
   .txt-md-success {
-    color: 120;
-  }
-  .txt-md-waiting {
-    color: 120;
+    color: #23d160;
   }
   .txt-md-shad-info {
-    text-shadow: 0 0 0.125em 64;
+    text-shadow: 0 0 0.125em yellow;
   }
   .txt-md-shad-alert {
-    text-shadow: 0 0 0.125em 35.5;
+    text-shadow: 0 0 0.125em orange;
   }
   .txt-md-shad-error {
-    text-shadow: 0 0 0.125em 48;
+    text-shadow: 0 0 0.125em red;
   }
   .txt-md-shad-warning {
-    text-shadow: 0 0 0.125em 80;
+    text-shadow: 0 0 0.125em #ffdd57;
   }
   .txt-md-shad-discrete {
-    text-shadow: 0 0 0.125em 120;
+    text-shadow: 0 0 0.125em gray;
   }
   .txt-md-shad-success {
-    text-shadow: 0 0 0.125em 120;
-  }
-  .txt-md-shad-waiting {
-    text-shadow: 0 0 0.125em 120;
+    text-shadow: 0 0 0.125em #23d160;
   }
   .txt-md-shad-normal {
-    text-shadow: 0 0 0.125em 64;
-  }
-  .txt-md-shad-alert {
-    text-shadow: 0 0 0.125em 35.5;
+    text-shadow: 0 0 0.125em #333;
   }
   .txt-md-shad-error {
-    text-shadow: 0 0 0.125em 48;
+    text-shadow: 0 0 0.125em red;
   }
   .txt-md-shad-warning {
-    text-shadow: 0 0 0.125em 80;
+    text-shadow: 0 0 0.125em #ffdd57;
   }
   .txt-md-shad-discrete {
-    text-shadow: 0 0 0.125em 120;
+    text-shadow: 0 0 0.125em gray;
   }
   .txt-md-shad-success {
-    text-shadow: 0 0 0.125em 120;
-  }
-  .txt-md-shad-waiting {
-    text-shadow: 0 0 0.125em 120;
-  }
-  .txt-md-gray-100 {
-    color: #e4e4e4;
+    text-shadow: 0 0 0.125em #23d160;
   }
   .txt-md-gray-200 {
-    color: #d4d4d4;
+    color: #dfdfdf;
   }
   .txt-md-gray-300 {
-    color: #c4c4c4;
+    color: #c9c9c9;
   }
   .txt-md-gray-400 {
     color: #b4b4b4;
   }
   .txt-md-gray-500 {
-    color: #a4a4a4;
+    color: #9e9e9e;
   }
   .txt-md-gray-600 {
-    color: #949494;
+    color: #898989;
   }
   .txt-md-gray-700 {
-    color: #838383;
-  }
-  .txt-md-gray-800 {
     color: #737373;
   }
+  .txt-md-gray-800 {
+    color: #5e5e5e;
+  }
   .txt-md-gray-900 {
-    color: #636363;
+    color: #484848;
   }
   .txt-md-gray-1000 {
-    color: #535353;
-  }
-  .txt-md-gray-1100 {
-    color: #434343;
-  }
-  .txt-md-gray-1200 {
     color: #333333;
   }
 }
 @media only screen and (min-width: 64em) {
   .txt-lg-h1 {
-    font-size: 3em;
+    font-size: 3rem;
+    line-height: 1.2;
+    font-weight: 400;
   }
   .txt-lg-h2 {
-    font-size: 2.4em;
+    font-size: 2.4rem;
+    line-height: 1.2;
+    font-weight: 400;
   }
   .txt-lg-h3 {
-    font-size: 1.8em;
+    font-size: 1.8rem;
+    line-height: 1.2;
+    font-weight: 400;
   }
   .txt-lg-h4 {
-    font-size: 1.2em;
+    font-size: 1.2rem;
+    line-height: 1.2;
+    font-weight: 400;
   }
   .txt-lg-h5 {
-    font-size: 0.6em;
+    font-size: 0.6rem;
+    line-height: 1.2;
+    font-weight: 400;
   }
   .txt-lg-cap {
     text-transform: capitalize;
@@ -646,141 +605,124 @@
     text-align: justify;
   }
   .txt-lg-info {
-    color: 64;
+    color: yellow;
   }
   .txt-lg-alert {
-    color: 35.5;
+    color: orange;
   }
   .txt-lg-error {
-    color: 48;
+    color: red;
   }
   .txt-lg-warning {
-    color: 80;
+    color: #ffdd57;
   }
   .txt-lg-discrete {
-    color: 120;
+    color: gray;
   }
   .txt-lg-success {
-    color: 120;
-  }
-  .txt-lg-waiting {
-    color: 120;
+    color: #23d160;
   }
   .txt-lg-normal {
-    color: 64;
-  }
-  .txt-lg-alert {
-    color: 35.5;
+    color: #333;
   }
   .txt-lg-error {
-    color: 48;
+    color: red;
   }
   .txt-lg-warning {
-    color: 80;
+    color: #ffdd57;
   }
   .txt-lg-discrete {
-    color: 120;
+    color: gray;
   }
   .txt-lg-success {
-    color: 120;
-  }
-  .txt-lg-waiting {
-    color: 120;
+    color: #23d160;
   }
   .txt-lg-shad-info {
-    text-shadow: 0 0 0.125em 64;
+    text-shadow: 0 0 0.125em yellow;
   }
   .txt-lg-shad-alert {
-    text-shadow: 0 0 0.125em 35.5;
+    text-shadow: 0 0 0.125em orange;
   }
   .txt-lg-shad-error {
-    text-shadow: 0 0 0.125em 48;
+    text-shadow: 0 0 0.125em red;
   }
   .txt-lg-shad-warning {
-    text-shadow: 0 0 0.125em 80;
+    text-shadow: 0 0 0.125em #ffdd57;
   }
   .txt-lg-shad-discrete {
-    text-shadow: 0 0 0.125em 120;
+    text-shadow: 0 0 0.125em gray;
   }
   .txt-lg-shad-success {
-    text-shadow: 0 0 0.125em 120;
-  }
-  .txt-lg-shad-waiting {
-    text-shadow: 0 0 0.125em 120;
+    text-shadow: 0 0 0.125em #23d160;
   }
   .txt-lg-shad-normal {
-    text-shadow: 0 0 0.125em 64;
-  }
-  .txt-lg-shad-alert {
-    text-shadow: 0 0 0.125em 35.5;
+    text-shadow: 0 0 0.125em #333;
   }
   .txt-lg-shad-error {
-    text-shadow: 0 0 0.125em 48;
+    text-shadow: 0 0 0.125em red;
   }
   .txt-lg-shad-warning {
-    text-shadow: 0 0 0.125em 80;
+    text-shadow: 0 0 0.125em #ffdd57;
   }
   .txt-lg-shad-discrete {
-    text-shadow: 0 0 0.125em 120;
+    text-shadow: 0 0 0.125em gray;
   }
   .txt-lg-shad-success {
-    text-shadow: 0 0 0.125em 120;
-  }
-  .txt-lg-shad-waiting {
-    text-shadow: 0 0 0.125em 120;
-  }
-  .txt-lg-gray-100 {
-    color: #e4e4e4;
+    text-shadow: 0 0 0.125em #23d160;
   }
   .txt-lg-gray-200 {
-    color: #d4d4d4;
+    color: #dfdfdf;
   }
   .txt-lg-gray-300 {
-    color: #c4c4c4;
+    color: #c9c9c9;
   }
   .txt-lg-gray-400 {
     color: #b4b4b4;
   }
   .txt-lg-gray-500 {
-    color: #a4a4a4;
+    color: #9e9e9e;
   }
   .txt-lg-gray-600 {
-    color: #949494;
+    color: #898989;
   }
   .txt-lg-gray-700 {
-    color: #838383;
-  }
-  .txt-lg-gray-800 {
     color: #737373;
   }
+  .txt-lg-gray-800 {
+    color: #5e5e5e;
+  }
   .txt-lg-gray-900 {
-    color: #636363;
+    color: #484848;
   }
   .txt-lg-gray-1000 {
-    color: #535353;
-  }
-  .txt-lg-gray-1100 {
-    color: #434343;
-  }
-  .txt-lg-gray-1200 {
     color: #333333;
   }
 }
 @media only screen and (min-width: 80em) {
   .txt-xl-h1 {
-    font-size: 3em;
+    font-size: 3rem;
+    line-height: 1.2;
+    font-weight: 400;
   }
   .txt-xl-h2 {
-    font-size: 2.4em;
+    font-size: 2.4rem;
+    line-height: 1.2;
+    font-weight: 400;
   }
   .txt-xl-h3 {
-    font-size: 1.8em;
+    font-size: 1.8rem;
+    line-height: 1.2;
+    font-weight: 400;
   }
   .txt-xl-h4 {
-    font-size: 1.2em;
+    font-size: 1.2rem;
+    line-height: 1.2;
+    font-weight: 400;
   }
   .txt-xl-h5 {
-    font-size: 0.6em;
+    font-size: 0.6rem;
+    line-height: 1.2;
+    font-weight: 400;
   }
   .txt-xl-cap {
     text-transform: capitalize;
@@ -837,141 +779,124 @@
     text-align: justify;
   }
   .txt-xl-info {
-    color: 64;
+    color: yellow;
   }
   .txt-xl-alert {
-    color: 35.5;
+    color: orange;
   }
   .txt-xl-error {
-    color: 48;
+    color: red;
   }
   .txt-xl-warning {
-    color: 80;
+    color: #ffdd57;
   }
   .txt-xl-discrete {
-    color: 120;
+    color: gray;
   }
   .txt-xl-success {
-    color: 120;
-  }
-  .txt-xl-waiting {
-    color: 120;
+    color: #23d160;
   }
   .txt-xl-normal {
-    color: 64;
-  }
-  .txt-xl-alert {
-    color: 35.5;
+    color: #333;
   }
   .txt-xl-error {
-    color: 48;
+    color: red;
   }
   .txt-xl-warning {
-    color: 80;
+    color: #ffdd57;
   }
   .txt-xl-discrete {
-    color: 120;
+    color: gray;
   }
   .txt-xl-success {
-    color: 120;
-  }
-  .txt-xl-waiting {
-    color: 120;
+    color: #23d160;
   }
   .txt-xl-shad-info {
-    text-shadow: 0 0 0.125em 64;
+    text-shadow: 0 0 0.125em yellow;
   }
   .txt-xl-shad-alert {
-    text-shadow: 0 0 0.125em 35.5;
+    text-shadow: 0 0 0.125em orange;
   }
   .txt-xl-shad-error {
-    text-shadow: 0 0 0.125em 48;
+    text-shadow: 0 0 0.125em red;
   }
   .txt-xl-shad-warning {
-    text-shadow: 0 0 0.125em 80;
+    text-shadow: 0 0 0.125em #ffdd57;
   }
   .txt-xl-shad-discrete {
-    text-shadow: 0 0 0.125em 120;
+    text-shadow: 0 0 0.125em gray;
   }
   .txt-xl-shad-success {
-    text-shadow: 0 0 0.125em 120;
-  }
-  .txt-xl-shad-waiting {
-    text-shadow: 0 0 0.125em 120;
+    text-shadow: 0 0 0.125em #23d160;
   }
   .txt-xl-shad-normal {
-    text-shadow: 0 0 0.125em 64;
-  }
-  .txt-xl-shad-alert {
-    text-shadow: 0 0 0.125em 35.5;
+    text-shadow: 0 0 0.125em #333;
   }
   .txt-xl-shad-error {
-    text-shadow: 0 0 0.125em 48;
+    text-shadow: 0 0 0.125em red;
   }
   .txt-xl-shad-warning {
-    text-shadow: 0 0 0.125em 80;
+    text-shadow: 0 0 0.125em #ffdd57;
   }
   .txt-xl-shad-discrete {
-    text-shadow: 0 0 0.125em 120;
+    text-shadow: 0 0 0.125em gray;
   }
   .txt-xl-shad-success {
-    text-shadow: 0 0 0.125em 120;
-  }
-  .txt-xl-shad-waiting {
-    text-shadow: 0 0 0.125em 120;
-  }
-  .txt-xl-gray-100 {
-    color: #e4e4e4;
+    text-shadow: 0 0 0.125em #23d160;
   }
   .txt-xl-gray-200 {
-    color: #d4d4d4;
+    color: #dfdfdf;
   }
   .txt-xl-gray-300 {
-    color: #c4c4c4;
+    color: #c9c9c9;
   }
   .txt-xl-gray-400 {
     color: #b4b4b4;
   }
   .txt-xl-gray-500 {
-    color: #a4a4a4;
+    color: #9e9e9e;
   }
   .txt-xl-gray-600 {
-    color: #949494;
+    color: #898989;
   }
   .txt-xl-gray-700 {
-    color: #838383;
-  }
-  .txt-xl-gray-800 {
     color: #737373;
   }
+  .txt-xl-gray-800 {
+    color: #5e5e5e;
+  }
   .txt-xl-gray-900 {
-    color: #636363;
+    color: #484848;
   }
   .txt-xl-gray-1000 {
-    color: #535353;
-  }
-  .txt-xl-gray-1100 {
-    color: #434343;
-  }
-  .txt-xl-gray-1200 {
     color: #333333;
   }
 }
 @media only screen and (min-width: 120em) {
   .txt-xxl-h1 {
-    font-size: 3em;
+    font-size: 3rem;
+    line-height: 1.2;
+    font-weight: 400;
   }
   .txt-xxl-h2 {
-    font-size: 2.4em;
+    font-size: 2.4rem;
+    line-height: 1.2;
+    font-weight: 400;
   }
   .txt-xxl-h3 {
-    font-size: 1.8em;
+    font-size: 1.8rem;
+    line-height: 1.2;
+    font-weight: 400;
   }
   .txt-xxl-h4 {
-    font-size: 1.2em;
+    font-size: 1.2rem;
+    line-height: 1.2;
+    font-weight: 400;
   }
   .txt-xxl-h5 {
-    font-size: 0.6em;
+    font-size: 0.6rem;
+    line-height: 1.2;
+    font-weight: 400;
   }
   .txt-xxl-cap {
     text-transform: capitalize;
@@ -1028,123 +953,96 @@
     text-align: justify;
   }
   .txt-xxl-info {
-    color: 64;
+    color: yellow;
   }
   .txt-xxl-alert {
-    color: 35.5;
+    color: orange;
   }
   .txt-xxl-error {
-    color: 48;
+    color: red;
   }
   .txt-xxl-warning {
-    color: 80;
+    color: #ffdd57;
   }
   .txt-xxl-discrete {
-    color: 120;
+    color: gray;
   }
   .txt-xxl-success {
-    color: 120;
-  }
-  .txt-xxl-waiting {
-    color: 120;
+    color: #23d160;
   }
   .txt-xxl-normal {
-    color: 64;
-  }
-  .txt-xxl-alert {
-    color: 35.5;
+    color: #333;
   }
   .txt-xxl-error {
-    color: 48;
+    color: red;
   }
   .txt-xxl-warning {
-    color: 80;
+    color: #ffdd57;
   }
   .txt-xxl-discrete {
-    color: 120;
+    color: gray;
   }
   .txt-xxl-success {
-    color: 120;
-  }
-  .txt-xxl-waiting {
-    color: 120;
+    color: #23d160;
   }
   .txt-xxl-shad-info {
-    text-shadow: 0 0 0.125em 64;
+    text-shadow: 0 0 0.125em yellow;
   }
   .txt-xxl-shad-alert {
-    text-shadow: 0 0 0.125em 35.5;
+    text-shadow: 0 0 0.125em orange;
   }
   .txt-xxl-shad-error {
-    text-shadow: 0 0 0.125em 48;
+    text-shadow: 0 0 0.125em red;
   }
   .txt-xxl-shad-warning {
-    text-shadow: 0 0 0.125em 80;
+    text-shadow: 0 0 0.125em #ffdd57;
   }
   .txt-xxl-shad-discrete {
-    text-shadow: 0 0 0.125em 120;
+    text-shadow: 0 0 0.125em gray;
   }
   .txt-xxl-shad-success {
-    text-shadow: 0 0 0.125em 120;
-  }
-  .txt-xxl-shad-waiting {
-    text-shadow: 0 0 0.125em 120;
+    text-shadow: 0 0 0.125em #23d160;
   }
   .txt-xxl-shad-normal {
-    text-shadow: 0 0 0.125em 64;
-  }
-  .txt-xxl-shad-alert {
-    text-shadow: 0 0 0.125em 35.5;
+    text-shadow: 0 0 0.125em #333;
   }
   .txt-xxl-shad-error {
-    text-shadow: 0 0 0.125em 48;
+    text-shadow: 0 0 0.125em red;
   }
   .txt-xxl-shad-warning {
-    text-shadow: 0 0 0.125em 80;
+    text-shadow: 0 0 0.125em #ffdd57;
   }
   .txt-xxl-shad-discrete {
-    text-shadow: 0 0 0.125em 120;
+    text-shadow: 0 0 0.125em gray;
   }
   .txt-xxl-shad-success {
-    text-shadow: 0 0 0.125em 120;
-  }
-  .txt-xxl-shad-waiting {
-    text-shadow: 0 0 0.125em 120;
-  }
-  .txt-xxl-gray-100 {
-    color: #e4e4e4;
+    text-shadow: 0 0 0.125em #23d160;
   }
   .txt-xxl-gray-200 {
-    color: #d4d4d4;
+    color: #dfdfdf;
   }
   .txt-xxl-gray-300 {
-    color: #c4c4c4;
+    color: #c9c9c9;
   }
   .txt-xxl-gray-400 {
     color: #b4b4b4;
   }
   .txt-xxl-gray-500 {
-    color: #a4a4a4;
+    color: #9e9e9e;
   }
   .txt-xxl-gray-600 {
-    color: #949494;
+    color: #898989;
   }
   .txt-xxl-gray-700 {
-    color: #838383;
-  }
-  .txt-xxl-gray-800 {
     color: #737373;
   }
+  .txt-xxl-gray-800 {
+    color: #5e5e5e;
+  }
   .txt-xxl-gray-900 {
-    color: #636363;
+    color: #484848;
   }
   .txt-xxl-gray-1000 {
-    color: #535353;
-  }
-  .txt-xxl-gray-1100 {
-    color: #434343;
-  }
-  .txt-xxl-gray-1200 {
     color: #333333;
   }
 }

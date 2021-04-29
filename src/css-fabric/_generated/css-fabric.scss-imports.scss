@@ -1,3 +1,5 @@
+ @use '../modules/animation/animation';
+ @use '../modules/base/base';
  @use '../modules/box/box';
  @use '../modules/grid/grid';
  @use '../modules/menu/menu';
@@ -6,4 +8,3 @@
  @use '../modules/table/table';
  @use '../modules/text/text';
  @use '../modules/zindex/zindex';
- 

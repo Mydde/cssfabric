@@ -26,29 +26,47 @@ $menu_dropdown_tag: map-get($_menu, menu_dropdown_tag);
 $menu_dropdown_open: map-get($_menu, menu_dropdown_open);
 $menu_dropdown_close: map-get($_menu, menu_dropdown_close);
 
-.#{$menu_class_name_short} {
-	&.#{$menu_class_name} {
-		@each $orientation_key, $orientation in $orientations {
-			&.test-#{$orientation_key} {
-				
-               
+#{$menu_class_name_short} {
 
-                @if $orientation_key == h {
+
+
+    // display: none;
+    &.#{$menu_class_name} {
+
+        list-style: none;
+        list-style-type: none;
+
+      
+
+        @each $orientation_key,
+        $orientation in $orientations {
+            &-#{$orientation_key} {
+
+                padding: 0;
+                margin: 0;
+
+                @if $orientation_key==h {
                     display: flex;
-                    &-scroll{
+
+                    &-scroll {
                         dsp: none;
                     }
                 }
-                color: red;
 
-                & li.#{$menu_item_class_name}{
-                    dsp: none;
+                & li.#{$menu_item_class_name} {
+                    &:hover{
+                        background-color: #ededed;
+                    }
                 }
 
-                 
-			}
-		}
-	}
+                & li {
+                    list-style: none;
+                }
+
+
+            }
+        }
+    }
 }
 
 

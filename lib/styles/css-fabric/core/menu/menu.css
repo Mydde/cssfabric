@@ -2,21 +2,33 @@
  css-fabric 
  menu system
 */
-.ul.menu.test-v {
-  color: red;
+ul.menu {
+  list-style: none;
+  list-style-type: none;
 }
-.ul.menu.test-v li.menu-item {
-  dsp: none;
+ul.menu-v {
+  padding: 0;
+  margin: 0;
 }
-.ul.menu.test-h {
+ul.menu-v li.menu-item:hover {
+  background-color: #ededed;
+}
+ul.menu-v li {
+  list-style: none;
+}
+ul.menu-h {
+  padding: 0;
+  margin: 0;
   display: flex;
-  color: red;
 }
-.ul.menu.test-h-scroll {
+ul.menu-h-scroll {
   dsp: none;
 }
-.ul.menu.test-h li.menu-item {
-  dsp: none;
+ul.menu-h li.menu-item:hover {
+  background-color: #ededed;
+}
+ul.menu-h li {
+  list-style: none;
 }
 
 /* & li.menu-item{

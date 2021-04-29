@@ -4,11 +4,12 @@
   "private": true,
   "main": "./lib",
   "scripts": {
-    "dev": "tsc --watch & node lib/ & gulp taskDownload & npm-run-all watch-all & tsc ",
+    "dev": "tsc --watch & node lib/ & gulp taskDownload & npm-run-all watch-all",
     "build": "",
-    "watch-all": "npm-run-all -p -r  watch-json watch-sass ",
+    "watch-all": "npm-run-all -p -r  watch-json watch-sass watch-include",
     "watch-sass": "gulp watchSass",
     "watch-json": "gulp watchJson",
+    "watch-include": "gulp watchInclude",
     "task-download": "gulp taskDownload"
   },
   "dependencies": {

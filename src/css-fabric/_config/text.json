@@ -50,9 +50,9 @@
 			"font_sizes_h1_em": "",
 			"font_sizes_h_min_em": "",
 			"text_ellipsis_tag": "",
-			"text_transform": "text_transform declaration",
-			"font_weights": "font_weights declaration",
-			"text_align": "text_align declaration"
+			"text_transform": "text transform declaration",
+			"font_weights": "font weights declaration",
+			"text_align": "text align declaration"
 		}
 	}
 }
