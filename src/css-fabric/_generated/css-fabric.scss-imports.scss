@@ -11,7 +11,9 @@
  @use '../modules/scale/scale-responsive';
  @use '../modules/scale/scale';
  @use '../modules/scale/_scale-build';
+ @use '../modules/table/table-responsive';
  @use '../modules/table/table';
+ @use '../modules/table/_table-build';
  @use '../modules/text/text-responsive';
  @use '../modules/text/text';
  @use '../modules/zindex/zindex';
