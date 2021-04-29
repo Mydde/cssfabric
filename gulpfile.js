@@ -93,54 +93,68 @@ const json_comments = (file) => {
 };
 
 function fabricVarExportFile(filePath) {
-
-  // name of the module, from path 
-  let module_name = filePath.substring(filePath.lastIndexOf("modules/")).replace('modules/','');
+  // name of the module, from path
+  let module_name = filePath
+    .substring(filePath.lastIndexOf("modules/"))
+    .replace("modules/", "");
 
   let module = filePath.substring(filePath.lastIndexOf("/") + 1);
 
   return " @use '../modules/" + module_name + "';" + "\r\n";
 }
 
+function fabricReadmeFile(filePath) {
+  // name of the module, from path
+  let module_name = filePath
+    .substring(filePath.lastIndexOf("modules/"))
+    .replace("modules/", "");
+
+  let module = filePath.substring(filePath.lastIndexOf("/") + 1);
+
+ let   out  = "### " + module_name + "" + "\r\n";  
+
+  return out;
+}
 /**
  *
  * @param {string} filePath
  * @returns
  */
 function fabricScssImportFile(filePath) {
-
-  // name of the module, from path 
-  let module_name = filePath.substring(filePath.lastIndexOf("modules/")).replace('modules/','');
+  // name of the module, from path
+  let module_name = filePath
+    .substring(filePath.lastIndexOf("modules/"))
+    .replace("modules/", "");
 
   let module = filePath.substring(filePath.lastIndexOf("/") + 1);
 
   return " @use '../modules/" + module_name + "';" + "\r\n";
 }
 
-function readVars(filePath){
- 
+function readVars(filePath) {
+  const out = fs.readFileSync(filePath + ".scss");
 
-  const out = fs.readFileSync(filePath+".scss");
-
-  fs.readFile(filePath+".scss", "utf-8", (err, data) => {
-    console.log({data});
+  fs.readFile(filePath + ".scss", "utf-8", (err, data) => {
+    console.log({ data });
   });
 
-  console.log('out',out);
+  console.log("out", out);
 
-  return "// "+filePath+ "\r\n";
-};
+  return "// " + filePath + "\r\n";
+}
 
 /**
- * 
- * @param {*} filePath 
- * @returns 
+ *
+ * @param {*} filePath
+ * @returns
  */
 function fabricScssExportVarsFile(filePath) {
-  console.log('fabricScssExportVarsFile',filePath);
+  console.log("fabricScssExportVarsFile", filePath);
 
-  // name of the module, from path 
-  let module_name = filePath.substring(filePath.lastIndexOf("modules/")).replace('modules/','');
+  // name of the module, from path
+  let module_name = filePath
+    .substring(filePath.lastIndexOf("modules/"))
+    .replace("modules/", "");
 
   let module = filePath.substring(filePath.lastIndexOf("/") + 1);
 
@@ -157,7 +171,6 @@ const {
   generatedDir,
 } = fabricConfig;
 
-
 /**
  * add default comment key for each property
  * @returns function
@@ -172,7 +185,7 @@ function task_scss2json(cb) {
 
 // from task_mergeInclude;
 function task_varsExport(cb) {
-  console.log('task_varsExport');
+  console.log("task_varsExport");
 
   gulp
     .src(fabricModuleDir + "/*/_*-vars.scss")
@@ -189,6 +202,21 @@ function task_varsExport(cb) {
     });
 }
 
+function task_readme(cb) {
+  gulp
+    .src(fabricModuleDir + "/*/*[!_].scss")
+    .pipe(
+      gulFileList("readme.md", {
+        destRowTemplate: fabricReadmeFile,
+        removeExtensions: true,
+      })
+    )
+    .pipe(cache(task_readme))
+    .pipe(gulp.dest(generatedDir))
+    .on("end", () => {
+      return cb();
+    });
+}
 /**
  *
  * @param {function} cb gulp callback
@@ -283,6 +311,13 @@ function watchInclude(cb) {
   cb();
 }
 
+function watchReadme(cb) {
+  console.log([fabricModuleDir,"!"+fabricModuleDir + "/**/_*.scss"])
+  gulp.watch([fabricModuleDir ,"!"+fabricModuleDir + "/**/_*.scss"], task_readme);
+
+  cb();
+}
+
 /* download(url)
 	.pipe(gulp.dest("downloads/")); */
 
@@ -297,6 +332,8 @@ function taskDownload(cb) {
 exports.watchJson = watchJsonTask;
 exports.watchSass = watchSassTask;
 exports.watchInclude = watchInclude;
+exports.watchReadme = watchReadme;
 exports.taskDownload = taskDownload;
 
 exports.task_varsExport = task_varsExport;
+exports.task_readme = task_readme;

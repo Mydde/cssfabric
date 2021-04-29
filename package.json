@@ -6,10 +6,11 @@
   "scripts": {
     "dev": "tsc --watch & node lib/ & npm run",
     "build": "",
-    "watch-all": "npm-run-all -p -r  watch-json watch-sass watch-include",
+    "watch-all": "npm-run-all -p -r  watch-json watch-sass watch-include watch-readme",
     "watch-sass": "gulp watchSass",
     "watch-json": "gulp watchJson",
     "watch-include": "gulp watchInclude",
+    "watch-readme": "gulp watchReadme",
     "task-download": "gulp taskDownload || exit 1"
   },
   "dependencies": {
