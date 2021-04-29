@@ -1,0 +1,31 @@
+/*
+ css-fabric 
+ overflow system
+*/
+
+// load scss config file
+@use '../../_utils';
+
+// load general config variables
+$_cfg: utils.get_conf();
+// load local config variables
+$_overflow: utils.get_conf_data(overflow);
+
+// read variables
+$overflow_props: map-get($_overflow, overflow_props);
+$overflow_values: map-get($_overflow, overflow_values);
+
+/* css overflow rules */
+@mixin buildOverflow($mq_size_key) {
+
+  @each $overflow_prop in $overflow_props {
+
+    $property_key: if($mq_size_key, #{$overflow_prop}-#{$mq_size_key}, #{$overflow_prop});
+
+    @each $overflow_value in $overflow_values {
+      .#{$property_key}-#{$overflow_value} {
+        overflow: $overflow_value;
+      }
+    }
+  }
+}
