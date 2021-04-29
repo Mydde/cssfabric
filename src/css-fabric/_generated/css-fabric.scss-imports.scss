@@ -6,7 +6,9 @@
  @use '../modules/grid/grid-responsive';
  @use '../modules/grid/grid';
  @use '../modules/grid/_build';
+ @use '../modules/menu/menu-responsive';
  @use '../modules/menu/menu';
+ @use '../modules/menu/_menu-build';
  @use '../modules/overflow/overflow';
  @use '../modules/scale/scale-responsive';
  @use '../modules/scale/scale';
