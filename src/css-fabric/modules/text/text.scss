@@ -41,9 +41,6 @@ $scale_grid_ratios: (8, 24);
 $h1_size: $font_sizes_h1_em;
 $ratio: $h1_size/$font_sizes;
 $ratio_max_min: $font_sizes_h1_em / $font_sizes_h_min_em;
-
-
-
  
 @mixin fabric_text($tag_short) {
 
@@ -55,7 +52,7 @@ $ratio_max_min: $font_sizes_h1_em / $font_sizes_h_min_em;
             $index: $font_sizes - $grid_size_value + 1;
             $font_size: $index * $ratio;
 
-            &-h#{$size}  {
+            &-h#{$size}, & & h  {
                 font-size: $font_size+rem;
                 line-height: 1.2;
                 font-weight: 400; 
@@ -63,40 +60,23 @@ $ratio_max_min: $font_sizes_h1_em / $font_sizes_h_min_em;
         }
 
         @each $transform_key,
-        $transform_prop in $text_transform {
+        $transform_prop in $text_transform { // capitalize ...
             &-#{$transform_key} {
                 text-transform: $transform_prop;
             }
         }
 
         @each $transform_key,
-        $transform_prop in $font_weights {
+        $transform_prop in $font_weights { // bold ...
             &-#{$transform_key} {
                 font-weight: $transform_prop;
             }
         }
 
         @each $transform_key,
-        $transform_prop in $text_align {
+        $transform_prop in $text_align { // left, right ...
             &-#{$transform_key} {
                 text-align: $transform_prop;
-            }
-        }
-
-        // text color_schemes
-        @each $color_key,
-        $color_prop in $color_schemes {
-
-            &-#{$color_key} {
-                color: $color_prop;
-            }
-        }
-
-        // text color_palette_props
-        @each $color_palette_key,
-        $color_palette_prop in $color_palette_props {
-            &-#{$color_palette_key} {
-                color: $color_palette_prop;
             }
         }
 
@@ -113,16 +93,6 @@ $ratio_max_min: $font_sizes_h1_em / $font_sizes_h_min_em;
         $color_palette_prop in $color_palette_props {
             &-shad-#{$color_palette_key} {
                 text-shadow: 0 0 0.125em $color_palette_prop;
-            }
-        }
-
-        $gray_start: map-get($color_grays, gray_start);
-        $gray_end: map-get($color_grays, gray_end);
-        $gray_steps: map-get($color_grays, gray_steps);
-
-        @for $i from 1 through $gray_steps {
-            &-gray-#{($i+1)*100} {
-                color: mix($gray_end, $gray_start, $i / $gray_steps * 100%);
             }
         }
 
