@@ -12,6 +12,8 @@ const gulp = require("gulp"),
   fs = require("fs"),
   gulpRename = require("gulp-rename"),
   gulpDownload = require("gulp-download-stream"),
+  gulpConcat = require("gulp-concat-util"),
+  gulpIgnore = require("gulp-ignore"),
   gulpSort = require("gulp-sort");
 
 gulpSass.compiler = require("sass");
@@ -145,8 +147,6 @@ function readVars(filePath) {
     // console.log({ data });
   });
 
-  // console.log("out", out);
-
   return "// " + filePath + "\r\n";
 }
 
@@ -192,8 +192,6 @@ function task_scss2json(cb) {
 
 // from task_mergeInclude;
 function task_varsExport(cb) {
-  // console.log("task_varsExport");
-
   gulp
     .src(fabricModuleDir + "/*/_*-vars.scss")
     .pipe(
@@ -225,55 +223,88 @@ function task_readme(cb) {
     });
 }
 /**
- *
+ * concatenate css files
+ * by min | responsive | ...
+ *  
  * @param {function} cb gulp callback
  */
 function task_mergeInclude(cb) {
+  //
+  const dest = fabricStylesDir;
+  const dir = fabricStylesDir + "/core";
+
+  // normal stylesheets
   gulp
-    .src(fabricModuleDir + "/*/*.scss")
-    .pipe(
-      gulFileList("css-fabric.scss-imports.scss", {
-        destRowTemplate: fabricScssImportFile,
-        removeExtensions: true,
-      })
-    )
-    .pipe(cache(task_mergeInclude))
-    .pipe(gulp.dest(generatedDir))
-    .on("end", () => {
-      return cb();
-    });
+    .src([
+      `${dir}/**/*.css`,
+      `!${dir}/**/*responsive*.css`,
+      `!${dir}/**/*min*.css`,
+    ])
+    .pipe(gulpConcat("cssfabric.css"))
+    .pipe(gulp.dest(dest));
+
+  // normal minified stylesheets
+  gulp
+    .src([`${dir}/**/*min.css`, `!${dir}/**/*responsive*.css`])
+    .pipe(gulpConcat("cssfabric.min.css"))
+    .pipe(gulp.dest(dest));
+
+  // responsive stylesheets
+  gulp
+    .src([`${dir}/**/*responsive.css`, `!${dir}/**/*min..css`])
+    .pipe(gulpConcat("cssfabric.responsive.css"))
+    .pipe(gulp.dest(dest));
+
+  // responsive minified stylesheets
+  gulp
+    .src([`${dir}/**/*responsive.min.css`])
+    .pipe(gulpConcat("cssfabric.responsive.min.css"))
+    .pipe(gulp.dest(dest));
+
+  return cb();
 }
 /**
  * task_sass2css
  * transform scss to css
- * distribute diles
- * 
- * @param {function} cb 
+ * distribute files
+ *
+ * rename *-responsive to *.responsive, because not dot in sass file
+ *
+ * @param {function} cb
  * @returns function
  */
-function task_sass2css(cb) { 
-  //  .pipe(gulpSort())
+function task_sass2css(cb) {
+
   gulp
     .src(`${fabricModuleDir}/**/*.scss`)
-    .pipe(gulpSort())
+    .pipe(gulpIgnore.exclude("**/*css-fabric*"))
     .pipe(
-      gulpSass({ sourceMap: true, outputStyle: "expanded" }).on(
-        "error",
-        gulpSass.logError
-      )
-    ) //
-    .pipe(gulp.dest(`${fabricStylesDir}/css-fabric/core`))
+      gulpRename(function (path) {
+        path.dirname = path.dirname;
+        path.extname = path.extname;
+        path.basename = path.basename.replace("-", ".");
+      })
+    )
+    // to css and to /core
+    .pipe(gulpSass({ outputStyle: "expanded" }).on("error", gulpSass.logError))
+    .pipe(gulp.dest(`${fabricStylesDir}/core`))
+    // to css and minify and to /core
     .pipe(
       minifyCss({
         keepSpecialComments: 0,
       })
     )
-    .pipe(gulpRename({ extname: ".min.css" }))
-    .pipe(gulp.dest(`${fabricStylesDir}/css-fabric/min`))
+    .pipe(
+      gulpRename(function (path) {
+        path.dirname = path.dirname;
+        path.extname = ".min.css";
+        path.basename = path.basename.replace("-", ".");
+      })
+    )
+    .pipe(gulp.dest(`${fabricStylesDir}/core`))
     .on("end", () => {
       return cb();
     });
-
 
   return cb();
 }
@@ -332,11 +363,12 @@ function watchJsonTask(cb) {
 }
 
 function watchSassTask(cb) {
-  gulp.watch(fabricRootDir, gulp.series(task_sass2css)); // task_varsExport
+  gulp.watch(fabricRootDir, gulp.parallel(task_sass2css)); // task_varsExport
 
   cb();
 }
 
+// todo change to styleDir
 function watchInclude(cb) {
   gulp.watch(fabricModuleDir, task_mergeInclude);
 

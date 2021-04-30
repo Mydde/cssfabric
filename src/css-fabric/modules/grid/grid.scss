@@ -3,7 +3,7 @@
  grid system
 */ 
 // load _build
-@use '_grid-build';
+@use '_grid-build' as build;
 
 
 @include build.makeGrid(null);

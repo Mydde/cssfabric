@@ -5,7 +5,7 @@
 
 // load scss config file
 @use '../../_utils';
-@use '_grid-build';
+@use '_grid-build' as build;
 
 // load general config variables 
 $_base: utils.get_conf();
