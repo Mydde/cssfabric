@@ -2,12 +2,15 @@ const gulp = require("gulp"),
   unescapeJs = require("unescape-js"),
   jsonTransform = require("gulp-json-transform"),
   cache = require("gulp-cached"),
+  nodeSass = require("node-sass"),
+  gulpSass = require("gulp-sass"),
   sassExport = require("gulp-sass-export"),
   mergeJson = require("gulp-merge-json"),
   gulFileList = require("gulp-filelist"),
   spawn = require("cross-spawn"),
   fs = require("fs"),
-  gulpDownload = require("gulp-download-stream");
+  gulpDownload = require("gulp-download-stream"),
+  gulpSort = require("gulp-sort");
 
 var fabricConfig = require("./cssfabric.json");
 
@@ -111,7 +114,7 @@ function fabricReadmeFile(filePath) {
 
   let module = filePath.substring(filePath.lastIndexOf("/") + 1);
 
- let   out  = "### " + module_name + "" + "\r\n";  
+  let out = "### " + module_name + "" + "\r\n";
 
   return out;
 }
@@ -205,6 +208,7 @@ function task_varsExport(cb) {
 function task_readme(cb) {
   gulp
     .src(fabricModuleDir + "/*/*[!_].scss")
+    .pipe(gulpSort())
     .pipe(
       gulFileList("readme.md", {
         destRowTemplate: fabricReadmeFile,
@@ -238,10 +242,19 @@ function task_mergeInclude(cb) {
 }
 
 function task_sass2css(cb) {
-  spawn.sync(`sass   ${fabricModuleDir}/:${fabricStylesDir}/css-fabric/core`);
+  // use node-sass
+  gulp
+    .src(`${fabricModuleDir}/**/*.scss`)
+    .pipe(gulpSass({ outputStyle: "compressed" })) // .on('error', gulpSass.logError)
+    .pipe(gulp.dest(`${fabricStylesDir}/css-fabric/cool`))
+    .on("end", () => {
+      return cb();
+    });
+
+  /* spawn.sync(`sass   ${fabricModuleDir}/:${fabricStylesDir}/css-fabric/core`);
   spawn.sync(
     `sass   ${fabricModuleDir}/:${fabricStylesDir}/css-fabric/min/ --style=compressed`
-  );
+  ); */
 
   return cb();
 }
@@ -313,7 +326,10 @@ function watchInclude(cb) {
 
 function watchReadme(cb) {
   // console.log([fabricModuleDir,"!"+fabricModuleDir + "/**/_*.scss"])
-  gulp.watch([fabricModuleDir ,"!"+fabricModuleDir + "/**/_*.scss"], task_readme);
+  gulp.watch(
+    [fabricModuleDir, "!" + fabricModuleDir + "/**/_*.scss"],
+    task_readme
+  );
 
   cb();
 }
