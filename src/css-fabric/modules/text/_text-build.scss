@@ -10,9 +10,7 @@ $_cfg: utils.get_conf();
 // load local config variables
 $_text: utils.get_conf_data(text);
 
-// read variables
-// media queries sizes, in em  
-$_media_quey_sizes: map-get($_cfg, media_quey_sizes);
+// read variables 
 //
 $text_class_name: map-get($_cfg, text_class_name);
 $text_class_name_short: map-get($_cfg, text_class_name_short);

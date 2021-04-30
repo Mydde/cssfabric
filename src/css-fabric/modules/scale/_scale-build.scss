@@ -16,8 +16,6 @@ $_has_dimensions_strict: map-get($_cfg, has_dimensions_strict);
 $_has_dimensions_min: map-get($_cfg, has_dimensions_min);
 $_has_dimensions_max: map-get($_cfg, has_dimensions_max);
 
-// media queries sizes, in em  
-$_media_quey_sizes: map-get($_cfg, media_quey_sizes);
 
 // dimensions declaration
 $scale_size: map-get($_scale, scale_size);

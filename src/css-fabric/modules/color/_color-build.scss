@@ -8,10 +8,7 @@
 // load general config variables
 $_cfg: utils.get_conf();
 // load local config variables
-$_color: utils.get_conf_data(color);
-
-// media queries sizes, in em
-$_media_quey_sizes: map-get($_cfg, media_quey_sizes);
+$_color: utils.get_conf_data(color); 
 
 // COLOR SCHEMES
 $color_schemes: map-get($_color, color_schemes_props);
@@ -33,7 +30,7 @@ $gray_steps: map-get($color_grays, gray_steps);
         color: white;
     } @else {
         color: black;
-    }
+    } 
 }
 
 $gray_schemes: ();

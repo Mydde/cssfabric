@@ -12,9 +12,7 @@ $_grid: utils.get_conf_data(grid);
 
 // read variables
 $CFG_GRID_CODE: map-get($_base, grid_class_name);
-// media queries sizes, in em  
-$_media_quey_sizes: map-get($_base, media_quey_sizes);
-
+ 
 
 $CFG_GRID_SEPARATOR: map-get($_grid, grid_separator);
 $CFG_GRID_HOR: map-get($_grid, grid_hor_code);
@@ -30,7 +28,7 @@ $CFG_GRID_VERT: map-get($_grid, grid_vert_code);
 
 
     %flex {
-        display: flex;
+        display: flex; 
     }
 
     .#{$h_prop} {
