@@ -1,11 +1,10 @@
 // load scss config file
-@use '_generated/config.scss'  ; 
- 
+@use '_generated/config.scss';
 
 @function get_conf() {
   $po: map-get(config.$config, base);
-  @return  map-get($po, "_data");
-} 
+  @return map-get($po, "_data");
+}
 
 @function get_conf_part($_module, $_part) {
   $po: map-get(config.$config, $_module);
@@ -18,7 +17,6 @@
 }
 
 @function get_conf_data_properties($_prop) {
-  
   @return get_conf_part($_module, "_data");
 }
 
@@ -49,9 +47,8 @@
 }
 
 // css dimensions rules builder responsive
-@mixin responsive_encloser($mq_size_value) {
- 
-  @media only screen and (max-width: $mq_size_value + em) {
-      @content;
+@mixin responsive_encloser($mq_size_value,$mq_min_size_value: null) {
+  @media only screen and (min-width: $mq_min_size_value + rem) and (max-width: $mq_size_value + rem) {
+    @content;
   }
 }

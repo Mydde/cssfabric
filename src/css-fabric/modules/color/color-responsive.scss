@@ -12,10 +12,13 @@
 // media queries sizes, in em  
 $_media_quey_sizes: map-get($_cfg, media_quey_sizes); 
 
-// loop on responsive ratio dimensions
+// builder responsive  
+$min_value: 0;
+
 @each $mq_size_key,
 $mq_size_value in $_media_quey_sizes {
-    @include utils.responsive_encloser($mq_size_value) {
+    @include utils.responsive_encloser($mq_size_value,$min_value) {
         @include build.buildColor($mq_size_key);
     }
+    $min_value: $mq_size_value;
 } 

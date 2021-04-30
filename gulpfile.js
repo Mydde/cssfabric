@@ -247,7 +247,6 @@ function task_mergeInclude(cb) {
 
 function task_sass2css(cb) {
   // use node-sass
-  console.log(`${fabricModuleDir}/**/*.scss`);
   gulp
     .src(`${fabricModuleDir}/**/*.scss`)
     .pipe(
@@ -326,7 +325,7 @@ function watchJsonTask(cb) {
 }
 
 function watchSassTask(cb) {
-  gulp.watch(fabricRootDir, gulp.parallel(task_sass2css, task_varsExport));
+  gulp.watch(fabricRootDir, gulp.series(task_sass2css)); // task_varsExport
 
   cb();
 }

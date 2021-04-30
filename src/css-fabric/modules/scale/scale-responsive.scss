@@ -13,9 +13,13 @@ $_base: utils.get_conf();
 $_media_quey_sizes: map-get($_base, media_quey_sizes);
 
 // builder responsive 
+$min_value: 0;
+ 
 @each $mq_size_key,
 $mq_size_value in $_media_quey_sizes {
-    @include utils.responsive_encloser($mq_size_value) {
+    
+    @include utils.responsive_encloser($mq_size_value,$min_value) {
         @include build.buildScale($mq_size_key);
     }
+    $min_value: $mq_size_value;
 }
