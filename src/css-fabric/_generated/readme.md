@@ -1,9 +1,9 @@
 ### animation/animation
-### base/base
 ### box/box-responsive
 ### box/box
 ### box/_box-build
 ### box/_box-vars
+### base/base
 ### color/color-responsive
 ### color/color
 ### color/_color-build

@@ -47,15 +47,22 @@ $menu_dropdown_close: map-get($_menu, menu_dropdown_close);
     
                     @if $orientation_key==h {
                         display: flex;
+                        border-bottom: 1px solid #ededed;
     
                         &-scroll {
                             dsp: none;
                         }
                     }
     
-                    & li.#{$menu_item_class_name} {
+                    & li.#{$menu_item_class_name}, li {
+
                         &:hover{
                             background-color: #ededed;
+                        }
+
+                        @if $orientation_key==h {
+                                flex: 1 1 0; 
+                                // border: 1px solid #ededed;
                         }
                     }
     

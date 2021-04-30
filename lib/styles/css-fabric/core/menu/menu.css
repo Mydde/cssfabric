@@ -39,7 +39,7 @@ ul.menu-v {
   padding: 0;
   margin: 0;
 }
-ul.menu-v li.menu-item:hover {
+ul.menu-v li.menu-item:hover, ul.menu-v li:hover {
   background-color: #ededed;
 }
 ul.menu-v li {
@@ -49,11 +49,15 @@ ul.menu-h {
   padding: 0;
   margin: 0;
   display: flex;
+  border-bottom: 1px solid #ededed;
 }
 ul.menu-h-scroll {
   dsp: none;
 }
-ul.menu-h li.menu-item:hover {
+ul.menu-h li.menu-item, ul.menu-h li {
+  flex: 1 1 0;
+}
+ul.menu-h li.menu-item:hover, ul.menu-h li:hover {
   background-color: #ededed;
 }
 ul.menu-h li {

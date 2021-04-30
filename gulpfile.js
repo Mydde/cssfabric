@@ -135,10 +135,10 @@ function readVars(filePath) {
   const out = fs.readFileSync(filePath + ".scss");
 
   fs.readFile(filePath + ".scss", "utf-8", (err, data) => {
-    console.log({ data });
+    // console.log({ data });
   });
 
-  console.log("out", out);
+  // console.log("out", out);
 
   return "// " + filePath + "\r\n";
 }
@@ -149,7 +149,7 @@ function readVars(filePath) {
  * @returns
  */
 function fabricScssExportVarsFile(filePath) {
-  console.log("fabricScssExportVarsFile", filePath);
+  // console.log("fabricScssExportVarsFile", filePath);
 
   // name of the module, from path
   let module_name = filePath
@@ -185,7 +185,7 @@ function task_scss2json(cb) {
 
 // from task_mergeInclude;
 function task_varsExport(cb) {
-  console.log("task_varsExport");
+  // console.log("task_varsExport");
 
   gulp
     .src(fabricModuleDir + "/*/_*-vars.scss")
@@ -312,7 +312,7 @@ function watchInclude(cb) {
 }
 
 function watchReadme(cb) {
-  console.log([fabricModuleDir,"!"+fabricModuleDir + "/**/_*.scss"])
+  // console.log([fabricModuleDir,"!"+fabricModuleDir + "/**/_*.scss"])
   gulp.watch([fabricModuleDir ,"!"+fabricModuleDir + "/**/_*.scss"], task_readme);
 
   cb();
