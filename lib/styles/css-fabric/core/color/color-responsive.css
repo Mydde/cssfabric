@@ -6,7 +6,7 @@
 * css-fabric 
 * color system responsive
 */
-@media only screen and (min-width: 0) and (max-width: 35.5rem) {
+@media only screen and (min-width: 0rem) and (max-width: 35.5rem) {
   .color-sm-yellow {
     color: #ffb900;
   }
@@ -589,7 +589,7 @@
     background-color: #333333;
   }
 }
-@media only screen and (min-width: 0) and (max-width: 48rem) {
+@media only screen and (min-width: 35.5rem) and (max-width: 48rem) {
   .color-md-yellow {
     color: #ffb900;
   }
@@ -1172,7 +1172,7 @@
     background-color: #333333;
   }
 }
-@media only screen and (min-width: 0) and (max-width: 64rem) {
+@media only screen and (min-width: 48rem) and (max-width: 64rem) {
   .color-lg-yellow {
     color: #ffb900;
   }
@@ -1755,7 +1755,7 @@
     background-color: #333333;
   }
 }
-@media only screen and (min-width: 0) and (max-width: 80rem) {
+@media only screen and (min-width: 64rem) and (max-width: 80rem) {
   .color-xl-yellow {
     color: #ffb900;
   }
@@ -2338,7 +2338,7 @@
     background-color: #333333;
   }
 }
-@media only screen and (min-width: 0) and (max-width: 120rem) {
+@media only screen and (min-width: 80rem) and (max-width: 120rem) {
   .color-xxl-yellow {
     color: #ffb900;
   }

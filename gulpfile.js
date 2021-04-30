@@ -212,7 +212,6 @@ function task_varsExport(cb) {
 function task_readme(cb) {
   gulp
     .src(fabricModuleDir + "/*/*[!_].scss")
-    .pipe(gulpSort())
     .pipe(
       gulFileList("readme.md", {
         destRowTemplate: fabricReadmeFile,
@@ -244,11 +243,19 @@ function task_mergeInclude(cb) {
       return cb();
     });
 }
-
-function task_sass2css(cb) {
-  // use node-sass
+/**
+ * task_sass2css
+ * transform scss to css
+ * distribute diles
+ * 
+ * @param {function} cb 
+ * @returns function
+ */
+function task_sass2css(cb) { 
+  //  .pipe(gulpSort())
   gulp
     .src(`${fabricModuleDir}/**/*.scss`)
+    .pipe(gulpSort())
     .pipe(
       gulpSass({ sourceMap: true, outputStyle: "expanded" }).on(
         "error",

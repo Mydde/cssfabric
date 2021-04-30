@@ -19,7 +19,8 @@ $min_value: 0;
 $mq_size_value in $_media_quey_sizes {
 
     @include utils.responsive_encloser($mq_size_value,$min_value) {
-       @include build.buildBox($mq_size_key);
+      @include build.buildBox($mq_size_key);
     }
     $min_value: $mq_size_value;
 }
+ 

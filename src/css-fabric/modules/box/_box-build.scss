@@ -170,19 +170,7 @@ $fabric_box_display_props : map-get($_box, box_display_props);
         @include fabric_box($css_prop, $css_prop_short);
     }
 
-    // loop on responsive ratio dimensions
-    @each $mq_size_key,
-    $mq_size_value in $_media_quey_sizes {
-        @include utils.responsive_encloser($mq_size_value) {
-            $new_prop_short: $css_prop_short + '-'+ $mq_size_key;
-            $_args_prox: map.set($_args, "css_prop_short", $new_prop_short);
-
-            // TODO add condition if responsive position + display
-            @if $write_rule==position_display {
-                @include fabric_property_proxy($_args_prox);
-            }
-        }
-    }
+   
 }
 
 // pmb as padding margin border property

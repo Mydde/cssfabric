@@ -6,7 +6,7 @@
  css-fabric 
  scale-responsive  system pointless
 */
-@media only screen and (min-width: 0) and (max-width: 35.5rem) {
+@media only screen and (min-width: 0rem) and (max-width: 35.5rem) {
   /*  dimension : "-full" shorthand is 100% width*/
   .w-sm-full {
     width: 100%;
@@ -517,7 +517,7 @@
     height: 100%;
   }
 }
-@media only screen and (min-width: 0) and (max-width: 48rem) {
+@media only screen and (min-width: 35.5rem) and (max-width: 48rem) {
   /*  dimension : "-full" shorthand is 100% width*/
   .w-md-full {
     width: 100%;
@@ -1028,7 +1028,7 @@
     height: 100%;
   }
 }
-@media only screen and (min-width: 0) and (max-width: 64rem) {
+@media only screen and (min-width: 48rem) and (max-width: 64rem) {
   /*  dimension : "-full" shorthand is 100% width*/
   .w-lg-full {
     width: 100%;
@@ -1539,7 +1539,7 @@
     height: 100%;
   }
 }
-@media only screen and (min-width: 0) and (max-width: 80rem) {
+@media only screen and (min-width: 64rem) and (max-width: 80rem) {
   /*  dimension : "-full" shorthand is 100% width*/
   .w-xl-full {
     width: 100%;
@@ -2050,7 +2050,7 @@
     height: 100%;
   }
 }
-@media only screen and (min-width: 0) and (max-width: 120rem) {
+@media only screen and (min-width: 80rem) and (max-width: 120rem) {
   /*  dimension : "-full" shorthand is 100% width*/
   .w-xxl-full {
     width: 100%;
