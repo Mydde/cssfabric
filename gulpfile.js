@@ -2,15 +2,19 @@ const gulp = require("gulp"),
   unescapeJs = require("unescape-js"),
   jsonTransform = require("gulp-json-transform"),
   cache = require("gulp-cached"),
-  nodeSass = require("node-sass"),
+  //nodeSass = require("node-sass"),
   gulpSass = require("gulp-sass"),
   sassExport = require("gulp-sass-export"),
   mergeJson = require("gulp-merge-json"),
   gulFileList = require("gulp-filelist"),
   spawn = require("cross-spawn"),
+  minifyCss = require("gulp-minify-css"),
   fs = require("fs"),
+  gulpRename = require("gulp-rename"),
   gulpDownload = require("gulp-download-stream"),
   gulpSort = require("gulp-sort");
+
+gulpSass.compiler = require("sass");
 
 var fabricConfig = require("./cssfabric.json");
 
@@ -243,18 +247,27 @@ function task_mergeInclude(cb) {
 
 function task_sass2css(cb) {
   // use node-sass
+  console.log(`${fabricModuleDir}/**/*.scss`);
   gulp
     .src(`${fabricModuleDir}/**/*.scss`)
-    .pipe(gulpSass({ outputStyle: "compressed" })) // .on('error', gulpSass.logError)
-    .pipe(gulp.dest(`${fabricStylesDir}/css-fabric/cool`))
+    .pipe(
+      gulpSass({ sourceMap: true, outputStyle: "expanded" }).on(
+        "error",
+        gulpSass.logError
+      )
+    ) //
+    .pipe(gulp.dest(`${fabricStylesDir}/css-fabric/core`))
+    .pipe(
+      minifyCss({
+        keepSpecialComments: 0,
+      })
+    )
+    .pipe(gulpRename({ extname: ".min.css" }))
+    .pipe(gulp.dest(`${fabricStylesDir}/css-fabric/min`))
     .on("end", () => {
       return cb();
     });
 
-  /* spawn.sync(`sass   ${fabricModuleDir}/:${fabricStylesDir}/css-fabric/core`);
-  spawn.sync(
-    `sass   ${fabricModuleDir}/:${fabricStylesDir}/css-fabric/min/ --style=compressed`
-  ); */
 
   return cb();
 }

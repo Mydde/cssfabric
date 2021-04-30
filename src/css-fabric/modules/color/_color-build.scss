@@ -100,7 +100,7 @@ $gray_schemes: ();
 
     .#{$property_key} {
         @each $color_key, $color_prop in $type {
-            &-#{$color_key} {
+            &#{"-"+ $color_key} {
                 @if $tag_short==color {
                     color: $color_prop;
                     @if $has_color_factory {

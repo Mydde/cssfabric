@@ -1245,6 +1245,52 @@ template {
 
 /*
 * css-fabric 
+* text size and transform system
+*/
+p {
+  margin: auto;
+}
+
+.hover-parent .hover-show {
+  display: none;
+}
+
+.hover-parent .hover-hide {
+  display: initial;
+}
+
+.hover-parent:hover .hover-show {
+  display: initial;
+}
+
+.hover-parent:hover .hover-hide {
+  display: none;
+}
+
+.block:not(:last-child) {
+  margin-bottom: 1.5rem;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin-block-start: 0 !important;
+  margin-block-end: 0 !important;
+  margin-inline-start: 0 !important;
+  margin-inline-end: 0 !important;
+}
+
+.txt-ellipsis {
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+/*
+* css-fabric 
 * padding, margin and border system
 */
 /**
@@ -24257,52 +24303,6 @@ template {
 }
 /*
 * css-fabric 
-* text size and transform system
-*/
-p {
-  margin: auto;
-}
-
-.hover-parent .hover-show {
-  display: none;
-}
-
-.hover-parent .hover-hide {
-  display: initial;
-}
-
-.hover-parent:hover .hover-show {
-  display: initial;
-}
-
-.hover-parent:hover .hover-hide {
-  display: none;
-}
-
-.block:not(:last-child) {
-  margin-bottom: 1.5rem;
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  margin-block-start: 0 !important;
-  margin-block-end: 0 !important;
-  margin-inline-start: 0 !important;
-  margin-inline-end: 0 !important;
-}
-
-.txt-ellipsis {
-  text-overflow: ellipsis;
-  overflow: hidden;
-  white-space: nowrap;
-}
-
-/*
-* css-fabric 
 * color system
 */
 /*
@@ -36284,5 +36284,3 @@ h6 {
   /* set zIndex value */
   z-index: 800;
 }
-
-/*# sourceMappingURL=css-fabric.css.map */

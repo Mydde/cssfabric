@@ -5,7 +5,7 @@
 @use "sass:map";
 // load scss config file
 @use '../../_utils'; 
-@use 'color-build' as build;
+@use 'color-build' as build; 
  // load general config variables
  $_cfg: utils.get_conf();
 
@@ -18,4 +18,4 @@ $mq_size_value in $_media_quey_sizes {
     @include utils.responsive_encloser($mq_size_value) {
         @include build.buildColor($mq_size_key);
     }
-}
+} 

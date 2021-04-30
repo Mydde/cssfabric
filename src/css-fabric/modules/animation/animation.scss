@@ -1,24 +1,23 @@
 /*
  css-fabric 
  grid system 
-*/
+*/ 
 
 // load scss config file 
-@use '../../_utils';
+@use '../../_utils' as utils; 
 // load general config variables 
 $_cfg: utils.get_conf();
 // load local config variables
 $_animation: utils.get_conf_data(animation);
 
-
-
+  
 $fabric_attention_props: map-get($_animation, attention_props);
 $fabric_in_out_props: map-get($_animation, in_out_props);
 
 $vectorDirections: (up right bottom left);
 
-
-
+  
+  
 // up down right left
 @function getVectorPropertyObject($vectorDirection) {
 
@@ -34,7 +33,7 @@ $vectorDirections: (up right bottom left);
 
     @return (translation:map-get($test, translation), direction:map-get($test, direction));
 
-}
+} 
 
 @function draw ($vectorMove, $vectorDirection, $vectorValue) {
 
