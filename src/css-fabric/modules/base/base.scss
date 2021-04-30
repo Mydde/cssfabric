@@ -5,17 +5,16 @@
 @use "sass:map";
 // load scss config file
 @use '../../_utils';
+@use 'resources/css/normalize.min.css';   
 // load general config variables
 $_cfg: utils.get_conf();
 // load local config variables
 $_base: utils.get_conf_data(base);
 
+
 p {
-    margin: auto;
+    margin: auto; 
 }
-
-
-
 
 .hover-parent {
     .hover-show {

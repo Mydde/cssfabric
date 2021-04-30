@@ -14,7 +14,7 @@
 			"table_class_name": "table",
 			"table_class_name_short": "tbl",
 			"text_class_name": "text",
-			"text_class_name_short": "txt",
+			"text_class_name_short": "txt", 
 			"menu_class_name": "menu",
 			"menu_class_name_short": "ul",
 			"size_step": "0.25rem",
@@ -23,14 +23,14 @@
 				"small": "64",
 				"medium": "120",
 				"large": "250",
-				"full": "100%"
+				"full": "100%" 
 			},
 			"media_quey_sizes": {
-				"sm": 35.5,
-				"md": 48,
-				"lg": 64,
+				"xxl": 140,
 				"xl": 80,
-				"xxl": 120
+				"lg": 64,
+				"md": 48,
+				"sm": 35.7
 			},
 			"color_schemes_props": {
 				"info": "yellow",

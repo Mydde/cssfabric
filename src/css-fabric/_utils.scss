@@ -21,34 +21,38 @@
 }
 
 @function get_conf_metadata($_module) {
-  @return get_conf_part($_module, "_metadata");
-}
+  @return get_conf_part($_module, "_metadata"); 
 
-@function str-split($string, $separator) {
+}
+ 
+@function str-split($string, $separator) {  
   // empty array/list
   $split-arr: ();
   // first index of separator in string
-  $index: str-index($string, $separator);
+  $index: str-index($string, $separator);   
   // loop through string
-  @while $index != null {
+  @while $index != null { 
     // get the substring from the first character to the separator
     $item: str-slice($string, 1, $index - 1);
     // push item to array
     $split-arr: append($split-arr, $item);
     // remove item and separator from string
-    $string: str-slice($string, $index + 1);
+    $string: str-slice($string, $index + 1); 
     // find new index of separator
     $index: str-index($string, $separator);
   }
   // add the remaining string to list (the last item)
   $split-arr: append($split-arr, $string);
 
-  @return $split-arr;
+  @return $split-arr;  
 }
 
 // css dimensions rules builder responsive
-@mixin responsive_encloser($mq_size_value,$mq_min_size_value: null) {
-  @media only screen and (min-width: $mq_min_size_value + rem) and (max-width: $mq_size_value + rem) {
-    @content;
+@mixin responsive_encloser($mq_size_value,$mq_min_size_value: null) { 
+  // and (min-width: $mq_min_size_value + rem)
+  @media only screen  and (max-width: $mq_size_value + rem) {
+
+    @content;  
   }
 }
+ 

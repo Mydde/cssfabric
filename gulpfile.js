@@ -178,17 +178,7 @@ const {
   generatedDir,
 } = fabricConfig;
 
-/**
- * add default comment key for each property
- * @returns function
- */
-function task_scss2json(cb) {
-  spawn.sync(
-    `json-to-scss ${fabricConfDir}/*.*   ${generatedDir}/_config.scss  --mo`
-  );
 
-  return cb();
-}
 
 // from task_mergeInclude;
 function task_varsExport(cb) {
@@ -263,6 +253,7 @@ function task_mergeInclude(cb) {
 
   return cb();
 }
+
 /**
  * task_sass2css
  * transform scss to css
@@ -330,7 +321,14 @@ function task_addComments(cb) {
     });
 }
 
-function task_mergeConf(cb) {
+/**
+ *  merge json config files into one css.fabric.config.json
+ * 
+ * @param {function} cb 
+ */
+function task_mergeJsonConf(cb) {
+
+  console.log('task_mergeJsonConf  __________________________________________')
   let sourceFiles = [`${fabricConfDir}/**/*.json`];
 
   gulp
@@ -353,10 +351,25 @@ function task_mergeConf(cb) {
     });
 }
 
+/**
+ * add default comment key for each property
+ * @returns function
+ */
+ function task_jsonToScss(cb) {
+
+  console.log('task_jsonToScss __________________________________________')
+
+  spawn.sync(
+    `json-to-scss ${fabricConfDir}/*.*   ${generatedDir}/_config.scss  --mo`
+  );
+
+  return cb(); 
+}
+
 function watchJsonTask(cb) {
   gulp.watch(
     fabricConfDir + "/**/*.json",
-    gulp.series(task_mergeConf, task_addComments, task_scss2json)
+    gulp.series(task_mergeJsonConf,  task_jsonToScss) // task_addComments,
   );
 
   cb();

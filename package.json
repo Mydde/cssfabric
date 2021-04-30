@@ -4,9 +4,9 @@
   "private": true,
   "main": "./lib",
   "scripts": {
-    "dev": "tsc --watch & node lib/ & npm run",
+    "dev": "gulp taskDownload & npm run watch-all",
     "build": "",
-    "watch-all": "npm-run-all -p -r  watch-json watch-sass watch-include watch-readme",
+    "watch-all": "npm-run-all -p -r  watch-json watch-sass watch-include",
     "watch-sass": "gulp watchSass",
     "watch-json": "gulp watchJson",
     "watch-include": "gulp watchInclude",
