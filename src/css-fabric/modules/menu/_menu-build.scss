@@ -26,57 +26,58 @@ $menu_dropdown_tag: map-get($_menu, menu_dropdown_tag);
 $menu_dropdown_open: map-get($_menu, menu_dropdown_open);
 $menu_dropdown_close: map-get($_menu, menu_dropdown_close);
 
-
-@mixin buildMenu($mq_key){
-    
-    $class_name: if($mq_key,#{$menu_class_name}-#{$mq_key},#{$menu_class_name});
+@mixin buildMenu($mq_key) {
+    $class_name: if($mq_key, #{$menu_class_name}-#{$mq_key}, #{$menu_class_name});
 
     #{$menu_class_name_short} {
-
         &.#{$class_name} {
-     
             list-style: none;
-            list-style-type: none;         
-    
-            @each $orientation_key,
-            $orientation in $orientations {
+            list-style-type: none;
+
+            @each $orientation_key, $orientation in $orientations {
                 &-#{$orientation_key} {
-    
                     padding: 0;
                     margin: 0;
-    
+
                     @if $orientation_key==h {
                         display: flex;
                         border-bottom: 1px solid #ededed;
-    
+
                         &-scroll {
                             dsp: none;
                         }
                     }
-    
-                    & li.#{$menu_item_class_name}, li {
 
-                        &:hover{
+                    & li.#{$menu_item_class_name},
+                    li {
+                        &:hover {
                             background-color: #ededed;
                         }
 
                         @if $orientation_key==h {
-                                flex: 1 1 0; 
-                                // border: 1px solid #ededed;
+                            flex: 1 1 0;
+                            // border: 1px solid #ededed;
                         }
                     }
-    
+
                     & li {
                         list-style: none;
-                    }  
+                    }
                 }
             }
         }
     }
 }
 
+$menu-border-color: #ddd;
 
-
+.menu-h {
+    &-underlined{
+        ul {
+            border-bottom: 1px solid #ccc
+        }
+    }
+}
 /* & li.#{$menu_item_class_name}{
     dsp: none;
 }
