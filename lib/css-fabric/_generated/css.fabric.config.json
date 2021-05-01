@@ -25,7 +25,7 @@
                     "description": "'css-fabric global config variables'"
                 },
                 "_data": {
-                    "CFG_HAS_DIMENSION_STRICT": true,
+                    "cfg-has-dimension-strict": true,
                     "CFG_HAS_DIMENSION_MIN": true,
                     "CFG_HAS_DIMENSION_MAX": true,
                     "grid_class_name": "grid",
@@ -77,7 +77,7 @@
                     ]
                 },
                 "_docs": {
-                    "CFG_HAS_DIMENSION_STRICT": "",
+                    "cfg-has-dimension-strict": "",
                     "CFG_HAS_DIMENSION_MIN": "",
                     "CFG_HAS_DIMENSION_MAX": "",
                     "grid_class_name": "",

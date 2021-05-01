@@ -3,7 +3,6 @@
 ### box/box-responsive
 ### box/box
 ### box/_box-build
-### box/_box-vars
 ### color/color-responsive
 ### color/color
 ### color/_color-build

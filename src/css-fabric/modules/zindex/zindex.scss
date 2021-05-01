@@ -2,17 +2,17 @@
  css-fabric 
  zIndex system
 */ 
-
+@use 'zindex-vars';
+$zindex-config: zindex-vars.$zindex-config;
 // load scss config file
 @use '../../_utils';
 
 // load general config variables 
 $_cfg: utils.get_conf();
-// load local config variables
-$_zindex: utils.get_conf_data(zindex);
+// load local config variables 
 
 // read variables
-$z_groups: map-get($_zindex, z_groups);
+$z_groups: map-get($zindex-config, z_groups); 
  
 
 @each $z_group in $z_groups {

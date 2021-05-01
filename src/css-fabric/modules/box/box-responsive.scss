@@ -7,20 +7,17 @@
 @use '../../_utils';
 @use "_box-build" as build;
 
-// load general config variables 
+// load general config variables
 $_base: utils.get_conf();
-// media queries sizes, in rem  
+// media queries sizes, in rem
 $_media_quey_sizes: map-get($_base, media_quey_sizes);
 
-// builder responsive  
-$min_value: 0; 
- 
-@each $mq_size_key, 
-$mq_size_value in $_media_quey_sizes {
+// builder responsive
+$min_value: 0;
 
-    @include utils.responsive_encloser($mq_size_value,$min_value) {
-      @include build.buildBox($mq_size_key); 
-    }
-    $min_value: $mq_size_value;  
-} 
- 
+@each $mq_size_key, $mq_size_value in $_media_quey_sizes {
+  @include utils.responsive_encloser($mq_size_value, $min_value) {
+    @include build.buildBox($mq_size_key);
+  }
+  $min_value: $mq_size_value;
+}

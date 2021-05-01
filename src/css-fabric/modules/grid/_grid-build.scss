@@ -4,23 +4,23 @@
 */
 // load scss config file
 @use '../../_utils';
+@use 'grid-vars';
+
+$grid-config:  grid-vars.$grid-config;
 
 // load general config variables 
-$_base: utils.get_conf();
-// load local config variables
-$_grid: utils.get_conf_data(grid);
+$_base: utils.get_conf(); 
 
 // read variables
 $CFG_GRID_CODE: map-get($_base, grid_class_name);
  
 
-$CFG_GRID_SEPARATOR: map-get($_grid, grid_separator);
-$CFG_GRID_HOR: map-get($_grid, grid_hor_code);
-$CFG_GRID_VERT: map-get($_grid, grid_vert_code);
+$CFG_GRID_SEPARATOR: map-get($grid-config, grid_separator);
+$CFG_GRID_HOR: map-get($grid-config, grid_hor_code);
+$CFG_GRID_VERT: map-get($grid-config, grid_vert_code);
 
 
 @mixin makeGrid($mqKey) {
-
 
     $prefix : if($mqKey, #{$CFG_GRID_CODE}-#{$mqKey}, #{$CFG_GRID_CODE});
     $h_prop: #{$prefix}#{$CFG_GRID_SEPARATOR}#{$CFG_GRID_HOR};

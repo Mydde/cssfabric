@@ -3,7 +3,7 @@
  menu system
 */
 ul {
-  border-bottom: 1px solid red;
+  border-bottom: 1px solid blue;
 }
 ul:after {
   bottom: 0;
@@ -14,7 +14,7 @@ ul:after {
 }
 ul li {
   margin: 0 4px;
-  border-bottom: 4px solid #660000;
+  border-bottom: 4px solid #000066;
 }
 
 /* & li.menu-item{

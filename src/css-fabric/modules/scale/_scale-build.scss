@@ -2,14 +2,13 @@
  css-fabric 
  scale  system pointless
 */
-
+@use 'scale-vars';
+$scale-config: scale-vars.$scale-config; 
 // load scss config file
-@use '../../_utils';
+@use '../../_utils'; 
 
 // load general config variables
-$_cfg: utils.get_conf();
-// load local config variables
-$_scale: utils.get_conf_data(scale);
+$_cfg: utils.get_conf(); 
 
 // read variables
 $_has_dimensions_strict: map-get($_cfg, has_dimensions_strict);
@@ -17,14 +16,14 @@ $_has_dimensions_min: map-get($_cfg, has_dimensions_min);
 $_has_dimensions_max: map-get($_cfg, has_dimensions_max);
 
 // dimensions declaration
-$scale_size: map-get($_scale, scale_size);
-$scale_props: map-get($_scale, scale_props);
-$scale_css_values: map-get($_scale, scale_css_values);
-$scale_shorthands: map-get($_scale, scale_shorthands);
-$scale_defined_steps: map-get($_scale, scale_defined_steps);
-$scale_defined_step_unit: map-get($_scale, scale_defined_step_unit);
-$scale_defined_step_size: map-get($_scale, scale_defined_step_size);
-$scale_grid_ratios: map-get($_scale, scale_grid_ratios);
+$scale_size: map-get($scale-config, scale_size);
+$scale_props: map-get($scale-config, scale_props);
+$scale_css_values: map-get($scale-config, scale_css_values);
+$scale_shorthands: map-get($scale-config, scale_shorthands);
+$scale_defined_steps: map-get($scale-config, scale_defined_steps);
+$scale_defined_step_unit: map-get($scale-config, scale_defined_step_unit);
+$scale_defined_step_size: map-get($scale-config, scale_defined_step_size);
+$scale_grid_ratios: map-get($scale-config, scale_grid_ratios);
 
 /// css dimensions rules builder
 @mixin css_dimension_property_builder($scale_prop, $size_code, $size_value, $media_query_code) {

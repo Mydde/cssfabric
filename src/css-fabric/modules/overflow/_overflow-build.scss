@@ -2,18 +2,17 @@
  css-fabric 
  overflow system
 */
-
+@use 'overflow-vars';
+$overflow-config: overflow-vars.$overflow-config;
 // load scss config file
 @use '../../_utils';
 
 // load general config variables
-$_cfg: utils.get_conf();
-// load local config variables
-$_overflow: utils.get_conf_data(overflow);
+$_cfg: utils.get_conf(); 
 
 // read variables
-$overflow_props: map-get($_overflow, overflow_props);
-$overflow_values: map-get($_overflow, overflow_values);
+$overflow_props: map-get($overflow-config, overflow_props);
+$overflow_values: map-get($overflow-config, overflow_values);
 
 /* css overflow rules */
 @mixin buildOverflow($mq_size_key) {

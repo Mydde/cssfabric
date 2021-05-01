@@ -3,7 +3,7 @@ const gulp = require("gulp"),
   jsonTransform = require("gulp-json-transform"),
   cache = require("gulp-cached"),
   gulpSass = require("gulp-sass"),
-  sassExport = require("gulp-sass-export"),
+  // sassExport = require("gulp-sass-export"),
   mergeJson = require("gulp-merge-json"),
   gulFileList = require("gulp-filelist"),
   spawn = require("cross-spawn"),
@@ -12,9 +12,7 @@ const gulp = require("gulp"),
   gulpRename = require("gulp-rename"),
   gulpDownload = require("gulp-download-stream"),
   gulpConcat = require("gulp-concat-util"),
-  gulpIgnore = require("gulp-ignore"),
-  sassJson = require('gulp-sass-json'),
-  gulpSort = require("gulp-sort");
+  gulpIgnore = require("gulp-ignore");
 
 gulpSass.compiler = require("sass");
 
@@ -257,7 +255,7 @@ function task_mergeInclude(cb) {
 /**
  * task_sass2css
  * transform scss to css
- * distribute files
+ * store files in /lib
  *
  * rename *-responsive to *.responsive, because not dot in sass file
  *
@@ -357,12 +355,11 @@ function task_mergeJsonConf(cb) {
 }
 
 /**
- * add default comment key for each property
+ * build _generated/_config.scss, used by _utils
  * @returns function
  */
  function task_jsonToScss(cb) {
-
-  console.log('task_jsonToScss __________________________________________')
+ 
 
   spawn.sync(
     `json-to-scss ${fabricConfDir}/*.*   ${generatedDir}/_config.scss  --mo`
@@ -381,7 +378,7 @@ function watchJsonTask(cb) {
 }
 
 function watchSassTask(cb) {
-  gulp.watch(fabricRootDir, gulp.parallel(task_sass2css)); // task_varsExport
+  gulp.watch(fabricRootDir, gulp.series(task_sass2css)); // task_varsExport
 
   cb();
 }
@@ -398,6 +395,15 @@ function watchReadme(cb) {
   gulp.watch(
     [fabricModuleDir, "!" + fabricModuleDir + "/**/_*.scss"],
     task_readme
+  );
+
+  cb();
+}
+
+function watchAll(cb) {
+  gulp.watch(
+     "/**/*.*",
+    gulp.series(task_mergeJsonConf,  task_jsonToScss) // task_addComments,
   );
 
   cb();

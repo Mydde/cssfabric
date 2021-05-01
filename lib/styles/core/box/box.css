@@ -20,906 +20,906 @@
 * css-fabric 
 * box : padding, margin and border system
 */
-.border-t, .border-t-1 {
+.order-t, .order-t-1 {
   border-top: 1px solid #ccc;
 }
-.border-t-2 {
+.order-t-2 {
   border-top: 2px solid #ccc;
 }
-.border-t-3 {
+.order-t-3 {
   border-top: 3px solid #ccc;
 }
-.border-t-4 {
+.order-t-4 {
   border-top: 4px solid #ccc;
 }
-.border-t-5 {
+.order-t-5 {
   border-top: 5px solid #ccc;
 }
-.border-t-6 {
+.order-t-6 {
   border-top: 6px solid #ccc;
 }
-.border-t-7 {
+.order-t-7 {
   border-top: 7px solid #ccc;
 }
-.border-t-8 {
+.order-t-8 {
   border-top: 8px solid #ccc;
 }
-.border-t-9 {
+.order-t-9 {
   border-top: 9px solid #ccc;
 }
-.border-t-10 {
+.order-t-10 {
   border-top: 10px solid #ccc;
 }
-.border-t-11 {
+.order-t-11 {
   border-top: 11px solid #ccc;
 }
-.border-t-12 {
+.order-t-12 {
   border-top: 12px solid #ccc;
 }
-.border-t-13 {
+.order-t-13 {
   border-top: 13px solid #ccc;
 }
-.border-t-14 {
+.order-t-14 {
   border-top: 14px solid #ccc;
 }
-.border-t-15 {
+.order-t-15 {
   border-top: 15px solid #ccc;
 }
-.border-t-16 {
+.order-t-16 {
   border-top: 16px solid #ccc;
 }
-.border-t-17 {
+.order-t-17 {
   border-top: 17px solid #ccc;
 }
-.border-t-18 {
+.order-t-18 {
   border-top: 18px solid #ccc;
 }
-.border-t-19 {
+.order-t-19 {
   border-top: 19px solid #ccc;
 }
-.border-t-20 {
+.order-t-20 {
   border-top: 20px solid #ccc;
 }
-.border-t-21 {
+.order-t-21 {
   border-top: 21px solid #ccc;
 }
-.border-t-22 {
+.order-t-22 {
   border-top: 22px solid #ccc;
 }
-.border-t-23 {
+.order-t-23 {
   border-top: 23px solid #ccc;
 }
-.border-t-24 {
+.order-t-24 {
   border-top: 24px solid #ccc;
 }
-.border-t-25 {
+.order-t-25 {
   border-top: 25px solid #ccc;
 }
-.border-t-26 {
+.order-t-26 {
   border-top: 26px solid #ccc;
 }
-.border-t-27 {
+.order-t-27 {
   border-top: 27px solid #ccc;
 }
-.border-t-28 {
+.order-t-28 {
   border-top: 28px solid #ccc;
 }
-.border-t-29 {
+.order-t-29 {
   border-top: 29px solid #ccc;
 }
-.border-t-30 {
+.order-t-30 {
   border-top: 30px solid #ccc;
 }
-.border-t-31 {
+.order-t-31 {
   border-top: 31px solid #ccc;
 }
-.border-t-32 {
+.order-t-32 {
   border-top: 32px solid #ccc;
 }
 
-.border-b, .border-b-1 {
+.order-b, .order-b-1 {
   border-bottom: 1px solid #ccc;
 }
-.border-b-2 {
+.order-b-2 {
   border-bottom: 2px solid #ccc;
 }
-.border-b-3 {
+.order-b-3 {
   border-bottom: 3px solid #ccc;
 }
-.border-b-4 {
+.order-b-4 {
   border-bottom: 4px solid #ccc;
 }
-.border-b-5 {
+.order-b-5 {
   border-bottom: 5px solid #ccc;
 }
-.border-b-6 {
+.order-b-6 {
   border-bottom: 6px solid #ccc;
 }
-.border-b-7 {
+.order-b-7 {
   border-bottom: 7px solid #ccc;
 }
-.border-b-8 {
+.order-b-8 {
   border-bottom: 8px solid #ccc;
 }
-.border-b-9 {
+.order-b-9 {
   border-bottom: 9px solid #ccc;
 }
-.border-b-10 {
+.order-b-10 {
   border-bottom: 10px solid #ccc;
 }
-.border-b-11 {
+.order-b-11 {
   border-bottom: 11px solid #ccc;
 }
-.border-b-12 {
+.order-b-12 {
   border-bottom: 12px solid #ccc;
 }
-.border-b-13 {
+.order-b-13 {
   border-bottom: 13px solid #ccc;
 }
-.border-b-14 {
+.order-b-14 {
   border-bottom: 14px solid #ccc;
 }
-.border-b-15 {
+.order-b-15 {
   border-bottom: 15px solid #ccc;
 }
-.border-b-16 {
+.order-b-16 {
   border-bottom: 16px solid #ccc;
 }
-.border-b-17 {
+.order-b-17 {
   border-bottom: 17px solid #ccc;
 }
-.border-b-18 {
+.order-b-18 {
   border-bottom: 18px solid #ccc;
 }
-.border-b-19 {
+.order-b-19 {
   border-bottom: 19px solid #ccc;
 }
-.border-b-20 {
+.order-b-20 {
   border-bottom: 20px solid #ccc;
 }
-.border-b-21 {
+.order-b-21 {
   border-bottom: 21px solid #ccc;
 }
-.border-b-22 {
+.order-b-22 {
   border-bottom: 22px solid #ccc;
 }
-.border-b-23 {
+.order-b-23 {
   border-bottom: 23px solid #ccc;
 }
-.border-b-24 {
+.order-b-24 {
   border-bottom: 24px solid #ccc;
 }
-.border-b-25 {
+.order-b-25 {
   border-bottom: 25px solid #ccc;
 }
-.border-b-26 {
+.order-b-26 {
   border-bottom: 26px solid #ccc;
 }
-.border-b-27 {
+.order-b-27 {
   border-bottom: 27px solid #ccc;
 }
-.border-b-28 {
+.order-b-28 {
   border-bottom: 28px solid #ccc;
 }
-.border-b-29 {
+.order-b-29 {
   border-bottom: 29px solid #ccc;
 }
-.border-b-30 {
+.order-b-30 {
   border-bottom: 30px solid #ccc;
 }
-.border-b-31 {
+.order-b-31 {
   border-bottom: 31px solid #ccc;
 }
-.border-b-32 {
+.order-b-32 {
   border-bottom: 32px solid #ccc;
 }
 
-.border-l, .border-l-1 {
+.order-l, .order-l-1 {
   border-left: 1px solid #ccc;
 }
-.border-l-2 {
+.order-l-2 {
   border-left: 2px solid #ccc;
 }
-.border-l-3 {
+.order-l-3 {
   border-left: 3px solid #ccc;
 }
-.border-l-4 {
+.order-l-4 {
   border-left: 4px solid #ccc;
 }
-.border-l-5 {
+.order-l-5 {
   border-left: 5px solid #ccc;
 }
-.border-l-6 {
+.order-l-6 {
   border-left: 6px solid #ccc;
 }
-.border-l-7 {
+.order-l-7 {
   border-left: 7px solid #ccc;
 }
-.border-l-8 {
+.order-l-8 {
   border-left: 8px solid #ccc;
 }
-.border-l-9 {
+.order-l-9 {
   border-left: 9px solid #ccc;
 }
-.border-l-10 {
+.order-l-10 {
   border-left: 10px solid #ccc;
 }
-.border-l-11 {
+.order-l-11 {
   border-left: 11px solid #ccc;
 }
-.border-l-12 {
+.order-l-12 {
   border-left: 12px solid #ccc;
 }
-.border-l-13 {
+.order-l-13 {
   border-left: 13px solid #ccc;
 }
-.border-l-14 {
+.order-l-14 {
   border-left: 14px solid #ccc;
 }
-.border-l-15 {
+.order-l-15 {
   border-left: 15px solid #ccc;
 }
-.border-l-16 {
+.order-l-16 {
   border-left: 16px solid #ccc;
 }
-.border-l-17 {
+.order-l-17 {
   border-left: 17px solid #ccc;
 }
-.border-l-18 {
+.order-l-18 {
   border-left: 18px solid #ccc;
 }
-.border-l-19 {
+.order-l-19 {
   border-left: 19px solid #ccc;
 }
-.border-l-20 {
+.order-l-20 {
   border-left: 20px solid #ccc;
 }
-.border-l-21 {
+.order-l-21 {
   border-left: 21px solid #ccc;
 }
-.border-l-22 {
+.order-l-22 {
   border-left: 22px solid #ccc;
 }
-.border-l-23 {
+.order-l-23 {
   border-left: 23px solid #ccc;
 }
-.border-l-24 {
+.order-l-24 {
   border-left: 24px solid #ccc;
 }
-.border-l-25 {
+.order-l-25 {
   border-left: 25px solid #ccc;
 }
-.border-l-26 {
+.order-l-26 {
   border-left: 26px solid #ccc;
 }
-.border-l-27 {
+.order-l-27 {
   border-left: 27px solid #ccc;
 }
-.border-l-28 {
+.order-l-28 {
   border-left: 28px solid #ccc;
 }
-.border-l-29 {
+.order-l-29 {
   border-left: 29px solid #ccc;
 }
-.border-l-30 {
+.order-l-30 {
   border-left: 30px solid #ccc;
 }
-.border-l-31 {
+.order-l-31 {
   border-left: 31px solid #ccc;
 }
-.border-l-32 {
+.order-l-32 {
   border-left: 32px solid #ccc;
 }
 
-.border-r, .border-r-1 {
+.order-r, .order-r-1 {
   border-right: 1px solid #ccc;
 }
-.border-r-2 {
+.order-r-2 {
   border-right: 2px solid #ccc;
 }
-.border-r-3 {
+.order-r-3 {
   border-right: 3px solid #ccc;
 }
-.border-r-4 {
+.order-r-4 {
   border-right: 4px solid #ccc;
 }
-.border-r-5 {
+.order-r-5 {
   border-right: 5px solid #ccc;
 }
-.border-r-6 {
+.order-r-6 {
   border-right: 6px solid #ccc;
 }
-.border-r-7 {
+.order-r-7 {
   border-right: 7px solid #ccc;
 }
-.border-r-8 {
+.order-r-8 {
   border-right: 8px solid #ccc;
 }
-.border-r-9 {
+.order-r-9 {
   border-right: 9px solid #ccc;
 }
-.border-r-10 {
+.order-r-10 {
   border-right: 10px solid #ccc;
 }
-.border-r-11 {
+.order-r-11 {
   border-right: 11px solid #ccc;
 }
-.border-r-12 {
+.order-r-12 {
   border-right: 12px solid #ccc;
 }
-.border-r-13 {
+.order-r-13 {
   border-right: 13px solid #ccc;
 }
-.border-r-14 {
+.order-r-14 {
   border-right: 14px solid #ccc;
 }
-.border-r-15 {
+.order-r-15 {
   border-right: 15px solid #ccc;
 }
-.border-r-16 {
+.order-r-16 {
   border-right: 16px solid #ccc;
 }
-.border-r-17 {
+.order-r-17 {
   border-right: 17px solid #ccc;
 }
-.border-r-18 {
+.order-r-18 {
   border-right: 18px solid #ccc;
 }
-.border-r-19 {
+.order-r-19 {
   border-right: 19px solid #ccc;
 }
-.border-r-20 {
+.order-r-20 {
   border-right: 20px solid #ccc;
 }
-.border-r-21 {
+.order-r-21 {
   border-right: 21px solid #ccc;
 }
-.border-r-22 {
+.order-r-22 {
   border-right: 22px solid #ccc;
 }
-.border-r-23 {
+.order-r-23 {
   border-right: 23px solid #ccc;
 }
-.border-r-24 {
+.order-r-24 {
   border-right: 24px solid #ccc;
 }
-.border-r-25 {
+.order-r-25 {
   border-right: 25px solid #ccc;
 }
-.border-r-26 {
+.order-r-26 {
   border-right: 26px solid #ccc;
 }
-.border-r-27 {
+.order-r-27 {
   border-right: 27px solid #ccc;
 }
-.border-r-28 {
+.order-r-28 {
   border-right: 28px solid #ccc;
 }
-.border-r-29 {
+.order-r-29 {
   border-right: 29px solid #ccc;
 }
-.border-r-30 {
+.order-r-30 {
   border-right: 30px solid #ccc;
 }
-.border-r-31 {
+.order-r-31 {
   border-right: 31px solid #ccc;
 }
-.border-r-32 {
+.order-r-32 {
   border-right: 32px solid #ccc;
 }
 
-.border-all, .border-all-1 {
+.order-all, .order-all-1 {
   border: 1px solid #ccc;
 }
-.border-all-2 {
+.order-all-2 {
   border: 2px solid #ccc;
 }
-.border-all-3 {
+.order-all-3 {
   border: 3px solid #ccc;
 }
-.border-all-4 {
+.order-all-4 {
   border: 4px solid #ccc;
 }
-.border-all-5 {
+.order-all-5 {
   border: 5px solid #ccc;
 }
-.border-all-6 {
+.order-all-6 {
   border: 6px solid #ccc;
 }
-.border-all-7 {
+.order-all-7 {
   border: 7px solid #ccc;
 }
-.border-all-8 {
+.order-all-8 {
   border: 8px solid #ccc;
 }
-.border-all-9 {
+.order-all-9 {
   border: 9px solid #ccc;
 }
-.border-all-10 {
+.order-all-10 {
   border: 10px solid #ccc;
 }
-.border-all-11 {
+.order-all-11 {
   border: 11px solid #ccc;
 }
-.border-all-12 {
+.order-all-12 {
   border: 12px solid #ccc;
 }
-.border-all-13 {
+.order-all-13 {
   border: 13px solid #ccc;
 }
-.border-all-14 {
+.order-all-14 {
   border: 14px solid #ccc;
 }
-.border-all-15 {
+.order-all-15 {
   border: 15px solid #ccc;
 }
-.border-all-16 {
+.order-all-16 {
   border: 16px solid #ccc;
 }
-.border-all-17 {
+.order-all-17 {
   border: 17px solid #ccc;
 }
-.border-all-18 {
+.order-all-18 {
   border: 18px solid #ccc;
 }
-.border-all-19 {
+.order-all-19 {
   border: 19px solid #ccc;
 }
-.border-all-20 {
+.order-all-20 {
   border: 20px solid #ccc;
 }
-.border-all-21 {
+.order-all-21 {
   border: 21px solid #ccc;
 }
-.border-all-22 {
+.order-all-22 {
   border: 22px solid #ccc;
 }
-.border-all-23 {
+.order-all-23 {
   border: 23px solid #ccc;
 }
-.border-all-24 {
+.order-all-24 {
   border: 24px solid #ccc;
 }
-.border-all-25 {
+.order-all-25 {
   border: 25px solid #ccc;
 }
-.border-all-26 {
+.order-all-26 {
   border: 26px solid #ccc;
 }
-.border-all-27 {
+.order-all-27 {
   border: 27px solid #ccc;
 }
-.border-all-28 {
+.order-all-28 {
   border: 28px solid #ccc;
 }
-.border-all-29 {
+.order-all-29 {
   border: 29px solid #ccc;
 }
-.border-all-30 {
+.order-all-30 {
   border: 30px solid #ccc;
 }
-.border-all-31 {
+.order-all-31 {
   border: 31px solid #ccc;
 }
-.border-all-32 {
+.order-all-32 {
   border: 32px solid #ccc;
 }
 
-.border-u, .border-u-1 {
+.order-u, .order-u-1 {
   border-bottom: 1px solid #ccc;
   border-left: 1px solid #ccc;
   border-right: 1px solid #ccc;
 }
-.border-u-2 {
+.order-u-2 {
   border-bottom: 2px solid #ccc;
   border-left: 2px solid #ccc;
   border-right: 2px solid #ccc;
 }
-.border-u-3 {
+.order-u-3 {
   border-bottom: 3px solid #ccc;
   border-left: 3px solid #ccc;
   border-right: 3px solid #ccc;
 }
-.border-u-4 {
+.order-u-4 {
   border-bottom: 4px solid #ccc;
   border-left: 4px solid #ccc;
   border-right: 4px solid #ccc;
 }
-.border-u-5 {
+.order-u-5 {
   border-bottom: 5px solid #ccc;
   border-left: 5px solid #ccc;
   border-right: 5px solid #ccc;
 }
-.border-u-6 {
+.order-u-6 {
   border-bottom: 6px solid #ccc;
   border-left: 6px solid #ccc;
   border-right: 6px solid #ccc;
 }
-.border-u-7 {
+.order-u-7 {
   border-bottom: 7px solid #ccc;
   border-left: 7px solid #ccc;
   border-right: 7px solid #ccc;
 }
-.border-u-8 {
+.order-u-8 {
   border-bottom: 8px solid #ccc;
   border-left: 8px solid #ccc;
   border-right: 8px solid #ccc;
 }
-.border-u-9 {
+.order-u-9 {
   border-bottom: 9px solid #ccc;
   border-left: 9px solid #ccc;
   border-right: 9px solid #ccc;
 }
-.border-u-10 {
+.order-u-10 {
   border-bottom: 10px solid #ccc;
   border-left: 10px solid #ccc;
   border-right: 10px solid #ccc;
 }
-.border-u-11 {
+.order-u-11 {
   border-bottom: 11px solid #ccc;
   border-left: 11px solid #ccc;
   border-right: 11px solid #ccc;
 }
-.border-u-12 {
+.order-u-12 {
   border-bottom: 12px solid #ccc;
   border-left: 12px solid #ccc;
   border-right: 12px solid #ccc;
 }
-.border-u-13 {
+.order-u-13 {
   border-bottom: 13px solid #ccc;
   border-left: 13px solid #ccc;
   border-right: 13px solid #ccc;
 }
-.border-u-14 {
+.order-u-14 {
   border-bottom: 14px solid #ccc;
   border-left: 14px solid #ccc;
   border-right: 14px solid #ccc;
 }
-.border-u-15 {
+.order-u-15 {
   border-bottom: 15px solid #ccc;
   border-left: 15px solid #ccc;
   border-right: 15px solid #ccc;
 }
-.border-u-16 {
+.order-u-16 {
   border-bottom: 16px solid #ccc;
   border-left: 16px solid #ccc;
   border-right: 16px solid #ccc;
 }
-.border-u-17 {
+.order-u-17 {
   border-bottom: 17px solid #ccc;
   border-left: 17px solid #ccc;
   border-right: 17px solid #ccc;
 }
-.border-u-18 {
+.order-u-18 {
   border-bottom: 18px solid #ccc;
   border-left: 18px solid #ccc;
   border-right: 18px solid #ccc;
 }
-.border-u-19 {
+.order-u-19 {
   border-bottom: 19px solid #ccc;
   border-left: 19px solid #ccc;
   border-right: 19px solid #ccc;
 }
-.border-u-20 {
+.order-u-20 {
   border-bottom: 20px solid #ccc;
   border-left: 20px solid #ccc;
   border-right: 20px solid #ccc;
 }
-.border-u-21 {
+.order-u-21 {
   border-bottom: 21px solid #ccc;
   border-left: 21px solid #ccc;
   border-right: 21px solid #ccc;
 }
-.border-u-22 {
+.order-u-22 {
   border-bottom: 22px solid #ccc;
   border-left: 22px solid #ccc;
   border-right: 22px solid #ccc;
 }
-.border-u-23 {
+.order-u-23 {
   border-bottom: 23px solid #ccc;
   border-left: 23px solid #ccc;
   border-right: 23px solid #ccc;
 }
-.border-u-24 {
+.order-u-24 {
   border-bottom: 24px solid #ccc;
   border-left: 24px solid #ccc;
   border-right: 24px solid #ccc;
 }
-.border-u-25 {
+.order-u-25 {
   border-bottom: 25px solid #ccc;
   border-left: 25px solid #ccc;
   border-right: 25px solid #ccc;
 }
-.border-u-26 {
+.order-u-26 {
   border-bottom: 26px solid #ccc;
   border-left: 26px solid #ccc;
   border-right: 26px solid #ccc;
 }
-.border-u-27 {
+.order-u-27 {
   border-bottom: 27px solid #ccc;
   border-left: 27px solid #ccc;
   border-right: 27px solid #ccc;
 }
-.border-u-28 {
+.order-u-28 {
   border-bottom: 28px solid #ccc;
   border-left: 28px solid #ccc;
   border-right: 28px solid #ccc;
 }
-.border-u-29 {
+.order-u-29 {
   border-bottom: 29px solid #ccc;
   border-left: 29px solid #ccc;
   border-right: 29px solid #ccc;
 }
-.border-u-30 {
+.order-u-30 {
   border-bottom: 30px solid #ccc;
   border-left: 30px solid #ccc;
   border-right: 30px solid #ccc;
 }
-.border-u-31 {
+.order-u-31 {
   border-bottom: 31px solid #ccc;
   border-left: 31px solid #ccc;
   border-right: 31px solid #ccc;
 }
-.border-u-32 {
+.order-u-32 {
   border-bottom: 32px solid #ccc;
   border-left: 32px solid #ccc;
   border-right: 32px solid #ccc;
 }
 
-.border-ii, .border-ii-1 {
+.order-ii, .order-ii-1 {
   border-left: 1px solid #ccc;
   border-right: 1px solid #ccc;
 }
-.border-ii-2 {
+.order-ii-2 {
   border-left: 2px solid #ccc;
   border-right: 2px solid #ccc;
 }
-.border-ii-3 {
+.order-ii-3 {
   border-left: 3px solid #ccc;
   border-right: 3px solid #ccc;
 }
-.border-ii-4 {
+.order-ii-4 {
   border-left: 4px solid #ccc;
   border-right: 4px solid #ccc;
 }
-.border-ii-5 {
+.order-ii-5 {
   border-left: 5px solid #ccc;
   border-right: 5px solid #ccc;
 }
-.border-ii-6 {
+.order-ii-6 {
   border-left: 6px solid #ccc;
   border-right: 6px solid #ccc;
 }
-.border-ii-7 {
+.order-ii-7 {
   border-left: 7px solid #ccc;
   border-right: 7px solid #ccc;
 }
-.border-ii-8 {
+.order-ii-8 {
   border-left: 8px solid #ccc;
   border-right: 8px solid #ccc;
 }
-.border-ii-9 {
+.order-ii-9 {
   border-left: 9px solid #ccc;
   border-right: 9px solid #ccc;
 }
-.border-ii-10 {
+.order-ii-10 {
   border-left: 10px solid #ccc;
   border-right: 10px solid #ccc;
 }
-.border-ii-11 {
+.order-ii-11 {
   border-left: 11px solid #ccc;
   border-right: 11px solid #ccc;
 }
-.border-ii-12 {
+.order-ii-12 {
   border-left: 12px solid #ccc;
   border-right: 12px solid #ccc;
 }
-.border-ii-13 {
+.order-ii-13 {
   border-left: 13px solid #ccc;
   border-right: 13px solid #ccc;
 }
-.border-ii-14 {
+.order-ii-14 {
   border-left: 14px solid #ccc;
   border-right: 14px solid #ccc;
 }
-.border-ii-15 {
+.order-ii-15 {
   border-left: 15px solid #ccc;
   border-right: 15px solid #ccc;
 }
-.border-ii-16 {
+.order-ii-16 {
   border-left: 16px solid #ccc;
   border-right: 16px solid #ccc;
 }
-.border-ii-17 {
+.order-ii-17 {
   border-left: 17px solid #ccc;
   border-right: 17px solid #ccc;
 }
-.border-ii-18 {
+.order-ii-18 {
   border-left: 18px solid #ccc;
   border-right: 18px solid #ccc;
 }
-.border-ii-19 {
+.order-ii-19 {
   border-left: 19px solid #ccc;
   border-right: 19px solid #ccc;
 }
-.border-ii-20 {
+.order-ii-20 {
   border-left: 20px solid #ccc;
   border-right: 20px solid #ccc;
 }
-.border-ii-21 {
+.order-ii-21 {
   border-left: 21px solid #ccc;
   border-right: 21px solid #ccc;
 }
-.border-ii-22 {
+.order-ii-22 {
   border-left: 22px solid #ccc;
   border-right: 22px solid #ccc;
 }
-.border-ii-23 {
+.order-ii-23 {
   border-left: 23px solid #ccc;
   border-right: 23px solid #ccc;
 }
-.border-ii-24 {
+.order-ii-24 {
   border-left: 24px solid #ccc;
   border-right: 24px solid #ccc;
 }
-.border-ii-25 {
+.order-ii-25 {
   border-left: 25px solid #ccc;
   border-right: 25px solid #ccc;
 }
-.border-ii-26 {
+.order-ii-26 {
   border-left: 26px solid #ccc;
   border-right: 26px solid #ccc;
 }
-.border-ii-27 {
+.order-ii-27 {
   border-left: 27px solid #ccc;
   border-right: 27px solid #ccc;
 }
-.border-ii-28 {
+.order-ii-28 {
   border-left: 28px solid #ccc;
   border-right: 28px solid #ccc;
 }
-.border-ii-29 {
+.order-ii-29 {
   border-left: 29px solid #ccc;
   border-right: 29px solid #ccc;
 }
-.border-ii-30 {
+.order-ii-30 {
   border-left: 30px solid #ccc;
   border-right: 30px solid #ccc;
 }
-.border-ii-31 {
+.order-ii-31 {
   border-left: 31px solid #ccc;
   border-right: 31px solid #ccc;
 }
-.border-ii-32 {
+.order-ii-32 {
   border-left: 32px solid #ccc;
   border-right: 32px solid #ccc;
 }
 
-.border-tb, .border-tb-1 {
+.order-tb, .order-tb-1 {
   border-top: 1px solid #ccc;
   border-bottom: 1px solid #ccc;
 }
-.border-tb-2 {
+.order-tb-2 {
   border-top: 2px solid #ccc;
   border-bottom: 2px solid #ccc;
 }
-.border-tb-3 {
+.order-tb-3 {
   border-top: 3px solid #ccc;
   border-bottom: 3px solid #ccc;
 }
-.border-tb-4 {
+.order-tb-4 {
   border-top: 4px solid #ccc;
   border-bottom: 4px solid #ccc;
 }
-.border-tb-5 {
+.order-tb-5 {
   border-top: 5px solid #ccc;
   border-bottom: 5px solid #ccc;
 }
-.border-tb-6 {
+.order-tb-6 {
   border-top: 6px solid #ccc;
   border-bottom: 6px solid #ccc;
 }
-.border-tb-7 {
+.order-tb-7 {
   border-top: 7px solid #ccc;
   border-bottom: 7px solid #ccc;
 }
-.border-tb-8 {
+.order-tb-8 {
   border-top: 8px solid #ccc;
   border-bottom: 8px solid #ccc;
 }
-.border-tb-9 {
+.order-tb-9 {
   border-top: 9px solid #ccc;
   border-bottom: 9px solid #ccc;
 }
-.border-tb-10 {
+.order-tb-10 {
   border-top: 10px solid #ccc;
   border-bottom: 10px solid #ccc;
 }
-.border-tb-11 {
+.order-tb-11 {
   border-top: 11px solid #ccc;
   border-bottom: 11px solid #ccc;
 }
-.border-tb-12 {
+.order-tb-12 {
   border-top: 12px solid #ccc;
   border-bottom: 12px solid #ccc;
 }
-.border-tb-13 {
+.order-tb-13 {
   border-top: 13px solid #ccc;
   border-bottom: 13px solid #ccc;
 }
-.border-tb-14 {
+.order-tb-14 {
   border-top: 14px solid #ccc;
   border-bottom: 14px solid #ccc;
 }
-.border-tb-15 {
+.order-tb-15 {
   border-top: 15px solid #ccc;
   border-bottom: 15px solid #ccc;
 }
-.border-tb-16 {
+.order-tb-16 {
   border-top: 16px solid #ccc;
   border-bottom: 16px solid #ccc;
 }
-.border-tb-17 {
+.order-tb-17 {
   border-top: 17px solid #ccc;
   border-bottom: 17px solid #ccc;
 }
-.border-tb-18 {
+.order-tb-18 {
   border-top: 18px solid #ccc;
   border-bottom: 18px solid #ccc;
 }
-.border-tb-19 {
+.order-tb-19 {
   border-top: 19px solid #ccc;
   border-bottom: 19px solid #ccc;
 }
-.border-tb-20 {
+.order-tb-20 {
   border-top: 20px solid #ccc;
   border-bottom: 20px solid #ccc;
 }
-.border-tb-21 {
+.order-tb-21 {
   border-top: 21px solid #ccc;
   border-bottom: 21px solid #ccc;
 }
-.border-tb-22 {
+.order-tb-22 {
   border-top: 22px solid #ccc;
   border-bottom: 22px solid #ccc;
 }
-.border-tb-23 {
+.order-tb-23 {
   border-top: 23px solid #ccc;
   border-bottom: 23px solid #ccc;
 }
-.border-tb-24 {
+.order-tb-24 {
   border-top: 24px solid #ccc;
   border-bottom: 24px solid #ccc;
 }
-.border-tb-25 {
+.order-tb-25 {
   border-top: 25px solid #ccc;
   border-bottom: 25px solid #ccc;
 }
-.border-tb-26 {
+.order-tb-26 {
   border-top: 26px solid #ccc;
   border-bottom: 26px solid #ccc;
 }
-.border-tb-27 {
+.order-tb-27 {
   border-top: 27px solid #ccc;
   border-bottom: 27px solid #ccc;
 }
-.border-tb-28 {
+.order-tb-28 {
   border-top: 28px solid #ccc;
   border-bottom: 28px solid #ccc;
 }
-.border-tb-29 {
+.order-tb-29 {
   border-top: 29px solid #ccc;
   border-bottom: 29px solid #ccc;
 }
-.border-tb-30 {
+.order-tb-30 {
   border-top: 30px solid #ccc;
   border-bottom: 30px solid #ccc;
 }
-.border-tb-31 {
+.order-tb-31 {
   border-top: 31px solid #ccc;
   border-bottom: 31px solid #ccc;
 }
-.border-tb-32 {
+.order-tb-32 {
   border-top: 32px solid #ccc;
   border-bottom: 32px solid #ccc;
 }

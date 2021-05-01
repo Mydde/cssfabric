@@ -2,13 +2,12 @@
 * css-fabric 
 * text size and transform system
 */
-
+@use 'text-vars';
+$text-config: text-vars.$text-config;
 // load scss config file
 @use '../../_utils';
 // load general config variables
-$_cfg: utils.get_conf();
-// load local config variables
-$_text: utils.get_conf_data(text);
+$_cfg: utils.get_conf(); 
 
 // read variables 
 //
@@ -19,15 +18,15 @@ $color_palette_props: map-get($_cfg, color_palette_props);
 $color_grays: map-get($_cfg, color_grays);
 
 //
-$font_sizes: map-get($_text, font_sizes);
-$font_sizes_unit: map-get($_text, font_sizes_unit);
-$font_sizes_h1_em: map-get($_text, font_sizes_h1_em);
-$font_sizes_h_min_em: map-get($_text, font_sizes_h_min_em);
+$font_sizes: map-get($text-config, font_sizes);
+$font_sizes_unit: map-get($text-config, font_sizes_unit);
+$font_sizes_h1_em: map-get($text-config, font_sizes_h1_em);
+$font_sizes_h_min_em: map-get($text-config, font_sizes_h_min_em);
 
-$text_transform: map-get($_text, text_transform);
-$font_weights: map-get($_text, font_weights);
+$text_transform: map-get($text-config, text_transform);
+$font_weights: map-get($text-config, font_weights);
 
-$text_align: map-get($_text, text_align);
+$text_align: map-get($text-config, text_align);
 
 
 $scale_props: ("width":"w", "height":"h");

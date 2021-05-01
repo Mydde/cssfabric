@@ -5,19 +5,21 @@
 @use "sass:map";
 // load scss config file
 @use '../../_utils';
+@use 'color-vars';
+
+$color-config: color-vars.$color-config;
+
 // load general config variables
 $_cfg: utils.get_conf();
-// load local config variables
-$_color: utils.get_conf_data(color); 
-
+ 
 // COLOR SCHEMES
-$color_schemes: map-get($_color, color_schemes_props);
+$color_schemes: map-get($color-config, color_schemes_props);
 
 // COLOR PALETTE
-$color_palette_props: map-get($_color, color_palette_props);
+$color_palette_props: map-get($color-config, color_palette_props);
 
 // GRAYS
-$color_grays: map-get($_color, color_grays);
+$color_grays: map-get($color-config, color_grays);
 $gray_start: map-get($color_grays, gray_start);
 $gray_end: map-get($color_grays, gray_end);
 $gray_steps: map-get($color_grays, gray_steps);

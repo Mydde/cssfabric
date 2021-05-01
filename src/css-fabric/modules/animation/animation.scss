@@ -2,17 +2,16 @@
  css-fabric 
  grid system 
 */ 
+@use 'animation-vars';
+$animation-config: animation-vars.$animation-config;
 
 // load scss config file 
 @use '../../_utils' as utils; 
 // load general config variables 
-$_cfg: utils.get_conf();
-// load local config variables
-$_animation: utils.get_conf_data(animation);
-
+$_cfg: utils.get_conf(); 
   
-$fabric_attention_props: map-get($_animation, attention_props);
-$fabric_in_out_props: map-get($_animation, in_out_props);
+$fabric_attention_props: map-get($animation-config, attention_props);
+$fabric_in_out_props: map-get($animation-config, in_out_props);
 
 $vectorDirections: (up right bottom left);
 

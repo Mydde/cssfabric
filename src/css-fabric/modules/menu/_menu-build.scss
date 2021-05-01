@@ -3,28 +3,29 @@
  menu system
 */
 
+@use 'menu-vars';
+$menu-config: menu-vars.$menu-config;
+
 // load scss config file
 @use '../../_utils';
 
 // load general config variables
 $_cfg: utils.get_conf();
-// load local config variables
-$_menu: utils.get_conf_data(menu);
 
 // read variables
 $menu_class_name: map-get($_cfg, menu_class_name);
 $menu_class_name_short: map-get($_cfg, menu_class_name_short);
 
-$menu_item_class_name: map-get($_menu, menu_item_class_name);
-$menu_item_class_name_short: map-get($_menu, menu_item_class_name_short);
+$menu_item_class_name: map-get($menu-config, menu_item_class_name);
+$menu_item_class_name_short: map-get($menu-config, menu_item_class_name_short);
 
-$orientations: map-get($_menu, orientations);
-$menu_item_disabled_tag: map-get($_menu, menu_item_disabled_tag);
-$menu_item_selected_tag: map-get($_menu, menu_item_selected_tag);
+$orientations: map-get($menu-config, orientations);
+$menu_item_disabled_tag: map-get($menu-config, menu_item_disabled_tag);
+$menu_item_selected_tag: map-get($menu-config, menu_item_selected_tag);
 
-$menu_dropdown_tag: map-get($_menu, menu_dropdown_tag);
-$menu_dropdown_open: map-get($_menu, menu_dropdown_open);
-$menu_dropdown_close: map-get($_menu, menu_dropdown_close);
+$menu_dropdown_tag: map-get($menu-config, menu_dropdown_tag);
+$menu_dropdown_open: map-get($menu-config, menu_dropdown_open);
+$menu_dropdown_close: map-get($menu-config, menu_dropdown_close);
 
 @mixin buildMenu($mq_key) {
     $class_name: if($mq_key, #{$menu_class_name}-#{$mq_key}, #{$menu_class_name});
@@ -67,9 +68,9 @@ $menu_dropdown_close: map-get($_menu, menu_dropdown_close);
             }
         }
     }
-}  
+}
 
-$menu-border-color: red;
+$menu-border-color: blue;
 
 ul {
     border-bottom: 1px solid $menu-border-color;
@@ -78,11 +79,11 @@ ul {
         position: absolute;
         width: 100%;
         padding: 4px;
-        box-shadow: 0 0 4px 4px black; 
+        box-shadow: 0 0 4px 4px black;
     }
     li {
-        margin: 0 4px; 
-        border-bottom: 4px solid darken($menu-border-color,30%);
+        margin: 0 4px;
+        border-bottom: 4px solid darken($menu-border-color, 30%);
     }
 }
 

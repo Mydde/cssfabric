@@ -6,30 +6,31 @@
 
 // load scss config file 
 @use '../../_utils';
-@use "sass:map";
+@use "box-vars" as box;
+@use "sass:map"; 
+
+$box_vars : box.$box-config ;
 
 // load general config variables  
-$_cfg : utils.get_conf();
-// load local config variables 
-$_box : utils.get_conf_data(box);
-
+$_cfg : utils.get_conf(); 
+ 
 // read variables
 // media queries sizes, in em  
 $_media_quey_sizes: map-get($_cfg, media_quey_sizes);
 
-$box_unit : map-get($_box, box_unit);
-$box_unit_size : map-get($_box, box_unit_size);
-$fabric_box_sizes: map-get($_box, box_sizes);
-$box_shorthands: map-get($_box, box_shorthands);
+$box_unit : map-get($box_vars, box_unit);
+$box_unit_size : map-get($box_vars, box_unit_size);
+$fabric_box_sizes: map-get($box_vars, box_sizes);
+$box_shorthands: map-get($box_vars, box_shorthands);
 
 $box_position_shorthand : map-get($box_shorthands, position);
 $box_display_shorthand : map-get($box_shorthands, display);
 
-$fabric_box_pmb_shorthands : map-get($_box, box_css_props_shorthands);
-$fabric_box_pmb_side_shorthands: map-get($_box, box_border_shorthands);
+$fabric_box_pmb_shorthands : map-get($box_vars, box_css_props_shorthands);
+$fabric_box_pmb_side_shorthands: map-get($box_vars, box_border_shorthands);
 
-$fabric_box_position_props: map-get($_box, box_position_props);
-$fabric_box_display_props : map-get($_box, box_display_props);
+$fabric_box_position_props: map-get($box_vars, box_position_props);
+$fabric_box_display_props : map-get($box_vars, box_display_props);
 
 // adding {border}-{r} shorthand css rule for .{border}-{r}-1
 @function raw_size_tag_rule($condition) {
