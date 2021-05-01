@@ -2,6 +2,21 @@
  css-fabric 
  menu system
 */
+ul {
+  border-bottom: 1px solid red;
+}
+ul:after {
+  bottom: 0;
+  position: absolute;
+  width: 100%;
+  padding: 4px;
+  box-shadow: 0 0 4px 4px black;
+}
+ul li {
+  margin: 0 4px;
+  border-bottom: 4px solid #660000;
+}
+
 /* & li.menu-item{
     dsp: none;
 }
@@ -39,7 +54,8 @@ ul.menu-v {
   padding: 0;
   margin: 0;
 }
-ul.menu-v li.menu-item:hover, ul.menu-v li:hover {
+ul.menu-v li.menu-item:hover,
+ul.menu-v li:hover {
   background-color: #ededed;
 }
 ul.menu-v li {
@@ -54,10 +70,12 @@ ul.menu-h {
 ul.menu-h-scroll {
   dsp: none;
 }
-ul.menu-h li.menu-item, ul.menu-h li {
+ul.menu-h li.menu-item,
+ul.menu-h li {
   flex: 1 1 0;
 }
-ul.menu-h li.menu-item:hover, ul.menu-h li:hover {
+ul.menu-h li.menu-item:hover,
+ul.menu-h li:hover {
   background-color: #ededed;
 }
 ul.menu-h li {

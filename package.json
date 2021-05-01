@@ -4,9 +4,9 @@
   "private": true,
   "main": "./lib",
   "scripts": {
-    "dev": "gulp taskDownload & npm run watch-all",
+    "dev": "tsc --watch & node lib/ & npm run",
     "build": "",
-    "watch-all": "npm-run-all -p -r  watch-json watch-sass watch-include",
+    "watch-all": "npm-run-all -p -r  watch-json watch-sass watch-include watch-readme",
     "watch-sass": "gulp watchSass",
     "watch-json": "gulp watchJson",
     "watch-include": "gulp watchInclude",
@@ -17,7 +17,6 @@
     "JSON": "^1.0.0",
     "chokidar": "^3.5.1",
     "gulp-filelist": "^2.0.5",
-    "gulp-sass-json": "^1.0.1",
     "gulp-sort": "^2.0.0",
     "sass": "^1.32.8",
     "unescape-js": "^1.1.4"

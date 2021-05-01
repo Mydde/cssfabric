@@ -2,6 +2,21 @@
  css-fabric 
  menu system
 */
+ul {
+  border-bottom: 1px solid red;
+}
+ul:after {
+  bottom: 0;
+  position: absolute;
+  width: 100%;
+  padding: 4px;
+  box-shadow: 0 0 4px 4px black;
+}
+ul li {
+  margin: 0 4px;
+  border-bottom: 4px solid #660000;
+}
+
 /* & li.menu-item{
     dsp: none;
 }
@@ -40,7 +55,8 @@
     padding: 0;
     margin: 0;
   }
-  ul.menu-xxl-v li.menu-item:hover, ul.menu-xxl-v li:hover {
+  ul.menu-xxl-v li.menu-item:hover,
+ul.menu-xxl-v li:hover {
     background-color: #ededed;
   }
   ul.menu-xxl-v li {
@@ -55,10 +71,12 @@
   ul.menu-xxl-h-scroll {
     dsp: none;
   }
-  ul.menu-xxl-h li.menu-item, ul.menu-xxl-h li {
+  ul.menu-xxl-h li.menu-item,
+ul.menu-xxl-h li {
     flex: 1 1 0;
   }
-  ul.menu-xxl-h li.menu-item:hover, ul.menu-xxl-h li:hover {
+  ul.menu-xxl-h li.menu-item:hover,
+ul.menu-xxl-h li:hover {
     background-color: #ededed;
   }
   ul.menu-xxl-h li {
@@ -74,7 +92,8 @@
     padding: 0;
     margin: 0;
   }
-  ul.menu-xl-v li.menu-item:hover, ul.menu-xl-v li:hover {
+  ul.menu-xl-v li.menu-item:hover,
+ul.menu-xl-v li:hover {
     background-color: #ededed;
   }
   ul.menu-xl-v li {
@@ -89,10 +108,12 @@
   ul.menu-xl-h-scroll {
     dsp: none;
   }
-  ul.menu-xl-h li.menu-item, ul.menu-xl-h li {
+  ul.menu-xl-h li.menu-item,
+ul.menu-xl-h li {
     flex: 1 1 0;
   }
-  ul.menu-xl-h li.menu-item:hover, ul.menu-xl-h li:hover {
+  ul.menu-xl-h li.menu-item:hover,
+ul.menu-xl-h li:hover {
     background-color: #ededed;
   }
   ul.menu-xl-h li {
@@ -108,7 +129,8 @@
     padding: 0;
     margin: 0;
   }
-  ul.menu-lg-v li.menu-item:hover, ul.menu-lg-v li:hover {
+  ul.menu-lg-v li.menu-item:hover,
+ul.menu-lg-v li:hover {
     background-color: #ededed;
   }
   ul.menu-lg-v li {
@@ -123,10 +145,12 @@
   ul.menu-lg-h-scroll {
     dsp: none;
   }
-  ul.menu-lg-h li.menu-item, ul.menu-lg-h li {
+  ul.menu-lg-h li.menu-item,
+ul.menu-lg-h li {
     flex: 1 1 0;
   }
-  ul.menu-lg-h li.menu-item:hover, ul.menu-lg-h li:hover {
+  ul.menu-lg-h li.menu-item:hover,
+ul.menu-lg-h li:hover {
     background-color: #ededed;
   }
   ul.menu-lg-h li {
@@ -142,7 +166,8 @@
     padding: 0;
     margin: 0;
   }
-  ul.menu-md-v li.menu-item:hover, ul.menu-md-v li:hover {
+  ul.menu-md-v li.menu-item:hover,
+ul.menu-md-v li:hover {
     background-color: #ededed;
   }
   ul.menu-md-v li {
@@ -157,10 +182,12 @@
   ul.menu-md-h-scroll {
     dsp: none;
   }
-  ul.menu-md-h li.menu-item, ul.menu-md-h li {
+  ul.menu-md-h li.menu-item,
+ul.menu-md-h li {
     flex: 1 1 0;
   }
-  ul.menu-md-h li.menu-item:hover, ul.menu-md-h li:hover {
+  ul.menu-md-h li.menu-item:hover,
+ul.menu-md-h li:hover {
     background-color: #ededed;
   }
   ul.menu-md-h li {
@@ -176,7 +203,8 @@
     padding: 0;
     margin: 0;
   }
-  ul.menu-sm-v li.menu-item:hover, ul.menu-sm-v li:hover {
+  ul.menu-sm-v li.menu-item:hover,
+ul.menu-sm-v li:hover {
     background-color: #ededed;
   }
   ul.menu-sm-v li {
@@ -191,10 +219,12 @@
   ul.menu-sm-h-scroll {
     dsp: none;
   }
-  ul.menu-sm-h li.menu-item, ul.menu-sm-h li {
+  ul.menu-sm-h li.menu-item,
+ul.menu-sm-h li {
     flex: 1 1 0;
   }
-  ul.menu-sm-h li.menu-item:hover, ul.menu-sm-h li:hover {
+  ul.menu-sm-h li.menu-item:hover,
+ul.menu-sm-h li:hover {
     background-color: #ededed;
   }
   ul.menu-sm-h li {
