@@ -310,7 +310,9 @@ $config: (
         quarter: 25%,
         tiers: 33%
       ),
-      scale_defined_sizes: (1, 2, 4, 8, 16, 24, 32, 48, 64, 96, 128, 256),
+      scale_defined_steps: (1, 2, 4, 8, 16, 24, 32, 48, 64),
+      scale_defined_step_size: 2,
+      scale_defined_step_unit: rem,
       scale_grid_ratios: (8, 24)
     ),
     _docs: (
