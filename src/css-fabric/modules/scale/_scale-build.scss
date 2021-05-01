@@ -8,7 +8,7 @@ $scale-config: scale-vars.$scale-config;
 @use '../../_utils'; 
 
 // load general config variables
-$_cfg: utils.get_conf(); 
+$_cfg: utils.get_fabric_conf(); 
 
 // read variables
 $_has_dimensions_strict: map-get($_cfg, has_dimensions_strict);

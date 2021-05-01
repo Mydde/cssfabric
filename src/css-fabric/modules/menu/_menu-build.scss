@@ -10,7 +10,7 @@ $menu-config: menu-vars.$menu-config;
 @use '../../_utils';
 
 // load general config variables
-$_cfg: utils.get_conf();
+$_cfg: utils.get_fabric_conf();
 
 // read variables
 $menu_class_name: map-get($_cfg, menu_class_name);

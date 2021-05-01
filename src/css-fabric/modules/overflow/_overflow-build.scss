@@ -8,7 +8,7 @@ $overflow-config: overflow-vars.$overflow-config;
 @use '../../_utils';
 
 // load general config variables
-$_cfg: utils.get_conf(); 
+$_cfg: utils.get_fabric_conf(); 
 
 // read variables
 $overflow_props: map-get($overflow-config, overflow_props);

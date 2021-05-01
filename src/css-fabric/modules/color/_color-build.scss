@@ -10,7 +10,7 @@
 $color-config: color-vars.$color-config;
 
 // load general config variables
-$_cfg: utils.get_conf();
+$_cfg: utils.get_fabric_conf();
  
 // COLOR SCHEMES
 $color_schemes: map-get($color-config, color_schemes_props);

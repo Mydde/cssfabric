@@ -7,7 +7,7 @@
 @use '../../_utils'; 
 @use '_text-build' as build;
  // load general config variables
- $_cfg: utils.get_conf();
+ $_cfg: utils.get_fabric_conf();
 
 // media queries sizes, in em  
 $_media_quey_sizes: map-get($_cfg, media_quey_sizes); 

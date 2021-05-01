@@ -17,6 +17,8 @@
     "githubIssues.createInsertFormat": "url",
     "githubIssues.useBranchForIssues": "prompt",
     "cSpell.words": [
-        "cssfabric"
+        "config",
+        "cssfabric",
+        "zindex"
     ]
 }

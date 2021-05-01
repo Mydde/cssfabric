@@ -9,7 +9,7 @@
 $grid-config:  grid-vars.$grid-config;
 
 // load general config variables 
-$_base: utils.get_conf(); 
+$_base: utils.get_fabric_conf(); 
 
 // read variables
 $CFG_GRID_CODE: map-get($_base, grid_class_name);

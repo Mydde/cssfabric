@@ -8,7 +8,7 @@ $table-config: table-vars.$table-config;
 @use '../../_utils';
 
 // load general config variables 
-$_cfg: utils.get_conf();
+$_cfg: utils.get_fabric_conf();
 // load local config variables 
 
 // read variables

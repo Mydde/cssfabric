@@ -8,7 +8,7 @@ $animation-config: animation-vars.$animation-config;
 // load scss config file 
 @use '../../_utils' as utils; 
 // load general config variables 
-$_cfg: utils.get_conf(); 
+$_cfg: utils.get_fabric_conf(); 
   
 $fabric_attention_props: map-get($animation-config, attention_props);
 $fabric_in_out_props: map-get($animation-config, in_out_props);

@@ -12,7 +12,7 @@
 $box_vars : box.$box-config ;
 
 // load general config variables  
-$_cfg : utils.get_conf(); 
+$_cfg : utils.get_fabric_conf(); 
  
 // read variables
 // media queries sizes, in em  

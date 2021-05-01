@@ -7,12 +7,13 @@ $text-config: text-vars.$text-config;
 // load scss config file
 @use '../../_utils';
 // load general config variables
-$_cfg: utils.get_conf(); 
+$_cfg: utils.get_fabric_conf(); 
 
 // read variables 
 //
 $text_class_name: map-get($_cfg, text_class_name);
 $text_class_name_short: map-get($_cfg, text_class_name_short);
+
 $color_schemes: map-get($_cfg, color_schemes_props);
 $color_palette_props: map-get($_cfg, color_palette_props);
 $color_grays: map-get($_cfg, color_grays);

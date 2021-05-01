@@ -1,50 +1,9 @@
-// load scss config file, generated, which hold module declarations
-@use '_generated/config.scss';
+// load main fabric vars
+@use 'modules/cssfabric-vars' as cssfabric-vars;
 
-@function get_conf() {
-  $po: map-get(config.$config, base);
-  @return map-get($po, "_data");
-}
-
-@function get_conf_part($_module, $_part) {
-  $po: map-get(config.$config, $_module);
-
-  @return map-get($po, $_part);
-}
-
-@function get_conf_data($_module) {
-  @return get_conf_part($_module, "_data");
-}
-
-@function get_conf_data_properties($_prop) {
-  @return get_conf_part($_module, "_data");
-}
-
-@function get_conf_metadata($_module) {
-  @return get_conf_part($_module, "_metadata"); 
-
-}
- 
-@function str-split($string, $separator) {  
-  // empty array/list
-  $split-arr: ();
-  // first index of separator in string
-  $index: str-index($string, $separator);   
-  // loop through string
-  @while $index != null { 
-    // get the substring from the first character to the separator
-    $item: str-slice($string, 1, $index - 1);
-    // push item to array
-    $split-arr: append($split-arr, $item);
-    // remove item and separator from string
-    $string: str-slice($string, $index + 1); 
-    // find new index of separator
-    $index: str-index($string, $separator);
-  }
-  // add the remaining string to list (the last item)
-  $split-arr: append($split-arr, $string);
-
-  @return $split-arr;  
+// link to fabric conf scss file, which often move ;)
+@function get_fabric_conf() {
+  @return cssfabric-vars.$cssfabric-config;  
 }
 
 // css dimensions rules builder responsive
@@ -54,5 +13,5 @@
 
     @content;  
   }
-}
+} 
  
