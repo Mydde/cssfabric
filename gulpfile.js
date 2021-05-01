@@ -354,24 +354,11 @@ function task_mergeJsonConf(cb) {
     });
 }
 
-/**
- * build _generated/_config.scss, used by _utils
- * @returns function
- */
- function task_jsonToScss(cb) {
- 
-
-  spawn.sync(
-    `json-to-scss ${fabricConfDir}/*.*   ${generatedDir}/_config.scss  --mo`
-  );
-
-  return cb(); 
-}
 
 function watchJsonTask(cb) {
   gulp.watch(
     fabricConfDir + "/**/*.json",
-    gulp.series(task_mergeJsonConf,  task_jsonToScss) // task_addComments,
+    gulp.series(task_mergeJsonConf) // task_addComments,
   );
 
   cb();
@@ -403,7 +390,7 @@ function watchReadme(cb) {
 function watchAll(cb) {
   gulp.watch(
      "/**/*.*",
-    gulp.series(task_mergeJsonConf,  task_jsonToScss) // task_addComments,
+    gulp.series(task_mergeJsonConf) // task_addComments,
   );
 
   cb();
