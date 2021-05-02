@@ -1,24 +1,24 @@
 $scale-metadata: (
     title: scale,
     tag: scale,
-    description: "css-fabric scale module to set dimensions and ratios on all html elements",
+    description: "css-fabric scale module to set dimensions and ratios on all html elements"
 );
 $scale-config: (
     scale_size: 1em,
     scale_props: (
         width: w,
-        height: h,
+        height: h
     ),
     scale_css_values: (
         max-content,
         min-content,
-        fit-content,
+        fit-content
     ),
     scale_shorthands: (
         full: 100%,
         mid: 50%,
         quarter: 25%,
-        tiers: 33%,
+        tiers: 33%
     ),
     scale_defined_steps: (
         1,
@@ -29,14 +29,14 @@ $scale-config: (
         24,
         32,
         48,
-        64,
+        64
     ),
     scale_defined_step_size: 2,
     scale_defined_step_unit: rem,
     scale_grid_ratios: (
         8,
-        24,
-    ),
+        24
+    )
 );
 $scale-docs: (
     scale_size: _,
@@ -44,5 +44,5 @@ $scale-docs: (
     scale_css_values: _,
     scale_shorthands: _,
     scale_defined_sizes: _,
-    scale_grid_ratios: _,
+    scale_grid_ratios: _
 );

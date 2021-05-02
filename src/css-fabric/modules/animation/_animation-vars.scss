@@ -1,4 +1,4 @@
-$animation-metadata: ();
+$animation-metadata: ("title":"nope twice");
 $animation-config: (
     attention_props: (),
     in_out_props: (
@@ -6,10 +6,13 @@ $animation-config: (
         bounce: (),
         slide: (),
         fade: (),
-        zoom: (),
-    ),
+        zoom: ()
+    )
 );
 $animation-docs: (
-    attention_props: "",
-    in_out_props: "",
-);
+    attention_props: "",  
+    in_out_props: ""
+); 
+   
+
+// $white: #fff !default

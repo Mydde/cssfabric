@@ -14,7 +14,11 @@ const gulp = require("gulp"),
   sassJson = require("gulp-sass-json"),
   sassExport = require("gulp-sass-export"),
   sassVarsToJs = require("gulp-sass-vars-to-js"),
-  gulpIgnore = require("gulp-ignore");
+  parse = require("sass-parser")(),
+  modifyFile = require("gulp-modify-file");
+gulpIgnore = require("gulp-ignore");
+
+var spawn = require("child_process").spawn;
 
 gulpSass.compiler = require("sass");
 
@@ -101,17 +105,6 @@ const json_comments = (file) => {
   return { ...file_content };
 };
 
-function fabricVarExportFile(filePath) {
-  // name of the module, from path
-  let module_name = filePath
-    .substring(filePath.lastIndexOf("modules/"))
-    .replace("modules/", "");
-
-  let module = filePath.substring(filePath.lastIndexOf("/") + 1);
-
-  return " @use '../modules/" + module_name + "';" + "\r\n";
-}
-
 function fabricReadmeFile(filePath) {
   // name of the module, from path
   let module_name = filePath
@@ -178,9 +171,122 @@ const {
   generatedDir,
 } = fabricConfig;
 
-// from task_mergeInclude;
+
+
+const sassJsonExporter = (file) => {
+  let { file_content, file_info } = file;
+
+  let obj;
+  obj = file_content.obj;
+  obj = obj.substring(0, obj.length - 1).split("|");
+
+  const redPath = "";
+  const redModulePath = fabricModuleDir + "/";
+
+  let header = (footer = "");
+  let importExport = `@import  "./src/${redPath}sass-json-export/stylesheets/sass-json-export.scss";`;
+
+  Object.values(obj).forEach((v, k, a) => {
+    let module_path = redModulePath + v;
+    let module_name = v
+      .replace("_", "")
+      .split("/")
+      ?.pop()
+      .split(".")?.[0]
+      .replace("-vars", "");
+
+    if (v) {
+      header += makeHeader(module_path, module_name);
+      footer += makeFooter(module_name);
+    }
+  });
+
+  let out = header;
+  out += "\r\n";
+  out += importExport + "\r\n";
+  out += "\r\n";
+  out += footer;
+
+  function makeHeader(path, module_name) {
+    // form is module-vars.$module-config
+    return '@use "' + path + '.scss" as  ' + module_name + "; \r\n";
+  }
+
+  function makeFooter(module_name) {
+    // form is module.$module-(config|*)
+    //  $export : ( data: base-vars.$base-config, docs :base-vars.$base-docs , metadata :base-vars.$base-metadata  );     
+    
+    let out1 = ` ( _data: ${module_name}.$${module_name}-config, _docs :${module_name}.$${module_name}-docs , _metadata :${module_name}.$${module_name}-metadata  )`
+
+    return "@include json-encode(" + out1 + ",comment," + module_name + ");\r\n";
+  }
+
+  return out;
+};
+
+function fabricVarExportFile(filePath) {
+  // name of the module, from path
+  let module_name = filePath
+    .substring(filePath.lastIndexOf("modules/"))
+    .split("\\")
+    ?.pop()
+    .split(".")?.[0]
+    .replace("modules/", "");
+
+  return module_name + "|";
+}
+
+ // exports sass maps to json
 function task_varsExport(cb) {
-  let sourceFiles = fabricModuleDir + "/**/*.scss";
+  let sourceFiles = fabricModuleDir + "/**/_*-vars.scss";
+
+  gulp
+    .src(sourceFiles)
+    //.pipe(cache(task_varsExport))
+    .pipe(
+      gulFileList("ghost", {
+        destRowTemplate: fabricVarExportFile,
+        removeExtensions: false,
+      })
+    )
+    .pipe(gulpConcat("export-variables.try"))
+    .pipe(gulpConcat.header('{"obj":"'))
+    .pipe(gulpConcat.footer('"}'))
+    .pipe(
+      jsonTransform(function (file_content, file_info) {
+        return sassJsonExporter({ file_content: file_content, file_info });
+      }, "\t")
+    )
+    .pipe(cache(task_varsExport))
+    // .pipe(sass().on('error', sass.logError))
+    .pipe(gulpSass({ outputStyle: "expanded" }).on("error", gulpSass.logError))
+    .pipe(
+      modifyFile((content, path, file) => {
+        const start = '{"cssfabric":{"modules":{';
+        const end = " }}}";
+
+        const regexIn = /\/\*\! json-encode: {/gm;
+        const regexOut = /} \*\//gm;  
+
+        let exp = content
+          .replace(regexIn, "")
+          .replace(regexOut, ",")
+          .replace(/,\s*$/, "");
+    
+        return `${start}${exp}${end}`;
+      })
+    )
+    .pipe(
+      gulpRename(function (path) {
+        path.dirname = path.dirname;
+        path.extname = ".json";
+        path.basename = path.basename.replace("-", ".");
+      })
+    )
+    .pipe(gulp.dest(generatedDir))
+    .on("end", () => {
+      return cb();
+    });
 
   return cb();
 }
@@ -221,6 +327,7 @@ function task_mergeInclude(cb) {
         `!${dir}/**/*min*.css`,
       ])
       .pipe(gulpConcat("cssfabric.css"))
+      .pipe(gulpConcat.header("/** Merged by Mydde */"))
       .pipe(cache(task_mergeInclude))
       .pipe(gulp.dest(dest))
       .on("end", () => {
@@ -364,6 +471,14 @@ function task_mergeJsonConf(cb) {
     });
 }
 
+function taskDownload(cb) {
+  gulpDownload(
+    "https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
+  ).pipe(gulp.dest("resources/css/"));
+
+  cb();
+}
+
 function watchJsonTask(cb) {
   gulp.watch(
     fabricConfDir + "/**/*.json",
@@ -374,14 +489,18 @@ function watchJsonTask(cb) {
 }
 
 function watchSassTask(cb) {
-  gulp.watch(fabricRootDir, gulp.series(task_sass2css, task_mergeInclude, )); // task_varsExport
+  // scss , css , scss
+  gulp.watch(
+    fabricModuleDir+ "/**/*.scss",
+    gulp.series(task_sass2css, task_mergeInclude, task_varsExport)
+  ); // task_varsExport
 
   cb();
 }
 
 // todo change to styleDir
 function watchInclude(cb) {
-   // gulp.watch(fabricStylesDir, task_mergeInclude);
+  // gulp.watch(fabricStylesDir, task_mergeInclude);
   //gulp.watch(fabricModuleDir, task_mergeInclude);
 
   cb();
@@ -395,12 +514,10 @@ function watchReadme(cb) {
   );
 
   cb();
-} 
- 
-function taskDownload(cb) {
-  gulpDownload(
-    "https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
-  ).pipe(gulp.dest("resources/css/"));
+}
+
+function watchExportVars(cb) {
+  gulp.watch(fabricRootDir, gulp.series(task_varsExport)); // task_varsExport
 
   cb();
 }
@@ -409,4 +526,6 @@ exports.watchJson = watchJsonTask;
 exports.watchSass = watchSassTask;
 exports.watchInclude = watchInclude;
 exports.watchReadme = watchReadme;
+exports.watchExportVars = watchExportVars;
+
 exports.taskDownload = taskDownload;

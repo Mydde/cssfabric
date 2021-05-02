@@ -1,4 +1,4 @@
-import jsonConfig from "../src/css-fabric/_generated/css.fabric.config.json";
+import jsonConfig from "../src/css-fabric/_generated/export.variables.json";
 /* import cssFile from "../src/styles/css-fabric/core/css-fabric.css"; */
 
 export interface IFabricConfModulePart {

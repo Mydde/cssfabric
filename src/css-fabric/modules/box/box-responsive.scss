@@ -5,7 +5,7 @@
 
 // load scss config file
 @use '../../_utils';
-@use "_box-build" as build;
+@use "_box-build" as build; 
 
 // load general config variables
 $_base: utils.get_fabric_conf();

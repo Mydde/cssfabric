@@ -1,12 +1,12 @@
 $menu-metadata: (
     title: menu,
     tag: ul,
-    description: "css-fabric menu module to set menu style",
+    description: "css-fabric menu module to set menu style"
 );
 $menu-config: (
     orientations: (
         v: vertical,
-        h: horizontal,
+        h: horizontal
     ),
     menu_item_class_name: menu-item,
     menu_item_class_name_short: li,
@@ -14,7 +14,7 @@ $menu-config: (
     menu_item_selected_tag: selected,
     menu_dropdown_tag: drop,
     menu_dropdown_open: open,
-    menu_dropdown_close: close,
+    menu_dropdown_close: close
 );
 $menu-docs: (
     menu_item_class_name: "",
@@ -24,5 +24,5 @@ $menu-docs: (
     menu_item_selected_tag: "",
     orientations: "",
     menu_dropdown_open: "",
-    menu_dropdown_close: "",
+    menu_dropdown_close: ""
 );

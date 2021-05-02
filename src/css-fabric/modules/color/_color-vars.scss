@@ -1,7 +1,7 @@
 $color-metadata: (
 	title: color,
 	title_tag: "its about colors",
-	description: description,
+	description: description
 );
 $color-config: (
 	color_schemes_props: (
@@ -10,7 +10,7 @@ $color-config: (
 		error: red,
 		warning: hsl(48, 100%, 67%),
 		discrete: gray,
-		success: hsl(141, 71%, 48%),
+		success: hsl(141, 71%, 48%)
 	),
 	color_palette_props: (
 		yellow: #ffb900,
@@ -20,16 +20,16 @@ $color-config: (
 		purple: #5c2d91,
 		green: #107c10,
 		teal: #008272,
-		blue: #0078d4,
+		blue: #0078d4
 	),
 	color_grays: (
 		gray_start: #f4f4f4,
 		gray_end: #333333,
-		gray_steps: 9,
-	),
+		gray_steps: 9
+	)
 );
 $color-docs: (
 	color_schemes_props: "",
 	color_palette_props: "",
-	color_grays: "",
+	color_grays: ""
 );

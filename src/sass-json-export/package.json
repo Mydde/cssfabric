@@ -1,0 +1,60 @@
+{
+  "_from": "sass-json-export",
+  "_id": "sass-json-export@2.0.1",
+  "_inBundle": false,
+  "_integrity": "sha512-xNoOlN+36MKOnNxB/zQ09s6vZH6WmC/u9lXJ9FAbTf65lRJNyT2sPRS1iqKopLb9ZbdXfukpvHzh1n1/BkqVdA==",
+  "_location": "/sass-json-export",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "tag",
+    "registry": true,
+    "raw": "sass-json-export",
+    "name": "sass-json-export",
+    "escapedName": "sass-json-export",
+    "rawSpec": "",
+    "saveSpec": null,
+    "fetchSpec": "latest"
+  },
+  "_requiredBy": [
+    "#DEV:/",
+    "#USER"
+  ],
+  "_resolved": "https://registry.npmjs.org/sass-json-export/-/sass-json-export-2.0.1.tgz",
+  "_shasum": "265d822db87d5c1a12cc3934531404b889bbf26b",
+  "_spec": "sass-json-export",
+  "_where": "D:\\boulot\\app-node\\cssfabric",
+  "author": {
+    "name": "Hugo Giraudel, Fabrice Weinberg"
+  },
+  "bugs": {
+    "url": "https://github.com/oddbird/sass-json-export/issues"
+  },
+  "bundleDependencies": false,
+  "dependencies": {},
+  "deprecated": false,
+  "description": "Export your Sass data structures to JSON.",
+  "devDependencies": {
+    "bootcamp": "^1.1.7",
+    "grunt": "^0.4.5",
+    "grunt-contrib-watch": "^0.6.1",
+    "grunt-sass": "^1.1.0",
+    "grunt-sass-lint": "0.1.0-beta.4"
+  },
+  "homepage": "https://github.com/oddbird/sass-json-export",
+  "keywords": [
+    "sass",
+    "scss",
+    "json"
+  ],
+  "license": "MIT",
+  "maintainer": "OddBird",
+  "name": "sass-json-export",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/oddbird/sass-json-export.git"
+  },
+  "scripts": {
+    "test": "grunt test"
+  },
+  "version": "2.0.1"
+}

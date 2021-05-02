@@ -1,13 +1,13 @@
 $overflow-metadata: (
     title: overflow,
     tag: flow,
-    description: "css-fabric overflow module to set overflow styles on all html elements",
+    description: "css-fabric overflow module to set overflow styles on all html elements"
 );
 $overflow-config: (
     overflow_props: overflow overflow-x overflow-y,
-    overflow_values: visible hidden clip scroll auto initial unset,
+    overflow_values: visible hidden clip scroll auto initial unset
 );
 $overflow-docs: (
     overflow_props: "",
-    overflow_values: "",
+    overflow_values: ""
 );
