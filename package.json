@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "tsc && tsc -w & npm run watch-all",
     "build": "",
-    "watch-all": "npm-run-all -p -r  watch-json watch-sass watch-include",
+    "watch-all": "npm-run-all -p -r  watch-json watch-sass",
     "watch-sass": "gulp watchSass",
     "watch-json": "gulp watchJson",
     "watch-include": "gulp watchInclude",
@@ -17,6 +17,7 @@
     "JSON": "^1.0.0",
     "chokidar": "^3.5.1",
     "gulp-filelist": "^2.0.5",
+    "gulp-sass-json": "^1.0.1",
     "gulp-sort": "^2.0.0",
     "sass": "^1.32.12",
     "unescape-js": "^1.1.4"
@@ -42,6 +43,7 @@
     "gulp-rename": "^2.0.0",
     "gulp-sass": "^4.1.0",
     "gulp-sass-export": "0.0.3",
+    "gulp-sass-vars-to-js": "^0.1.2",
     "gulp-util": "^3.0.8",
     "json-to-scss": "^1.6.2",
     "mini-css-extract-plugin": "^1.6.0",

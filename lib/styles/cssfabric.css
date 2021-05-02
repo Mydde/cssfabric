@@ -4864,18 +4864,13 @@ label {
  menu system
 */
 ul {
-  border-bottom: 1px solid blue;
-}
-ul:after {
-  bottom: 0;
-  position: absolute;
-  width: 100%;
-  padding: 4px;
-  box-shadow: 0 0 4px 4px black;
+  border-bottom: 1px solid red;
 }
 ul li {
   margin: 0 4px;
-  border-bottom: 4px solid #000066;
+}
+ul li.active {
+  border-bottom: 4px solid #660000;
 }
 
 /* & li.menu-item{
@@ -4895,14 +4890,7 @@ ul li {
             dsp: none;
         }
     }
-}
-
-@if $orientation_key == h {
-    display: flex;
-    &-scroll{
-        dsp: none;
-    }
-} */
+}*/
 /*
  css-fabric 
  menu system
@@ -4926,14 +4914,24 @@ ul.menu-h {
   padding: 0;
   margin: 0;
   display: flex;
+  padding: 0 4rem;
+  position: relative;
   border-bottom: 1px solid #ededed;
 }
-ul.menu-h-scroll {
-  dsp: none;
+ul.menu-h:after {
+  bottom: 0px;
+  left: 0;
+  position: absolute;
+  width: 100%;
+  padding: 1px;
+  box-shadow: 0 2px 2px #ccc;
+  content: " ";
 }
 ul.menu-h li.menu-item,
 ul.menu-h li {
   flex: 1 1 0;
+  border-left: 1px solid #ededed;
+  text-align: center;
 }
 ul.menu-h li.menu-item:hover,
 ul.menu-h li:hover {

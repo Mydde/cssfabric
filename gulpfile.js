@@ -6,12 +6,14 @@ const gulp = require("gulp"),
   // sassExport = require("gulp-sass-export"),
   mergeJson = require("gulp-merge-json"),
   gulFileList = require("gulp-filelist"),
-  spawn = require("cross-spawn"),
   minifyCss = require("gulp-minify-css"),
   fs = require("fs"),
   gulpRename = require("gulp-rename"),
   gulpDownload = require("gulp-download-stream"),
   gulpConcat = require("gulp-concat-util"),
+  sassJson = require("gulp-sass-json"),
+  sassExport = require("gulp-sass-export"),
+  sassVarsToJs = require("gulp-sass-vars-to-js"),
   gulpIgnore = require("gulp-ignore");
 
 gulpSass.compiler = require("sass");
@@ -176,23 +178,11 @@ const {
   generatedDir,
 } = fabricConfig;
 
-
-
 // from task_mergeInclude;
 function task_varsExport(cb) {
-  gulp
-    .src(fabricModuleDir + "/*/_*-vars.scss")
-    .pipe(
-      gulFileList("app_vars.scss", {
-        destRowTemplate: fabricScssExportVarsFile,
-        removeExtensions: true,
-      })
-    )
-    .pipe(cache(task_varsExport))
-    .pipe(gulp.dest(generatedDir))
-    .on("end", () => {
-      return cb();
-    });
+  let sourceFiles = fabricModuleDir + "/**/*.scss";
+
+  return cb();
 }
 
 function task_readme(cb) {
@@ -213,7 +203,7 @@ function task_readme(cb) {
 /**
  * concatenate css files
  * by min | responsive | ...
- *  
+ *
  * @param {function} cb gulp callback
  */
 function task_mergeInclude(cb) {
@@ -221,35 +211,60 @@ function task_mergeInclude(cb) {
   const dest = fabricStylesDir;
   const dir = fabricStylesDir + "/core";
 
+  const steps = [];
   // normal stylesheets
-  gulp
-    .src([
-      `${dir}/**/*.css`,
-      `!${dir}/**/*responsive*.css`,
-      `!${dir}/**/*min*.css`,
-    ])
-    .pipe(gulpConcat("cssfabric.css"))
-    .pipe(gulp.dest(dest));
+  steps.push(
+    gulp
+      .src([
+        `${dir}/**/*.css`,
+        `!${dir}/**/*responsive*.css`,
+        `!${dir}/**/*min*.css`,
+      ])
+      .pipe(gulpConcat("cssfabric.css"))
+      .pipe(cache(task_mergeInclude))
+      .pipe(gulp.dest(dest))
+      .on("end", () => {
+        return cb();
+      })
+  );
 
   // normal minified stylesheets
-  gulp
-    .src([`${dir}/**/*min.css`, `!${dir}/**/*responsive*.css`])
-    .pipe(gulpConcat("cssfabric.min.css"))
-    .pipe(gulp.dest(dest));
+  steps.push(
+    gulp
+      .src([`${dir}/**/*min.css`, `!${dir}/**/*responsive*.css`])
+      .pipe(gulpConcat("cssfabric.min.css"))
+      .pipe(cache(task_mergeInclude))
+      .pipe(gulp.dest(dest))
+      .on("end", () => {
+        return cb();
+      })
+  );
 
   // responsive stylesheets
-  gulp
-    .src([`${dir}/**/*responsive.css`, `!${dir}/**/*min..css`])
-    .pipe(gulpConcat("cssfabric.responsive.css"))
-    .pipe(gulp.dest(dest));
+  steps.push(
+    gulp
+      .src([`${dir}/**/*responsive.css`, `!${dir}/**/*min..css`])
+      .pipe(gulpConcat("cssfabric.responsive.css"))
+      .pipe(cache(task_mergeInclude))
+      .pipe(gulp.dest(dest))
+      .on("end", () => {
+        return cb();
+      })
+  );
 
   // responsive minified stylesheets
-  gulp
-    .src([`${dir}/**/*responsive.min.css`])
-    .pipe(gulpConcat("cssfabric.responsive.min.css"))
-    .pipe(gulp.dest(dest));
+  steps.push(
+    gulp
+      .src([`${dir}/**/*responsive.min.css`])
+      .pipe(gulpConcat("cssfabric.responsive.min.css"))
+      .pipe(cache(task_mergeInclude))
+      .pipe(gulp.dest(dest))
+      .on("end", () => {
+        return cb();
+      })
+  );
 
-  return cb();
+  return [...steps];
 }
 
 /**
@@ -263,44 +278,40 @@ function task_mergeInclude(cb) {
  * @returns function
  */
 function task_sass2css(cb) {
-
-  gulp
-    .src(`${fabricModuleDir}/**/*.scss`)
-    .pipe(gulpIgnore.exclude("**/*css-fabric*"))
-    .pipe(
-      gulpRename(function (path) {
-        path.dirname = path.dirname;
-        path.extname = path.extname;
-        path.basename = path.basename.replace("-", ".");
+  return (
+    gulp
+      .src(`${fabricModuleDir}/**/*.scss`)
+      .pipe(gulpIgnore.exclude("**/*css-fabric*"))
+      .pipe(
+        gulpRename(function (path) {
+          path.dirname = path.dirname;
+          path.extname = path.extname;
+          path.basename = path.basename.replace("-", ".");
+        })
+      )
+      // to css and to /core
+      .pipe(
+        gulpSass({ outputStyle: "expanded" }).on("error", gulpSass.logError)
+      )
+      .pipe(gulp.dest(`${fabricStylesDir}/core`))
+      // to css and minify and to /core
+      .pipe(
+        minifyCss({
+          keepSpecialComments: 0,
+        })
+      )
+      .pipe(
+        gulpRename(function (path) {
+          path.dirname = path.dirname;
+          path.extname = ".min.css";
+          path.basename = path.basename.replace("-", ".");
+        })
+      )
+      .pipe(gulp.dest(`${fabricStylesDir}/core`))
+      .on("end", () => {
+        return cb();
       })
-    )
-    // to css and to /core
-    .pipe(gulpSass({ outputStyle: "expanded" }).on("error", gulpSass.logError))
-    .pipe(gulp.dest(`${fabricStylesDir}/core`))
-    // to css and minify and to /core
-    .pipe(
-      minifyCss({
-        keepSpecialComments: 0,
-      })
-    )
-    .pipe(
-      gulpRename(function (path) {
-        path.dirname = path.dirname;
-        path.extname = ".min.css";
-        path.basename = path.basename.replace("-", ".");
-      })
-    )
-    .pipe(gulp.dest(`${fabricStylesDir}/core`))
-    .on("end", () => {
-      return cb();
-    });
-
-    // little test
-
-    
- 
-
-  return cb();
+  );
 }
 
 /**
@@ -326,12 +337,11 @@ function task_addComments(cb) {
 
 /**
  *  merge json config files into one css.fabric.config.json
- * 
- * @param {function} cb 
+ *
+ * @param {function} cb
  */
 function task_mergeJsonConf(cb) {
-
-  console.log('task_mergeJsonConf  __________________________________________')
+  console.log("task_mergeJsonConf  __________________________________________");
   let sourceFiles = [`${fabricConfDir}/**/*.json`];
 
   gulp
@@ -354,7 +364,6 @@ function task_mergeJsonConf(cb) {
     });
 }
 
-
 function watchJsonTask(cb) {
   gulp.watch(
     fabricConfDir + "/**/*.json",
@@ -365,14 +374,15 @@ function watchJsonTask(cb) {
 }
 
 function watchSassTask(cb) {
-  gulp.watch(fabricRootDir, gulp.series(task_sass2css)); // task_varsExport
+  gulp.watch(fabricRootDir, gulp.series(task_sass2css, task_mergeInclude, )); // task_varsExport
 
   cb();
 }
 
 // todo change to styleDir
 function watchInclude(cb) {
-  gulp.watch(fabricModuleDir, task_mergeInclude);
+   // gulp.watch(fabricStylesDir, task_mergeInclude);
+  //gulp.watch(fabricModuleDir, task_mergeInclude);
 
   cb();
 }
@@ -385,20 +395,8 @@ function watchReadme(cb) {
   );
 
   cb();
-}
-
-function watchAll(cb) {
-  gulp.watch(
-     "/**/*.*",
-    gulp.series(task_mergeJsonConf) // task_addComments,
-  );
-
-  cb();
-}
-
-/* download(url)
-	.pipe(gulp.dest("downloads/")); */
-
+} 
+ 
 function taskDownload(cb) {
   gulpDownload(
     "https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
@@ -412,6 +410,3 @@ exports.watchSass = watchSassTask;
 exports.watchInclude = watchInclude;
 exports.watchReadme = watchReadme;
 exports.taskDownload = taskDownload;
-
-exports.task_varsExport = task_varsExport;
-exports.task_readme = task_readme;

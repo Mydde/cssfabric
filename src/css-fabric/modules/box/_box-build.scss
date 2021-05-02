@@ -10,11 +10,11 @@
 @use "sass:map"; 
 
 $box_vars : box.$box-config ;
-
-// load general config variables  
-$_cfg : utils.get_fabric_conf(); 
  
-// read variables
+// load general config variables  
+$_cfg : utils.get_fabric_conf();  
+ 
+// read variables 
 // media queries sizes, in em  
 $_media_quey_sizes: map-get($_cfg, media_quey_sizes);
 
@@ -38,7 +38,7 @@ $fabric_box_display_props : map-get($box_vars, box_display_props);
         @return "&,";
     }
 
-    @else {
+    @else { 
         @return "";
     }
 }

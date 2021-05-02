@@ -8,7 +8,7 @@ $box-config: (
     box_unit: px,
     box_unit_size: 1,
     box_sizes: 32,
-    box_shorthands: (
+    box_shorthands: ( 
         position: pos,
         display: dsp,
     ),
@@ -21,14 +21,14 @@ $box-config: (
         t: top,
         b: bottom,
         l: left,
-        r: right,
-        all: top bottom left right,
+        r: right, 
+        all: top bottom left right, 
         u: bottom left right,
         ii: left right,
-        tb: top bottom,
+        tb: top bottom, 
     ),
-    box_position_props: (
-        abs: absolute,
+    box_position_props: ( 
+        abs: absolute, 
         rel: relative,
         stat: static,
         fix: fixed,

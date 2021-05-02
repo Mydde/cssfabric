@@ -31,37 +31,46 @@ $menu_dropdown_close: map-get($menu-config, menu_dropdown_close);
     $class_name: if($mq_key, #{$menu_class_name}-#{$mq_key}, #{$menu_class_name});
 
     #{$menu_class_name_short} {
-        &.#{$class_name} {
+        &.#{$class_name} { 
             list-style: none;
             list-style-type: none;
 
             @each $orientation_key, $orientation in $orientations {
-                &-#{$orientation_key} {
+                &-#{$orientation_key} { 
                     padding: 0;
                     margin: 0;
 
-                    @if $orientation_key==h {
-                        display: flex;
+                    @if $orientation_key==h {  
+                        display: flex; 
+                        padding: 0 4rem;
+                        position:relative;
                         border-bottom: 1px solid #ededed;
 
-                        &-scroll {
-                            dsp: none;
-                        }
+                        &:after {  
+                            bottom: 0px;
+                            left:0;
+                            position: absolute; 
+                            width: 100%;
+                            padding: 1px;
+                            box-shadow: 0 2px 2px #ccc;  
+                            content: ' '; 
+                        }   
                     }
 
-                    & li.#{$menu_item_class_name},
+                    & li.#{$menu_item_class_name},  
                     li {
                         &:hover {
                             background-color: #ededed;
                         }
 
                         @if $orientation_key==h {
-                            flex: 1 1 0;
-                            // border: 1px solid #ededed;
+                            flex: 1 1 0; 
+                            border-left: 1px solid #ededed;
+                            text-align: center;
                         }
                     }
 
-                    & li {
+                    & li { 
                         list-style: none;
                     }
                 }
@@ -70,20 +79,16 @@ $menu_dropdown_close: map-get($menu-config, menu_dropdown_close);
     }
 }
 
-$menu-border-color: blue;
+$menu-border-color: red;   
 
-ul {
+ul {    
     border-bottom: 1px solid $menu-border-color;
-    &:after {
-        bottom: 0;
-        position: absolute;
-        width: 100%;
-        padding: 4px;
-        box-shadow: 0 0 4px 4px black;
-    }
-    li {
+
+    li { 
         margin: 0 4px;
-        border-bottom: 4px solid darken($menu-border-color, 30%);
+        &.active { 
+            border-bottom: 4px solid darken($menu-border-color, 30%);
+        }
     }
 }
 
@@ -104,11 +109,4 @@ ul {
             dsp: none;
         }
     }
-}
-
-@if $orientation_key == h {
-    display: flex;
-    &-scroll{
-        dsp: none;
-    }
-} */
+}*/
