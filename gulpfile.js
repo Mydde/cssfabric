@@ -444,11 +444,12 @@ function task_addComments(cb) {
  
 
 function taskDownload(cb) {
-  gulpDownload(
+  return gulpDownload(
     "https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
-  ).pipe(gulp.dest("resources/css/"));
-
-  cb();
+  ).pipe(gulp.dest("./src/vendor/normalize/")).on("end", () => {
+    return cb();
+  })
+   
 }
 
  

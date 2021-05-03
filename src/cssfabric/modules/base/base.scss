@@ -2,9 +2,9 @@
 @use "sass:map";
 // load scss config file
 @use '../../_utils';
-@use 'resources/css/normalize.min.css';   
+@use '../../../vendor/normalize/normalize.min.css';   
 
-
+ 
 p {
     margin: auto; 
 }

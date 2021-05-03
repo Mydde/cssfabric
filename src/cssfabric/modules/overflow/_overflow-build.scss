@@ -12,7 +12,7 @@ $overflow_props: map-get($overflow-config, overflow_props);
 $overflow_values: map-get($overflow-config, overflow_values);
 
 /* css overflow rules */
-@mixin buildOverflow($mq_size_key) {
+@mixin buildOverflow($mq_size_key: null) {
   @each $overflow_prop in $overflow_props {
     $property_key: if($mq_size_key, #{$overflow_prop}-#{$mq_size_key}, #{$overflow_prop});
 
