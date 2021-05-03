@@ -441,35 +441,7 @@ function task_addComments(cb) {
       return cb();
     });
 }
-
-/**
- *  merge json config files into one css.fabric.config.json
- *
- * @param {function} cb
- */
-function task_mergeJsonConf(cb) {
-  console.log("task_mergeJsonConf  __________________________________________");
-  let sourceFiles = [`${fabricConfDir}/**/*.json`];
-
-  gulp
-    .src(sourceFiles)
-    .pipe(
-      mergeJson({
-        fileName: "css.fabric.config.json",
-        transform: (mergedJson) => {
-          return {
-            ["css-config"]: {
-              modules: { ...mergedJson },
-            },
-          };
-        },
-      })
-    )
-    .pipe(gulp.dest(generatedDir))
-    .on("end", () => {
-      return cb();
-    });
-}
+ 
 
 function taskDownload(cb) {
   gulpDownload(
@@ -479,14 +451,7 @@ function taskDownload(cb) {
   cb();
 }
 
-function watchJsonTask(cb) {
-  gulp.watch(
-    fabricConfDir + "/**/*.json",
-    gulp.series(task_mergeJsonConf) // task_addComments,
-  );
-
-  cb();
-}
+ 
 
 function watchSassTask(cb) {
   // scss , css , scss
@@ -522,8 +487,10 @@ function watchExportVars(cb) {
   cb();
 }
 
-exports.watchJson = watchJsonTask;
+// oly one called by npm
 exports.watchSass = watchSassTask;
+
+
 exports.watchInclude = watchInclude;
 exports.watchReadme = watchReadme;
 exports.watchExportVars = watchExportVars;

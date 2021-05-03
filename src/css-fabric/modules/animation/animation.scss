@@ -2,7 +2,7 @@
  css-fabric 
  grid system 
 */ 
-@use 'animation-vars';
+@use 'animation-vars';  
 $animation-config: animation-vars.$animation-config;
 
 // load scss config file 
@@ -18,7 +18,7 @@ $vectorDirections: (up right bottom left);
   
   
 // up down right left
-@function getVectorPropertyObject($vectorDirection) {
+@function getVectorPropertyObject($vectorDirection) {  
 
     $move: '';
     $direction: '';

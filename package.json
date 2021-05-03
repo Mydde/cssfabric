@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "tsc -w || exit 1",
     "build": "",
-    "watch-all": "npm-run-all -p -r  watch-json watch-sass",
+    "watch-all": "npm-run-all -p -r  watch-sass",
     "watch-sass": "gulp watchSass",
     "watch-json": "gulp watchJson",
     "watch-include": "gulp watchInclude",
