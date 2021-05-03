@@ -3,12 +3,13 @@
 // load scss config file
 @use '../../_utils'; 
 @use 'color-build' as build; 
- // load general config variables
+@use "../cssfabric-vars";
+// load general config variables
+$_base: cssfabric-vars.$cssfabric-config;
 
- $_cfg: utils.get_fabric_conf();
-
-// media queries sizes, in em  
-$_media_quey_sizes: map-get($_cfg, media_quey_sizes); 
+// load general config variables
+// media queries sizes, in rem
+$_media_quey_sizes: map-get($_base, media_quey_sizes);
 
 // builder responsive  
 $min_value: 0;

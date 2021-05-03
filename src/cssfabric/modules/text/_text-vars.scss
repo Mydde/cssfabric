@@ -4,6 +4,8 @@ $text-metadata: (
     description: "cssfabric text module to set text style on all html elements",
 );
 $text-config: (
+    text_class_name: text, 
+    text_class_name_short: txt,
     font_sizes: 6,
     font_sizes_unit: rem,
     font_sizes_h1_em: 3,

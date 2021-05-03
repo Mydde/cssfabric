@@ -1,16 +1,15 @@
 // load scss config file
 @use '../../_utils';
 @use "box-vars" as box;
+@use "../cssfabric-vars"; 
+
 @use "sass:map";
 
 $box_vars: box.$box-config;
 
 // load general config variables
-$_cfg: utils.get_fabric_conf();
-
-// read variables
-// media queries sizes, in em
-$_media_quey_sizes: map-get($_cfg, media_quey_sizes);
+$_cfg: cssfabric-vars.$cssfabric-config;
+ 
 
 $box_unit: map-get($box_vars, box_unit);
 $box_unit_size: map-get($box_vars, box_unit_size);

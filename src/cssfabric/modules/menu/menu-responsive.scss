@@ -2,10 +2,12 @@
 // load scss config file
 @use '../../_utils';
 @use '_menu-build'as build;
- 
-// load general config variables 
-$_base: utils.get_fabric_conf();
-// media queries sizes, in rem  
+@use "../cssfabric-vars";
+// load general config variables
+$_base: cssfabric-vars.$cssfabric-config;
+
+// load general config variables
+// media queries sizes, in rem
 $_media_quey_sizes: map-get($_base, media_quey_sizes);
 
 // builder responsive  

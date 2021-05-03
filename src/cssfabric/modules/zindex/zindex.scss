@@ -4,10 +4,6 @@ $zindex-config: zindex-vars.$zindex-config;
 // load scss config file
 @use '../../_utils';
 
-// load general config variables 
-$_cfg: utils.get_fabric_conf();
-// load local config variables 
-
 // read variables
 $z_groups: map-get($zindex-config, z_groups); 
  

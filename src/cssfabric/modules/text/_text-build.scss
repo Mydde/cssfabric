@@ -1,21 +1,19 @@
 
 @use 'text-vars';
-$text-config: text-vars.$text-config;
-// load scss config file
+@use "../cssfabric-vars";
 @use '../../_utils';
-// load general config variables
-$_cfg: utils.get_fabric_conf(); 
+$text-config: text-vars.$text-config;
 
-// read variables 
-//
-$text_class_name: map-get($_cfg, text_class_name);
-$text_class_name_short: map-get($_cfg, text_class_name_short);
+// load general config variables 
+$_base: cssfabric-vars.$cssfabric-config;
 
-$color_schemes: map-get($_cfg, color_schemes_props);
-$color_palette_props: map-get($_cfg, color_palette_props);
-$color_grays: map-get($_cfg, color_grays);
+$text_class_name: map-get($text-config, text_class_name);
+$text_class_name_short: map-get($text-config, text_class_name_short);
 
-//
+$color_schemes: map-get($_base, color_schemes_props);
+$color_palette_props: map-get($_base, color_palette_props);
+$color_grays: map-get($_base, color_grays);
+
 $font_sizes: map-get($text-config, font_sizes);
 $font_sizes_unit: map-get($text-config, font_sizes_unit);
 $font_sizes_h1_em: map-get($text-config, font_sizes_h1_em);
@@ -26,19 +24,12 @@ $font_weights: map-get($text-config, font_weights);
 
 $text_align: map-get($text-config, text_align);
 
-
 $scale_props: ("width":"w", "height":"h");
 $scale_grid_ratios: (8, 24);
 
-
-
-/* css Hn text rules */
 $h1_size: $font_sizes_h1_em;
 $ratio: $h1_size/$font_sizes;
 $ratio_max_min: $font_sizes_h1_em / $font_sizes_h_min_em;
-
-
-
 
 @mixin fabric_text($tag_short) {
 

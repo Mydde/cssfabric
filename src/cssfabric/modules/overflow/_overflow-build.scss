@@ -2,10 +2,7 @@
 @use 'overflow-vars';
 $overflow-config: overflow-vars.$overflow-config;
 // load scss config file
-@use '../../_utils';
-
-// load general config variables
-$_cfg: utils.get_fabric_conf();
+@use '../../_utils'; 
 
 // read variables
 $overflow_props: map-get($overflow-config, overflow_props);

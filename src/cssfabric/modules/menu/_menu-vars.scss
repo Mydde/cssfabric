@@ -4,6 +4,8 @@ $menu-metadata: (
     description: "cssfabric menu module to set menu style"
 );
 $menu-config: (
+    menu_class_name: menu,
+    menu_class_name_short: ul,
     orientations: (
         v: vertical,
         h: horizontal

@@ -1,16 +1,12 @@
 
 @use 'menu-vars';
-$menu-config: menu-vars.$menu-config;
+@use '../../_utils'; 
 
-// load scss config file
-@use '../../_utils';
-
-// load general config variables
-$_cfg: utils.get_fabric_conf();
+$menu-config: menu-vars.$menu-config; 
 
 // read variables
-$menu_class_name: map-get($_cfg, menu_class_name);
-$menu_class_name_short: map-get($_cfg, menu_class_name_short);
+$menu_class_name: map-get($menu-config, menu_class_name);
+$menu_class_name_short: map-get($menu-config, menu_class_name_short);
 
 $menu_item_class_name: map-get($menu-config, menu_item_class_name);
 $menu_item_class_name_short: map-get($menu-config, menu_item_class_name_short);

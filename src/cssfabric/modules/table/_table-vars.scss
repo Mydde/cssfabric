@@ -4,6 +4,8 @@ $table-metadata: (
     description: "cssfabric table module to set different table styles"
 );
 $table-config: (
+    table_class_name: table,
+    table_class_name_short: tbl, 
     table_bg_color_head: #f4f4f4,
     table_bg_color_strip_main: #ededed,
     table_bg_color_strip_second: #f5f5f5,
