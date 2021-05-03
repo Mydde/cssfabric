@@ -7,8 +7,9 @@ $box-metadata: (
 $box-config: ( 
     box_unit: rem,
     box_border_unit: px,
+    box_shadow_shorthand: shad,
     box_unit_size: 0.25,
-    box_unit_border_size: 1,
+    box_unit_border_size: 1, 
     box_sizes: 8,
     box_border_sizes_px: 5, 
     box_shorthands: (

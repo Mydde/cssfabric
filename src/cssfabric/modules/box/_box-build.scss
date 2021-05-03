@@ -1,7 +1,7 @@
 // load scss config file
 @use '../../_utils';
 @use "box-vars" as box;
-@use "../cssfabric-vars"; 
+@use "../cssfabric-vars";
 
 @use "sass:map";
 
@@ -9,7 +9,6 @@ $box_vars: box.$box-config;
 
 // load general config variables
 $_cfg: cssfabric-vars.$cssfabric-config;
- 
 
 $box_unit: map-get($box_vars, box_unit);
 $box_unit_size: map-get($box_vars, box_unit_size);
@@ -18,6 +17,7 @@ $fabric_box_sizes: map-get($box_vars, box_sizes);
 $box_shorthands: map-get($box_vars, box_shorthands);
 $box_border_unit: map-get($box_vars, box_border_unit);
 $box_border_sizes_px: map-get($box_vars, box_border_sizes_px);
+$box_shadow_shorthand: map-get($box_vars, box_shadow_shorthand);
 
 $box_position_shorthand: map-get($box_shorthands, position);
 $box_display_shorthand: map-get($box_shorthands, display);
@@ -198,8 +198,42 @@ $fabric_box_display_props: map-get($box_vars, box_display_props);
     );
 }
 
+$shadows_steps: 6;
+$shadows_step_multiplier: 2;
+
+@mixin shadows($mq_key) {
+/**
+*   box shadows ---------------------
+*/
+    $shorthand: if($mq_key, #{$box_shadow_shorthand}-#{$mq_key}, #{$box_shadow_shorthand});
+
+    $v_fact: 2.5;
+    $h_fact: 1.1;
+
+    $v_fact_2: 13.3;
+    $h_fact_2: 4.44;
+
+    $acc: 1;
+
+    @for $shadows_step from 1 through $shadows_steps {
+        $acc: $acc * 2;
+        $v: $shadows_step * 2;
+
+        $v_val: $acc / $v_fact;
+        $h_val: $acc / $h_fact;
+
+        $v_val_2: $acc / $v_fact_2;
+        $h_val_2: $acc / $h_fact_2;
+
+        .#{$shorthand}-#{$acc} {
+            box-shadow: 0 #{$v_val}px #{$h_val}px 0 rgb(0 0 0 / 15%), 0 #{$v_val_2}px #{$h_val_2}px 0 rgb(0 0 0 / 10%);
+        }
+    }
+}
+
 @mixin buildBox($mq_key) {
     @include pmb($mq_key);
     @include display($mq_key);
     @include position($mq_key);
+    @include shadows($mq_key);
 }
