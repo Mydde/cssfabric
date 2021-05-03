@@ -14,4 +14,23 @@
     @content;  
   }
 }     
+
+@mixin var-export-to-css($module, $module-config){
+  @each $red, $rt in $module-config{
+      // list map string
+      @if(type_of($rt)=='string'){
+          $key: #{$module}-#{$red};
+          --cssfabric-#{$key}: #{$rt};
+      } 
+      @if(type_of($rt)=='map'){
+          @each $rtkey, $rtval in $rt{ 
+              $key: #{$module}-#{$red}-#{$rtkey};
+              --cssfabric-#{$key}: #{$rtval};
+          }
+      } 
+      @if(type_of($rt)=='list'){
+          // $key: #{$module}-#{$red};
+      } 
+  }
+}
  

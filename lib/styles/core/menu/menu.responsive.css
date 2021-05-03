@@ -1,3 +1,17 @@
+:root {
+  --cssfabric-menu-menu_class_name: menu;
+  --cssfabric-menu-menu_class_name_short: ul;
+  --cssfabric-menu-orientations-v: vertical;
+  --cssfabric-menu-orientations-h: horizontal;
+  --cssfabric-menu-menu_item_class_name: menu-item;
+  --cssfabric-menu-menu_item_class_name_short: li;
+  --cssfabric-menu-menu_item_disabled_tag: disabled;
+  --cssfabric-menu-menu_item_selected_tag: selected;
+  --cssfabric-menu-menu_dropdown_tag: drop;
+  --cssfabric-menu-menu_dropdown_open: open;
+  --cssfabric-menu-menu_dropdown_close: close;
+}
+
 ul {
   border-bottom: 1px solid red;
 }

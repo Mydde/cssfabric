@@ -16,7 +16,8 @@ $menu-config: (
     menu_item_selected_tag: selected,
     menu_dropdown_tag: drop,
     menu_dropdown_open: open,
-    menu_dropdown_close: close
+    menu_dropdown_close: close,
+    test: (quoi donc)
 );
 $menu-docs: (
     menu_item_class_name: "",
@@ -28,3 +29,27 @@ $menu-docs: (
     menu_dropdown_open: "",
     menu_dropdown_close: ""
 );
+
+  
+
+@mixin var-export($module, $module-config){
+    @each $red, $rt in $module-config{
+        // list map string
+        @if(type_of($rt)=='string'){
+            $key: #{$module}-#{$red};
+            --cssfabric-#{$key}: #{$rt};
+        } 
+        @if(type_of($rt)=='map'){
+            @each $rtkey, $rtval in $rt{ 
+                $key: #{$module}-#{$red}-#{$rtkey};
+                --cssfabric-#{$key}: #{$rtval};
+            }
+        } 
+        @if(type_of($rt)=='list'){
+            // $key: #{$module}-#{$red};
+        } 
+    }
+}
+:root{
+    @include var-export(menu,$menu-config);
+}
