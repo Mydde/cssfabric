@@ -1,11 +1,3 @@
-/*
-* css-fabric 
-* color system
-*/
-/*
-* css-fabric 
-* color system responsive
-*/
 @media only screen and (max-width: 140rem) {
   .color-xxl-yellow {
     color: #ffb900;

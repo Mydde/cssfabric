@@ -184,7 +184,7 @@ const sassJsonExporter = (file) => {
   const redModulePath = fabricModuleDir + "/";
 
   let header = (footer = "");
-  let importExport = `@import  "./src/${redPath}sass-json-export/stylesheets/sass-json-export.scss";`;
+  let importExport = `@import  "./src/${redPath}vendor/sass-json-export/stylesheets/sass-json-export.scss";`;
 
   Object.values(obj).forEach((v, k, a) => {
     let module_path = redModulePath + v;

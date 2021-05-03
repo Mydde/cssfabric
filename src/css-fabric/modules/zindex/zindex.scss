@@ -1,7 +1,4 @@
-/*
- css-fabric 
- zIndex system
-*/ 
+
 @use 'zindex-vars';
 $zindex-config: zindex-vars.$zindex-config;
 // load scss config file

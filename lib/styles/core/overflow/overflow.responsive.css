@@ -1,12 +1,4 @@
-/*
- css-fabric 
- overflow system
-*/
 /* css overflow rules */
-/*
-* css-fabric 
-* text system responsive
-*/
 @media only screen and (max-width: 140rem) {
   .overflow-xxl-visible {
     overflow: visible;

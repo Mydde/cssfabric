@@ -1,8 +1,4 @@
 /** Merged by Mydde */
-/*
- css-fabric 
- grid system 
-*/
 @keyframes animate-backIn-up {
   0% {
     transform: scale(1);
@@ -379,10 +375,6 @@ template {
 }
 
 /*# sourceMappingURL=normalize.min.css.map */
-/*
-* css-fabric 
-* text size and transform system
-*/
 p {
   margin: auto;
 }
@@ -427,10 +419,6 @@ label {
   border: 1px solid #ccc;
   display: inline-block;
 }
-/*
-* css-fabric 
-* padding, margin and border system
-*/
 /**
   $css_prop               : display
   $css_prop_short         : dsp
@@ -444,10 +432,6 @@ label {
   $unit                   : '' | em | px
   $fabric_key_shorthands  : (tbl  table)
   $write_rule             : position_display | pmb
-*/
-/*
-* css-fabric 
-* box : padding, margin and border system
 */
 .order-t, .order-t-1 {
   border-top: 1px solid #ccc;
@@ -3220,14 +3204,6 @@ label {
 .pos-sticky {
   position: sticky;
 }
-/*
- css-fabric 
- grid builder system
-*/
-/*
- css-fabric 
- grid system
-*/
 .grid-h {
   display: flex;
   flex-direction: row;
@@ -3407,14 +3383,79 @@ label {
 .grid-v .self_stretch {
   align-self: stretch;
 }
-/*
-* css-fabric 
-* color system
-*/
-/*
-* css-fabric 
-* color system
-*/
+ul {
+  border-bottom: 1px solid red;
+}
+ul li {
+  margin: 0 4px;
+}
+ul li.active {
+  border-bottom: 4px solid #660000;
+}
+
+/* & li.menu-item{
+    dsp: none;
+}
+&-drop{
+    dsp: none;
+    & .menu-open{
+        dsp: none;
+        & li.menu-item, > li{
+            dsp: none;
+        }
+    }
+    & .menu-close{
+        dsp: none;
+        & li.menu-item, > li{
+            dsp: none;
+        }
+    }
+}*/
+ul.menu {
+  list-style: none;
+  list-style-type: none;
+}
+ul.menu-v {
+  padding: 0;
+  margin: 0;
+}
+ul.menu-v li.menu-item:hover,
+ul.menu-v li:hover {
+  background-color: #ededed;
+}
+ul.menu-v li {
+  list-style: none;
+}
+ul.menu-h {
+  padding: 0;
+  margin: 0;
+  display: flex;
+  padding: 0 4rem;
+  position: relative;
+  border-bottom: 1px solid #ededed;
+}
+ul.menu-h:after {
+  bottom: 0px;
+  left: 0;
+  position: absolute;
+  width: 100%;
+  padding: 1px;
+  box-shadow: 0 2px 2px #ccc;
+  content: " ";
+}
+ul.menu-h li.menu-item,
+ul.menu-h li {
+  flex: 1 1 0;
+  border-left: 1px solid #ededed;
+  text-align: center;
+}
+ul.menu-h li.menu-item:hover,
+ul.menu-h li:hover {
+  background-color: #ededed;
+}
+ul.menu-h li {
+  list-style: none;
+}
 .color-yellow {
   color: #ffb900;
 }
@@ -3996,187 +4037,6 @@ label {
   text-shadow: 0 0 0.125rem black;
   background-color: #333333;
 }
-/*
- css-fabric 
- menu system
-*/
-ul {
-  border-bottom: 1px solid red;
-}
-ul li {
-  margin: 0 4px;
-}
-ul li.active {
-  border-bottom: 4px solid #660000;
-}
-
-/* & li.menu-item{
-    dsp: none;
-}
-&-drop{
-    dsp: none;
-    & .menu-open{
-        dsp: none;
-        & li.menu-item, > li{
-            dsp: none;
-        }
-    }
-    & .menu-close{
-        dsp: none;
-        & li.menu-item, > li{
-            dsp: none;
-        }
-    }
-}*/
-/*
- css-fabric 
- menu system
-*/
-ul.menu {
-  list-style: none;
-  list-style-type: none;
-}
-ul.menu-v {
-  padding: 0;
-  margin: 0;
-}
-ul.menu-v li.menu-item:hover,
-ul.menu-v li:hover {
-  background-color: #ededed;
-}
-ul.menu-v li {
-  list-style: none;
-}
-ul.menu-h {
-  padding: 0;
-  margin: 0;
-  display: flex;
-  padding: 0 4rem;
-  position: relative;
-  border-bottom: 1px solid #ededed;
-}
-ul.menu-h:after {
-  bottom: 0px;
-  left: 0;
-  position: absolute;
-  width: 100%;
-  padding: 1px;
-  box-shadow: 0 2px 2px #ccc;
-  content: " ";
-}
-ul.menu-h li.menu-item,
-ul.menu-h li {
-  flex: 1 1 0;
-  border-left: 1px solid #ededed;
-  text-align: center;
-}
-ul.menu-h li.menu-item:hover,
-ul.menu-h li:hover {
-  background-color: #ededed;
-}
-ul.menu-h li {
-  list-style: none;
-}
-/*
- css-fabric 
- overflow system
-*/
-/* css overflow rules */
-/*
- css-fabric 
- overflow system
-*/
-.overflow-visible {
-  overflow: visible;
-}
-
-.overflow-hidden {
-  overflow: hidden;
-}
-
-.overflow-clip {
-  overflow: clip;
-}
-
-.overflow-scroll {
-  overflow: scroll;
-}
-
-.overflow-auto {
-  overflow: auto;
-}
-
-.overflow-initial {
-  overflow: initial;
-}
-
-.overflow-unset {
-  overflow: unset;
-}
-
-.overflow-x-visible {
-  overflow: visible;
-}
-
-.overflow-x-hidden {
-  overflow: hidden;
-}
-
-.overflow-x-clip {
-  overflow: clip;
-}
-
-.overflow-x-scroll {
-  overflow: scroll;
-}
-
-.overflow-x-auto {
-  overflow: auto;
-}
-
-.overflow-x-initial {
-  overflow: initial;
-}
-
-.overflow-x-unset {
-  overflow: unset;
-}
-
-.overflow-y-visible {
-  overflow: visible;
-}
-
-.overflow-y-hidden {
-  overflow: hidden;
-}
-
-.overflow-y-clip {
-  overflow: clip;
-}
-
-.overflow-y-scroll {
-  overflow: scroll;
-}
-
-.overflow-y-auto {
-  overflow: auto;
-}
-
-.overflow-y-initial {
-  overflow: initial;
-}
-
-.overflow-y-unset {
-  overflow: unset;
-}
-/*
- css-fabric 
- scale  system pointless
-*/
-/*
- css-fabric 
- scale  system pointless
-*/
 /*  dimension : "-full" shorthand is 100% width*/
 .w-full {
   width: 100%;
@@ -4656,14 +4516,90 @@ ul.menu-h li {
 .h-24-24 {
   height: 100%;
 }
-/*
- css-fabric 
- tables system
-*/
-/*
- css-fabric 
- tables system
-*/
+/* css overflow rules */
+.overflow-visible {
+  overflow: visible;
+}
+
+.overflow-hidden {
+  overflow: hidden;
+}
+
+.overflow-clip {
+  overflow: clip;
+}
+
+.overflow-scroll {
+  overflow: scroll;
+}
+
+.overflow-auto {
+  overflow: auto;
+}
+
+.overflow-initial {
+  overflow: initial;
+}
+
+.overflow-unset {
+  overflow: unset;
+}
+
+.overflow-x-visible {
+  overflow: visible;
+}
+
+.overflow-x-hidden {
+  overflow: hidden;
+}
+
+.overflow-x-clip {
+  overflow: clip;
+}
+
+.overflow-x-scroll {
+  overflow: scroll;
+}
+
+.overflow-x-auto {
+  overflow: auto;
+}
+
+.overflow-x-initial {
+  overflow: initial;
+}
+
+.overflow-x-unset {
+  overflow: unset;
+}
+
+.overflow-y-visible {
+  overflow: visible;
+}
+
+.overflow-y-hidden {
+  overflow: hidden;
+}
+
+.overflow-y-clip {
+  overflow: clip;
+}
+
+.overflow-y-scroll {
+  overflow: scroll;
+}
+
+.overflow-y-auto {
+  overflow: auto;
+}
+
+.overflow-y-initial {
+  overflow: initial;
+}
+
+.overflow-y-unset {
+  overflow: unset;
+}
 .table {
   border-collapse: collapse;
   border-spacing: 0;
@@ -4733,15 +4669,7 @@ ul.menu-h li {
   position: sticky;
   top: 0;
 }
-/*
-* css-fabric 
-* text size and transform system
-*/
 /* css Hn text rules */
-/*
-* css-fabric 
-* text size and transform system
-*/
 /** cssfabric : txt*/
 .h1,
 h1 {
@@ -4932,10 +4860,6 @@ h6 {
 .txt-gray-1000 {
   color: #333333;
 }
-/*
- css-fabric 
- zIndex system
-*/
 .zI-a-0 {
   /* set zIndex value */
   z-index: 110;

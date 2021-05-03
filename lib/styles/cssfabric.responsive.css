@@ -1,7 +1,3 @@
-/*
-* css-fabric 
-* padding, margin and border system
-*/
 /**
   $css_prop               : display
   $css_prop_short         : dsp
@@ -15,10 +11,6 @@
   $unit                   : '' | em | px
   $fabric_key_shorthands  : (tbl  table)
   $write_rule             : position_display | pmb
-*/
-/*
- css-fabric 
- box-responsive : padding, margin and border system
 */
 @media only screen and (max-width: 140rem) {
   .order-xxl-t, .order-xxl-t-1 {
@@ -13885,14 +13877,6 @@
     position: sticky;
   }
 }
-/*
- css-fabric 
- grid builder system
-*/
-/*
- css-fabric 
- grid-responsive system
-*/
 @media only screen and (max-width: 140rem) {
   .grid-xxl-h {
     display: flex;
@@ -14798,14 +14782,269 @@
     align-self: stretch;
   }
 }
-/*
-* css-fabric 
-* color system
-*/
-/*
-* css-fabric 
-* color system responsive
-*/
+ul {
+  border-bottom: 1px solid red;
+}
+ul li {
+  margin: 0 4px;
+}
+ul li.active {
+  border-bottom: 4px solid #660000;
+}
+
+/* & li.menu-item{
+    dsp: none;
+}
+&-drop{
+    dsp: none;
+    & .menu-open{
+        dsp: none;
+        & li.menu-item, > li{
+            dsp: none;
+        }
+    }
+    & .menu-close{
+        dsp: none;
+        & li.menu-item, > li{
+            dsp: none;
+        }
+    }
+}*/
+@media only screen and (max-width: 140rem) {
+  ul.menu-xxl {
+    list-style: none;
+    list-style-type: none;
+  }
+  ul.menu-xxl-v {
+    padding: 0;
+    margin: 0;
+  }
+  ul.menu-xxl-v li.menu-item:hover,
+ul.menu-xxl-v li:hover {
+    background-color: #ededed;
+  }
+  ul.menu-xxl-v li {
+    list-style: none;
+  }
+  ul.menu-xxl-h {
+    padding: 0;
+    margin: 0;
+    display: flex;
+    padding: 0 4rem;
+    position: relative;
+    border-bottom: 1px solid #ededed;
+  }
+  ul.menu-xxl-h:after {
+    bottom: 0px;
+    left: 0;
+    position: absolute;
+    width: 100%;
+    padding: 1px;
+    box-shadow: 0 2px 2px #ccc;
+    content: " ";
+  }
+  ul.menu-xxl-h li.menu-item,
+ul.menu-xxl-h li {
+    flex: 1 1 0;
+    border-left: 1px solid #ededed;
+    text-align: center;
+  }
+  ul.menu-xxl-h li.menu-item:hover,
+ul.menu-xxl-h li:hover {
+    background-color: #ededed;
+  }
+  ul.menu-xxl-h li {
+    list-style: none;
+  }
+}
+@media only screen and (max-width: 80rem) {
+  ul.menu-xl {
+    list-style: none;
+    list-style-type: none;
+  }
+  ul.menu-xl-v {
+    padding: 0;
+    margin: 0;
+  }
+  ul.menu-xl-v li.menu-item:hover,
+ul.menu-xl-v li:hover {
+    background-color: #ededed;
+  }
+  ul.menu-xl-v li {
+    list-style: none;
+  }
+  ul.menu-xl-h {
+    padding: 0;
+    margin: 0;
+    display: flex;
+    padding: 0 4rem;
+    position: relative;
+    border-bottom: 1px solid #ededed;
+  }
+  ul.menu-xl-h:after {
+    bottom: 0px;
+    left: 0;
+    position: absolute;
+    width: 100%;
+    padding: 1px;
+    box-shadow: 0 2px 2px #ccc;
+    content: " ";
+  }
+  ul.menu-xl-h li.menu-item,
+ul.menu-xl-h li {
+    flex: 1 1 0;
+    border-left: 1px solid #ededed;
+    text-align: center;
+  }
+  ul.menu-xl-h li.menu-item:hover,
+ul.menu-xl-h li:hover {
+    background-color: #ededed;
+  }
+  ul.menu-xl-h li {
+    list-style: none;
+  }
+}
+@media only screen and (max-width: 64rem) {
+  ul.menu-lg {
+    list-style: none;
+    list-style-type: none;
+  }
+  ul.menu-lg-v {
+    padding: 0;
+    margin: 0;
+  }
+  ul.menu-lg-v li.menu-item:hover,
+ul.menu-lg-v li:hover {
+    background-color: #ededed;
+  }
+  ul.menu-lg-v li {
+    list-style: none;
+  }
+  ul.menu-lg-h {
+    padding: 0;
+    margin: 0;
+    display: flex;
+    padding: 0 4rem;
+    position: relative;
+    border-bottom: 1px solid #ededed;
+  }
+  ul.menu-lg-h:after {
+    bottom: 0px;
+    left: 0;
+    position: absolute;
+    width: 100%;
+    padding: 1px;
+    box-shadow: 0 2px 2px #ccc;
+    content: " ";
+  }
+  ul.menu-lg-h li.menu-item,
+ul.menu-lg-h li {
+    flex: 1 1 0;
+    border-left: 1px solid #ededed;
+    text-align: center;
+  }
+  ul.menu-lg-h li.menu-item:hover,
+ul.menu-lg-h li:hover {
+    background-color: #ededed;
+  }
+  ul.menu-lg-h li {
+    list-style: none;
+  }
+}
+@media only screen and (max-width: 48rem) {
+  ul.menu-md {
+    list-style: none;
+    list-style-type: none;
+  }
+  ul.menu-md-v {
+    padding: 0;
+    margin: 0;
+  }
+  ul.menu-md-v li.menu-item:hover,
+ul.menu-md-v li:hover {
+    background-color: #ededed;
+  }
+  ul.menu-md-v li {
+    list-style: none;
+  }
+  ul.menu-md-h {
+    padding: 0;
+    margin: 0;
+    display: flex;
+    padding: 0 4rem;
+    position: relative;
+    border-bottom: 1px solid #ededed;
+  }
+  ul.menu-md-h:after {
+    bottom: 0px;
+    left: 0;
+    position: absolute;
+    width: 100%;
+    padding: 1px;
+    box-shadow: 0 2px 2px #ccc;
+    content: " ";
+  }
+  ul.menu-md-h li.menu-item,
+ul.menu-md-h li {
+    flex: 1 1 0;
+    border-left: 1px solid #ededed;
+    text-align: center;
+  }
+  ul.menu-md-h li.menu-item:hover,
+ul.menu-md-h li:hover {
+    background-color: #ededed;
+  }
+  ul.menu-md-h li {
+    list-style: none;
+  }
+}
+@media only screen and (max-width: 35.7rem) {
+  ul.menu-sm {
+    list-style: none;
+    list-style-type: none;
+  }
+  ul.menu-sm-v {
+    padding: 0;
+    margin: 0;
+  }
+  ul.menu-sm-v li.menu-item:hover,
+ul.menu-sm-v li:hover {
+    background-color: #ededed;
+  }
+  ul.menu-sm-v li {
+    list-style: none;
+  }
+  ul.menu-sm-h {
+    padding: 0;
+    margin: 0;
+    display: flex;
+    padding: 0 4rem;
+    position: relative;
+    border-bottom: 1px solid #ededed;
+  }
+  ul.menu-sm-h:after {
+    bottom: 0px;
+    left: 0;
+    position: absolute;
+    width: 100%;
+    padding: 1px;
+    box-shadow: 0 2px 2px #ccc;
+    content: " ";
+  }
+  ul.menu-sm-h li.menu-item,
+ul.menu-sm-h li {
+    flex: 1 1 0;
+    border-left: 1px solid #ededed;
+    text-align: center;
+  }
+  ul.menu-sm-h li.menu-item:hover,
+ul.menu-sm-h li:hover {
+    background-color: #ededed;
+  }
+  ul.menu-sm-h li {
+    list-style: none;
+  }
+}
 @media only screen and (max-width: 140rem) {
   .color-xxl-yellow {
     color: #ffb900;
@@ -17721,719 +17960,6 @@
     background-color: #333333;
   }
 }
-/*
- css-fabric 
- menu system
-*/
-ul {
-  border-bottom: 1px solid red;
-}
-ul li {
-  margin: 0 4px;
-}
-ul li.active {
-  border-bottom: 4px solid #660000;
-}
-
-/* & li.menu-item{
-    dsp: none;
-}
-&-drop{
-    dsp: none;
-    & .menu-open{
-        dsp: none;
-        & li.menu-item, > li{
-            dsp: none;
-        }
-    }
-    & .menu-close{
-        dsp: none;
-        & li.menu-item, > li{
-            dsp: none;
-        }
-    }
-}*/
-/*
- css-fabric 
- menu-responsive  system pointless
-*/
-@media only screen and (max-width: 140rem) {
-  ul.menu-xxl {
-    list-style: none;
-    list-style-type: none;
-  }
-  ul.menu-xxl-v {
-    padding: 0;
-    margin: 0;
-  }
-  ul.menu-xxl-v li.menu-item:hover,
-ul.menu-xxl-v li:hover {
-    background-color: #ededed;
-  }
-  ul.menu-xxl-v li {
-    list-style: none;
-  }
-  ul.menu-xxl-h {
-    padding: 0;
-    margin: 0;
-    display: flex;
-    padding: 0 4rem;
-    position: relative;
-    border-bottom: 1px solid #ededed;
-  }
-  ul.menu-xxl-h:after {
-    bottom: 0px;
-    left: 0;
-    position: absolute;
-    width: 100%;
-    padding: 1px;
-    box-shadow: 0 2px 2px #ccc;
-    content: " ";
-  }
-  ul.menu-xxl-h li.menu-item,
-ul.menu-xxl-h li {
-    flex: 1 1 0;
-    border-left: 1px solid #ededed;
-    text-align: center;
-  }
-  ul.menu-xxl-h li.menu-item:hover,
-ul.menu-xxl-h li:hover {
-    background-color: #ededed;
-  }
-  ul.menu-xxl-h li {
-    list-style: none;
-  }
-}
-@media only screen and (max-width: 80rem) {
-  ul.menu-xl {
-    list-style: none;
-    list-style-type: none;
-  }
-  ul.menu-xl-v {
-    padding: 0;
-    margin: 0;
-  }
-  ul.menu-xl-v li.menu-item:hover,
-ul.menu-xl-v li:hover {
-    background-color: #ededed;
-  }
-  ul.menu-xl-v li {
-    list-style: none;
-  }
-  ul.menu-xl-h {
-    padding: 0;
-    margin: 0;
-    display: flex;
-    padding: 0 4rem;
-    position: relative;
-    border-bottom: 1px solid #ededed;
-  }
-  ul.menu-xl-h:after {
-    bottom: 0px;
-    left: 0;
-    position: absolute;
-    width: 100%;
-    padding: 1px;
-    box-shadow: 0 2px 2px #ccc;
-    content: " ";
-  }
-  ul.menu-xl-h li.menu-item,
-ul.menu-xl-h li {
-    flex: 1 1 0;
-    border-left: 1px solid #ededed;
-    text-align: center;
-  }
-  ul.menu-xl-h li.menu-item:hover,
-ul.menu-xl-h li:hover {
-    background-color: #ededed;
-  }
-  ul.menu-xl-h li {
-    list-style: none;
-  }
-}
-@media only screen and (max-width: 64rem) {
-  ul.menu-lg {
-    list-style: none;
-    list-style-type: none;
-  }
-  ul.menu-lg-v {
-    padding: 0;
-    margin: 0;
-  }
-  ul.menu-lg-v li.menu-item:hover,
-ul.menu-lg-v li:hover {
-    background-color: #ededed;
-  }
-  ul.menu-lg-v li {
-    list-style: none;
-  }
-  ul.menu-lg-h {
-    padding: 0;
-    margin: 0;
-    display: flex;
-    padding: 0 4rem;
-    position: relative;
-    border-bottom: 1px solid #ededed;
-  }
-  ul.menu-lg-h:after {
-    bottom: 0px;
-    left: 0;
-    position: absolute;
-    width: 100%;
-    padding: 1px;
-    box-shadow: 0 2px 2px #ccc;
-    content: " ";
-  }
-  ul.menu-lg-h li.menu-item,
-ul.menu-lg-h li {
-    flex: 1 1 0;
-    border-left: 1px solid #ededed;
-    text-align: center;
-  }
-  ul.menu-lg-h li.menu-item:hover,
-ul.menu-lg-h li:hover {
-    background-color: #ededed;
-  }
-  ul.menu-lg-h li {
-    list-style: none;
-  }
-}
-@media only screen and (max-width: 48rem) {
-  ul.menu-md {
-    list-style: none;
-    list-style-type: none;
-  }
-  ul.menu-md-v {
-    padding: 0;
-    margin: 0;
-  }
-  ul.menu-md-v li.menu-item:hover,
-ul.menu-md-v li:hover {
-    background-color: #ededed;
-  }
-  ul.menu-md-v li {
-    list-style: none;
-  }
-  ul.menu-md-h {
-    padding: 0;
-    margin: 0;
-    display: flex;
-    padding: 0 4rem;
-    position: relative;
-    border-bottom: 1px solid #ededed;
-  }
-  ul.menu-md-h:after {
-    bottom: 0px;
-    left: 0;
-    position: absolute;
-    width: 100%;
-    padding: 1px;
-    box-shadow: 0 2px 2px #ccc;
-    content: " ";
-  }
-  ul.menu-md-h li.menu-item,
-ul.menu-md-h li {
-    flex: 1 1 0;
-    border-left: 1px solid #ededed;
-    text-align: center;
-  }
-  ul.menu-md-h li.menu-item:hover,
-ul.menu-md-h li:hover {
-    background-color: #ededed;
-  }
-  ul.menu-md-h li {
-    list-style: none;
-  }
-}
-@media only screen and (max-width: 35.7rem) {
-  ul.menu-sm {
-    list-style: none;
-    list-style-type: none;
-  }
-  ul.menu-sm-v {
-    padding: 0;
-    margin: 0;
-  }
-  ul.menu-sm-v li.menu-item:hover,
-ul.menu-sm-v li:hover {
-    background-color: #ededed;
-  }
-  ul.menu-sm-v li {
-    list-style: none;
-  }
-  ul.menu-sm-h {
-    padding: 0;
-    margin: 0;
-    display: flex;
-    padding: 0 4rem;
-    position: relative;
-    border-bottom: 1px solid #ededed;
-  }
-  ul.menu-sm-h:after {
-    bottom: 0px;
-    left: 0;
-    position: absolute;
-    width: 100%;
-    padding: 1px;
-    box-shadow: 0 2px 2px #ccc;
-    content: " ";
-  }
-  ul.menu-sm-h li.menu-item,
-ul.menu-sm-h li {
-    flex: 1 1 0;
-    border-left: 1px solid #ededed;
-    text-align: center;
-  }
-  ul.menu-sm-h li.menu-item:hover,
-ul.menu-sm-h li:hover {
-    background-color: #ededed;
-  }
-  ul.menu-sm-h li {
-    list-style: none;
-  }
-}
-/*
- css-fabric 
- overflow system
-*/
-/* css overflow rules */
-/*
-* css-fabric 
-* text system responsive
-*/
-@media only screen and (max-width: 140rem) {
-  .overflow-xxl-visible {
-    overflow: visible;
-  }
-
-  .overflow-xxl-hidden {
-    overflow: hidden;
-  }
-
-  .overflow-xxl-clip {
-    overflow: clip;
-  }
-
-  .overflow-xxl-scroll {
-    overflow: scroll;
-  }
-
-  .overflow-xxl-auto {
-    overflow: auto;
-  }
-
-  .overflow-xxl-initial {
-    overflow: initial;
-  }
-
-  .overflow-xxl-unset {
-    overflow: unset;
-  }
-
-  .overflow-x-xxl-visible {
-    overflow: visible;
-  }
-
-  .overflow-x-xxl-hidden {
-    overflow: hidden;
-  }
-
-  .overflow-x-xxl-clip {
-    overflow: clip;
-  }
-
-  .overflow-x-xxl-scroll {
-    overflow: scroll;
-  }
-
-  .overflow-x-xxl-auto {
-    overflow: auto;
-  }
-
-  .overflow-x-xxl-initial {
-    overflow: initial;
-  }
-
-  .overflow-x-xxl-unset {
-    overflow: unset;
-  }
-
-  .overflow-y-xxl-visible {
-    overflow: visible;
-  }
-
-  .overflow-y-xxl-hidden {
-    overflow: hidden;
-  }
-
-  .overflow-y-xxl-clip {
-    overflow: clip;
-  }
-
-  .overflow-y-xxl-scroll {
-    overflow: scroll;
-  }
-
-  .overflow-y-xxl-auto {
-    overflow: auto;
-  }
-
-  .overflow-y-xxl-initial {
-    overflow: initial;
-  }
-
-  .overflow-y-xxl-unset {
-    overflow: unset;
-  }
-}
-@media only screen and (max-width: 80rem) {
-  .overflow-xl-visible {
-    overflow: visible;
-  }
-
-  .overflow-xl-hidden {
-    overflow: hidden;
-  }
-
-  .overflow-xl-clip {
-    overflow: clip;
-  }
-
-  .overflow-xl-scroll {
-    overflow: scroll;
-  }
-
-  .overflow-xl-auto {
-    overflow: auto;
-  }
-
-  .overflow-xl-initial {
-    overflow: initial;
-  }
-
-  .overflow-xl-unset {
-    overflow: unset;
-  }
-
-  .overflow-x-xl-visible {
-    overflow: visible;
-  }
-
-  .overflow-x-xl-hidden {
-    overflow: hidden;
-  }
-
-  .overflow-x-xl-clip {
-    overflow: clip;
-  }
-
-  .overflow-x-xl-scroll {
-    overflow: scroll;
-  }
-
-  .overflow-x-xl-auto {
-    overflow: auto;
-  }
-
-  .overflow-x-xl-initial {
-    overflow: initial;
-  }
-
-  .overflow-x-xl-unset {
-    overflow: unset;
-  }
-
-  .overflow-y-xl-visible {
-    overflow: visible;
-  }
-
-  .overflow-y-xl-hidden {
-    overflow: hidden;
-  }
-
-  .overflow-y-xl-clip {
-    overflow: clip;
-  }
-
-  .overflow-y-xl-scroll {
-    overflow: scroll;
-  }
-
-  .overflow-y-xl-auto {
-    overflow: auto;
-  }
-
-  .overflow-y-xl-initial {
-    overflow: initial;
-  }
-
-  .overflow-y-xl-unset {
-    overflow: unset;
-  }
-}
-@media only screen and (max-width: 64rem) {
-  .overflow-lg-visible {
-    overflow: visible;
-  }
-
-  .overflow-lg-hidden {
-    overflow: hidden;
-  }
-
-  .overflow-lg-clip {
-    overflow: clip;
-  }
-
-  .overflow-lg-scroll {
-    overflow: scroll;
-  }
-
-  .overflow-lg-auto {
-    overflow: auto;
-  }
-
-  .overflow-lg-initial {
-    overflow: initial;
-  }
-
-  .overflow-lg-unset {
-    overflow: unset;
-  }
-
-  .overflow-x-lg-visible {
-    overflow: visible;
-  }
-
-  .overflow-x-lg-hidden {
-    overflow: hidden;
-  }
-
-  .overflow-x-lg-clip {
-    overflow: clip;
-  }
-
-  .overflow-x-lg-scroll {
-    overflow: scroll;
-  }
-
-  .overflow-x-lg-auto {
-    overflow: auto;
-  }
-
-  .overflow-x-lg-initial {
-    overflow: initial;
-  }
-
-  .overflow-x-lg-unset {
-    overflow: unset;
-  }
-
-  .overflow-y-lg-visible {
-    overflow: visible;
-  }
-
-  .overflow-y-lg-hidden {
-    overflow: hidden;
-  }
-
-  .overflow-y-lg-clip {
-    overflow: clip;
-  }
-
-  .overflow-y-lg-scroll {
-    overflow: scroll;
-  }
-
-  .overflow-y-lg-auto {
-    overflow: auto;
-  }
-
-  .overflow-y-lg-initial {
-    overflow: initial;
-  }
-
-  .overflow-y-lg-unset {
-    overflow: unset;
-  }
-}
-@media only screen and (max-width: 48rem) {
-  .overflow-md-visible {
-    overflow: visible;
-  }
-
-  .overflow-md-hidden {
-    overflow: hidden;
-  }
-
-  .overflow-md-clip {
-    overflow: clip;
-  }
-
-  .overflow-md-scroll {
-    overflow: scroll;
-  }
-
-  .overflow-md-auto {
-    overflow: auto;
-  }
-
-  .overflow-md-initial {
-    overflow: initial;
-  }
-
-  .overflow-md-unset {
-    overflow: unset;
-  }
-
-  .overflow-x-md-visible {
-    overflow: visible;
-  }
-
-  .overflow-x-md-hidden {
-    overflow: hidden;
-  }
-
-  .overflow-x-md-clip {
-    overflow: clip;
-  }
-
-  .overflow-x-md-scroll {
-    overflow: scroll;
-  }
-
-  .overflow-x-md-auto {
-    overflow: auto;
-  }
-
-  .overflow-x-md-initial {
-    overflow: initial;
-  }
-
-  .overflow-x-md-unset {
-    overflow: unset;
-  }
-
-  .overflow-y-md-visible {
-    overflow: visible;
-  }
-
-  .overflow-y-md-hidden {
-    overflow: hidden;
-  }
-
-  .overflow-y-md-clip {
-    overflow: clip;
-  }
-
-  .overflow-y-md-scroll {
-    overflow: scroll;
-  }
-
-  .overflow-y-md-auto {
-    overflow: auto;
-  }
-
-  .overflow-y-md-initial {
-    overflow: initial;
-  }
-
-  .overflow-y-md-unset {
-    overflow: unset;
-  }
-}
-@media only screen and (max-width: 35.7rem) {
-  .overflow-sm-visible {
-    overflow: visible;
-  }
-
-  .overflow-sm-hidden {
-    overflow: hidden;
-  }
-
-  .overflow-sm-clip {
-    overflow: clip;
-  }
-
-  .overflow-sm-scroll {
-    overflow: scroll;
-  }
-
-  .overflow-sm-auto {
-    overflow: auto;
-  }
-
-  .overflow-sm-initial {
-    overflow: initial;
-  }
-
-  .overflow-sm-unset {
-    overflow: unset;
-  }
-
-  .overflow-x-sm-visible {
-    overflow: visible;
-  }
-
-  .overflow-x-sm-hidden {
-    overflow: hidden;
-  }
-
-  .overflow-x-sm-clip {
-    overflow: clip;
-  }
-
-  .overflow-x-sm-scroll {
-    overflow: scroll;
-  }
-
-  .overflow-x-sm-auto {
-    overflow: auto;
-  }
-
-  .overflow-x-sm-initial {
-    overflow: initial;
-  }
-
-  .overflow-x-sm-unset {
-    overflow: unset;
-  }
-
-  .overflow-y-sm-visible {
-    overflow: visible;
-  }
-
-  .overflow-y-sm-hidden {
-    overflow: hidden;
-  }
-
-  .overflow-y-sm-clip {
-    overflow: clip;
-  }
-
-  .overflow-y-sm-scroll {
-    overflow: scroll;
-  }
-
-  .overflow-y-sm-auto {
-    overflow: auto;
-  }
-
-  .overflow-y-sm-initial {
-    overflow: initial;
-  }
-
-  .overflow-y-sm-unset {
-    overflow: unset;
-  }
-}
-/*
- css-fabric 
- scale  system pointless
-*/
-/*
- css-fabric 
- scale-responsive  system pointless
-*/
 @media only screen and (max-width: 140rem) {
   /*  dimension : "-full" shorthand is 100% width*/
   .w-xxl-full {
@@ -20839,14 +20365,432 @@ ul.menu-sm-h li:hover {
     height: 100%;
   }
 }
-/*
- css-fabric 
- tables system
-*/
-/*
- css-fabric 
- tables system
-*/
+/* css overflow rules */
+@media only screen and (max-width: 140rem) {
+  .overflow-xxl-visible {
+    overflow: visible;
+  }
+
+  .overflow-xxl-hidden {
+    overflow: hidden;
+  }
+
+  .overflow-xxl-clip {
+    overflow: clip;
+  }
+
+  .overflow-xxl-scroll {
+    overflow: scroll;
+  }
+
+  .overflow-xxl-auto {
+    overflow: auto;
+  }
+
+  .overflow-xxl-initial {
+    overflow: initial;
+  }
+
+  .overflow-xxl-unset {
+    overflow: unset;
+  }
+
+  .overflow-x-xxl-visible {
+    overflow: visible;
+  }
+
+  .overflow-x-xxl-hidden {
+    overflow: hidden;
+  }
+
+  .overflow-x-xxl-clip {
+    overflow: clip;
+  }
+
+  .overflow-x-xxl-scroll {
+    overflow: scroll;
+  }
+
+  .overflow-x-xxl-auto {
+    overflow: auto;
+  }
+
+  .overflow-x-xxl-initial {
+    overflow: initial;
+  }
+
+  .overflow-x-xxl-unset {
+    overflow: unset;
+  }
+
+  .overflow-y-xxl-visible {
+    overflow: visible;
+  }
+
+  .overflow-y-xxl-hidden {
+    overflow: hidden;
+  }
+
+  .overflow-y-xxl-clip {
+    overflow: clip;
+  }
+
+  .overflow-y-xxl-scroll {
+    overflow: scroll;
+  }
+
+  .overflow-y-xxl-auto {
+    overflow: auto;
+  }
+
+  .overflow-y-xxl-initial {
+    overflow: initial;
+  }
+
+  .overflow-y-xxl-unset {
+    overflow: unset;
+  }
+}
+@media only screen and (max-width: 80rem) {
+  .overflow-xl-visible {
+    overflow: visible;
+  }
+
+  .overflow-xl-hidden {
+    overflow: hidden;
+  }
+
+  .overflow-xl-clip {
+    overflow: clip;
+  }
+
+  .overflow-xl-scroll {
+    overflow: scroll;
+  }
+
+  .overflow-xl-auto {
+    overflow: auto;
+  }
+
+  .overflow-xl-initial {
+    overflow: initial;
+  }
+
+  .overflow-xl-unset {
+    overflow: unset;
+  }
+
+  .overflow-x-xl-visible {
+    overflow: visible;
+  }
+
+  .overflow-x-xl-hidden {
+    overflow: hidden;
+  }
+
+  .overflow-x-xl-clip {
+    overflow: clip;
+  }
+
+  .overflow-x-xl-scroll {
+    overflow: scroll;
+  }
+
+  .overflow-x-xl-auto {
+    overflow: auto;
+  }
+
+  .overflow-x-xl-initial {
+    overflow: initial;
+  }
+
+  .overflow-x-xl-unset {
+    overflow: unset;
+  }
+
+  .overflow-y-xl-visible {
+    overflow: visible;
+  }
+
+  .overflow-y-xl-hidden {
+    overflow: hidden;
+  }
+
+  .overflow-y-xl-clip {
+    overflow: clip;
+  }
+
+  .overflow-y-xl-scroll {
+    overflow: scroll;
+  }
+
+  .overflow-y-xl-auto {
+    overflow: auto;
+  }
+
+  .overflow-y-xl-initial {
+    overflow: initial;
+  }
+
+  .overflow-y-xl-unset {
+    overflow: unset;
+  }
+}
+@media only screen and (max-width: 64rem) {
+  .overflow-lg-visible {
+    overflow: visible;
+  }
+
+  .overflow-lg-hidden {
+    overflow: hidden;
+  }
+
+  .overflow-lg-clip {
+    overflow: clip;
+  }
+
+  .overflow-lg-scroll {
+    overflow: scroll;
+  }
+
+  .overflow-lg-auto {
+    overflow: auto;
+  }
+
+  .overflow-lg-initial {
+    overflow: initial;
+  }
+
+  .overflow-lg-unset {
+    overflow: unset;
+  }
+
+  .overflow-x-lg-visible {
+    overflow: visible;
+  }
+
+  .overflow-x-lg-hidden {
+    overflow: hidden;
+  }
+
+  .overflow-x-lg-clip {
+    overflow: clip;
+  }
+
+  .overflow-x-lg-scroll {
+    overflow: scroll;
+  }
+
+  .overflow-x-lg-auto {
+    overflow: auto;
+  }
+
+  .overflow-x-lg-initial {
+    overflow: initial;
+  }
+
+  .overflow-x-lg-unset {
+    overflow: unset;
+  }
+
+  .overflow-y-lg-visible {
+    overflow: visible;
+  }
+
+  .overflow-y-lg-hidden {
+    overflow: hidden;
+  }
+
+  .overflow-y-lg-clip {
+    overflow: clip;
+  }
+
+  .overflow-y-lg-scroll {
+    overflow: scroll;
+  }
+
+  .overflow-y-lg-auto {
+    overflow: auto;
+  }
+
+  .overflow-y-lg-initial {
+    overflow: initial;
+  }
+
+  .overflow-y-lg-unset {
+    overflow: unset;
+  }
+}
+@media only screen and (max-width: 48rem) {
+  .overflow-md-visible {
+    overflow: visible;
+  }
+
+  .overflow-md-hidden {
+    overflow: hidden;
+  }
+
+  .overflow-md-clip {
+    overflow: clip;
+  }
+
+  .overflow-md-scroll {
+    overflow: scroll;
+  }
+
+  .overflow-md-auto {
+    overflow: auto;
+  }
+
+  .overflow-md-initial {
+    overflow: initial;
+  }
+
+  .overflow-md-unset {
+    overflow: unset;
+  }
+
+  .overflow-x-md-visible {
+    overflow: visible;
+  }
+
+  .overflow-x-md-hidden {
+    overflow: hidden;
+  }
+
+  .overflow-x-md-clip {
+    overflow: clip;
+  }
+
+  .overflow-x-md-scroll {
+    overflow: scroll;
+  }
+
+  .overflow-x-md-auto {
+    overflow: auto;
+  }
+
+  .overflow-x-md-initial {
+    overflow: initial;
+  }
+
+  .overflow-x-md-unset {
+    overflow: unset;
+  }
+
+  .overflow-y-md-visible {
+    overflow: visible;
+  }
+
+  .overflow-y-md-hidden {
+    overflow: hidden;
+  }
+
+  .overflow-y-md-clip {
+    overflow: clip;
+  }
+
+  .overflow-y-md-scroll {
+    overflow: scroll;
+  }
+
+  .overflow-y-md-auto {
+    overflow: auto;
+  }
+
+  .overflow-y-md-initial {
+    overflow: initial;
+  }
+
+  .overflow-y-md-unset {
+    overflow: unset;
+  }
+}
+@media only screen and (max-width: 35.7rem) {
+  .overflow-sm-visible {
+    overflow: visible;
+  }
+
+  .overflow-sm-hidden {
+    overflow: hidden;
+  }
+
+  .overflow-sm-clip {
+    overflow: clip;
+  }
+
+  .overflow-sm-scroll {
+    overflow: scroll;
+  }
+
+  .overflow-sm-auto {
+    overflow: auto;
+  }
+
+  .overflow-sm-initial {
+    overflow: initial;
+  }
+
+  .overflow-sm-unset {
+    overflow: unset;
+  }
+
+  .overflow-x-sm-visible {
+    overflow: visible;
+  }
+
+  .overflow-x-sm-hidden {
+    overflow: hidden;
+  }
+
+  .overflow-x-sm-clip {
+    overflow: clip;
+  }
+
+  .overflow-x-sm-scroll {
+    overflow: scroll;
+  }
+
+  .overflow-x-sm-auto {
+    overflow: auto;
+  }
+
+  .overflow-x-sm-initial {
+    overflow: initial;
+  }
+
+  .overflow-x-sm-unset {
+    overflow: unset;
+  }
+
+  .overflow-y-sm-visible {
+    overflow: visible;
+  }
+
+  .overflow-y-sm-hidden {
+    overflow: hidden;
+  }
+
+  .overflow-y-sm-clip {
+    overflow: clip;
+  }
+
+  .overflow-y-sm-scroll {
+    overflow: scroll;
+  }
+
+  .overflow-y-sm-auto {
+    overflow: auto;
+  }
+
+  .overflow-y-sm-initial {
+    overflow: initial;
+  }
+
+  .overflow-y-sm-unset {
+    overflow: unset;
+  }
+}
 @media only screen and (max-width: 140rem) {
   .table {
     border-collapse: collapse;
@@ -21202,15 +21146,7 @@ ul.menu-sm-h li:hover {
     top: 0;
   }
 }
-/*
-* css-fabric 
-* text size and transform system
-*/
 /* css Hn text rules */
-/*
-* css-fabric 
-* text system responsive
-*/
 @media only screen and (max-width: 140rem) {
   /** cssfabric : txt-xxl*/
   .h1,

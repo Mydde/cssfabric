@@ -2,10 +2,10 @@
 $cssfabric-metadata: ( 
     title: base,
     tag: base,
-    description: "css-fabric global config variables" 
+    description: "cssfabric global config variables" 
 );
 
-$cssfabric-config: (
+$cssfabric-config: ( 
     cfg-has-dimension-strict: true,
     CFG_HAS_DIMENSION_MIN: true,
     CFG_HAS_DIMENSION_MAX: true,
@@ -19,12 +19,12 @@ $cssfabric-config: (
     menu_class_name_short: ul,
     size_step: 0.25rem,
     sizes: (
-        tiny: "",
+        tiny: 32,
         small: 64,
-        medium: 120,
+        medium: 256,
         large: 250,
         full: 100%  
-    ),
+    ), 
     media_quey_sizes: ( 
         xxl: 140,   
         xl: 80,  

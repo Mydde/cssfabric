@@ -1,11 +1,3 @@
-/*
- css-fabric 
- grid builder system
-*/
-/*
- css-fabric 
- grid-responsive system
-*/
 @media only screen and (max-width: 140rem) {
   .grid-xxl-h {
     display: flex;
