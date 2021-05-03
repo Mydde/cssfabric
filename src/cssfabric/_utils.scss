@@ -1,36 +1,50 @@
+@use "sass:string";
 // load main fabric vars
 @use 'modules/cssfabric-vars' as cssfabric-vars;
 
 // link to fabric conf scss file, which often move ;)
 @function get_fabric_conf() {
-  @return cssfabric-vars.$cssfabric-config;  
+  @return cssfabric-vars.$cssfabric-config;
 }
 
 // css dimensions rules builder responsive
-@mixin responsive_encloser($mq_size_value,$mq_min_size_value: null) { 
+@mixin responsive_encloser($mq_size_value, $mq_min_size_value: null) {
   // and (min-width: $mq_min_size_value + rem)
-  @media only screen  and (max-width: $mq_size_value + rem) {
-
-    @content;  
-  }
-}     
-
-@mixin var-export-to-css($module, $module-config){
-  @each $red, $rt in $module-config{
-      // list map string
-      @if(type_of($rt)=='string'){
-          $key: #{$module}-#{$red};
-          --cssfabric-#{$key}: #{$rt};
-      } 
-      @if(type_of($rt)=='map'){
-          @each $rtkey, $rtval in $rt{ 
-              $key: #{$module}-#{$red}-#{$rtkey};
-              --cssfabric-#{$key}: #{$rtval};
-          }
-      } 
-      @if(type_of($rt)=='list'){
-          // $key: #{$module}-#{$red};
-      } 
+  @media only screen and (max-width: $mq_size_value + rem) {
+    @content;
   }
 }
- 
+
+@function show_val($val) {
+  @return ($val);
+}
+
+@mixin var-export-to-css($module, $module-config) {
+  /** 
+  * cssfabric
+  * generated file
+  * css vars for #{$module} 
+  */
+  @each $red, $rt in $module-config {
+    // list map string
+    @if (type_of($rt) == "string") {
+      $key: #{$module}-#{$red};
+      --cssfabric-#{$key}: #{$rt};
+    }
+    @if (type_of($rt) == "map") {
+      @each $rtkey, $rtval in $rt {
+        $type: type_of($rtval);
+        $key: #{$module}-#{$red}-#{$rtkey};
+        $compval: #{string.slice(#{#ss($rtval)}, 4)}; 
+
+        $comp: if($type== map or $type == list, #{$compval}, #{$rtval});
+
+        --cssfabric-#{$key}: #{$comp};
+      }
+    }
+    @if (type_of($rt) == "list") {
+      $key: #{$module}-#{$red};
+      --cssfabric-#{$key}: #{string.slice(#{#ss($rt)}, 4)};
+    }
+  }
+}

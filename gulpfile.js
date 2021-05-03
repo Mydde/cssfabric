@@ -1,3 +1,5 @@
+// ## WIP
+
 const gulp = require("gulp"),
   unescapeJs = require("unescape-js"),
   jsonTransform = require("gulp-json-transform"),
@@ -24,86 +26,13 @@ gulpSass.compiler = require("sass");
 
 var fabricConfig = require("./cssfabric.json");
 
-/**
- *
- * @param {File} file
- * @returns File
- */
-const json_comments = (file) => {
-  let { file_content, file_info } = file;
-
-  file_info.relative = unescapeJs(file_info.relative);
-  const module_name = file_info.relative.split("\\")?.pop().split(".")?.[0];
-
-  if (file_content?.[module_name]) {
-    let module_conf = file_content[module_name];
-
-    if (module_conf && !module_conf?.["_metadata"])
-      module_conf["_metadata"] = {};
-    if (module_conf && !module_conf?.["_data"]) module_conf["_data"] = {};
-    if (module_conf && !module_conf?.["_docs"]) module_conf["_docs"] = {};
-
-    const module_out = {};
-
-    if (module_conf) {
-      const module_metadata = (module_out["_metadata"] =
-        module_conf?.["_metadata"] || {});
-      const module_data = (module_out["_data"] = module_conf?.["_data"] || {});
-      const module_docs = (module_out["_docs"] = module_conf?.["_docs"] || {});
-
-      const out_docs = {};
-      let out_docs_changed = false;
-
-      /**
-       * loop on _data keys, check if in _docs[]
-       */
-      Object.keys(module_data).forEach((v, i, a) => {
-        if (!module_docs?.[v]) {
-          module_out["_docs"][v] = "";
-          out_docs_changed = true;
-        }
-      });
-
-      Object.keys(module_docs).forEach((k, i, a) => {
-        // :undefined because boolean values to test for
-        if (module_data?.[k] === undefined) {
-          if (
-            !Boolean(module_docs[k].length) ||
-            module_out["_docs"][k] !== "deleted"
-          ) {
-            module_out["_docs"][k] = "deleted" + module_docs[k];
-          } else {
-            (module_out["_docs"] = undefined), delete out_docs[k];
-          }
-          out_docs_changed = true;
-        }
-      });
-
-      if (out_docs_changed)
-        file_content[module_name] = Object.assign(
-          file_content[module_name],
-          module_out
-        );
-    } else {
-      file_content[module_name] = {
-        _metadata: {},
-        _data: {},
-        _docs: {},
-      };
-    }
-  } else {
-    file_content = {
-      [module_name]: {
-        _metadata: {},
-        _data: {},
-        _docs: {},
-      },
-    };
-    console.log("module not registered or filename mismatch : " + module_name);
-  }
-
-  return { ...file_content };
-};
+const {
+  fabricRootDir,
+  fabricStylesDir,
+  fabricConfDir,
+  fabricModuleDir,
+  fabricGeneratedDir,
+} = fabricConfig;
 
 function fabricReadmeFile(filePath) {
   // name of the module, from path
@@ -117,61 +46,6 @@ function fabricReadmeFile(filePath) {
 
   return out;
 }
-/**
- *
- * @param {string} filePath
- * @returns
- */
-function fabricScssImportFile(filePath) {
-  // name of the module, from path
-  let module_name = filePath
-    .substring(filePath.lastIndexOf("modules/"))
-    .replace("modules/", "");
-
-  let module = filePath.substring(filePath.lastIndexOf("/") + 1);
-
-  return " @use '../modules/" + module_name + "';" + "\r\n";
-}
-
-function readVars(filePath) {
-  const out = fs.readFileSync(filePath + ".scss");
-
-  fs.readFile(filePath + ".scss", "utf-8", (err, data) => {
-    // console.log({ data });
-  });
-
-  return "// " + filePath + "\r\n";
-}
-
-/**
- *
- * @param {*} filePath
- * @returns
- */
-function fabricScssExportVarsFile(filePath) {
-  // console.log("fabricScssExportVarsFile", filePath);
-
-  // name of the module, from path
-  let module_name = filePath
-    .substring(filePath.lastIndexOf("modules/"))
-    .replace("modules/", "");
-
-  let module = filePath.substring(filePath.lastIndexOf("/") + 1);
-
-  // return " @use '../modules/" + module_name + "';" + "\r\n";
-
-  return readVars(filePath);
-}
-
-const {
-  fabricRootDir,
-  fabricStylesDir,
-  fabricConfDir,
-  fabricModuleDir,
-  fabricGeneratedDir
-} = fabricConfig;
-
-
 
 const sassJsonExporter = (file) => {
   let { file_content, file_info } = file;
@@ -214,11 +88,13 @@ const sassJsonExporter = (file) => {
 
   function makeFooter(module_name) {
     // form is module.$module-(config|*)
-    //  $export : ( data: base-vars.$base-config, docs :base-vars.$base-docs , metadata :base-vars.$base-metadata  );     
-    
-    let out1 = ` ( _data: ${module_name}.$${module_name}-config, _docs :${module_name}.$${module_name}-docs , _metadata :${module_name}.$${module_name}-metadata  )`
+    //  $export : ( data: base-vars.$base-config, docs :base-vars.$base-docs , metadata :base-vars.$base-metadata  );
 
-    return "@include json-encode(" + out1 + ",comment," + module_name + ");\r\n";
+    let out1 = ` ( _data: ${module_name}.$${module_name}-config, _docs :${module_name}.$${module_name}-docs , _metadata :${module_name}.$${module_name}-metadata  )`;
+
+    return (
+      "@include json-encode(" + out1 + ",comment," + module_name + ");\r\n"
+    );
   }
 
   return out;
@@ -236,7 +112,74 @@ function fabricVarExportFile(filePath) {
   return module_name + "|";
 }
 
- // exports sass maps to json
+function fabricCssVarExportFile(filePath) {
+  let module_path = filePath
+    .split("modules/")[1]
+    .replace("modules", "")
+    .replace(".scss", "");
+
+  let module_filename = filePath
+    .substring(filePath.lastIndexOf("/"))
+    .replace(".scss", "")
+    .replace("/", "");
+
+  let module_name = filePath
+    .substring(filePath.lastIndexOf("/_"))
+    .replace(".scss", "")
+    .replace("-vars", "")
+    .replace("_", "")
+    .replace("/", ""); 
+
+  return `|{"module_path" : "${module_path}","module_filename" : "${module_filename}","module_name" : "${module_name}"}`;
+}
+// exports sass maps to json
+function task_cssVarsExport(cb) {
+  let sourceFiles = fabricModuleDir + "/**/_*-vars.scss";
+  gulp
+    .src(sourceFiles)
+    .pipe(
+      gulFileList("cssfabric-vars.css", {
+        destRowTemplate: fabricCssVarExportFile,
+        removeExtensions: false,
+      })
+    )
+    .pipe(
+      modifyFile((content, path, file) => {
+        let exp = content.split("|"); // JSON.parse()
+        let header = (footer = "");
+
+        let utils = `@use '${fabricRootDir}/utils' as utils;` + "\r\n";
+        const openVarTag = ":root{";
+        const closeVarTag = "}";
+ 
+        Object.values(exp).forEach((v, k, a) => {
+          if (v) {
+            moduleConf = JSON.parse(v); 
+
+            if (moduleConf) {
+              header +=
+                `@use '${fabricModuleDir}/${moduleConf.module_path}' as ${moduleConf.module_name};` +
+                "\r\n";
+              footer +=
+                `@include utils.var-export-to-css(${moduleConf.module_name},${moduleConf.module_name}.$${moduleConf.module_name}-config);` +
+                "\r\n";
+            }
+          }
+        });
+ 
+        const out =  utils + header + openVarTag + footer + closeVarTag;
+      
+        return out;
+      })
+    )
+    .pipe(gulpSass({ outputStyle: "expanded", includePaths:[fabricModuleDir] }).on("error", gulpSass.logError))
+    .pipe(gulp.dest(fabricStylesDir))
+    .on("end", () => {
+      return cb();
+    });
+}
+
+// exports sass maps to json
 function task_varsExport(cb) {
   let sourceFiles = fabricModuleDir + "/**/_*-vars.scss";
 
@@ -266,13 +209,13 @@ function task_varsExport(cb) {
         const end = " }}}";
 
         const regexIn = /\/\*\! json-encode: {/gm;
-        const regexOut = /} \*\//gm;  
+        const regexOut = /} \*\//gm;
 
         let exp = content
           .replace(regexIn, "")
           .replace(regexOut, ",")
           .replace(/,\s*$/, "");
-    
+
         return `${start}${exp}${end}`;
       })
     )
@@ -421,43 +364,20 @@ function task_sass2css(cb) {
   );
 }
 
-/**
- *
- * @param {function} cb
- * @returns function
- */
-function task_addComments(cb) {
-  return gulp
-    .src(fabricConfDir + "/**/*.json")
-    .pipe(cache(task_addComments))
-    .pipe(
-      jsonTransform(function (file_content, file_info) {
-        return json_comments({ file_content: file_content, file_info });
-      }, "\t")
-    )
-    .pipe(cache(task_addComments))
-    .pipe(gulp.dest(fabricConfDir))
+function taskDownload(cb) {
+  return gulpDownload(
+    "https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
+  )
+    .pipe(gulp.dest("./src/vendor/normalize/"))
     .on("end", () => {
       return cb();
     });
 }
- 
-
-function taskDownload(cb) {
-  return gulpDownload(
-    "https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
-  ).pipe(gulp.dest("./src/vendor/normalize/")).on("end", () => {
-    return cb();
-  })
-   
-}
-
- 
 
 function watchSassTask(cb) {
   // scss , css , scss
   gulp.watch(
-    fabricModuleDir+ "/**/*.scss",
+    fabricModuleDir + "/**/*.scss",
     gulp.series(task_sass2css, task_mergeInclude, task_varsExport)
   ); // task_varsExport
 
@@ -488,12 +408,19 @@ function watchExportVars(cb) {
   cb();
 }
 
+function watchCssExportVars(cb) {
+  gulp.watch(fabricModuleDir, gulp.series(task_cssVarsExport)); // task_varsExport
+
+  cb();
+}
+
 // oly one called by npm
 exports.watchSass = watchSassTask;
-
 
 exports.watchInclude = watchInclude;
 exports.watchReadme = watchReadme;
 exports.watchExportVars = watchExportVars;
+
+exports.watchCssExport = watchCssExportVars;
 
 exports.taskDownload = taskDownload;

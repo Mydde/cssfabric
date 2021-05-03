@@ -1,0 +1,17 @@
+@use './src/cssfabric/utils' as utils;
+@use './src/cssfabric/modules/_cssfabric-vars' as cssfabric;
+@use './src/cssfabric/modules/animation/_animation-vars' as animation;
+@use './src/cssfabric/modules/base/_base-vars' as base;
+@use './src/cssfabric/modules/box/_box-vars' as box;
+@use './src/cssfabric/modules/color/_color-vars' as color;
+@use './src/cssfabric/modules/grid/_grid-vars' as grid;
+@use './src/cssfabric/modules/menu/_menu-vars' as menu;
+@use './src/cssfabric/modules/overflow/_overflow-vars' as overflow;
+@use './src/cssfabric/modules/scale/_scale-vars' as scale;
+@use './src/cssfabric/modules/table/_table-vars' as table;
+@use './src/cssfabric/modules/text/_text-vars' as text;
+@use './src/cssfabric/modules/zindex/_zindex-vars' as zindex;
+@include utils.var-export-to-css(cssfabric,cssfabric.$cssfabric-config);
+@include utils.var-export-to-css(animation,animation.$animation-config);
+@include utils.var-export-to-css(base,base.$base-config);
+@include utils.var-export-to-css(box,box.$box-config); 
