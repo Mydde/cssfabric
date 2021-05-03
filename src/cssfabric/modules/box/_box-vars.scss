@@ -4,14 +4,19 @@ $box-metadata: (
     description: "cssfabric box module to set heights, paddings and margins on all html elements"
 );
 
-$box-config: ( 
+$box-config: (
     box_unit: rem,
     box_border_unit: px,
     box_shadow_shorthand: shad,
     box_unit_size: 0.25,
-    box_unit_border_size: 1, 
+    box_unit_border_size: 1,
     box_sizes: 8,
-    box_border_sizes_px: 5, 
+    box_border_sizes_px: 5,
+    box_position_shorthand: pos,
+    box_display_shorthand: dsp,
+    box_border_shorthand: border,
+    box_padding_shorthand: pad,
+    box_margin_shorthand: marg,
     box_shorthands: (
         position: pos,
         display: dsp

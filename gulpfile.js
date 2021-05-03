@@ -378,7 +378,7 @@ function watchSassTask(cb) {
   // scss , css , scss
   gulp.watch(
     fabricModuleDir + "/**/*.scss",
-    gulp.series(task_sass2css, task_mergeInclude, task_varsExport)
+    gulp.series(task_sass2css, task_mergeInclude, watchCssExportVars,task_varsExport)
   ); // task_varsExport
 
   cb();

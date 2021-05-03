@@ -207,11 +207,11 @@ $shadows_step_multiplier: 2;
 */
     $shorthand: if($mq_key, #{$box_shadow_shorthand}-#{$mq_key}, #{$box_shadow_shorthand});
 
-    $v_fact: 2.5;
-    $h_fact: 1.1;
+    $v_fact: 2.4;
+    $h_fact: 1.16;
 
-    $v_fact_2: 13.3;
-    $h_fact_2: 4.44;
+    $v_fact_2: 13.1;
+    $h_fact_2: 4.3;
 
     $acc: 1;
 

@@ -1,0 +1,14 @@
+$theme-metadata: (
+    "title": "theme",
+    "description": ""
+);
+$theme-config: (
+    moduleName: theme,
+    moduleNameShort: theme,
+    color: (
+        primary: orange,
+        foreground: #333,
+        background: #ededed
+    )
+);
+$theme-docs: ();

@@ -4,6 +4,11 @@ $color-metadata: (
 	description: description
 );
 $color-config: (
+    color_theme: (
+        primary: orange,
+        foreground: #333,
+        background: #ededed
+    ),
 	color_schemes_props: (
 		info: yellow,
 		alert: orange,

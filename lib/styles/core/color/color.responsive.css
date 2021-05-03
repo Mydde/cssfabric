@@ -353,7 +353,7 @@
     background-color: #0046ff;
   }
   .bg-theme-xxl-yellow-invert {
-    color: white;
+    color: black;
     background-color: #0046ff;
   }
   .bg-theme-xxl-orange {
@@ -374,7 +374,7 @@
     background-color: #019ed8;
   }
   .bg-theme-xxl-orange-invert {
-    color: black;
+    color: white;
     background-color: #27c4fe;
   }
   .bg-theme-xxl-red {
@@ -395,7 +395,7 @@
     background-color: #34d1cd;
   }
   .bg-theme-xxl-red-invert {
-    color: black;
+    color: white;
     background-color: #2ecbc7;
   }
   .bg-theme-xxl-magenta {
@@ -416,7 +416,7 @@
     background-color: #00b416;
   }
   .bg-theme-xxl-magenta-invert {
-    color: black;
+    color: white;
     background-color: #4bff61;
   }
   .bg-theme-xxl-purple {
@@ -437,7 +437,7 @@
     background-color: #62912d;
   }
   .bg-theme-xxl-purple-invert {
-    color: black;
+    color: white;
     background-color: #a3d26e;
   }
   .bg-theme-xxl-green {
@@ -458,7 +458,7 @@
     background-color: #7c107c;
   }
   .bg-theme-xxl-green-invert {
-    color: black;
+    color: white;
     background-color: #ef83ef;
   }
   .bg-theme-xxl-teal {
@@ -479,7 +479,7 @@
     background-color: #820010;
   }
   .bg-theme-xxl-teal-invert {
-    color: black;
+    color: white;
     background-color: #ff7d8d;
   }
   .bg-theme-xxl-blue {
@@ -500,7 +500,7 @@
     background-color: #d45c00;
   }
   .bg-theme-xxl-blue-invert {
-    color: black;
+    color: white;
     background-color: #ff872b;
   }
 
@@ -936,7 +936,7 @@
     background-color: #0046ff;
   }
   .bg-theme-xl-yellow-invert {
-    color: white;
+    color: black;
     background-color: #0046ff;
   }
   .bg-theme-xl-orange {
@@ -957,7 +957,7 @@
     background-color: #019ed8;
   }
   .bg-theme-xl-orange-invert {
-    color: black;
+    color: white;
     background-color: #27c4fe;
   }
   .bg-theme-xl-red {
@@ -978,7 +978,7 @@
     background-color: #34d1cd;
   }
   .bg-theme-xl-red-invert {
-    color: black;
+    color: white;
     background-color: #2ecbc7;
   }
   .bg-theme-xl-magenta {
@@ -999,7 +999,7 @@
     background-color: #00b416;
   }
   .bg-theme-xl-magenta-invert {
-    color: black;
+    color: white;
     background-color: #4bff61;
   }
   .bg-theme-xl-purple {
@@ -1020,7 +1020,7 @@
     background-color: #62912d;
   }
   .bg-theme-xl-purple-invert {
-    color: black;
+    color: white;
     background-color: #a3d26e;
   }
   .bg-theme-xl-green {
@@ -1041,7 +1041,7 @@
     background-color: #7c107c;
   }
   .bg-theme-xl-green-invert {
-    color: black;
+    color: white;
     background-color: #ef83ef;
   }
   .bg-theme-xl-teal {
@@ -1062,7 +1062,7 @@
     background-color: #820010;
   }
   .bg-theme-xl-teal-invert {
-    color: black;
+    color: white;
     background-color: #ff7d8d;
   }
   .bg-theme-xl-blue {
@@ -1083,7 +1083,7 @@
     background-color: #d45c00;
   }
   .bg-theme-xl-blue-invert {
-    color: black;
+    color: white;
     background-color: #ff872b;
   }
 
@@ -1519,7 +1519,7 @@
     background-color: #0046ff;
   }
   .bg-theme-lg-yellow-invert {
-    color: white;
+    color: black;
     background-color: #0046ff;
   }
   .bg-theme-lg-orange {
@@ -1540,7 +1540,7 @@
     background-color: #019ed8;
   }
   .bg-theme-lg-orange-invert {
-    color: black;
+    color: white;
     background-color: #27c4fe;
   }
   .bg-theme-lg-red {
@@ -1561,7 +1561,7 @@
     background-color: #34d1cd;
   }
   .bg-theme-lg-red-invert {
-    color: black;
+    color: white;
     background-color: #2ecbc7;
   }
   .bg-theme-lg-magenta {
@@ -1582,7 +1582,7 @@
     background-color: #00b416;
   }
   .bg-theme-lg-magenta-invert {
-    color: black;
+    color: white;
     background-color: #4bff61;
   }
   .bg-theme-lg-purple {
@@ -1603,7 +1603,7 @@
     background-color: #62912d;
   }
   .bg-theme-lg-purple-invert {
-    color: black;
+    color: white;
     background-color: #a3d26e;
   }
   .bg-theme-lg-green {
@@ -1624,7 +1624,7 @@
     background-color: #7c107c;
   }
   .bg-theme-lg-green-invert {
-    color: black;
+    color: white;
     background-color: #ef83ef;
   }
   .bg-theme-lg-teal {
@@ -1645,7 +1645,7 @@
     background-color: #820010;
   }
   .bg-theme-lg-teal-invert {
-    color: black;
+    color: white;
     background-color: #ff7d8d;
   }
   .bg-theme-lg-blue {
@@ -1666,7 +1666,7 @@
     background-color: #d45c00;
   }
   .bg-theme-lg-blue-invert {
-    color: black;
+    color: white;
     background-color: #ff872b;
   }
 
@@ -2102,7 +2102,7 @@
     background-color: #0046ff;
   }
   .bg-theme-md-yellow-invert {
-    color: white;
+    color: black;
     background-color: #0046ff;
   }
   .bg-theme-md-orange {
@@ -2123,7 +2123,7 @@
     background-color: #019ed8;
   }
   .bg-theme-md-orange-invert {
-    color: black;
+    color: white;
     background-color: #27c4fe;
   }
   .bg-theme-md-red {
@@ -2144,7 +2144,7 @@
     background-color: #34d1cd;
   }
   .bg-theme-md-red-invert {
-    color: black;
+    color: white;
     background-color: #2ecbc7;
   }
   .bg-theme-md-magenta {
@@ -2165,7 +2165,7 @@
     background-color: #00b416;
   }
   .bg-theme-md-magenta-invert {
-    color: black;
+    color: white;
     background-color: #4bff61;
   }
   .bg-theme-md-purple {
@@ -2186,7 +2186,7 @@
     background-color: #62912d;
   }
   .bg-theme-md-purple-invert {
-    color: black;
+    color: white;
     background-color: #a3d26e;
   }
   .bg-theme-md-green {
@@ -2207,7 +2207,7 @@
     background-color: #7c107c;
   }
   .bg-theme-md-green-invert {
-    color: black;
+    color: white;
     background-color: #ef83ef;
   }
   .bg-theme-md-teal {
@@ -2228,7 +2228,7 @@
     background-color: #820010;
   }
   .bg-theme-md-teal-invert {
-    color: black;
+    color: white;
     background-color: #ff7d8d;
   }
   .bg-theme-md-blue {
@@ -2249,7 +2249,7 @@
     background-color: #d45c00;
   }
   .bg-theme-md-blue-invert {
-    color: black;
+    color: white;
     background-color: #ff872b;
   }
 
@@ -2685,7 +2685,7 @@
     background-color: #0046ff;
   }
   .bg-theme-sm-yellow-invert {
-    color: white;
+    color: black;
     background-color: #0046ff;
   }
   .bg-theme-sm-orange {
@@ -2706,7 +2706,7 @@
     background-color: #019ed8;
   }
   .bg-theme-sm-orange-invert {
-    color: black;
+    color: white;
     background-color: #27c4fe;
   }
   .bg-theme-sm-red {
@@ -2727,7 +2727,7 @@
     background-color: #34d1cd;
   }
   .bg-theme-sm-red-invert {
-    color: black;
+    color: white;
     background-color: #2ecbc7;
   }
   .bg-theme-sm-magenta {
@@ -2748,7 +2748,7 @@
     background-color: #00b416;
   }
   .bg-theme-sm-magenta-invert {
-    color: black;
+    color: white;
     background-color: #4bff61;
   }
   .bg-theme-sm-purple {
@@ -2769,7 +2769,7 @@
     background-color: #62912d;
   }
   .bg-theme-sm-purple-invert {
-    color: black;
+    color: white;
     background-color: #a3d26e;
   }
   .bg-theme-sm-green {
@@ -2790,7 +2790,7 @@
     background-color: #7c107c;
   }
   .bg-theme-sm-green-invert {
-    color: black;
+    color: white;
     background-color: #ef83ef;
   }
   .bg-theme-sm-teal {
@@ -2811,7 +2811,7 @@
     background-color: #820010;
   }
   .bg-theme-sm-teal-invert {
-    color: black;
+    color: white;
     background-color: #ff7d8d;
   }
   .bg-theme-sm-blue {
@@ -2832,7 +2832,7 @@
     background-color: #d45c00;
   }
   .bg-theme-sm-blue-invert {
-    color: black;
+    color: white;
     background-color: #ff872b;
   }
 

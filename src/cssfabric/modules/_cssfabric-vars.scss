@@ -17,32 +17,41 @@ $cssfabric-config: (
         full: 100%
     ),
     media_quey_sizes: (
-        xxl: 140, 
+        xxl: 140,
         xl: 80,
-        lg: 64, 
-        md: 48, 
-        sm: 35.7  
-    ), 
-    color_schemes_props: ( 
+        lg: 64,
+        md: 48,
+        sm: 35.7
+    ),
+    color_theme: (
+        primary: orange,
+        foreground: #333,
+        background: #ededed
+    ),
+    color_schemes_props:
+    (
         info: yellow,
         alert: orange,
-        error: red,
-        warning: hsl(48, 100%, 67%),
-        discrete: gray,  
-        success: hsl(141, 71%, 48%)
-    ), 
-    color_palette_props: (
-        normal: #333, 
         error: red,
         warning: hsl(48, 100%, 67%),
         discrete: gray,
         success: hsl(141, 71%, 48%)
     ),
+    color_palette_props: (
+        yellow: #ffb900,
+        orange: #d83b01,
+        red: #d13438,
+        magenta: #b4009e,
+        purple: #5c2d91,
+        green: #107c10,
+        teal: #008272,
+        blue: #0078d4
+    ),
     color_grays: (
-        gray_start: #f4f4f4, 
+        gray_start: #f4f4f4,
         gray_end: #333333,
         gray_steps: 9
-    ) 
+    )
 );
 
 $cssfabric-docs: (

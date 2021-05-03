@@ -14,17 +14,23 @@
   --cssfabric-cssfabric-media_quey_sizes-lg: 64;
   --cssfabric-cssfabric-media_quey_sizes-md: 48;
   --cssfabric-cssfabric-media_quey_sizes-sm: 35.7;
+  --cssfabric-cssfabric-color_theme-primary: orange;
+  --cssfabric-cssfabric-color_theme-foreground: #333;
+  --cssfabric-cssfabric-color_theme-background: #ededed;
   --cssfabric-cssfabric-color_schemes_props-info: yellow;
   --cssfabric-cssfabric-color_schemes_props-alert: orange;
   --cssfabric-cssfabric-color_schemes_props-error: red;
   --cssfabric-cssfabric-color_schemes_props-warning: #ffdd57;
   --cssfabric-cssfabric-color_schemes_props-discrete: gray;
   --cssfabric-cssfabric-color_schemes_props-success: #23d160;
-  --cssfabric-cssfabric-color_palette_props-normal: #333;
-  --cssfabric-cssfabric-color_palette_props-error: red;
-  --cssfabric-cssfabric-color_palette_props-warning: #ffdd57;
-  --cssfabric-cssfabric-color_palette_props-discrete: gray;
-  --cssfabric-cssfabric-color_palette_props-success: #23d160;
+  --cssfabric-cssfabric-color_palette_props-yellow: #ffb900;
+  --cssfabric-cssfabric-color_palette_props-orange: #d83b01;
+  --cssfabric-cssfabric-color_palette_props-red: #d13438;
+  --cssfabric-cssfabric-color_palette_props-magenta: #b4009e;
+  --cssfabric-cssfabric-color_palette_props-purple: #5c2d91;
+  --cssfabric-cssfabric-color_palette_props-green: #107c10;
+  --cssfabric-cssfabric-color_palette_props-teal: #008272;
+  --cssfabric-cssfabric-color_palette_props-blue: #0078d4;
   --cssfabric-cssfabric-color_grays-gray_start: #f4f4f4;
   --cssfabric-cssfabric-color_grays-gray_end: #333333;
   --cssfabric-cssfabric-color_grays-gray_steps: 9;
@@ -33,7 +39,7 @@
   * generated file
   * css vars for animation 
   */
-  --cssfabric-animation-attention_props:  ;
+  --cssfabric-animation-attention_props: ;
   --cssfabric-animation-in_out_props-back: ;
   /** 
   * cssfabric
@@ -77,6 +83,12 @@
   */
   --cssfabric-box-box_unit: rem;
   --cssfabric-box-box_border_unit: px;
+  --cssfabric-box-box_shadow_shorthand: shad;
+  --cssfabric-box-box_position_shorthand: pos;
+  --cssfabric-box-box_display_shorthand: dsp;
+  --cssfabric-box-box_border_shorthand: border;
+  --cssfabric-box-box_padding_shorthand: pad;
+  --cssfabric-box-box_margin_shorthand: marg;
   --cssfabric-box-box_shorthands-position: pos;
   --cssfabric-box-box_shorthands-display: dsp;
   --cssfabric-box-box_css_props_shorthands-border: border;
@@ -110,6 +122,9 @@
   * generated file
   * css vars for color 
   */
+  --cssfabric-color-color_theme-primary: orange;
+  --cssfabric-color-color_theme-foreground: #333;
+  --cssfabric-color-color_theme-background: #ededed;
   --cssfabric-color-color_schemes_props-info: yellow;
   --cssfabric-color-color_schemes_props-alert: orange;
   --cssfabric-color-color_schemes_props-error: red;
@@ -130,16 +145,6 @@
   /** 
   * cssfabric
   * generated file
-  * css vars for grid 
-  */
-  --cssfabric-grid-grid_class_name: grid;
-  --cssfabric-grid-grid_class_name_short: grid;
-  --cssfabric-grid-grid_separator: -;
-  --cssfabric-grid-grid_hor_code: h;
-  --cssfabric-grid-grid_vert_code: v;
-  /** 
-  * cssfabric
-  * generated file
   * css vars for menu 
   */
   --cssfabric-menu-menu_class_name: menu;
@@ -153,14 +158,24 @@
   --cssfabric-menu-menu_dropdown_tag: drop;
   --cssfabric-menu-menu_dropdown_open: open;
   --cssfabric-menu-menu_dropdown_close: close;
-  --cssfabric-menu-test:  quoi donc ;
+  --cssfabric-menu-test:  quoi donc;
   /** 
   * cssfabric
   * generated file
   * css vars for overflow 
   */
-  --cssfabric-overflow-overflow_props:  overflow overflow-x overflow-y ;
-  --cssfabric-overflow-overflow_values:  visible hidden clip scroll auto initial unset ;
+  --cssfabric-overflow-overflow_props:  overflow overflow-x overflow-y;
+  --cssfabric-overflow-overflow_values:  visible hidden clip scroll auto initial unset;
+  /** 
+  * cssfabric
+  * generated file
+  * css vars for grid 
+  */
+  --cssfabric-grid-grid_class_name: grid;
+  --cssfabric-grid-grid_class_name_short: grid;
+  --cssfabric-grid-grid_separator: -;
+  --cssfabric-grid-grid_hor_code: h;
+  --cssfabric-grid-grid_vert_code: v;
   /** 
   * cssfabric
   * generated file
@@ -168,14 +183,14 @@
   */
   --cssfabric-scale-scale_props-width: w;
   --cssfabric-scale-scale_props-height: h;
-  --cssfabric-scale-scale_css_values:  max-content, min-content, fit-content ;
+  --cssfabric-scale-scale_css_values:  max-content, min-content, fit-content;
   --cssfabric-scale-scale_shorthands-full: 100%;
   --cssfabric-scale-scale_shorthands-mid: 50%;
   --cssfabric-scale-scale_shorthands-quarter: 25%;
   --cssfabric-scale-scale_shorthands-tiers: 33%;
-  --cssfabric-scale-scale_defined_steps:  1, 2, 4, 8, 16, 24, 32, 48, 64 ;
+  --cssfabric-scale-scale_defined_steps:  1, 2, 4, 8, 16, 24, 32, 48, 64;
   --cssfabric-scale-scale_defined_step_unit: rem;
-  --cssfabric-scale-scale_grid_ratios:  8, 24 ;
+  --cssfabric-scale-scale_grid_ratios:  8, 24;
   /** 
   * cssfabric
   * generated file
@@ -218,7 +233,17 @@
   /** 
   * cssfabric
   * generated file
+  * css vars for theme 
+  */
+  --cssfabric-theme-moduleName: theme;
+  --cssfabric-theme-moduleNameShort: theme;
+  --cssfabric-theme-color-primary: orange;
+  --cssfabric-theme-color-foreground: #333;
+  --cssfabric-theme-color-background: #ededed;
+  /** 
+  * cssfabric
+  * generated file
   * css vars for zindex 
   */
-  --cssfabric-zindex-z_groups:  a, b, c, d, e, f, g ;
+  --cssfabric-zindex-z_groups:  a, b, c, d, e, f, g;
 }

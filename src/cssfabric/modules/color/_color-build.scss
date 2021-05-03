@@ -1,16 +1,18 @@
-
 @use "sass:map";
 // load scss config file
 @use '../../_utils';
 @use 'color-vars';
 
 $color-config: color-vars.$color-config;
- 
+
 // COLOR SCHEMES
 $color_schemes: map-get($color-config, color_schemes_props);
 
 // COLOR PALETTE
 $color_palette_props: map-get($color-config, color_palette_props);
+
+// COLOR THEME
+$color_theme: map-get($color-config, color_theme);
 
 // GRAYS
 $color_grays: map-get($color-config, color_grays);
@@ -26,7 +28,7 @@ $gray_steps: map-get($color_grays, gray_steps);
         color: white;
     } @else {
         color: black;
-    } 
+    }
 }
 
 $gray_schemes: ();
@@ -37,53 +39,39 @@ $gray_schemes: ();
 }
 
 @mixin color_factory($tag_short, $color_prop) {
-    //
-    @if $tag_short==color {
-        &-light {
-            color: lighten($color_prop, 30%);
-        }
-        &-dark {
-            color: darken($color_prop, 30%);
-        }
-        &-complement {
-            color: complement($color_prop);
-        }
-        &-invert {
-            color: invert($color_prop);
-        }
-    }
-    @if $tag_short== "bg" {
-        &-light { 
-            background-color: lighten($color_prop, 30%);
-        }
-        &-dark { 
-            background-color: darken($color_prop, 30%);
-        }
-        &-complement { 
-            background-color: complement($color_prop);
-        }
-        &-invert { 
-            background-color: invert($color_prop);
-        }
-    }
-    @if $tag_short== "bg-theme" {
-        &-light {
+    $switch-tag_short: map-get(
+        (
+            color: color,
+            bg: background-color,
+            bg-theme: background-color
+        ),
+        $tag_short
+    );
+
+    &-light {
+        @if $tag_short== "bg-theme" {
             @include text-contrast(lighten($color_prop, 30%));
-            background-color: lighten($color_prop, 30%);
         }
-        &-dark {
-            @include text-contrast(darken($color_prop, 30%));
-            background-color: darken($color_prop, 30%);
-        }
-        &-complement {
-            @include text-contrast(complement($color_prop));
-            background-color: complement($color_prop);
-        }
-        &-invert {
-            @include text-contrast(invert($color_prop));
-            background-color: invert($color_prop);
-        }
+        #{$switch-tag_short}: lighten($color_prop, 30%);
     }
+    &-dark {
+        @if $tag_short== "bg-theme" {
+            @include text-contrast(darken($color_prop, 30%));
+        }
+        #{$switch-tag_short}: darken($color_prop, 30%);
+    }
+    &-complement {
+        @if $tag_short== "bg-theme" {
+            @include text-contrast(complement($color_prop));
+        }
+        #{$switch-tag_short}: complement($color_prop);
+    }
+    &-invert {
+        @if $tag_short== "bg-theme" {
+            @include text-contrast(invert($color_prop, 30%));
+        }
+        #{$switch-tag_short}: invert($color_prop);
+    } 
 }
 
 @mixin fabric_colors($type, $tag_short, $mq_key, $has_color_factory) {
@@ -93,7 +81,7 @@ $gray_schemes: ();
 
     .#{$property_key} {
         @each $color_key, $color_prop in $type {
-            &#{"-"+ $color_key} {
+            &#{"-" + $color_key} {
                 @if $tag_short==color {
                     color: $color_prop;
                     @if $has_color_factory {
@@ -121,10 +109,13 @@ $gray_schemes: ();
     }
 }
 
+@mixin fabric_themes($type, $tag_short, $mq_key, $has_color_factory) {
+}
+
 @mixin buildColor($mq_size_key) {
     @each $key in color bg bg-theme {
         @include fabric_colors($color_palette_props, $key, $mq_size_key, true);
         @include fabric_colors($color_schemes, $key,  $mq_size_key, null );
-        @include fabric_colors($gray_schemes, $key, $mq_size_key, null);
+        @include fabric_colors($gray_schemes, $key, $mq_size_key, null); 
     }
 }
