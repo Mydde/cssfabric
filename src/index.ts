@@ -1,11 +1,6 @@
 const fabricConfig = require("./cssfabric.json");
 
-const {
-  fabricGeneratedDir,
-  fabricJsonExportFile
-} = fabricConfig; 
-
-import jsonConfig from `${fabricGeneratedDir}/${fabricJsonExportFile}` ;
+import jsonConfig from "./cssfabric/_generated/export.variables.json" ;
  
 export interface IFabricConfModulePart {
   [key: string]: any;
