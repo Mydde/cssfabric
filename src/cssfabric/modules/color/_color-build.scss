@@ -75,6 +75,15 @@ $gray_schemes: ();
 }
 
 @mixin fabric_colors($type, $tag_short, $mq_key, $has_color_factory) {
+    $switch-tag_short: map-get(
+        (
+            color: color,
+            bg: background-color,
+            bg-theme: background-color
+        ),
+        $tag_short
+    );
+    
     $prop: "";
 
     $property_key: #{$tag_short}+ if($mq_key, -#{$mq_key}, "");

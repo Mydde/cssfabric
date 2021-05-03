@@ -145,6 +145,16 @@
   /** 
   * cssfabric
   * generated file
+  * css vars for grid 
+  */
+  --cssfabric-grid-grid_class_name: grid;
+  --cssfabric-grid-grid_class_name_short: grid;
+  --cssfabric-grid-grid_separator: -;
+  --cssfabric-grid-grid_hor_code: h;
+  --cssfabric-grid-grid_vert_code: v;
+  /** 
+  * cssfabric
+  * generated file
   * css vars for menu 
   */
   --cssfabric-menu-menu_class_name: menu;
@@ -166,16 +176,6 @@
   */
   --cssfabric-overflow-overflow_props:  overflow overflow-x overflow-y;
   --cssfabric-overflow-overflow_values:  visible hidden clip scroll auto initial unset;
-  /** 
-  * cssfabric
-  * generated file
-  * css vars for grid 
-  */
-  --cssfabric-grid-grid_class_name: grid;
-  --cssfabric-grid-grid_class_name_short: grid;
-  --cssfabric-grid-grid_separator: -;
-  --cssfabric-grid-grid_hor_code: h;
-  --cssfabric-grid-grid_vert_code: v;
   /** 
   * cssfabric
   * generated file
