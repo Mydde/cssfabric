@@ -2,8 +2,7 @@
     "fabricRootDir": "./src/cssfabric",
     "fabricConfDir": "./src/cssfabric/_config",
     "fabricModuleDir": "./src/cssfabric/modules",
-    "fabricGeneratedDir": "./src/cssfabric/_generated",
-    "fabricJsonExportFile": "export.variables.json",
-    "generatedDir": "./src/cssfabric/_generated",
+    "fabricGeneratedDir": "./src/_generated",
+    "fabricJsonExportFile": "export.variables.json", 
     "fabricStylesDir": "./lib/styles"
 }

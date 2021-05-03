@@ -1,18 +1,16 @@
-$animation-metadata: ("title":"nope twice");
+$animation-metadata: (
+    "title": "nope twice"
+);
 $animation-config: (
     attention_props: (),
     in_out_props: (
-        back: ()
-        /* bounce: (),
+        back: () /* bounce: (),
         slide: (),
         fade: (),
         zoom: () */
     )
 );
 $animation-docs: (
-    attention_props: "",  
+    attention_props: "",
     in_out_props: ""
-); 
-   
-
-// $white: #fff !default
+);

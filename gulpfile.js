@@ -168,7 +168,7 @@ const {
   fabricStylesDir,
   fabricConfDir,
   fabricModuleDir,
-  generatedDir,
+  fabricGeneratedDir
 } = fabricConfig;
 
 
@@ -283,7 +283,7 @@ function task_varsExport(cb) {
         path.basename = path.basename.replace("-", ".");
       })
     )
-    .pipe(gulp.dest(generatedDir))
+    .pipe(gulp.dest(fabricGeneratedDir))
     .on("end", () => {
       return cb();
     });
@@ -301,7 +301,7 @@ function task_readme(cb) {
       })
     )
     .pipe(cache(task_readme))
-    .pipe(gulp.dest(generatedDir))
+    .pipe(gulp.dest(fabricGeneratedDir))
     .on("end", () => {
       return cb();
     });
