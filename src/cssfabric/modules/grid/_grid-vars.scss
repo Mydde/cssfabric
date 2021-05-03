@@ -4,6 +4,8 @@ $grid-metadata: (
     description: "cssfabric grid module"
 );
 $grid-config: (
+    grid_class_name: grid,
+    grid_class_name_short: grid,
     grid_separator: "-",
     grid_hor_code: h,
     grid_vert_code: v

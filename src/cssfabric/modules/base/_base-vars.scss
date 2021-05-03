@@ -8,8 +8,6 @@ $base-config: (
     cfg-has-dimension-strict: true,
     CFG_HAS_DIMENSION_MIN: true,
     CFG_HAS_DIMENSION_MAX: true,
-    grid_class_name: grid,
-    grid_class_name_short: grid,
     table_class_name: table,
     table_class_name_short: tbl,
     text_class_name: text,
@@ -58,9 +56,7 @@ $base-config: (
     _data: (
         cfg-has-dimension-strict: true,
         CFG_HAS_DIMENSION_MIN: true,
-        CFG_HAS_DIMENSION_MAX: true,
-        grid_class_name: grid,
-        grid_class_name_short: grid,
+        CFG_HAS_DIMENSION_MAX: true, 
         table_class_name: table,
         table_class_name_short: tbl,
         text_class_name: text,
@@ -69,8 +65,8 @@ $base-config: (
         menu_class_name_short: ul,
         size_step: 0.25rem,
         sizes: (
-            tiny: "",
-            small: 64,
+            tiny: 32,
+            small: 64, 
             medium: 120,
             large: 250,
             full: 100%
