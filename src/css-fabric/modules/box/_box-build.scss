@@ -15,8 +15,11 @@ $_media_quey_sizes: map-get($_cfg, media_quey_sizes);
 
 $box_unit : map-get($box_vars, box_unit);
 $box_unit_size : map-get($box_vars, box_unit_size);
+$box_unit_border_size : map-get($box_vars, box_unit_border_size);
 $fabric_box_sizes: map-get($box_vars, box_sizes);
 $box_shorthands: map-get($box_vars, box_shorthands);
+$box_border_unit: map-get($box_vars, box_border_unit);
+$box_border_sizes_px: map-get($box_vars, box_border_sizes_px);
 
 $box_position_shorthand : map-get($box_shorthands, position);
 $box_display_shorthand : map-get($box_shorthands, display);
@@ -72,19 +75,25 @@ $fabric_box_display_props : map-get($box_vars, box_display_props);
     @each $fabric_box_pmb_side_shorthand,
     $rule in $fabric_box_pmb_side_shorthands {
 
+        $iterator: if($fabric_box_position_prop== border,$box_border_sizes_px,$fabric_box_sizes);
+        $unit: if($fabric_box_position_prop== border,$box_border_unit,$box_unit);
+         // box_unit_border_size
+        $unit_size: if($fabric_box_position_prop== border,$box_unit_border_size,$box_unit_size);
+
+
         // css property name 
         .#{$fabric_box_position_prop_short}-#{$fabric_box_pmb_side_shorthand} {
 
-            @for $grid_size_value from 1 through $fabric_box_sizes {
-                $css_size_value: ($grid_size_value * $box_unit_size) + $box_unit;
+            @for $grid_size_value from 1 through $iterator {
 
+                $css_size_value: ($grid_size_value * $unit_size) + $unit;
                 // css property name is aggregated with size value $i
                 #{raw_size_tag_rule($grid_size_value)} &-#{$grid_size_value} {
 
                     @if length($rule)==4 {
 
                         $_args: (rule_value:$css_size_value,
-                                unit:$box_unit,
+                                unit:$unit,
                                 rule_type:'pmb',
                                 css_prop:$fabric_box_position_prop);
 
@@ -95,7 +104,7 @@ $fabric_box_display_props : map-get($box_vars, box_display_props);
                     @else {
                         @each $grid_size_value in $rule {
                             $_args: (rule_value:$css_size_value,
-                                    unit:$box_unit,
+                                    unit:$unit,
                                     rule_type:'pmb',
                                     css_prop:$fabric_box_position_prop);
 
@@ -109,13 +118,13 @@ $fabric_box_display_props : map-get($box_vars, box_display_props);
     }
 }
 
-/**
+/* 
   $css_prop               : display
   $css_prop_short         : dsp
   $unit                   : '' | em | px
   $fabric_key_shorthands  : (tbl  table)
   $write_rule             : position_display | pmb
-*/
+ */
 @mixin fabric_property_proxy($_args) {
 
     $css_prop: map-get($_args, css_prop);

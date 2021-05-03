@@ -5,15 +5,18 @@ $box-metadata: (
 );
 
 $box-config: ( 
-    box_unit: px,
-    box_unit_size: 1,
-    box_sizes: 32,
+    box_unit: rem,
+    box_border_unit: px,
+    box_unit_size: 0.125,
+    box_unit_border_size: 1,
+    box_sizes: 8,
+    box_border_sizes_px: 5, 
     box_shorthands: (
         position: pos,
         display: dsp
     ),
     box_css_props_shorthands: (
-        order: border,
+        border: border,
         pad: padding,
         marg: margin
     ),
