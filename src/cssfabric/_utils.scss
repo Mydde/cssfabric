@@ -15,10 +15,9 @@
   }
 }
 
-@mixin var-export-to-css($module, $module-config) {
+@mixin scssVarsToCssVars($module, $module-config) {
   /** 
-  * cssfabric
-  * generated file
+  * cssfabric generated file
   * css vars for #{$module} 
   */
   @each $red, $rt in $module-config {
@@ -59,10 +58,10 @@
 @function applyColorEffect($theme-level, $color) {
   $switch-named: map-get(
                   (
-                          light: lighten($color, 30%),
+                          light: lighten($color, 15%),
                           lighter: lighten($color, 30%),
-                          dark: lighten($color, 30%),
-                          darker: lighten($color, 30%),
+                          dark: darken($color, 15%),
+                          darker: darken($color, 30%),
                           complement: complement($color),
                           invert: invert($color)
                   ),
@@ -99,9 +98,18 @@
                   $fabric-tag
   );
 }
+ 
+@function getThemeLevels($declinations-config,$color_primary) {
+  $out: ();
+  @each $color-grade in $declinations-config {
+    $color: themeDeclinationColors($color-grade, $color_primary);
+    $out: map.set($out, $color-grade,$color);
+    @each $theme-level in (light lighter dark darker complement invert) {
+      $new-theme-level: #{$color-grade}-#{$theme-level};
+      $newColor:  applyColorEffect($theme-level, $color);
+      $out: map.set($out, $new-theme-level,$newColor);
+    }
+  }
 
-@function aie($color-grade,$color_primary){
-  $switch-color-grad: themeDeclinationColors($color-grade, $color_primary);
-
-  @return $switch-color-grad;
+  @return $out;
 }

@@ -1,5 +1,13 @@
 @use '../../utils' as utils;
 
+$_declinations-config: (primary, secondary, tertiary);
+$_color-primary: green;
+$_theme-levels: (light lighter dark darker complement invert);
+$_theme-properties-apply: (text, bg, border);
+
+$_theme-default-foreground: #333333;
+$_theme-default-background: #ededed;
+
 $theme-metadata: (
         "title": "theme",
         "description": ""
@@ -8,11 +16,14 @@ $theme-config: (
         moduleName: theme,
         moduleNameShort: theme,
         color-default-config: (
-                primary: orange,
+                primary: $_color-primary,
                 foreground: #333,
                 background: #ededed
         ),
-        declinations-config:(primary, secondary, tertiary),
-        test: what//utils.aie(primary,blue)
+        declinations-config:$_declinations-config,
+        theme-level-config:$_theme-levels,
+        theme-properties-apply-config:$_theme-properties-apply,
+        color: utils.getThemeLevels($_declinations-config, $_color-primary)
 );
+
 $theme-docs: ();

@@ -162,7 +162,7 @@ function task_cssVarsExport(cb) {
                                 `@use '${fabricModuleDir}/${moduleConf.module_path}' as ${moduleConf.module_name};` +
                                 "\r\n";
                             footer +=
-                                `@include utils.var-export-to-css(${moduleConf.module_name},${moduleConf.module_name}.$${moduleConf.module_name}-config);` +
+                                `@include utils.scssVarsToCssVars(${moduleConf.module_name},${moduleConf.module_name}.$${moduleConf.module_name}-config);` +
                                 "\r\n";
                         }
                     }

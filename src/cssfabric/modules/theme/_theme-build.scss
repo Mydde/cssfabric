@@ -8,6 +8,9 @@ $theme-config: theme-vars.$theme-config;
 $moduleNameShort: map-get($theme-config, moduleNameShort);
 //
 $color-themes: map-get($theme-config, color-default-config);
+$theme-levels: map-get($theme-config, theme-level-config);
+$theme-properties-apply-config: map-get($theme-config, theme-properties-apply-config);
+
 $color-primary: map-get($color-themes, primary);
 
 
@@ -19,8 +22,7 @@ $declinations-config: map-get($theme-config, declinations-config);
 
     $switch-color-grad: utils.themeDeclinationColors($color-grade, $color-primary);
 
-
-    @each $text-or-bg-or-border in (text, bg, border) {
+    @each $text-or-bg-or-border in $theme-properties-apply-config {
 
       $property_key: if($mq_size_key, #{$text-or-bg-or-border}-#{$mq_size_key}, #{$text-or-bg-or-border});
 
@@ -29,9 +31,9 @@ $declinations-config: map-get($theme-config, declinations-config);
       .#{$moduleNameShort}-#{$property_key}-#{$color-grade} {
         #{$switch-tag-type}: #{$switch-color-grad};
 
-        @each $theme-level in (light lighter dark darker complement invert) {
+        @each $theme-level in $theme-levels {
 
-          $newColor:  utils.applyColorEffect($theme-level, $switch-color-grad);
+          $newColor: utils.applyColorEffect($theme-level, $switch-color-grad);
 
           @include utils.fabricAttributes("&-", $theme-level, #{$switch-tag-type}, $newColor);
         }
