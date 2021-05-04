@@ -8,15 +8,14 @@ $cssfabric-config: cssfabric-vars.$cssfabric-config;
 
 $sep: map-get($cssfabric-config, sep);
 // read variables
-$cssProps: map-get($grid-config, cssProps);
 $grid-code: map-get($grid-config, grid_class_name);
 $grid-h: map-get($grid-config, grid_hor_code);
 $grid-v: map-get($grid-config, grid_vert_code);
 
+$cssProps: map-get($grid-config, cssProps);
+$gridFullWidth: map-get($grid-config, gridFullWidth); 
 
-// @error map-get($cssProps, alignSelf);
-// $tes: map-get(cssProps, alignSelf);
-
+$grid-code-sep: #{$grid-code}#{$sep};
 
 @mixin makeGrid($mqKey) {
     $prefix: if($mqKey, #{$grid-code}-#{$mqKey}, #{$grid-code});
@@ -31,7 +30,7 @@ $grid-v: map-get($grid-config, grid_vert_code);
         display: flex;
         flex-direction: row;
 
-        & > .#{$grid-code}#{$sep}main {
+        & > .#{$grid-code}#{$sep}#{$gridFullWidth} {
             flex: 1 1 0;
             width: 100%;
             max-width: 100%;
@@ -42,7 +41,7 @@ $grid-v: map-get($grid-config, grid_vert_code);
         display: flex;
         flex-direction: column;
 
-        & > .#{$grid-code}#{$sep}main {
+        & > .#{$grid-code}#{$sep}#{$gridFullWidth} {
             flex: 1 1 0;
             max-height: 100%;
         }
@@ -51,154 +50,70 @@ $grid-v: map-get($grid-config, grid_vert_code);
     .#{$h_prop},
     .#{$v_prop} {
         box-sizing: border-box;
-
-        &.#{$grid-code}#{$sep}wrap#{$sep}reverse {
-            flex-wrap: wrap-reverse;
-        }
-
-        &.#{$grid-code}#{$sep}wrap {
-            flex-wrap: wrap;
-        }
-
-        &.#{$grid-code}#{$sep}nowrap {
-            flex-wrap: nowrap;
-        }
-
         & > * {
             box-sizing: border-box;
         }
 
-        & > *:not(.#{$grid-code}#{$sep}main) {
+        & > *:not(.#{$grid-code-sep}#{$gridFullWidth}) {
             flex: 0 0 auto;
         }
 
-        &.#{$grid-code}#{$sep}inline {
+        &.#{$grid-code-sep}inline {
             display: inline-flex;
         }
 
-        &.#{$grid-code}#{$sep}overflow {
+        &.#{$grid-code-sep}overflow {
             overflow: auto;
         }
 
-        &.#{$grid-code}#{$sep}no-overflow {
+        &.#{$grid-code-sep}no-overflow {
             overflow: hidden;
         }
 
         @for $i from 1 through 4 {
-            &.#{$grid-code}#{$sep}grow#{$sep}#{$i} {
+            &.#{$grid-code-sep}grow#{$sep}#{$i} {
                 flex-grow: $i;
             }
 
-            &.#{$grid-code}#{$sep}shrink#{$sep}#{$i} {
+            &.#{$grid-code-sep}shrink#{$sep}#{$i} {
                 flex-shrink: $i;
             }
         }
     }
 
-    /* justify content rules */
+    /** raw css properties distribution */
     .#{$h_prop},
-    .#{$v_prop} {
-        &.just#{$sep}start {
-            justify-content: flex-start;
-        }
-
-        &.just#{$sep}center {
-            justify-content: center;
-        }
-
-        &.just#{$sep}end {
-            justify-content: flex-end;
-        }
-
-        &.just#{$sep}between {
-            justify-content: space-between;
-        }
-
-        &.just#{$sep}equal {
-            justify-content: space-evenly;
-        }
-    }
-
-    /* align-items rules */
-    .#{$h_prop},
-    .#{$v_prop} {
-        &.items#{$sep}baseline {
-            align-items: baseline;
-        }
-
-        &.items#{$sep}stretch {
-            align-items: stretch;
-        }
-
-        &.items#{$sep}start {
-            align-items: flex-start;
-        }
-
-        &.items#{$sep}center {
-            align-items: center;
-        }
-
-        &.items#{$sep}end {
-            align-items: flex-end;
-        }
-    }
-
-    /* align-content rules */
-    .#{$h_prop},
-    .#{$v_prop} {
-        &.content#{$sep}start {
-            align-content: flex-start;
-        }
-
-        &.content#{$sep}end {
-            align-content: flex-end;
-        }
-
-        &.content#{$sep}between {
-            align-content: space-between;
-        }
-
-        &.content#{$sep}stretch {
-            align-content: stretch;
-        }
-
-        &.content#{$sep}center {
-            align-content: center;
-        }
-    }
-
-    /* align-self rules */
-    .#{$h_prop},
-    .#{$v_prop} {
-        & .self {
-            //  &_debug   {debug : #debug($cssProps);}
-            @each $fabricTag, $value in map-get($cssProps, alignSelf) {
-                @include utils.fabric-attribute('-',$fabricTag,'align-self',$value);
-            }
-
-            &_auto {
-                align-self: auto;
-            }
-
-            &_start {
-                align-self: flex-start;
-            }
-
-            &_end {
-                align-self: flex-end;
-            }
-
-            &_center {
-                align-self: center;
-            }
-
-            &_baseline {
-                align-self: baseline;
-            }
-
-            &_stretch {
-                align-self: stretch;
+    .#{$v_prop} {   
+        // wrap rules
+        &.#{$grid-code}{
+            @each $fabricRule, $value in map-get($cssProps, flexWrap) { 
+                @include utils.fabric-attribute('&'+$sep,$fabricRule,'flex-wrap',$value); 
             }
         }
-    }
+        // justify content rules */  
+        &.just{
+            @each $fabricRule, $value in map-get($cssProps, justifyContent) { 
+                @include utils.fabric-attribute('&'+$sep,$fabricRule,'justify-content',$value); 
+            }
+        } 
+        // align-items rules */
+        &.items {
+            @each $fabricRule, $value in map-get($cssProps, alignItems) { 
+                @include utils.fabric-attribute('&'+$sep,$fabricRule,'align-items',$value); 
+            }
+        }
+        // align-content rules */
+        &.content{
+            @each $fabricRule, $value in map-get($cssProps, alignContent) {
+                $tag: content#{$sep}start;
+                @include utils.fabric-attribute('&'+$sep,$fabricRule,'align-content',$value); 
+            }
+        }
+        // align-self rules for children */
+        & .self {  
+            @each $fabricRule, $value in map-get($cssProps, alignSelf) {
+                @include utils.fabric-attribute('&-',$fabricRule,'align-self',$value);
+            }
+        }
+    }  
 }

@@ -24,13 +24,16 @@
   /** 
   * cssfabric
   * generated file
-  * css vars for grid 
+  * css vars for box 
   */
-  --cssfabric-grid-grid_class_name: grid;
-  --cssfabric-grid-grid_class_name_short: grid;
-  --cssfabric-grid-grid_separator: -;
-  --cssfabric-grid-grid_hor_code: h;
-  --cssfabric-grid-grid_vert_code: v;
+  --cssfabric-box-box_unit: rem;
+  --cssfabric-box-box_border_unit: px;
+  --cssfabric-box-box_shadow_shorthand: shad;
+  --cssfabric-box-box_position_shorthand: pos;
+  --cssfabric-box-box_display_shorthand: dsp;
+  --cssfabric-box-box_border_shorthand: border;
+  --cssfabric-box-box_padding_shorthand: pad;
+  --cssfabric-box-box_margin_shorthand: marg;
   /** 
   * cssfabric
   * generated file
@@ -46,6 +49,16 @@
   --cssfabric-menu-menu_dropdown_open: open;
   --cssfabric-menu-menu_dropdown_close: close;
   --cssfabric-menu-test:  quoi donc;
+  /** 
+  * cssfabric
+  * generated file
+  * css vars for grid 
+  */
+  --cssfabric-grid-grid_class_name: grid;
+  --cssfabric-grid-grid_class_name_short: grid;
+  --cssfabric-grid-grid_separator: -;
+  --cssfabric-grid-grid_hor_code: h;
+  --cssfabric-grid-grid_vert_code: v;
   /** 
   * cssfabric
   * generated file
@@ -83,27 +96,14 @@
   /** 
   * cssfabric
   * generated file
-  * css vars for theme 
-  */
-  --cssfabric-theme-moduleName: theme;
-  --cssfabric-theme-moduleNameShort: theme;
-  /** 
-  * cssfabric
-  * generated file
   * css vars for zindex 
   */
   --cssfabric-zindex-z_groups:  a, b, c, d, e, f, g;
   /** 
   * cssfabric
   * generated file
-  * css vars for box 
+  * css vars for theme 
   */
-  --cssfabric-box-box_unit: rem;
-  --cssfabric-box-box_border_unit: px;
-  --cssfabric-box-box_shadow_shorthand: shad;
-  --cssfabric-box-box_position_shorthand: pos;
-  --cssfabric-box-box_display_shorthand: dsp;
-  --cssfabric-box-box_border_shorthand: border;
-  --cssfabric-box-box_padding_shorthand: pad;
-  --cssfabric-box-box_margin_shorthand: marg;
+  --cssfabric-theme-moduleName: theme;
+  --cssfabric-theme-moduleNameShort: theme;
 }

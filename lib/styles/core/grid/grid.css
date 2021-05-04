@@ -2,7 +2,7 @@
   display: flex;
   flex-direction: row;
 }
-.grid-h > .grid-main {
+.grid-h > .grid- {
   flex: 1 1 0;
   width: 100%;
   max-width: 100%;
@@ -12,7 +12,7 @@
   display: flex;
   flex-direction: column;
 }
-.grid-v > .grid-main {
+.grid-v > .grid- {
   flex: 1 1 0;
   max-height: 100%;
 }
@@ -21,24 +21,12 @@
 .grid-v {
   box-sizing: border-box;
 }
-.grid-h.grid-wrap-reverse,
-.grid-v.grid-wrap-reverse {
-  flex-wrap: wrap-reverse;
-}
-.grid-h.grid-wrap,
-.grid-v.grid-wrap {
-  flex-wrap: wrap;
-}
-.grid-h.grid-nowrap,
-.grid-v.grid-nowrap {
-  flex-wrap: nowrap;
-}
 .grid-h > *,
 .grid-v > * {
   box-sizing: border-box;
 }
-.grid-h > *:not(.grid-main),
-.grid-v > *:not(.grid-main) {
+.grid-h > *:not(.grid-),
+.grid-v > *:not(.grid-) {
   flex: 0 0 auto;
 }
 .grid-h.grid-inline,
@@ -86,14 +74,22 @@
   flex-shrink: 4;
 }
 
-/* justify content rules */
+/** raw css properties distribution */
+.grid-h.grid-wrap-reverse,
+.grid-v.grid-wrap-reverse {
+  flex-wrap: wrap-reverse;
+}
+.grid-h.grid-wrap,
+.grid-v.grid-wrap {
+  flex-wrap: wrap;
+}
+.grid-h.grid-nowrap,
+.grid-v.grid-nowrap {
+  flex-wrap: nowrap;
+}
 .grid-h.just-start,
 .grid-v.just-start {
   justify-content: flex-start;
-}
-.grid-h.just-center,
-.grid-v.just-center {
-  justify-content: center;
 }
 .grid-h.just-end,
 .grid-v.just-end {
@@ -103,12 +99,14 @@
 .grid-v.just-between {
   justify-content: space-between;
 }
-.grid-h.just-equal,
-.grid-v.just-equal {
-  justify-content: space-evenly;
+.grid-h.just-stretch,
+.grid-v.just-stretch {
+  justify-content: stretch;
 }
-
-/* align-items rules */
+.grid-h.just-center,
+.grid-v.just-center {
+  justify-content: flex-center;
+}
 .grid-h.items-baseline,
 .grid-v.items-baseline {
   align-items: baseline;
@@ -129,11 +127,13 @@
 .grid-v.items-end {
   align-items: flex-end;
 }
-
-/* align-content rules */
 .grid-h.content-start,
 .grid-v.content-start {
   align-content: flex-start;
+}
+.grid-h.content-center,
+.grid-v.content-center {
+  align-content: center;
 }
 .grid-h.content-end,
 .grid-v.content-end {
@@ -143,16 +143,10 @@
 .grid-v.content-between {
   align-content: space-between;
 }
-.grid-h.content-stretch,
-.grid-v.content-stretch {
-  align-content: stretch;
+.grid-h.content-equal,
+.grid-v.content-equal {
+  align-content: space-evenly;
 }
-.grid-h.content-center,
-.grid-v.content-center {
-  align-content: center;
-}
-
-/* align-self rules */
 .grid-h .self-auto,
 .grid-v .self-auto {
   align-self: auto;
@@ -175,29 +169,5 @@
 }
 .grid-h .self-stretch,
 .grid-v .self-stretch {
-  align-self: stretch;
-}
-.grid-h .self_auto,
-.grid-v .self_auto {
-  align-self: auto;
-}
-.grid-h .self_start,
-.grid-v .self_start {
-  align-self: flex-start;
-}
-.grid-h .self_end,
-.grid-v .self_end {
-  align-self: flex-end;
-}
-.grid-h .self_center,
-.grid-v .self_center {
-  align-self: center;
-}
-.grid-h .self_baseline,
-.grid-v .self_baseline {
-  align-self: baseline;
-}
-.grid-h .self_stretch,
-.grid-v .self_stretch {
   align-self: stretch;
 }

@@ -10,6 +10,11 @@ $grid-config: (
     grid_hor_code: h,
     grid_vert_code: v,
     cssProps: (
+        flexWrap: (
+            wrap-reverse: wrap-reverse,
+            wrap: wrap,
+            nowrap: nowrap
+        ),
         alignSelf: (
             auto: auto,
             start: flex-start,
