@@ -697,51 +697,47 @@
   display: inline;
 }
 
-.dsp-block-inline {
-  display: inline-block;
+.dsp-inline-block {
+  display: block-inline;
 }
 
-.dsp-flex-inline {
-  display: inline-flex;
+.dsp-inline-flex {
+  display: flex-inline;
 }
 
-.dsp-tbl {
-  display: table;
+.dsp-table {
+  display: tbl;
 }
 
-.dsp-tbl-row {
-  display: table;
+.dsp-table-row {
+  display: tbl-row;
 }
 
-.dsp-tbl-cell {
-  display: table;
+.dsp-table-cell {
+  display: tbl-cell;
 }
 
-.dsp-tbl-column {
-  display: table-column;
-}
-
-.dsp-unset {
-  display: unset;
+.dsp-table-column {
+  display: tbl-column;
 }
 
 /**
 *   pos position ---------------------
 */
-.pos-abs {
-  position: absolute;
+.pos-absolute {
+  position: abs;
 }
 
-.pos-rel {
-  position: relative;
+.pos-relative {
+  position: rel;
 }
 
-.pos-stat {
-  position: static;
+.pos-static {
+  position: stat;
 }
 
-.pos-fix {
-  position: fixed;
+.pos-fixed {
+  position: fix;
 }
 
 .pos-sticky {

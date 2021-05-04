@@ -1,32 +1,4 @@
-$box-metadata: (
-    title: box,
-    tag: box,
-    description: "cssfabric box module to set heights, paddings and margins on all html elements"
-);
-
-$box-config: (
-    box_unit: rem,
-    box_border_unit: px,
-    box_shadow_shorthand: shad,
-    box_unit_size: 0.25,
-    box_unit_border_size: 1,
-    box_sizes: 8,
-    box_border_sizes_px: 5,
-    box_position_shorthand: pos,
-    box_display_shorthand: dsp,
-    box_border_shorthand: border,
-    box_padding_shorthand: pad,
-    box_margin_shorthand: marg,
-    box_shorthands: (
-        position: pos,
-        display: dsp
-    ),
-    box_css_props_shorthands: (
-        border: border,
-        pad: padding,
-        marg: margin
-    ),
-    box_border_shorthands: (
+$_border-shorthands: (
         t: top,
         b: bottom,
         l: left,
@@ -35,35 +7,52 @@ $box-config: (
         u: bottom left right,
         ii: left right,
         tb: top bottom
-    ),
-    box_position_props: (
+);
+
+$_position-props: (
         abs: absolute,
         rel: relative,
         stat: static,
         fix: fixed,
         sticky: sticky
-    ),
-    box_display_props: (
+);
+
+$_display-props: (
         block: block,
         none: none,
         inline: inline,
         block-inline: inline-block,
         flex-inline: inline-flex,
         tbl: table,
-        tbl-row: table,
-        tbl-cell: table,
-        tbl-column: table-column,
-        unset: unset
-    )
+        tbl-row: table-row,
+        tbl-cell: table-cell,
+        tbl-column: table-column
 );
 
-$box-docs: (
-    box_unit: "",
-    box_unit_size: "",
-    box_sizes: "",
-    box_shorthands: "",
-    box_css_props_shorthands: "",
-    box_border_shorthands: "",
-    box_position_props: "",
-    box_display_props: ""
+$box-metadata: (
+        title: box,
+        tag: box,
+        description: "cssfabric box module to set heights, paddings and margins on all html elements"
 );
+
+$box-config: (
+        unit-config: rem,
+        border-unit-config: px,
+        unit-size-config: 0.25,
+        unit-border-size-config: 1,
+        sizes-config: 8,
+        border-sizes-px-config: 5,
+        position-shorthand-config: pos,
+        display-shorthand-config: dsp,
+        shadow-shorthand-config: shad,
+        border-shorthand-config: border,
+        padding-shorthand-config: pad,
+        margin-shorthand-config: marg,
+        cssProps:(
+                borderShorthands: $_border-shorthands,
+                positionProps: $_position-props,
+                displayProps: $_display-props
+        )
+);
+
+$box-docs: ();

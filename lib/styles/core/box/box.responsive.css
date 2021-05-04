@@ -698,51 +698,47 @@
     display: inline;
   }
 
-  .dsp-xxl-block-inline {
-    display: inline-block;
+  .dsp-xxl-inline-block {
+    display: block-inline;
   }
 
-  .dsp-xxl-flex-inline {
-    display: inline-flex;
+  .dsp-xxl-inline-flex {
+    display: flex-inline;
   }
 
-  .dsp-xxl-tbl {
-    display: table;
+  .dsp-xxl-table {
+    display: tbl;
   }
 
-  .dsp-xxl-tbl-row {
-    display: table;
+  .dsp-xxl-table-row {
+    display: tbl-row;
   }
 
-  .dsp-xxl-tbl-cell {
-    display: table;
+  .dsp-xxl-table-cell {
+    display: tbl-cell;
   }
 
-  .dsp-xxl-tbl-column {
-    display: table-column;
-  }
-
-  .dsp-xxl-unset {
-    display: unset;
+  .dsp-xxl-table-column {
+    display: tbl-column;
   }
 
   /**
   *   pos-xxl position ---------------------
   */
-  .pos-xxl-abs {
-    position: absolute;
+  .pos-xxl-absolute {
+    position: abs;
   }
 
-  .pos-xxl-rel {
-    position: relative;
+  .pos-xxl-relative {
+    position: rel;
   }
 
-  .pos-xxl-stat {
-    position: static;
+  .pos-xxl-static {
+    position: stat;
   }
 
-  .pos-xxl-fix {
-    position: fixed;
+  .pos-xxl-fixed {
+    position: fix;
   }
 
   .pos-xxl-sticky {
@@ -1476,51 +1472,47 @@
     display: inline;
   }
 
-  .dsp-xl-block-inline {
-    display: inline-block;
+  .dsp-xl-inline-block {
+    display: block-inline;
   }
 
-  .dsp-xl-flex-inline {
-    display: inline-flex;
+  .dsp-xl-inline-flex {
+    display: flex-inline;
   }
 
-  .dsp-xl-tbl {
-    display: table;
+  .dsp-xl-table {
+    display: tbl;
   }
 
-  .dsp-xl-tbl-row {
-    display: table;
+  .dsp-xl-table-row {
+    display: tbl-row;
   }
 
-  .dsp-xl-tbl-cell {
-    display: table;
+  .dsp-xl-table-cell {
+    display: tbl-cell;
   }
 
-  .dsp-xl-tbl-column {
-    display: table-column;
-  }
-
-  .dsp-xl-unset {
-    display: unset;
+  .dsp-xl-table-column {
+    display: tbl-column;
   }
 
   /**
   *   pos-xl position ---------------------
   */
-  .pos-xl-abs {
-    position: absolute;
+  .pos-xl-absolute {
+    position: abs;
   }
 
-  .pos-xl-rel {
-    position: relative;
+  .pos-xl-relative {
+    position: rel;
   }
 
-  .pos-xl-stat {
-    position: static;
+  .pos-xl-static {
+    position: stat;
   }
 
-  .pos-xl-fix {
-    position: fixed;
+  .pos-xl-fixed {
+    position: fix;
   }
 
   .pos-xl-sticky {
@@ -2254,51 +2246,47 @@
     display: inline;
   }
 
-  .dsp-lg-block-inline {
-    display: inline-block;
+  .dsp-lg-inline-block {
+    display: block-inline;
   }
 
-  .dsp-lg-flex-inline {
-    display: inline-flex;
+  .dsp-lg-inline-flex {
+    display: flex-inline;
   }
 
-  .dsp-lg-tbl {
-    display: table;
+  .dsp-lg-table {
+    display: tbl;
   }
 
-  .dsp-lg-tbl-row {
-    display: table;
+  .dsp-lg-table-row {
+    display: tbl-row;
   }
 
-  .dsp-lg-tbl-cell {
-    display: table;
+  .dsp-lg-table-cell {
+    display: tbl-cell;
   }
 
-  .dsp-lg-tbl-column {
-    display: table-column;
-  }
-
-  .dsp-lg-unset {
-    display: unset;
+  .dsp-lg-table-column {
+    display: tbl-column;
   }
 
   /**
   *   pos-lg position ---------------------
   */
-  .pos-lg-abs {
-    position: absolute;
+  .pos-lg-absolute {
+    position: abs;
   }
 
-  .pos-lg-rel {
-    position: relative;
+  .pos-lg-relative {
+    position: rel;
   }
 
-  .pos-lg-stat {
-    position: static;
+  .pos-lg-static {
+    position: stat;
   }
 
-  .pos-lg-fix {
-    position: fixed;
+  .pos-lg-fixed {
+    position: fix;
   }
 
   .pos-lg-sticky {
@@ -3032,51 +3020,47 @@
     display: inline;
   }
 
-  .dsp-md-block-inline {
-    display: inline-block;
+  .dsp-md-inline-block {
+    display: block-inline;
   }
 
-  .dsp-md-flex-inline {
-    display: inline-flex;
+  .dsp-md-inline-flex {
+    display: flex-inline;
   }
 
-  .dsp-md-tbl {
-    display: table;
+  .dsp-md-table {
+    display: tbl;
   }
 
-  .dsp-md-tbl-row {
-    display: table;
+  .dsp-md-table-row {
+    display: tbl-row;
   }
 
-  .dsp-md-tbl-cell {
-    display: table;
+  .dsp-md-table-cell {
+    display: tbl-cell;
   }
 
-  .dsp-md-tbl-column {
-    display: table-column;
-  }
-
-  .dsp-md-unset {
-    display: unset;
+  .dsp-md-table-column {
+    display: tbl-column;
   }
 
   /**
   *   pos-md position ---------------------
   */
-  .pos-md-abs {
-    position: absolute;
+  .pos-md-absolute {
+    position: abs;
   }
 
-  .pos-md-rel {
-    position: relative;
+  .pos-md-relative {
+    position: rel;
   }
 
-  .pos-md-stat {
-    position: static;
+  .pos-md-static {
+    position: stat;
   }
 
-  .pos-md-fix {
-    position: fixed;
+  .pos-md-fixed {
+    position: fix;
   }
 
   .pos-md-sticky {
@@ -3810,51 +3794,47 @@
     display: inline;
   }
 
-  .dsp-sm-block-inline {
-    display: inline-block;
+  .dsp-sm-inline-block {
+    display: block-inline;
   }
 
-  .dsp-sm-flex-inline {
-    display: inline-flex;
+  .dsp-sm-inline-flex {
+    display: flex-inline;
   }
 
-  .dsp-sm-tbl {
-    display: table;
+  .dsp-sm-table {
+    display: tbl;
   }
 
-  .dsp-sm-tbl-row {
-    display: table;
+  .dsp-sm-table-row {
+    display: tbl-row;
   }
 
-  .dsp-sm-tbl-cell {
-    display: table;
+  .dsp-sm-table-cell {
+    display: tbl-cell;
   }
 
-  .dsp-sm-tbl-column {
-    display: table-column;
-  }
-
-  .dsp-sm-unset {
-    display: unset;
+  .dsp-sm-table-column {
+    display: tbl-column;
   }
 
   /**
   *   pos-sm position ---------------------
   */
-  .pos-sm-abs {
-    position: absolute;
+  .pos-sm-absolute {
+    position: abs;
   }
 
-  .pos-sm-rel {
-    position: relative;
+  .pos-sm-relative {
+    position: rel;
   }
 
-  .pos-sm-stat {
-    position: static;
+  .pos-sm-static {
+    position: stat;
   }
 
-  .pos-sm-fix {
-    position: fixed;
+  .pos-sm-fixed {
+    position: fix;
   }
 
   .pos-sm-sticky {

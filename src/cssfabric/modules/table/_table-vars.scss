@@ -8,12 +8,11 @@ $table-config: (
     classNameShort: tbl, 
     table_class_name: table,
     table_class_name_short: tbl,  
-    table_bg_color_head: #f4f4f4,
-    table_bg_color_strip_main: #ededed,
-    table_bg_color_strip_second: #f5f5f5,
-    table_border_color_header: #ccc,
-    table_border_color_main: #ededed,
-    table_border_color_second: #f5f5f5
+    table-bg-color-head: #f4f4f4,
+    table-bg-color-strip-main: #ededed,
+    table-bg-color-strip-second: #f5f5f5,
+    table-border-color-header: #ccc,
+    table-border-color-main: #ededed,
+    table-border-color-second: #f5f5f5
 );
-$table-docs: ( 
-);
+$table-docs: ();

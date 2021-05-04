@@ -8,7 +8,7 @@ $cssfabric-config: cssfabric-vars.$cssfabric-config;
 
 $sep: map-get($cssfabric-config, sep);
 // read variables
-$grid-code: map-get($grid-config, grid_class_name);
+$grid-code: map-get($grid-config, moduleNameShort);
 $grid-h: map-get($grid-config, horCode);
 $grid-v: map-get($grid-config, vertCode); 
 

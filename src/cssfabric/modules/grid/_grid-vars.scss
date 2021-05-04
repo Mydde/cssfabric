@@ -4,8 +4,8 @@ $grid-metadata: (
     description: "cssfabric grid module"
 );
 $grid-config: (
-    grid_class_name: grid,
-    grid_class_name_short: grid, 
+    moduleName: grid,
+    moduleNameShort: grid,
     horCode: h,
     vertCode: v,
     gridFullWidth: main,

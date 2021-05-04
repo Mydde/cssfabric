@@ -51,6 +51,21 @@
   --cssfabric-animation-in_out_props-back: is-map;
   /** 
   * cssfabric generated file
+  * css vars for box 
+  */
+  --cssfabric-box-unit-config: rem;
+  --cssfabric-box-border-unit-config: px;
+  --cssfabric-box-position-shorthand-config: pos;
+  --cssfabric-box-display-shorthand-config: dsp;
+  --cssfabric-box-shadow-shorthand-config: shad;
+  --cssfabric-box-border-shorthand-config: border;
+  --cssfabric-box-padding-shorthand-config: pad;
+  --cssfabric-box-margin-shorthand-config: marg;
+  --cssfabric-box-cssProps-borderShorthands: is-map;
+  --cssfabric-box-cssProps-positionProps: is-map;
+  --cssfabric-box-cssProps-displayProps: is-map;
+  /** 
+  * cssfabric generated file
   * css vars for base 
   */
   --cssfabric-base-sizes-tiny: 32;
@@ -58,46 +73,6 @@
   --cssfabric-base-sizes-medium: 256;
   --cssfabric-base-sizes-large: 250;
   --cssfabric-base-sizes-full: 100%;
-  /** 
-  * cssfabric generated file
-  * css vars for box 
-  */
-  --cssfabric-box-box_unit: rem;
-  --cssfabric-box-box_border_unit: px;
-  --cssfabric-box-box_shadow_shorthand: shad;
-  --cssfabric-box-box_position_shorthand: pos;
-  --cssfabric-box-box_display_shorthand: dsp;
-  --cssfabric-box-box_border_shorthand: border;
-  --cssfabric-box-box_padding_shorthand: pad;
-  --cssfabric-box-box_margin_shorthand: marg;
-  --cssfabric-box-box_shorthands-position: pos;
-  --cssfabric-box-box_shorthands-display: dsp;
-  --cssfabric-box-box_css_props_shorthands-border: border;
-  --cssfabric-box-box_css_props_shorthands-pad: padding;
-  --cssfabric-box-box_css_props_shorthands-marg: margin;
-  --cssfabric-box-box_border_shorthands-t: top;
-  --cssfabric-box-box_border_shorthands-b: bottom;
-  --cssfabric-box-box_border_shorthands-l: left;
-  --cssfabric-box-box_border_shorthands-r: right;
-  --cssfabric-box-box_border_shorthands-all: is-map;
-  --cssfabric-box-box_border_shorthands-u: is-map;
-  --cssfabric-box-box_border_shorthands-ii: is-map;
-  --cssfabric-box-box_border_shorthands-tb: is-map;
-  --cssfabric-box-box_position_props-abs: absolute;
-  --cssfabric-box-box_position_props-rel: relative;
-  --cssfabric-box-box_position_props-stat: static;
-  --cssfabric-box-box_position_props-fix: fixed;
-  --cssfabric-box-box_position_props-sticky: sticky;
-  --cssfabric-box-box_display_props-block: block;
-  --cssfabric-box-box_display_props-none: none;
-  --cssfabric-box-box_display_props-inline: inline;
-  --cssfabric-box-box_display_props-block-inline: inline-block;
-  --cssfabric-box-box_display_props-flex-inline: inline-flex;
-  --cssfabric-box-box_display_props-tbl: table;
-  --cssfabric-box-box_display_props-tbl-row: table;
-  --cssfabric-box-box_display_props-tbl-cell: table;
-  --cssfabric-box-box_display_props-tbl-column: table-column;
-  --cssfabric-box-box_display_props-unset: unset;
   /** 
   * cssfabric generated file
   * css vars for color 
@@ -136,8 +111,8 @@
   * cssfabric generated file
   * css vars for grid 
   */
-  --cssfabric-grid-grid_class_name: grid;
-  --cssfabric-grid-grid_class_name_short: grid;
+  --cssfabric-grid-moduleName: grid;
+  --cssfabric-grid-moduleNameShort: grid;
   --cssfabric-grid-horCode: h;
   --cssfabric-grid-vertCode: v;
   --cssfabric-grid-gridFullWidth: main;
@@ -146,6 +121,26 @@
   --cssfabric-grid-cssProps-justifyContent: is-map;
   --cssfabric-grid-cssProps-alignItems: is-map;
   --cssfabric-grid-cssProps-alignContent: is-map;
+  /** 
+  * cssfabric generated file
+  * css vars for overflow 
+  */
+  --cssfabric-overflow-overflow_props:  overflow overflow-x overflow-y;
+  --cssfabric-overflow-overflow_values:  visible hidden clip scroll auto initial unset;
+  --cssfabric-overflow-cssProps-overflow: overflow;
+  --cssfabric-overflow-cssProps-overflowX: overflow-x;
+  --cssfabric-overflow-cssProps-overflowY: overflow-y;
+  /** 
+  * cssfabric generated file
+  * css vars for scale 
+  */
+  --cssfabric-scale-unit-tag-config-width: w;
+  --cssfabric-scale-unit-tag-config-height: h;
+  --cssfabric-scale-grid-ratios-config:  8, 24;
+  --cssfabric-scale-defined-step-unit: rem;
+  --cssfabric-scale-defined-steps:  1, 2, 4, 8, 16, 24, 32, 48, 64;
+  --cssfabric-scale-cssProps-size: is-map;
+  --cssfabric-scale-cssProps-content: is-map;
   /** 
   * cssfabric generated file
   * css vars for menu 
@@ -163,35 +158,45 @@
   --cssfabric-menu-menu_dropdown_close: close;
   /** 
   * cssfabric generated file
-  * css vars for overflow 
-  */
-  --cssfabric-overflow-overflow_props:  overflow overflow-x overflow-y;
-  --cssfabric-overflow-overflow_values:  visible hidden clip scroll auto initial unset;
-  --cssfabric-overflow-cssProps-overflow: overflow;
-  --cssfabric-overflow-cssProps-overflowX: overflow-x;
-  --cssfabric-overflow-cssProps-overflowY: overflow-y;
-  /** 
-  * cssfabric generated file
-  * css vars for scale 
-  */
-  --cssfabric-scale-scale_props-width: w;
-  --cssfabric-scale-scale_props-height: h;
-  --cssfabric-scale-scale_css_values:  max-content, min-content;
-  --cssfabric-scale-scale_shorthands-full: 100%;
-  --cssfabric-scale-scale_shorthands-mid: 50%;
-  --cssfabric-scale-scale_shorthands-quarter: 25%;
-  --cssfabric-scale-scale_shorthands-tiers: 33%;
-  --cssfabric-scale-scale_defined_steps:  1, 2, 4, 8, 16, 24, 32, 48, 64;
-  --cssfabric-scale-scale_defined_step_unit: rem;
-  --cssfabric-scale-scale_grid_ratios:  8, 24;
-  /** 
-  * cssfabric generated file
   * css vars for table 
   */
   --cssfabric-table-className: table;
   --cssfabric-table-classNameShort: tbl;
   --cssfabric-table-table_class_name: table;
   --cssfabric-table-table_class_name_short: tbl;
+  /** 
+  * cssfabric generated file
+  * css vars for theme 
+  */
+  --cssfabric-theme-moduleName: theme;
+  --cssfabric-theme-moduleNameShort: theme;
+  --cssfabric-theme-color-default-config-primary: green;
+  --cssfabric-theme-color-default-config-foreground: #333;
+  --cssfabric-theme-color-default-config-background: #ededed;
+  --cssfabric-theme-declinations-config:  primary, secondary, tertiary;
+  --cssfabric-theme-theme-level-config:  light lighter dark darker complement invert;
+  --cssfabric-theme-theme-properties-apply-config:  text, bg, border;
+  --cssfabric-theme-color-primary: green;
+  --cssfabric-theme-color-primary-light: #00cd00;
+  --cssfabric-theme-color-primary-lighter: #1aff1a;
+  --cssfabric-theme-color-primary-dark: #003400;
+  --cssfabric-theme-color-primary-darker: black;
+  --cssfabric-theme-color-primary-complement: purple;
+  --cssfabric-theme-color-primary-invert: #ff7fff;
+  --cssfabric-theme-color-secondary: purple;
+  --cssfabric-theme-color-secondary-light: #cd00cd;
+  --cssfabric-theme-color-secondary-lighter: #ff1aff;
+  --cssfabric-theme-color-secondary-dark: #340034;
+  --cssfabric-theme-color-secondary-darker: black;
+  --cssfabric-theme-color-secondary-complement: green;
+  --cssfabric-theme-color-secondary-invert: #7fff7f;
+  --cssfabric-theme-color-tertiary: green;
+  --cssfabric-theme-color-tertiary-light: #00cd00;
+  --cssfabric-theme-color-tertiary-lighter: #1aff1a;
+  --cssfabric-theme-color-tertiary-dark: #003400;
+  --cssfabric-theme-color-tertiary-darker: black;
+  --cssfabric-theme-color-tertiary-complement: purple;
+  --cssfabric-theme-color-tertiary-invert: #ff7fff;
   /** 
   * cssfabric generated file
   * css vars for text 
@@ -226,39 +231,6 @@
   --cssfabric-text-gray-700: #5c5c5c;
   --cssfabric-text-gray-800: #484848;
   --cssfabric-text-gray-900: #333333;
-  /** 
-  * cssfabric generated file
-  * css vars for theme 
-  */
-  --cssfabric-theme-moduleName: theme;
-  --cssfabric-theme-moduleNameShort: theme;
-  --cssfabric-theme-color-default-config-primary: green;
-  --cssfabric-theme-color-default-config-foreground: #333;
-  --cssfabric-theme-color-default-config-background: #ededed;
-  --cssfabric-theme-declinations-config:  primary, secondary, tertiary;
-  --cssfabric-theme-theme-level-config:  light lighter dark darker complement invert;
-  --cssfabric-theme-theme-properties-apply-config:  text, bg, border;
-  --cssfabric-theme-color-primary: green;
-  --cssfabric-theme-color-primary-light: #00cd00;
-  --cssfabric-theme-color-primary-lighter: #1aff1a;
-  --cssfabric-theme-color-primary-dark: #003400;
-  --cssfabric-theme-color-primary-darker: black;
-  --cssfabric-theme-color-primary-complement: purple;
-  --cssfabric-theme-color-primary-invert: #ff7fff;
-  --cssfabric-theme-color-secondary: purple;
-  --cssfabric-theme-color-secondary-light: #cd00cd;
-  --cssfabric-theme-color-secondary-lighter: #ff1aff;
-  --cssfabric-theme-color-secondary-dark: #340034;
-  --cssfabric-theme-color-secondary-darker: black;
-  --cssfabric-theme-color-secondary-complement: green;
-  --cssfabric-theme-color-secondary-invert: #7fff7f;
-  --cssfabric-theme-color-tertiary: green;
-  --cssfabric-theme-color-tertiary-light: #00cd00;
-  --cssfabric-theme-color-tertiary-lighter: #1aff1a;
-  --cssfabric-theme-color-tertiary-dark: #003400;
-  --cssfabric-theme-color-tertiary-darker: black;
-  --cssfabric-theme-color-tertiary-complement: purple;
-  --cssfabric-theme-color-tertiary-invert: #ff7fff;
   /** 
   * cssfabric generated file
   * css vars for zindex 

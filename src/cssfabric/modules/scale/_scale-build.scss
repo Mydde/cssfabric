@@ -1,39 +1,36 @@
-
 @use 'scale-vars';
-$scale-config: scale-vars.$scale-config; 
-// load scss config file
-@use '../../_utils'; 
+@use '../../_utils';
 @use '../../_loader';
 
-// load general config variables
-$_cfg: loader.get_fabric_conf(); 
+$scale-config: scale-vars.$scale-config;
+$_cfg: loader.get_fabric_conf();
+$cssProps: map-get($scale-config, cssProps);
 
 // read variables
 $_has_dimensions_strict: map-get($_cfg, has_dimensions_strict);
 $_has_dimensions_min: map-get($_cfg, has_dimensions_min);
 $_has_dimensions_max: map-get($_cfg, has_dimensions_max);
 
-// dimensions declaration
-$scale_size: map-get($scale-config, scale_size);
-$scale_props: map-get($scale-config, scale_props);
-$scale_css_values: map-get($scale-config, scale_css_values);
-$scale_shorthands: map-get($scale-config, scale_shorthands);
-$scale_defined_steps: map-get($scale-config, scale_defined_steps);
-$scale_defined_step_unit: map-get($scale-config, scale_defined_step_unit);
-$scale_defined_step_size: map-get($scale-config, scale_defined_step_size);
-$scale_grid_ratios: map-get($scale-config, scale_grid_ratios);
+$scale-defined-steps: map-get($scale-config, defined-steps);
+$scale-defined-step-unit: map-get($scale-config, defined-step-unit);
+$scale-defined-step-size: map-get($scale-config, defined-step-size);
+$scale-grid-ratios-config: map-get($scale-config, grid-ratios-config);
+
+$scale-sizes: map-get($cssProps, size);
+$scale-content: map-get($cssProps, content);
+
+$weight-config: map-get($scale-config, weight-config)!default;
+$unit-tag-config: map-get($scale-config, unit-tag-config)!default;
 
 /// css dimensions rules builder
 @mixin css_dimension_property_builder($scale_prop, $size_code, $size_value, $media_query_code) {
-  //
-  $scale_prop_short: map-get($scale_props, $scale_prop);
 
-  //$property_name: if($media_query_code,#{$scale_prop_short}-#{$media_query_code}-#{$size_code},#{$scale_prop_short}-#{$size_code});
-  /*  dimension : "-#{$size_code}" shorthand is #{$size_value} #{$scale_prop}*/
+  $scale_prop_short: map-get($unit-tag-config, $scale_prop);
+
   $tag: if(
-    $media_query_code,
-    #{$scale_prop_short}-#{$media_query_code}-#{$size_code},
-    #{$scale_prop_short}-#{$size_code}
+                  $media_query_code,
+                  #{$scale_prop_short}-#{$media_query_code}-#{$size_code},
+                  #{$scale_prop_short}-#{$size_code}
   );
   .#{$tag} {
     #{$scale_prop}: $size_value;
@@ -60,12 +57,12 @@ $scale_grid_ratios: map-get($scale-config, scale_grid_ratios);
 
 // loop on shorthands
 @mixin play_shorthand_loop($scale_prop, $mq_size_key) {
-  @each $scale_shorthand, $scale_shorthand_value in $scale_shorthands {
+  @each $scale_shorthand, $scale_shorthand_value in $scale-sizes {
     @include css_dimension_property_builder(
-      $scale_prop,
-      $scale_shorthand,
-      map-get($scale_shorthands, $scale_shorthand),
-      $mq_size_key
+                    $scale_prop,
+                    $scale_shorthand,
+                    map-get($scale-sizes, $scale_shorthand),
+                    $mq_size_key
     );
   }
 }
@@ -73,8 +70,8 @@ $scale_grid_ratios: map-get($scale-config, scale_grid_ratios);
 // loop on dimensions
 @mixin play_dimensions_loop($scale_prop, $mq_size_key) {
   // loop on dimensions
-  @each $scale_css_value in $scale_css_values {
-    @include css_dimension_property_builder($scale_prop, $scale_css_value, $scale_css_value, $mq_size_key);
+  @each $scale_css_key , $scale_css_value in $scale-content {
+    @include css_dimension_property_builder($scale_prop, $scale_css_key, $scale_css_value, $mq_size_key);
   }
 }
 
@@ -85,17 +82,17 @@ $scale_grid_ratios: map-get($scale-config, scale_grid_ratios);
   // loop on defined dimensions
   // @each $scale_defined_size in $scale_defined_steps {
   $loop_turn: 1;
-  $multiplier: $scale_defined_step_size;
+  $multiplier: $scale-defined-step-size;
 
-  @each $scale_defined_step in $scale_defined_steps { 
+  @each $scale_defined_step in $scale-defined-steps {
 
     $loop_turn: $loop_turn * $multiplier;
 
     @include css_dimension_property_builder(
-      $scale_prop,  
-      $scale_defined_step,
-      $scale_defined_step + #{$scale_defined_step_unit},
-      $mq_size_key
+                    $scale_prop,
+                    $scale_defined_step,
+                    $scale_defined_step + #{$scale-defined-step-unit},
+                    $mq_size_key
     );
   }
 }
@@ -103,20 +100,20 @@ $scale_grid_ratios: map-get($scale-config, scale_grid_ratios);
 // loop on ratio dimensions
 @mixin play_ratio_dimensions_loop($scale_prop, $mq_size_key) {
   // loop on ratio dimensions
-  @each $dimensions_grid_ratio in $scale_grid_ratios {
+  @each $dimensions_grid_ratio in $scale-grid-ratios-config {
     @for $z_value from 1 through $dimensions_grid_ratio {
       @include css_dimension_property_builder(
-        $scale_prop,
-        $z_value + "-" + $dimensions_grid_ratio,
-        (($z_value / $dimensions_grid_ratio) * 100) +#{"%"},
-        $mq_size_key
+                      $scale_prop,
+                      $z_value + "-" + $dimensions_grid_ratio,
+                      (($z_value / $dimensions_grid_ratio) * 100) +#{"%"},
+                      $mq_size_key
       );
     }
   }
 }
 
 @mixin buildScale($mq_size_key) {
-  @each $scale_prop, $scale_prop_short in $scale_props {
+  @each $scale_prop, $scale_prop_short in $unit-tag-config {
     // loop on shorthands
     @include play_shorthand_loop($scale_prop, $mq_size_key);
 

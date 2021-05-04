@@ -1,7 +1,6 @@
 @use 'text-vars';
 @use "../cssfabric-vars";
 @use '../../_utils';
-@use '../../_loader';
 
 // load general config variables
 $cssfabric-config: cssfabric-vars.$cssfabric-config;
