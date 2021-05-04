@@ -37,10 +37,10 @@ $gray-schemes: utils.getGraySteps($color-gray-steps,$color-gray-start,$color-gra
 }
 
 @mixin colorFactory($tag_short, $color_prop) {
-
     $switch-tag_short: utils.getColorPropertyType($tag_short);
 
-    @each $colorTint in light lighter dark darker complement invert {
+    @each $colorTint in (light lighter dark darker complement invert) {
+
         $newColor: utils.applyColorEffect($colorTint, $color_prop);
 
         &-#{$colorTint} {

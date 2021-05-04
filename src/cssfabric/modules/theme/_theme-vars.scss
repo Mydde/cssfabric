@@ -1,14 +1,18 @@
+@use '../../utils' as utils;
+
 $theme-metadata: (
-    "title": "theme",
-    "description": ""
+        "title": "theme",
+        "description": ""
 );
 $theme-config: (
-    moduleName: theme,
-    moduleNameShort: theme,
-    color: (
-        primary: orange,
-        foreground: #333,
-        background: #ededed
-    )
+        moduleName: theme,
+        moduleNameShort: theme,
+        color-default-config: (
+                primary: orange,
+                foreground: #333,
+                background: #ededed
+        ),
+        declinations-config:(primary, secondary, tertiary),
+        test: what//utils.aie(primary,blue)
 );
 $theme-docs: ();

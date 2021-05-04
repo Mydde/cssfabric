@@ -56,7 +56,7 @@
   @return $gray-schemes;
 }
 
-@function applyColorEffect($named, $color) {
+@function applyColorEffect($theme-level, $color) {
   $switch-named: map-get(
                   (
                           light: lighten($color, 30%),
@@ -66,13 +66,13 @@
                           complement: complement($color),
                           invert: invert($color)
                   ),
-                  $named
+                  $theme-level
   );
 
   @return $switch-named;
 }
 
-@function themeColors($theme-color:primary,$theme-color-primary) {
+@function themeDeclinationColors($theme-color:primary,$theme-color-primary) {
 
   $switch-theme-color: map-get(
                   (
@@ -87,12 +87,21 @@
 }
 
 @function getColorPropertyType($fabric-tag) {
+  /** get property for #{$fabric-tag} */
   @return map-get(
                   (
                           color: color,
+                          text: color,
                           bg: background-color,
-                          bg-themed: background-color
+                          bg-themed: background-color,
+                          border: border-color
                   ),
-                  fabric-tag
+                  $fabric-tag
   );
+}
+
+@function aie($color-grade,$color_primary){
+  $switch-color-grad: themeDeclinationColors($color-grade, $color_primary);
+
+  @return $switch-color-grad;
 }

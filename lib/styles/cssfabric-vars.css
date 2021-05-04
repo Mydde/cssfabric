@@ -261,9 +261,11 @@
   */
   --cssfabric-theme-moduleName: theme;
   --cssfabric-theme-moduleNameShort: theme;
-  --cssfabric-theme-color-primary: orange;
-  --cssfabric-theme-color-foreground: #333;
-  --cssfabric-theme-color-background: #ededed;
+  --cssfabric-theme-color-default-config-primary: orange;
+  --cssfabric-theme-color-default-config-foreground: #333;
+  --cssfabric-theme-color-default-config-background: #ededed;
+  --cssfabric-theme-declinations-config:  primary, secondary, tertiary;
+  --cssfabric-theme-test: what;
   /** 
   * cssfabric
   * generated file

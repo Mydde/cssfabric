@@ -6,41 +6,40 @@ $theme-config: theme-vars.$theme-config;
 
 // COLOR THEME
 $moduleNameShort: map-get($theme-config, moduleNameShort);
-$color_themes: map-get($theme-config, color);
-$color_primary: map-get($color_themes, primary);
+//
+$color-themes: map-get($theme-config, color-default-config);
+$color-primary: map-get($color-themes, primary);
+
+
+$declinations-config: map-get($theme-config, declinations-config);
 
 @mixin fabric_theme($mq_size_key: null) {
-    //
-    @each $color-grade in (primary, secondary, tertiary) {
+  //
+  @each $color-grade in $declinations-config {
 
-        $switch-color-grad: utils.themeColors($color-grade,$color_primary);
- 
+    $switch-color-grad: utils.themeDeclinationColors($color-grade, $color-primary);
 
-        @each $sup in (text, bg, border) {
-            $property_key: if($mq_size_key, #{$sup}-#{$mq_size_key}, #{$sup});
 
-            $switch-tag: map-get(
-                (
-                    text: color,
-                    bg: background-color,
-                    border: border-color
-                ),
-                $sup
-            ); 
+    @each $text-or-bg-or-border in (text, bg, border) {
 
-            .#{$moduleNameShort}-#{$property_key}-#{$color-grade} {
-                #{$switch-tag}: #{$switch-color-grad};
+      $property_key: if($mq_size_key, #{$text-or-bg-or-border}-#{$mq_size_key}, #{$text-or-bg-or-border});
 
-                @each $colorTint in light lighter dark darker complement invert {
-                    $newColor: utils.applyColorEffect($colorTint, $switch-color-grad);
+      $switch-tag-type: utils.getColorPropertyType($text-or-bg-or-border);
 
-                    @include utils.fabricAttributes("&-", $colorTint, #{$switch-tag}, $newColor);
-                }
-            }
+      .#{$moduleNameShort}-#{$property_key}-#{$color-grade} {
+        #{$switch-tag-type}: #{$switch-color-grad};
+
+        @each $theme-level in (light lighter dark darker complement invert) {
+
+          $newColor:  utils.applyColorEffect($theme-level, $switch-color-grad);
+
+          @include utils.fabricAttributes("&-", $theme-level, #{$switch-tag-type}, $newColor);
         }
+      }
     }
+  }
 }
 
 @mixin buildTheme($mq_size_key: null) {
-    @include fabric_theme($mq_size_key);
+  @include fabric_theme($mq_size_key);
 }
