@@ -15,7 +15,7 @@ $color_primary: map-get($color_themes, primary);
         $switch-color-grad: map-get(
             (
                 primary: $color_primary,
-                secondary: complement($color_primary),
+                secondary: complement($color_primary), 
                 tertiary: complement(complement($color_primary))
             ),
             $color-grade

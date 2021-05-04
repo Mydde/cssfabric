@@ -4,12 +4,12 @@ $color-metadata: (
 	description: description
 );
 $color-config: (
-    color_theme: (
+    theme: (
         primary: orange,
         foreground: #333,
         background: #ededed
     ),
-	color_schemes_props: (
+	scheme: (
 		info: yellow,
 		alert: orange,
 		error: red,
@@ -17,7 +17,7 @@ $color-config: (
 		discrete: gray,
 		success: hsl(141, 71%, 48%)
 	),
-	color_palette_props: (
+	palette: (
 		yellow: #ffb900,
 		orange: #d83b01,
 		red: #d13438,
@@ -27,14 +27,12 @@ $color-config: (
 		teal: #008272,
 		blue: #0078d4
 	),
-	color_grays: (
-		gray_start: #f4f4f4,
-		gray_end: #333333,
-		gray_steps: 9
+	gray: (
+		start: #f4f4f4,
+		end: #333333,
+		steps: 9
 	)
 );
 $color-docs: (
-	color_schemes_props: "",
-	color_palette_props: "",
-	color_grays: ""
+ 
 );

@@ -6,19 +6,19 @@
 $color-config: color-vars.$color-config;
 
 // COLOR SCHEMES
-$color_schemes: map-get($color-config, color_schemes_props);
+$color_schemes: map-get($color-config, scheme);
 
 // COLOR PALETTE
-$color_palette_props: map-get($color-config, color_palette_props);
+$color-palette: map-get($color-config, palette);
 
 // COLOR THEME
-$color_theme: map-get($color-config, color_theme);
+$color-theme: map-get($color-config, theme);
 
 // GRAYS
-$color_grays: map-get($color-config, color_grays);
-$gray_start: map-get($color_grays, gray_start);
-$gray_end: map-get($color_grays, gray_end);
-$gray_steps: map-get($color_grays, gray_steps);
+$color-gray: map-get($color-config, gray);
+$color-gray-start: map-get($color-gray, start);
+$color-gray-end: map-get($color-gray, end);
+$color-gray-steps: map-get($color-gray, steps); 
 
 @mixin text-contrast($n) {
     $color-brightness: round((red($n) * 299) + (green($n) * 587) + (blue($n) * 114) / 1000);
@@ -31,21 +31,21 @@ $gray_steps: map-get($color_grays, gray_steps);
     }
 }
 
-$gray_schemes: ();
+$gray_schemes: ();  
 
-@for $i from 1 through $gray_steps {
-    $color: mix($gray_end, $gray_start, $i / $gray_steps * 100%);
+@for $i from 1 through $color-gray-steps {
+    $color: mix($color-gray-end, $color-gray-start, $i / $color-gray-steps * 100%);
     $gray_schemes: map.set($gray_schemes, #{$i * 100}, $color);
 }
 
-@mixin color_factory($tag_short, $color_prop) {
+@mixin color_factory($tag_short, $color_prop) { 
     $switch-tag_short: map-get(
         (
             color: color,
             bg: background-color,
             bg-theme: background-color
         ),
-        $tag_short
+        $tag_short 
     );
 
     &-light {
@@ -123,7 +123,7 @@ $gray_schemes: ();
 
 @mixin buildColor($mq_size_key) {
     @each $key in color bg bg-theme {
-        @include fabric_colors($color_palette_props, $key, $mq_size_key, true);
+        @include fabric_colors($color-palette, $key, $mq_size_key, true);
         @include fabric_colors($color_schemes, $key,  $mq_size_key, null );
         @include fabric_colors($gray_schemes, $key, $mq_size_key, null); 
     }
