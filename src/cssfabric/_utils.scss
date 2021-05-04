@@ -1,15 +1,15 @@
 @use "sass:string";
-@use "sass:map"; 
+@use "sass:map";
 
 // css dimensions rules builder responsive
-@mixin responsive_encloser($mq_size_value, $mq_min_size_value: null) {
+@mixin fabricResponsiveEncloser($mq_size_value, $mq_min_size_value: null) {
   // and (min-width: $mq_min_size_value + rem)
   @media only screen and (max-width: $mq_size_value + rem) {
     @content;
   }
 }
 
-@mixin fabric-attribute($sep,$frag, $property, $value) {
+@mixin fabricAttributes($sep, $frag, $property, $value) {
   #{$sep}#{$frag} {
     #{$property}: #{$value};
   }
@@ -26,7 +26,7 @@
     @if (type_of($rt) == "string") {
       $key: #{$module}-#{$red};
       --cssfabric-#{$key}: #{$rt};
-    } 
+    }
     @if (type_of($rt) == "map") {
       @each $rtkey, $rtval in $rt {
         $type: type_of($rtval);
@@ -39,21 +39,49 @@
       }
     }
     @if (type_of($rt) == "list") {
-      $key: #{$module}-#{$red}; 
+      $key: #{$module}-#{$red};
       --cssfabric-#{$key}: #{string.slice(#{#ss($rt)}, 4)};
     }
   }
 }
 
-@function getGraySteps($steps,$gray-start,$gray-end){
+@function getGraySteps($steps, $gray-start, $gray-end) {
   $gray-schemes: ();
 
   @for $i from 1 through $steps {
-      $color: mix($gray-end, $gray-start, $i / $steps * 100%);
-      $gray-schemes: map.set($gray-schemes, #{$i * 100}, $color);
+    $color: mix($gray-end, $gray-start, $i / $steps * 100%);
+    $gray-schemes: map.set($gray-schemes, #{$i * 100}, $color);
   }
 
   @return $gray-schemes;
 }
 
+@function applyColorEffect($named, $color) {
+  $switch-named: map-get(
+    (
+      light: lighten($color, 30%),
+      lighter: lighten($color, 30%),
+      dark: lighten($color, 30%),
+      darker: lighten($color, 30%),
+      complement: complement($color),
+      invert: invert($color)
+    ),
+    $named
+  );
 
+  @return $switch-named;
+}
+
+@function themeColors($theme-color:primary,$theme-color-primary) {
+
+  $switch-theme-color: map-get(
+    (
+      primary: $theme-color-primary,
+      secondary: complement($theme-color-primary),
+      tertiary: complement(complement($theme-color-primary))
+    ),
+    $theme-color
+  );
+
+  @return $switch-theme-color;
+}

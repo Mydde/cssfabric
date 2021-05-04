@@ -34,21 +34,7 @@ $color-gray-steps: map-get($gray-config, steps) !default;
  
 $gray_schemes: utils.getGraySteps($color-gray-steps,$color-gray-start,$color-gray-end);
 
-@function applyColorEffect($named, $color) {
-    $switch-named: map-get(
-        (
-            light: lighten($color, 30%),
-            lighter: lighten($color, 30%),
-            dark: lighten($color, 30%),
-            darker: lighten($color, 30%),
-            complement: complement($color),
-            invert: invert($color)
-        ),
-        $named
-    );
 
-    @return $switch-named;
-}
 
 @mixin colorFactory($tag_short, $color_prop) {
     $switch-tag_short: map-get(
@@ -61,7 +47,7 @@ $gray_schemes: utils.getGraySteps($color-gray-steps,$color-gray-start,$color-gra
     );
 
     @each $colorTint in light lighter dark darker complement invert {
-        $newColor: applyColorEffect($colorTint, $color_prop);
+        $newColor: utils.applyColorEffect($colorTint, $color_prop);
 
         &-#{$colorTint} {
             @if $tag_short== "bg-theme" {
@@ -105,7 +91,7 @@ $gray_schemes: utils.getGraySteps($color-gray-steps,$color-gray-start,$color-gra
 
                 @if $tag_short== "bg-theme" {
                     color: text-contrast($color_prop);
-                    text-shadow: 0 0 0.125rem applyColorEffect("dark", $color_prop);
+                    text-shadow: 0 0 0.125rem utils.applyColorEffect("dark", $color_prop);
                     background-color: $color_prop;
                     @if $has_color_factory {
                         @include colorFactory($tag_short, $color_prop);

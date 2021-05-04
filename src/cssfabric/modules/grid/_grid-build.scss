@@ -87,32 +87,32 @@ $grid-code-sep: #{$grid-code}#{$sep};
         // wrap rules
         &.#{$grid-code}{
             @each $fabricRule, $value in map-get($cssProps, flexWrap) { 
-                @include utils.fabric-attribute('&'+$sep,$fabricRule,'flex-wrap',$value); 
+                @include utils.fabricAttributes('&'+$sep,$fabricRule,'flex-wrap',$value); 
             }
         }
         // justify content rules */  
         &.just{
             @each $fabricRule, $value in map-get($cssProps, justifyContent) { 
-                @include utils.fabric-attribute('&'+$sep,$fabricRule,'justify-content',$value); 
+                @include utils.fabricAttributes('&'+$sep,$fabricRule,'justify-content',$value); 
             }
         } 
         // align-items rules */
         &.items {
             @each $fabricRule, $value in map-get($cssProps, alignItems) { 
-                @include utils.fabric-attribute('&'+$sep,$fabricRule,'align-items',$value); 
+                @include utils.fabricAttributes('&'+$sep,$fabricRule,'align-items',$value); 
             }
         }
         // align-content rules */
         &.content{
             @each $fabricRule, $value in map-get($cssProps, alignContent) {
                 $tag: content#{$sep}start;
-                @include utils.fabric-attribute('&'+$sep,$fabricRule,'align-content',$value); 
+                @include utils.fabricAttributes('&'+$sep,$fabricRule,'align-content',$value); 
             }
         }
         // align-self rules for children */
         & .self {  
             @each $fabricRule, $value in map-get($cssProps, alignSelf) {
-                @include utils.fabric-attribute('&-',$fabricRule,'align-self',$value);
+                @include utils.fabricAttributes('&-',$fabricRule,'align-self',$value);
             }
         }
     }  

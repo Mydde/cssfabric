@@ -5,6 +5,7 @@
 $theme-config: theme-vars.$theme-config;
 
 // COLOR THEME
+$moduleNameShort: map-get($theme-config, moduleNameShort);
 $color_themes: map-get($theme-config, color);
 $color_primary: map-get($color_themes, primary);
 
@@ -12,14 +13,8 @@ $color_primary: map-get($color_themes, primary);
     //
     @each $color-grade in (primary, secondary, tertiary) {
 
-        $switch-color-grad: map-get(
-            (
-                primary: $color_primary,
-                secondary: complement($color_primary), 
-                tertiary: complement(complement($color_primary))
-            ),
-            $color-grade
-        );
+        $switch-color-grad: utils.themeColors($color-grade,$color_primary);
+ 
 
         @each $sup in (text, bg, border) {
             $property_key: if($mq_size_key, #{$sup}-#{$mq_size_key}, #{$sup});
@@ -31,24 +26,15 @@ $color_primary: map-get($color_themes, primary);
                     border: border-color
                 ),
                 $sup
-            );
+            ); 
 
-            .theme-#{$property_key}-#{$color-grade} {
+            .#{$moduleNameShort}-#{$property_key}-#{$color-grade} {
                 #{$switch-tag}: #{$switch-color-grad};
-                &-light {
-                    #{$switch-tag}: lighten($switch-color-grad, 15%);
-                }
-                &-lighter {
-                    #{$switch-tag}: lighten($switch-color-grad, 30%);
-                }
-                &-dark {
-                    #{$switch-tag}: darken($switch-color-grad, 15%);
-                }
-                &-darker {
-                    #{$switch-tag}: darken($switch-color-grad, 30%);
-                }
-                &-hover :hover {
-                    #{$switch-tag}: #{$switch-color-grad}; 
+
+                @each $colorTint in light lighter dark darker complement invert {
+                    $newColor: utils.applyColorEffect($colorTint, $switch-color-grad);
+
+                    @include utils.fabricAttributes("&-", $colorTint, #{$switch-tag}, $newColor);
                 }
             }
         }
@@ -56,6 +42,5 @@ $color_primary: map-get($color_themes, primary);
 }
 
 @mixin buildTheme($mq_size_key: null) {
-    
     @include fabric_theme($mq_size_key);
 }

@@ -54,40 +54,6 @@
   /** 
   * cssfabric
   * generated file
-  * css vars for color 
-  */
-  --cssfabric-color-gray-config-start: #ededed;
-  --cssfabric-color-gray-config-end: #333333;
-  --cssfabric-color-gray-config-steps: 9;
-  --cssfabric-color-theme-primary: orange;
-  --cssfabric-color-theme-foreground: #333;
-  --cssfabric-color-theme-background: #ededed;
-  --cssfabric-color-scheme-info: yellow;
-  --cssfabric-color-scheme-alert: orange;
-  --cssfabric-color-scheme-error: red;
-  --cssfabric-color-scheme-warning: #ffdd57;
-  --cssfabric-color-scheme-discrete: gray;
-  --cssfabric-color-scheme-success: #23d160;
-  --cssfabric-color-palette-yellow: #ffb900;
-  --cssfabric-color-palette-orange: #d83b01;
-  --cssfabric-color-palette-red: #d13438;
-  --cssfabric-color-palette-magenta: #b4009e;
-  --cssfabric-color-palette-purple: #5c2d91;
-  --cssfabric-color-palette-green: #107c10;
-  --cssfabric-color-palette-teal: #008272;
-  --cssfabric-color-palette-blue: #0078d4;
-  --cssfabric-color-gray-100: #d8d8d8;
-  --cssfabric-color-gray-200: #c4c4c4;
-  --cssfabric-color-gray-300: #afafaf;
-  --cssfabric-color-gray-400: #9a9a9a;
-  --cssfabric-color-gray-500: #868686;
-  --cssfabric-color-gray-600: #717171;
-  --cssfabric-color-gray-700: #5c5c5c;
-  --cssfabric-color-gray-800: #484848;
-  --cssfabric-color-gray-900: #333333;
-  /** 
-  * cssfabric
-  * generated file
   * css vars for base 
   */
   --cssfabric-base-sizes-tiny: 32;
@@ -139,6 +105,40 @@
   /** 
   * cssfabric
   * generated file
+  * css vars for color 
+  */
+  --cssfabric-color-gray-config-start: #ededed;
+  --cssfabric-color-gray-config-end: #333333;
+  --cssfabric-color-gray-config-steps: 9;
+  --cssfabric-color-theme-primary: orange;
+  --cssfabric-color-theme-foreground: #333;
+  --cssfabric-color-theme-background: #ededed;
+  --cssfabric-color-scheme-info: yellow;
+  --cssfabric-color-scheme-alert: orange;
+  --cssfabric-color-scheme-error: red;
+  --cssfabric-color-scheme-warning: #ffdd57;
+  --cssfabric-color-scheme-discrete: gray;
+  --cssfabric-color-scheme-success: #23d160;
+  --cssfabric-color-palette-yellow: #ffb900;
+  --cssfabric-color-palette-orange: #d83b01;
+  --cssfabric-color-palette-red: #d13438;
+  --cssfabric-color-palette-magenta: #b4009e;
+  --cssfabric-color-palette-purple: #5c2d91;
+  --cssfabric-color-palette-green: #107c10;
+  --cssfabric-color-palette-teal: #008272;
+  --cssfabric-color-palette-blue: #0078d4;
+  --cssfabric-color-gray-100: #d8d8d8;
+  --cssfabric-color-gray-200: #c4c4c4;
+  --cssfabric-color-gray-300: #afafaf;
+  --cssfabric-color-gray-400: #9a9a9a;
+  --cssfabric-color-gray-500: #868686;
+  --cssfabric-color-gray-600: #717171;
+  --cssfabric-color-gray-700: #5c5c5c;
+  --cssfabric-color-gray-800: #484848;
+  --cssfabric-color-gray-900: #333333;
+  /** 
+  * cssfabric
+  * generated file
   * css vars for grid 
   */
   --cssfabric-grid-grid_class_name: grid;
@@ -151,30 +151,6 @@
   --cssfabric-grid-cssProps-justifyContent: is-map;
   --cssfabric-grid-cssProps-alignItems: is-map;
   --cssfabric-grid-cssProps-alignContent: is-map;
-  /** 
-  * cssfabric
-  * generated file
-  * css vars for scale 
-  */
-  --cssfabric-scale-scale_props-width: w;
-  --cssfabric-scale-scale_props-height: h;
-  --cssfabric-scale-scale_css_values:  max-content, min-content;
-  --cssfabric-scale-scale_shorthands-full: 100%;
-  --cssfabric-scale-scale_shorthands-mid: 50%;
-  --cssfabric-scale-scale_shorthands-quarter: 25%;
-  --cssfabric-scale-scale_shorthands-tiers: 33%;
-  --cssfabric-scale-scale_defined_steps:  1, 2, 4, 8, 16, 24, 32, 48, 64;
-  --cssfabric-scale-scale_defined_step_unit: rem;
-  --cssfabric-scale-scale_grid_ratios:  8, 24;
-  /** 
-  * cssfabric
-  * generated file
-  * css vars for table 
-  */
-  --cssfabric-table-className: table;
-  --cssfabric-table-classNameShort: tbl;
-  --cssfabric-table-table_class_name: table;
-  --cssfabric-table-table_class_name_short: tbl;
   /** 
   * cssfabric
   * generated file
@@ -201,13 +177,27 @@
   /** 
   * cssfabric
   * generated file
-  * css vars for theme 
+  * css vars for scale 
   */
-  --cssfabric-theme-moduleName: theme;
-  --cssfabric-theme-moduleNameShort: theme;
-  --cssfabric-theme-color-primary: orange;
-  --cssfabric-theme-color-foreground: #333;
-  --cssfabric-theme-color-background: #ededed;
+  --cssfabric-scale-scale_props-width: w;
+  --cssfabric-scale-scale_props-height: h;
+  --cssfabric-scale-scale_css_values:  max-content, min-content;
+  --cssfabric-scale-scale_shorthands-full: 100%;
+  --cssfabric-scale-scale_shorthands-mid: 50%;
+  --cssfabric-scale-scale_shorthands-quarter: 25%;
+  --cssfabric-scale-scale_shorthands-tiers: 33%;
+  --cssfabric-scale-scale_defined_steps:  1, 2, 4, 8, 16, 24, 32, 48, 64;
+  --cssfabric-scale-scale_defined_step_unit: rem;
+  --cssfabric-scale-scale_grid_ratios:  8, 24;
+  /** 
+  * cssfabric
+  * generated file
+  * css vars for table 
+  */
+  --cssfabric-table-className: table;
+  --cssfabric-table-classNameShort: tbl;
+  --cssfabric-table-table_class_name: table;
+  --cssfabric-table-table_class_name_short: tbl;
   /** 
   * cssfabric
   * generated file
@@ -263,6 +253,16 @@
   --cssfabric-text-gray-700: #5c5c5c;
   --cssfabric-text-gray-800: #484848;
   --cssfabric-text-gray-900: #333333;
+  /** 
+  * cssfabric
+  * generated file
+  * css vars for theme 
+  */
+  --cssfabric-theme-moduleName: theme;
+  --cssfabric-theme-moduleNameShort: theme;
+  --cssfabric-theme-color-primary: orange;
+  --cssfabric-theme-color-foreground: #333;
+  --cssfabric-theme-color-background: #ededed;
   /** 
   * cssfabric
   * generated file
