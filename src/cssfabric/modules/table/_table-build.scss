@@ -1,9 +1,8 @@
-
 @use 'table-vars';
 @use '../../_utils';
 
 $table-config: table-vars.$table-config;
- 
+
 $TABLE_PREFIX: map-get($table-config, table_class_name);
 $TABLE_PREFIX_SHORT: map-get($table-config, table_class_name_short);
 
@@ -16,113 +15,117 @@ $table_border_color_main: map-get($table-config, table_border_color_main);
 $table_border_color_second: map-get($table-config, table_border_color_second);
 
 @mixin bg_strip($prefix_short,$nb_strips) {
-    &.#{$prefix_short}-bg-strip-#{$nb_strips} {
-        @for $nb_strip from 1 through $nb_strips {
-            tr:nth-child(#{$nb_strips}n + #{$nb_strip}) td {
-                @if ($nb_strip==$nb_strips) {
-                    background-color: #{$table_bg_color_strip_main};
-                }
-
-                @if ($nb_strips%2==1 and $nb_strip%2==0 and $nb_strips > 2 and $nb_strip !=$nb_strips) {
-                    // border-bottom: 10px solid black;
-                }
-            }
+  &.#{$prefix_short}-bg-strip-#{$nb_strips} {
+    @for $nb_strip from 1 through $nb_strips {
+      tr:nth-child(#{$nb_strips}n + #{$nb_strip}) td {
+        @if ($nb_strip==$nb_strips) {
+          background-color: #{$table_bg_color_strip_main};
         }
+
+        @if ($nb_strips%2==1 and $nb_strip%2==0 and $nb_strips > 2 and $nb_strip !=$nb_strips) {
+          // border-bottom: 10px solid black;
+        }
+      }
     }
+  }
 }
 
 
 @mixin sticky($table_prefix_short) {
-    &.#{$table_prefix_short}-sticky {
-        position: relative;
+  &.#{$table_prefix_short}-sticky {
+    position: relative;
 
-        thead tr,
-        .thead .tr {
-            position: static;
+    thead tr,
+    .thead .tr {
+      position: static;
 
-            th,
-            .th {
-                background-color: #ededed;
-                position: sticky;
-                top: 0;
-            }
-        }
+      th,
+      .th {
+        background-color: #ededed;
+        position: sticky;
+        top: 0;
+      }
     }
+  }
+}
+
+@mixin fabric_table($mq_size_key: null) {
+  /** cssfabric : #{$TABLE_PREFIX_SHORT}*/
+  $prefix_short: if($mq_size_key, #{$TABLE_PREFIX_SHORT}-#{$mq_size_key}, $TABLE_PREFIX_SHORT);
+
+  .#{$TABLE_PREFIX} {
+    border-collapse: collapse;
+    border-spacing: 0;
+
+    thead,
+    .thead {
+      position: relative;
+    }
+
+    &.#{$prefix_short}-head thead tr th {
+      background-color: #{table_bg_color_head};
+    }
+
+    thead tr th,
+    .thead .tr .th {
+      padding: 0.25em;
+    }
+
+    tbody tr td,
+    .tbody .tr .td {
+      padding: 0.25em;
+    }
+
+    &.#{$prefix_short}-layout {
+      table-layout: fixed;
+    }
+
+    &.#{$prefix_short}-h-line {
+
+      th,
+      td,
+      .th,
+      .td {
+        border-bottom: 1px solid #{$table_border_color_main};
+      }
+
+      &:last-child {
+        border-bottom: none;
+      }
+    }
+
+    &.#{$prefix_short}-v-line tr th,
+    &.#{$prefix_short}-v-line tr td {
+      border-right: 1px solid #{$table_border_color_main};
+
+      &:last-child {
+        border-right: none;
+      }
+    }
+
+    &.#{$prefix_short}-border {
+      border: 1px solid #{$table_border_color_main};
+    }
+
+    &.#{$prefix_short}-shad {
+      thead tr th {
+        box-shadow: 4px 4px 8px #ccc;
+        z-index: 11;
+
+        &:last-child {
+          box-shadow: 4px 4px 8px #ccc;
+          z-index: -1;
+        }
+      }
+    }
+
+    @include bg_strip($prefix_short, 2);
+    @include bg_strip($prefix_short, 5);
+
+    @include sticky($prefix_short);
+  }
 }
 
 @mixin buildTable($mq_size_key: null) {
-
-    $prefix_short: if($mq_size_key,#{$TABLE_PREFIX_SHORT}-#{$mq_size_key},$TABLE_PREFIX_SHORT);
-
-    .#{$TABLE_PREFIX} {
-        border-collapse: collapse;
-        border-spacing: 0;
-
-        thead,
-        .thead {
-            position: relative;
-        }
-
-        &.#{$prefix_short}-head thead tr th {
-            background-color: #{table_bg_color_head};
-        }
-
-        thead tr th,
-        .thead .tr .th {
-            padding: 0.25em;
-        }
-
-        tbody tr td,
-        .tbody .tr .td {
-            padding: 0.25em;
-        }
-
-        &.#{$prefix_short}-layout {
-            table-layout: fixed;
-        }
-
-        &.#{$prefix_short}-h-line {
-
-            th,
-            td,
-            .th,
-            .td {
-                border-bottom: 1px solid #{$table_border_color_main};
-            }
-
-            &:last-child {
-                border-bottom: none;
-            }
-        }
-
-        &.#{$prefix_short}-v-line tr th,
-        &.#{$prefix_short}-v-line tr td {
-            border-right: 1px solid #{$table_border_color_main};
-
-            &:last-child {
-                border-right: none;
-            }
-        }
-
-        &.#{$prefix_short}-border {
-            border: 1px solid #{$table_border_color_main};
-        }
-
-        &.#{$prefix_short}-shad {
-            thead tr th {
-                box-shadow: 4px 4px 8px #ccc;
-                z-index: 11;
-
-                &:last-child {
-                    box-shadow: 4px 4px 8px #ccc;
-                    z-index: -1;
-                }
-            }
-        }
-
-        @include bg_strip($prefix_short,2);
-        @include bg_strip($prefix_short,5);
-
-        @include sticky($prefix_short);
-    }
+  @include fabric_table($mq_size_key);
 }
