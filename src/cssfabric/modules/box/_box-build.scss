@@ -17,15 +17,14 @@ $box-unit-border-size-config: map-get($box-config, unit-border-size-config);
 $box-sizes-config: map-get($box-config, sizes-config);
 $box-border-sizes-px-config: map-get($box-config, border-sizes-px-config);
 
-$box-position-shorthand-config: map-get($box-config, position-shorthand-config)!default;
-$box-display-shorthand-config: map-get($box-config, display-shorthand-config)!default;
-$box-shadow-shorthand-config: map-get($box-config, shadow-shorthand-config)!default;
+$box-position-shorthand-config: map-get($box-config, position-shorthand-config) !default;
+$box-display-shorthand-config: map-get($box-config, display-shorthand-config) !default;
+$box-shadow-shorthand-config: map-get($box-config, shadow-shorthand-config) !default;
 
 
-
-$box-border-shorthand-config: map-get($box-config, border-shorthand-config)!default;
-$box-padding-shorthand-config: map-get($box-config, padding-shorthand-config)!default;
-$box-margin-shorthand-config: map-get($box-config, margin-shorthand-config)!default;
+$box-border-shorthand-config: map-get($box-config, border-shorthand-config) !default;
+$box-padding-shorthand-config: map-get($box-config, padding-shorthand-config) !default;
+$box-margin-shorthand-config: map-get($box-config, margin-shorthand-config) !default;
 
 $css-shorthands: (
         border: $box-border-shorthand-config,
@@ -71,6 +70,7 @@ $css-shorthands: (
 // prop : ...top bottom for  border | margin | padding
 @mixin fabric_box($fabric_box_position_prop, $fabric_box_position_prop_short) {
   @each $fabric_box_pmb_side_shorthand, $rule in $box-border-shorthands {
+
     $iterator: if($fabric_box_position_prop== border, $box-border-sizes-px-config, $box-sizes-config);
     $unit: if($fabric_box_position_prop== border, $box-border-unit-config, $box-unit-config);
     // box_unit_border_size
@@ -121,7 +121,7 @@ $css-shorthands: (
   /**
 *   #{$css_prop_short} #{$css_prop} ---------------------
 */
-  @each $fabric_box_prop, $fabric_key_shorthand   in $fabric_key_shorthands {
+  @each $fabric_box_prop, $fabric_key_shorthand in $fabric_key_shorthands {
     // css property
     $prop_re: #{$css_prop_short}-#{$fabric_key_shorthand};
 

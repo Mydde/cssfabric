@@ -1,3 +1,6 @@
+$_overflow-values: (visible hidden clip scroll auto);
+$_overflow-shorthands: (visible: visible, hidden:hidden, clip:clip, scroll:scroll, _: auto);
+
 $overflow-metadata: (
         title: overflow,
         tag: flow,
@@ -5,14 +8,9 @@ $overflow-metadata: (
 );
 $overflow-config: (
         overflow_props: overflow overflow-x overflow-y,
-        overflow_values: visible hidden clip scroll auto initial unset,
+        overflow_values: $_overflow-values,
         cssProps:(
-                overflow: 'overflow',
-                overflowX: 'overflow-x',
-                overflowY : 'overflow-y'
+                overflow: $_overflow-shorthands
         )
 );
-$overflow-docs: (
-        overflow_props: "",
-        overflow_values: ""
-);
+$overflow-docs: (); 
