@@ -36,13 +36,19 @@ $color_primary: map-get($color_themes, primary);
             .theme-#{$property_key}-#{$color-grade} {
                 #{$switch-tag}: #{$switch-color-grad};
                 &-light {
+                    #{$switch-tag}: lighten($switch-color-grad, 15%);
+                }
+                &-lighter {
                     #{$switch-tag}: lighten($switch-color-grad, 30%);
                 }
                 &-dark {
+                    #{$switch-tag}: darken($switch-color-grad, 15%);
+                }
+                &-darker {
                     #{$switch-tag}: darken($switch-color-grad, 30%);
                 }
                 &-hover :hover {
-                    #{$switch-tag}: #{$switch-color-grad};
+                    #{$switch-tag}: #{$switch-color-grad}; 
                 }
             }
         }
