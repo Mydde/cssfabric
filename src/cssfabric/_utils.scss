@@ -58,15 +58,15 @@
 
 @function applyColorEffect($named, $color) {
   $switch-named: map-get(
-    (
-      light: lighten($color, 30%),
-      lighter: lighten($color, 30%),
-      dark: lighten($color, 30%),
-      darker: lighten($color, 30%),
-      complement: complement($color),
-      invert: invert($color)
-    ),
-    $named
+                  (
+                          light: lighten($color, 30%),
+                          lighter: lighten($color, 30%),
+                          dark: lighten($color, 30%),
+                          darker: lighten($color, 30%),
+                          complement: complement($color),
+                          invert: invert($color)
+                  ),
+                  $named
   );
 
   @return $switch-named;
@@ -75,13 +75,24 @@
 @function themeColors($theme-color:primary,$theme-color-primary) {
 
   $switch-theme-color: map-get(
-    (
-      primary: $theme-color-primary,
-      secondary: complement($theme-color-primary),
-      tertiary: complement(complement($theme-color-primary))
-    ),
-    $theme-color
+                  (
+                          primary: $theme-color-primary,
+                          secondary: complement($theme-color-primary),
+                          tertiary: complement(complement($theme-color-primary))
+                  ),
+                  $theme-color
   );
 
   @return $switch-theme-color;
+}
+
+@function getColorPropertyType($fabric-tag) {
+  @return map-get(
+                  (
+                          color: color,
+                          bg: background-color,
+                          bg-themed: background-color
+                  ),
+                  fabric-tag
+  );
 }

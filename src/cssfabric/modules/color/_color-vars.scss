@@ -7,10 +7,10 @@ $color-metadata: (
 );
 $color-config: (
 	gray-config: loader.getFabricSharedParams(gray-config),
+	color-types-config: (color bg bg-themed),
 	theme: loader.getFabricSharedParams(theme),
 	scheme: loader.getFabricSharedParams(scheme),
 	palette: loader.getFabricSharedParams(palette),
 	gray: loader.getFabricSharedParams(gray)
 );
 $color-docs: ();  
- 

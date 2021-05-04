@@ -110,6 +110,7 @@
   --cssfabric-color-gray-config-start: #ededed;
   --cssfabric-color-gray-config-end: #333333;
   --cssfabric-color-gray-config-steps: 9;
+  --cssfabric-color-color-types-config:  color bg bg-themed;
   --cssfabric-color-theme-primary: orange;
   --cssfabric-color-theme-foreground: #333;
   --cssfabric-color-theme-background: #ededed;
