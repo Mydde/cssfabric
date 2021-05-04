@@ -1,9 +1,16 @@
+@use '../../_utils';
+
 $color-metadata: (
 	title: color,
 	title_tag: "its about colors",
 	description: description
 );
 $color-config: (
+	gray-config: (
+		start: #ededed,
+		end: #333333,
+		steps: 9
+	),
     theme: (
         primary: orange,
         foreground: #333,
@@ -11,7 +18,7 @@ $color-config: (
     ),
 	scheme: (
 		info: yellow,
-		alert: orange,
+		alert: orange, 
 		error: red,
 		warning: hsl(48, 100%, 67%),
 		discrete: gray,
@@ -27,11 +34,7 @@ $color-config: (
 		teal: #008272,
 		blue: #0078d4
 	),
-	gray: (
-		start: #f4f4f4,
-		end: #333333,
-		steps: 9
-	)
+	gray: utils.getGraySteps(9,#ededed,#333333)
 );
 $color-docs: (
  

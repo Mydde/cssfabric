@@ -38,6 +38,13 @@
   /** 
   * cssfabric
   * generated file
+  * css vars for animation 
+  */
+  --cssfabric-animation-attention_props: ;
+  --cssfabric-animation-in_out_props-back: is-map;
+  /** 
+  * cssfabric
+  * generated file
   * css vars for base 
   */
   --cssfabric-base-sizes-tiny: ;
@@ -59,13 +66,6 @@
   --cssfabric-base-color_grays-gray_start: #f4f4f4;
   --cssfabric-base-color_grays-gray_end: #333333;
   --cssfabric-base-color_grays-gray_steps: 9;
-  /** 
-  * cssfabric
-  * generated file
-  * css vars for animation 
-  */
-  --cssfabric-animation-attention_props: ;
-  --cssfabric-animation-in_out_props-back: is-map;
   /** 
   * cssfabric
   * generated file
@@ -112,6 +112,9 @@
   * generated file
   * css vars for color 
   */
+  --cssfabric-color-gray-config-start: #ededed;
+  --cssfabric-color-gray-config-end: #333333;
+  --cssfabric-color-gray-config-steps: 9;
   --cssfabric-color-theme-primary: orange;
   --cssfabric-color-theme-foreground: #333;
   --cssfabric-color-theme-background: #ededed;
@@ -129,9 +132,15 @@
   --cssfabric-color-palette-green: #107c10;
   --cssfabric-color-palette-teal: #008272;
   --cssfabric-color-palette-blue: #0078d4;
-  --cssfabric-color-gray-start: #f4f4f4;
-  --cssfabric-color-gray-end: #333333;
-  --cssfabric-color-gray-steps: 9;
+  --cssfabric-color-gray-100: #d8d8d8;
+  --cssfabric-color-gray-200: #c4c4c4;
+  --cssfabric-color-gray-300: #afafaf;
+  --cssfabric-color-gray-400: #9a9a9a;
+  --cssfabric-color-gray-500: #868686;
+  --cssfabric-color-gray-600: #717171;
+  --cssfabric-color-gray-700: #5c5c5c;
+  --cssfabric-color-gray-800: #484848;
+  --cssfabric-color-gray-900: #333333;
   /** 
   * cssfabric
   * generated file
@@ -150,13 +159,6 @@
   /** 
   * cssfabric
   * generated file
-  * css vars for overflow 
-  */
-  --cssfabric-overflow-overflow_props:  overflow overflow-x overflow-y;
-  --cssfabric-overflow-overflow_values:  visible hidden clip scroll auto initial unset;
-  /** 
-  * cssfabric
-  * generated file
   * css vars for menu 
   */
   --cssfabric-menu-menu_class_name: menu;
@@ -170,6 +172,28 @@
   --cssfabric-menu-menu_dropdown_tag: drop;
   --cssfabric-menu-menu_dropdown_open: open;
   --cssfabric-menu-menu_dropdown_close: close;
+  /** 
+  * cssfabric
+  * generated file
+  * css vars for overflow 
+  */
+  --cssfabric-overflow-overflow_props:  overflow overflow-x overflow-y;
+  --cssfabric-overflow-overflow_values:  visible hidden clip scroll auto initial unset;
+  /** 
+  * cssfabric
+  * generated file
+  * css vars for scale 
+  */
+  --cssfabric-scale-scale_props-width: w;
+  --cssfabric-scale-scale_props-height: h;
+  --cssfabric-scale-scale_css_values:  max-content, min-content;
+  --cssfabric-scale-scale_shorthands-full: 100%;
+  --cssfabric-scale-scale_shorthands-mid: 50%;
+  --cssfabric-scale-scale_shorthands-quarter: 25%;
+  --cssfabric-scale-scale_shorthands-tiers: 33%;
+  --cssfabric-scale-scale_defined_steps:  1, 2, 4, 8, 16, 24, 32, 48, 64;
+  --cssfabric-scale-scale_defined_step_unit: rem;
+  --cssfabric-scale-scale_grid_ratios:  8, 24;
   /** 
   * cssfabric
   * generated file
@@ -214,27 +238,6 @@
   /** 
   * cssfabric
   * generated file
-  * css vars for scale 
-  */
-  --cssfabric-scale-scale_props-width: w;
-  --cssfabric-scale-scale_props-height: h;
-  --cssfabric-scale-scale_css_values:  max-content, min-content;
-  --cssfabric-scale-scale_shorthands-full: 100%;
-  --cssfabric-scale-scale_shorthands-mid: 50%;
-  --cssfabric-scale-scale_shorthands-quarter: 25%;
-  --cssfabric-scale-scale_shorthands-tiers: 33%;
-  --cssfabric-scale-scale_defined_steps:  1, 2, 4, 8, 16, 24, 32, 48, 64;
-  --cssfabric-scale-scale_defined_step_unit: rem;
-  --cssfabric-scale-scale_grid_ratios:  8, 24;
-  /** 
-  * cssfabric
-  * generated file
-  * css vars for zindex 
-  */
-  --cssfabric-zindex-z_groups:  a, b, c, d, e, f, g;
-  /** 
-  * cssfabric
-  * generated file
   * css vars for theme 
   */
   --cssfabric-theme-moduleName: theme;
@@ -242,4 +245,10 @@
   --cssfabric-theme-color-primary: orange;
   --cssfabric-theme-color-foreground: #333;
   --cssfabric-theme-color-background: #ededed;
+  /** 
+  * cssfabric
+  * generated file
+  * css vars for zindex 
+  */
+  --cssfabric-zindex-z_groups:  a, b, c, d, e, f, g;
 }

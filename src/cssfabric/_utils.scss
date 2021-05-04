@@ -1,4 +1,5 @@
 @use "sass:string";
+@use "sass:map";
 // load main fabric vars
 @use 'modules/cssfabric-vars' as cssfabric-vars;
 
@@ -13,10 +14,6 @@
   @media only screen and (max-width: $mq_size_value + rem) {
     @content;
   }
-}
-
-@function show_val($val) {
-  @return ($val);
 }
 
 @mixin fabric-attribute($sep,$frag, $property, $value) {
@@ -36,7 +33,7 @@
     @if (type_of($rt) == "string") {
       $key: #{$module}-#{$red};
       --cssfabric-#{$key}: #{$rt};
-    }
+    } 
     @if (type_of($rt) == "map") {
       @each $rtkey, $rtval in $rt {
         $type: type_of($rtval);
@@ -53,4 +50,15 @@
       --cssfabric-#{$key}: #{string.slice(#{#ss($rt)}, 4)};
     }
   }
+}
+
+@function getGraySteps($steps,$gray-start,$gray-end){
+  $gray-schemes: ();
+
+  @for $i from 1 through $steps {
+      $color: mix($gray-end, $gray-start, $i / $steps * 100%);
+      $gray-schemes: map.set($gray-schemes, #{$i * 100}, $color);
+  }
+
+  @return $gray-schemes;
 }
