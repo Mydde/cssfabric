@@ -1,5 +1,4 @@
- 
-@use '_text-build' as build; 
+@use '_text-build' as build;
 
 @include build.buildText();
 

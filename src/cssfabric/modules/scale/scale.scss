@@ -1,8 +1,3 @@
-
-
-// load scss config file
-@use '../../_utils';
 @use '_scale-build'as build;
 
-// builder   
 @include build.buildScale(null);

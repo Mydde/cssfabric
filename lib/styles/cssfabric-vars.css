@@ -194,39 +194,6 @@
   --cssfabric-table-table_class_name_short: tbl;
   /** 
   * cssfabric generated file
-  * css vars for theme 
-  */
-  --cssfabric-theme-moduleName: theme;
-  --cssfabric-theme-moduleNameShort: theme;
-  --cssfabric-theme-color-default-config-primary: green;
-  --cssfabric-theme-color-default-config-foreground: #333;
-  --cssfabric-theme-color-default-config-background: #ededed;
-  --cssfabric-theme-declinations-config:  primary, secondary, tertiary;
-  --cssfabric-theme-theme-level-config:  light lighter dark darker complement invert;
-  --cssfabric-theme-theme-properties-apply-config:  text, bg, border;
-  --cssfabric-theme-color-primary: green;
-  --cssfabric-theme-color-primary-light: #00cd00;
-  --cssfabric-theme-color-primary-lighter: #1aff1a;
-  --cssfabric-theme-color-primary-dark: #003400;
-  --cssfabric-theme-color-primary-darker: black;
-  --cssfabric-theme-color-primary-complement: purple;
-  --cssfabric-theme-color-primary-invert: #ff7fff;
-  --cssfabric-theme-color-secondary: purple;
-  --cssfabric-theme-color-secondary-light: #cd00cd;
-  --cssfabric-theme-color-secondary-lighter: #ff1aff;
-  --cssfabric-theme-color-secondary-dark: #340034;
-  --cssfabric-theme-color-secondary-darker: black;
-  --cssfabric-theme-color-secondary-complement: green;
-  --cssfabric-theme-color-secondary-invert: #7fff7f;
-  --cssfabric-theme-color-tertiary: green;
-  --cssfabric-theme-color-tertiary-light: #00cd00;
-  --cssfabric-theme-color-tertiary-lighter: #1aff1a;
-  --cssfabric-theme-color-tertiary-dark: #003400;
-  --cssfabric-theme-color-tertiary-darker: black;
-  --cssfabric-theme-color-tertiary-complement: purple;
-  --cssfabric-theme-color-tertiary-invert: #ff7fff;
-  /** 
-  * cssfabric generated file
   * css vars for text 
   */
   --cssfabric-text-moduleName: text;
@@ -259,6 +226,39 @@
   --cssfabric-text-gray-700: #5c5c5c;
   --cssfabric-text-gray-800: #484848;
   --cssfabric-text-gray-900: #333333;
+  /** 
+  * cssfabric generated file
+  * css vars for theme 
+  */
+  --cssfabric-theme-moduleName: theme;
+  --cssfabric-theme-moduleNameShort: theme;
+  --cssfabric-theme-color-default-config-primary: green;
+  --cssfabric-theme-color-default-config-foreground: #333;
+  --cssfabric-theme-color-default-config-background: #ededed;
+  --cssfabric-theme-declinations-config:  primary, secondary, tertiary;
+  --cssfabric-theme-theme-level-config:  light lighter dark darker complement invert;
+  --cssfabric-theme-theme-properties-apply-config:  text, bg, border;
+  --cssfabric-theme-color-primary: green;
+  --cssfabric-theme-color-primary-light: #00cd00;
+  --cssfabric-theme-color-primary-lighter: #1aff1a;
+  --cssfabric-theme-color-primary-dark: #003400;
+  --cssfabric-theme-color-primary-darker: black;
+  --cssfabric-theme-color-primary-complement: purple;
+  --cssfabric-theme-color-primary-invert: #ff7fff;
+  --cssfabric-theme-color-secondary: purple;
+  --cssfabric-theme-color-secondary-light: #cd00cd;
+  --cssfabric-theme-color-secondary-lighter: #ff1aff;
+  --cssfabric-theme-color-secondary-dark: #340034;
+  --cssfabric-theme-color-secondary-darker: black;
+  --cssfabric-theme-color-secondary-complement: green;
+  --cssfabric-theme-color-secondary-invert: #7fff7f;
+  --cssfabric-theme-color-tertiary: green;
+  --cssfabric-theme-color-tertiary-light: #00cd00;
+  --cssfabric-theme-color-tertiary-lighter: #1aff1a;
+  --cssfabric-theme-color-tertiary-dark: #003400;
+  --cssfabric-theme-color-tertiary-darker: black;
+  --cssfabric-theme-color-tertiary-complement: purple;
+  --cssfabric-theme-color-tertiary-invert: #ff7fff;
   /** 
   * cssfabric generated file
   * css vars for zindex 

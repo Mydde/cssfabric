@@ -1,5 +1,4 @@
- 
-@use '_theme-build' as build; 
+@use '_theme-build' as build;
 
 @include build.buildTheme(null);
 

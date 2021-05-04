@@ -1,9 +1,3 @@
+@use '_color-build' as build;
 
-
- @use '../../_utils';
- @use '_color-build' as build; 
- 
-
-@include build.buildColor(null); 
-
- 
+@include build.buildColor(null);

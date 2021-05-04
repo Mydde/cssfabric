@@ -1,8 +1,3 @@
-
-
-// load scss config file
-@use '../../_utils';
-@use '_table-build' as build; 
-
+@use '_table-build' as build;
 
 @include build.buildTable();
