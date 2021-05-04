@@ -1,6 +1,6 @@
  
 @use '_text-build' as build; 
 
-@include build.buildText(null);
+@include build.buildText();
 
 

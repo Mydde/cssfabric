@@ -51,6 +51,40 @@
   --cssfabric-animation-in_out_props-back: is-map;
   /** 
   * cssfabric generated file
+  * css vars for color 
+  */
+  --cssfabric-color-gray-config-start: #ededed;
+  --cssfabric-color-gray-config-end: #333333;
+  --cssfabric-color-gray-config-steps: 9;
+  --cssfabric-color-color-types-config:  color bg bg-themed;
+  --cssfabric-color-theme-primary: orange;
+  --cssfabric-color-theme-foreground: #333;
+  --cssfabric-color-theme-background: #ededed;
+  --cssfabric-color-scheme-info: yellow;
+  --cssfabric-color-scheme-alert: orange;
+  --cssfabric-color-scheme-error: red;
+  --cssfabric-color-scheme-warning: #ffdd57;
+  --cssfabric-color-scheme-discrete: gray;
+  --cssfabric-color-scheme-success: #23d160;
+  --cssfabric-color-palette-yellow: #ffb900;
+  --cssfabric-color-palette-orange: #d83b01;
+  --cssfabric-color-palette-red: #d13438;
+  --cssfabric-color-palette-magenta: #b4009e;
+  --cssfabric-color-palette-purple: #5c2d91;
+  --cssfabric-color-palette-green: #107c10;
+  --cssfabric-color-palette-teal: #008272;
+  --cssfabric-color-palette-blue: #0078d4;
+  --cssfabric-color-gray-100: #d8d8d8;
+  --cssfabric-color-gray-200: #c4c4c4;
+  --cssfabric-color-gray-300: #afafaf;
+  --cssfabric-color-gray-400: #9a9a9a;
+  --cssfabric-color-gray-500: #868686;
+  --cssfabric-color-gray-600: #717171;
+  --cssfabric-color-gray-700: #5c5c5c;
+  --cssfabric-color-gray-800: #484848;
+  --cssfabric-color-gray-900: #333333;
+  /** 
+  * cssfabric generated file
   * css vars for base 
   */
   --cssfabric-base-sizes-tiny: 32;
@@ -100,40 +134,6 @@
   --cssfabric-box-box_display_props-unset: unset;
   /** 
   * cssfabric generated file
-  * css vars for color 
-  */
-  --cssfabric-color-gray-config-start: #ededed;
-  --cssfabric-color-gray-config-end: #333333;
-  --cssfabric-color-gray-config-steps: 9;
-  --cssfabric-color-color-types-config:  color bg bg-themed;
-  --cssfabric-color-theme-primary: orange;
-  --cssfabric-color-theme-foreground: #333;
-  --cssfabric-color-theme-background: #ededed;
-  --cssfabric-color-scheme-info: yellow;
-  --cssfabric-color-scheme-alert: orange;
-  --cssfabric-color-scheme-error: red;
-  --cssfabric-color-scheme-warning: #ffdd57;
-  --cssfabric-color-scheme-discrete: gray;
-  --cssfabric-color-scheme-success: #23d160;
-  --cssfabric-color-palette-yellow: #ffb900;
-  --cssfabric-color-palette-orange: #d83b01;
-  --cssfabric-color-palette-red: #d13438;
-  --cssfabric-color-palette-magenta: #b4009e;
-  --cssfabric-color-palette-purple: #5c2d91;
-  --cssfabric-color-palette-green: #107c10;
-  --cssfabric-color-palette-teal: #008272;
-  --cssfabric-color-palette-blue: #0078d4;
-  --cssfabric-color-gray-100: #d8d8d8;
-  --cssfabric-color-gray-200: #c4c4c4;
-  --cssfabric-color-gray-300: #afafaf;
-  --cssfabric-color-gray-400: #9a9a9a;
-  --cssfabric-color-gray-500: #868686;
-  --cssfabric-color-gray-600: #717171;
-  --cssfabric-color-gray-700: #5c5c5c;
-  --cssfabric-color-gray-800: #484848;
-  --cssfabric-color-gray-900: #333333;
-  /** 
-  * cssfabric generated file
   * css vars for grid 
   */
   --cssfabric-grid-grid_class_name: grid;
@@ -163,10 +163,12 @@
   --cssfabric-menu-menu_dropdown_close: close;
   /** 
   * cssfabric generated file
-  * css vars for overflow 
+  * css vars for table 
   */
-  --cssfabric-overflow-overflow_props:  overflow overflow-x overflow-y;
-  --cssfabric-overflow-overflow_values:  visible hidden clip scroll auto initial unset;
+  --cssfabric-table-className: table;
+  --cssfabric-table-classNameShort: tbl;
+  --cssfabric-table-table_class_name: table;
+  --cssfabric-table-table_class_name_short: tbl;
   /** 
   * cssfabric generated file
   * css vars for scale 
@@ -181,14 +183,6 @@
   --cssfabric-scale-scale_defined_steps:  1, 2, 4, 8, 16, 24, 32, 48, 64;
   --cssfabric-scale-scale_defined_step_unit: rem;
   --cssfabric-scale-scale_grid_ratios:  8, 24;
-  /** 
-  * cssfabric generated file
-  * css vars for table 
-  */
-  --cssfabric-table-className: table;
-  --cssfabric-table-classNameShort: tbl;
-  --cssfabric-table-table_class_name: table;
-  --cssfabric-table-table_class_name_short: tbl;
   /** 
   * cssfabric generated file
   * css vars for theme 
@@ -224,35 +218,24 @@
   --cssfabric-theme-color-tertiary-invert: #ff7fff;
   /** 
   * cssfabric generated file
+  * css vars for overflow 
+  */
+  --cssfabric-overflow-overflow_props:  overflow overflow-x overflow-y;
+  --cssfabric-overflow-overflow_values:  visible hidden clip scroll auto initial unset;
+  --cssfabric-overflow-cssProps-overflow: overflow;
+  --cssfabric-overflow-cssProps-overflowX: overflow-x;
+  --cssfabric-overflow-cssProps-overflowY: overflow-y;
+  /** 
+  * cssfabric generated file
   * css vars for text 
   */
-  --cssfabric-text-text_class_name: text;
-  --cssfabric-text-text_class_name_short: txt;
-  --cssfabric-text-font_sizes_unit: rem;
-  --cssfabric-text-font_predefined_colors-msg: black;
-  --cssfabric-text-font_predefined_colors-alert: red;
-  --cssfabric-text-font_predefined_colors-warning: yellow;
-  --cssfabric-text-font_predefined_colors-important: orange;
-  --cssfabric-text-font_predefined_colors-default: #ccc;
-  --cssfabric-text-text_ellipsis_tag: ellipsis;
-  --cssfabric-text-text_transform-cap: capitalize;
-  --cssfabric-text-text_transform-up: uppercase;
-  --cssfabric-text-text_transform-low: lowercase;
-  --cssfabric-text-text_transform-none: none;
-  --cssfabric-text-text_transform-full: full-width;
-  --cssfabric-text-font_weights-50: 50;
-  --cssfabric-text-font_weights-100: 100;
-  --cssfabric-text-font_weights-300: 400;
-  --cssfabric-text-font_weights-500: 500;
-  --cssfabric-text-font_weights-900: 900;
-  --cssfabric-text-font_weights-light: lighter;
-  --cssfabric-text-font_weights-cap: normal;
-  --cssfabric-text-font_weights-bold: bold;
-  --cssfabric-text-font_weights-bolder: bolder;
-  --cssfabric-text-text_align-l: left;
-  --cssfabric-text-text_align-r: right;
-  --cssfabric-text-text_align-c: center;
-  --cssfabric-text-text_align-j: justify;
+  --cssfabric-text-moduleName: text;
+  --cssfabric-text-moduleNameShort: txt;
+  --cssfabric-text-font-size-unit-config: rem;
+  --cssfabric-text-text-ellipsis-tag-config: ellipsis;
+  --cssfabric-text-cssProps-textTransform: is-map;
+  --cssfabric-text-cssProps-fontWeight: is-map;
+  --cssfabric-text-cssProps-textAlign: is-map;
   --cssfabric-text-scheme-info: yellow;
   --cssfabric-text-scheme-alert: orange;
   --cssfabric-text-scheme-error: red;

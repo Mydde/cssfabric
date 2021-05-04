@@ -50,7 +50,7 @@ $table_border_color_second: map-get($table-config, table_border_color_second);
     }
 }
 
-@mixin buildTable($mq_size_key) {
+@mixin buildTable($mq_size_key: null) {
 
     $prefix_short: if($mq_size_key,#{$TABLE_PREFIX_SHORT}-#{$mq_size_key},$TABLE_PREFIX_SHORT);
 

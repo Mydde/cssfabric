@@ -5,4 +5,4 @@
 @use '_table-build' as build; 
 
 
-@include build.buildTable(null);
+@include build.buildTable();

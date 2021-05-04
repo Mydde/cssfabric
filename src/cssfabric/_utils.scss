@@ -10,7 +10,7 @@
 }
 
 @mixin fabricAttributes($sep, $frag, $property, $value) {
-  #{$sep}#{$frag} {
+  #{$sep+$frag} {
     #{$property}: #{$value};
   }
 }
@@ -98,7 +98,7 @@
                   $fabric-tag
   );
 }
- 
+
 @function getThemeLevels($declinations-config,$color_primary) {
   $out: ();
   @each $color-grade in $declinations-config {
