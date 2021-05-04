@@ -8,19 +8,14 @@
   /** 
   * cssfabric
   * generated file
-  * css vars for animation 
-  */
-  --cssfabric-animation-attention_props: ;
-  /** 
-  * cssfabric
-  * generated file
   * css vars for base 
   */
   /** 
   * cssfabric
   * generated file
-  * css vars for color 
+  * css vars for animation 
   */
+  --cssfabric-animation-attention_props: ;
   /** 
   * cssfabric
   * generated file
@@ -37,6 +32,21 @@
   /** 
   * cssfabric
   * generated file
+  * css vars for color 
+  */
+  /** 
+  * cssfabric
+  * generated file
+  * css vars for grid 
+  */
+  --cssfabric-grid-grid_class_name: grid;
+  --cssfabric-grid-grid_class_name_short: grid;
+  --cssfabric-grid-horCode: h;
+  --cssfabric-grid-vertCode: v;
+  --cssfabric-grid-gridFullWidth: main;
+  /** 
+  * cssfabric
+  * generated file
   * css vars for menu 
   */
   --cssfabric-menu-menu_class_name: menu;
@@ -48,17 +58,6 @@
   --cssfabric-menu-menu_dropdown_tag: drop;
   --cssfabric-menu-menu_dropdown_open: open;
   --cssfabric-menu-menu_dropdown_close: close;
-  --cssfabric-menu-test:  quoi donc;
-  /** 
-  * cssfabric
-  * generated file
-  * css vars for grid 
-  */
-  --cssfabric-grid-grid_class_name: grid;
-  --cssfabric-grid-grid_class_name_short: grid;
-  --cssfabric-grid-grid_separator: -;
-  --cssfabric-grid-grid_hor_code: h;
-  --cssfabric-grid-grid_vert_code: v;
   /** 
   * cssfabric
   * generated file
@@ -96,14 +95,14 @@
   /** 
   * cssfabric
   * generated file
-  * css vars for zindex 
-  */
-  --cssfabric-zindex-z_groups:  a, b, c, d, e, f, g;
-  /** 
-  * cssfabric
-  * generated file
   * css vars for theme 
   */
   --cssfabric-theme-moduleName: theme;
   --cssfabric-theme-moduleNameShort: theme;
+  /** 
+  * cssfabric
+  * generated file
+  * css vars for zindex 
+  */
+  --cssfabric-zindex-z_groups:  a, b, c, d, e, f, g;
 }

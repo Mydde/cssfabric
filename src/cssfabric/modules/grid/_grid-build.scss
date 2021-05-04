@@ -9,13 +9,13 @@ $cssfabric-config: cssfabric-vars.$cssfabric-config;
 $sep: map-get($cssfabric-config, sep);
 // read variables
 $grid-code: map-get($grid-config, grid_class_name);
-$grid-h: map-get($grid-config, grid_hor_code);
-$grid-v: map-get($grid-config, grid_vert_code);
+$grid-h: map-get($grid-config, horCode);
+$grid-v: map-get($grid-config, vertCode); 
 
 $cssProps: map-get($grid-config, cssProps);
-$gridFullWidth: map-get($grid-config, gridFullWidth); 
-
-$grid-code-sep: #{$grid-code}#{$sep};
+$gridFullWidth: map-get($grid-config, gridFullWidth);  
+ 
+$grid-code-sep: #{$grid-code}#{$sep};   
 
 @mixin makeGrid($mqKey) {
     $prefix: if($mqKey, #{$grid-code}-#{$mqKey}, #{$grid-code});
@@ -23,7 +23,7 @@ $grid-code-sep: #{$grid-code}#{$sep};
     $v_prop: #{$prefix}#{$sep}#{$grid-v};
 
     %flex {
-        display: flex;
+        display: flex; 
     }
 
     .#{$h_prop} {
@@ -39,7 +39,7 @@ $grid-code-sep: #{$grid-code}#{$sep};
 
     .#{$v_prop} {
         display: flex;
-        flex-direction: column;
+        flex-direction: column; 
 
         & > .#{$grid-code}#{$sep}#{$gridFullWidth} {
             flex: 1 1 0;

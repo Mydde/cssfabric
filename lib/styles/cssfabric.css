@@ -1779,7 +1779,7 @@ label {
   display: flex;
   flex-direction: row;
 }
-.grid-h > .grid- {
+.grid-h > .grid-main {
   flex: 1 1 0;
   width: 100%;
   max-width: 100%;
@@ -1789,7 +1789,7 @@ label {
   display: flex;
   flex-direction: column;
 }
-.grid-v > .grid- {
+.grid-v > .grid-main {
   flex: 1 1 0;
   max-height: 100%;
 }
@@ -1802,8 +1802,8 @@ label {
 .grid-v > * {
   box-sizing: border-box;
 }
-.grid-h > *:not(.grid-),
-.grid-v > *:not(.grid-) {
+.grid-h > *:not(.grid-main),
+.grid-v > *:not(.grid-main) {
   flex: 0 0 auto;
 }
 .grid-h.grid-inline,
