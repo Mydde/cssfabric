@@ -1,7 +1,7 @@
 
 
 import jsonConfig from "./_generated/export.variables.json" ;
- 
+// import from "../../cssfabric.json"
 export interface IFabricConfModulePart {
   [key: string]: any;
 }
@@ -22,19 +22,19 @@ const getCssFile = () => {
 };
 //
 const getModuleConfig = (module?: string):IFabricConfModulePart => {
-  if (module) return jsonConfig["css-config"]?.["modules"]?.[module] || {};
+  if (module) return jsonConfig["cssfabric"]?.["modules"]?.[module] || {};
   return jsonConfig;
 };
 
 const getModuleData = (module?: string):IFabricConfModuleDataPart => {
-  if (module) return jsonConfig["css-config"]?.["modules"]?.[module]?.["_data"] || {};
+  if (module) return jsonConfig["cssfabric"]?.["modules"]?.[module]?.["_data"] || {};
   return jsonConfig;
 };
 
 const getModuleMetaData = (module?: string):IFabricConfModuleMetaDataPart => {
   if (module)
-    return jsonConfig["css-config"]?.["modules"]?.[module]?.["_metadata"] || {};
-  return jsonConfig;
+    return jsonConfig["cssfabric"]?.["modules"]?.[module]?.["_metadata"] || {};
+  return jsonConfig; 
 };
 /**
  * 
@@ -43,7 +43,7 @@ const getModuleMetaData = (module?: string):IFabricConfModuleMetaDataPart => {
  */
 const getModuleDocs = (module?: string):IFabricConfModuleDocsPart => {
   if (module)
-    return jsonConfig["css-config"]?.["modules"]?.[module]?.["_metadata"] || {};
+    return jsonConfig["cssfabric"]?.["modules"]?.[module]?.["_metadata"] || {};
   return jsonConfig;
 };
 
