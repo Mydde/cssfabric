@@ -1,4 +1,4 @@
-const fabricConfig = require("./cssfabric.json");
+
 
 import jsonConfig from "./_generated/export.variables.json" ;
  
@@ -13,7 +13,7 @@ export interface IFabricConfModuleDataPart {
 export interface IFabricConfModuleMetaDataPart {
   [key: string]: any;
 }
-export interface IFabricConfModuleDocsPart {
+export interface IFabricConfModuleDocsPart { 
   [key: string]: any;
 }
 

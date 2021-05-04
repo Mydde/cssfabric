@@ -52,6 +52,7 @@
     "sass-json-export": "^2.0.1",
     "sass-loader": "^11.0.1",
     "sass-parser": "^0.1.2",
+    "sassdoc": "^2.7.3",
     "scss-to-json": "^2.0.0",
     "style-loader": "^2.0.0",
     "terminal": "^0.1.4",
