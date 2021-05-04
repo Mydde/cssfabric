@@ -4,144 +4,23 @@
   * generated file
   * css vars for cssfabric 
   */
-  --cssfabric-cssfabric-sizes-tiny: 32;
-  --cssfabric-cssfabric-sizes-small: 64;
-  --cssfabric-cssfabric-sizes-medium: 256;
-  --cssfabric-cssfabric-sizes-large: 250;
-  --cssfabric-cssfabric-sizes-full: 100%;
-  --cssfabric-cssfabric-media_quey_sizes-xxl: 140;
-  --cssfabric-cssfabric-media_quey_sizes-xl: 80;
-  --cssfabric-cssfabric-media_quey_sizes-lg: 64;
-  --cssfabric-cssfabric-media_quey_sizes-md: 48;
-  --cssfabric-cssfabric-media_quey_sizes-sm: 35.7;
-  --cssfabric-cssfabric-color_theme-primary: orange;
-  --cssfabric-cssfabric-color_theme-foreground: #333;
-  --cssfabric-cssfabric-color_theme-background: #ededed;
-  --cssfabric-cssfabric-color_schemes_props-info: yellow;
-  --cssfabric-cssfabric-color_schemes_props-alert: orange;
-  --cssfabric-cssfabric-color_schemes_props-error: red;
-  --cssfabric-cssfabric-color_schemes_props-warning: #ffdd57;
-  --cssfabric-cssfabric-color_schemes_props-discrete: gray;
-  --cssfabric-cssfabric-color_schemes_props-success: #23d160;
-  --cssfabric-cssfabric-color_palette_props-yellow: #ffb900;
-  --cssfabric-cssfabric-color_palette_props-orange: #d83b01;
-  --cssfabric-cssfabric-color_palette_props-red: #d13438;
-  --cssfabric-cssfabric-color_palette_props-magenta: #b4009e;
-  --cssfabric-cssfabric-color_palette_props-purple: #5c2d91;
-  --cssfabric-cssfabric-color_palette_props-green: #107c10;
-  --cssfabric-cssfabric-color_palette_props-teal: #008272;
-  --cssfabric-cssfabric-color_palette_props-blue: #0078d4;
-  --cssfabric-cssfabric-color_grays-gray_start: #f4f4f4;
-  --cssfabric-cssfabric-color_grays-gray_end: #333333;
-  --cssfabric-cssfabric-color_grays-gray_steps: 9;
+  --cssfabric-cssfabric-sep: -;
   /** 
   * cssfabric
   * generated file
   * css vars for animation 
   */
   --cssfabric-animation-attention_props: ;
-  --cssfabric-animation-in_out_props-back: ;
   /** 
   * cssfabric
   * generated file
   * css vars for base 
   */
-  --cssfabric-base-table_class_name: table;
-  --cssfabric-base-table_class_name_short: tbl;
-  --cssfabric-base-text_class_name: text;
-  --cssfabric-base-text_class_name_short: txt;
-  --cssfabric-base-menu_class_name: menu;
-  --cssfabric-base-menu_class_name_short: ul;
-  --cssfabric-base-sizes-tiny: ;
-  --cssfabric-base-sizes-small: 64;
-  --cssfabric-base-sizes-medium: 120;
-  --cssfabric-base-sizes-large: 250;
-  --cssfabric-base-sizes-full: 100%;
-  --cssfabric-base-media_quey_sizes-xxl: 140;
-  --cssfabric-base-media_quey_sizes-xl: 80;
-  --cssfabric-base-media_quey_sizes-lg: 64;
-  --cssfabric-base-media_quey_sizes-md: 48;
-  --cssfabric-base-media_quey_sizes-sm: 35.7;
-  --cssfabric-base-color_schemes_props-info: yellow;
-  --cssfabric-base-color_schemes_props-alert: orange;
-  --cssfabric-base-color_schemes_props-error: red;
-  --cssfabric-base-color_schemes_props-warning: #ffdd57;
-  --cssfabric-base-color_schemes_props-discrete: gray;
-  --cssfabric-base-color_schemes_props-success: #23d160;
-  --cssfabric-base-color_palette_props-normal: #333;
-  --cssfabric-base-color_palette_props-error: red;
-  --cssfabric-base-color_palette_props-warning: #ffdd57;
-  --cssfabric-base-color_palette_props-discrete: gray;
-  --cssfabric-base-color_palette_props-success: #23d160;
-  --cssfabric-base-color_grays-gray_start: #f4f4f4;
-  --cssfabric-base-color_grays-gray_end: #333333;
-  --cssfabric-base-color_grays-gray_steps: 9;
-  /** 
-  * cssfabric
-  * generated file
-  * css vars for box 
-  */
-  --cssfabric-box-box_unit: rem;
-  --cssfabric-box-box_border_unit: px;
-  --cssfabric-box-box_shadow_shorthand: shad;
-  --cssfabric-box-box_position_shorthand: pos;
-  --cssfabric-box-box_display_shorthand: dsp;
-  --cssfabric-box-box_border_shorthand: border;
-  --cssfabric-box-box_padding_shorthand: pad;
-  --cssfabric-box-box_margin_shorthand: marg;
-  --cssfabric-box-box_shorthands-position: pos;
-  --cssfabric-box-box_shorthands-display: dsp;
-  --cssfabric-box-box_css_props_shorthands-border: border;
-  --cssfabric-box-box_css_props_shorthands-pad: padding;
-  --cssfabric-box-box_css_props_shorthands-marg: margin;
-  --cssfabric-box-box_border_shorthands-t: top;
-  --cssfabric-box-box_border_shorthands-b: bottom;
-  --cssfabric-box-box_border_shorthands-l: left;
-  --cssfabric-box-box_border_shorthands-r: right;
-  --cssfabric-box-box_border_shorthands-all:  top bottom left right;
-  --cssfabric-box-box_border_shorthands-u:  bottom left right;
-  --cssfabric-box-box_border_shorthands-ii:  left right;
-  --cssfabric-box-box_border_shorthands-tb:  top bottom;
-  --cssfabric-box-box_position_props-abs: absolute;
-  --cssfabric-box-box_position_props-rel: relative;
-  --cssfabric-box-box_position_props-stat: static;
-  --cssfabric-box-box_position_props-fix: fixed;
-  --cssfabric-box-box_position_props-sticky: sticky;
-  --cssfabric-box-box_display_props-block: block;
-  --cssfabric-box-box_display_props-none: none;
-  --cssfabric-box-box_display_props-inline: inline;
-  --cssfabric-box-box_display_props-block-inline: inline-block;
-  --cssfabric-box-box_display_props-flex-inline: inline-flex;
-  --cssfabric-box-box_display_props-tbl: table;
-  --cssfabric-box-box_display_props-tbl-row: table;
-  --cssfabric-box-box_display_props-tbl-cell: table;
-  --cssfabric-box-box_display_props-tbl-column: table-column;
-  --cssfabric-box-box_display_props-unset: unset;
   /** 
   * cssfabric
   * generated file
   * css vars for color 
   */
-  --cssfabric-color-color_theme-primary: orange;
-  --cssfabric-color-color_theme-foreground: #333;
-  --cssfabric-color-color_theme-background: #ededed;
-  --cssfabric-color-color_schemes_props-info: yellow;
-  --cssfabric-color-color_schemes_props-alert: orange;
-  --cssfabric-color-color_schemes_props-error: red;
-  --cssfabric-color-color_schemes_props-warning: #ffdd57;
-  --cssfabric-color-color_schemes_props-discrete: gray;
-  --cssfabric-color-color_schemes_props-success: #23d160;
-  --cssfabric-color-color_palette_props-yellow: #ffb900;
-  --cssfabric-color-color_palette_props-orange: #d83b01;
-  --cssfabric-color-color_palette_props-red: #d13438;
-  --cssfabric-color-color_palette_props-magenta: #b4009e;
-  --cssfabric-color-color_palette_props-purple: #5c2d91;
-  --cssfabric-color-color_palette_props-green: #107c10;
-  --cssfabric-color-color_palette_props-teal: #008272;
-  --cssfabric-color-color_palette_props-blue: #0078d4;
-  --cssfabric-color-color_grays-gray_start: #f4f4f4;
-  --cssfabric-color-color_grays-gray_end: #333333;
-  --cssfabric-color-color_grays-gray_steps: 9;
   /** 
   * cssfabric
   * generated file
@@ -159,8 +38,6 @@
   */
   --cssfabric-menu-menu_class_name: menu;
   --cssfabric-menu-menu_class_name_short: ul;
-  --cssfabric-menu-orientations-v: vertical;
-  --cssfabric-menu-orientations-h: horizontal;
   --cssfabric-menu-menu_item_class_name: menu-item;
   --cssfabric-menu-menu_item_class_name_short: li;
   --cssfabric-menu-menu_item_disabled_tag: disabled;
@@ -181,13 +58,7 @@
   * generated file
   * css vars for scale 
   */
-  --cssfabric-scale-scale_props-width: w;
-  --cssfabric-scale-scale_props-height: h;
-  --cssfabric-scale-scale_css_values:  max-content, min-content, fit-content;
-  --cssfabric-scale-scale_shorthands-full: 100%;
-  --cssfabric-scale-scale_shorthands-mid: 50%;
-  --cssfabric-scale-scale_shorthands-quarter: 25%;
-  --cssfabric-scale-scale_shorthands-tiers: 33%;
+  --cssfabric-scale-scale_css_values:  max-content, min-content;
   --cssfabric-scale-scale_defined_steps:  1, 2, 4, 8, 16, 24, 32, 48, 64;
   --cssfabric-scale-scale_defined_step_unit: rem;
   --cssfabric-scale-scale_grid_ratios:  8, 24;
@@ -196,6 +67,8 @@
   * generated file
   * css vars for table 
   */
+  --cssfabric-table-className: table;
+  --cssfabric-table-classNameShort: tbl;
   --cssfabric-table-table_class_name: table;
   --cssfabric-table-table_class_name_short: tbl;
   /** 
@@ -206,30 +79,7 @@
   --cssfabric-text-text_class_name: text;
   --cssfabric-text-text_class_name_short: txt;
   --cssfabric-text-font_sizes_unit: rem;
-  --cssfabric-text-font_predefined_colors-msg: black;
-  --cssfabric-text-font_predefined_colors-alert: red;
-  --cssfabric-text-font_predefined_colors-warning: yellow;
-  --cssfabric-text-font_predefined_colors-important: orange;
-  --cssfabric-text-font_predefined_colors-default: #ccc;
   --cssfabric-text-text_ellipsis_tag: ellipsis;
-  --cssfabric-text-text_transform-cap: capitalize;
-  --cssfabric-text-text_transform-up: uppercase;
-  --cssfabric-text-text_transform-low: lowercase;
-  --cssfabric-text-text_transform-none: none;
-  --cssfabric-text-text_transform-full: full-width;
-  --cssfabric-text-font_weights-50: 50;
-  --cssfabric-text-font_weights-100: 100;
-  --cssfabric-text-font_weights-300: 400;
-  --cssfabric-text-font_weights-500: 500;
-  --cssfabric-text-font_weights-900: 900;
-  --cssfabric-text-font_weights-light: lighter;
-  --cssfabric-text-font_weights-cap: normal;
-  --cssfabric-text-font_weights-bold: bold;
-  --cssfabric-text-font_weights-bolder: bolder;
-  --cssfabric-text-text_align-l: left;
-  --cssfabric-text-text_align-r: right;
-  --cssfabric-text-text_align-c: center;
-  --cssfabric-text-text_align-j: justify;
   /** 
   * cssfabric
   * generated file
@@ -237,13 +87,23 @@
   */
   --cssfabric-theme-moduleName: theme;
   --cssfabric-theme-moduleNameShort: theme;
-  --cssfabric-theme-color-primary: orange;
-  --cssfabric-theme-color-foreground: #333;
-  --cssfabric-theme-color-background: #ededed;
   /** 
   * cssfabric
   * generated file
   * css vars for zindex 
   */
   --cssfabric-zindex-z_groups:  a, b, c, d, e, f, g;
+  /** 
+  * cssfabric
+  * generated file
+  * css vars for box 
+  */
+  --cssfabric-box-box_unit: rem;
+  --cssfabric-box-box_border_unit: px;
+  --cssfabric-box-box_shadow_shorthand: shad;
+  --cssfabric-box-box_position_shorthand: pos;
+  --cssfabric-box-box_display_shorthand: dsp;
+  --cssfabric-box-box_border_shorthand: border;
+  --cssfabric-box-box_padding_shorthand: pad;
+  --cssfabric-box-box_margin_shorthand: marg;
 }

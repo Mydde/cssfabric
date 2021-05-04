@@ -9,6 +9,7 @@ $cssfabric-config: (
     CFG_HAS_DIMENSION_MIN: true,
     CFG_HAS_DIMENSION_MAX: true,
     size_step: 0.25rem,
+    sep: "-",
     sizes: (
         tiny: 32,
         small: 64,

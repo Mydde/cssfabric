@@ -19,6 +19,12 @@
   @return ($val);
 }
 
+@mixin fabric-attribute($sep,$frag, $property, $value) {
+  &#{$sep}#{$frag} {
+    #{$property}: #{$value};
+  }
+}
+
 @mixin var-export-to-css($module, $module-config) {
   /** 
   * cssfabric
@@ -33,13 +39,13 @@
     }
     @if (type_of($rt) == "map") {
       @each $rtkey, $rtval in $rt {
-        $type: type_of($rtval);
-        $key: #{$module}-#{$red}-#{$rtkey};
-        $compval: #{string.slice(#{#ss($rtval)}, 4)}; 
+        // $type: type_of($rtval);
+        // $key: #{$module}-#{$red}-#{$rtkey};
+        // $compval: #{string.slice(#{#ss($rtval)}, 4)};
 
-        $comp: if($type== map or $type == list, #{$compval}, #{$rtval});
+        //$comp: if($type== map or $type == list, #{$compval}, #{$rtval});
 
-        --cssfabric-#{$key}: #{$comp};
+        //--cssfabric-#{$key}: #{$comp};
       }
     }
     @if (type_of($rt) == "list") {

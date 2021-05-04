@@ -153,6 +153,30 @@
 }
 
 /* align-self rules */
+.grid-h .self-auto,
+.grid-v .self-auto {
+  align-self: auto;
+}
+.grid-h .self-start,
+.grid-v .self-start {
+  align-self: flex-start;
+}
+.grid-h .self-end,
+.grid-v .self-end {
+  align-self: flex-end;
+}
+.grid-h .self-center,
+.grid-v .self-center {
+  align-self: flex-center;
+}
+.grid-h .self-baseline,
+.grid-v .self-baseline {
+  align-self: baseline;
+}
+.grid-h .self-stretch,
+.grid-v .self-stretch {
+  align-self: stretch;
+}
 .grid-h .self_auto,
 .grid-v .self_auto {
   align-self: auto;

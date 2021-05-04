@@ -7,13 +7,7 @@ $base-metadata: (
 $base-config: (
     cfg-has-dimension-strict: true,
     CFG_HAS_DIMENSION_MIN: true,
-    CFG_HAS_DIMENSION_MAX: true,
-    table_class_name: table,
-    table_class_name_short: tbl,
-    text_class_name: text,
-    text_class_name_short: txt,
-    menu_class_name: menu,
-    menu_class_name_short: ul,
+    CFG_HAS_DIMENSION_MAX: true,  
     size_step: 0.25rem,
     sizes: (
         tiny: "",
@@ -21,13 +15,6 @@ $base-config: (
         medium: 120,
         large: 250,
         full: 100%
-    ),
-    media_quey_sizes: (
-        xxl: 140,
-        xl: 80,
-        lg: 64,
-        md: 48,
-        sm: 35.7
     ),
     color_schemes_props: (
         info: yellow,
@@ -51,22 +38,5 @@ $base-config: (
     )
 );
 
-$base-docs: (
-    cfg-has-dimension-strict: "",
-    CFG_HAS_DIMENSION_MIN: "",
-    CFG_HAS_DIMENSION_MAX: "",
-    grid_class_name: "",
-    table_class_name: "",
-    table_class_name_short: "",
-    media_quey_sizes: "", 
-    text_class_name_short: "",
-    text_class_name: "",
-    grid_class_name_short: "",
-    menu_class_name: "",
-    menu_class_name_short: "",
-    color_schemes_props: "",
-    color_palette_props: "",
-    color_grays: "",
-    size_step: "",
-    sizes: ""
+$base-docs: ( 
 );

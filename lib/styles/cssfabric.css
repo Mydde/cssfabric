@@ -213,211 +213,6 @@
 .animate-backOut-left {
   animation-name: translateX(-10px);
 }
-/*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
-html {
-  line-height: 1.15;
-  -webkit-text-size-adjust: 100%;
-}
-
-body {
-  margin: 0;
-}
-
-main {
-  display: block;
-}
-
-h1 {
-  font-size: 2em;
-  margin: 0.67em 0;
-}
-
-hr {
-  box-sizing: content-box;
-  height: 0;
-  overflow: visible;
-}
-
-pre {
-  font-family: monospace, monospace;
-  font-size: 1em;
-}
-
-a {
-  background-color: transparent;
-}
-
-abbr[title] {
-  border-bottom: none;
-  text-decoration: underline;
-  text-decoration: underline dotted;
-}
-
-b, strong {
-  font-weight: bolder;
-}
-
-code, kbd, samp {
-  font-family: monospace, monospace;
-  font-size: 1em;
-}
-
-small {
-  font-size: 80%;
-}
-
-sub, sup {
-  font-size: 75%;
-  line-height: 0;
-  position: relative;
-  vertical-align: baseline;
-}
-
-sub {
-  bottom: -0.25em;
-}
-
-sup {
-  top: -0.5em;
-}
-
-img {
-  border-style: none;
-}
-
-button, input, optgroup, select, textarea {
-  font-family: inherit;
-  font-size: 100%;
-  line-height: 1.15;
-  margin: 0;
-}
-
-button, input {
-  overflow: visible;
-}
-
-button, select {
-  text-transform: none;
-}
-
-[type=button], [type=reset], [type=submit], button {
-  -webkit-appearance: button;
-}
-
-[type=button]::-moz-focus-inner, [type=reset]::-moz-focus-inner, [type=submit]::-moz-focus-inner, button::-moz-focus-inner {
-  border-style: none;
-  padding: 0;
-}
-
-[type=button]:-moz-focusring, [type=reset]:-moz-focusring, [type=submit]:-moz-focusring, button:-moz-focusring {
-  outline: 1px dotted ButtonText;
-}
-
-fieldset {
-  padding: 0.35em 0.75em 0.625em;
-}
-
-legend {
-  box-sizing: border-box;
-  color: inherit;
-  display: table;
-  max-width: 100%;
-  padding: 0;
-  white-space: normal;
-}
-
-progress {
-  vertical-align: baseline;
-}
-
-textarea {
-  overflow: auto;
-}
-
-[type=checkbox], [type=radio] {
-  box-sizing: border-box;
-  padding: 0;
-}
-
-[type=number]::-webkit-inner-spin-button, [type=number]::-webkit-outer-spin-button {
-  height: auto;
-}
-
-[type=search] {
-  -webkit-appearance: textfield;
-  outline-offset: -2px;
-}
-
-[type=search]::-webkit-search-decoration {
-  -webkit-appearance: none;
-}
-
-::-webkit-file-upload-button {
-  -webkit-appearance: button;
-  font: inherit;
-}
-
-details {
-  display: block;
-}
-
-summary {
-  display: list-item;
-}
-
-template {
-  display: none;
-}
-
-[hidden] {
-  display: none;
-}
-
-/*# sourceMappingURL=normalize.min.css.map */
-p {
-  margin: auto;
-}
-
-.hover-parent .hover-show {
-  display: none;
-}
-.hover-parent .hover-hide {
-  display: initial;
-}
-.hover-parent:hover .hover-show {
-  display: initial;
-}
-.hover-parent:hover .hover-hide {
-  display: none;
-}
-
-.block:not(:last-child) {
-  margin-bottom: 1.5rem;
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  margin-block-start: 0 !important;
-  margin-block-end: 0 !important;
-  margin-inline-start: 0 !important;
-  margin-inline-end: 0 !important;
-}
-
-.txt-ellipsis {
-  text-overflow: ellipsis;
-  overflow: hidden;
-  white-space: nowrap;
-}
-
-label {
-  padding: 0.2rem 0.5rem;
-  border: 1px solid #ccc;
-  display: inline-block;
-}
 /**
 *   border  t ---------------------
 */
@@ -1775,6 +1570,79 @@ label {
   text-shadow: 0 0 0.125rem black;
   background-color: #333333;
 }
+ul {
+  border-bottom: 1px solid red;
+}
+ul li {
+  margin: 0 4px;
+}
+ul li.active {
+  border-bottom: 4px solid #660000;
+}
+
+/* & li.menu-item{
+    dsp: none;
+}
+&-drop{
+    dsp: none;
+    & .menu-open{
+        dsp: none;
+        & li.menu-item, > li{
+            dsp: none;
+        }
+    }
+    & .menu-close{
+        dsp: none;
+        & li.menu-item, > li{
+            dsp: none;
+        }
+    }
+}*/
+ul.menu {
+  list-style: none;
+  list-style-type: none;
+}
+ul.menu-v {
+  padding: 0;
+  margin: 0;
+}
+ul.menu-v li.menu-item:hover,
+ul.menu-v li:hover {
+  background-color: #ededed;
+}
+ul.menu-v li {
+  list-style: none;
+}
+ul.menu-h {
+  padding: 0;
+  margin: 0;
+  display: flex;
+  padding: 0 4rem;
+  position: relative;
+  border-bottom: 1px solid #ededed;
+}
+ul.menu-h:after {
+  bottom: 0px;
+  left: 0;
+  position: absolute;
+  width: 100%;
+  padding: 1px;
+  box-shadow: 0 2px 2px #ccc;
+  content: " ";
+}
+ul.menu-h li.menu-item,
+ul.menu-h li {
+  flex: 1 1 0;
+  border-left: 1px solid #ededed;
+  text-align: center;
+}
+ul.menu-h li.menu-item:hover,
+ul.menu-h li:hover {
+  background-color: #ededed;
+}
+ul.menu-h li {
+  list-style: none;
+}
 .grid-h {
   display: flex;
   flex-direction: row;
@@ -1930,6 +1798,30 @@ label {
 }
 
 /* align-self rules */
+.grid-h .self-auto,
+.grid-v .self-auto {
+  align-self: auto;
+}
+.grid-h .self-start,
+.grid-v .self-start {
+  align-self: flex-start;
+}
+.grid-h .self-end,
+.grid-v .self-end {
+  align-self: flex-end;
+}
+.grid-h .self-center,
+.grid-v .self-center {
+  align-self: flex-center;
+}
+.grid-h .self-baseline,
+.grid-v .self-baseline {
+  align-self: baseline;
+}
+.grid-h .self-stretch,
+.grid-v .self-stretch {
+  align-self: stretch;
+}
 .grid-h .self_auto,
 .grid-v .self_auto {
   align-self: auto;
@@ -1953,79 +1845,6 @@ label {
 .grid-h .self_stretch,
 .grid-v .self_stretch {
   align-self: stretch;
-}
-ul {
-  border-bottom: 1px solid red;
-}
-ul li {
-  margin: 0 4px;
-}
-ul li.active {
-  border-bottom: 4px solid #660000;
-}
-
-/* & li.menu-item{
-    dsp: none;
-}
-&-drop{
-    dsp: none;
-    & .menu-open{
-        dsp: none;
-        & li.menu-item, > li{
-            dsp: none;
-        }
-    }
-    & .menu-close{
-        dsp: none;
-        & li.menu-item, > li{
-            dsp: none;
-        }
-    }
-}*/
-ul.menu {
-  list-style: none;
-  list-style-type: none;
-}
-ul.menu-v {
-  padding: 0;
-  margin: 0;
-}
-ul.menu-v li.menu-item:hover,
-ul.menu-v li:hover {
-  background-color: #ededed;
-}
-ul.menu-v li {
-  list-style: none;
-}
-ul.menu-h {
-  padding: 0;
-  margin: 0;
-  display: flex;
-  padding: 0 4rem;
-  position: relative;
-  border-bottom: 1px solid #ededed;
-}
-ul.menu-h:after {
-  bottom: 0px;
-  left: 0;
-  position: absolute;
-  width: 100%;
-  padding: 1px;
-  box-shadow: 0 2px 2px #ccc;
-  content: " ";
-}
-ul.menu-h li.menu-item,
-ul.menu-h li {
-  flex: 1 1 0;
-  border-left: 1px solid #ededed;
-  text-align: center;
-}
-ul.menu-h li.menu-item:hover,
-ul.menu-h li:hover {
-  background-color: #ededed;
-}
-ul.menu-h li {
-  list-style: none;
 }
 /* css overflow rules */
 .overflow-visible {
@@ -2110,554 +1929,6 @@ ul.menu-h li {
 
 .overflow-y-unset {
   overflow: unset;
-}
-/*  dimension : "-full" shorthand is 100% width*/
-.w-full {
-  width: 100%;
-}
-
-/*  dimension : "-mid" shorthand is 50% width*/
-.w-mid {
-  width: 50%;
-}
-
-/*  dimension : "-quarter" shorthand is 25% width*/
-.w-quarter {
-  width: 25%;
-}
-
-/*  dimension : "-tiers" shorthand is 33% width*/
-.w-tiers {
-  width: 33%;
-}
-
-/*  dimension : "-max-content" shorthand is max-content width*/
-.w-max-content {
-  width: max-content;
-}
-
-/*  dimension : "-min-content" shorthand is min-content width*/
-.w-min-content {
-  width: min-content;
-}
-
-/*  dimension : "-fit-content" shorthand is fit-content width*/
-.w-fit-content {
-  width: fit-content;
-}
-
-/*  dimension : "-1" shorthand is 1rem width*/
-.w-1 {
-  width: 1rem;
-}
-
-/*  dimension : "-2" shorthand is 2rem width*/
-.w-2 {
-  width: 2rem;
-}
-
-/*  dimension : "-4" shorthand is 4rem width*/
-.w-4 {
-  width: 4rem;
-}
-
-/*  dimension : "-8" shorthand is 8rem width*/
-.w-8 {
-  width: 8rem;
-}
-
-/*  dimension : "-16" shorthand is 16rem width*/
-.w-16 {
-  width: 16rem;
-}
-
-/*  dimension : "-24" shorthand is 24rem width*/
-.w-24 {
-  width: 24rem;
-}
-
-/*  dimension : "-32" shorthand is 32rem width*/
-.w-32 {
-  width: 32rem;
-}
-
-/*  dimension : "-48" shorthand is 48rem width*/
-.w-48 {
-  width: 48rem;
-}
-
-/*  dimension : "-64" shorthand is 64rem width*/
-.w-64 {
-  width: 64rem;
-}
-
-/*  dimension : "-1-8" shorthand is 12.5% width*/
-.w-1-8 {
-  width: 12.5%;
-}
-
-/*  dimension : "-2-8" shorthand is 25% width*/
-.w-2-8 {
-  width: 25%;
-}
-
-/*  dimension : "-3-8" shorthand is 37.5% width*/
-.w-3-8 {
-  width: 37.5%;
-}
-
-/*  dimension : "-4-8" shorthand is 50% width*/
-.w-4-8 {
-  width: 50%;
-}
-
-/*  dimension : "-5-8" shorthand is 62.5% width*/
-.w-5-8 {
-  width: 62.5%;
-}
-
-/*  dimension : "-6-8" shorthand is 75% width*/
-.w-6-8 {
-  width: 75%;
-}
-
-/*  dimension : "-7-8" shorthand is 87.5% width*/
-.w-7-8 {
-  width: 87.5%;
-}
-
-/*  dimension : "-8-8" shorthand is 100% width*/
-.w-8-8 {
-  width: 100%;
-}
-
-/*  dimension : "-1-24" shorthand is 4.1666666667% width*/
-.w-1-24 {
-  width: 4.1666666667%;
-}
-
-/*  dimension : "-2-24" shorthand is 8.3333333333% width*/
-.w-2-24 {
-  width: 8.3333333333%;
-}
-
-/*  dimension : "-3-24" shorthand is 12.5% width*/
-.w-3-24 {
-  width: 12.5%;
-}
-
-/*  dimension : "-4-24" shorthand is 16.6666666667% width*/
-.w-4-24 {
-  width: 16.6666666667%;
-}
-
-/*  dimension : "-5-24" shorthand is 20.8333333333% width*/
-.w-5-24 {
-  width: 20.8333333333%;
-}
-
-/*  dimension : "-6-24" shorthand is 25% width*/
-.w-6-24 {
-  width: 25%;
-}
-
-/*  dimension : "-7-24" shorthand is 29.1666666667% width*/
-.w-7-24 {
-  width: 29.1666666667%;
-}
-
-/*  dimension : "-8-24" shorthand is 33.3333333333% width*/
-.w-8-24 {
-  width: 33.3333333333%;
-}
-
-/*  dimension : "-9-24" shorthand is 37.5% width*/
-.w-9-24 {
-  width: 37.5%;
-}
-
-/*  dimension : "-10-24" shorthand is 41.6666666667% width*/
-.w-10-24 {
-  width: 41.6666666667%;
-}
-
-/*  dimension : "-11-24" shorthand is 45.8333333333% width*/
-.w-11-24 {
-  width: 45.8333333333%;
-}
-
-/*  dimension : "-12-24" shorthand is 50% width*/
-.w-12-24 {
-  width: 50%;
-}
-
-/*  dimension : "-13-24" shorthand is 54.1666666667% width*/
-.w-13-24 {
-  width: 54.1666666667%;
-}
-
-/*  dimension : "-14-24" shorthand is 58.3333333333% width*/
-.w-14-24 {
-  width: 58.3333333333%;
-}
-
-/*  dimension : "-15-24" shorthand is 62.5% width*/
-.w-15-24 {
-  width: 62.5%;
-}
-
-/*  dimension : "-16-24" shorthand is 66.6666666667% width*/
-.w-16-24 {
-  width: 66.6666666667%;
-}
-
-/*  dimension : "-17-24" shorthand is 70.8333333333% width*/
-.w-17-24 {
-  width: 70.8333333333%;
-}
-
-/*  dimension : "-18-24" shorthand is 75% width*/
-.w-18-24 {
-  width: 75%;
-}
-
-/*  dimension : "-19-24" shorthand is 79.1666666667% width*/
-.w-19-24 {
-  width: 79.1666666667%;
-}
-
-/*  dimension : "-20-24" shorthand is 83.3333333333% width*/
-.w-20-24 {
-  width: 83.3333333333%;
-}
-
-/*  dimension : "-21-24" shorthand is 87.5% width*/
-.w-21-24 {
-  width: 87.5%;
-}
-
-/*  dimension : "-22-24" shorthand is 91.6666666667% width*/
-.w-22-24 {
-  width: 91.6666666667%;
-}
-
-/*  dimension : "-23-24" shorthand is 95.8333333333% width*/
-.w-23-24 {
-  width: 95.8333333333%;
-}
-
-/*  dimension : "-24-24" shorthand is 100% width*/
-.w-24-24 {
-  width: 100%;
-}
-
-/*  dimension : "-full" shorthand is 100% height*/
-.h-full {
-  height: 100%;
-}
-
-/*  dimension : "-mid" shorthand is 50% height*/
-.h-mid {
-  height: 50%;
-}
-
-/*  dimension : "-quarter" shorthand is 25% height*/
-.h-quarter {
-  height: 25%;
-}
-
-/*  dimension : "-tiers" shorthand is 33% height*/
-.h-tiers {
-  height: 33%;
-}
-
-/*  dimension : "-max-content" shorthand is max-content height*/
-.h-max-content {
-  height: max-content;
-}
-
-/*  dimension : "-min-content" shorthand is min-content height*/
-.h-min-content {
-  height: min-content;
-}
-
-/*  dimension : "-fit-content" shorthand is fit-content height*/
-.h-fit-content {
-  height: fit-content;
-}
-
-/*  dimension : "-1" shorthand is 1rem height*/
-.h-1 {
-  height: 1rem;
-}
-
-/*  dimension : "-2" shorthand is 2rem height*/
-.h-2 {
-  height: 2rem;
-}
-
-/*  dimension : "-4" shorthand is 4rem height*/
-.h-4 {
-  height: 4rem;
-}
-
-/*  dimension : "-8" shorthand is 8rem height*/
-.h-8 {
-  height: 8rem;
-}
-
-/*  dimension : "-16" shorthand is 16rem height*/
-.h-16 {
-  height: 16rem;
-}
-
-/*  dimension : "-24" shorthand is 24rem height*/
-.h-24 {
-  height: 24rem;
-}
-
-/*  dimension : "-32" shorthand is 32rem height*/
-.h-32 {
-  height: 32rem;
-}
-
-/*  dimension : "-48" shorthand is 48rem height*/
-.h-48 {
-  height: 48rem;
-}
-
-/*  dimension : "-64" shorthand is 64rem height*/
-.h-64 {
-  height: 64rem;
-}
-
-/*  dimension : "-1-8" shorthand is 12.5% height*/
-.h-1-8 {
-  height: 12.5%;
-}
-
-/*  dimension : "-2-8" shorthand is 25% height*/
-.h-2-8 {
-  height: 25%;
-}
-
-/*  dimension : "-3-8" shorthand is 37.5% height*/
-.h-3-8 {
-  height: 37.5%;
-}
-
-/*  dimension : "-4-8" shorthand is 50% height*/
-.h-4-8 {
-  height: 50%;
-}
-
-/*  dimension : "-5-8" shorthand is 62.5% height*/
-.h-5-8 {
-  height: 62.5%;
-}
-
-/*  dimension : "-6-8" shorthand is 75% height*/
-.h-6-8 {
-  height: 75%;
-}
-
-/*  dimension : "-7-8" shorthand is 87.5% height*/
-.h-7-8 {
-  height: 87.5%;
-}
-
-/*  dimension : "-8-8" shorthand is 100% height*/
-.h-8-8 {
-  height: 100%;
-}
-
-/*  dimension : "-1-24" shorthand is 4.1666666667% height*/
-.h-1-24 {
-  height: 4.1666666667%;
-}
-
-/*  dimension : "-2-24" shorthand is 8.3333333333% height*/
-.h-2-24 {
-  height: 8.3333333333%;
-}
-
-/*  dimension : "-3-24" shorthand is 12.5% height*/
-.h-3-24 {
-  height: 12.5%;
-}
-
-/*  dimension : "-4-24" shorthand is 16.6666666667% height*/
-.h-4-24 {
-  height: 16.6666666667%;
-}
-
-/*  dimension : "-5-24" shorthand is 20.8333333333% height*/
-.h-5-24 {
-  height: 20.8333333333%;
-}
-
-/*  dimension : "-6-24" shorthand is 25% height*/
-.h-6-24 {
-  height: 25%;
-}
-
-/*  dimension : "-7-24" shorthand is 29.1666666667% height*/
-.h-7-24 {
-  height: 29.1666666667%;
-}
-
-/*  dimension : "-8-24" shorthand is 33.3333333333% height*/
-.h-8-24 {
-  height: 33.3333333333%;
-}
-
-/*  dimension : "-9-24" shorthand is 37.5% height*/
-.h-9-24 {
-  height: 37.5%;
-}
-
-/*  dimension : "-10-24" shorthand is 41.6666666667% height*/
-.h-10-24 {
-  height: 41.6666666667%;
-}
-
-/*  dimension : "-11-24" shorthand is 45.8333333333% height*/
-.h-11-24 {
-  height: 45.8333333333%;
-}
-
-/*  dimension : "-12-24" shorthand is 50% height*/
-.h-12-24 {
-  height: 50%;
-}
-
-/*  dimension : "-13-24" shorthand is 54.1666666667% height*/
-.h-13-24 {
-  height: 54.1666666667%;
-}
-
-/*  dimension : "-14-24" shorthand is 58.3333333333% height*/
-.h-14-24 {
-  height: 58.3333333333%;
-}
-
-/*  dimension : "-15-24" shorthand is 62.5% height*/
-.h-15-24 {
-  height: 62.5%;
-}
-
-/*  dimension : "-16-24" shorthand is 66.6666666667% height*/
-.h-16-24 {
-  height: 66.6666666667%;
-}
-
-/*  dimension : "-17-24" shorthand is 70.8333333333% height*/
-.h-17-24 {
-  height: 70.8333333333%;
-}
-
-/*  dimension : "-18-24" shorthand is 75% height*/
-.h-18-24 {
-  height: 75%;
-}
-
-/*  dimension : "-19-24" shorthand is 79.1666666667% height*/
-.h-19-24 {
-  height: 79.1666666667%;
-}
-
-/*  dimension : "-20-24" shorthand is 83.3333333333% height*/
-.h-20-24 {
-  height: 83.3333333333%;
-}
-
-/*  dimension : "-21-24" shorthand is 87.5% height*/
-.h-21-24 {
-  height: 87.5%;
-}
-
-/*  dimension : "-22-24" shorthand is 91.6666666667% height*/
-.h-22-24 {
-  height: 91.6666666667%;
-}
-
-/*  dimension : "-23-24" shorthand is 95.8333333333% height*/
-.h-23-24 {
-  height: 95.8333333333%;
-}
-
-/*  dimension : "-24-24" shorthand is 100% height*/
-.h-24-24 {
-  height: 100%;
-}
-.table {
-  border-collapse: collapse;
-  border-spacing: 0;
-}
-.table thead,
-.table .thead {
-  position: relative;
-}
-.table.tbl-head thead tr th {
-  background-color: table_bg_color_head;
-}
-.table thead tr th,
-.table .thead .tr .th {
-  padding: 0.25em;
-}
-.table tbody tr td,
-.table .tbody .tr .td {
-  padding: 0.25em;
-}
-.table.tbl-layout {
-  table-layout: fixed;
-}
-.table.tbl-h-line th,
-.table.tbl-h-line td,
-.table.tbl-h-line .th,
-.table.tbl-h-line .td {
-  border-bottom: 1px solid #ededed;
-}
-.table.tbl-h-line:last-child {
-  border-bottom: none;
-}
-.table.tbl-v-line tr th, .table.tbl-v-line tr td {
-  border-right: 1px solid #ededed;
-}
-.table.tbl-v-line tr th:last-child, .table.tbl-v-line tr td:last-child {
-  border-right: none;
-}
-.table.tbl-border {
-  border: 1px solid #ededed;
-}
-.table.tbl-shad thead tr th {
-  box-shadow: 4px 4px 8px #ccc;
-  z-index: 11;
-}
-.table.tbl-shad thead tr th:last-child {
-  box-shadow: 4px 4px 8px #ccc;
-  z-index: -1;
-}
-.table.tbl-bg-strip-2 tr:nth-child(2n+2) td {
-  background-color: #ededed;
-}
-.table.tbl-bg-strip-5 tr:nth-child(5n+5) td {
-  background-color: #ededed;
-}
-.table.tbl-sticky {
-  position: relative;
-}
-.table.tbl-sticky thead tr,
-.table.tbl-sticky .thead .tr {
-  position: static;
-}
-.table.tbl-sticky thead tr th,
-.table.tbl-sticky thead tr .th,
-.table.tbl-sticky .thead .tr th,
-.table.tbl-sticky .thead .tr .th {
-  background-color: #ededed;
-  position: sticky;
-  top: 0;
 }
 /** cssfabric : txt*/
 .h1,
@@ -2866,6 +2137,75 @@ h6 {
 }
 .txt-gray-1000 {
   color: #333333;
+}
+.table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+.table thead,
+.table .thead {
+  position: relative;
+}
+.table.tbl-head thead tr th {
+  background-color: table_bg_color_head;
+}
+.table thead tr th,
+.table .thead .tr .th {
+  padding: 0.25em;
+}
+.table tbody tr td,
+.table .tbody .tr .td {
+  padding: 0.25em;
+}
+.table.tbl-layout {
+  table-layout: fixed;
+}
+.table.tbl-h-line th,
+.table.tbl-h-line td,
+.table.tbl-h-line .th,
+.table.tbl-h-line .td {
+  border-bottom: 1px solid #ededed;
+}
+.table.tbl-h-line:last-child {
+  border-bottom: none;
+}
+.table.tbl-v-line tr th, .table.tbl-v-line tr td {
+  border-right: 1px solid #ededed;
+}
+.table.tbl-v-line tr th:last-child, .table.tbl-v-line tr td:last-child {
+  border-right: none;
+}
+.table.tbl-border {
+  border: 1px solid #ededed;
+}
+.table.tbl-shad thead tr th {
+  box-shadow: 4px 4px 8px #ccc;
+  z-index: 11;
+}
+.table.tbl-shad thead tr th:last-child {
+  box-shadow: 4px 4px 8px #ccc;
+  z-index: -1;
+}
+.table.tbl-bg-strip-2 tr:nth-child(2n+2) td {
+  background-color: #ededed;
+}
+.table.tbl-bg-strip-5 tr:nth-child(5n+5) td {
+  background-color: #ededed;
+}
+.table.tbl-sticky {
+  position: relative;
+}
+.table.tbl-sticky thead tr,
+.table.tbl-sticky .thead .tr {
+  position: static;
+}
+.table.tbl-sticky thead tr th,
+.table.tbl-sticky thead tr .th,
+.table.tbl-sticky .thead .tr th,
+.table.tbl-sticky .thead .tr .th {
+  background-color: #ededed;
+  position: sticky;
+  top: 0;
 }
 .theme-text-primary {
   color: orange;
@@ -3331,4 +2671,678 @@ h6 {
 .zI-g-9 {
   /* set zIndex value */
   z-index: 800;
+}
+/*  dimension : "-full" shorthand is 100% width*/
+.w-full {
+  width: 100%;
+}
+
+/*  dimension : "-mid" shorthand is 50% width*/
+.w-mid {
+  width: 50%;
+}
+
+/*  dimension : "-quarter" shorthand is 25% width*/
+.w-quarter {
+  width: 25%;
+}
+
+/*  dimension : "-tiers" shorthand is 33% width*/
+.w-tiers {
+  width: 33%;
+}
+
+/*  dimension : "-max-content" shorthand is max-content width*/
+.w-max-content {
+  width: max-content;
+}
+
+/*  dimension : "-min-content" shorthand is min-content width*/
+.w-min-content {
+  width: min-content;
+}
+
+/*  dimension : "-1" shorthand is 1rem width*/
+.w-1 {
+  width: 1rem;
+}
+
+/*  dimension : "-2" shorthand is 2rem width*/
+.w-2 {
+  width: 2rem;
+}
+
+/*  dimension : "-4" shorthand is 4rem width*/
+.w-4 {
+  width: 4rem;
+}
+
+/*  dimension : "-8" shorthand is 8rem width*/
+.w-8 {
+  width: 8rem;
+}
+
+/*  dimension : "-16" shorthand is 16rem width*/
+.w-16 {
+  width: 16rem;
+}
+
+/*  dimension : "-24" shorthand is 24rem width*/
+.w-24 {
+  width: 24rem;
+}
+
+/*  dimension : "-32" shorthand is 32rem width*/
+.w-32 {
+  width: 32rem;
+}
+
+/*  dimension : "-48" shorthand is 48rem width*/
+.w-48 {
+  width: 48rem;
+}
+
+/*  dimension : "-64" shorthand is 64rem width*/
+.w-64 {
+  width: 64rem;
+}
+
+/*  dimension : "-1-8" shorthand is 12.5% width*/
+.w-1-8 {
+  width: 12.5%;
+}
+
+/*  dimension : "-2-8" shorthand is 25% width*/
+.w-2-8 {
+  width: 25%;
+}
+
+/*  dimension : "-3-8" shorthand is 37.5% width*/
+.w-3-8 {
+  width: 37.5%;
+}
+
+/*  dimension : "-4-8" shorthand is 50% width*/
+.w-4-8 {
+  width: 50%;
+}
+
+/*  dimension : "-5-8" shorthand is 62.5% width*/
+.w-5-8 {
+  width: 62.5%;
+}
+
+/*  dimension : "-6-8" shorthand is 75% width*/
+.w-6-8 {
+  width: 75%;
+}
+
+/*  dimension : "-7-8" shorthand is 87.5% width*/
+.w-7-8 {
+  width: 87.5%;
+}
+
+/*  dimension : "-8-8" shorthand is 100% width*/
+.w-8-8 {
+  width: 100%;
+}
+
+/*  dimension : "-1-24" shorthand is 4.1666666667% width*/
+.w-1-24 {
+  width: 4.1666666667%;
+}
+
+/*  dimension : "-2-24" shorthand is 8.3333333333% width*/
+.w-2-24 {
+  width: 8.3333333333%;
+}
+
+/*  dimension : "-3-24" shorthand is 12.5% width*/
+.w-3-24 {
+  width: 12.5%;
+}
+
+/*  dimension : "-4-24" shorthand is 16.6666666667% width*/
+.w-4-24 {
+  width: 16.6666666667%;
+}
+
+/*  dimension : "-5-24" shorthand is 20.8333333333% width*/
+.w-5-24 {
+  width: 20.8333333333%;
+}
+
+/*  dimension : "-6-24" shorthand is 25% width*/
+.w-6-24 {
+  width: 25%;
+}
+
+/*  dimension : "-7-24" shorthand is 29.1666666667% width*/
+.w-7-24 {
+  width: 29.1666666667%;
+}
+
+/*  dimension : "-8-24" shorthand is 33.3333333333% width*/
+.w-8-24 {
+  width: 33.3333333333%;
+}
+
+/*  dimension : "-9-24" shorthand is 37.5% width*/
+.w-9-24 {
+  width: 37.5%;
+}
+
+/*  dimension : "-10-24" shorthand is 41.6666666667% width*/
+.w-10-24 {
+  width: 41.6666666667%;
+}
+
+/*  dimension : "-11-24" shorthand is 45.8333333333% width*/
+.w-11-24 {
+  width: 45.8333333333%;
+}
+
+/*  dimension : "-12-24" shorthand is 50% width*/
+.w-12-24 {
+  width: 50%;
+}
+
+/*  dimension : "-13-24" shorthand is 54.1666666667% width*/
+.w-13-24 {
+  width: 54.1666666667%;
+}
+
+/*  dimension : "-14-24" shorthand is 58.3333333333% width*/
+.w-14-24 {
+  width: 58.3333333333%;
+}
+
+/*  dimension : "-15-24" shorthand is 62.5% width*/
+.w-15-24 {
+  width: 62.5%;
+}
+
+/*  dimension : "-16-24" shorthand is 66.6666666667% width*/
+.w-16-24 {
+  width: 66.6666666667%;
+}
+
+/*  dimension : "-17-24" shorthand is 70.8333333333% width*/
+.w-17-24 {
+  width: 70.8333333333%;
+}
+
+/*  dimension : "-18-24" shorthand is 75% width*/
+.w-18-24 {
+  width: 75%;
+}
+
+/*  dimension : "-19-24" shorthand is 79.1666666667% width*/
+.w-19-24 {
+  width: 79.1666666667%;
+}
+
+/*  dimension : "-20-24" shorthand is 83.3333333333% width*/
+.w-20-24 {
+  width: 83.3333333333%;
+}
+
+/*  dimension : "-21-24" shorthand is 87.5% width*/
+.w-21-24 {
+  width: 87.5%;
+}
+
+/*  dimension : "-22-24" shorthand is 91.6666666667% width*/
+.w-22-24 {
+  width: 91.6666666667%;
+}
+
+/*  dimension : "-23-24" shorthand is 95.8333333333% width*/
+.w-23-24 {
+  width: 95.8333333333%;
+}
+
+/*  dimension : "-24-24" shorthand is 100% width*/
+.w-24-24 {
+  width: 100%;
+}
+
+/*  dimension : "-full" shorthand is 100% height*/
+.h-full {
+  height: 100%;
+}
+
+/*  dimension : "-mid" shorthand is 50% height*/
+.h-mid {
+  height: 50%;
+}
+
+/*  dimension : "-quarter" shorthand is 25% height*/
+.h-quarter {
+  height: 25%;
+}
+
+/*  dimension : "-tiers" shorthand is 33% height*/
+.h-tiers {
+  height: 33%;
+}
+
+/*  dimension : "-max-content" shorthand is max-content height*/
+.h-max-content {
+  height: max-content;
+}
+
+/*  dimension : "-min-content" shorthand is min-content height*/
+.h-min-content {
+  height: min-content;
+}
+
+/*  dimension : "-1" shorthand is 1rem height*/
+.h-1 {
+  height: 1rem;
+}
+
+/*  dimension : "-2" shorthand is 2rem height*/
+.h-2 {
+  height: 2rem;
+}
+
+/*  dimension : "-4" shorthand is 4rem height*/
+.h-4 {
+  height: 4rem;
+}
+
+/*  dimension : "-8" shorthand is 8rem height*/
+.h-8 {
+  height: 8rem;
+}
+
+/*  dimension : "-16" shorthand is 16rem height*/
+.h-16 {
+  height: 16rem;
+}
+
+/*  dimension : "-24" shorthand is 24rem height*/
+.h-24 {
+  height: 24rem;
+}
+
+/*  dimension : "-32" shorthand is 32rem height*/
+.h-32 {
+  height: 32rem;
+}
+
+/*  dimension : "-48" shorthand is 48rem height*/
+.h-48 {
+  height: 48rem;
+}
+
+/*  dimension : "-64" shorthand is 64rem height*/
+.h-64 {
+  height: 64rem;
+}
+
+/*  dimension : "-1-8" shorthand is 12.5% height*/
+.h-1-8 {
+  height: 12.5%;
+}
+
+/*  dimension : "-2-8" shorthand is 25% height*/
+.h-2-8 {
+  height: 25%;
+}
+
+/*  dimension : "-3-8" shorthand is 37.5% height*/
+.h-3-8 {
+  height: 37.5%;
+}
+
+/*  dimension : "-4-8" shorthand is 50% height*/
+.h-4-8 {
+  height: 50%;
+}
+
+/*  dimension : "-5-8" shorthand is 62.5% height*/
+.h-5-8 {
+  height: 62.5%;
+}
+
+/*  dimension : "-6-8" shorthand is 75% height*/
+.h-6-8 {
+  height: 75%;
+}
+
+/*  dimension : "-7-8" shorthand is 87.5% height*/
+.h-7-8 {
+  height: 87.5%;
+}
+
+/*  dimension : "-8-8" shorthand is 100% height*/
+.h-8-8 {
+  height: 100%;
+}
+
+/*  dimension : "-1-24" shorthand is 4.1666666667% height*/
+.h-1-24 {
+  height: 4.1666666667%;
+}
+
+/*  dimension : "-2-24" shorthand is 8.3333333333% height*/
+.h-2-24 {
+  height: 8.3333333333%;
+}
+
+/*  dimension : "-3-24" shorthand is 12.5% height*/
+.h-3-24 {
+  height: 12.5%;
+}
+
+/*  dimension : "-4-24" shorthand is 16.6666666667% height*/
+.h-4-24 {
+  height: 16.6666666667%;
+}
+
+/*  dimension : "-5-24" shorthand is 20.8333333333% height*/
+.h-5-24 {
+  height: 20.8333333333%;
+}
+
+/*  dimension : "-6-24" shorthand is 25% height*/
+.h-6-24 {
+  height: 25%;
+}
+
+/*  dimension : "-7-24" shorthand is 29.1666666667% height*/
+.h-7-24 {
+  height: 29.1666666667%;
+}
+
+/*  dimension : "-8-24" shorthand is 33.3333333333% height*/
+.h-8-24 {
+  height: 33.3333333333%;
+}
+
+/*  dimension : "-9-24" shorthand is 37.5% height*/
+.h-9-24 {
+  height: 37.5%;
+}
+
+/*  dimension : "-10-24" shorthand is 41.6666666667% height*/
+.h-10-24 {
+  height: 41.6666666667%;
+}
+
+/*  dimension : "-11-24" shorthand is 45.8333333333% height*/
+.h-11-24 {
+  height: 45.8333333333%;
+}
+
+/*  dimension : "-12-24" shorthand is 50% height*/
+.h-12-24 {
+  height: 50%;
+}
+
+/*  dimension : "-13-24" shorthand is 54.1666666667% height*/
+.h-13-24 {
+  height: 54.1666666667%;
+}
+
+/*  dimension : "-14-24" shorthand is 58.3333333333% height*/
+.h-14-24 {
+  height: 58.3333333333%;
+}
+
+/*  dimension : "-15-24" shorthand is 62.5% height*/
+.h-15-24 {
+  height: 62.5%;
+}
+
+/*  dimension : "-16-24" shorthand is 66.6666666667% height*/
+.h-16-24 {
+  height: 66.6666666667%;
+}
+
+/*  dimension : "-17-24" shorthand is 70.8333333333% height*/
+.h-17-24 {
+  height: 70.8333333333%;
+}
+
+/*  dimension : "-18-24" shorthand is 75% height*/
+.h-18-24 {
+  height: 75%;
+}
+
+/*  dimension : "-19-24" shorthand is 79.1666666667% height*/
+.h-19-24 {
+  height: 79.1666666667%;
+}
+
+/*  dimension : "-20-24" shorthand is 83.3333333333% height*/
+.h-20-24 {
+  height: 83.3333333333%;
+}
+
+/*  dimension : "-21-24" shorthand is 87.5% height*/
+.h-21-24 {
+  height: 87.5%;
+}
+
+/*  dimension : "-22-24" shorthand is 91.6666666667% height*/
+.h-22-24 {
+  height: 91.6666666667%;
+}
+
+/*  dimension : "-23-24" shorthand is 95.8333333333% height*/
+.h-23-24 {
+  height: 95.8333333333%;
+}
+
+/*  dimension : "-24-24" shorthand is 100% height*/
+.h-24-24 {
+  height: 100%;
+}
+/*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
+html {
+  line-height: 1.15;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+}
+
+main {
+  display: block;
+}
+
+h1 {
+  font-size: 2em;
+  margin: 0.67em 0;
+}
+
+hr {
+  box-sizing: content-box;
+  height: 0;
+  overflow: visible;
+}
+
+pre {
+  font-family: monospace, monospace;
+  font-size: 1em;
+}
+
+a {
+  background-color: transparent;
+}
+
+abbr[title] {
+  border-bottom: none;
+  text-decoration: underline;
+  text-decoration: underline dotted;
+}
+
+b, strong {
+  font-weight: bolder;
+}
+
+code, kbd, samp {
+  font-family: monospace, monospace;
+  font-size: 1em;
+}
+
+small {
+  font-size: 80%;
+}
+
+sub, sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+
+sub {
+  bottom: -0.25em;
+}
+
+sup {
+  top: -0.5em;
+}
+
+img {
+  border-style: none;
+}
+
+button, input, optgroup, select, textarea {
+  font-family: inherit;
+  font-size: 100%;
+  line-height: 1.15;
+  margin: 0;
+}
+
+button, input {
+  overflow: visible;
+}
+
+button, select {
+  text-transform: none;
+}
+
+[type=button], [type=reset], [type=submit], button {
+  -webkit-appearance: button;
+}
+
+[type=button]::-moz-focus-inner, [type=reset]::-moz-focus-inner, [type=submit]::-moz-focus-inner, button::-moz-focus-inner {
+  border-style: none;
+  padding: 0;
+}
+
+[type=button]:-moz-focusring, [type=reset]:-moz-focusring, [type=submit]:-moz-focusring, button:-moz-focusring {
+  outline: 1px dotted ButtonText;
+}
+
+fieldset {
+  padding: 0.35em 0.75em 0.625em;
+}
+
+legend {
+  box-sizing: border-box;
+  color: inherit;
+  display: table;
+  max-width: 100%;
+  padding: 0;
+  white-space: normal;
+}
+
+progress {
+  vertical-align: baseline;
+}
+
+textarea {
+  overflow: auto;
+}
+
+[type=checkbox], [type=radio] {
+  box-sizing: border-box;
+  padding: 0;
+}
+
+[type=number]::-webkit-inner-spin-button, [type=number]::-webkit-outer-spin-button {
+  height: auto;
+}
+
+[type=search] {
+  -webkit-appearance: textfield;
+  outline-offset: -2px;
+}
+
+[type=search]::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
+::-webkit-file-upload-button {
+  -webkit-appearance: button;
+  font: inherit;
+}
+
+details {
+  display: block;
+}
+
+summary {
+  display: list-item;
+}
+
+template {
+  display: none;
+}
+
+[hidden] {
+  display: none;
+}
+
+/*# sourceMappingURL=normalize.min.css.map */
+p {
+  margin: auto;
+}
+
+.hover-parent .hover-show {
+  display: none;
+}
+.hover-parent .hover-hide {
+  display: initial;
+}
+.hover-parent:hover .hover-show {
+  display: initial;
+}
+.hover-parent:hover .hover-hide {
+  display: none;
+}
+
+.block:not(:last-child) {
+  margin-bottom: 1.5rem;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin-block-start: 0 !important;
+  margin-block-end: 0 !important;
+  margin-inline-start: 0 !important;
+  margin-inline-end: 0 !important;
+}
+
+.txt-ellipsis {
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+label {
+  padding: 0.2rem 0.5rem;
+  border: 1px solid #ccc;
+  display: inline-block;
 }

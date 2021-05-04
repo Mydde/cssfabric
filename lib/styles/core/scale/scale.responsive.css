@@ -29,11 +29,6 @@
     width: min-content;
   }
 
-  /*  dimension : "-fit-content" shorthand is fit-content width*/
-  .w-xxl-fit-content {
-    width: fit-content;
-  }
-
   /*  dimension : "-1" shorthand is 1rem width*/
   .w-xxl-1 {
     width: 1rem;
@@ -267,11 +262,6 @@
   /*  dimension : "-min-content" shorthand is min-content height*/
   .h-xxl-min-content {
     height: min-content;
-  }
-
-  /*  dimension : "-fit-content" shorthand is fit-content height*/
-  .h-xxl-fit-content {
-    height: fit-content;
   }
 
   /*  dimension : "-1" shorthand is 1rem height*/
@@ -510,11 +500,6 @@
     width: min-content;
   }
 
-  /*  dimension : "-fit-content" shorthand is fit-content width*/
-  .w-xl-fit-content {
-    width: fit-content;
-  }
-
   /*  dimension : "-1" shorthand is 1rem width*/
   .w-xl-1 {
     width: 1rem;
@@ -748,11 +733,6 @@
   /*  dimension : "-min-content" shorthand is min-content height*/
   .h-xl-min-content {
     height: min-content;
-  }
-
-  /*  dimension : "-fit-content" shorthand is fit-content height*/
-  .h-xl-fit-content {
-    height: fit-content;
   }
 
   /*  dimension : "-1" shorthand is 1rem height*/
@@ -991,11 +971,6 @@
     width: min-content;
   }
 
-  /*  dimension : "-fit-content" shorthand is fit-content width*/
-  .w-lg-fit-content {
-    width: fit-content;
-  }
-
   /*  dimension : "-1" shorthand is 1rem width*/
   .w-lg-1 {
     width: 1rem;
@@ -1229,11 +1204,6 @@
   /*  dimension : "-min-content" shorthand is min-content height*/
   .h-lg-min-content {
     height: min-content;
-  }
-
-  /*  dimension : "-fit-content" shorthand is fit-content height*/
-  .h-lg-fit-content {
-    height: fit-content;
   }
 
   /*  dimension : "-1" shorthand is 1rem height*/
@@ -1472,11 +1442,6 @@
     width: min-content;
   }
 
-  /*  dimension : "-fit-content" shorthand is fit-content width*/
-  .w-md-fit-content {
-    width: fit-content;
-  }
-
   /*  dimension : "-1" shorthand is 1rem width*/
   .w-md-1 {
     width: 1rem;
@@ -1710,11 +1675,6 @@
   /*  dimension : "-min-content" shorthand is min-content height*/
   .h-md-min-content {
     height: min-content;
-  }
-
-  /*  dimension : "-fit-content" shorthand is fit-content height*/
-  .h-md-fit-content {
-    height: fit-content;
   }
 
   /*  dimension : "-1" shorthand is 1rem height*/
@@ -1953,11 +1913,6 @@
     width: min-content;
   }
 
-  /*  dimension : "-fit-content" shorthand is fit-content width*/
-  .w-sm-fit-content {
-    width: fit-content;
-  }
-
   /*  dimension : "-1" shorthand is 1rem width*/
   .w-sm-1 {
     width: 1rem;
@@ -2191,11 +2146,6 @@
   /*  dimension : "-min-content" shorthand is min-content height*/
   .h-sm-min-content {
     height: min-content;
-  }
-
-  /*  dimension : "-fit-content" shorthand is fit-content height*/
-  .h-sm-fit-content {
-    height: fit-content;
   }
 
   /*  dimension : "-1" shorthand is 1rem height*/

@@ -1,37 +1,37 @@
-
 // load scss config file
 @use '../../_utils';
 @use '../cssfabric-vars' as cssfabric-vars;
-@use 'grid-vars'; 
-
-$grid-config:  grid-vars.$grid-config;
+@use 'grid-vars';
  
+$grid-config: grid-vars.$grid-config;
+$cssfabric-config: cssfabric-vars.$cssfabric-config;
 
+$sep: map-get($cssfabric-config, sep);
 // read variables
-$CFG_GRID_CODE: map-get($grid-config, grid_class_name);
- 
+$cssProps: map-get($grid-config, cssProps);
+$grid-code: map-get($grid-config, grid_class_name);
+$grid-h: map-get($grid-config, grid_hor_code);
+$grid-v: map-get($grid-config, grid_vert_code);
 
-$CFG_GRID_SEPARATOR: map-get($grid-config, grid_separator);
-$CFG_GRID_HOR: map-get($grid-config, grid_hor_code);
-$CFG_GRID_VERT: map-get($grid-config, grid_vert_code);
+
+// @error map-get($cssProps, alignSelf);
+// $tes: map-get(cssProps, alignSelf);
 
 
 @mixin makeGrid($mqKey) {
-
-    $prefix : if($mqKey, #{$CFG_GRID_CODE}-#{$mqKey}, #{$CFG_GRID_CODE});
-    $h_prop: #{$prefix}#{$CFG_GRID_SEPARATOR}#{$CFG_GRID_HOR};
-    $v_prop: #{$prefix}#{$CFG_GRID_SEPARATOR}#{$CFG_GRID_VERT};
-
+    $prefix: if($mqKey, #{$grid-code}-#{$mqKey}, #{$grid-code});
+    $h_prop: #{$prefix}#{$sep}#{$grid-h};
+    $v_prop: #{$prefix}#{$sep}#{$grid-v};
 
     %flex {
-        display: flex; 
+        display: flex;
     }
 
     .#{$h_prop} {
         display: flex;
         flex-direction: row;
 
-        &>.#{$CFG_GRID_CODE}#{$CFG_GRID_SEPARATOR}main {
+        & > .#{$grid-code}#{$sep}main {
             flex: 1 1 0;
             width: 100%;
             max-width: 100%;
@@ -42,7 +42,7 @@ $CFG_GRID_VERT: map-get($grid-config, grid_vert_code);
         display: flex;
         flex-direction: column;
 
-        &>.#{$CFG_GRID_CODE}#{$CFG_GRID_SEPARATOR}main {
+        & > .#{$grid-code}#{$sep}main {
             flex: 1 1 0;
             max-height: 100%;
         }
@@ -52,44 +52,44 @@ $CFG_GRID_VERT: map-get($grid-config, grid_vert_code);
     .#{$v_prop} {
         box-sizing: border-box;
 
-        &.#{$CFG_GRID_CODE}#{$CFG_GRID_SEPARATOR}wrap#{$CFG_GRID_SEPARATOR}reverse {
+        &.#{$grid-code}#{$sep}wrap#{$sep}reverse {
             flex-wrap: wrap-reverse;
         }
 
-        &.#{$CFG_GRID_CODE}#{$CFG_GRID_SEPARATOR}wrap {
+        &.#{$grid-code}#{$sep}wrap {
             flex-wrap: wrap;
         }
 
-        &.#{$CFG_GRID_CODE}#{$CFG_GRID_SEPARATOR}nowrap {
+        &.#{$grid-code}#{$sep}nowrap {
             flex-wrap: nowrap;
         }
 
-        &>* {
+        & > * {
             box-sizing: border-box;
         }
 
-        &>*:not(.#{$CFG_GRID_CODE}#{$CFG_GRID_SEPARATOR}main) {
+        & > *:not(.#{$grid-code}#{$sep}main) {
             flex: 0 0 auto;
         }
 
-        &.#{$CFG_GRID_CODE}#{$CFG_GRID_SEPARATOR}inline {
+        &.#{$grid-code}#{$sep}inline {
             display: inline-flex;
         }
 
-        &.#{$CFG_GRID_CODE}#{$CFG_GRID_SEPARATOR}overflow {
+        &.#{$grid-code}#{$sep}overflow {
             overflow: auto;
         }
 
-        &.#{$CFG_GRID_CODE}#{$CFG_GRID_SEPARATOR}no-overflow {
+        &.#{$grid-code}#{$sep}no-overflow {
             overflow: hidden;
         }
 
         @for $i from 1 through 4 {
-            &.#{$CFG_GRID_CODE}#{$CFG_GRID_SEPARATOR}grow#{$CFG_GRID_SEPARATOR}#{$i} {
+            &.#{$grid-code}#{$sep}grow#{$sep}#{$i} {
                 flex-grow: $i;
             }
 
-            &.#{$CFG_GRID_CODE}#{$CFG_GRID_SEPARATOR}shrink#{$CFG_GRID_SEPARATOR}#{$i} {
+            &.#{$grid-code}#{$sep}shrink#{$sep}#{$i} {
                 flex-shrink: $i;
             }
         }
@@ -98,23 +98,23 @@ $CFG_GRID_VERT: map-get($grid-config, grid_vert_code);
     /* justify content rules */
     .#{$h_prop},
     .#{$v_prop} {
-        &.just#{$CFG_GRID_SEPARATOR}start {
+        &.just#{$sep}start {
             justify-content: flex-start;
         }
 
-        &.just#{$CFG_GRID_SEPARATOR}center {
+        &.just#{$sep}center {
             justify-content: center;
         }
 
-        &.just#{$CFG_GRID_SEPARATOR}end {
+        &.just#{$sep}end {
             justify-content: flex-end;
         }
 
-        &.just#{$CFG_GRID_SEPARATOR}between {
+        &.just#{$sep}between {
             justify-content: space-between;
         }
 
-        &.just#{$CFG_GRID_SEPARATOR}equal {
+        &.just#{$sep}equal {
             justify-content: space-evenly;
         }
     }
@@ -122,23 +122,23 @@ $CFG_GRID_VERT: map-get($grid-config, grid_vert_code);
     /* align-items rules */
     .#{$h_prop},
     .#{$v_prop} {
-        &.items#{$CFG_GRID_SEPARATOR}baseline {
+        &.items#{$sep}baseline {
             align-items: baseline;
         }
 
-        &.items#{$CFG_GRID_SEPARATOR}stretch {
+        &.items#{$sep}stretch {
             align-items: stretch;
         }
 
-        &.items#{$CFG_GRID_SEPARATOR}start {
+        &.items#{$sep}start {
             align-items: flex-start;
         }
 
-        &.items#{$CFG_GRID_SEPARATOR}center {
+        &.items#{$sep}center {
             align-items: center;
         }
 
-        &.items#{$CFG_GRID_SEPARATOR}end {
+        &.items#{$sep}end {
             align-items: flex-end;
         }
     }
@@ -146,23 +146,23 @@ $CFG_GRID_VERT: map-get($grid-config, grid_vert_code);
     /* align-content rules */
     .#{$h_prop},
     .#{$v_prop} {
-        &.content#{$CFG_GRID_SEPARATOR}start {
+        &.content#{$sep}start {
             align-content: flex-start;
         }
 
-        &.content#{$CFG_GRID_SEPARATOR}end {
+        &.content#{$sep}end {
             align-content: flex-end;
         }
 
-        &.content#{$CFG_GRID_SEPARATOR}between {
+        &.content#{$sep}between {
             align-content: space-between;
         }
 
-        &.content#{$CFG_GRID_SEPARATOR}stretch {
+        &.content#{$sep}stretch {
             align-content: stretch;
         }
 
-        &.content#{$CFG_GRID_SEPARATOR}center {
+        &.content#{$sep}center {
             align-content: center;
         }
     }
@@ -171,6 +171,11 @@ $CFG_GRID_VERT: map-get($grid-config, grid_vert_code);
     .#{$h_prop},
     .#{$v_prop} {
         & .self {
+            //  &_debug   {debug : #debug($cssProps);}
+            @each $fabricTag, $value in map-get($cssProps, alignSelf) {
+                @include utils.fabric-attribute('-',$fabricTag,'align-self',$value);
+            }
+
             &_auto {
                 align-self: auto;
             }
@@ -196,5 +201,4 @@ $CFG_GRID_VERT: map-get($grid-config, grid_vert_code);
             }
         }
     }
-
 }

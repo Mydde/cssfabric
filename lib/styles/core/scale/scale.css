@@ -28,11 +28,6 @@
   width: min-content;
 }
 
-/*  dimension : "-fit-content" shorthand is fit-content width*/
-.w-fit-content {
-  width: fit-content;
-}
-
 /*  dimension : "-1" shorthand is 1rem width*/
 .w-1 {
   width: 1rem;
@@ -266,11 +261,6 @@
 /*  dimension : "-min-content" shorthand is min-content height*/
 .h-min-content {
   height: min-content;
-}
-
-/*  dimension : "-fit-content" shorthand is fit-content height*/
-.h-fit-content {
-  height: fit-content;
 }
 
 /*  dimension : "-1" shorthand is 1rem height*/

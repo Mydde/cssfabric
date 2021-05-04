@@ -11,8 +11,7 @@ $scale-config: (
     ),
     scale_css_values: (
         max-content,
-        min-content,
-        fit-content
+        min-content
     ),
     scale_shorthands: (
         full: 100%,
@@ -38,11 +37,5 @@ $scale-config: (
         24
     )
 );
-$scale-docs: (
-    scale_size: _,
-    scale_props: _,
-    scale_css_values: _,
-    scale_shorthands: _,
-    scale_defined_sizes: _,
-    scale_grid_ratios: _
+$scale-docs: ( 
 );

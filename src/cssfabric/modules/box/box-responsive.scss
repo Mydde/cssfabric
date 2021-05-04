@@ -1,14 +1,11 @@
 
-// load scss config file
 @use '../../_utils';
 @use "_box-build" as build; 
 @use "../cssfabric-vars";
 // load general config variables
-$_base: cssfabric-vars.$cssfabric-config;
+$config: cssfabric-vars.$cssfabric-config;
 
-// load general config variables
-// media queries sizes, in rem
-$_media_quey_sizes: map-get($_base, media_quey_sizes);
+$_media_quey_sizes: map-get($config, media_quey_sizes);
 
 // builder responsive
 $min_value: 0;
