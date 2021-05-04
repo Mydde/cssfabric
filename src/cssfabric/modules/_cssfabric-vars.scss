@@ -1,3 +1,5 @@
+@use '../utils' as utils;
+
 $cssfabric-metadata: (
     title: base,
     tag: base,
@@ -24,13 +26,12 @@ $cssfabric-config: (
         md: 48,
         sm: 35.7
     ),
-    color_theme: (
+    theme: (
         primary: orange,
         foreground: #333,
         background: #ededed
     ),
-    color_schemes_props:
-    (
+    scheme: (
         info: yellow,
         alert: orange,
         error: red,
@@ -38,39 +39,22 @@ $cssfabric-config: (
         discrete: gray,
         success: hsl(141, 71%, 48%)
     ),
-    color_palette_props: (
-        yellow: #ffb900,
-        orange: #d83b01,
-        red: #d13438,
-        magenta: #b4009e,
-        purple: #5c2d91,
-        green: #107c10,
-        teal: #008272,
-        blue: #0078d4
-    ),
-    color_grays: (
-        gray_start: #f4f4f4,
-        gray_end: #333333,
-        gray_steps: 9
-    )
+	palette: (
+		yellow: #ffb900,
+		orange: #d83b01,
+		red: #d13438,
+		magenta: #b4009e,
+		purple: #5c2d91,
+		green: #107c10,
+		teal: #008272,
+		blue: #0078d4
+	),
+    gray: utils.getGraySteps(9, #ededed, #333333),
+	gray-config: (
+		start: #ededed,
+		end: #333333,
+		steps: 9
+	)
 );
 
-$cssfabric-docs: (
-    cfg-has-dimension-strict: "",
-    CFG_HAS_DIMENSION_MIN: "",
-    CFG_HAS_DIMENSION_MAX: "",
-    grid_class_name: "",
-    table_class_name: "",
-    table_class_name_short: "",
-    media_quey_sizes: "",
-    text_class_name_short: "",
-    text_class_name: "",
-    grid_class_name_short: "",
-    menu_class_name: "",
-    menu_class_name_short: "",
-    color_schemes_props: "",
-    color_palette_props: "",
-    color_grays: "",
-    size_step: "",
-    sizes: ""
-);
+$cssfabric-docs: ();

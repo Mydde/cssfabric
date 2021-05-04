@@ -3,9 +3,10 @@
 $scale-config: scale-vars.$scale-config; 
 // load scss config file
 @use '../../_utils'; 
+@use '../../_loader';
 
 // load general config variables
-$_cfg: utils.get_fabric_conf(); 
+$_cfg: loader.get_fabric_conf(); 
 
 // read variables
 $_has_dimensions_strict: map-get($_cfg, has_dimensions_strict);

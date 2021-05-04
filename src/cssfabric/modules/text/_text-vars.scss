@@ -1,3 +1,5 @@
+@use '../../_loader';
+
 $text-metadata: (
     title: text,
     tag: txt,
@@ -42,6 +44,9 @@ $text-config: (
         c: center,
         j: justify,
     ),
+    scheme: loader.getFabricSharedParams(scheme),
+	palette: loader.getFabricSharedParams(palette),
+    gray: loader.getFabricSharedParams(gray)
 );
 $text-docs: (
     font_sizes: "",

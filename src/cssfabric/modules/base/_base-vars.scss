@@ -1,3 +1,5 @@
+@use '../../_loader';
+
 $base-metadata: (
     title: base,
     tag: base,
@@ -7,36 +9,9 @@ $base-metadata: (
 $base-config: (
     cfg-has-dimension-strict: true,
     CFG_HAS_DIMENSION_MIN: true,
-    CFG_HAS_DIMENSION_MAX: true,  
+    CFG_HAS_DIMENSION_MAX: true,
     size_step: 0.25rem,
-    sizes: (
-        tiny: "",
-        small: 64,
-        medium: 120,
-        large: 250,
-        full: 100%
-    ),
-    color_schemes_props: (
-        info: yellow,
-        alert: orange,
-        error: red,
-        warning: hsl(48, 100%, 67%),
-        discrete: gray,
-        success: hsl(141, 71%, 48%)
-    ),
-    color_palette_props: (
-        normal: #333,
-        error: red,
-        warning: hsl(48, 100%, 67%),
-        discrete: gray,
-        success: hsl(141, 71%, 48%)
-    ),
-    color_grays: (
-        gray_start: #f4f4f4,
-        gray_end: #333333,
-        gray_steps: 9
-    )
+    sizes: loader.getFabricSharedParams(sizes)
 );
 
-$base-docs: ( 
-);
+$base-docs: ();

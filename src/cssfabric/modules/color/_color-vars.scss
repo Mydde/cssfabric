@@ -1,4 +1,4 @@
-@use '../../_utils';
+@use '../../_loader';
 
 $color-metadata: (
 	title: color,
@@ -6,36 +6,11 @@ $color-metadata: (
 	description: description
 );
 $color-config: (
-	gray-config: (
-		start: #ededed,
-		end: #333333,
-		steps: 9
-	),
-    theme: (
-        primary: orange,
-        foreground: #333,
-        background: #ededed
-    ),
-	scheme: (
-		info: yellow,
-		alert: orange, 
-		error: red,
-		warning: hsl(48, 100%, 67%),
-		discrete: gray,
-		success: hsl(141, 71%, 48%)
-	),
-	palette: (
-		yellow: #ffb900,
-		orange: #d83b01,
-		red: #d13438,
-		magenta: #b4009e,
-		purple: #5c2d91,
-		green: #107c10,
-		teal: #008272,
-		blue: #0078d4
-	),
-	gray: utils.getGraySteps(9,#ededed,#333333)
+	gray-config: loader.getFabricSharedParams(gray-config),
+	theme: loader.getFabricSharedParams(theme),
+	scheme: loader.getFabricSharedParams(scheme),
+	palette: loader.getFabricSharedParams(palette),
+	gray: loader.getFabricSharedParams(gray)
 );
-$color-docs: (
+$color-docs: ();  
  
-);
