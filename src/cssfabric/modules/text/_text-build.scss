@@ -15,16 +15,16 @@ $cssProps: map-get($text-config, cssProps);
 $color-schemes: map-get($text-config, scheme);
 $color-palette-props: map-get($text-config, palette);
 
-$grays: map-get($text-config, gray);
-
-$title-size-declination-config: map-get($text-config, title-size-declination-config);
-$font-size-unit-config: map-get($text-config, font-size-unit-config);
-$font-sizes-h1-rem-config: map-get($text-config, font-sizes-h1-rem-config);
-$font-size-h-min-rem-config: map-get($text-config, font-size-h-min-rem-config);
+$gray-list: map-get($text-config, gray);
 
 $textTransform: map-get($cssProps, textTransform);
 $fontWeight: map-get($cssProps, fontWeight);
 $textAlign: map-get($cssProps, textAlign);
+
+$title-size-declination-config: map-get($text-config, title-size-declination-config)!default;
+$font-size-unit-config: map-get($text-config, font-size-unit-config)!default;
+$font-sizes-h1-rem-config: map-get($text-config, font-sizes-h1-rem-config)!default;
+$font-size-h-min-rem-config: map-get($text-config, font-size-h-min-rem-config)!default;
 
 $h1-size: $font-sizes-h1-rem-config;
 $ratio: $h1-size/$title-size-declination-config;
@@ -68,7 +68,7 @@ $ratio: $h1-size/$title-size-declination-config;
     }
 
     // grays
-    @each $fabricRule, $value in $grays {
+    @each $fabricRule, $value in $gray-list {
       @include utils.fabricAttributes('&-gray'+$sep, $fabricRule, 'color', $value);
     }
 
