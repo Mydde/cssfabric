@@ -2,7 +2,7 @@
 @use '../../_utils';
 @use '../cssfabric-vars' as cssfabric-vars;
 @use 'grid-vars';
- 
+
 $grid-config: grid-vars.$grid-config;
 $cssfabric-config: cssfabric-vars.$cssfabric-config;
 
@@ -10,110 +10,112 @@ $sep: map-get($cssfabric-config, sep);
 // read variables
 $grid-code: map-get($grid-config, moduleNameShort);
 $grid-h: map-get($grid-config, horCode);
-$grid-v: map-get($grid-config, vertCode); 
+$grid-v: map-get($grid-config, vertCode);
 
 $cssProps: map-get($grid-config, cssProps);
-$gridFullWidth: map-get($grid-config, gridFullWidth);  
- 
-$grid-code-sep: #{$grid-code}#{$sep};   
+$gridFullWidth: map-get($grid-config, gridFullWidth);
+
+$grid-code-sep: #{$grid-code}#{$sep};
 
 @mixin makeGrid($mqKey) {
-    $prefix: if($mqKey, #{$grid-code}-#{$mqKey}, #{$grid-code});
-    $h_prop: #{$prefix}#{$sep}#{$grid-h};
-    $v_prop: #{$prefix}#{$sep}#{$grid-v};
+  $prefix: if($mqKey, #{$grid-code}-#{$mqKey}, #{$grid-code});
+  $h_prop: #{$prefix}#{$sep}#{$grid-h};
+  $v_prop: #{$prefix}#{$sep}#{$grid-v};
 
-    %flex {
-        display: flex; 
+  %flex {
+    display: flex;
+  }
+
+  .#{$h_prop} {
+    display: flex;
+    flex-direction: row;
+
+    & > .#{$grid-code}#{$sep}#{$gridFullWidth} {
+      flex: 1 1 0;
+      width: 100%;
+      max-width: 100%;
+    }
+  }
+
+  .#{$v_prop} {
+    display: flex;
+    flex-direction: column;
+
+    & > .#{$grid-code}#{$sep}#{$gridFullWidth} {
+      flex: 1 1 0;
+      max-height: 100%;
+    }
+  }
+
+  .#{$h_prop},
+  .#{$v_prop} {
+    box-sizing: border-box;
+
+    & > * {
+      box-sizing: border-box;
     }
 
-    .#{$h_prop} {
-        display: flex;
-        flex-direction: row;
-
-        & > .#{$grid-code}#{$sep}#{$gridFullWidth} {
-            flex: 1 1 0;
-            width: 100%;
-            max-width: 100%;
-        }
+    & > *:not(.#{$grid-code-sep}#{$gridFullWidth}) {
+      flex: 0 0 auto;
     }
 
-    .#{$v_prop} {
-        display: flex;
-        flex-direction: column; 
-
-        & > .#{$grid-code}#{$sep}#{$gridFullWidth} {
-            flex: 1 1 0;
-            max-height: 100%;
-        }
+    &.#{$grid-code-sep}inline {
+      display: inline-flex;
     }
 
-    .#{$h_prop},
-    .#{$v_prop} {
-        box-sizing: border-box;
-        & > * {
-            box-sizing: border-box;
-        }
-
-        & > *:not(.#{$grid-code-sep}#{$gridFullWidth}) {
-            flex: 0 0 auto;
-        }
-
-        &.#{$grid-code-sep}inline {
-            display: inline-flex;
-        }
-
-        &.#{$grid-code-sep}overflow {
-            overflow: auto;
-        }
-
-        &.#{$grid-code-sep}no-overflow {
-            overflow: hidden;
-        }
-
-        @for $i from 1 through 4 {
-            &.#{$grid-code-sep}grow#{$sep}#{$i} {
-                flex-grow: $i;
-            }
-
-            &.#{$grid-code-sep}shrink#{$sep}#{$i} {
-                flex-shrink: $i;
-            }
-        }
+    &.align-middle {
+      justify-content: center;
+      align-items: center;
     }
 
-    /** raw css properties distribution */
-    .#{$h_prop},
-    .#{$v_prop} {   
-        // wrap rules
-        &.#{$grid-code}{
-            @each $fabricRule, $value in map-get($cssProps, flexWrap) { 
-                @include utils.fabricAttributes('&'+$sep,$fabricRule,'flex-wrap',$value); 
-            }
-        }
-        // justify content rules */  
-        &.just{
-            @each $fabricRule, $value in map-get($cssProps, justifyContent) { 
-                @include utils.fabricAttributes('&'+$sep,$fabricRule,'justify-content',$value); 
-            }
-        } 
-        // align-items rules */
-        &.items {
-            @each $fabricRule, $value in map-get($cssProps, alignItems) { 
-                @include utils.fabricAttributes('&'+$sep,$fabricRule,'align-items',$value); 
-            }
-        }
-        // align-content rules */
-        &.content{
-            @each $fabricRule, $value in map-get($cssProps, alignContent) {
-                $tag: content#{$sep}start;
-                @include utils.fabricAttributes('&'+$sep,$fabricRule,'align-content',$value); 
-            }
-        }
-        // align-self rules for children */
-        & .self {  
-            @each $fabricRule, $value in map-get($cssProps, alignSelf) {
-                @include utils.fabricAttributes('&-',$fabricRule,'align-self',$value);
-            }
-        }
-    }  
+    @for $i from 1 through 4 {
+      &.#{$grid-code-sep}grow#{$sep}#{$i} {
+        flex-grow: $i;
+      }
+
+      &.#{$grid-code-sep}shrink#{$sep}#{$i} {
+        flex-shrink: $i;
+      }
+    }
+  }
+
+  /** raw css properties distribution */
+  .#{$h_prop},
+  .#{$v_prop} {
+    // wrap rules
+    &.#{$grid-code} {
+      @each $fabricRule, $value in map-get($cssProps, flexWrap) {
+        @include utils.fabricAttributes('&'+$sep, $fabricRule, 'flex-wrap', $value);
+      }
+    }
+
+    // justify content rules */
+    &.just {
+      @each $fabricRule, $value in map-get($cssProps, justifyContent) {
+        @include utils.fabricAttributes('&'+$sep, $fabricRule, 'justify-content', $value);
+      }
+    }
+
+    // align-items rules */
+    &.items {
+      @each $fabricRule, $value in map-get($cssProps, alignItems) {
+        @include utils.fabricAttributes('&'+$sep, $fabricRule, 'align-items', $value);
+      }
+    }
+
+    // align-content rules */
+    &.content {
+      @each $fabricRule, $value in map-get($cssProps, alignContent) {
+        $tag: content#{$sep}start;
+        @include utils.fabricAttributes('&'+$sep, $fabricRule, 'align-content', $value);
+      }
+    }
+
+    // align-self rules for children */
+    & .self {
+      @each $fabricRule, $value in map-get($cssProps, alignSelf) {
+        @include utils.fabricAttributes('&-', $fabricRule, 'align-self', $value);
+      }
+    }
+  }
 }
