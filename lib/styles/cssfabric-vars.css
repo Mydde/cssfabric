@@ -45,36 +45,6 @@
   --cssfabric-cssfabric-gray-config-steps: 9;
   /** 
   * cssfabric generated file
-  * css vars for animation 
-  */
-  --cssfabric-animation-attention_props: ;
-  --cssfabric-animation-in_out_props-back: is-map;
-  /** 
-  * cssfabric generated file
-  * css vars for base 
-  */
-  --cssfabric-base-sizes-tiny: 32;
-  --cssfabric-base-sizes-small: 64;
-  --cssfabric-base-sizes-medium: 256;
-  --cssfabric-base-sizes-large: 250;
-  --cssfabric-base-sizes-full: 100%;
-  /** 
-  * cssfabric generated file
-  * css vars for box 
-  */
-  --cssfabric-box-unit-config: rem;
-  --cssfabric-box-border-unit-config: px;
-  --cssfabric-box-position-shorthand-config: pos;
-  --cssfabric-box-display-shorthand-config: dsp;
-  --cssfabric-box-shadow-shorthand-config: shad;
-  --cssfabric-box-border-shorthand-config: border;
-  --cssfabric-box-padding-shorthand-config: pad;
-  --cssfabric-box-margin-shorthand-config: marg;
-  --cssfabric-box-cssProps-borderShorthands: is-map;
-  --cssfabric-box-cssProps-positionProps: is-map;
-  --cssfabric-box-cssProps-displayProps: is-map;
-  /** 
-  * cssfabric generated file
   * css vars for color 
   */
   --cssfabric-color-gray-config-start: #ededed;
@@ -109,18 +79,34 @@
   --cssfabric-color-gray-900: #333333;
   /** 
   * cssfabric generated file
-  * css vars for grid 
+  * css vars for box 
   */
-  --cssfabric-grid-moduleName: grid;
-  --cssfabric-grid-moduleNameShort: grid;
-  --cssfabric-grid-horCode: h;
-  --cssfabric-grid-vertCode: v;
-  --cssfabric-grid-gridFullWidth: main;
-  --cssfabric-grid-cssProps-flexWrap: is-map;
-  --cssfabric-grid-cssProps-alignSelf: is-map;
-  --cssfabric-grid-cssProps-justifyContent: is-map;
-  --cssfabric-grid-cssProps-alignItems: is-map;
-  --cssfabric-grid-cssProps-alignContent: is-map;
+  --cssfabric-box-unit-config: rem;
+  --cssfabric-box-border-unit-config: px;
+  --cssfabric-box-position-shorthand-config: pos;
+  --cssfabric-box-display-shorthand-config: dsp;
+  --cssfabric-box-shadow-shorthand-config: shad;
+  --cssfabric-box-border-shorthand-config: border;
+  --cssfabric-box-padding-shorthand-config: pad;
+  --cssfabric-box-margin-shorthand-config: marg;
+  --cssfabric-box-cssProps-borderShorthands: is-map;
+  --cssfabric-box-cssProps-positionProps: is-map;
+  --cssfabric-box-cssProps-displayProps: is-map;
+  /** 
+  * cssfabric generated file
+  * css vars for base 
+  */
+  --cssfabric-base-sizes-tiny: 32;
+  --cssfabric-base-sizes-small: 64;
+  --cssfabric-base-sizes-medium: 256;
+  --cssfabric-base-sizes-large: 250;
+  --cssfabric-base-sizes-full: 100%;
+  /** 
+  * cssfabric generated file
+  * css vars for animation 
+  */
+  --cssfabric-animation-attention_props: ;
+  --cssfabric-animation-in_out_props-back: is-map;
   /** 
   * cssfabric generated file
   * css vars for menu 
@@ -138,11 +124,26 @@
   --cssfabric-menu-menu_dropdown_close: close;
   /** 
   * cssfabric generated file
-  * css vars for overflow 
+  * css vars for grid 
   */
-  --cssfabric-overflow-overflow_props:  overflow overflow-x overflow-y;
-  --cssfabric-overflow-overflow_values:  visible hidden clip scroll auto;
-  --cssfabric-overflow-cssProps-overflow: is-map;
+  --cssfabric-grid-moduleName: grid;
+  --cssfabric-grid-moduleNameShort: grid;
+  --cssfabric-grid-horCode: h;
+  --cssfabric-grid-vertCode: v;
+  --cssfabric-grid-gridFullWidth: main;
+  --cssfabric-grid-cssProps-flexWrap: is-map;
+  --cssfabric-grid-cssProps-alignSelf: is-map;
+  --cssfabric-grid-cssProps-justifyContent: is-map;
+  --cssfabric-grid-cssProps-alignItems: is-map;
+  --cssfabric-grid-cssProps-alignContent: is-map;
+  /** 
+  * cssfabric generated file
+  * css vars for table 
+  */
+  --cssfabric-table-className: table;
+  --cssfabric-table-classNameShort: tbl;
+  --cssfabric-table-table_class_name: table;
+  --cssfabric-table-table_class_name_short: tbl;
   /** 
   * cssfabric generated file
   * css vars for scale 
@@ -156,12 +157,11 @@
   --cssfabric-scale-cssProps-content: is-map;
   /** 
   * cssfabric generated file
-  * css vars for table 
+  * css vars for overflow 
   */
-  --cssfabric-table-className: table;
-  --cssfabric-table-classNameShort: tbl;
-  --cssfabric-table-table_class_name: table;
-  --cssfabric-table-table_class_name_short: tbl;
+  --cssfabric-overflow-overflow_props:  overflow overflow-x overflow-y;
+  --cssfabric-overflow-overflow_values:  visible hidden clip scroll auto;
+  --cssfabric-overflow-cssProps-overflow: is-map;
   /** 
   * cssfabric generated file
   * css vars for text 

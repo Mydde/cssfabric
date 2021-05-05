@@ -34,13 +34,10 @@
 .grid-xxl-v.grid-inline {
     display: inline-flex;
   }
-  .grid-xxl-h.grid-overflow,
-.grid-xxl-v.grid-overflow {
-    overflow: auto;
-  }
-  .grid-xxl-h.grid-no-overflow,
-.grid-xxl-v.grid-no-overflow {
-    overflow: hidden;
+  .grid-xxl-h.align-middle,
+.grid-xxl-v.align-middle {
+    justify-content: center;
+    align-items: center;
   }
   .grid-xxl-h.grid-grow-1,
 .grid-xxl-v.grid-grow-1 {
@@ -209,13 +206,10 @@
 .grid-xl-v.grid-inline {
     display: inline-flex;
   }
-  .grid-xl-h.grid-overflow,
-.grid-xl-v.grid-overflow {
-    overflow: auto;
-  }
-  .grid-xl-h.grid-no-overflow,
-.grid-xl-v.grid-no-overflow {
-    overflow: hidden;
+  .grid-xl-h.align-middle,
+.grid-xl-v.align-middle {
+    justify-content: center;
+    align-items: center;
   }
   .grid-xl-h.grid-grow-1,
 .grid-xl-v.grid-grow-1 {
@@ -384,13 +378,10 @@
 .grid-lg-v.grid-inline {
     display: inline-flex;
   }
-  .grid-lg-h.grid-overflow,
-.grid-lg-v.grid-overflow {
-    overflow: auto;
-  }
-  .grid-lg-h.grid-no-overflow,
-.grid-lg-v.grid-no-overflow {
-    overflow: hidden;
+  .grid-lg-h.align-middle,
+.grid-lg-v.align-middle {
+    justify-content: center;
+    align-items: center;
   }
   .grid-lg-h.grid-grow-1,
 .grid-lg-v.grid-grow-1 {
@@ -559,13 +550,10 @@
 .grid-md-v.grid-inline {
     display: inline-flex;
   }
-  .grid-md-h.grid-overflow,
-.grid-md-v.grid-overflow {
-    overflow: auto;
-  }
-  .grid-md-h.grid-no-overflow,
-.grid-md-v.grid-no-overflow {
-    overflow: hidden;
+  .grid-md-h.align-middle,
+.grid-md-v.align-middle {
+    justify-content: center;
+    align-items: center;
   }
   .grid-md-h.grid-grow-1,
 .grid-md-v.grid-grow-1 {
@@ -734,13 +722,10 @@
 .grid-sm-v.grid-inline {
     display: inline-flex;
   }
-  .grid-sm-h.grid-overflow,
-.grid-sm-v.grid-overflow {
-    overflow: auto;
-  }
-  .grid-sm-h.grid-no-overflow,
-.grid-sm-v.grid-no-overflow {
-    overflow: hidden;
+  .grid-sm-h.align-middle,
+.grid-sm-v.align-middle {
+    justify-content: center;
+    align-items: center;
   }
   .grid-sm-h.grid-grow-1,
 .grid-sm-v.grid-grow-1 {

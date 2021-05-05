@@ -33,13 +33,10 @@
 .grid-v.grid-inline {
   display: inline-flex;
 }
-.grid-h.grid-overflow,
-.grid-v.grid-overflow {
-  overflow: auto;
-}
-.grid-h.grid-no-overflow,
-.grid-v.grid-no-overflow {
-  overflow: hidden;
+.grid-h.align-middle,
+.grid-v.align-middle {
+  justify-content: center;
+  align-items: center;
 }
 .grid-h.grid-grow-1,
 .grid-v.grid-grow-1 {
