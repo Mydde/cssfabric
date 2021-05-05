@@ -5,6 +5,7 @@ const gulp = require("gulp"),
     jsonTransform = require("gulp-json-transform"),
     cache = require("gulp-cached"),
     gulpSass = require("gulp-sass"),
+    // sassExport = require("gulp-sass-export"),
     mergeJson = require("gulp-merge-json"),
     gulFileList = require("gulp-filelist"),
     minifyCss = require("gulp-minify-css"),
@@ -12,8 +13,13 @@ const gulp = require("gulp"),
     gulpRename = require("gulp-rename"),
     gulpDownload = require("gulp-download-stream"),
     gulpConcat = require("gulp-concat-util"),
-    modifyFile = require("gulp-modify-file"),
-    gulpIgnore = require("gulp-ignore");
+    sassJson = require("gulp-sass-json"),
+    sassExport = require("gulp-sass-export"),
+    sassVarsToJs = require("gulp-sass-vars-to-js"),
+    parse = require("sass-parser")(),
+    gulpJsBeautifier = require('gulp-jsbeautifier'),
+    modifyFile = require("gulp-modify-file");
+gulpIgnore = require("gulp-ignore");
 
 const spawn = require("child_process").spawn;
 
@@ -29,17 +35,12 @@ const {
     fabricGeneratedDir,
 } = fabricConfig;
 
-function fabricReadmeFile(filePath) {
+function fabricReadmeFile({file_content, file_info}) {
     // name of the module, from path
-    let module_name = filePath
-        .substring(filePath.lastIndexOf("modules/"))
-        .replace("modules/", "");
+    // let out = "### " + module_name + "" + "\r\n";
+    console.log(file_content.cssfabric.modules);
 
-    let module = filePath.substring(filePath.lastIndexOf("/") + 1);
-
-    let out = "### " + module_name + "" + "\r\n";
-
-    return out;
+    return file_content;
 }
 
 const sassJsonExporter = (file) => {
@@ -157,7 +158,7 @@ function task_cssVarsExport(cb) {
                                 `@use '${fabricModuleDir}/${moduleConf.module_path}' as ${moduleConf.module_name};` +
                                 "\r\n";
                             footer +=
-                                `@include utils.var-export-to-css(${moduleConf.module_name},${moduleConf.module_name}.$${moduleConf.module_name}-config);` +
+                                `@include utils.scssVarsToCssVars(${moduleConf.module_name},${moduleConf.module_name}.$${moduleConf.module_name}-config);` +
                                 "\r\n";
                         }
                     }
@@ -194,7 +195,7 @@ function task_varsExport(cb) {
         .pipe(
             jsonTransform(function (file_content, file_info) {
                 return sassJsonExporter({file_content: file_content, file_info});
-            }, "\t")
+            })
         )
         .pipe(cache(task_varsExport))
         // .pipe(sass().on('error', sass.logError))
@@ -215,6 +216,7 @@ function task_varsExport(cb) {
                 return `${start}${exp}${end}`;
             })
         )
+        .pipe(gulpJsBeautifier())
         .pipe(
             gulpRename(function (path) {
                 path.dirname = path.dirname;
@@ -230,13 +232,13 @@ function task_varsExport(cb) {
     return cb();
 }
 
+// when _generated/json files are emitted
 function task_readme(cb) {
     gulp
-        .src(fabricModuleDir + "/*/*[!_].scss")
+        .src(fabricGeneratedDir + "/**/export.variables.json")
         .pipe(
-            gulFileList("readme.md", {
-                destRowTemplate: fabricReadmeFile,
-                removeExtensions: true,
+            jsonTransform(function (file_content, file_info) {
+                return fabricReadmeFile({file_content, file_info});
             })
         )
         .pipe(cache(task_readme))
@@ -392,7 +394,7 @@ function watchInclude(cb) {
 function watchReadme(cb) {
     // console.log([fabricModuleDir,"!"+fabricModuleDir + "/**/_*.scss"])
     gulp.watch(
-        [fabricModuleDir, "!" + fabricModuleDir + "/**/_*.scss"],
+        [fabricGeneratedDir + "/**/*.json"],
         task_readme
     );
 
