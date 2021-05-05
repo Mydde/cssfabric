@@ -38,7 +38,8 @@ const {
 function fabricReadmeFile({file_content, file_info}) {
     // name of the module, from path
     // let out = "### " + module_name + "" + "\r\n";
-console.log(file_content.cssfabric.modules)
+    console.log(file_content.cssfabric.modules);
+
     return file_content;
 }
 
