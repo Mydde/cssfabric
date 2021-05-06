@@ -1,3 +1,5 @@
+@use '../../utils';
+
 $_border-shorthands: (
         t: top,
         b: bottom,
@@ -30,9 +32,9 @@ $_display-props: (
 );
 
 $box-metadata: (
-        title: box,
-        tag: box,
-        description: "cssfabric box module to set heights, paddings and margins on all html elements"
+        title: "box",
+        tag: "box",
+        description: "cssfabric box module to set heights, paddings, margins and shadows on all html elements"
 );
 
 $box-config: (
@@ -55,4 +57,31 @@ $box-config: (
         )
 );
 
-$box-docs: ();
+$box-docs: (
+        attributes:(
+                padding: (
+                        tag: map-get($box-config, padding-shorthand-config),
+                        keys: utils.getObjectKeys($_border-shorthands),
+                        //levels: (10 25 69 745 41214),
+                        about:  "padding properties for html elements"
+                ),
+                margin: (
+                        tag: map-get($box-config, margin-shorthand-config),
+                        keys: utils.getObjectKeys($_border-shorthands),
+                        //levels: (10 25 69 745 41214),
+                        about:  "margin properties for html elements"
+                ),
+                border: (
+                        tag: map-get($box-config, border-shorthand-config),
+                        keys: utils.getObjectKeys($_border-shorthands),
+                        //levels: (10 25 69 745 41214),
+                        about:  "padding properties for html elements"
+                ),
+                shadow: (
+                        tag: map-get($box-config, shadow-shorthand-config),
+                        // keys: utils.getObjectKeys($_border-shorthands),
+                        //levels: (10 25 69 745 41214),
+                        about:  "applying shadows give levels to your design"
+                )
+        )
+);

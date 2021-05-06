@@ -1,16 +1,17 @@
 $animation-metadata: (
-    "title": "nope twice"
+        title: "animation",
+        description: "cssfabric simplest animation module"
 );
 $animation-config: (
-    attention_props: (),
-    in_out_props: (
-        back: () /* bounce: (),
+        attention_props: (),
+        in_out_props: (
+                back: () /* bounce: (),
         slide: (),
         fade: (),
         zoom: () */
-    )
+        )
 );
 $animation-docs: (
-    attention_props: "",
-    in_out_props: ""
+        attention_props: "",
+        in_out_props: ""
 );

@@ -1,7 +1,7 @@
 $grid-metadata: (
-    title: grid,
-    tag: grid,
-    description: "cssfabric grid module"
+    title: "grid",
+    tag: "grid",
+    description: "cssfabric flex grid system module"
 );
 $grid-config: (
     moduleName: grid,
@@ -46,6 +46,7 @@ $grid-config: (
         )
     )
 );
+
 $grid-docs: (
     grid_separator: "",
     grid_hor_code: "",

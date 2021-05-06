@@ -20,8 +20,8 @@ This is also a learning point about gulp, webpack, packages and friends.
 | ------- | --- |
 | cssfabric | cssfabric global config variables
 animation | cssfabric simplest animation module
-box | cssfabric box module to set heights, paddings, margins and shadows on all html elements
 base | cssfabric base config variables
+box | cssfabric box module to set heights, paddings, margins and shadows on all html elements
 color | cssfabric color system: its about colors
 grid | cssfabric flex grid system module
 menu | cssfabric menu module to set menu style
@@ -29,7 +29,7 @@ overflow | cssfabric overflow module to set overflow styles on all html elements
 scale | cssfabric scale module to set dimensions and ratios on all html elements
 table | cssfabric table module to set different table styles
 text | cssfabric text module to set text style on all html elements
-theme |
+theme | 
 zindex | cssfabric zindex module to set z-index on all html elements |
 
 
@@ -56,8 +56,8 @@ zindex | cssfabric zindex module to set z-index on all html elements |
 padding properties for html elements
 
 
-- values are: t, b, l, r, all, u, ii, tb
-- levels are: 10, 25, 69, 745, 41214
+ - values are: t, b, l, r, all, u, ii, tb
+ - levels are: 10, 25, 69, 745, 41214
 
 #### - margin :
 
@@ -65,8 +65,8 @@ padding properties for html elements
 margin properties for html elements
 
 
-- values are: t, b, l, r, all, u, ii, tb
-- levels are: 10, 25, 69, 745, 41214
+ - values are: t, b, l, r, all, u, ii, tb
+ - levels are: 10, 25, 69, 745, 41214
 
 #### - border :
 
@@ -74,8 +74,8 @@ margin properties for html elements
 padding properties for html elements
 
 
-- values are: t, b, l, r, all, u, ii, tb
-- levels are: 10, 25, 69, 745, 41214
+ - values are: t, b, l, r, all, u, ii, tb
+ - levels are: 10, 25, 69, 745, 41214
 
 #### - shadow :
 
@@ -83,8 +83,8 @@ padding properties for html elements
 applying shadows give levels to your design
 
 
-- values are: t, b, l, r, all, u, ii, tb
-- levels are: 10, 25, 69, 745, 41214
+ - values are: t, b, l, r, all, u, ii, tb
+ - levels are: 10, 25, 69, 745, 41214
 
 
 <br/>
@@ -100,7 +100,8 @@ applying shadows give levels to your design
 color for text level html elements
 
 
-- values are: primary, foreground, background
+ - values are: 100, 200, 300, 400, 500, 600, 700, 800, 900
+ - levels are:<br/>
 
 #### - background-color :
 
@@ -108,7 +109,8 @@ color for text level html elements
 background colors
 
 
-- values are: primary, foreground, background
+ - values are: 100, 200, 300, 400, 500, 600, 700, 800, 900
+ - levels are:<br/>
 
 #### - background-themed :
 
@@ -116,4 +118,5 @@ background colors
 same as background-color, but with added contrasted color to text
 
 
-- values are: primary, foreground, background
+ - values are: 100, 200, 300, 400, 500, 600, 700, 800, 900
+ - levels are:<br/>

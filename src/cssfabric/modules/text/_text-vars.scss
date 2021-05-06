@@ -42,6 +42,6 @@ $text-config: (
         ),
         scheme: loader.getFabricSharedParams(scheme),
         palette: loader.getFabricSharedParams(palette),
-        gray: loader.getFabricSharedParams(gray) // alias utils.getGraySteps
+        gray: loader.getFabricSharedParams(gray)
 );
 $text-docs: ();

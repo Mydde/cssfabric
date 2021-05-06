@@ -1,16 +1,53 @@
 @use '../../_loader';
+@use '../../utils';
+
+$_color-types-config: (color bg bg-themed);
 
 $color-metadata: (
-	title: color,
-	title_tag: "its about colors",
-	description: description
+        title: color,
+        title_tag: "its about colors",
+        description: "cssfabric color system: its about colors"
 );
 $color-config: (
-	gray-config: loader.getFabricSharedParams(gray-config),
-	color-types-config: (color bg bg-themed),
-	theme: loader.getFabricSharedParams(theme),
-	scheme: loader.getFabricSharedParams(scheme),
-	palette: loader.getFabricSharedParams(palette),
-	gray: loader.getFabricSharedParams(gray)
+        gray-config: loader.getFabricSharedParams(gray-config),
+        color-types-config: $_color-types-config,
+        theme: loader.getFabricSharedParams(theme),
+        scheme: loader.getFabricSharedParams(scheme),
+        palette: loader.getFabricSharedParams(palette),
+        gray: loader.getFabricSharedParams(gray)
 );
-$color-docs: ();  
+
+$color-docs: (
+        attributes:(
+                color:(
+                        tag: color,
+                        keys: utils.getObjectKeys(map-get($color-config, gray)),
+                        levels: (
+                                theme: loader.getFabricSharedParams(theme),
+                                scheme: loader.getFabricSharedParams(scheme),
+                                palette: loader.getFabricSharedParams(palette),
+                                gray: loader.getFabricSharedParams(gray)
+                        ),
+                        about: "color for text level html elements"
+                ),
+                background-color:(
+                        tag: bg,
+                        about: "background colors"),
+                background-themed:(
+                        tag: "bg-themed",
+                        about: "same as background-color, but with added contrasted color to text"
+                )
+        ),
+        sharedKeys:(
+                theme: utils.getObjectKeys(map-get($color-config, theme)),
+                scheme: utils.getObjectKeys(map-get($color-config, scheme)),
+                palette: utils.getObjectKeys(map-get($color-config, palette)),
+                gray: utils.getObjectKeys(map-get($color-config, gray))
+        ),
+        sharedKeyValues:(
+                theme: map-get($color-config, theme),
+                scheme: map-get($color-config, scheme),
+                palette: map-get($color-config, palette),
+                gray: map-get($color-config, gray)
+        )
+);
