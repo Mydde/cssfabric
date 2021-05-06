@@ -10,7 +10,7 @@
 }
 
 @mixin fabricAttributes($sep, $frag, $property, $value) {
-  #{$sep+$frag} {
+  #{$sep + $frag} {
     #{$property}: #{$value};
   }
 }
@@ -57,29 +57,28 @@
 
 @function applyColorEffect($theme-level, $color) {
   $switch-named: map-get(
-                  (
-                          light: lighten($color, 15%),
-                          lighter: lighten($color, 30%),
-                          dark: darken($color, 15%),
-                          darker: darken($color, 30%),
-                          complement: complement($color),
-                          invert: invert($color)
-                  ),
-                  $theme-level
+    (
+      light: lighten($color, 15%),
+      lighter: lighten($color, 30%),
+      dark: darken($color, 15%),
+      darker: darken($color, 30%),
+      complement: complement($color),
+      invert: invert($color)
+    ),
+    $theme-level
   );
 
   @return $switch-named;
 }
 
-@function themeDeclinationColors($theme-color:primary,$theme-color-primary) {
-
+@function themeDeclinationColors($theme-color: primary, $theme-color-primary) {
   $switch-theme-color: map-get(
-                  (
-                          primary: $theme-color-primary,
-                          secondary: complement($theme-color-primary),
-                          tertiary: complement(complement($theme-color-primary))
-                  ),
-                  $theme-color
+    (
+      primary: $theme-color-primary,
+      secondary: complement($theme-color-primary),
+      tertiary: complement(complement($theme-color-primary))
+    ),
+    $theme-color
   );
 
   @return $switch-theme-color;
@@ -88,18 +87,18 @@
 @function getColorPropertyType($fabric-tag) {
   /** get property for #{$fabric-tag} */
   @return map-get(
-                  (
-                          color: color,
-                          text: color,
-                          bg: background-color,
-                          bg-themed: background-color,
-                          border: border-color
-                  ),
-                  $fabric-tag
+    (
+      color: color,
+      text: color,
+      bg: background-color,
+      bg-themed: background-color,
+      border: border-color
+    ),
+    $fabric-tag
   );
 }
 
-@function getThemeLevels($declinations-config,$color_primary) {
+@function getThemeLevels($declinations-config, $color_primary) {
   $out: ();
   @each $color-grade in $declinations-config {
     $color: themeDeclinationColors($color-grade, $color_primary);
@@ -114,10 +113,19 @@
   @return $out;
 }
 
+@function getBoxIterator($sizeConfig, $unit,$unit_size) {
+  $iterator: $sizeConfig; //if($fabric_box_position_prop== border, $box-border-sizes-px-config, $box-sizes-config); 
+  // box_unit_border_size 
+
+  @for $grid_size_value from 1 through $sizeConfig {
+    $css_size_value: ($grid_size_value * $unit_size) + $unit;
+  }
+}
+
 @function getObjectKeys($object) {
   $out: ();
   @each $key, $value in $object {
-    $out: append($out,$key);
+    $out: append($out, $key);
   }
 
   @return $out;

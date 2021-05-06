@@ -21,7 +21,6 @@ $box-position-shorthand-config: map-get($box-config, position-shorthand-config) 
 $box-display-shorthand-config: map-get($box-config, display-shorthand-config) !default;
 $box-shadow-shorthand-config: map-get($box-config, shadow-shorthand-config) !default;
 
-
 $box-border-shorthand-config: map-get($box-config, border-shorthand-config) !default;
 $box-padding-shorthand-config: map-get($box-config, padding-shorthand-config) !default;
 $box-margin-shorthand-config: map-get($box-config, margin-shorthand-config) !default;

@@ -62,19 +62,19 @@ $box-docs: (
                 padding: (
                         tag: map-get($box-config, padding-shorthand-config),
                         keys: utils.getObjectKeys($_border-shorthands),
-                        //levels: (10 25 69 745 41214),
+                        levels: utils.getBoxIterator($box-sizes-config,map-get($box-config,unit-config),map-get($box-config,unit-size-config)),
                         about:  "padding properties for html elements"
                 ),
                 margin: (
                         tag: map-get($box-config, margin-shorthand-config),
                         keys: utils.getObjectKeys($_border-shorthands),
-                        //levels: (10 25 69 745 41214),
+                        levels: utils.getBoxIterator($box-sizes-config,map-get($box-config,unit-config,unit-size-config)),
                         about:  "margin properties for html elements"
                 ),
                 border: (
                         tag: map-get($box-config, border-shorthand-config),
                         keys: utils.getObjectKeys($_border-shorthands),
-                        //levels: (10 25 69 745 41214),
+                        levels: utils.getBoxIterator($box-border-sizes-px-config,map-get($box-config,border-unit-config,unit-border-size-config)),
                         about:  "padding properties for html elements"
                 ),
                 shadow: (
