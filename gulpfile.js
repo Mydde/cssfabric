@@ -54,11 +54,13 @@ const doFabric = {
         const table = {headers: ["modules", ""]};
         const rows  = [];
         
-        const labelIn = "<span style='width:80px;display:inline-block;overflow:visible'><b>";
+        const labelIn  = "<span style='width:80px;display:inline-block;overflow:visible'><b>";
         const labelOut = "</b></span>";
-    
-        const labelNestedIn = "<span style='margin-left:20px;width:80px;display:inline-block;overflow:visible'>- ";
+        
+        const labelNestedIn  = "<span style='margin-left:20px;width:80px;display:inline-block;overflow:visible'>- ";
         const labelNestedOut = "</span>";
+        
+        const eol = '<br>&nbsp;&nbsp;-&nbsp;&nbsp;';
         
         out.push({h1: "Welcome to cssfabric"});
         out.push({p: "Willing to bring my utility-first 2011 css framework to a more decent life !"});
@@ -110,19 +112,43 @@ const doFabric = {
                         }
                         // si keys
                         if (attributeValue?.keys) {
-                            collect.keys = `${labelIn}keys${labelOut}: ${attributeValue.keys.join('&nbsp;&nbsp;&nbsp;&nbsp;')}`;
+                            // if [][]
+                            if (attributeValue.keys.every(x => Array.isArray(x))) {
+                                collect.keys = `${labelIn}keys${labelOut}:${eol}` + attributeValue.keys.map((x) => x.join('&nbsp;&nbsp;')).join(eol)
+    
+                            }
+                            // if string[]
+                            if (attributeValue.keys.every(x => typeof x === 'string')) {
+                                collect.keys = `${labelIn}keys${labelOut}: ${attributeValue.keys.join('&nbsp;&nbsp;')}`;
+                            }
                         }
                         // si levels
                         if (attributeValue?.levels) {
-                            if (Array.isArray(attributeValue.levels)) collect.levels = `${labelIn}levels${labelOut}: ${attributeValue.levels.join('&nbsp;&nbsp;&nbsp;&nbsp;')}`;
+                            // si typeof level array => array of string or of arrays
+                            if (Array.isArray(attributeValue.levels)) {
+                                // if [][]
+                                if (attributeValue.levels.every(x => Array.isArray(x))) {
+                                    collect.levels = `${labelIn}levels${labelOut}:${eol}` + attributeValue.levels.map((x) => x.join('&nbsp;&nbsp;')).join(eol)
+                                }
+                                // if string[]
+                                if (attributeValue.levels.every(x => typeof x === 'string')) {
+                                    collect.levels = `${labelIn}levels${labelOut}: ${eol}${attributeValue.levels.join('&nbsp;&nbsp;')}`;
+                                }
+                                // if {}[]
+                                if (attributeValue.levels.every(x => typeof x === 'object' && !Array.isArray(x))) {
+                                    collect.levels = `${labelIn}levels${labelOut}: ${eol}${attributeValue.levels.map((x) => x.join('&nbsp;&nbsp;')).join(eol)}`;
+                                }
+                                
+                            }
+                            // si typeof level object
                             if (!Array.isArray(attributeValue.levels) && typeof (attributeValue.levels === "object")) {
                                 nestedLevels.push(`${labelIn}level keys${labelOut}:`);
                                 Object.keys(attributeValue.levels).forEach((levelKey) => {
                                     let levelValue = attributeValue.levels[levelKey].join('&nbsp;&nbsp;&nbsp;&nbsp;')
-                                    console.log(levelValue)
+                                    // console.log(levelValue)
                                     nestedLevels.push(`${labelNestedIn}${levelKey}${labelNestedOut}: ${levelValue}`);
                                 })
-                                
+                                // [].concat(...arr));
                             }
                         }
                     }

@@ -29,8 +29,8 @@ overflow | cssfabric overflow module to set overflow styles on all html elements
 scale | cssfabric scale module to set dimensions and ratios on all html elements
 table | cssfabric table module to set different table styles
 text | cssfabric text module to set text style on all html elements
-theme | 
-zindex | cssfabric zindex module to set z-index on all html elements |
+zindex | cssfabric zindex module to set z-index on all html elements
+theme |  |
 
 
 <br/>
@@ -56,8 +56,7 @@ zindex | cssfabric zindex module to set z-index on all html elements |
 
 
  - <span style='width:80px;display:inline-block;overflow:visible'><b>shorthand</b></span>:  pad
- - <span style='width:80px;display:inline-block;overflow:visible'><b>keys</b></span>: t&nbsp;&nbsp;&nbsp;&nbsp;b&nbsp;&nbsp;&nbsp;&nbsp;l&nbsp;&nbsp;&nbsp;&nbsp;r&nbsp;&nbsp;&nbsp;&nbsp;all&nbsp;&nbsp;&nbsp;&nbsp;u&nbsp;&nbsp;&nbsp;&nbsp;ii&nbsp;&nbsp;&nbsp;&nbsp;tb
- - <span style='width:80px;display:inline-block;overflow:visible'><b>levels</b></span>: 1&nbsp;&nbsp;&nbsp;&nbsp;2&nbsp;&nbsp;&nbsp;&nbsp;3&nbsp;&nbsp;&nbsp;&nbsp;4&nbsp;&nbsp;&nbsp;&nbsp;5&nbsp;&nbsp;&nbsp;&nbsp;6&nbsp;&nbsp;&nbsp;&nbsp;7&nbsp;&nbsp;&nbsp;&nbsp;8
+ - <span style='width:80px;display:inline-block;overflow:visible'><b>keys</b></span>: t&nbsp;&nbsp;b&nbsp;&nbsp;l&nbsp;&nbsp;r&nbsp;&nbsp;all&nbsp;&nbsp;u&nbsp;&nbsp;ii&nbsp;&nbsp;tb
 
 #### [margin]
 
@@ -66,8 +65,7 @@ zindex | cssfabric zindex module to set z-index on all html elements |
 
 
  - <span style='width:80px;display:inline-block;overflow:visible'><b>shorthand</b></span>:  marg
- - <span style='width:80px;display:inline-block;overflow:visible'><b>keys</b></span>: t&nbsp;&nbsp;&nbsp;&nbsp;b&nbsp;&nbsp;&nbsp;&nbsp;l&nbsp;&nbsp;&nbsp;&nbsp;r&nbsp;&nbsp;&nbsp;&nbsp;all&nbsp;&nbsp;&nbsp;&nbsp;u&nbsp;&nbsp;&nbsp;&nbsp;ii&nbsp;&nbsp;&nbsp;&nbsp;tb
- - <span style='width:80px;display:inline-block;overflow:visible'><b>levels</b></span>: 1&nbsp;&nbsp;&nbsp;&nbsp;2&nbsp;&nbsp;&nbsp;&nbsp;3&nbsp;&nbsp;&nbsp;&nbsp;4&nbsp;&nbsp;&nbsp;&nbsp;5&nbsp;&nbsp;&nbsp;&nbsp;6&nbsp;&nbsp;&nbsp;&nbsp;7&nbsp;&nbsp;&nbsp;&nbsp;8
+ - <span style='width:80px;display:inline-block;overflow:visible'><b>keys</b></span>: t&nbsp;&nbsp;b&nbsp;&nbsp;l&nbsp;&nbsp;r&nbsp;&nbsp;all&nbsp;&nbsp;u&nbsp;&nbsp;ii&nbsp;&nbsp;tb
 
 #### [border]
 
@@ -76,8 +74,7 @@ zindex | cssfabric zindex module to set z-index on all html elements |
 
 
  - <span style='width:80px;display:inline-block;overflow:visible'><b>shorthand</b></span>:  border
- - <span style='width:80px;display:inline-block;overflow:visible'><b>keys</b></span>: t&nbsp;&nbsp;&nbsp;&nbsp;b&nbsp;&nbsp;&nbsp;&nbsp;l&nbsp;&nbsp;&nbsp;&nbsp;r&nbsp;&nbsp;&nbsp;&nbsp;all&nbsp;&nbsp;&nbsp;&nbsp;u&nbsp;&nbsp;&nbsp;&nbsp;ii&nbsp;&nbsp;&nbsp;&nbsp;tb
- - <span style='width:80px;display:inline-block;overflow:visible'><b>levels</b></span>: 1&nbsp;&nbsp;&nbsp;&nbsp;2&nbsp;&nbsp;&nbsp;&nbsp;3&nbsp;&nbsp;&nbsp;&nbsp;4&nbsp;&nbsp;&nbsp;&nbsp;5
+ - <span style='width:80px;display:inline-block;overflow:visible'><b>keys</b></span>: t&nbsp;&nbsp;b&nbsp;&nbsp;l&nbsp;&nbsp;r&nbsp;&nbsp;all&nbsp;&nbsp;u&nbsp;&nbsp;ii&nbsp;&nbsp;tb
 
 #### [shadow]
 
@@ -86,7 +83,6 @@ zindex | cssfabric zindex module to set z-index on all html elements |
 
 
  - <span style='width:80px;display:inline-block;overflow:visible'><b>shorthand</b></span>:  shad
- - <span style='width:80px;display:inline-block;overflow:visible'><b>levels</b></span>: 2&nbsp;&nbsp;&nbsp;&nbsp;4&nbsp;&nbsp;&nbsp;&nbsp;8&nbsp;&nbsp;&nbsp;&nbsp;16&nbsp;&nbsp;&nbsp;&nbsp;32&nbsp;&nbsp;&nbsp;&nbsp;64&nbsp;&nbsp;&nbsp;&nbsp;128&nbsp;&nbsp;&nbsp;&nbsp;256
 
 ---
 
@@ -102,7 +98,7 @@ zindex | cssfabric zindex module to set z-index on all html elements |
 
 
  - <span style='width:80px;display:inline-block;overflow:visible'><b>shorthand</b></span>:  color
- - <span style='width:80px;display:inline-block;overflow:visible'><b>keys</b></span>: theme&nbsp;&nbsp;&nbsp;&nbsp;scheme&nbsp;&nbsp;&nbsp;&nbsp;palette&nbsp;&nbsp;&nbsp;&nbsp;gray
+ - <span style='width:80px;display:inline-block;overflow:visible'><b>keys</b></span>: theme&nbsp;&nbsp;scheme&nbsp;&nbsp;palette&nbsp;&nbsp;gray
  - <span style='width:80px;display:inline-block;overflow:visible'><b>level keys</b></span>:<br/><span style='margin-left:20px;width:80px;display:inline-block;overflow:visible'>- theme</span>: primary&nbsp;&nbsp;&nbsp;&nbsp;foreground&nbsp;&nbsp;&nbsp;&nbsp;background<br/><span style='margin-left:20px;width:80px;display:inline-block;overflow:visible'>- scheme</span>: info&nbsp;&nbsp;&nbsp;&nbsp;alert&nbsp;&nbsp;&nbsp;&nbsp;error&nbsp;&nbsp;&nbsp;&nbsp;warning&nbsp;&nbsp;&nbsp;&nbsp;discrete&nbsp;&nbsp;&nbsp;&nbsp;success<br/><span style='margin-left:20px;width:80px;display:inline-block;overflow:visible'>- palette</span>: yellow&nbsp;&nbsp;&nbsp;&nbsp;orange&nbsp;&nbsp;&nbsp;&nbsp;red&nbsp;&nbsp;&nbsp;&nbsp;magenta&nbsp;&nbsp;&nbsp;&nbsp;purple&nbsp;&nbsp;&nbsp;&nbsp;green&nbsp;&nbsp;&nbsp;&nbsp;teal&nbsp;&nbsp;&nbsp;&nbsp;blue<br/><span style='margin-left:20px;width:80px;display:inline-block;overflow:visible'>- gray</span>: 100&nbsp;&nbsp;&nbsp;&nbsp;200&nbsp;&nbsp;&nbsp;&nbsp;300&nbsp;&nbsp;&nbsp;&nbsp;400&nbsp;&nbsp;&nbsp;&nbsp;500&nbsp;&nbsp;&nbsp;&nbsp;600&nbsp;&nbsp;&nbsp;&nbsp;700&nbsp;&nbsp;&nbsp;&nbsp;800&nbsp;&nbsp;&nbsp;&nbsp;900
 
 #### [background-color]
@@ -112,7 +108,7 @@ zindex | cssfabric zindex module to set z-index on all html elements |
 
 
  - <span style='width:80px;display:inline-block;overflow:visible'><b>shorthand</b></span>:  bg
- - <span style='width:80px;display:inline-block;overflow:visible'><b>keys</b></span>: theme&nbsp;&nbsp;&nbsp;&nbsp;scheme&nbsp;&nbsp;&nbsp;&nbsp;palette&nbsp;&nbsp;&nbsp;&nbsp;gray
+ - <span style='width:80px;display:inline-block;overflow:visible'><b>keys</b></span>: theme&nbsp;&nbsp;scheme&nbsp;&nbsp;palette&nbsp;&nbsp;gray
  - <span style='width:80px;display:inline-block;overflow:visible'><b>level keys</b></span>:<br/><span style='margin-left:20px;width:80px;display:inline-block;overflow:visible'>- theme</span>: primary&nbsp;&nbsp;&nbsp;&nbsp;foreground&nbsp;&nbsp;&nbsp;&nbsp;background<br/><span style='margin-left:20px;width:80px;display:inline-block;overflow:visible'>- scheme</span>: info&nbsp;&nbsp;&nbsp;&nbsp;alert&nbsp;&nbsp;&nbsp;&nbsp;error&nbsp;&nbsp;&nbsp;&nbsp;warning&nbsp;&nbsp;&nbsp;&nbsp;discrete&nbsp;&nbsp;&nbsp;&nbsp;success<br/><span style='margin-left:20px;width:80px;display:inline-block;overflow:visible'>- palette</span>: yellow&nbsp;&nbsp;&nbsp;&nbsp;orange&nbsp;&nbsp;&nbsp;&nbsp;red&nbsp;&nbsp;&nbsp;&nbsp;magenta&nbsp;&nbsp;&nbsp;&nbsp;purple&nbsp;&nbsp;&nbsp;&nbsp;green&nbsp;&nbsp;&nbsp;&nbsp;teal&nbsp;&nbsp;&nbsp;&nbsp;blue<br/><span style='margin-left:20px;width:80px;display:inline-block;overflow:visible'>- gray</span>: 100&nbsp;&nbsp;&nbsp;&nbsp;200&nbsp;&nbsp;&nbsp;&nbsp;300&nbsp;&nbsp;&nbsp;&nbsp;400&nbsp;&nbsp;&nbsp;&nbsp;500&nbsp;&nbsp;&nbsp;&nbsp;600&nbsp;&nbsp;&nbsp;&nbsp;700&nbsp;&nbsp;&nbsp;&nbsp;800&nbsp;&nbsp;&nbsp;&nbsp;900
 
 #### [background-themed]
@@ -122,5 +118,84 @@ zindex | cssfabric zindex module to set z-index on all html elements |
 
 
  - <span style='width:80px;display:inline-block;overflow:visible'><b>shorthand</b></span>:  bg-themed
- - <span style='width:80px;display:inline-block;overflow:visible'><b>keys</b></span>: theme&nbsp;&nbsp;&nbsp;&nbsp;scheme&nbsp;&nbsp;&nbsp;&nbsp;palette&nbsp;&nbsp;&nbsp;&nbsp;gray
+ - <span style='width:80px;display:inline-block;overflow:visible'><b>keys</b></span>: theme&nbsp;&nbsp;scheme&nbsp;&nbsp;palette&nbsp;&nbsp;gray
  - <span style='width:80px;display:inline-block;overflow:visible'><b>level keys</b></span>:<br/><span style='margin-left:20px;width:80px;display:inline-block;overflow:visible'>- theme</span>: primary&nbsp;&nbsp;&nbsp;&nbsp;foreground&nbsp;&nbsp;&nbsp;&nbsp;background<br/><span style='margin-left:20px;width:80px;display:inline-block;overflow:visible'>- scheme</span>: info&nbsp;&nbsp;&nbsp;&nbsp;alert&nbsp;&nbsp;&nbsp;&nbsp;error&nbsp;&nbsp;&nbsp;&nbsp;warning&nbsp;&nbsp;&nbsp;&nbsp;discrete&nbsp;&nbsp;&nbsp;&nbsp;success<br/><span style='margin-left:20px;width:80px;display:inline-block;overflow:visible'>- palette</span>: yellow&nbsp;&nbsp;&nbsp;&nbsp;orange&nbsp;&nbsp;&nbsp;&nbsp;red&nbsp;&nbsp;&nbsp;&nbsp;magenta&nbsp;&nbsp;&nbsp;&nbsp;purple&nbsp;&nbsp;&nbsp;&nbsp;green&nbsp;&nbsp;&nbsp;&nbsp;teal&nbsp;&nbsp;&nbsp;&nbsp;blue<br/><span style='margin-left:20px;width:80px;display:inline-block;overflow:visible'>- gray</span>: 100&nbsp;&nbsp;&nbsp;&nbsp;200&nbsp;&nbsp;&nbsp;&nbsp;300&nbsp;&nbsp;&nbsp;&nbsp;400&nbsp;&nbsp;&nbsp;&nbsp;500&nbsp;&nbsp;&nbsp;&nbsp;600&nbsp;&nbsp;&nbsp;&nbsp;700&nbsp;&nbsp;&nbsp;&nbsp;800&nbsp;&nbsp;&nbsp;&nbsp;900
+
+---
+
+#### <strong>module grid</strong>
+
+
+<br/>
+
+#### [grid]
+
+
+- a so classic grid system, and, hey, it gets height !
+
+
+ - <span style='width:80px;display:inline-block;overflow:visible'><b>shorthand</b></span>:  grid
+ - <span style='width:80px;display:inline-block;overflow:visible'><b>keys</b></span>: w&nbsp;&nbsp;h
+
+#### [self]
+
+
+- grid children specific classnames
+
+
+ - <span style='width:80px;display:inline-block;overflow:visible'><b>shorthand</b></span>:  self
+ - <span style='width:80px;display:inline-block;overflow:visible'><b>keys</b></span>: auto&nbsp;&nbsp;start&nbsp;&nbsp;end&nbsp;&nbsp;center&nbsp;&nbsp;baseline&nbsp;&nbsp;stretch
+
+---
+
+#### <strong>module scale</strong>
+
+
+<br/>
+
+#### [width]
+
+
+ - <span style='width:80px;display:inline-block;overflow:visible'><b>shorthand</b></span>:  w
+
+#### [height]
+
+
+ - <span style='width:80px;display:inline-block;overflow:visible'><b>shorthand</b></span>:  h
+ - <span style='width:80px;display:inline-block;overflow:visible'><b>levels</b></span>:<br>&nbsp;&nbsp;-&nbsp;&nbsp;145 exist&nbsp;&nbsp;and 151<br>&nbsp;&nbsp;-&nbsp;&nbsp;999 exist&nbsp;&nbsp;and 666
+
+---
+
+#### <strong>module text</strong>
+
+
+<br/>
+
+#### [text-transform]
+
+
+ - <span style='width:80px;display:inline-block;overflow:visible'><b>shorthand</b></span>:  text
+ - <span style='width:80px;display:inline-block;overflow:visible'><b>keys</b></span>: cap&nbsp;&nbsp;up&nbsp;&nbsp;low&nbsp;&nbsp;none&nbsp;&nbsp;full
+
+#### [font-weight]
+
+
+ - <span style='width:80px;display:inline-block;overflow:visible'><b>shorthand</b></span>:  text
+
+#### [text-align]
+
+
+ - <span style='width:80px;display:inline-block;overflow:visible'><b>shorthand</b></span>:  text
+ - <span style='width:80px;display:inline-block;overflow:visible'><b>keys</b></span>: l&nbsp;&nbsp;r&nbsp;&nbsp;center&nbsp;&nbsp;justify
+
+#### [text-shadow]
+
+
+ - <span style='width:80px;display:inline-block;overflow:visible'><b>shorthand</b></span>:  text-shad
+ - <span style='width:80px;display:inline-block;overflow:visible'><b>keys</b></span>: 
+
+#### [color]
+
+
+ - <span style='width:80px;display:inline-block;overflow:visible'><b>shorthand</b></span>:  text
+ - <span style='width:80px;display:inline-block;overflow:visible'><b>keys</b></span>:<br>&nbsp;&nbsp;-&nbsp;&nbsp;info&nbsp;&nbsp;alert&nbsp;&nbsp;error&nbsp;&nbsp;warning&nbsp;&nbsp;discrete&nbsp;&nbsp;success<br>&nbsp;&nbsp;-&nbsp;&nbsp;yellow&nbsp;&nbsp;orange&nbsp;&nbsp;red&nbsp;&nbsp;magenta&nbsp;&nbsp;purple&nbsp;&nbsp;green&nbsp;&nbsp;teal&nbsp;&nbsp;blue<br>&nbsp;&nbsp;-&nbsp;&nbsp;100&nbsp;&nbsp;200&nbsp;&nbsp;300&nbsp;&nbsp;400&nbsp;&nbsp;500&nbsp;&nbsp;600&nbsp;&nbsp;700&nbsp;&nbsp;800&nbsp;&nbsp;900

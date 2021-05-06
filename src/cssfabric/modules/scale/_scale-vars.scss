@@ -3,6 +3,7 @@ $scale-metadata: (
         tag: scale,
         description: "cssfabric scale module to set dimensions and ratios on all html elements"
 );
+
 $scale-config: (
         weight-config: 1em,
         unit-tag-config: (
@@ -39,5 +40,19 @@ $scale-config: (
                 )
         )
 );
+$oi: ("145 exist", "and 151");
+$oi3: ("999 exist", "and 666");
 $scale-docs: (
+        attributes:(
+                width:(
+                        tag: w,
+                  // keys: (8 24), // flatten css props
+                        levels:(1, 2, 4, 8, 16, 24, 32, 48, 64, content-max, content-min),
+                ),
+                height:(
+                        tag: h,
+                  // keys:((5, 6), (7, 8)),
+                        levels:($oi, $oi3)
+                )
+        )
 );

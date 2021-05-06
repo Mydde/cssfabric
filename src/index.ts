@@ -1,6 +1,6 @@
 
 
-import jsonConfig from "./_generated/export.variables.json" ;
+import jsonConfig from "./_generated/export.variables.json" ; 
 // import from "../../cssfabric.json"
 export interface IFabricConfModulePart {
   [key: string]: any;

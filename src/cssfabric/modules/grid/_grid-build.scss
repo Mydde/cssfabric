@@ -13,6 +13,8 @@ $grid-h: map-get($grid-config, horCode);
 $grid-v: map-get($grid-config, vertCode);
 
 $cssProps: map-get($grid-config, cssProps);
+$cssItemsProps: map-get($grid-config, cssItemsProps);
+
 $gridFullWidth: map-get($grid-config, gridFullWidth);
 
 $grid-code-sep: #{$grid-code}#{$sep};
@@ -91,21 +93,21 @@ $grid-code-sep: #{$grid-code}#{$sep};
 
     // justify content rules */
     &.just {
-      @each $fabricRule, $value in map-get($cssProps, justifyContent) {
+      @each $fabricRule, $value in map-get($cssProps, just) {
         @include utils.fabricAttributes('&'+$sep, $fabricRule, 'justify-content', $value);
       }
     }
 
     // align-items rules */
     &.items {
-      @each $fabricRule, $value in map-get($cssProps, alignItems) {
+      @each $fabricRule, $value in map-get($cssProps, items) {
         @include utils.fabricAttributes('&'+$sep, $fabricRule, 'align-items', $value);
       }
     }
 
     // align-content rules */
     &.content {
-      @each $fabricRule, $value in map-get($cssProps, alignContent) {
+      @each $fabricRule, $value in map-get($cssProps, content) {
         $tag: content#{$sep}start;
         @include utils.fabricAttributes('&'+$sep, $fabricRule, 'align-content', $value);
       }
@@ -113,7 +115,7 @@ $grid-code-sep: #{$grid-code}#{$sep};
 
     // align-self rules for children */
     & .self {
-      @each $fabricRule, $value in map-get($cssProps, alignSelf) {
+      @each $fabricRule, $value in map-get($cssItemsProps, self) {
         @include utils.fabricAttributes('&-', $fabricRule, 'align-self', $value);
       }
     }
