@@ -21,21 +21,33 @@ $color-docs: (
         attributes:(
                 color:(
                         tag: color,
-                        keys: utils.getObjectKeys(map-get($color-config, gray)),
+                        keys:  (theme scheme palette gray),
                         levels: (
-                                theme: loader.getFabricSharedParams(theme),
-                                scheme: loader.getFabricSharedParams(scheme),
-                                palette: loader.getFabricSharedParams(palette),
-                                gray: loader.getFabricSharedParams(gray)
+                                theme: utils.getObjectKeys(loader.getFabricSharedParams(theme)),
+                                scheme: utils.getObjectKeys(loader.getFabricSharedParams(scheme)),
+                                palette: utils.getObjectKeys(loader.getFabricSharedParams(palette)),
+                                gray: utils.getObjectKeys(loader.getFabricSharedParams(gray))
                         ),
                         about: "color for text level html elements"
                 ),
                 background-color:(
                         tag: bg,
                         about: "background colors"),
+                levels: (
+                        theme: utils.getObjectKeys(loader.getFabricSharedParams(theme)),
+                        scheme: utils.getObjectKeys(loader.getFabricSharedParams(scheme)),
+                        palette: utils.getObjectKeys(loader.getFabricSharedParams(palette)),
+                        gray: utils.getObjectKeys(loader.getFabricSharedParams(gray))
+                ),
                 background-themed:(
                         tag: "bg-themed",
-                        about: "same as background-color, but with added contrasted color to text"
+                        about: "same as background-color, but with added contrasted color to text",
+                        levels: (
+                                theme: utils.getObjectKeys(loader.getFabricSharedParams(theme)),
+                                scheme: utils.getObjectKeys(loader.getFabricSharedParams(scheme)),
+                                palette: utils.getObjectKeys(loader.getFabricSharedParams(palette)),
+                                gray: utils.getObjectKeys(loader.getFabricSharedParams(gray))
+                        ),
                 )
         ),
         sharedKeys:(
