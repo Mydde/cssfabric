@@ -1,4 +1,33 @@
 @use '../../_loader';
+@use '../../utils';
+
+$cssProps: (
+        text-transform: (
+                cap: capitalize,
+                up: uppercase,
+                low: lowercase,
+                none: none,
+                full: full-width
+        ),
+        font-weight: (
+                50: 50,
+                100: 100,
+                300: 400,
+                500: 500,
+                900: 900,
+                light: lighter,
+                cap: normal,
+                bold: bold,
+                bolder: bolder
+        ),
+        text-align: (
+                l: left,
+                r: right,
+                center: center,
+                justify: justify
+        ),
+        text-shadow:()
+);
 
 $text-metadata: (
         title: text,
@@ -44,4 +73,33 @@ $text-config: (
         palette: loader.getFabricSharedParams(palette),
         gray: loader.getFabricSharedParams(gray)
 );
-$text-docs: ();
+
+
+$text-docs: (
+        attributes:(
+                text-transform:(
+                        tag: text,
+                        keys: utils.getObjectKeys(map-get($cssProps, text-transform))
+                ),
+                font-weight:(
+                        tag: text,
+                        keys: utils.getObjectKeys(map-get($cssProps, font-weight))
+                ),
+                text-align:(
+                        tag: text,
+                        keys: utils.getObjectKeys(map-get($cssProps, text-align))
+                ),
+                text-shadow:(
+                        tag: text-shad,
+                        keys: utils.getObjectKeys(map-get($cssProps, text-shadow))
+                ),
+                color:(
+                        tag: text,
+                        keys: (
+                               utils.getObjectKeys(loader.getFabricSharedParams(scheme)),
+                               utils.getObjectKeys(loader.getFabricSharedParams(palette)),
+                               utils.getObjectKeys(loader.getFabricSharedParams(gray))
+                        )
+                )
+        )
+);

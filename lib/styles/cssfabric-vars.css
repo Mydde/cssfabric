@@ -45,6 +45,21 @@
   --cssfabric-cssfabric-gray-config-steps: 9;
   /** 
   * cssfabric generated file
+  * css vars for animation 
+  */
+  --cssfabric-animation-attention_props: ;
+  --cssfabric-animation-in_out_props-back: is-map;
+  /** 
+  * cssfabric generated file
+  * css vars for base 
+  */
+  --cssfabric-base-sizes-tiny: 32;
+  --cssfabric-base-sizes-small: 64;
+  --cssfabric-base-sizes-medium: 256;
+  --cssfabric-base-sizes-large: 250;
+  --cssfabric-base-sizes-full: 100%;
+  /** 
+  * cssfabric generated file
   * css vars for color 
   */
   --cssfabric-color-gray-config-start: #ededed;
@@ -94,34 +109,15 @@
   --cssfabric-box-cssProps-displayProps: is-map;
   /** 
   * cssfabric generated file
-  * css vars for base 
+  * css vars for scale 
   */
-  --cssfabric-base-sizes-tiny: 32;
-  --cssfabric-base-sizes-small: 64;
-  --cssfabric-base-sizes-medium: 256;
-  --cssfabric-base-sizes-large: 250;
-  --cssfabric-base-sizes-full: 100%;
-  /** 
-  * cssfabric generated file
-  * css vars for animation 
-  */
-  --cssfabric-animation-attention_props: ;
-  --cssfabric-animation-in_out_props-back: is-map;
-  /** 
-  * cssfabric generated file
-  * css vars for menu 
-  */
-  --cssfabric-menu-menu_class_name: menu;
-  --cssfabric-menu-menu_class_name_short: ul;
-  --cssfabric-menu-orientations-v: vertical;
-  --cssfabric-menu-orientations-h: horizontal;
-  --cssfabric-menu-menu_item_class_name: menu-item;
-  --cssfabric-menu-menu_item_class_name_short: li;
-  --cssfabric-menu-menu_item_disabled_tag: disabled;
-  --cssfabric-menu-menu_item_selected_tag: selected;
-  --cssfabric-menu-menu_dropdown_tag: drop;
-  --cssfabric-menu-menu_dropdown_open: open;
-  --cssfabric-menu-menu_dropdown_close: close;
+  --cssfabric-scale-unit-tag-config-width: w;
+  --cssfabric-scale-unit-tag-config-height: h;
+  --cssfabric-scale-grid-ratios-config:  8, 24;
+  --cssfabric-scale-defined-step-unit: rem;
+  --cssfabric-scale-defined-steps:  1, 2, 4, 8, 16, 24, 32, 48, 64;
+  --cssfabric-scale-cssProps-size: is-map;
+  --cssfabric-scale-cssProps-content: is-map;
   /** 
   * cssfabric generated file
   * css vars for grid 
@@ -132,29 +128,10 @@
   --cssfabric-grid-vertCode: v;
   --cssfabric-grid-gridFullWidth: main;
   --cssfabric-grid-cssProps-flexWrap: is-map;
-  --cssfabric-grid-cssProps-alignSelf: is-map;
-  --cssfabric-grid-cssProps-justifyContent: is-map;
-  --cssfabric-grid-cssProps-alignItems: is-map;
-  --cssfabric-grid-cssProps-alignContent: is-map;
-  /** 
-  * cssfabric generated file
-  * css vars for table 
-  */
-  --cssfabric-table-className: table;
-  --cssfabric-table-classNameShort: tbl;
-  --cssfabric-table-table_class_name: table;
-  --cssfabric-table-table_class_name_short: tbl;
-  /** 
-  * cssfabric generated file
-  * css vars for scale 
-  */
-  --cssfabric-scale-unit-tag-config-width: w;
-  --cssfabric-scale-unit-tag-config-height: h;
-  --cssfabric-scale-grid-ratios-config:  8, 24;
-  --cssfabric-scale-defined-step-unit: rem;
-  --cssfabric-scale-defined-steps:  1, 2, 4, 8, 16, 24, 32, 48, 64;
-  --cssfabric-scale-cssProps-size: is-map;
-  --cssfabric-scale-cssProps-content: is-map;
+  --cssfabric-grid-cssProps-just: is-map;
+  --cssfabric-grid-cssProps-items: is-map;
+  --cssfabric-grid-cssProps-content: is-map;
+  --cssfabric-grid-cssItemsProps-self: is-map;
   /** 
   * cssfabric generated file
   * css vars for overflow 
@@ -229,6 +206,29 @@
   --cssfabric-theme-color-tertiary-darker: black;
   --cssfabric-theme-color-tertiary-complement: purple;
   --cssfabric-theme-color-tertiary-invert: #ff7fff;
+  /** 
+  * cssfabric generated file
+  * css vars for menu 
+  */
+  --cssfabric-menu-menu_class_name: menu;
+  --cssfabric-menu-menu_class_name_short: ul;
+  --cssfabric-menu-orientations-v: vertical;
+  --cssfabric-menu-orientations-h: horizontal;
+  --cssfabric-menu-menu_item_class_name: menu-item;
+  --cssfabric-menu-menu_item_class_name_short: li;
+  --cssfabric-menu-menu_item_disabled_tag: disabled;
+  --cssfabric-menu-menu_item_selected_tag: selected;
+  --cssfabric-menu-menu_dropdown_tag: drop;
+  --cssfabric-menu-menu_dropdown_open: open;
+  --cssfabric-menu-menu_dropdown_close: close;
+  /** 
+  * cssfabric generated file
+  * css vars for table 
+  */
+  --cssfabric-table-className: table;
+  --cssfabric-table-classNameShort: tbl;
+  --cssfabric-table-table_class_name: table;
+  --cssfabric-table-table_class_name_short: tbl;
   /** 
   * cssfabric generated file
   * css vars for zindex 
