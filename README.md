@@ -26,8 +26,8 @@ color | cssfabric color system: its about colors
 grid | cssfabric flex grid system module
 menu | cssfabric menu module to set menu style
 overflow | cssfabric overflow module to set overflow styles on all html elements
-scale | cssfabric scale module to set dimensions and ratios on all html elements
 table | cssfabric table module to set different table styles
+scale | cssfabric scale module to set dimensions and ratios on all html elements
 text | cssfabric text module to set text style on all html elements
 theme |
 zindex | cssfabric zindex module to set z-index on all html elements |
@@ -57,7 +57,7 @@ padding properties for html elements
 
 
 - values are: t, b, l, r, all, u, ii, tb
-- levels are: 10, 25, 69, 745, 41214
+- levels are: 1, 2, 3, 4, 5, 6, 7, 8
 
 #### - margin :
 
@@ -66,16 +66,16 @@ margin properties for html elements
 
 
 - values are: t, b, l, r, all, u, ii, tb
-- levels are: 10, 25, 69, 745, 41214
+- levels are: 1, 2, 3, 4, 5, 6, 7, 8
 
 #### - border :
 
 
-padding properties for html elements
+border properties for html elements
 
 
 - values are: t, b, l, r, all, u, ii, tb
-- levels are: 10, 25, 69, 745, 41214
+- levels are: 1, 2, 3, 4, 5
 
 #### - shadow :
 
@@ -84,7 +84,7 @@ applying shadows give levels to your design
 
 
 - values are: t, b, l, r, all, u, ii, tb
-- levels are: 10, 25, 69, 745, 41214
+- levels are: 2, 4, 8, 16, 32, 64, 128, 256
 
 
 <br/>
@@ -100,7 +100,8 @@ applying shadows give levels to your design
 color for text level html elements
 
 
-- values are: primary, foreground, background
+- values are: 100, 200, 300, 400, 500, 600, 700, 800, 900
+- levels are:<br/>
 
 #### - background-color :
 
@@ -108,7 +109,8 @@ color for text level html elements
 background colors
 
 
-- values are: primary, foreground, background
+- values are: 100, 200, 300, 400, 500, 600, 700, 800, 900
+- levels are:<br/>
 
 #### - background-themed :
 
@@ -116,4 +118,5 @@ background colors
 same as background-color, but with added contrasted color to text
 
 
-- values are: primary, foreground, background
+- values are: 100, 200, 300, 400, 500, 600, 700, 800, 900
+- levels are:<br/>

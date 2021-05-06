@@ -57,15 +57,15 @@
 
 @function applyColorEffect($theme-level, $color) {
   $switch-named: map-get(
-    (
-      light: lighten($color, 15%),
-      lighter: lighten($color, 30%),
-      dark: darken($color, 15%),
-      darker: darken($color, 30%),
-      complement: complement($color),
-      invert: invert($color)
-    ),
-    $theme-level
+                  (
+                          light: lighten($color, 15%),
+                          lighter: lighten($color, 30%),
+                          dark: darken($color, 15%),
+                          darker: darken($color, 30%),
+                          complement: complement($color),
+                          invert: invert($color)
+                  ),
+                  $theme-level
   );
 
   @return $switch-named;
@@ -73,12 +73,12 @@
 
 @function themeDeclinationColors($theme-color: primary, $theme-color-primary) {
   $switch-theme-color: map-get(
-    (
-      primary: $theme-color-primary,
-      secondary: complement($theme-color-primary),
-      tertiary: complement(complement($theme-color-primary))
-    ),
-    $theme-color
+                  (
+                          primary: $theme-color-primary,
+                          secondary: complement($theme-color-primary),
+                          tertiary: complement(complement($theme-color-primary))
+                  ),
+                  $theme-color
   );
 
   @return $switch-theme-color;
@@ -87,14 +87,14 @@
 @function getColorPropertyType($fabric-tag) {
   /** get property for #{$fabric-tag} */
   @return map-get(
-    (
-      color: color,
-      text: color,
-      bg: background-color,
-      bg-themed: background-color,
-      border: border-color
-    ),
-    $fabric-tag
+                  (
+                          color: color,
+                          text: color,
+                          bg: background-color,
+                          bg-themed: background-color,
+                          border: border-color
+                  ),
+                  $fabric-tag
   );
 }
 
@@ -118,10 +118,36 @@
 
   @for $grid_size_value from 1 through $iterator {
     $css_size_value: ($grid_size_value * $_unit-size-config) + $unit-config;
-    $out: map.set($out,  $grid_size_value, $css_size_value);
+    $out: map.set($out, $grid_size_value, $css_size_value);
   }
-@debug $out;
   @return $out
+}
+
+@function getShadowIterator($factors,$box-shadows-steps) {
+  $out: ();
+
+  $v_fact: map-get($factors, v_fact);
+  $h_fact: map-get($factors, h_fact);
+
+  $v_fact_2: map-get($factors, v_fact_2);
+  $h_fact_2: map-get($factors, h_fact_2);
+
+  $acc: 1;
+
+  @for $shadows_step from 1 through $box-shadows-steps {
+    $acc: $acc * 2;
+    $v: $shadows_step * 2;
+
+    $v_val: $acc / $v_fact;
+    $h_val: $acc / $h_fact;
+
+    $v_val_2: $acc / $v_fact_2;
+    $h_val_2: $acc / $h_fact_2;
+
+    $out: map.set($out, $acc, #{$v_val} + #{$h_val} );
+  }
+
+  @return $out;
 }
 
 @function getObjectKeys($object) {

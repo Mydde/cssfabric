@@ -106,6 +106,8 @@
                     "unit-border-size-config": 1,
                     "sizes-config": 8,
                     "border-sizes-px-config": 5,
+                    "shadows-steps": 6,
+                    "shadows_step_multiplier": 2,
                     "position-shorthand-config": "pos",
                     "display-shorthand-config": "dsp",
                     "shadow-shorthand-config": "shad",
@@ -138,22 +140,103 @@
                 "_docs": {
                     "attributes": {
                         "padding": {
-                            "tag": "pad", "keys": ["t", "b", "l", "r", "all", "u", "ii", "tb"], "levels": [1, 2, 3, 4, 5, 6, 7, 8], "about": "padding properties for html elements"
+
+                            "tag": "pad",
+                            "keys": ["t",
+                            "b",
+                            "l",
+                            "r",
+                            "all",
+                            "u",
+                            "ii",
+                            "tb"],
+                            "values": {
+                                "1": "0.25rem", "2": "0.5rem", "3": "0.75rem", "4": "1rem", "5": "1.25rem", "6": "1.5rem", "7": "1.75rem", "8": "2rem"
+                            }
+
+                            ,
+                            "levels": [1,
+                            2,
+                            3,
+                            4,
+                            5,
+                            6,
+                            7,
+                            8],
+                            "about": "padding properties for html elements"
                         }
 
                         ,
                         "margin": {
-                            "tag": "marg", "keys": ["t", "b", "l", "r", "all", "u", "ii", "tb"], "levels": [1, 2, 3, 4, 5, 6, 7, 8], "about": "margin properties for html elements"
+
+                            "tag": "marg",
+                            "keys": ["t",
+                            "b",
+                            "l",
+                            "r",
+                            "all",
+                            "u",
+                            "ii",
+                            "tb"],
+                            "values": {
+                                "1": "0.25rem", "2": "0.5rem", "3": "0.75rem", "4": "1rem", "5": "1.25rem", "6": "1.5rem", "7": "1.75rem", "8": "2rem"
+                            }
+
+                            ,
+                            "levels": [1,
+                            2,
+                            3,
+                            4,
+                            5,
+                            6,
+                            7,
+                            8],
+                            "about": "margin properties for html elements"
                         }
 
                         ,
                         "border": {
-                            "tag": "border", "keys": ["t", "b", "l", "r", "all", "u", "ii", "tb"], "levels": [1, 2, 3, 4, 5], "about": "border properties for html elements"
+
+                            "tag": "border",
+                            "keys": ["t",
+                            "b",
+                            "l",
+                            "r",
+                            "all",
+                            "u",
+                            "ii",
+                            "tb"],
+                            "values": {
+                                "1": "1px", "2": "2px", "3": "3px", "4": "4px", "5": "5px"
+                            }
+
+                            ,
+                            "levels": [1,
+                            2,
+                            3,
+                            4,
+                            5],
+                            "about": "border properties for html elements"
                         }
 
                         ,
                         "shadow": {
-                            "tag": "shad", "about": "applying shadows give levels to your design"
+
+                            "tag": "shad",
+                            "values": {
+                                "2": "0.83333333331.724137931", "4": "1.66666666673.4482758621", "8": "3.33333333336.8965517241", "16": "6.666666666713.7931034483", "32": "13.333333333327.5862068966", "64": "26.666666666755.1724137931", "128": "53.3333333333110.3448275862", "256": "106.6666666667220.6896551724"
+                            }
+
+                            ,
+                            "levels": [2,
+                            4,
+                            8,
+                            16,
+                            32,
+                            64,
+                            128,
+                            256],
+                            "about": "applying shadows give depth and levels to your design"
                         }
                     }
                 }
@@ -276,6 +359,53 @@
             }
 
             ,
+            "grid": {
+                "_data": {
+
+                    "moduleName": "grid",
+                    "moduleNameShort": "grid",
+                    "horCode": "h",
+                    "vertCode": "v",
+                    "gridFullWidth": "main",
+                    "cssProps": {
+                        "flexWrap": {
+                            "wrap-reverse": "wrap-reverse", "wrap": "wrap", "nowrap": "nowrap"
+                        }
+
+                        ,
+                        "alignSelf": {
+                            "auto": "auto", "start": "flex-start", "end": "flex-end", "center": "flex-center", "baseline": "baseline", "stretch": "stretch"
+                        }
+
+                        ,
+                        "justifyContent": {
+                            "start": "flex-start", "end": "flex-end", "between": "space-between", "stretch": "stretch", "center": "flex-center"
+                        }
+
+                        ,
+                        "alignItems": {
+                            "baseline": "baseline", "stretch": "stretch", "start": "flex-start", "center": "center", "end": "flex-end"
+                        }
+
+                        ,
+                        "alignContent": {
+                            "start": "flex-start", "center": "center", "end": "flex-end", "between": "space-between", "equal": "space-evenly"
+                        }
+                    }
+                }
+
+                ,
+                "_metadata": {
+                    "title": "grid", "tag": "grid", "description": "cssfabric flex grid system module"
+                }
+
+                ,
+                "_docs": {
+                    "grid_separator": "", "grid_hor_code": "", "grid_vert_code": ""
+                }
+            }
+
+            ,
             "menu": {
                 "_data": {
 
@@ -328,6 +458,50 @@
                 ,
                 "_metadata": {
                     "title": "overflow", "tag": "flow", "description": "cssfabric overflow module to set overflow styles on all html elements"
+                }
+
+                ,
+                "_docs": []
+            }
+
+            ,
+            "scale": {
+                "_data": {
+
+                    "weight-config": "1em",
+                    "unit-tag-config": {
+                        "width": "w", "height": "h"
+                    }
+
+                    ,
+                    "grid-ratios-config": [8,
+                    24],
+                    "defined-step-size": 2,
+                    "defined-step-unit": "rem",
+                    "defined-steps": [1,
+                    2,
+                    4,
+                    8,
+                    16,
+                    24,
+                    32,
+                    48,
+                    64],
+                    "cssProps": {
+                        "size": {
+                            "full": "100%", "mid": "50%", "quarter": "25%", "tiers": "33%"
+                        }
+
+                        ,
+                        "content": {
+                            "content-max": "max-content", "content-min": "min-content"
+                        }
+                    }
+                }
+
+                ,
+                "_metadata": {
+                    "title": "scale", "tag": "scale", "description": "cssfabric scale module to set dimensions and ratios on all html elements"
                 }
 
                 ,
@@ -432,97 +606,6 @@
                 ,
                 "_metadata": {
                     "title": "theme", "description": ""
-                }
-
-                ,
-                "_docs": []
-            }
-
-            ,
-            "grid": {
-                "_data": {
-
-                    "moduleName": "grid",
-                    "moduleNameShort": "grid",
-                    "horCode": "h",
-                    "vertCode": "v",
-                    "gridFullWidth": "main",
-                    "cssProps": {
-                        "flexWrap": {
-                            "wrap-reverse": "wrap-reverse", "wrap": "wrap", "nowrap": "nowrap"
-                        }
-
-                        ,
-                        "alignSelf": {
-                            "auto": "auto", "start": "flex-start", "end": "flex-end", "center": "flex-center", "baseline": "baseline", "stretch": "stretch"
-                        }
-
-                        ,
-                        "justifyContent": {
-                            "start": "flex-start", "end": "flex-end", "between": "space-between", "stretch": "stretch", "center": "flex-center"
-                        }
-
-                        ,
-                        "alignItems": {
-                            "baseline": "baseline", "stretch": "stretch", "start": "flex-start", "center": "center", "end": "flex-end"
-                        }
-
-                        ,
-                        "alignContent": {
-                            "start": "flex-start", "center": "center", "end": "flex-end", "between": "space-between", "equal": "space-evenly"
-                        }
-                    }
-                }
-
-                ,
-                "_metadata": {
-                    "title": "grid", "tag": "grid", "description": "cssfabric flex grid system module"
-                }
-
-                ,
-                "_docs": {
-                    "grid_separator": "", "grid_hor_code": "", "grid_vert_code": ""
-                }
-            }
-
-            ,
-            "scale": {
-                "_data": {
-
-                    "weight-config": "1em",
-                    "unit-tag-config": {
-                        "width": "w", "height": "h"
-                    }
-
-                    ,
-                    "grid-ratios-config": [8,
-                    24],
-                    "defined-step-size": 2,
-                    "defined-step-unit": "rem",
-                    "defined-steps": [1,
-                    2,
-                    4,
-                    8,
-                    16,
-                    24,
-                    32,
-                    48,
-                    64],
-                    "cssProps": {
-                        "size": {
-                            "full": "100%", "mid": "50%", "quarter": "25%", "tiers": "33%"
-                        }
-
-                        ,
-                        "content": {
-                            "content-max": "max-content", "content-min": "min-content"
-                        }
-                    }
-                }
-
-                ,
-                "_metadata": {
-                    "title": "scale", "tag": "scale", "description": "cssfabric scale module to set dimensions and ratios on all html elements"
                 }
 
                 ,

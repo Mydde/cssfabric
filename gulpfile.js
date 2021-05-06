@@ -83,35 +83,35 @@ const doFabric = {
                 docContent.push({h4: `<strong>module ${title}</strong>`});
                 docContent.push({p: '<br/>'});
                 
-                collect = {};
+                
                 
                 Object.keys(docs.attributes).forEach((attributeCode) => {
                     
                     collectContentList = [];
-                    
+                    collect = {};
                     const attributeValue = docs.attributes[attributeCode];
                     // looking for tag
                     
                     if (typeof attributeValue === "object" && !Array.isArray(attributeValue)) {
-                        collect.title = `- ${attributeCode} :`;
+                        collect.title = `[${attributeCode}]`;
                         // si tag
                         if (attributeValue?.tag) {
-                            collect.tag = `for ${attributeCode} property,  <b>shorthand</b>:  ${attributeValue.tag}`;
+                            collect.tag = `<b>shorthand</b>:  ${attributeValue.tag}`;
                         }
                         // si about
                         if (attributeValue?.about) {
-                            collect.about = `${attributeValue.about}`;
+                            collect.about = `- ${attributeValue.about}`;
                         }
                         // si keys
                         if (attributeValue?.keys) {
-                            collect.keys = `values are: ${attributeValue.keys.join(', ')}`;
+                            collect.keys = `<b>keys</b> are: ${attributeValue.keys.join(', ')}`;
                         }
                         // si levels
                         if (attributeValue?.levels) {
-                           if(Array.isArray(attributeValue.levels)) collect.levels = `levels are: ${attributeValue.levels.join(', ')}`;
+                           if(Array.isArray(attributeValue.levels)) collect.levels = `<b>levels</b>: ${attributeValue.levels.join(', ')}`;
                            if(!Array.isArray(attributeValue.levels) && typeof( attributeValue.levels === "object")) {
                                console.log(Object.keys(attributeValue.levels).join(','))
-                               collect.levels = `levels are:<br/>`;
+                               collect.levels = `<b>levels</b>: multiple<br/>`;
                            }
                         }
                     }
@@ -119,6 +119,7 @@ const doFabric = {
                     if (collect.title) docContent.push({h4: collect.title});
                     if (collect.about) docContent.push({"p": collect.about });
                     
+                    if (collect.tag) collectContentList.push(collect.tag) ;
                     if (collect.keys) collectContentList.push(collect.keys) ;
                     if (collect.levels) collectContentList.push(collect.levels) ;
     

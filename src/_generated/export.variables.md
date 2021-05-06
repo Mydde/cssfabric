@@ -50,41 +50,44 @@ zindex | cssfabric zindex module to set z-index on all html elements |
 
 <br/>
 
-#### - padding :
+#### [padding]
 
 
-padding properties for html elements
+- padding properties for html elements
 
 
- - values are: t, b, l, r, all, u, ii, tb
- - levels are: 1, 2, 3, 4, 5, 6, 7, 8
+ - <b>shorthand</b>:  pad
+ - <b>keys</b> are: t, b, l, r, all, u, ii, tb
+ - <b>levels</b>: 1, 2, 3, 4, 5, 6, 7, 8
 
-#### - margin :
-
-
-margin properties for html elements
+#### [margin]
 
 
- - values are: t, b, l, r, all, u, ii, tb
- - levels are: 1, 2, 3, 4, 5, 6, 7, 8
-
-#### - border :
+- margin properties for html elements
 
 
-border properties for html elements
+ - <b>shorthand</b>:  marg
+ - <b>keys</b> are: t, b, l, r, all, u, ii, tb
+ - <b>levels</b>: 1, 2, 3, 4, 5, 6, 7, 8
+
+#### [border]
 
 
- - values are: t, b, l, r, all, u, ii, tb
- - levels are: 1, 2, 3, 4, 5
-
-#### - shadow :
+- border properties for html elements
 
 
-applying shadows give levels to your design
+ - <b>shorthand</b>:  border
+ - <b>keys</b> are: t, b, l, r, all, u, ii, tb
+ - <b>levels</b>: 1, 2, 3, 4, 5
+
+#### [shadow]
 
 
- - values are: t, b, l, r, all, u, ii, tb
- - levels are: 1, 2, 3, 4, 5
+- applying shadows give depth and levels to your design
+
+
+ - <b>shorthand</b>:  shad
+ - <b>levels</b>: 2, 4, 8, 16, 32, 64, 128, 256
 
 
 <br/>
@@ -94,29 +97,28 @@ applying shadows give levels to your design
 
 <br/>
 
-#### - color :
+#### [color]
 
 
-color for text level html elements
+- color for text level html elements
 
 
- - values are: 100, 200, 300, 400, 500, 600, 700, 800, 900
- - levels are:<br/>
+ - <b>shorthand</b>:  color
+ - <b>keys</b> are: 100, 200, 300, 400, 500, 600, 700, 800, 900
+ - <b>levels</b>: multiple<br/>
 
-#### - background-color :
-
-
-background colors
+#### [background-color]
 
 
- - values are: 100, 200, 300, 400, 500, 600, 700, 800, 900
- - levels are:<br/>
-
-#### - background-themed :
+- background colors
 
 
-same as background-color, but with added contrasted color to text
+ - <b>shorthand</b>:  bg
+
+#### [background-themed]
 
 
- - values are: 100, 200, 300, 400, 500, 600, 700, 800, 900
- - levels are:<br/>
+- same as background-color, but with added contrasted color to text
+
+
+ - <b>shorthand</b>:  bg-themed

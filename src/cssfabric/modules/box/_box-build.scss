@@ -25,6 +25,9 @@ $box-border-shorthand-config: map-get($box-config, border-shorthand-config) !def
 $box-padding-shorthand-config: map-get($box-config, padding-shorthand-config) !default;
 $box-margin-shorthand-config: map-get($box-config, margin-shorthand-config) !default;
 
+$box-shadows-steps:  map-get($box-config, shadows-steps) !default;
+$box-shadows-step-multiplier:  map-get($box-config, shadows-step_multiplier) !default;
+
 $css-shorthands: (
         border: $box-border-shorthand-config,
         padding: $box-padding-shorthand-config,
@@ -203,9 +206,6 @@ $css-shorthands: (
   );
 }
 
-$shadows_steps: 6;
-$shadows_step_multiplier: 2;
-
 @mixin shadows($mq_key) {
   /**
   *   box shadows ---------------------
@@ -220,7 +220,7 @@ $shadows_step_multiplier: 2;
 
   $acc: 1;
 
-  @for $shadows_step from 1 through $shadows_steps {
+  @for $shadows_step from 1 through $box-shadows-steps {
     $acc: $acc * 2;
     $v: $shadows_step * 2;
 
