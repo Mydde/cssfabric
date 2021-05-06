@@ -57,7 +57,7 @@ padding properties for html elements
 
 
  - values are: t, b, l, r, all, u, ii, tb
- - levels are: 10, 25, 69, 745, 41214
+ - levels are: 1, 2, 3, 4, 5, 6, 7, 8
 
 #### - margin :
 
@@ -66,16 +66,16 @@ margin properties for html elements
 
 
  - values are: t, b, l, r, all, u, ii, tb
- - levels are: 10, 25, 69, 745, 41214
+ - levels are: 1, 2, 3, 4, 5, 6, 7, 8
 
 #### - border :
 
 
-padding properties for html elements
+border properties for html elements
 
 
  - values are: t, b, l, r, all, u, ii, tb
- - levels are: 10, 25, 69, 745, 41214
+ - levels are: 1, 2, 3, 4, 5
 
 #### - shadow :
 
@@ -84,7 +84,7 @@ applying shadows give levels to your design
 
 
  - values are: t, b, l, r, all, u, ii, tb
- - levels are: 10, 25, 69, 745, 41214
+ - levels are: 1, 2, 3, 4, 5
 
 
 <br/>

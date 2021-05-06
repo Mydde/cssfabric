@@ -1,5 +1,13 @@
 @use '../../utils';
 
+$_unit-config: rem;
+$_border-unit-config: px;
+$_unit-size-config: 0.25;
+$_unit-border-size-config: 1;
+
+$_sizes-config: 8;
+$_sizes-border-config: 5;
+
 $_border-shorthands: (
         t: top,
         b: bottom,
@@ -38,11 +46,11 @@ $box-metadata: (
 );
 
 $box-config: (
-        unit-config: rem,
-        border-unit-config: px,
-        unit-size-config: 0.25,
-        unit-border-size-config: 1,
-        sizes-config: 8,
+        unit-config: $_unit-config,
+        border-unit-config: $_border-unit-config,
+        unit-size-config: $_unit-size-config,
+        unit-border-size-config: $_unit-border-size-config,
+        sizes-config: $_sizes-config,
         border-sizes-px-config: 5,
         position-shorthand-config: pos,
         display-shorthand-config: dsp,
@@ -62,26 +70,25 @@ $box-docs: (
                 padding: (
                         tag: map-get($box-config, padding-shorthand-config),
                         keys: utils.getObjectKeys($_border-shorthands),
-                        levels: utils.getBoxIterator($box-sizes-config,map-get($box-config,unit-config),map-get($box-config,unit-size-config)),
-                        about:  "padding properties for html elements"
+                        levels: utils.getObjectKeys(utils.getBoxIterator($_sizes-config, $_unit-config, $_unit-size-config)),
+                        about: "padding properties for html elements"
                 ),
                 margin: (
                         tag: map-get($box-config, margin-shorthand-config),
                         keys: utils.getObjectKeys($_border-shorthands),
-                        levels: utils.getBoxIterator($box-sizes-config,map-get($box-config,unit-config,unit-size-config)),
-                        about:  "margin properties for html elements"
+                        levels: utils.getObjectKeys(utils.getBoxIterator($_sizes-config, $_unit-config, $_unit-size-config)),
+                        about: "margin properties for html elements"
                 ),
                 border: (
                         tag: map-get($box-config, border-shorthand-config),
                         keys: utils.getObjectKeys($_border-shorthands),
-                        levels: utils.getBoxIterator($box-border-sizes-px-config,map-get($box-config,border-unit-config,unit-border-size-config)),
-                        about:  "padding properties for html elements"
+                        levels: utils.getObjectKeys(utils.getBoxIterator($_sizes-border-config, $_border-unit-config, $_unit-border-size-config)),
+                        about: "border properties for html elements"
                 ),
                 shadow: (
                         tag: map-get($box-config, shadow-shorthand-config),
-                        // keys: utils.getObjectKeys($_border-shorthands),
-                        //levels: (10 25 69 745 41214),
-                        about:  "applying shadows give levels to your design"
+                  // keys: utils.getObjectKeys($_border-shorthands),
+                  //levels: (10 25 69 745 41214),
+                        about: "applying shadows give levels to your design"
                 )
-        )
-);
+        ));

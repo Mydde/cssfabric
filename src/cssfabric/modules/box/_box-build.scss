@@ -80,6 +80,7 @@ $css-shorthands: (
 */
     // css property name
     .#{$fabric_box_position_prop_short}-#{$fabric_box_pmb_side_shorthand} {
+      // todo use utils.getBoxIterator
       @for $grid_size_value from 1 through $iterator {
         $css_size_value: ($grid_size_value * $unit_size) + $unit;
         // css property name is aggregated with size value $i

@@ -113,13 +113,15 @@
   @return $out;
 }
 
-@function getBoxIterator($sizeConfig, $unit,$unit_size) {
-  $iterator: $sizeConfig; //if($fabric_box_position_prop== border, $box-border-sizes-px-config, $box-sizes-config); 
-  // box_unit_border_size 
+@function getBoxIterator($iterator, $unit-config,$_unit-size-config) {
+  $out: ();
 
-  @for $grid_size_value from 1 through $sizeConfig {
-    $css_size_value: ($grid_size_value * $unit_size) + $unit;
+  @for $grid_size_value from 1 through $iterator {
+    $css_size_value: ($grid_size_value * $_unit-size-config) + $unit-config;
+    $out: map.set($out,  $grid_size_value, $css_size_value);
   }
+@debug $out;
+  @return $out
 }
 
 @function getObjectKeys($object) {
