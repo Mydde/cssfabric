@@ -47,12 +47,18 @@ const doFabric = {
         const fileContent = file_content || {}
         const moduleList  = fileContent?.cssfabric?.modules;
         
-        let out        = [];
+        let out          = [];
         const content    = [];
         const docContent = [];
         
         const table = {headers: ["modules", ""]};
         const rows  = [];
+        
+        const labelIn = "<span style='width:80px;display:inline-block;overflow:visible'><b>";
+        const labelOut = "</b></span>";
+    
+        const labelNestedIn = "<span style='margin-left:20px;width:80px;display:inline-block;overflow:visible'>- ";
+        const labelNestedOut = "</span>";
         
         out.push({h1: "Welcome to cssfabric"});
         out.push({p: "Willing to bring my utility-first 2011 css framework to a more decent life !"});
@@ -73,56 +79,64 @@ const doFabric = {
             let cssProps = config?.cssProps;
             let collect;
             let collectContentList;
-    
-    
+            let nestedLevels;
             
             
             if (docs?.attributes) {
-    
+                
                 docContent.push({p: '<br/>'});
                 docContent.push({h4: `<strong>module ${title}</strong>`});
                 docContent.push({p: '<br/>'});
                 
-                collect = {};
                 
                 Object.keys(docs.attributes).forEach((attributeCode) => {
                     
                     collectContentList = [];
+                    collect            = {};
+                    nestedLevels       = [];
                     
                     const attributeValue = docs.attributes[attributeCode];
                     // looking for tag
                     
                     if (typeof attributeValue === "object" && !Array.isArray(attributeValue)) {
-                        collect.title = `- ${attributeCode} :`;
+                        collect.title = `[${attributeCode}]`;
                         // si tag
                         if (attributeValue?.tag) {
-                            collect.tag = `for ${attributeCode} property,  <b>shorthand</b>:  ${attributeValue.tag}`;
+                            collect.tag = `${labelIn}shorthand${labelOut}:  ${attributeValue.tag}`;
                         }
                         // si about
                         if (attributeValue?.about) {
-                            collect.about = `${attributeValue.about}`;
+                            collect.about = `- ${attributeValue.about}`;
                         }
                         // si keys
                         if (attributeValue?.keys) {
-                            collect.keys = `values are: ${attributeValue.keys.join(', ')}`;
+                            collect.keys = `${labelIn}keys${labelOut}: ${attributeValue.keys.join('&nbsp;&nbsp;&nbsp;&nbsp;')}`;
                         }
                         // si levels
                         if (attributeValue?.levels) {
-                           if(Array.isArray(attributeValue.levels)) collect.levels = `levels are: ${attributeValue.levels.join(', ')}`;
-                           if(!Array.isArray(attributeValue.levels) && typeof( attributeValue.levels === "object")) {
-                               console.log(Object.keys(attributeValue.levels).join(','))
-                               collect.levels = `levels are:<br/>`;
-                           }
+                            if (Array.isArray(attributeValue.levels)) collect.levels = `${labelIn}levels${labelOut}: ${attributeValue.levels.join('&nbsp;&nbsp;&nbsp;&nbsp;')}`;
+                            if (!Array.isArray(attributeValue.levels) && typeof (attributeValue.levels === "object")) {
+                                nestedLevels.push(`${labelIn}level keys${labelOut}:`);
+                                Object.keys(attributeValue.levels).forEach((levelKey) => {
+                                    let levelValue = attributeValue.levels[levelKey].join('&nbsp;&nbsp;&nbsp;&nbsp;')
+                                    console.log(levelValue)
+                                    nestedLevels.push(`${labelNestedIn}${levelKey}${labelNestedOut}: ${levelValue}`);
+                                })
+                                
+                            }
                         }
                     }
                     
                     if (collect.title) docContent.push({h4: collect.title});
-                    if (collect.about) docContent.push({"p": collect.about });
+                    if (collect.about) docContent.push({"p": collect.about});
                     
-                    if (collect.keys) collectContentList.push(collect.keys) ;
-                    if (collect.levels) collectContentList.push(collect.levels) ;
-    
-                    docContent.push({"ul": collectContentList });
+                    if (collect.tag) collectContentList.push(collect.tag);
+                    if (collect.keys) collectContentList.push(collect.keys);
+                    if (collect.levels) collectContentList.push(collect.levels);
+                    
+                    if (nestedLevels && nestedLevels.length) collectContentList.push(nestedLevels.join('<br/>'));
+                    
+                    docContent.push({"ul": collectContentList});
                     
                     // docContent.push({"p":  "<br/>"}) ;
                     

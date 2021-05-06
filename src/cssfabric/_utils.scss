@@ -10,7 +10,7 @@
 }
 
 @mixin fabricAttributes($sep, $frag, $property, $value) {
-  #{$sep+$frag} {
+  #{$sep + $frag} {
     #{$property}: #{$value};
   }
 }
@@ -71,8 +71,7 @@
   @return $switch-named;
 }
 
-@function themeDeclinationColors($theme-color:primary,$theme-color-primary) {
-
+@function themeDeclinationColors($theme-color: primary, $theme-color-primary) {
   $switch-theme-color: map-get(
                   (
                           primary: $theme-color-primary,
@@ -99,7 +98,7 @@
   );
 }
 
-@function getThemeLevels($declinations-config,$color_primary) {
+@function getThemeLevels($declinations-config, $color_primary) {
   $out: ();
   @each $color-grade in $declinations-config {
     $color: themeDeclinationColors($color-grade, $color_primary);
@@ -114,10 +113,47 @@
   @return $out;
 }
 
+@function getBoxIterator($iterator, $unit-config,$_unit-size-config) {
+  $out: ();
+
+  @for $grid_size_value from 1 through $iterator {
+    $css_size_value: ($grid_size_value * $_unit-size-config) + $unit-config;
+    $out: map.set($out, $grid_size_value, $css_size_value);
+  }
+  @return $out
+}
+
+@function getShadowIterator($factors,$box-shadows-steps) {
+  $out: ();
+
+  $v_fact: map-get($factors, v_fact);
+  $h_fact: map-get($factors, h_fact);
+
+  $v_fact_2: map-get($factors, v_fact_2);
+  $h_fact_2: map-get($factors, h_fact_2);
+
+  $acc: 1;
+
+  @for $shadows_step from 1 through $box-shadows-steps {
+    $acc: $acc * 2;
+    $v: $shadows_step * 2;
+
+    $v_val: $acc / $v_fact;
+    $h_val: $acc / $h_fact;
+
+    $v_val_2: $acc / $v_fact_2;
+    $h_val_2: $acc / $h_fact_2;
+
+    $out: map.set($out, $acc, #{$v_val} + #{$h_val} );
+  }
+
+  @return $out;
+}
+
 @function getObjectKeys($object) {
   $out: ();
   @each $key, $value in $object {
-    $out: append($out,$key);
+    $out: append($out, $key);
   }
 
   @return $out;

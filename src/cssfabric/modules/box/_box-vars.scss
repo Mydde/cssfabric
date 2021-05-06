@@ -1,5 +1,29 @@
 @use '../../utils';
 
+$_unit-config: rem;
+$_border-unit-config: px;
+$_unit-size-config: 0.25;
+$_unit-border-size-config: 1;
+
+$_sizes-config: 8;
+$_sizes-border-config: 5;
+
+$_shadows-steps: 6;
+$_shadows-step-multiplier: 2;
+
+$_shadows-v_fact: 2.4;
+$_shadows-h_fact: 1.16;
+
+$_shadows-v_fact_2: 13.1;
+$_shadows-h_fact_2: 4.3;
+
+$shadow-factors: (
+        v_fact:$_shadows-v_fact,
+        h_fact:$_shadows-h_fact,
+        v_fact_2:$_shadows-v_fact_2,
+        h_fact_2:$_shadows-h_fact_2,
+);
+
 $_border-shorthands: (
         t: top,
         b: bottom,
@@ -38,12 +62,14 @@ $box-metadata: (
 );
 
 $box-config: (
-        unit-config: rem,
-        border-unit-config: px,
-        unit-size-config: 0.25,
-        unit-border-size-config: 1,
-        sizes-config: 8,
+        unit-config: $_unit-config,
+        border-unit-config: $_border-unit-config,
+        unit-size-config: $_unit-size-config,
+        unit-border-size-config: $_unit-border-size-config,
+        sizes-config: $_sizes-config,
         border-sizes-px-config: 5,
+        shadows-steps: $_shadows-steps,
+        shadows_step_multiplier: $_shadows-step-multiplier,
         position-shorthand-config: pos,
         display-shorthand-config: dsp,
         shadow-shorthand-config: shad,
@@ -62,26 +88,28 @@ $box-docs: (
                 padding: (
                         tag: map-get($box-config, padding-shorthand-config),
                         keys: utils.getObjectKeys($_border-shorthands),
-                        //levels: (10 25 69 745 41214),
-                        about:  "padding properties for html elements"
+                        values: utils.getBoxIterator($_sizes-config, $_unit-config, $_unit-size-config),
+                        levels: utils.getObjectKeys(utils.getBoxIterator($_sizes-config, $_unit-config, $_unit-size-config)),
+                        about: "padding properties for html elements"
                 ),
                 margin: (
                         tag: map-get($box-config, margin-shorthand-config),
                         keys: utils.getObjectKeys($_border-shorthands),
-                        //levels: (10 25 69 745 41214),
-                        about:  "margin properties for html elements"
+                        values:  utils.getBoxIterator($_sizes-config, $_unit-config, $_unit-size-config) ,
+                        levels: utils.getObjectKeys(utils.getBoxIterator($_sizes-config, $_unit-config, $_unit-size-config)),
+                        about: "margin properties for html elements"
                 ),
                 border: (
                         tag: map-get($box-config, border-shorthand-config),
                         keys: utils.getObjectKeys($_border-shorthands),
-                        //levels: (10 25 69 745 41214),
-                        about:  "padding properties for html elements"
+                        values: utils.getBoxIterator($_sizes-border-config, $_border-unit-config, $_unit-border-size-config) ,
+                        levels: utils.getObjectKeys(utils.getBoxIterator($_sizes-border-config, $_border-unit-config, $_unit-border-size-config)),
+                        about: "border properties for html elements"
                 ),
-                shadow: (
+                shadow: ( // no declination keys
                         tag: map-get($box-config, shadow-shorthand-config),
-                        // keys: utils.getObjectKeys($_border-shorthands),
-                        //levels: (10 25 69 745 41214),
-                        about:  "applying shadows give levels to your design"
+                        values:utils.getShadowIterator($shadow-factors, 8),
+                        levels:utils.getObjectKeys(utils.getShadowIterator($shadow-factors, 8)),
+                        about: "applying shadows give depth and levels to your design"
                 )
-        )
-);
+        ));

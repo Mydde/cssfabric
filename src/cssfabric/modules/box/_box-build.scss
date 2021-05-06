@@ -1,239 +1,244 @@
-// load scss config file
-@use '../../_utils';
-@use "box-vars" as box;
-@use "../cssfabric-vars";
-
 @use "sass:map";
+@use '../../_utils';
+@use "../cssfabric-vars";
+@use "box-vars" as box;
 
-$box_vars: box.$box-config;
+$box-config: box.$box-config;
 
-// load general config variables
-$_cfg: cssfabric-vars.$cssfabric-config;
+$cssProps: map-get($box-config, cssProps);
+$box-border-shorthands: map-get($cssProps, borderShorthands);
+$box-position-props: map-get($cssProps, positionProps);
+$box-display-props: map-get($cssProps, displayProps);
 
-$box_unit: map-get($box_vars, box_unit);
-$box_unit_size: map-get($box_vars, box_unit_size);
-$box_unit_border_size: map-get($box_vars, box_unit_border_size);
-$fabric_box_sizes: map-get($box_vars, box_sizes);
-$box_shorthands: map-get($box_vars, box_shorthands);
-$box_border_unit: map-get($box_vars, box_border_unit);
-$box_border_sizes_px: map-get($box_vars, box_border_sizes_px);
-$box_shadow_shorthand: map-get($box_vars, box_shadow_shorthand);
+$box-unit-config: map-get($box-config, unit-config);
+$box-border-unit-config: map-get($box-config, border-unit-config);
+$box-unit-size-config: map-get($box-config, unit-size-config);
+$box-unit-border-size-config: map-get($box-config, unit-border-size-config);
+$box-sizes-config: map-get($box-config, sizes-config);
+$box-border-sizes-px-config: map-get($box-config, border-sizes-px-config);
 
-$box_position_shorthand: map-get($box_shorthands, position);
-$box_display_shorthand: map-get($box_shorthands, display);
+$box-position-shorthand-config: map-get($box-config, position-shorthand-config) !default;
+$box-display-shorthand-config: map-get($box-config, display-shorthand-config) !default;
+$box-shadow-shorthand-config: map-get($box-config, shadow-shorthand-config) !default;
 
-$fabric_box_pmb_shorthands: map-get($box_vars, box_css_props_shorthands);
-$fabric_box_pmb_side_shorthands: map-get($box_vars, box_border_shorthands);
+$box-border-shorthand-config: map-get($box-config, border-shorthand-config) !default;
+$box-padding-shorthand-config: map-get($box-config, padding-shorthand-config) !default;
+$box-margin-shorthand-config: map-get($box-config, margin-shorthand-config) !default;
 
-$fabric_box_position_props: map-get($box_vars, box_position_props);
-$fabric_box_display_props: map-get($box_vars, box_display_props);
+$box-shadows-steps:  map-get($box-config, shadows-steps) !default;
+$box-shadows-step-multiplier:  map-get($box-config, shadows-step_multiplier) !default;
+
+$css-shorthands: (
+        border: $box-border-shorthand-config,
+        padding: $box-padding-shorthand-config,
+        margin: $box-margin-shorthand-config
+);
 
 // adding {border}-{r} shorthand css rule for .{border}-{r}-1
 @function raw_size_tag_rule($condition) {
-    @if ($condition==1) {
-        @return "&,";
-    } @else {
-        @return "";
-    }
+  @if ($condition==1) {
+    @return "&,";
+  } @else {
+    @return "";
+  }
 }
 
 @function write_rule_value($_args) {
-    $rule_value: map-get($_args, rule_value);
-    $unit: map-get($_args, unit);
-    $rule_type: map-get($_args, rule_type);
-    $css_prop: map-get($_args, css_prop);
+  $rule_value: map-get($_args, rule_value);
+  $unit: map-get($_args, unit);
+  $rule_type: map-get($_args, rule_type);
+  $css_prop: map-get($_args, css_prop);
 
-    $computed_value: "";
+  $computed_value: "";
 
-    // simply write method: value
-    @if $rule_type== "position_display" {
-        $computed_value: $rule_value;
-    }
+  // simply write method: value
+  @if $rule_type== "position_display" {
+    $computed_value: $rule_value;
+  }
 
-    // complex write method: 1px value
-    @if ($css_prop== "padding" or $css_prop== "margin") {
-        $computed_value: $rule_value;
-    }
+  // complex write method: 1px value
+  @if ($css_prop== "padding" or $css_prop== "margin") {
+    $computed_value: $rule_value;
+  }
 
-    // complex write method: 1px value
-    @if ($css_prop== "border") {
-        $computed_value: $rule_value + " solid #ccc";
-    }
+  // complex write method: 1px value
+  @if ($css_prop== "border") {
+    $computed_value: $rule_value + " solid #ccc";
+  }
 
-    @return $computed_value;
+  @return $computed_value;
 }
 
 // prop : ...top bottom for  border | margin | padding
 @mixin fabric_box($fabric_box_position_prop, $fabric_box_position_prop_short) {
-    @each $fabric_box_pmb_side_shorthand, $rule in $fabric_box_pmb_side_shorthands {
-        $iterator: if($fabric_box_position_prop== border, $box_border_sizes_px, $fabric_box_sizes);
-        $unit: if($fabric_box_position_prop== border, $box_border_unit, $box_unit);
-        // box_unit_border_size
-        $unit_size: if($fabric_box_position_prop== border, $box_unit_border_size, $box_unit_size);
+  @each $fabric_box_pmb_side_shorthand, $rule in $box-border-shorthands {
 
-        /**
+    $iterator: if($fabric_box_position_prop== border, $box-border-sizes-px-config, $box-sizes-config);
+    $unit: if($fabric_box_position_prop== border, $box-border-unit-config, $box-unit-config);
+    // box_unit_border_size
+    $unit_size: if($fabric_box_position_prop== border, $box-unit-border-size-config, $box-unit-size-config);
+
+    /**
 *   #{$fabric_box_position_prop_short}  #{$fabric_box_pmb_side_shorthand} ---------------------
 */
-        // css property name
-        .#{$fabric_box_position_prop_short}-#{$fabric_box_pmb_side_shorthand} {
-            @for $grid_size_value from 1 through $iterator {
-                $css_size_value: ($grid_size_value * $unit_size) + $unit;
-                // css property name is aggregated with size value $i
-                #{raw_size_tag_rule($grid_size_value)} &-#{$grid_size_value} {
-                    @if length($rule) ==4 {
-                        $_args: (
-                            rule_value: $css_size_value,
-                            unit: $unit,
-                            rule_type: "pmb",
-                            css_prop: $fabric_box_position_prop
-                        );
+    // css property name
+    .#{$fabric_box_position_prop_short}-#{$fabric_box_pmb_side_shorthand} {
+      // todo use utils.getBoxIterator
+      @for $grid_size_value from 1 through $iterator {
+        $css_size_value: ($grid_size_value * $unit_size) + $unit;
+        // css property name is aggregated with size value $i
+        #{raw_size_tag_rule($grid_size_value)} &-#{$grid_size_value} {
+          @if length($rule) ==4 {
+            $_args: (
+                    rule_value: $css_size_value,
+                    unit: $unit,
+                    rule_type: "pmb",
+                    css_prop: $fabric_box_position_prop
+            );
 
-                        #{$fabric_box_position_prop}: write_rule_value($_args);
-                    } @else {
-                        @each $grid_size_value in $rule {
-                            $_args: (
-                                rule_value: $css_size_value,
-                                unit: $unit,
-                                rule_type: "pmb",
-                                css_prop: $fabric_box_position_prop
-                            );
+            #{$fabric_box_position_prop}: write_rule_value($_args);
+          } @else {
+            @each $grid_size_value in $rule {
+              $_args: (
+                      rule_value: $css_size_value,
+                      unit: $unit,
+                      rule_type: "pmb",
+                      css_prop: $fabric_box_position_prop
+              );
 
-                            #{$fabric_box_position_prop}-#{$grid_size_value}: write_rule_value($_args);
-                        }
-                    }
-                }
+              #{$fabric_box_position_prop}-#{$grid_size_value}: write_rule_value($_args);
             }
+          }
         }
+      }
     }
+  }
 }
 
 @mixin fabric_property_proxy($_args) {
-    $css_prop: map-get($_args, css_prop);
-    $css_prop_short: map-get($_args, css_prop_short);
-    $unit: map-get($_args, unit);
-    $fabric_key_shorthands: map-get($_args, fabric_key_shorthands);
-    $write_rule: map-get($_args, write_rule);
-    /**
+  $css_prop: map-get($_args, css_prop);
+  $css_prop_short: map-get($_args, css_prop_short);
+  $unit: map-get($_args, unit);
+  $fabric_key_shorthands: map-get($_args, fabric_key_shorthands);
+  $write_rule: map-get($_args, write_rule);
+  /**
 *   #{$css_prop_short} #{$css_prop} ---------------------
 */
-    @each $fabric_key_shorthand, $fabric_box_prop in $fabric_key_shorthands {
-        // css property
-        $prop_re: #{$css_prop_short}-#{$fabric_key_shorthand};
+  @each $fabric_box_prop, $fabric_key_shorthand in $fabric_key_shorthands {
+    // css property
+    $prop_re: #{$css_prop_short}-#{$fabric_key_shorthand};
 
-        .#{$prop_re} {
-            $_args: (
-                rule_value: $fabric_box_prop,
-                unit: $unit,
-                rule_type: $write_rule,
-                css_prop: $css_prop
-            );
+    .#{$prop_re} {
+      $_args: (
+              rule_value: $fabric_box_prop,
+              unit: $unit,
+              rule_type: $write_rule,
+              css_prop: $css_prop
+      );
 
-            #{$css_prop}: write_rule_value($_args);
-        }
+      #{$css_prop}: write_rule_value($_args);
     }
+  }
 }
 
 @mixin fabric_property($_args) {
-    $css_prop: map-get($_args, css_prop);
-    $css_prop_short: map-get($_args, css_prop_short);
-    $unit: map-get($_args, unit);
-    $fabric_key_shorthands: map-get($_args, fabric_key_shorthands);
-    $write_rule: map-get($_args, write_rule);
+  $css_prop: map-get($_args, css_prop);
+  $css_prop_short: map-get($_args, css_prop_short);
+  $unit: map-get($_args, unit);
+  $write_rule: map-get($_args, write_rule);
 
-    $_args_prox: $_args;
+  $_args_prox: $_args;
 
-    @if $write_rule==position_display {
-        @include fabric_property_proxy($_args);
-    }
+  @if $write_rule==position_display {
+    @include fabric_property_proxy($_args);
+  }
 
-    @if $write_rule==pmb {
-        @include fabric_box($css_prop, $css_prop_short);
-    }
+  @if $write_rule==pmb {
+    @include fabric_box($css_prop, $css_prop_short);
+  }
 }
 
 // pmb as padding margin border property
 @mixin pmb($mq_key) {
-    @each $box_pmb_shorthand, $box_pmb_shorthand_value in $fabric_box_pmb_shorthands {
-        $shorthand: if($mq_key, #{$box_pmb_shorthand}-#{$mq_key}, #{$box_pmb_shorthand});
-        // arguments for mixin.fabric_property
-        $_args: (
+  @each $box_pmb_shorthand_value, $box_pmb_shorthand in $css-shorthands {
+
+    $shorthand: if($mq_key, #{$box_pmb_shorthand}-#{$mq_key}, #{$box_pmb_shorthand});
+    // arguments for mixin.fabric_property
+    $_args: (
             css_prop: $box_pmb_shorthand_value,
             css_prop_short: $shorthand,
-            unit: $box_unit,
-            fabric_key_shorthands: $fabric_box_pmb_shorthands,
+            unit: $box-unit-config,
+            fabric_key_shorthands: $css-shorthands,
             write_rule: "pmb"
-        );
+    );
 
-        @include fabric_property($_args);
-    }
+    @include fabric_property($_args);
+  }
 }
 
 // display property
 @mixin display($mq_key) {
-    $shorthand: if($mq_key, #{$box_display_shorthand}-#{$mq_key}, #{$box_display_shorthand});
+  $shorthand: if($mq_key, #{$box-display-shorthand-config}-#{$mq_key}, #{$box-display-shorthand-config});
 
-    @include fabric_property(
-        (
-            css_prop: "display",
-            css_prop_short: $shorthand,
-            unit: "",
-            fabric_key_shorthands: $fabric_box_display_props,
-            write_rule: "position_display"
-        )
-    );
+  @include fabric_property(
+                  (
+                          css_prop: "display",
+                          css_prop_short: $shorthand,
+                          unit: "",
+                          fabric_key_shorthands: $box-display-props,
+                          write_rule: "position_display"
+                  )
+  );
 }
 
 // position property
 @mixin position($mq_key) {
-    $shorthand: if($mq_key, #{$box_position_shorthand}-#{$mq_key}, #{$box_position_shorthand});
+  $shorthand: if($mq_key, #{$box-position-shorthand-config}-#{$mq_key}, #{$box-position-shorthand-config});
 
-    @include fabric_property(
-        (
-            css_prop: "position",
-            css_prop_short: $shorthand,
-            unit: "",
-            fabric_key_shorthands: $fabric_box_position_props,
-            write_rule: "position_display"
-        )
-    );
+  @include fabric_property(
+                  (
+                          css_prop: "position",
+                          css_prop_short: $shorthand,
+                          unit: "",
+                          fabric_key_shorthands: $box-position-props,
+                          write_rule: "position_display"
+                  )
+  );
 }
 
-$shadows_steps: 6;
-$shadows_step_multiplier: 2;
-
 @mixin shadows($mq_key) {
-/**
-*   box shadows ---------------------
-*/
-    $shorthand: if($mq_key, #{$box_shadow_shorthand}-#{$mq_key}, #{$box_shadow_shorthand});
+  /**
+  *   box shadows ---------------------
+  */
+  $shorthand: if($mq_key, #{$box-shadow-shorthand-config}-#{$mq_key}, #{$box-shadow-shorthand-config});
 
-    $v_fact: 2.4;
-    $h_fact: 1.16;
+  $v_fact: 2.4;
+  $h_fact: 1.16;
 
-    $v_fact_2: 13.1;
-    $h_fact_2: 4.3;
+  $v_fact_2: 13.1;
+  $h_fact_2: 4.3;
 
-    $acc: 1;
+  $acc: 1;
 
-    @for $shadows_step from 1 through $shadows_steps {
-        $acc: $acc * 2;
-        $v: $shadows_step * 2;
+  @for $shadows_step from 1 through $box-shadows-steps {
+    $acc: $acc * 2;
+    $v: $shadows_step * 2;
 
-        $v_val: $acc / $v_fact;
-        $h_val: $acc / $h_fact;
+    $v_val: $acc / $v_fact;
+    $h_val: $acc / $h_fact;
 
-        $v_val_2: $acc / $v_fact_2;
-        $h_val_2: $acc / $h_fact_2;
+    $v_val_2: $acc / $v_fact_2;
+    $h_val_2: $acc / $h_fact_2;
 
-        .#{$shorthand}-#{$acc} {
-            box-shadow: 0 #{$v_val}px #{$h_val}px 0 rgb(0 0 0 / 15%), 0 #{$v_val_2}px #{$h_val_2}px 0 rgb(0 0 0 / 10%);
-        }
+    .#{$shorthand}-#{$acc} {
+      box-shadow: 0 #{$v_val}px #{$h_val}px 0 rgb(0 0 0 / 15%), 0 #{$v_val_2}px #{$h_val_2}px 0 rgb(0 0 0 / 10%);
     }
+  }
 }
 
 @mixin buildBox($mq_key) {
-    @include pmb($mq_key);
-    @include display($mq_key);
-    @include position($mq_key);
-    @include shadows($mq_key);
+  @include pmb($mq_key);
+  @include display($mq_key);
+  @include position($mq_key);
+  @include shadows($mq_key);
 }
