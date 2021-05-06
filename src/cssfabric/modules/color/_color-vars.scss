@@ -21,7 +21,7 @@ $color-docs: (
         attributes:(
                 color:(
                         tag: color,
-                        keys:  (theme scheme palette gray),
+                        keys: (theme scheme palette gray),
                         levels: (
                                 theme: utils.getObjectKeys(loader.getFabricSharedParams(theme)),
                                 scheme: utils.getObjectKeys(loader.getFabricSharedParams(scheme)),
@@ -32,34 +32,25 @@ $color-docs: (
                 ),
                 background-color:(
                         tag: bg,
-                        about: "background colors"),
-                levels: (
-                        theme: utils.getObjectKeys(loader.getFabricSharedParams(theme)),
-                        scheme: utils.getObjectKeys(loader.getFabricSharedParams(scheme)),
-                        palette: utils.getObjectKeys(loader.getFabricSharedParams(palette)),
-                        gray: utils.getObjectKeys(loader.getFabricSharedParams(gray))
-                ),
-                background-themed:(
-                        tag: "bg-themed",
-                        about: "same as background-color, but with added contrasted color to text",
+                        keys: (theme scheme palette gray),
                         levels: (
                                 theme: utils.getObjectKeys(loader.getFabricSharedParams(theme)),
                                 scheme: utils.getObjectKeys(loader.getFabricSharedParams(scheme)),
                                 palette: utils.getObjectKeys(loader.getFabricSharedParams(palette)),
                                 gray: utils.getObjectKeys(loader.getFabricSharedParams(gray))
                         ),
+                        about: "background colors"
+                ),
+                background-themed:(
+                        tag: "bg-themed",
+                        keys: (theme scheme palette gray),
+                        levels: (
+                                theme: utils.getObjectKeys(loader.getFabricSharedParams(theme)),
+                                scheme: utils.getObjectKeys(loader.getFabricSharedParams(scheme)),
+                                palette: utils.getObjectKeys(loader.getFabricSharedParams(palette)),
+                                gray: utils.getObjectKeys(loader.getFabricSharedParams(gray))
+                        ),
+                        about: "same as background-color, but with added contrasted color to text"
                 )
-        ),
-        sharedKeys:(
-                theme: utils.getObjectKeys(map-get($color-config, theme)),
-                scheme: utils.getObjectKeys(map-get($color-config, scheme)),
-                palette: utils.getObjectKeys(map-get($color-config, palette)),
-                gray: utils.getObjectKeys(map-get($color-config, gray))
-        ),
-        sharedKeyValues:(
-                theme: map-get($color-config, theme),
-                scheme: map-get($color-config, scheme),
-                palette: map-get($color-config, palette),
-                gray: map-get($color-config, gray)
         )
 );

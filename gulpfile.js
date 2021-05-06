@@ -84,7 +84,7 @@ const doFabric = {
             
             if (docs?.attributes) {
                 
-                docContent.push({p: '<br/>'});
+                docContent.push({hr: ''});
                 docContent.push({h4: `<strong>module ${title}</strong>`});
                 docContent.push({p: '<br/>'});
                 
