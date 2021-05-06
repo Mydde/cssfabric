@@ -1,56 +1,47 @@
+@use '../../_loader';
+
 $text-metadata: (
-    title: text,
-    tag: txt,
-    description: "cssfabric text module to set text style on all html elements",
+        title: text,
+        tag: txt,
+        description: "cssfabric text module to set text style on all html elements",
 );
+
 $text-config: (
-    text_class_name: text, 
-    text_class_name_short: txt,
-    font_sizes: 6,
-    font_sizes_unit: rem,
-    font_sizes_h1_em: 3,
-    font_sizes_h_min_em: 0.6,
-    font_predefined_colors: (
-        msg: "black",
-        alert: red,
-        warning: "yellow",
-        important: "orange",
-        default: "#ccc",
-    ),
-    text_ellipsis_tag: ellipsis,
-    text_transform: (
-        cap: capitalize,
-        up: uppercase,
-        low: lowercase,
-        none: none,
-        full: full-width,
-    ),
-    font_weights: (
-        50: 50,
-        100: 100,
-        300: 400,
-        500: 500,
-        900: 900,
-        light: lighter,
-        cap: normal,
-        bold: bold,
-        bolder: bolder,
-    ),
-    text_align: (
-        l: left,
-        r: right,
-        c: center,
-        j: justify,
-    ),
+        moduleName: text,
+        moduleNameShort: txt,
+        title-size-declination-config: 6,
+        font-size-unit-config: rem,
+        font-sizes-h1-rem-config: 3,
+        font-size-h-min-rem-config: 0.6,
+        text-ellipsis-tag-config: ellipsis,
+        cssProps:(
+                textTransform: (
+                        cap: capitalize,
+                        up: uppercase,
+                        low: lowercase,
+                        none: none,
+                        full: full-width
+                ),
+                fontWeight: (
+                        50: 50,
+                        100: 100,
+                        300: 400,
+                        500: 500,
+                        900: 900,
+                        light: lighter,
+                        cap: normal,
+                        bold: bold,
+                        bolder: bolder
+                ),
+                textAlign: (
+                        l: left,
+                        r: right,
+                        c: center,
+                        j: justify
+                )
+        ),
+        scheme: loader.getFabricSharedParams(scheme),
+        palette: loader.getFabricSharedParams(palette),
+        gray: loader.getFabricSharedParams(gray)
 );
-$text-docs: (
-    font_sizes: "",
-    font_sizes_unit: "",
-    font_predefined_colors: "",
-    font_sizes_h1_em: "",
-    font_sizes_h_min_em: "",
-    text_ellipsis_tag: "",
-    text_transform: text transform declaration,
-    font_weights: font weights declaration,
-    text_align: text align declaration,
-);
+$text-docs: ();
