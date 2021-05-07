@@ -12,6 +12,11 @@ $theme-metadata: (
         "title": "theme",
         "description": ""
 );
+
+$_theme-levels-obj: ('*' light lighter dark darker complement invert);
+$_declinations-config-object: (primary:$_theme-levels-obj, secondary:$_theme-levels-obj, tertiary:$_theme-levels-obj);
+
+
 $theme-config: (
         moduleName: theme,
         moduleNameShort: theme,
@@ -26,4 +31,10 @@ $theme-config: (
         color: utils.getThemeLevels($_declinations-config, $_color-primary)
 );
 
-$theme-docs: ();
+$theme-docs: (attributes:(
+        theme:(
+                tag: theme,
+                keys: $_theme-properties-apply,
+                levels: $_declinations-config-object
+        )
+));

@@ -97,6 +97,64 @@
             }
 
             ,
+            "grid": {
+                "_data": {
+
+                    "moduleName": "grid",
+                    "moduleNameShort": "grid",
+                    "horCode": "h",
+                    "vertCode": "v",
+                    "gridFullWidth": "main",
+                    "cssProps": {
+                        "flexWrap": {
+                            "wrap-reverse": "wrap-reverse", "wrap": "wrap", "nowrap": "nowrap"
+                        }
+
+                        ,
+                        "just": {
+                            "start": "flex-start", "end": "flex-end", "between": "space-between", "stretch": "stretch", "center": "flex-center"
+                        }
+
+                        ,
+                        "items": {
+                            "baseline": "baseline", "stretch": "stretch", "start": "flex-start", "center": "center", "end": "flex-end"
+                        }
+
+                        ,
+                        "content": {
+                            "start": "flex-start", "center": "center", "end": "flex-end", "between": "space-between", "equal": "space-evenly"
+                        }
+                    }
+
+                    ,
+                    "cssItemsProps": {
+                        "self": {
+                            "auto": "auto", "start": "flex-start", "end": "flex-end", "center": "flex-center", "baseline": "baseline", "stretch": "stretch"
+                        }
+                    }
+                }
+
+                ,
+                "_metadata": {
+                    "title": "grid", "tag": "grid", "description": "cssfabric flex grid system module"
+                }
+
+                ,
+                "_docs": {
+                    "attributes": {
+                        "grid": {
+                            "tag": "grid", "keys": ["w", "h"], "classNames": [], "about": "a so classic grid system, and, hey, it gets height !"
+                        }
+
+                        ,
+                        "self": {
+                            "tag": "self", "keys": ["auto", "start", "end", "center", "baseline", "stretch"], "about": "grid children specific classnames"
+                        }
+                    }
+                }
+            }
+
+            ,
             "box": {
                 "_data": {
 
@@ -243,6 +301,37 @@
             }
 
             ,
+            "menu": {
+                "_data": {
+
+                    "menu_class_name": "menu",
+                    "menu_class_name_short": "ul",
+                    "orientations": {
+                        "v": "vertical", "h": "horizontal"
+                    }
+
+                    ,
+                    "menu_item_class_name": "menu-item",
+                    "menu_item_class_name_short": "li",
+                    "menu_item_disabled_tag": "disabled",
+                    "menu_item_selected_tag": "selected",
+                    "menu_dropdown_tag": "drop",
+                    "menu_dropdown_open": "open",
+                    "menu_dropdown_close": "close"
+                }
+
+                ,
+                "_metadata": {
+                    "title": "menu", "tag": "ul", "description": "cssfabric menu module to set menu style"
+                }
+
+                ,
+                "_docs": {
+                    "menu_item_class_name": "", "menu_item_class_name_short": "", "menu_dropdown_tag": "", "menu_item_disabled_tag": "", "menu_item_selected_tag": "", "orientations": "", "menu_dropdown_open": "", "menu_dropdown_close": ""
+                }
+            }
+
+            ,
             "color": {
                 "_data": {
                     "gray-config": {
@@ -332,95 +421,6 @@
             }
 
             ,
-            "grid": {
-                "_data": {
-
-                    "moduleName": "grid",
-                    "moduleNameShort": "grid",
-                    "horCode": "h",
-                    "vertCode": "v",
-                    "gridFullWidth": "main",
-                    "cssProps": {
-                        "flexWrap": {
-                            "wrap-reverse": "wrap-reverse", "wrap": "wrap", "nowrap": "nowrap"
-                        }
-
-                        ,
-                        "just": {
-                            "start": "flex-start", "end": "flex-end", "between": "space-between", "stretch": "stretch", "center": "flex-center"
-                        }
-
-                        ,
-                        "items": {
-                            "baseline": "baseline", "stretch": "stretch", "start": "flex-start", "center": "center", "end": "flex-end"
-                        }
-
-                        ,
-                        "content": {
-                            "start": "flex-start", "center": "center", "end": "flex-end", "between": "space-between", "equal": "space-evenly"
-                        }
-                    }
-
-                    ,
-                    "cssItemsProps": {
-                        "self": {
-                            "auto": "auto", "start": "flex-start", "end": "flex-end", "center": "flex-center", "baseline": "baseline", "stretch": "stretch"
-                        }
-                    }
-                }
-
-                ,
-                "_metadata": {
-                    "title": "grid", "tag": "grid", "description": "cssfabric flex grid system module"
-                }
-
-                ,
-                "_docs": {
-                    "attributes": {
-                        "grid": {
-                            "tag": "grid", "keys": ["w", "h"], "classNames": [], "about": "a so classic grid system, and, hey, it gets height !"
-                        }
-
-                        ,
-                        "self": {
-                            "tag": "self", "keys": ["auto", "start", "end", "center", "baseline", "stretch"], "about": "grid children specific classnames"
-                        }
-                    }
-                }
-            }
-
-            ,
-            "menu": {
-                "_data": {
-
-                    "menu_class_name": "menu",
-                    "menu_class_name_short": "ul",
-                    "orientations": {
-                        "v": "vertical", "h": "horizontal"
-                    }
-
-                    ,
-                    "menu_item_class_name": "menu-item",
-                    "menu_item_class_name_short": "li",
-                    "menu_item_disabled_tag": "disabled",
-                    "menu_item_selected_tag": "selected",
-                    "menu_dropdown_tag": "drop",
-                    "menu_dropdown_open": "open",
-                    "menu_dropdown_close": "close"
-                }
-
-                ,
-                "_metadata": {
-                    "title": "menu", "tag": "ul", "description": "cssfabric menu module to set menu style"
-                }
-
-                ,
-                "_docs": {
-                    "menu_item_class_name": "", "menu_item_class_name_short": "", "menu_dropdown_tag": "", "menu_item_disabled_tag": "", "menu_item_selected_tag": "", "orientations": "", "menu_dropdown_open": "", "menu_dropdown_close": ""
-                }
-            }
-
-            ,
             "overflow": {
                 "_data": {
 
@@ -442,6 +442,21 @@
                 ,
                 "_metadata": {
                     "title": "overflow", "tag": "flow", "description": "cssfabric overflow module to set overflow styles on all html elements"
+                }
+
+                ,
+                "_docs": []
+            }
+
+            ,
+            "table": {
+                "_data": {
+                    "className": "table", "classNameShort": "tbl", "table_class_name": "table", "table_class_name_short": "tbl", "table-bg-color-head": "#f4f4f4", "table-bg-color-strip-main": "#ededed", "table-bg-color-strip-second": "#f5f5f5", "table-border-color-header": "#ccc", "table-border-color-main": "#ededed", "table-border-color-second": "#f5f5f5"
+                }
+
+                ,
+                "_metadata": {
+                    "title": "table", "tag": "table", "description": "cssfabric table module to set different table styles"
                 }
 
                 ,
@@ -501,21 +516,6 @@
                         }
                     }
                 }
-            }
-
-            ,
-            "table": {
-                "_data": {
-                    "className": "table", "classNameShort": "tbl", "table_class_name": "table", "table_class_name_short": "tbl", "table-bg-color-head": "#f4f4f4", "table-bg-color-strip-main": "#ededed", "table-bg-color-strip-second": "#f5f5f5", "table-border-color-header": "#ccc", "table-border-color-main": "#ededed", "table-border-color-second": "#f5f5f5"
-                }
-
-                ,
-                "_metadata": {
-                    "title": "table", "tag": "table", "description": "cssfabric table module to set different table styles"
-                }
-
-                ,
-                "_docs": []
             }
 
             ,
@@ -597,23 +597,6 @@
             }
 
             ,
-            "zindex": {
-                "_data": {
-                    "z_groups": ["a", "b", "c", "d", "e", "f", "g"]
-                }
-
-                ,
-                "_metadata": {
-                    "title": "zindex", "tag": "zI", "description": "cssfabric zindex module to set z-index on all html elements"
-                }
-
-                ,
-                "_docs": {
-                    "z_groups": "_"
-                }
-            }
-
-            ,
             "theme": {
                 "_data": {
 
@@ -647,7 +630,37 @@
                 }
 
                 ,
-                "_docs": []
+                "_docs": {
+                    "attributes": {
+                        "theme": {
+
+                            "tag": "theme",
+                            "keys": ["text",
+                            "bg",
+                            "border"],
+                            "levels": {
+                                "primary": ["*", "light", "lighter", "dark", "darker", "complement", "invert"], "secondary": ["*", "light", "lighter", "dark", "darker", "complement", "invert"], "tertiary": ["*", "light", "lighter", "dark", "darker", "complement", "invert"]
+                            }
+                        }
+                    }
+                }
+            }
+
+            ,
+            "zindex": {
+                "_data": {
+                    "z_groups": ["a", "b", "c", "d", "e", "f", "g"]
+                }
+
+                ,
+                "_metadata": {
+                    "title": "zindex", "tag": "zI", "description": "cssfabric zindex module to set z-index on all html elements"
+                }
+
+                ,
+                "_docs": {
+                    "z_groups": "_"
+                }
             }
         }
     }

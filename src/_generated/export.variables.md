@@ -21,16 +21,16 @@ This is also a learning point about gulp, webpack, packages and friends.
 | cssfabric | cssfabric global config variables
 animation | cssfabric simplest animation module
 base | cssfabric base config variables
-box | cssfabric box module to set heights, paddings, margins and shadows on all html elements
-color | cssfabric color system: its about colors
 grid | cssfabric flex grid system module
+box | cssfabric box module to set heights, paddings, margins and shadows on all html elements
 menu | cssfabric menu module to set menu style
+color | cssfabric color system: its about colors
 overflow | cssfabric overflow module to set overflow styles on all html elements
-scale | cssfabric scale module to set dimensions and ratios on all html elements
 table | cssfabric table module to set different table styles
+scale | cssfabric scale module to set dimensions and ratios on all html elements
 text | cssfabric text module to set text style on all html elements
-zindex | cssfabric zindex module to set z-index on all html elements
-theme |  |
+theme | 
+zindex | cssfabric zindex module to set z-index on all html elements |
 
 
 <br/>
@@ -41,6 +41,31 @@ theme |  |
 <br/>
 
 ### More details
+
+---
+
+#### <strong>module grid</strong>
+
+
+<br/>
+
+#### [grid]
+
+
+- a so classic grid system, and, hey, it gets height !
+
+
+ - <span style='width:80px;display:inline-block;overflow:visible'><b>shorthand</b></span>:  grid
+ - <span style='width:80px;display:inline-block;overflow:visible'><b>keys</b></span>: w&nbsp;&nbsp;h
+
+#### [self]
+
+
+- grid children specific classnames
+
+
+ - <span style='width:80px;display:inline-block;overflow:visible'><b>shorthand</b></span>:  self
+ - <span style='width:80px;display:inline-block;overflow:visible'><b>keys</b></span>: auto&nbsp;&nbsp;start&nbsp;&nbsp;end&nbsp;&nbsp;center&nbsp;&nbsp;baseline&nbsp;&nbsp;stretch
 
 ---
 
@@ -123,31 +148,6 @@ theme |  |
 
 ---
 
-#### <strong>module grid</strong>
-
-
-<br/>
-
-#### [grid]
-
-
-- a so classic grid system, and, hey, it gets height !
-
-
- - <span style='width:80px;display:inline-block;overflow:visible'><b>shorthand</b></span>:  grid
- - <span style='width:80px;display:inline-block;overflow:visible'><b>keys</b></span>: w&nbsp;&nbsp;h
-
-#### [self]
-
-
-- grid children specific classnames
-
-
- - <span style='width:80px;display:inline-block;overflow:visible'><b>shorthand</b></span>:  self
- - <span style='width:80px;display:inline-block;overflow:visible'><b>keys</b></span>: auto&nbsp;&nbsp;start&nbsp;&nbsp;end&nbsp;&nbsp;center&nbsp;&nbsp;baseline&nbsp;&nbsp;stretch
-
----
-
 #### <strong>module scale</strong>
 
 
@@ -199,3 +199,17 @@ theme |  |
 
  - <span style='width:80px;display:inline-block;overflow:visible'><b>shorthand</b></span>:  text
  - <span style='width:80px;display:inline-block;overflow:visible'><b>keys</b></span>:<br>&nbsp;&nbsp;-&nbsp;&nbsp;info&nbsp;&nbsp;alert&nbsp;&nbsp;error&nbsp;&nbsp;warning&nbsp;&nbsp;discrete&nbsp;&nbsp;success<br>&nbsp;&nbsp;-&nbsp;&nbsp;yellow&nbsp;&nbsp;orange&nbsp;&nbsp;red&nbsp;&nbsp;magenta&nbsp;&nbsp;purple&nbsp;&nbsp;green&nbsp;&nbsp;teal&nbsp;&nbsp;blue<br>&nbsp;&nbsp;-&nbsp;&nbsp;100&nbsp;&nbsp;200&nbsp;&nbsp;300&nbsp;&nbsp;400&nbsp;&nbsp;500&nbsp;&nbsp;600&nbsp;&nbsp;700&nbsp;&nbsp;800&nbsp;&nbsp;900
+
+---
+
+#### <strong>module theme</strong>
+
+
+<br/>
+
+#### [theme]
+
+
+ - <span style='width:80px;display:inline-block;overflow:visible'><b>shorthand</b></span>:  theme
+ - <span style='width:80px;display:inline-block;overflow:visible'><b>keys</b></span>: text&nbsp;&nbsp;bg&nbsp;&nbsp;border
+ - <span style='width:80px;display:inline-block;overflow:visible'><b>level keys</b></span>:<br/><span style='margin-left:20px;width:80px;display:inline-block;overflow:visible'>- primary</span>: *&nbsp;&nbsp;&nbsp;&nbsp;light&nbsp;&nbsp;&nbsp;&nbsp;lighter&nbsp;&nbsp;&nbsp;&nbsp;dark&nbsp;&nbsp;&nbsp;&nbsp;darker&nbsp;&nbsp;&nbsp;&nbsp;complement&nbsp;&nbsp;&nbsp;&nbsp;invert<br/><span style='margin-left:20px;width:80px;display:inline-block;overflow:visible'>- secondary</span>: *&nbsp;&nbsp;&nbsp;&nbsp;light&nbsp;&nbsp;&nbsp;&nbsp;lighter&nbsp;&nbsp;&nbsp;&nbsp;dark&nbsp;&nbsp;&nbsp;&nbsp;darker&nbsp;&nbsp;&nbsp;&nbsp;complement&nbsp;&nbsp;&nbsp;&nbsp;invert<br/><span style='margin-left:20px;width:80px;display:inline-block;overflow:visible'>- tertiary</span>: *&nbsp;&nbsp;&nbsp;&nbsp;light&nbsp;&nbsp;&nbsp;&nbsp;lighter&nbsp;&nbsp;&nbsp;&nbsp;dark&nbsp;&nbsp;&nbsp;&nbsp;darker&nbsp;&nbsp;&nbsp;&nbsp;complement&nbsp;&nbsp;&nbsp;&nbsp;invert
