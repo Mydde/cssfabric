@@ -13,4 +13,19 @@ $overflow-config: (
                 overflow: $_overflow-shorthands
         )
 );
-$overflow-docs: ();
+$overflow-docs: (
+        attributes:(
+                overflow:(
+                        tag:flow,
+                        keys: $_overflow-values
+                ),
+                overflowX:(
+                        tag:flowX,
+                        keys: $_overflow-values
+                ),
+                overflowY:(
+                        tag:flowY,
+                        keys: $_overflow-values
+                )
+        )
+);

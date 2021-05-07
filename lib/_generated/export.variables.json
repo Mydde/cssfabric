@@ -35,20 +35,6 @@
                 },
                 "_docs": []
             },
-            "animation": {
-                "_data": {
-                    "attention_props": [],
-                    "in_out_props": {
-                        "back": []
-                    }
-                },
-                "_metadata": {
-                    "title": "animation", "description": "cssfabric simplest animation module"
-                },
-                "_docs": {
-                    "attention_props": "", "in_out_props": ""
-                }
-            },
             "base": {
                 "_data": {
                     "cfg-has-dimension-strict": true,
@@ -63,6 +49,20 @@
                     "title": "base", "tag": "base", "description": "cssfabric base config variables"
                 },
                 "_docs": []
+            },
+            "animation": {
+                "_data": {
+                    "attention_props": [],
+                    "in_out_props": {
+                        "back": []
+                    }
+                },
+                "_metadata": {
+                    "title": "animation", "description": "cssfabric simplest animation module"
+                },
+                "_docs": {
+                    "attention_props": "", "in_out_props": ""
+                }
             },
             "box": {
                 "_data": {
@@ -164,19 +164,7 @@
                             "about": "border properties for html elements"
                         },
                         "shadow": {
-                            "tag": "shad",
-                            "values": {
-                                "2": "0.83333333331.724137931", "4": "1.66666666673.4482758621", "8": "3.33333333336.8965517241", "16": "6.666666666713.7931034483", "32": "13.333333333327.5862068966", "64": "26.666666666755.1724137931", "128": "53.3333333333110.3448275862", "256": "106.6666666667220.6896551724"
-                            },
-                            "levels": [2,
-                                4,
-                                8,
-                                16,
-                                32,
-                                64,
-                                128,
-                                256],
-                            "about": "applying shadows give depth and levels to your design"
+                            "tag": "shad", "levels": [2, 4, 8, 16, 32, 64, 128, 256], "about": "applying shadows give depth and levels to your design"
                         }
                     }
                 }
@@ -276,7 +264,7 @@
                 "_docs": {
                     "attributes": {
                         "grid": {
-                            "tag": "grid", "keys": ["w", "h"], "classNames": [], "about": "a so classic grid system, and, hey, it gets height !"
+                            "tag": "grid", "keys": ["w", "h"], "about": "a so classic grid system, and, hey, it gets height !"
                         },
                         "self": {
                             "tag": "self", "keys": ["auto", "start", "end", "center", "baseline", "stretch"], "about": "grid children specific classnames"
@@ -303,29 +291,12 @@
                     "title": "menu", "tag": "ul", "description": "cssfabric menu module to set menu style"
                 },
                 "_docs": {
-                    "menu_item_class_name": "", "menu_item_class_name_short": "", "menu_dropdown_tag": "", "menu_item_disabled_tag": "", "menu_item_selected_tag": "", "orientations": "", "menu_dropdown_open": "", "menu_dropdown_close": ""
-                }
-            },
-            "overflow": {
-                "_data": {
-                    "overflow_props": ["overflow",
-                        "overflow-x",
-                        "overflow-y"],
-                    "overflow_values": ["visible",
-                        "hidden",
-                        "clip",
-                        "scroll",
-                        "auto"],
-                    "cssProps": {
-                        "overflow": {
-                            "visible": "visible", "hidden": "hidden", "clip": "clip", "scroll": "scroll", "_": "auto"
+                    "attributes": {
+                        "menu": {
+                            "tag": "menu", "keys": ["h", "v"]
                         }
                     }
-                },
-                "_metadata": {
-                    "title": "overflow", "tag": "flow", "description": "cssfabric overflow module to set overflow styles on all html elements"
-                },
-                "_docs": []
+                }
             },
             "scale": {
                 "_data": {
@@ -333,8 +304,8 @@
                     "unit-tag-config": {
                         "width": "w", "height": "h"
                     },
-                    "grid-ratios-config": [8,
-                        24],
+                    "grid-ratios-config": [5,
+                        12],
                     "defined-step-size": 2,
                     "defined-step-unit": "rem",
                     "defined-steps": [1,
@@ -369,14 +340,38 @@
                     }
                 }
             },
-            "table": {
+            "overflow": {
                 "_data": {
-                    "className": "table", "classNameShort": "tbl", "table_class_name": "table", "table_class_name_short": "tbl", "table-bg-color-head": "#f4f4f4", "table-bg-color-strip-main": "#ededed", "table-bg-color-strip-second": "#f5f5f5", "table-border-color-header": "#ccc", "table-border-color-main": "#ededed", "table-border-color-second": "#f5f5f5"
+                    "overflow_props": ["overflow",
+                        "overflow-x",
+                        "overflow-y"],
+                    "overflow_values": ["visible",
+                        "hidden",
+                        "clip",
+                        "scroll",
+                        "auto"],
+                    "cssProps": {
+                        "overflow": {
+                            "visible": "visible", "hidden": "hidden", "clip": "clip", "scroll": "scroll", "_": "auto"
+                        }
+                    }
                 },
                 "_metadata": {
-                    "title": "table", "tag": "table", "description": "cssfabric table module to set different table styles"
+                    "title": "overflow", "tag": "flow", "description": "cssfabric overflow module to set overflow styles on all html elements"
                 },
-                "_docs": []
+                "_docs": {
+                    "attributes": {
+                        "overflow": {
+                            "tag": "flow", "keys": ["visible", "hidden", "clip", "scroll", "auto"]
+                        },
+                        "overflowX": {
+                            "tag": "flowX", "keys": ["visible", "hidden", "clip", "scroll", "auto"]
+                        },
+                        "overflowY": {
+                            "tag": "flowY", "keys": ["visible", "hidden", "clip", "scroll", "auto"]
+                        }
+                    }
+                }
             },
             "text": {
                 "_data": {
@@ -431,16 +426,14 @@
                     }
                 }
             },
-            "zindex": {
+            "table": {
                 "_data": {
-                    "z_groups": ["a", "b", "c", "d", "e", "f", "g"]
+                    "className": "table", "classNameShort": "tbl", "table_class_name": "table", "table_class_name_short": "tbl", "table-bg-color-head": "#f4f4f4", "table-bg-color-strip-main": "#ededed", "table-bg-color-strip-second": "#f5f5f5", "table-border-color-header": "#ccc", "table-border-color-main": "#ededed", "table-border-color-second": "#f5f5f5"
                 },
                 "_metadata": {
-                    "title": "zindex", "tag": "zI", "description": "cssfabric zindex module to set z-index on all html elements"
+                    "title": "table", "tag": "table", "description": "cssfabric table module to set different table styles"
                 },
-                "_docs": {
-                    "z_groups": "_"
-                }
+                "_docs": []
             },
             "theme": {
                 "_data": {
@@ -468,7 +461,30 @@
                 "_metadata": {
                     "title": "theme", "description": ""
                 },
-                "_docs": []
+                "_docs": {
+                    "attributes": {
+                        "theme": {
+                            "tag": "theme",
+                            "keys": ["text",
+                                "bg",
+                                "border"],
+                            "levels": {
+                                "primary": ["*", "light", "lighter", "dark", "darker", "complement", "invert"], "secondary": ["*", "light", "lighter", "dark", "darker", "complement", "invert"], "tertiary": ["*", "light", "lighter", "dark", "darker", "complement", "invert"]
+                            }
+                        }
+                    }
+                }
+            },
+            "zindex": {
+                "_data": {
+                    "z_groups": ["a", "b", "c", "d", "e", "f", "g"]
+                },
+                "_metadata": {
+                    "title": "zindex", "tag": "zI", "description": "cssfabric zindex module to set z-index on all html elements"
+                },
+                "_docs": {
+                    "z_groups": "_"
+                }
             }
         }
     }

@@ -19,16 +19,16 @@ This is also a learning point about gulp, webpack, packages and friends.
 | modules |     |
 | ------- | --- |
 | cssfabric | cssfabric global config variables
-animation | cssfabric simplest animation module
 base | cssfabric base config variables
-grid | cssfabric flex grid system module
+animation | cssfabric simplest animation module
 box | cssfabric box module to set heights, paddings, margins and shadows on all html elements
-menu | cssfabric menu module to set menu style
 color | cssfabric color system: its about colors
-overflow | cssfabric overflow module to set overflow styles on all html elements
-table | cssfabric table module to set different table styles
+grid | cssfabric flex grid system module
+menu | cssfabric menu module to set menu style
 scale | cssfabric scale module to set dimensions and ratios on all html elements
+overflow | cssfabric overflow module to set overflow styles on all html elements
 text | cssfabric text module to set text style on all html elements
+table | cssfabric table module to set different table styles
 theme | 
 zindex | cssfabric zindex module to set z-index on all html elements |
 
@@ -44,35 +44,7 @@ zindex | cssfabric zindex module to set z-index on all html elements |
 
 ---
 
-#### <strong>module grid</strong>
-
-
-<br/>
-
-#### [grid]
-
-
-- a so classic grid system, and, hey, it gets height !
-
-
- - <span style='width:80px;display:inline-block;overflow:visible'><b>shorthand</b></span>:  grid
- - <span style='width:80px;display:inline-block;overflow:visible'><b>keys</b></span>: w&nbsp;&nbsp;h
-
-#### [self]
-
-
-- grid children specific classnames
-
-
- - <span style='width:80px;display:inline-block;overflow:visible'><b>shorthand</b></span>:  self
- - <span style='width:80px;display:inline-block;overflow:visible'><b>keys</b></span>: auto&nbsp;&nbsp;start&nbsp;&nbsp;end&nbsp;&nbsp;center&nbsp;&nbsp;baseline&nbsp;&nbsp;stretch
-
----
-
 #### <strong>module box</strong>
-
-
-<br/>
 
 #### [padding]
 
@@ -82,6 +54,7 @@ zindex | cssfabric zindex module to set z-index on all html elements |
 
  - <span style='width:80px;display:inline-block;overflow:visible'><b>shorthand</b></span>:  pad
  - <span style='width:80px;display:inline-block;overflow:visible'><b>keys</b></span>: t&nbsp;&nbsp;b&nbsp;&nbsp;l&nbsp;&nbsp;r&nbsp;&nbsp;all&nbsp;&nbsp;u&nbsp;&nbsp;ii&nbsp;&nbsp;tb
+ - <span style='width:80px;display:inline-block;overflow:visible'><b>levels</b></span>: <br>&nbsp;&nbsp;-&nbsp;&nbsp;1&nbsp;&nbsp;2&nbsp;&nbsp;3&nbsp;&nbsp;4&nbsp;&nbsp;5&nbsp;&nbsp;6&nbsp;&nbsp;7&nbsp;&nbsp;8
 
 #### [margin]
 
@@ -91,6 +64,7 @@ zindex | cssfabric zindex module to set z-index on all html elements |
 
  - <span style='width:80px;display:inline-block;overflow:visible'><b>shorthand</b></span>:  marg
  - <span style='width:80px;display:inline-block;overflow:visible'><b>keys</b></span>: t&nbsp;&nbsp;b&nbsp;&nbsp;l&nbsp;&nbsp;r&nbsp;&nbsp;all&nbsp;&nbsp;u&nbsp;&nbsp;ii&nbsp;&nbsp;tb
+ - <span style='width:80px;display:inline-block;overflow:visible'><b>levels</b></span>: <br>&nbsp;&nbsp;-&nbsp;&nbsp;1&nbsp;&nbsp;2&nbsp;&nbsp;3&nbsp;&nbsp;4&nbsp;&nbsp;5&nbsp;&nbsp;6&nbsp;&nbsp;7&nbsp;&nbsp;8
 
 #### [border]
 
@@ -100,6 +74,7 @@ zindex | cssfabric zindex module to set z-index on all html elements |
 
  - <span style='width:80px;display:inline-block;overflow:visible'><b>shorthand</b></span>:  border
  - <span style='width:80px;display:inline-block;overflow:visible'><b>keys</b></span>: t&nbsp;&nbsp;b&nbsp;&nbsp;l&nbsp;&nbsp;r&nbsp;&nbsp;all&nbsp;&nbsp;u&nbsp;&nbsp;ii&nbsp;&nbsp;tb
+ - <span style='width:80px;display:inline-block;overflow:visible'><b>levels</b></span>: <br>&nbsp;&nbsp;-&nbsp;&nbsp;1&nbsp;&nbsp;2&nbsp;&nbsp;3&nbsp;&nbsp;4&nbsp;&nbsp;5
 
 #### [shadow]
 
@@ -108,13 +83,11 @@ zindex | cssfabric zindex module to set z-index on all html elements |
 
 
  - <span style='width:80px;display:inline-block;overflow:visible'><b>shorthand</b></span>:  shad
+ - <span style='width:80px;display:inline-block;overflow:visible'><b>levels</b></span>: <br>&nbsp;&nbsp;-&nbsp;&nbsp;2&nbsp;&nbsp;4&nbsp;&nbsp;8&nbsp;&nbsp;16&nbsp;&nbsp;32&nbsp;&nbsp;64&nbsp;&nbsp;128&nbsp;&nbsp;256
 
 ---
 
 #### <strong>module color</strong>
-
-
-<br/>
 
 #### [color]
 
@@ -148,10 +121,39 @@ zindex | cssfabric zindex module to set z-index on all html elements |
 
 ---
 
+#### <strong>module grid</strong>
+
+#### [grid]
+
+
+- a so classic grid system, and, hey, it gets height !
+
+
+ - <span style='width:80px;display:inline-block;overflow:visible'><b>shorthand</b></span>:  grid
+ - <span style='width:80px;display:inline-block;overflow:visible'><b>keys</b></span>: w&nbsp;&nbsp;h
+
+#### [self]
+
+
+- grid children specific classnames
+
+
+ - <span style='width:80px;display:inline-block;overflow:visible'><b>shorthand</b></span>:  self
+ - <span style='width:80px;display:inline-block;overflow:visible'><b>keys</b></span>: auto&nbsp;&nbsp;start&nbsp;&nbsp;end&nbsp;&nbsp;center&nbsp;&nbsp;baseline&nbsp;&nbsp;stretch
+
+---
+
+#### <strong>module menu</strong>
+
+#### [menu]
+
+
+ - <span style='width:80px;display:inline-block;overflow:visible'><b>shorthand</b></span>:  menu
+ - <span style='width:80px;display:inline-block;overflow:visible'><b>keys</b></span>: h&nbsp;&nbsp;v
+
+---
+
 #### <strong>module scale</strong>
-
-
-<br/>
 
 #### [width]
 
@@ -166,10 +168,29 @@ zindex | cssfabric zindex module to set z-index on all html elements |
 
 ---
 
+#### <strong>module overflow</strong>
+
+#### [overflow]
+
+
+ - <span style='width:80px;display:inline-block;overflow:visible'><b>shorthand</b></span>:  flow
+ - <span style='width:80px;display:inline-block;overflow:visible'><b>keys</b></span>: visible&nbsp;&nbsp;hidden&nbsp;&nbsp;clip&nbsp;&nbsp;scroll&nbsp;&nbsp;auto
+
+#### [overflowX]
+
+
+ - <span style='width:80px;display:inline-block;overflow:visible'><b>shorthand</b></span>:  flowX
+ - <span style='width:80px;display:inline-block;overflow:visible'><b>keys</b></span>: visible&nbsp;&nbsp;hidden&nbsp;&nbsp;clip&nbsp;&nbsp;scroll&nbsp;&nbsp;auto
+
+#### [overflowY]
+
+
+ - <span style='width:80px;display:inline-block;overflow:visible'><b>shorthand</b></span>:  flowY
+ - <span style='width:80px;display:inline-block;overflow:visible'><b>keys</b></span>: visible&nbsp;&nbsp;hidden&nbsp;&nbsp;clip&nbsp;&nbsp;scroll&nbsp;&nbsp;auto
+
+---
+
 #### <strong>module text</strong>
-
-
-<br/>
 
 #### [text-transform]
 
@@ -192,7 +213,6 @@ zindex | cssfabric zindex module to set z-index on all html elements |
 
 
  - <span style='width:80px;display:inline-block;overflow:visible'><b>shorthand</b></span>:  text-shad
- - <span style='width:80px;display:inline-block;overflow:visible'><b>keys</b></span>: 
 
 #### [color]
 
@@ -203,9 +223,6 @@ zindex | cssfabric zindex module to set z-index on all html elements |
 ---
 
 #### <strong>module theme</strong>
-
-
-<br/>
 
 #### [theme]
 
