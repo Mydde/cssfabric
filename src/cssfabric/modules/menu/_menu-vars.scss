@@ -1,31 +1,29 @@
 $menu-metadata: (
-    title: menu,
-    tag: ul,
-    description: "cssfabric menu module to set menu style"
+        title: menu,
+        tag: ul,
+        description: "cssfabric menu module to set menu style"
 );
 $menu-config: (
-    menu_class_name: menu,
-    menu_class_name_short: ul,
-    orientations: ( 
-        v: vertical,    
-        h: horizontal    
-    ),           
-    menu_item_class_name: menu-item,            
-    menu_item_class_name_short: li,    
-    menu_item_disabled_tag: disabled,        
-    menu_item_selected_tag: selected,      
-    menu_dropdown_tag: drop,
-    menu_dropdown_open: open,
-    menu_dropdown_close: close, 
-    test: (quoi donc)
+        menu_class_name: menu,
+        menu_class_name_short: ul,
+        orientations: (
+                v: vertical,
+                h: horizontal
+        ),
+        menu_item_class_name: menu-item,
+        menu_item_class_name_short: li,
+        menu_item_disabled_tag: disabled,
+        menu_item_selected_tag: selected,
+        menu_dropdown_tag: drop,
+        menu_dropdown_open: open,
+        menu_dropdown_close: close
 );
-$menu-docs: ( 
-    menu_item_class_name: "",
-    menu_item_class_name_short: "",
-    menu_dropdown_tag: "",
-    menu_item_disabled_tag: "", 
-    menu_item_selected_tag: "", 
-    orientations: "",
-    menu_dropdown_open: "",    
-    menu_dropdown_close: ""   
-);  
+$menu-docs: (
+        attributes:(
+                menu:(tag: menu,
+                        keys:(h v)
+                )
+        )
+);
+
+

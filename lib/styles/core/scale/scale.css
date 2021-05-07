@@ -1,469 +1,255 @@
-/*  dimension : "-full" shorthand is 100% width*/
 .w-full {
   width: 100%;
 }
 
-/*  dimension : "-mid" shorthand is 50% width*/
 .w-mid {
   width: 50%;
 }
 
-/*  dimension : "-quarter" shorthand is 25% width*/
 .w-quarter {
   width: 25%;
 }
 
-/*  dimension : "-tiers" shorthand is 33% width*/
 .w-tiers {
   width: 33%;
 }
 
-/*  dimension : "-max-content" shorthand is max-content width*/
-.w-max-content {
+.w-content-max {
   width: max-content;
 }
 
-/*  dimension : "-min-content" shorthand is min-content width*/
-.w-min-content {
+.w-content-min {
   width: min-content;
 }
 
-/*  dimension : "-1" shorthand is 1rem width*/
 .w-1 {
   width: 1rem;
 }
 
-/*  dimension : "-2" shorthand is 2rem width*/
 .w-2 {
   width: 2rem;
 }
 
-/*  dimension : "-4" shorthand is 4rem width*/
 .w-4 {
   width: 4rem;
 }
 
-/*  dimension : "-8" shorthand is 8rem width*/
 .w-8 {
   width: 8rem;
 }
 
-/*  dimension : "-16" shorthand is 16rem width*/
 .w-16 {
   width: 16rem;
 }
 
-/*  dimension : "-24" shorthand is 24rem width*/
 .w-24 {
   width: 24rem;
 }
 
-/*  dimension : "-32" shorthand is 32rem width*/
 .w-32 {
   width: 32rem;
 }
 
-/*  dimension : "-48" shorthand is 48rem width*/
 .w-48 {
   width: 48rem;
 }
 
-/*  dimension : "-64" shorthand is 64rem width*/
 .w-64 {
   width: 64rem;
 }
 
-/*  dimension : "-1-8" shorthand is 12.5% width*/
-.w-1-8 {
-  width: 12.5%;
+.w-1-5 {
+  width: 20%;
 }
 
-/*  dimension : "-2-8" shorthand is 25% width*/
-.w-2-8 {
-  width: 25%;
+.w-2-5 {
+  width: 40%;
 }
 
-/*  dimension : "-3-8" shorthand is 37.5% width*/
-.w-3-8 {
-  width: 37.5%;
+.w-3-5 {
+  width: 60%;
 }
 
-/*  dimension : "-4-8" shorthand is 50% width*/
-.w-4-8 {
-  width: 50%;
+.w-4-5 {
+  width: 80%;
 }
 
-/*  dimension : "-5-8" shorthand is 62.5% width*/
-.w-5-8 {
-  width: 62.5%;
-}
-
-/*  dimension : "-6-8" shorthand is 75% width*/
-.w-6-8 {
-  width: 75%;
-}
-
-/*  dimension : "-7-8" shorthand is 87.5% width*/
-.w-7-8 {
-  width: 87.5%;
-}
-
-/*  dimension : "-8-8" shorthand is 100% width*/
-.w-8-8 {
+.w-5-5 {
   width: 100%;
 }
 
-/*  dimension : "-1-24" shorthand is 4.1666666667% width*/
-.w-1-24 {
-  width: 4.1666666667%;
-}
-
-/*  dimension : "-2-24" shorthand is 8.3333333333% width*/
-.w-2-24 {
+.w-1-12 {
   width: 8.3333333333%;
 }
 
-/*  dimension : "-3-24" shorthand is 12.5% width*/
-.w-3-24 {
-  width: 12.5%;
-}
-
-/*  dimension : "-4-24" shorthand is 16.6666666667% width*/
-.w-4-24 {
+.w-2-12 {
   width: 16.6666666667%;
 }
 
-/*  dimension : "-5-24" shorthand is 20.8333333333% width*/
-.w-5-24 {
-  width: 20.8333333333%;
-}
-
-/*  dimension : "-6-24" shorthand is 25% width*/
-.w-6-24 {
+.w-3-12 {
   width: 25%;
 }
 
-/*  dimension : "-7-24" shorthand is 29.1666666667% width*/
-.w-7-24 {
-  width: 29.1666666667%;
-}
-
-/*  dimension : "-8-24" shorthand is 33.3333333333% width*/
-.w-8-24 {
+.w-4-12 {
   width: 33.3333333333%;
 }
 
-/*  dimension : "-9-24" shorthand is 37.5% width*/
-.w-9-24 {
-  width: 37.5%;
-}
-
-/*  dimension : "-10-24" shorthand is 41.6666666667% width*/
-.w-10-24 {
+.w-5-12 {
   width: 41.6666666667%;
 }
 
-/*  dimension : "-11-24" shorthand is 45.8333333333% width*/
-.w-11-24 {
-  width: 45.8333333333%;
-}
-
-/*  dimension : "-12-24" shorthand is 50% width*/
-.w-12-24 {
+.w-6-12 {
   width: 50%;
 }
 
-/*  dimension : "-13-24" shorthand is 54.1666666667% width*/
-.w-13-24 {
-  width: 54.1666666667%;
-}
-
-/*  dimension : "-14-24" shorthand is 58.3333333333% width*/
-.w-14-24 {
+.w-7-12 {
   width: 58.3333333333%;
 }
 
-/*  dimension : "-15-24" shorthand is 62.5% width*/
-.w-15-24 {
-  width: 62.5%;
-}
-
-/*  dimension : "-16-24" shorthand is 66.6666666667% width*/
-.w-16-24 {
+.w-8-12 {
   width: 66.6666666667%;
 }
 
-/*  dimension : "-17-24" shorthand is 70.8333333333% width*/
-.w-17-24 {
-  width: 70.8333333333%;
-}
-
-/*  dimension : "-18-24" shorthand is 75% width*/
-.w-18-24 {
+.w-9-12 {
   width: 75%;
 }
 
-/*  dimension : "-19-24" shorthand is 79.1666666667% width*/
-.w-19-24 {
-  width: 79.1666666667%;
-}
-
-/*  dimension : "-20-24" shorthand is 83.3333333333% width*/
-.w-20-24 {
+.w-10-12 {
   width: 83.3333333333%;
 }
 
-/*  dimension : "-21-24" shorthand is 87.5% width*/
-.w-21-24 {
-  width: 87.5%;
-}
-
-/*  dimension : "-22-24" shorthand is 91.6666666667% width*/
-.w-22-24 {
+.w-11-12 {
   width: 91.6666666667%;
 }
 
-/*  dimension : "-23-24" shorthand is 95.8333333333% width*/
-.w-23-24 {
-  width: 95.8333333333%;
-}
-
-/*  dimension : "-24-24" shorthand is 100% width*/
-.w-24-24 {
+.w-12-12 {
   width: 100%;
 }
 
-/*  dimension : "-full" shorthand is 100% height*/
 .h-full {
   height: 100%;
 }
 
-/*  dimension : "-mid" shorthand is 50% height*/
 .h-mid {
   height: 50%;
 }
 
-/*  dimension : "-quarter" shorthand is 25% height*/
 .h-quarter {
   height: 25%;
 }
 
-/*  dimension : "-tiers" shorthand is 33% height*/
 .h-tiers {
   height: 33%;
 }
 
-/*  dimension : "-max-content" shorthand is max-content height*/
-.h-max-content {
+.h-content-max {
   height: max-content;
 }
 
-/*  dimension : "-min-content" shorthand is min-content height*/
-.h-min-content {
+.h-content-min {
   height: min-content;
 }
 
-/*  dimension : "-1" shorthand is 1rem height*/
 .h-1 {
   height: 1rem;
 }
 
-/*  dimension : "-2" shorthand is 2rem height*/
 .h-2 {
   height: 2rem;
 }
 
-/*  dimension : "-4" shorthand is 4rem height*/
 .h-4 {
   height: 4rem;
 }
 
-/*  dimension : "-8" shorthand is 8rem height*/
 .h-8 {
   height: 8rem;
 }
 
-/*  dimension : "-16" shorthand is 16rem height*/
 .h-16 {
   height: 16rem;
 }
 
-/*  dimension : "-24" shorthand is 24rem height*/
 .h-24 {
   height: 24rem;
 }
 
-/*  dimension : "-32" shorthand is 32rem height*/
 .h-32 {
   height: 32rem;
 }
 
-/*  dimension : "-48" shorthand is 48rem height*/
 .h-48 {
   height: 48rem;
 }
 
-/*  dimension : "-64" shorthand is 64rem height*/
 .h-64 {
   height: 64rem;
 }
 
-/*  dimension : "-1-8" shorthand is 12.5% height*/
-.h-1-8 {
-  height: 12.5%;
+.h-1-5 {
+  height: 20%;
 }
 
-/*  dimension : "-2-8" shorthand is 25% height*/
-.h-2-8 {
-  height: 25%;
+.h-2-5 {
+  height: 40%;
 }
 
-/*  dimension : "-3-8" shorthand is 37.5% height*/
-.h-3-8 {
-  height: 37.5%;
+.h-3-5 {
+  height: 60%;
 }
 
-/*  dimension : "-4-8" shorthand is 50% height*/
-.h-4-8 {
-  height: 50%;
+.h-4-5 {
+  height: 80%;
 }
 
-/*  dimension : "-5-8" shorthand is 62.5% height*/
-.h-5-8 {
-  height: 62.5%;
-}
-
-/*  dimension : "-6-8" shorthand is 75% height*/
-.h-6-8 {
-  height: 75%;
-}
-
-/*  dimension : "-7-8" shorthand is 87.5% height*/
-.h-7-8 {
-  height: 87.5%;
-}
-
-/*  dimension : "-8-8" shorthand is 100% height*/
-.h-8-8 {
+.h-5-5 {
   height: 100%;
 }
 
-/*  dimension : "-1-24" shorthand is 4.1666666667% height*/
-.h-1-24 {
-  height: 4.1666666667%;
-}
-
-/*  dimension : "-2-24" shorthand is 8.3333333333% height*/
-.h-2-24 {
+.h-1-12 {
   height: 8.3333333333%;
 }
 
-/*  dimension : "-3-24" shorthand is 12.5% height*/
-.h-3-24 {
-  height: 12.5%;
-}
-
-/*  dimension : "-4-24" shorthand is 16.6666666667% height*/
-.h-4-24 {
+.h-2-12 {
   height: 16.6666666667%;
 }
 
-/*  dimension : "-5-24" shorthand is 20.8333333333% height*/
-.h-5-24 {
-  height: 20.8333333333%;
-}
-
-/*  dimension : "-6-24" shorthand is 25% height*/
-.h-6-24 {
+.h-3-12 {
   height: 25%;
 }
 
-/*  dimension : "-7-24" shorthand is 29.1666666667% height*/
-.h-7-24 {
-  height: 29.1666666667%;
-}
-
-/*  dimension : "-8-24" shorthand is 33.3333333333% height*/
-.h-8-24 {
+.h-4-12 {
   height: 33.3333333333%;
 }
 
-/*  dimension : "-9-24" shorthand is 37.5% height*/
-.h-9-24 {
-  height: 37.5%;
-}
-
-/*  dimension : "-10-24" shorthand is 41.6666666667% height*/
-.h-10-24 {
+.h-5-12 {
   height: 41.6666666667%;
 }
 
-/*  dimension : "-11-24" shorthand is 45.8333333333% height*/
-.h-11-24 {
-  height: 45.8333333333%;
-}
-
-/*  dimension : "-12-24" shorthand is 50% height*/
-.h-12-24 {
+.h-6-12 {
   height: 50%;
 }
 
-/*  dimension : "-13-24" shorthand is 54.1666666667% height*/
-.h-13-24 {
-  height: 54.1666666667%;
-}
-
-/*  dimension : "-14-24" shorthand is 58.3333333333% height*/
-.h-14-24 {
+.h-7-12 {
   height: 58.3333333333%;
 }
 
-/*  dimension : "-15-24" shorthand is 62.5% height*/
-.h-15-24 {
-  height: 62.5%;
-}
-
-/*  dimension : "-16-24" shorthand is 66.6666666667% height*/
-.h-16-24 {
+.h-8-12 {
   height: 66.6666666667%;
 }
 
-/*  dimension : "-17-24" shorthand is 70.8333333333% height*/
-.h-17-24 {
-  height: 70.8333333333%;
-}
-
-/*  dimension : "-18-24" shorthand is 75% height*/
-.h-18-24 {
+.h-9-12 {
   height: 75%;
 }
 
-/*  dimension : "-19-24" shorthand is 79.1666666667% height*/
-.h-19-24 {
-  height: 79.1666666667%;
-}
-
-/*  dimension : "-20-24" shorthand is 83.3333333333% height*/
-.h-20-24 {
+.h-10-12 {
   height: 83.3333333333%;
 }
 
-/*  dimension : "-21-24" shorthand is 87.5% height*/
-.h-21-24 {
-  height: 87.5%;
-}
-
-/*  dimension : "-22-24" shorthand is 91.6666666667% height*/
-.h-22-24 {
+.h-11-12 {
   height: 91.6666666667%;
 }
 
-/*  dimension : "-23-24" shorthand is 95.8333333333% height*/
-.h-23-24 {
-  height: 95.8333333333%;
-}
-
-/*  dimension : "-24-24" shorthand is 100% height*/
-.h-24-24 {
+.h-12-12 {
   height: 100%;
 }

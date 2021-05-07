@@ -236,7 +236,7 @@ $css-shorthands: (
   }
 }
 
-@mixin buildBox($mq_key) {
+@mixin buildBox($mq_key:null) {
   @include pmb($mq_key);
   @include display($mq_key);
   @include position($mq_key);

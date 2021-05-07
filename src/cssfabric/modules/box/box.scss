@@ -1,6 +1,3 @@
-
-// load scss config file 
 @use "_box-build" as build;
-
     
-@include build.buildBox(null);
+@include build.buildBox();

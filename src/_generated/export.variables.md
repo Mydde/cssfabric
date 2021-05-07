@@ -19,18 +19,18 @@ This is also a learning point about gulp, webpack, packages and friends.
 | modules |     |
 | ------- | --- |
 | cssfabric | cssfabric global config variables
-animation | cssfabric simplest animation module
 base | cssfabric base config variables
+animation | cssfabric simplest animation module
 box | cssfabric box module to set heights, paddings, margins and shadows on all html elements
 color | cssfabric color system: its about colors
 grid | cssfabric flex grid system module
 menu | cssfabric menu module to set menu style
-overflow | cssfabric overflow module to set overflow styles on all html elements
 scale | cssfabric scale module to set dimensions and ratios on all html elements
-table | cssfabric table module to set different table styles
+overflow | cssfabric overflow module to set overflow styles on all html elements
 text | cssfabric text module to set text style on all html elements
-zindex | cssfabric zindex module to set z-index on all html elements
-theme |  |
+table | cssfabric table module to set different table styles
+theme | 
+zindex | cssfabric zindex module to set z-index on all html elements |
 
 
 <br/>
@@ -46,9 +46,6 @@ theme |  |
 
 #### <strong>module box</strong>
 
-
-<br/>
-
 #### [padding]
 
 
@@ -57,6 +54,7 @@ theme |  |
 
  - <span style='width:80px;display:inline-block;overflow:visible'><b>shorthand</b></span>:  pad
  - <span style='width:80px;display:inline-block;overflow:visible'><b>keys</b></span>: t&nbsp;&nbsp;b&nbsp;&nbsp;l&nbsp;&nbsp;r&nbsp;&nbsp;all&nbsp;&nbsp;u&nbsp;&nbsp;ii&nbsp;&nbsp;tb
+ - <span style='width:80px;display:inline-block;overflow:visible'><b>levels</b></span>: <br>&nbsp;&nbsp;-&nbsp;&nbsp;1&nbsp;&nbsp;2&nbsp;&nbsp;3&nbsp;&nbsp;4&nbsp;&nbsp;5&nbsp;&nbsp;6&nbsp;&nbsp;7&nbsp;&nbsp;8
 
 #### [margin]
 
@@ -66,6 +64,7 @@ theme |  |
 
  - <span style='width:80px;display:inline-block;overflow:visible'><b>shorthand</b></span>:  marg
  - <span style='width:80px;display:inline-block;overflow:visible'><b>keys</b></span>: t&nbsp;&nbsp;b&nbsp;&nbsp;l&nbsp;&nbsp;r&nbsp;&nbsp;all&nbsp;&nbsp;u&nbsp;&nbsp;ii&nbsp;&nbsp;tb
+ - <span style='width:80px;display:inline-block;overflow:visible'><b>levels</b></span>: <br>&nbsp;&nbsp;-&nbsp;&nbsp;1&nbsp;&nbsp;2&nbsp;&nbsp;3&nbsp;&nbsp;4&nbsp;&nbsp;5&nbsp;&nbsp;6&nbsp;&nbsp;7&nbsp;&nbsp;8
 
 #### [border]
 
@@ -75,6 +74,7 @@ theme |  |
 
  - <span style='width:80px;display:inline-block;overflow:visible'><b>shorthand</b></span>:  border
  - <span style='width:80px;display:inline-block;overflow:visible'><b>keys</b></span>: t&nbsp;&nbsp;b&nbsp;&nbsp;l&nbsp;&nbsp;r&nbsp;&nbsp;all&nbsp;&nbsp;u&nbsp;&nbsp;ii&nbsp;&nbsp;tb
+ - <span style='width:80px;display:inline-block;overflow:visible'><b>levels</b></span>: <br>&nbsp;&nbsp;-&nbsp;&nbsp;1&nbsp;&nbsp;2&nbsp;&nbsp;3&nbsp;&nbsp;4&nbsp;&nbsp;5
 
 #### [shadow]
 
@@ -83,13 +83,11 @@ theme |  |
 
 
  - <span style='width:80px;display:inline-block;overflow:visible'><b>shorthand</b></span>:  shad
+ - <span style='width:80px;display:inline-block;overflow:visible'><b>levels</b></span>: <br>&nbsp;&nbsp;-&nbsp;&nbsp;2&nbsp;&nbsp;4&nbsp;&nbsp;8&nbsp;&nbsp;16&nbsp;&nbsp;32&nbsp;&nbsp;64&nbsp;&nbsp;128&nbsp;&nbsp;256
 
 ---
 
 #### <strong>module color</strong>
-
-
-<br/>
 
 #### [color]
 
@@ -125,9 +123,6 @@ theme |  |
 
 #### <strong>module grid</strong>
 
-
-<br/>
-
 #### [grid]
 
 
@@ -148,10 +143,17 @@ theme |  |
 
 ---
 
+#### <strong>module menu</strong>
+
+#### [menu]
+
+
+ - <span style='width:80px;display:inline-block;overflow:visible'><b>shorthand</b></span>:  menu
+ - <span style='width:80px;display:inline-block;overflow:visible'><b>keys</b></span>: h&nbsp;&nbsp;v
+
+---
+
 #### <strong>module scale</strong>
-
-
-<br/>
 
 #### [width]
 
@@ -166,10 +168,29 @@ theme |  |
 
 ---
 
+#### <strong>module overflow</strong>
+
+#### [overflow]
+
+
+ - <span style='width:80px;display:inline-block;overflow:visible'><b>shorthand</b></span>:  flow
+ - <span style='width:80px;display:inline-block;overflow:visible'><b>keys</b></span>: visible&nbsp;&nbsp;hidden&nbsp;&nbsp;clip&nbsp;&nbsp;scroll&nbsp;&nbsp;auto
+
+#### [overflowX]
+
+
+ - <span style='width:80px;display:inline-block;overflow:visible'><b>shorthand</b></span>:  flowX
+ - <span style='width:80px;display:inline-block;overflow:visible'><b>keys</b></span>: visible&nbsp;&nbsp;hidden&nbsp;&nbsp;clip&nbsp;&nbsp;scroll&nbsp;&nbsp;auto
+
+#### [overflowY]
+
+
+ - <span style='width:80px;display:inline-block;overflow:visible'><b>shorthand</b></span>:  flowY
+ - <span style='width:80px;display:inline-block;overflow:visible'><b>keys</b></span>: visible&nbsp;&nbsp;hidden&nbsp;&nbsp;clip&nbsp;&nbsp;scroll&nbsp;&nbsp;auto
+
+---
+
 #### <strong>module text</strong>
-
-
-<br/>
 
 #### [text-transform]
 
@@ -192,10 +213,20 @@ theme |  |
 
 
  - <span style='width:80px;display:inline-block;overflow:visible'><b>shorthand</b></span>:  text-shad
- - <span style='width:80px;display:inline-block;overflow:visible'><b>keys</b></span>: 
 
 #### [color]
 
 
  - <span style='width:80px;display:inline-block;overflow:visible'><b>shorthand</b></span>:  text
  - <span style='width:80px;display:inline-block;overflow:visible'><b>keys</b></span>:<br>&nbsp;&nbsp;-&nbsp;&nbsp;info&nbsp;&nbsp;alert&nbsp;&nbsp;error&nbsp;&nbsp;warning&nbsp;&nbsp;discrete&nbsp;&nbsp;success<br>&nbsp;&nbsp;-&nbsp;&nbsp;yellow&nbsp;&nbsp;orange&nbsp;&nbsp;red&nbsp;&nbsp;magenta&nbsp;&nbsp;purple&nbsp;&nbsp;green&nbsp;&nbsp;teal&nbsp;&nbsp;blue<br>&nbsp;&nbsp;-&nbsp;&nbsp;100&nbsp;&nbsp;200&nbsp;&nbsp;300&nbsp;&nbsp;400&nbsp;&nbsp;500&nbsp;&nbsp;600&nbsp;&nbsp;700&nbsp;&nbsp;800&nbsp;&nbsp;900
+
+---
+
+#### <strong>module theme</strong>
+
+#### [theme]
+
+
+ - <span style='width:80px;display:inline-block;overflow:visible'><b>shorthand</b></span>:  theme
+ - <span style='width:80px;display:inline-block;overflow:visible'><b>keys</b></span>: text&nbsp;&nbsp;bg&nbsp;&nbsp;border
+ - <span style='width:80px;display:inline-block;overflow:visible'><b>level keys</b></span>:<br/><span style='margin-left:20px;width:80px;display:inline-block;overflow:visible'>- primary</span>: *&nbsp;&nbsp;&nbsp;&nbsp;light&nbsp;&nbsp;&nbsp;&nbsp;lighter&nbsp;&nbsp;&nbsp;&nbsp;dark&nbsp;&nbsp;&nbsp;&nbsp;darker&nbsp;&nbsp;&nbsp;&nbsp;complement&nbsp;&nbsp;&nbsp;&nbsp;invert<br/><span style='margin-left:20px;width:80px;display:inline-block;overflow:visible'>- secondary</span>: *&nbsp;&nbsp;&nbsp;&nbsp;light&nbsp;&nbsp;&nbsp;&nbsp;lighter&nbsp;&nbsp;&nbsp;&nbsp;dark&nbsp;&nbsp;&nbsp;&nbsp;darker&nbsp;&nbsp;&nbsp;&nbsp;complement&nbsp;&nbsp;&nbsp;&nbsp;invert<br/><span style='margin-left:20px;width:80px;display:inline-block;overflow:visible'>- tertiary</span>: *&nbsp;&nbsp;&nbsp;&nbsp;light&nbsp;&nbsp;&nbsp;&nbsp;lighter&nbsp;&nbsp;&nbsp;&nbsp;dark&nbsp;&nbsp;&nbsp;&nbsp;darker&nbsp;&nbsp;&nbsp;&nbsp;complement&nbsp;&nbsp;&nbsp;&nbsp;invert

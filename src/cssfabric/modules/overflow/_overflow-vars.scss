@@ -1,13 +1,31 @@
+$_overflow-values: (visible hidden clip scroll auto);
+$_overflow-shorthands: (visible: visible, hidden:hidden, clip:clip, scroll:scroll, _: auto);
+
 $overflow-metadata: (
-    title: overflow,
-    tag: flow,
-    description: "cssfabric overflow module to set overflow styles on all html elements"
+        title: overflow,
+        tag: flow,
+        description: "cssfabric overflow module to set overflow styles on all html elements"
 );
 $overflow-config: (
-    overflow_props: overflow overflow-x overflow-y,
-    overflow_values: visible hidden clip scroll auto initial unset
+        overflow_props: overflow overflow-x overflow-y,
+        overflow_values: $_overflow-values,
+        cssProps:(
+                overflow: $_overflow-shorthands
+        )
 );
 $overflow-docs: (
-    overflow_props: "",
-    overflow_values: ""
+        attributes:(
+                overflow:(
+                        tag:flow,
+                        keys: $_overflow-values
+                ),
+                overflowX:(
+                        tag:flowX,
+                        keys: $_overflow-values
+                ),
+                overflowY:(
+                        tag:flowY,
+                        keys: $_overflow-values
+                )
+        )
 );

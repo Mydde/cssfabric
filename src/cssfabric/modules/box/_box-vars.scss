@@ -83,6 +83,10 @@ $box-config: (
         )
 );
 
+
+@debug utils.getObjectKeys(utils.getShadowIterator($shadow-factors, 8));
+
+
 $box-docs: (
         attributes:(
                 padding: (
@@ -106,9 +110,8 @@ $box-docs: (
                         levels: utils.getObjectKeys(utils.getBoxIterator($_sizes-border-config, $_border-unit-config, $_unit-border-size-config)),
                         about: "border properties for html elements"
                 ),
-                shadow: ( // no declination keys
-                        tag: map-get($box-config, shadow-shorthand-config),
-                        values:utils.getShadowIterator($shadow-factors, 8),
+                shadow: (
+                        tag:   map-get($box-config, shadow-shorthand-config),
                         levels:utils.getObjectKeys(utils.getShadowIterator($shadow-factors, 8)),
                         about: "applying shadows give depth and levels to your design"
                 )
