@@ -109,20 +109,6 @@
   --cssfabric-color-gray-900: #333333;
   /** 
   * cssfabric generated file
-  * css vars for grid 
-  */
-  --cssfabric-grid-moduleName: grid;
-  --cssfabric-grid-moduleNameShort: grid;
-  --cssfabric-grid-horCode: h;
-  --cssfabric-grid-vertCode: v;
-  --cssfabric-grid-gridFullWidth: main;
-  --cssfabric-grid-cssProps-flexWrap: is-map;
-  --cssfabric-grid-cssProps-just: is-map;
-  --cssfabric-grid-cssProps-items: is-map;
-  --cssfabric-grid-cssProps-content: is-map;
-  --cssfabric-grid-cssItemsProps-self: is-map;
-  /** 
-  * cssfabric generated file
   * css vars for menu 
   */
   --cssfabric-menu-menu_class_name: menu;
@@ -138,11 +124,18 @@
   --cssfabric-menu-menu_dropdown_close: close;
   /** 
   * cssfabric generated file
-  * css vars for overflow 
+  * css vars for grid 
   */
-  --cssfabric-overflow-overflow_props:  overflow overflow-x overflow-y;
-  --cssfabric-overflow-overflow_values:  visible hidden clip scroll auto;
-  --cssfabric-overflow-cssProps-overflow: is-map;
+  --cssfabric-grid-moduleName: grid;
+  --cssfabric-grid-moduleNameShort: grid;
+  --cssfabric-grid-horCode: h;
+  --cssfabric-grid-vertCode: v;
+  --cssfabric-grid-gridFullWidth: main;
+  --cssfabric-grid-cssProps-flexWrap: is-map;
+  --cssfabric-grid-cssProps-grid-justify: is-map;
+  --cssfabric-grid-cssProps-grid-items: is-map;
+  --cssfabric-grid-cssProps-grid-content: is-map;
+  --cssfabric-grid-cssItemsProps-self: is-map;
   /** 
   * cssfabric generated file
   * css vars for scale 
@@ -156,12 +149,11 @@
   --cssfabric-scale-cssProps-content: is-map;
   /** 
   * cssfabric generated file
-  * css vars for table 
+  * css vars for overflow 
   */
-  --cssfabric-table-className: table;
-  --cssfabric-table-classNameShort: tbl;
-  --cssfabric-table-table_class_name: table;
-  --cssfabric-table-table_class_name_short: tbl;
+  --cssfabric-overflow-overflow_props:  overflow overflow-x overflow-y;
+  --cssfabric-overflow-overflow_values:  visible hidden clip scroll auto;
+  --cssfabric-overflow-cssProps-overflow: is-map;
   /** 
   * cssfabric generated file
   * css vars for text 
@@ -196,6 +188,14 @@
   --cssfabric-text-gray-700: #5c5c5c;
   --cssfabric-text-gray-800: #484848;
   --cssfabric-text-gray-900: #333333;
+  /** 
+  * cssfabric generated file
+  * css vars for table 
+  */
+  --cssfabric-table-className: table;
+  --cssfabric-table-classNameShort: tbl;
+  --cssfabric-table-table_class_name: table;
+  --cssfabric-table-table_class_name_short: tbl;
   /** 
   * cssfabric generated file
   * css vars for theme 

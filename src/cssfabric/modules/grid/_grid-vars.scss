@@ -3,6 +3,9 @@
 
 $_grow-shrink-steps: 4;
 
+
+$_grid-align: (top middle bottom left right center);
+
 $_classNames: (
         wrap-reverse: wrap-reverse,
         wrap: wrap,
@@ -15,21 +18,21 @@ $_cssProps: (
                 wrap: wrap,
                 nowrap: nowrap
         ),
-        just: (
+        grid-justify: (
                 start: flex-start,
                 end: flex-end,
                 between: space-between,
                 stretch: stretch,
                 center: flex-center
         ),
-        items: (
+        grid-items: (
                 baseline: baseline,
                 stretch: stretch,
                 start: flex-start,
                 center: center,
                 end: flex-end
         ),
-        content: (
+        grid-content: (
                 start: flex-start,
                 center: center,
                 end: flex-end,
@@ -72,11 +75,11 @@ $grid-docs: (// add align-middle non generated className // grow + shrink
                         tag: grid,
                         keys: (w, h),
                         classNames: (
-                                items: utils.getObjectKeys(map-get($_cssProps, align-items)),
-                                content:utils.getObjectKeys(map-get($_cssProps, align-content)),
-                                just:utils.getObjectKeys(map-get($_cssProps, justify-content)),
-                                grid:utils.getObjectKeys(map-get($_cssProps, flexWrap)),
-                                align: (middle)
+                                grid:utils.getObjectKeys(map-get($_cssProps, flexWrap)), // inline !
+                                grid-align: $_grid-align,
+                                grid-items: utils.getObjectKeys(map-get($_cssProps, grid-items)),
+                                grid-content:utils.getObjectKeys(map-get($_cssProps, grid-content)),
+                                grid-justify:utils.getObjectKeys(map-get($_cssProps, grid-justify))
                         ),
                         about: "a so classic grid system, and, hey, it gets height !"
                 ),

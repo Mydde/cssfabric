@@ -34,13 +34,13 @@ $grid-code-sep: #{$grid-code}#{$sep};
     display: flex;
     flex-direction: row;
 
-    & > .#{$grid-code}#{$sep}#{$gridFullWidth} {
+    & > .#{$grid-code-sep}#{$gridFullWidth} {
       flex: 1 1 0;
       width: 100%;
       max-width: 100%;
     }
 
-    .align-middle{
+    .align-middle, .#{$grid-code-sep}align-middle {
       align-items: center;
     }
   }
@@ -49,12 +49,12 @@ $grid-code-sep: #{$grid-code}#{$sep};
     display: flex;
     flex-direction: column;
 
-    & > .#{$grid-code}#{$sep}#{$gridFullWidth} {
+    & > .#{$grid-code-sep}#{$gridFullWidth} {
       flex: 1 1 0;
       max-height: 100%;
     }
 
-    .align-middle{
+    .align-middle, .#{$grid-code-sep}align-middle {
       justify-content: center;
     }
   }
@@ -73,11 +73,6 @@ $grid-code-sep: #{$grid-code}#{$sep};
 
     &.#{$grid-code-sep}inline {
       display: inline-flex;
-    }
-
-    & .align-middle {
-      // justify-content: center;
-     //  align-items: center;
     }
 
     @for $i from 1 through $grow-shrink-steps {
@@ -102,22 +97,22 @@ $grid-code-sep: #{$grid-code}#{$sep};
     }
 
     // justify content rules */
-    &.just {
-      @each $fabricRule, $value in map-get($cssProps, just) {
+    &.just , .grid-justify {
+      @each $fabricRule, $value in map-get($cssProps, grid-justify) {
         @include utils.fabricAttributes('&'+$sep, $fabricRule, 'justify-content', $value);
       }
     }
 
     // align-items rules */
-    &.items {
-      @each $fabricRule, $value in map-get($cssProps, items) {
+    &.items , .grid-items{
+      @each $fabricRule, $value in map-get($cssProps, grid-items) {
         @include utils.fabricAttributes('&'+$sep, $fabricRule, 'align-items', $value);
       }
     }
 
     // align-content rules */
-    &.content {
-      @each $fabricRule, $value in map-get($cssProps, content) {
+    &.content, .grid-content {
+      @each $fabricRule, $value in map-get($cssProps, grid-content) {
         $tag: content#{$sep}start;
         @include utils.fabricAttributes('&'+$sep, $fabricRule, 'align-content', $value);
       }

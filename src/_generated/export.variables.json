@@ -75,6 +75,28 @@
             }
 
             ,
+            "base": {
+                "_data": {
+
+                    "cfg-has-dimension-strict": true,
+                    "CFG_HAS_DIMENSION_MIN": true,
+                    "CFG_HAS_DIMENSION_MAX": true,
+                    "size_step": "0.25rem",
+                    "sizes": {
+                        "tiny": 32, "small": 64, "medium": 256, "large": 250, "full": "100%"
+                    }
+                }
+
+                ,
+                "_metadata": {
+                    "title": "base", "tag": "base", "description": "cssfabric base config variables"
+                }
+
+                ,
+                "_docs": []
+            }
+
+            ,
             "box": {
                 "_data": {
 
@@ -206,28 +228,6 @@
             }
 
             ,
-            "base": {
-                "_data": {
-
-                    "cfg-has-dimension-strict": true,
-                    "CFG_HAS_DIMENSION_MIN": true,
-                    "CFG_HAS_DIMENSION_MAX": true,
-                    "size_step": "0.25rem",
-                    "sizes": {
-                        "tiny": 32, "small": 64, "medium": 256, "large": 250, "full": "100%"
-                    }
-                }
-
-                ,
-                "_metadata": {
-                    "title": "base", "tag": "base", "description": "cssfabric base config variables"
-                }
-
-                ,
-                "_docs": []
-            }
-
-            ,
             "color": {
                 "_data": {
                     "gray-config": {
@@ -337,23 +337,24 @@
                     "horCode": "h",
                     "vertCode": "v",
                     "gridFullWidth": "main",
+                    "grow-shrink-steps": 4,
                     "cssProps": {
                         "flexWrap": {
                             "wrap-reverse": "wrap-reverse", "wrap": "wrap", "nowrap": "nowrap"
                         }
 
                         ,
-                        "just": {
+                        "grid-justify": {
                             "start": "flex-start", "end": "flex-end", "between": "space-between", "stretch": "stretch", "center": "flex-center"
                         }
 
                         ,
-                        "items": {
+                        "grid-items": {
                             "baseline": "baseline", "stretch": "stretch", "start": "flex-start", "center": "center", "end": "flex-end"
                         }
 
                         ,
-                        "content": {
+                        "grid-content": {
                             "start": "flex-start", "center": "center", "end": "flex-end", "between": "space-between", "equal": "space-evenly"
                         }
                     }
@@ -375,7 +376,16 @@
                 "_docs": {
                     "attributes": {
                         "grid": {
-                            "tag": "grid", "keys": ["w", "h"], "about": "a so classic grid system, and, hey, it gets height !"
+
+                            "tag": "grid",
+                            "keys": ["w",
+                            "h"],
+                            "classNames": {
+                                "grid": ["wrap-reverse", "wrap", "nowrap"], "grid-align": ["top", "middle", "bottom", "left", "right", "center"], "grid-items": ["baseline", "stretch", "start", "center", "end"], "grid-content": ["start", "center", "end", "between", "equal"], "grid-justify": ["start", "end", "between", "stretch", "center"]
+                            }
+
+                            ,
+                            "about": "a so classic grid system, and, hey, it gets height !"
                         }
 
                         ,
@@ -614,23 +624,6 @@
             }
 
             ,
-            "zindex": {
-                "_data": {
-                    "z_groups": ["a", "b", "c", "d", "e", "f", "g"]
-                }
-
-                ,
-                "_metadata": {
-                    "title": "zindex", "tag": "zI", "description": "cssfabric zindex module to set z-index on all html elements"
-                }
-
-                ,
-                "_docs": {
-                    "z_groups": "_"
-                }
-            }
-
-            ,
             "theme": {
                 "_data": {
 
@@ -677,6 +670,23 @@
                             }
                         }
                     }
+                }
+            }
+
+            ,
+            "zindex": {
+                "_data": {
+                    "z_groups": ["a", "b", "c", "d", "e", "f", "g"]
+                }
+
+                ,
+                "_metadata": {
+                    "title": "zindex", "tag": "zI", "description": "cssfabric zindex module to set z-index on all html elements"
+                }
+
+                ,
+                "_docs": {
+                    "z_groups": "_"
                 }
             }
         }
