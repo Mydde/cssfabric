@@ -1,37 +1,34 @@
-
 @use "sass:map";
-// load scss config file
-@use '../../_utils';
-@use '../../../vendor/normalize/normalize.min.css';   
+@use '../../../vendor/normalize/normalize.min.css';
 
- 
+
 p {
-    margin: auto; 
+  margin: auto;
 }
 
 .hover-parent {
+  .hover-show {
+    display: none;
+  }
+
+  .hover-hide {
+    display: initial;
+  }
+
+  &:hover {
     .hover-show {
-        display: none;
+      display: initial;
     }
 
     .hover-hide {
-        display: initial;
+      display: none;
     }
-
-    &:hover {
-        .hover-show {
-            display: initial;
-        }
-
-        .hover-hide {
-            display: none;
-        }
-    }
+  }
 
 }
 
 .block:not(:last-child) {
-    margin-bottom: 1.5rem;
+  margin-bottom: 1.5rem;
 }
 
 h1,
@@ -40,22 +37,48 @@ h3,
 h4,
 h5,
 h6 {
-    margin-block-start: 0 !important;
-    margin-block-end: 0 !important;
-    margin-inline-start: 0 !important;
-    margin-inline-end: 0 !important;
+  margin-block-start: 0 !important;
+  margin-block-end: 0 !important;
+  margin-inline-start: 0 !important;
+  margin-inline-end: 0 !important;
 }
-
 
 
 .txt-ellipsis {
-    text-overflow: ellipsis;
-    overflow: hidden;
-    white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
 }
 
-label{
-    padding: 0.2rem 0.5rem;
-    border: 1px solid #ccc;
-    display: inline-block;
+label {
+  padding: 0.2rem 0.5rem;
+  border: 1px solid #ccc;
+  display: inline-block;
+  border-radius: 4px;
+  background-color: #ededed;
+  text-shadow: white;
+}
+
+.box-content {
+  padding: 0.25rem;
+  margin: 0.25rem 0;
+}
+
+.cell-padding {
+  & > *  {
+    padding: 0.25em;
+  }
+}
+
+.cell-spacing {
+  & > *  {
+    margin: 0.25em;
+  }
+}
+
+code {
+  padding: 0.25em;
+  border: 1px solid #cccccc;
+  background-color: #ededed;
+  border-radius: 5px;
 }

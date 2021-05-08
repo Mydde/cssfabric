@@ -51,6 +51,15 @@
   --cssfabric-animation-in_out_props-back: is-map;
   /** 
   * cssfabric generated file
+  * css vars for base 
+  */
+  --cssfabric-base-sizes-tiny: 32;
+  --cssfabric-base-sizes-small: 64;
+  --cssfabric-base-sizes-medium: 256;
+  --cssfabric-base-sizes-large: 250;
+  --cssfabric-base-sizes-full: 100%;
+  /** 
+  * cssfabric generated file
   * css vars for box 
   */
   --cssfabric-box-unit-config: rem;
@@ -64,15 +73,6 @@
   --cssfabric-box-cssProps-borderShorthands: is-map;
   --cssfabric-box-cssProps-positionProps: is-map;
   --cssfabric-box-cssProps-displayProps: is-map;
-  /** 
-  * cssfabric generated file
-  * css vars for base 
-  */
-  --cssfabric-base-sizes-tiny: 32;
-  --cssfabric-base-sizes-small: 64;
-  --cssfabric-base-sizes-medium: 256;
-  --cssfabric-base-sizes-large: 250;
-  --cssfabric-base-sizes-full: 100%;
   /** 
   * cssfabric generated file
   * css vars for color 
@@ -202,33 +202,33 @@
   */
   --cssfabric-theme-moduleName: theme;
   --cssfabric-theme-moduleNameShort: theme;
-  --cssfabric-theme-color-default-config-primary: green;
+  --cssfabric-theme-color-default-config-primary: orange;
   --cssfabric-theme-color-default-config-foreground: #333;
   --cssfabric-theme-color-default-config-background: #ededed;
   --cssfabric-theme-declinations-config:  primary, secondary, tertiary;
   --cssfabric-theme-theme-level-config:  light lighter dark darker complement invert;
   --cssfabric-theme-theme-properties-apply-config:  text, bg, border;
-  --cssfabric-theme-color-primary: green;
-  --cssfabric-theme-color-primary-light: #00cd00;
-  --cssfabric-theme-color-primary-lighter: #1aff1a;
-  --cssfabric-theme-color-primary-dark: #003400;
-  --cssfabric-theme-color-primary-darker: black;
-  --cssfabric-theme-color-primary-complement: purple;
-  --cssfabric-theme-color-primary-invert: #ff7fff;
-  --cssfabric-theme-color-secondary: purple;
-  --cssfabric-theme-color-secondary-light: #cd00cd;
-  --cssfabric-theme-color-secondary-lighter: #ff1aff;
-  --cssfabric-theme-color-secondary-dark: #340034;
-  --cssfabric-theme-color-secondary-darker: black;
-  --cssfabric-theme-color-secondary-complement: green;
-  --cssfabric-theme-color-secondary-invert: #7fff7f;
-  --cssfabric-theme-color-tertiary: green;
-  --cssfabric-theme-color-tertiary-light: #00cd00;
-  --cssfabric-theme-color-tertiary-lighter: #1aff1a;
-  --cssfabric-theme-color-tertiary-dark: #003400;
-  --cssfabric-theme-color-tertiary-darker: black;
-  --cssfabric-theme-color-tertiary-complement: purple;
-  --cssfabric-theme-color-tertiary-invert: #ff7fff;
+  --cssfabric-theme-color-primary: orange;
+  --cssfabric-theme-color-primary-light: #ffc04d;
+  --cssfabric-theme-color-primary-lighter: #ffdb99;
+  --cssfabric-theme-color-primary-dark: #b37400;
+  --cssfabric-theme-color-primary-darker: #664200;
+  --cssfabric-theme-color-primary-complement: #005aff;
+  --cssfabric-theme-color-primary-invert: #005aff;
+  --cssfabric-theme-color-secondary: #005aff;
+  --cssfabric-theme-color-secondary-light: #4d8cff;
+  --cssfabric-theme-color-secondary-lighter: #99bdff;
+  --cssfabric-theme-color-secondary-dark: #003fb3;
+  --cssfabric-theme-color-secondary-darker: #002466;
+  --cssfabric-theme-color-secondary-complement: orange;
+  --cssfabric-theme-color-secondary-invert: orange;
+  --cssfabric-theme-color-tertiary: orange;
+  --cssfabric-theme-color-tertiary-light: #ffc04d;
+  --cssfabric-theme-color-tertiary-lighter: #ffdb99;
+  --cssfabric-theme-color-tertiary-dark: #b37400;
+  --cssfabric-theme-color-tertiary-darker: #664200;
+  --cssfabric-theme-color-tertiary-complement: #005aff;
+  --cssfabric-theme-color-tertiary-invert: #005aff;
   /** 
   * cssfabric generated file
   * css vars for zindex 
