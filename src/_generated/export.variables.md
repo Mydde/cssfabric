@@ -19,16 +19,16 @@ This is also a learning point about gulp, webpack, packages and friends.
 | modules |     |
 | ------- | --- |
 | cssfabric | cssfabric global config variables
-base | cssfabric base config variables
 animation | cssfabric simplest animation module
+base | cssfabric base config variables
 box | cssfabric box module to set heights, paddings, margins and shadows on all html elements
 color | cssfabric color system: its about colors
 grid | cssfabric flex grid system module
 menu | cssfabric menu module to set menu style
-scale | cssfabric scale module to set dimensions and ratios on all html elements
 overflow | cssfabric overflow module to set overflow styles on all html elements
-text | cssfabric text module to set text style on all html elements
+scale | cssfabric scale module to set dimensions and ratios on all html elements
 table | cssfabric table module to set different table styles
+text | cssfabric text module to set text style on all html elements
 theme | 
 zindex | cssfabric zindex module to set z-index on all html elements |
 
@@ -153,21 +153,6 @@ zindex | cssfabric zindex module to set z-index on all html elements |
 
 ---
 
-#### <strong>module scale</strong>
-
-#### [width]
-
-
- - <span style='width:80px;display:inline-block;overflow:visible'><b>shorthand</b></span>:  w
-
-#### [height]
-
-
- - <span style='width:80px;display:inline-block;overflow:visible'><b>shorthand</b></span>:  h
- - <span style='width:80px;display:inline-block;overflow:visible'><b>levels</b></span>:<br>&nbsp;&nbsp;-&nbsp;&nbsp;145 exist&nbsp;&nbsp;and 151<br>&nbsp;&nbsp;-&nbsp;&nbsp;999 exist&nbsp;&nbsp;and 666
-
----
-
 #### <strong>module overflow</strong>
 
 #### [overflow]
@@ -187,6 +172,21 @@ zindex | cssfabric zindex module to set z-index on all html elements |
 
  - <span style='width:80px;display:inline-block;overflow:visible'><b>shorthand</b></span>:  flowY
  - <span style='width:80px;display:inline-block;overflow:visible'><b>keys</b></span>: visible&nbsp;&nbsp;hidden&nbsp;&nbsp;clip&nbsp;&nbsp;scroll&nbsp;&nbsp;auto
+
+---
+
+#### <strong>module scale</strong>
+
+#### [width]
+
+
+ - <span style='width:80px;display:inline-block;overflow:visible'><b>shorthand</b></span>:  w
+
+#### [height]
+
+
+ - <span style='width:80px;display:inline-block;overflow:visible'><b>shorthand</b></span>:  h
+ - <span style='width:80px;display:inline-block;overflow:visible'><b>levels</b></span>:<br>&nbsp;&nbsp;-&nbsp;&nbsp;145 exist&nbsp;&nbsp;and 151<br>&nbsp;&nbsp;-&nbsp;&nbsp;999 exist&nbsp;&nbsp;and 666
 
 ---
 

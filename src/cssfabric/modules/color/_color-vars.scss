@@ -2,6 +2,8 @@
 @use '../../utils';
 
 $_color-types-config: (color bg bg-themed);
+$_color-tint: ( _ light lighter dark darker complement invert);
+
 
 $color-metadata: (
         title: color,
@@ -21,34 +23,46 @@ $color-docs: (
         attributes:(
                 color:(
                         tag: color,
-                        keys: (theme scheme palette gray),
+                        keys: (scheme palette gray),
                         levels: (
-                                theme: utils.getObjectKeys(loader.getFabricSharedParams(theme)),
+                                //theme: utils.getObjectKeys(loader.getFabricSharedParams(theme)),
                                 scheme: utils.getObjectKeys(loader.getFabricSharedParams(scheme)),
                                 palette: utils.getObjectKeys(loader.getFabricSharedParams(palette)),
                                 gray: utils.getObjectKeys(loader.getFabricSharedParams(gray))
+                        ),
+                        levelsDeclin:(
+                                //theme : $_color-tint,
+                                palette : $_color-tint
                         ),
                         about: "color for text level html elements"
                 ),
                 background-color:(
                         tag: bg,
-                        keys: (theme scheme palette gray),
+                        keys: (scheme palette gray),
                         levels: (
-                                theme: utils.getObjectKeys(loader.getFabricSharedParams(theme)),
+                                //theme: utils.getObjectKeys(loader.getFabricSharedParams(theme)),
                                 scheme: utils.getObjectKeys(loader.getFabricSharedParams(scheme)),
                                 palette: utils.getObjectKeys(loader.getFabricSharedParams(palette)),
                                 gray: utils.getObjectKeys(loader.getFabricSharedParams(gray))
+                        ),
+                        levelsDeclin:(
+                               // theme : $_color-tint,
+                                palette : $_color-tint
                         ),
                         about: "background colors"
                 ),
                 background-themed:(
                         tag: "bg-themed",
-                        keys: (theme scheme palette gray),
+                        keys: (scheme palette gray),
                         levels: (
-                                theme: utils.getObjectKeys(loader.getFabricSharedParams(theme)),
+                                //theme: utils.getObjectKeys(loader.getFabricSharedParams(theme)),
                                 scheme: utils.getObjectKeys(loader.getFabricSharedParams(scheme)),
                                 palette: utils.getObjectKeys(loader.getFabricSharedParams(palette)),
                                 gray: utils.getObjectKeys(loader.getFabricSharedParams(gray))
+                        ),
+                        levelsDeclin:(
+                                //theme : $_color-tint,
+                                palette : $_color-tint
                         ),
                         about: "same as background-color, but with added contrasted color to text"
                 )

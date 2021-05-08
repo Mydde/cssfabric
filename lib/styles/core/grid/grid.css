@@ -7,6 +7,9 @@
   width: 100%;
   max-width: 100%;
 }
+.grid-h .align-middle {
+  align-items: center;
+}
 
 .grid-v {
   display: flex;
@@ -15,6 +18,9 @@
 .grid-v > .grid-main {
   flex: 1 1 0;
   max-height: 100%;
+}
+.grid-v .align-middle {
+  justify-content: center;
 }
 
 .grid-h,
@@ -32,11 +38,6 @@
 .grid-h.grid-inline,
 .grid-v.grid-inline {
   display: inline-flex;
-}
-.grid-h.align-middle,
-.grid-v.align-middle {
-  justify-content: center;
-  align-items: center;
 }
 .grid-h.grid-grow-1,
 .grid-v.grid-grow-1 {

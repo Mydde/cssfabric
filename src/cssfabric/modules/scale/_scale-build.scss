@@ -8,8 +8,8 @@ $cssProps: map-get($scale-config, cssProps);
 
 // read variables
 $_has_dimensions_strict: map-get($_cfg, has_dimensions_strict);
-$_has_dimensions_min: map-get($_cfg, has_dimensions_min);
-$_has_dimensions_max: map-get($_cfg, has_dimensions_max);
+$_has_dimensions_min: true; // map-get($_cfg, has_dimensions_min);
+$_has_dimensions_max: true; // map-get($_cfg, has_dimensions_max);
 
 $scale-defined-steps: map-get($scale-config, defined-steps);
 $scale-defined-step-unit: map-get($scale-config, defined-step-unit);

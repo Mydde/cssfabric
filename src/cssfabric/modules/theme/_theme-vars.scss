@@ -1,7 +1,7 @@
 @use '../../utils' as utils;
 
+$_color-primary: orange;
 $_declinations-config: (primary, secondary, tertiary);
-$_color-primary: green;
 $_theme-levels: (light lighter dark darker complement invert);
 $_theme-properties-apply: (text, bg, border);
 
@@ -13,7 +13,7 @@ $theme-metadata: (
         "description": ""
 );
 
-$_theme-levels-obj: ('*' light lighter dark darker complement invert);
+$_theme-levels-obj: (_ light lighter dark darker complement invert);
 $_declinations-config-object: (primary:$_theme-levels-obj, secondary:$_theme-levels-obj, tertiary:$_theme-levels-obj);
 
 

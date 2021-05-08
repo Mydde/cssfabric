@@ -37,6 +37,10 @@ $grid-code-sep: #{$grid-code}#{$sep};
       width: 100%;
       max-width: 100%;
     }
+
+    .align-middle{
+      align-items: center;
+    }
   }
 
   .#{$v_prop} {
@@ -46,6 +50,10 @@ $grid-code-sep: #{$grid-code}#{$sep};
     & > .#{$grid-code}#{$sep}#{$gridFullWidth} {
       flex: 1 1 0;
       max-height: 100%;
+    }
+
+    .align-middle{
+      justify-content: center;
     }
   }
 
@@ -65,9 +73,9 @@ $grid-code-sep: #{$grid-code}#{$sep};
       display: inline-flex;
     }
 
-    &.align-middle {
-      justify-content: center;
-      align-items: center;
+    & .align-middle {
+      // justify-content: center;
+     //  align-items: center;
     }
 
     @for $i from 1 through 4 {
@@ -120,4 +128,6 @@ $grid-code-sep: #{$grid-code}#{$sep};
       }
     }
   }
+
+
 }
