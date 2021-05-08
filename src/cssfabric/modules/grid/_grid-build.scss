@@ -17,6 +17,8 @@ $cssItemsProps: map-get($grid-config, cssItemsProps);
 
 $gridFullWidth: map-get($grid-config, gridFullWidth);
 
+$grow-shrink-steps: map-get($grid-config, grow-shrink-steps);
+
 $grid-code-sep: #{$grid-code}#{$sep};
 
 @mixin makeGrid($mqKey) {
@@ -78,7 +80,7 @@ $grid-code-sep: #{$grid-code}#{$sep};
      //  align-items: center;
     }
 
-    @for $i from 1 through 4 {
+    @for $i from 1 through $grow-shrink-steps {
       &.#{$grid-code-sep}grow#{$sep}#{$i} {
         flex-grow: $i;
       }

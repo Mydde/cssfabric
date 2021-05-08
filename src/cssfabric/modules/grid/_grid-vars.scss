@@ -1,5 +1,8 @@
 @use '../../utils';
 
+
+$_grow-shrink-steps: 4;
+
 $_classNames: (
         wrap-reverse: wrap-reverse,
         wrap: wrap,
@@ -58,15 +61,23 @@ $grid-config: (
         horCode: h,
         vertCode: v,
         gridFullWidth: main,
+        grow-shrink-steps:$_grow-shrink-steps,
         cssProps: $_cssProps,
         cssItemsProps: $_cssItemsProps
 );
 
-$grid-docs: (// add align-middle non generated className
+$grid-docs: (// add align-middle non generated className // grow + shrink
         attributes:(
                 grid:(
                         tag: grid,
                         keys: (w, h),
+                        classNames: (
+                                items: utils.getObjectKeys(map-get($_cssProps, align-items)),
+                                content:utils.getObjectKeys(map-get($_cssProps, align-content)),
+                                just:utils.getObjectKeys(map-get($_cssProps, justify-content)),
+                                grid:utils.getObjectKeys(map-get($_cssProps, flexWrap)),
+                                align: (middle)
+                        ),
                         about: "a so classic grid system, and, hey, it gets height !"
                 ),
                 self:(
