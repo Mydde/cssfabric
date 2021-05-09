@@ -36,8 +36,8 @@ $grid-code-sep: #{$grid-code}#{$sep};
 
     & > .#{$grid-code-sep}#{$gridFullWidth} {
       flex: 1 1 0;
-      width: 100%;
-      max-width: 100%;
+      // width: 100%;
+      // max-width: 100%;
     }
 
     .align-middle, .#{$grid-code-sep}align-middle {

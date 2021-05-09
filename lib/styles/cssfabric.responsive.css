@@ -7590,8 +7590,6 @@
   }
   .grid-xxl-h > .grid-main {
     flex: 1 1 0;
-    width: 100%;
-    max-width: 100%;
   }
   .grid-xxl-h .align-middle, .grid-xxl-h .grid-align-middle {
     align-items: center;
@@ -7778,8 +7776,6 @@
   }
   .grid-xl-h > .grid-main {
     flex: 1 1 0;
-    width: 100%;
-    max-width: 100%;
   }
   .grid-xl-h .align-middle, .grid-xl-h .grid-align-middle {
     align-items: center;
@@ -7966,8 +7962,6 @@
   }
   .grid-lg-h > .grid-main {
     flex: 1 1 0;
-    width: 100%;
-    max-width: 100%;
   }
   .grid-lg-h .align-middle, .grid-lg-h .grid-align-middle {
     align-items: center;
@@ -8154,8 +8148,6 @@
   }
   .grid-md-h > .grid-main {
     flex: 1 1 0;
-    width: 100%;
-    max-width: 100%;
   }
   .grid-md-h .align-middle, .grid-md-h .grid-align-middle {
     align-items: center;
@@ -8342,8 +8334,6 @@
   }
   .grid-sm-h > .grid-main {
     flex: 1 1 0;
-    width: 100%;
-    max-width: 100%;
   }
   .grid-sm-h .align-middle, .grid-sm-h .grid-align-middle {
     align-items: center;

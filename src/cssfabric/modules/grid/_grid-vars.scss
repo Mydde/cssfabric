@@ -81,7 +81,7 @@ $grid-docs: (// add align-middle non generated className // grow + shrink
                                 grid-content:utils.getObjectKeys(map-get($_cssProps, grid-content)),
                                 grid-justify:utils.getObjectKeys(map-get($_cssProps, grid-justify))
                         ),
-                        about: "a so classic grid system, and, hey, it gets height !"
+                        about: "a so classic grid system, and hey, it gets height !"
                 ),
                 self:(
                         tag: self,

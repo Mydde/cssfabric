@@ -144,10 +144,23 @@
     $v_val_2: $acc / $v_fact_2;
     $h_val_2: $acc / $h_fact_2;
 
-    $out: map.set($out, $acc, #{$v_val} + #{$h_val} );
+    $out: map.set($out, $acc, #{$v_val} + #{$h_val});
   }
 
   @return $out;
+}
+
+@function cssDimensionPropertyBuilder($scale_prop,$dimensions_grid_ratio) {
+  $out: ();
+
+  @for $z_value from 1 through $dimensions_grid_ratio {
+    $key: $z_value + "-" + $dimensions_grid_ratio;
+    $val: (($z_value / $dimensions_grid_ratio) * 100) +#{"%"};
+
+    $out: map.set($out, $key, $val);
+  }
+
+  @return $out
 }
 
 @function getObjectKeys($object) {

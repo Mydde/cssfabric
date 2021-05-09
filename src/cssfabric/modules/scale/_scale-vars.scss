@@ -1,3 +1,30 @@
+@use '../../utils';
+
+
+$_cssProps: (
+        size: (
+                full: 100%,
+                mid: 50%,
+                quarter: 25%,
+                tiers: 33%
+        ),
+        content:(
+                content-max: max-content,
+                content-min: min-content
+        ),
+        defined-steps: (
+                1,
+                2,
+                4,
+                8,
+                16,
+                24,
+                32,
+                48,
+                64
+        )
+);
+
 $scale-metadata: (
         title: scale,
         tag: scale,
@@ -27,32 +54,37 @@ $scale-config: (
                 48,
                 64
         ),
-        cssProps:(
-                size: (
-                        full: 100%,
-                        mid: 50%,
-                        quarter: 25%,
-                        tiers: 33%
-                ),
-                content:(
-                        content-max: max-content,
-                        content-min: min-content
-                )
-        )
+        cssProps:$_cssProps
 );
-$oi: ("145 exist", "and 151");
-$oi3: ("999 exist", "and 666");
+
+
 $scale-docs: (
         attributes:(
+                scale: (
+                        tag: scale,
+                        keys: (w , h),
+                        levels: 134
+                ),
                 width:(
                         tag: w,
-                  // keys: (8 24), // flatten css props
-                        levels:(1, 2, 4, 8, 16, 24, 32, 48, 64, content-max, content-min),
+                        keys: (vild fro),
+                        levels:(
+                                _size : utils.getObjectKeys(map-get($_cssProps, size)),
+                                _content: utils.getObjectKeys(map-get($_cssProps, content)),
+                                _defined-steps: utils.getObjectKeys(map-get($_cssProps, defined-steps)),
+                                _grid-5: utils.getObjectKeys(utils.cssDimensionPropertyBuilder(h, 5)),
+                                _grid-12: utils.getObjectKeys(utils.cssDimensionPropertyBuilder(h, 12))
+                        )
                 ),
                 height:(
                         tag: h,
-                  // keys:((5, 6), (7, 8)),
-                        levels:($oi, $oi3)
+                        levels:(
+                                _size : utils.getObjectKeys(map-get($_cssProps, size)),
+                                _content: utils.getObjectKeys(map-get($_cssProps, content)),
+                                _defined-steps: utils.getObjectKeys(map-get($_cssProps, defined-steps)),
+                                _dubide: utils.getObjectKeys(utils.cssDimensionPropertyBuilder(h, 5)),
+                                _dubidou: utils.getObjectKeys(utils.cssDimensionPropertyBuilder(h, 12))
+                        )
                 )
         )
 );

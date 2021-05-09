@@ -4,8 +4,6 @@
 }
 .grid-h > .grid-main {
   flex: 1 1 0;
-  width: 100%;
-  max-width: 100%;
 }
 .grid-h .align-middle, .grid-h .grid-align-middle {
   align-items: center;

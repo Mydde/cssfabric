@@ -112,7 +112,7 @@ $unit-tag-config: map-get($scale-config, unit-tag-config)!default;
   }
 }
 
-@mixin buildScale($mq_size_key) {
+@mixin buildScale($mq_size_key:null) {
   @each $scale_prop, $scale_prop_short in $unit-tag-config {
     // loop on shorthands
     @include play_shorthand_loop($scale_prop, $mq_size_key);

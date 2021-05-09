@@ -49,21 +49,6 @@
                     "attention_props": "", "in_out_props": ""
                 }
             },
-            "base": {
-                "_data": {
-                    "cfg-has-dimension-strict": true,
-                    "CFG_HAS_DIMENSION_MIN": true,
-                    "CFG_HAS_DIMENSION_MAX": true,
-                    "size_step": "0.25rem",
-                    "sizes": {
-                        "tiny": 32, "small": 64, "medium": 256, "large": 250, "full": "100%"
-                    }
-                },
-                "_metadata": {
-                    "title": "base", "tag": "base", "description": "cssfabric base config variables"
-                },
-                "_docs": []
-            },
             "box": {
                 "_data": {
                     "unit-config": "rem",
@@ -98,27 +83,7 @@
                 "_docs": {
                     "attributes": {
                         "padding": {
-                            "tag": "pad",
-                            "keys": ["t",
-                                "b",
-                                "l",
-                                "r",
-                                "all",
-                                "u",
-                                "ii",
-                                "tb"],
-                            "values": {
-                                "1": "0.25rem", "2": "0.5rem", "3": "0.75rem", "4": "1rem", "5": "1.25rem", "6": "1.5rem", "7": "1.75rem", "8": "2rem"
-                            },
-                            "levels": [1,
-                                2,
-                                3,
-                                4,
-                                5,
-                                6,
-                                7,
-                                8],
-                            "about": "padding properties for html elements"
+                            "tag": "pad", "keys": ["t", "b", "l", "r", "all", "u", "ii", "tb"], "levels": [1, 2, 3, 4, 5, 6, 7, 8], "about": "padding properties for html elements"
                         },
                         "margin": {
                             "tag": "marg",
@@ -168,6 +133,21 @@
                         }
                     }
                 }
+            },
+            "base": {
+                "_data": {
+                    "cfg-has-dimension-strict": true,
+                    "CFG_HAS_DIMENSION_MIN": true,
+                    "CFG_HAS_DIMENSION_MAX": true,
+                    "size_step": "0.25rem",
+                    "sizes": {
+                        "tiny": 32, "small": 64, "medium": 256, "large": 250, "full": "100%"
+                    }
+                },
+                "_metadata": {
+                    "title": "base", "tag": "base", "description": "cssfabric base config variables"
+                },
+                "_docs": []
             },
             "color": {
                 "_data": {
@@ -277,7 +257,7 @@
                             "classNames": {
                                 "grid": ["wrap-reverse", "wrap", "nowrap"], "grid-align": ["top", "middle", "bottom", "left", "right", "center"], "grid-items": ["baseline", "stretch", "start", "center", "end"], "grid-content": ["start", "center", "end", "between", "equal"], "grid-justify": ["start", "end", "between", "stretch", "center"]
                             },
-                            "about": "a so classic grid system, and, hey, it gets height !"
+                            "about": "a so classic grid system, and hey, it gets height !"
                         },
                         "self": {
                             "tag": "self", "keys": ["auto", "start", "end", "center", "baseline", "stretch"], "about": "grid children specific classnames"
@@ -369,7 +349,16 @@
                         },
                         "content": {
                             "content-max": "max-content", "content-min": "min-content"
-                        }
+                        },
+                        "defined-steps": [1,
+                            2,
+                            4,
+                            8,
+                            16,
+                            24,
+                            32,
+                            48,
+                            64]
                     }
                 },
                 "_metadata": {
@@ -377,23 +366,25 @@
                 },
                 "_docs": {
                     "attributes": {
+                        "scale": {
+                            "tag": "scale", "keys": ["w", "h"], "levels": 134
+                        },
                         "width": {
-                            "tag": "w", "levels": [1, 2, 4, 8, 16, 24, 32, 48, 64, "content-max", "content-min"]
+                            "tag": "w",
+                            "keys": ["vild",
+                                "fro"],
+                            "levels": {
+                                "_size": ["full", "mid", "quarter", "tiers"], "_content": ["content-max", "content-min"], "_defined-steps": [1, 2, 4, 8, 16, 24, 32, 48, 64], "_grid-5": ["1-5", "2-5", "3-5", "4-5", "5-5"], "_grid-12": ["1-12", "2-12", "3-12", "4-12", "5-12", "6-12", "7-12", "8-12", "9-12", "10-12", "11-12", "12-12"]
+                            }
                         },
                         "height": {
-                            "tag": "h", "levels": [["145 exist", "and 151"], ["999 exist", "and 666"]]
+                            "tag": "h",
+                            "levels": {
+                                "_size": ["full", "mid", "quarter", "tiers"], "_content": ["content-max", "content-min"], "_defined-steps": [1, 2, 4, 8, 16, 24, 32, 48, 64], "_dubide": ["1-5", "2-5", "3-5", "4-5", "5-5"], "_dubidou": ["1-12", "2-12", "3-12", "4-12", "5-12", "6-12", "7-12", "8-12", "9-12", "10-12", "11-12", "12-12"]
+                            }
                         }
                     }
                 }
-            },
-            "table": {
-                "_data": {
-                    "className": "table", "classNameShort": "tbl", "table_class_name": "table", "table_class_name_short": "tbl", "table-bg-color-head": "#f4f4f4", "table-bg-color-strip-main": "#ededed", "table-bg-color-strip-second": "#f5f5f5", "table-border-color-header": "#ccc", "table-border-color-main": "#ededed", "table-border-color-second": "#f5f5f5"
-                },
-                "_metadata": {
-                    "title": "table", "tag": "table", "description": "cssfabric table module to set different table styles"
-                },
-                "_docs": []
             },
             "text": {
                 "_data": {
@@ -487,6 +478,15 @@
                         }
                     }
                 }
+            },
+            "table": {
+                "_data": {
+                    "className": "table", "classNameShort": "tbl", "table_class_name": "table", "table_class_name_short": "tbl", "table-bg-color-head": "#f4f4f4", "table-bg-color-strip-main": "#ededed", "table-bg-color-strip-second": "#f5f5f5", "table-border-color-header": "#ccc", "table-border-color-main": "#ededed", "table-border-color-second": "#f5f5f5"
+                },
+                "_metadata": {
+                    "title": "table", "tag": "table", "description": "cssfabric table module to set different table styles"
+                },
+                "_docs": []
             },
             "zindex": {
                 "_data": {

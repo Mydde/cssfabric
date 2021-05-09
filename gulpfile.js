@@ -561,7 +561,7 @@ function watchSassTask(cb) {
     // scss , css , scss
     gulp.watch(
         fabricModuleDir + "/**/*.scss",
-        gulp.series(task_sass2css, task_mergeInclude, watchCssExportVars, task_varsExport)
+        gulp.series(task_sass2css, task_mergeInclude, task_varsExport)  // watchCssExportVars
     ); // task_varsExport
 
     cb();
@@ -586,13 +586,13 @@ function watchReadme(cb) {
 }
 
 function watchExportVars(cb) {
-    gulp.watch(fabricRootDir, gulp.series(task_varsExport)); // task_varsExport
+    gulp.watch(fabricRootDir, gulp.series(task_varsExport));
 
     cb();
 }
 
 function watchCssExportVars(cb) {
-    gulp.watch(fabricModuleDir, gulp.series(task_cssVarsExport)); // task_varsExport
+    gulp.watch(fabricModuleDir, gulp.series(task_cssVarsExport));
 
     cb();
 }

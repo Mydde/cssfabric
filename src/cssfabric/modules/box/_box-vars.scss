@@ -84,7 +84,7 @@ $box-config: (
 );
 
 
-@debug utils.getObjectKeys(utils.getShadowIterator($shadow-factors, 8));
+// @debug utils.getObjectKeys(utils.getShadowIterator($shadow-factors, 8));
 
 
 $box-docs: (
@@ -92,7 +92,7 @@ $box-docs: (
                 padding: (
                         tag: map-get($box-config, padding-shorthand-config),
                         keys: utils.getObjectKeys($_border-shorthands),
-                        values: utils.getBoxIterator($_sizes-config, $_unit-config, $_unit-size-config),
+                        // values: utils.getBoxIterator($_sizes-config, $_unit-config, $_unit-size-config),
                         levels: utils.getObjectKeys(utils.getBoxIterator($_sizes-config, $_unit-config, $_unit-size-config)),
                         about: "padding properties for html elements"
                 ),

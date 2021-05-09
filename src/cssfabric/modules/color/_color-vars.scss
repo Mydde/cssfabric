@@ -25,13 +25,11 @@ $color-docs: (
                         tag: color,
                         keys: (scheme palette gray),
                         levels: (
-                                //theme: utils.getObjectKeys(loader.getFabricSharedParams(theme)),
                                 scheme: utils.getObjectKeys(loader.getFabricSharedParams(scheme)),
                                 palette: utils.getObjectKeys(loader.getFabricSharedParams(palette)),
                                 gray: utils.getObjectKeys(loader.getFabricSharedParams(gray))
                         ),
                         levelsDeclin:(
-                                //theme : $_color-tint,
                                 palette : $_color-tint
                         ),
                         about: "color for text level html elements"
@@ -40,13 +38,11 @@ $color-docs: (
                         tag: bg,
                         keys: (scheme palette gray),
                         levels: (
-                                //theme: utils.getObjectKeys(loader.getFabricSharedParams(theme)),
                                 scheme: utils.getObjectKeys(loader.getFabricSharedParams(scheme)),
                                 palette: utils.getObjectKeys(loader.getFabricSharedParams(palette)),
                                 gray: utils.getObjectKeys(loader.getFabricSharedParams(gray))
                         ),
                         levelsDeclin:(
-                               // theme : $_color-tint,
                                 palette : $_color-tint
                         ),
                         about: "background colors"
@@ -55,13 +51,11 @@ $color-docs: (
                         tag: "bg-themed",
                         keys: (scheme palette gray),
                         levels: (
-                                //theme: utils.getObjectKeys(loader.getFabricSharedParams(theme)),
                                 scheme: utils.getObjectKeys(loader.getFabricSharedParams(scheme)),
                                 palette: utils.getObjectKeys(loader.getFabricSharedParams(palette)),
                                 gray: utils.getObjectKeys(loader.getFabricSharedParams(gray))
                         ),
                         levelsDeclin:(
-                                //theme : $_color-tint,
                                 palette : $_color-tint
                         ),
                         about: "same as background-color, but with added contrasted color to text"
