@@ -1,3 +1,3 @@
-declare const module;
+declare const cssfabric;
 
-export default module;
+export default cssfabric;

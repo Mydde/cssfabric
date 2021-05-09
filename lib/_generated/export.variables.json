@@ -49,6 +49,21 @@
                     "attention_props": "", "in_out_props": ""
                 }
             },
+            "base": {
+                "_data": {
+                    "cfg-has-dimension-strict": true,
+                    "CFG_HAS_DIMENSION_MIN": true,
+                    "CFG_HAS_DIMENSION_MAX": true,
+                    "size_step": "0.25rem",
+                    "sizes": {
+                        "tiny": 32, "small": 64, "medium": 256, "large": 250, "full": "100%"
+                    }
+                },
+                "_metadata": {
+                    "title": "base", "tag": "base", "description": "cssfabric base config variables"
+                },
+                "_docs": []
+            },
             "box": {
                 "_data": {
                     "unit-config": "rem",
@@ -133,21 +148,6 @@
                         }
                     }
                 }
-            },
-            "base": {
-                "_data": {
-                    "cfg-has-dimension-strict": true,
-                    "CFG_HAS_DIMENSION_MIN": true,
-                    "CFG_HAS_DIMENSION_MAX": true,
-                    "size_step": "0.25rem",
-                    "sizes": {
-                        "tiny": 32, "small": 64, "medium": 256, "large": 250, "full": "100%"
-                    }
-                },
-                "_metadata": {
-                    "title": "base", "tag": "base", "description": "cssfabric base config variables"
-                },
-                "_docs": []
             },
             "color": {
                 "_data": {
@@ -386,6 +386,15 @@
                     }
                 }
             },
+            "table": {
+                "_data": {
+                    "className": "table", "classNameShort": "tbl", "table_class_name": "table", "table_class_name_short": "tbl", "table-bg-color-head": "#f4f4f4", "table-bg-color-strip-main": "#ededed", "table-bg-color-strip-second": "#f5f5f5", "table-border-color-header": "#ccc", "table-border-color-main": "#ededed", "table-border-color-second": "#f5f5f5"
+                },
+                "_metadata": {
+                    "title": "table", "tag": "table", "description": "cssfabric table module to set different table styles"
+                },
+                "_docs": []
+            },
             "text": {
                 "_data": {
                     "moduleName": "text",
@@ -478,15 +487,6 @@
                         }
                     }
                 }
-            },
-            "table": {
-                "_data": {
-                    "className": "table", "classNameShort": "tbl", "table_class_name": "table", "table_class_name_short": "tbl", "table-bg-color-head": "#f4f4f4", "table-bg-color-strip-main": "#ededed", "table-bg-color-strip-second": "#f5f5f5", "table-border-color-header": "#ccc", "table-border-color-main": "#ededed", "table-border-color-second": "#f5f5f5"
-                },
-                "_metadata": {
-                    "title": "table", "tag": "table", "description": "cssfabric table module to set different table styles"
-                },
-                "_docs": []
             },
             "zindex": {
                 "_data": {
