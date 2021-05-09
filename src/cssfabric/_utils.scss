@@ -114,7 +114,7 @@
 }
 
 @function getBoxIterator($iterator, $unit-config,$_unit-size-config) {
-  $out: ();
+  $out: ("_": "_"  );
 
   @for $grid_size_value from 1 through $iterator {
     $css_size_value: ($grid_size_value * $_unit-size-config) + $unit-config;

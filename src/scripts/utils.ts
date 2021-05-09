@@ -15,7 +15,7 @@ const utils = {
         return ret;
     },
 
-    isObjectOfTypes: (arr: any): string | boolean => {
+    isObjectOfTypes: (arr: any): any => {
 
         if (Array.isArray(arr)) {
             return false;

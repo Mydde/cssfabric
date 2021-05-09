@@ -30,8 +30,7 @@
     "outDir": "./lib"
     /* Redirect output structure to the directory. */,
     "rootDirs": [
-      "src/scripts",
-      "generated/templates/views"
+      "lib/scripts"
     ],
     /* Strict Type-Checking Options */
 

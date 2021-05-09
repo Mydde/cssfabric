@@ -25,6 +25,7 @@ $shadow-factors: (
 );
 
 $_border-shorthands: (
+        _: top bottom left right,
         t: top,
         b: bottom,
         l: left,
@@ -70,6 +71,7 @@ $box-config: (
         border-sizes-px-config: 5,
         shadows-steps: $_shadows-steps,
         shadows_step_multiplier: $_shadows-step-multiplier,
+        //
         position-shorthand-config: pos,
         display-shorthand-config: dsp,
         shadow-shorthand-config: shad,
@@ -92,26 +94,27 @@ $box-docs: (
                 padding: (
                         tag: map-get($box-config, padding-shorthand-config),
                         keys: utils.getObjectKeys($_border-shorthands),
-                        // values: utils.getBoxIterator($_sizes-config, $_unit-config, $_unit-size-config),
+                        values: utils.getBoxIterator($_sizes-config, $_unit-config, $_unit-size-config),
                         levels: utils.getObjectKeys(utils.getBoxIterator($_sizes-config, $_unit-config, $_unit-size-config)),
                         about: "padding properties for html elements"
                 ),
                 margin: (
                         tag: map-get($box-config, margin-shorthand-config),
                         keys: utils.getObjectKeys($_border-shorthands),
-                        values:  utils.getBoxIterator($_sizes-config, $_unit-config, $_unit-size-config) ,
+                        values: utils.getBoxIterator($_sizes-config, $_unit-config, $_unit-size-config),
                         levels: utils.getObjectKeys(utils.getBoxIterator($_sizes-config, $_unit-config, $_unit-size-config)),
                         about: "margin properties for html elements"
                 ),
                 border: (
                         tag: map-get($box-config, border-shorthand-config),
                         keys: utils.getObjectKeys($_border-shorthands),
-                        values: utils.getBoxIterator($_sizes-border-config, $_border-unit-config, $_unit-border-size-config) ,
+                        values: utils.getBoxIterator($_sizes-border-config, $_border-unit-config, $_unit-border-size-config),
                         levels: utils.getObjectKeys(utils.getBoxIterator($_sizes-border-config, $_border-unit-config, $_unit-border-size-config)),
                         about: "border properties for html elements"
                 ),
                 shadow: (
-                        tag:   map-get($box-config, shadow-shorthand-config),
+                        tag: map-get($box-config, shadow-shorthand-config),
+                        values: utils.getShadowIterator($shadow-factors, 8),
                         levels:utils.getObjectKeys(utils.getShadowIterator($shadow-factors, 8)),
                         about: "applying shadows give depth and levels to your design"
                 )

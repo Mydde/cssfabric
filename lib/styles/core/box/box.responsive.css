@@ -1,7 +1,20 @@
 @media only screen and (max-width: 140rem) {
-  /**
-  *   border-xxl  t ---------------------
-  */
+  .border-xxl, .border-xxl-1 {
+    border: 1px solid #ccc;
+  }
+  .border-xxl-2 {
+    border: 2px solid #ccc;
+  }
+  .border-xxl-3 {
+    border: 3px solid #ccc;
+  }
+  .border-xxl-4 {
+    border: 4px solid #ccc;
+  }
+  .border-xxl-5 {
+    border: 5px solid #ccc;
+  }
+
   .border-xxl-t, .border-xxl-t-1 {
     border-top: 1px solid #ccc;
   }
@@ -18,9 +31,6 @@
     border-top: 5px solid #ccc;
   }
 
-  /**
-  *   border-xxl  b ---------------------
-  */
   .border-xxl-b, .border-xxl-b-1 {
     border-bottom: 1px solid #ccc;
   }
@@ -37,9 +47,6 @@
     border-bottom: 5px solid #ccc;
   }
 
-  /**
-  *   border-xxl  l ---------------------
-  */
   .border-xxl-l, .border-xxl-l-1 {
     border-left: 1px solid #ccc;
   }
@@ -56,9 +63,6 @@
     border-left: 5px solid #ccc;
   }
 
-  /**
-  *   border-xxl  r ---------------------
-  */
   .border-xxl-r, .border-xxl-r-1 {
     border-right: 1px solid #ccc;
   }
@@ -75,9 +79,6 @@
     border-right: 5px solid #ccc;
   }
 
-  /**
-  *   border-xxl  all ---------------------
-  */
   .border-xxl-all, .border-xxl-all-1 {
     border: 1px solid #ccc;
   }
@@ -94,9 +95,6 @@
     border: 5px solid #ccc;
   }
 
-  /**
-  *   border-xxl  u ---------------------
-  */
   .border-xxl-u, .border-xxl-u-1 {
     border-bottom: 1px solid #ccc;
     border-left: 1px solid #ccc;
@@ -123,9 +121,6 @@
     border-right: 5px solid #ccc;
   }
 
-  /**
-  *   border-xxl  ii ---------------------
-  */
   .border-xxl-ii, .border-xxl-ii-1 {
     border-left: 1px solid #ccc;
     border-right: 1px solid #ccc;
@@ -147,9 +142,6 @@
     border-right: 5px solid #ccc;
   }
 
-  /**
-  *   border-xxl  tb ---------------------
-  */
   .border-xxl-tb, .border-xxl-tb-1 {
     border-top: 1px solid #ccc;
     border-bottom: 1px solid #ccc;
@@ -171,9 +163,31 @@
     border-bottom: 5px solid #ccc;
   }
 
-  /**
-  *   pad-xxl  t ---------------------
-  */
+  .pad-xxl, .pad-xxl-1 {
+    padding: 0.25rem;
+  }
+  .pad-xxl-2 {
+    padding: 0.5rem;
+  }
+  .pad-xxl-3 {
+    padding: 0.75rem;
+  }
+  .pad-xxl-4 {
+    padding: 1rem;
+  }
+  .pad-xxl-5 {
+    padding: 1.25rem;
+  }
+  .pad-xxl-6 {
+    padding: 1.5rem;
+  }
+  .pad-xxl-7 {
+    padding: 1.75rem;
+  }
+  .pad-xxl-8 {
+    padding: 2rem;
+  }
+
   .pad-xxl-t, .pad-xxl-t-1 {
     padding-top: 0.25rem;
   }
@@ -199,9 +213,6 @@
     padding-top: 2rem;
   }
 
-  /**
-  *   pad-xxl  b ---------------------
-  */
   .pad-xxl-b, .pad-xxl-b-1 {
     padding-bottom: 0.25rem;
   }
@@ -227,9 +238,6 @@
     padding-bottom: 2rem;
   }
 
-  /**
-  *   pad-xxl  l ---------------------
-  */
   .pad-xxl-l, .pad-xxl-l-1 {
     padding-left: 0.25rem;
   }
@@ -255,9 +263,6 @@
     padding-left: 2rem;
   }
 
-  /**
-  *   pad-xxl  r ---------------------
-  */
   .pad-xxl-r, .pad-xxl-r-1 {
     padding-right: 0.25rem;
   }
@@ -283,9 +288,6 @@
     padding-right: 2rem;
   }
 
-  /**
-  *   pad-xxl  all ---------------------
-  */
   .pad-xxl-all, .pad-xxl-all-1 {
     padding: 0.25rem;
   }
@@ -311,9 +313,6 @@
     padding: 2rem;
   }
 
-  /**
-  *   pad-xxl  u ---------------------
-  */
   .pad-xxl-u, .pad-xxl-u-1 {
     padding-bottom: 0.25rem;
     padding-left: 0.25rem;
@@ -355,9 +354,6 @@
     padding-right: 2rem;
   }
 
-  /**
-  *   pad-xxl  ii ---------------------
-  */
   .pad-xxl-ii, .pad-xxl-ii-1 {
     padding-left: 0.25rem;
     padding-right: 0.25rem;
@@ -391,9 +387,6 @@
     padding-right: 2rem;
   }
 
-  /**
-  *   pad-xxl  tb ---------------------
-  */
   .pad-xxl-tb, .pad-xxl-tb-1 {
     padding-top: 0.25rem;
     padding-bottom: 0.25rem;
@@ -427,9 +420,31 @@
     padding-bottom: 2rem;
   }
 
-  /**
-  *   marg-xxl  t ---------------------
-  */
+  .marg-xxl, .marg-xxl-1 {
+    margin: 0.25rem;
+  }
+  .marg-xxl-2 {
+    margin: 0.5rem;
+  }
+  .marg-xxl-3 {
+    margin: 0.75rem;
+  }
+  .marg-xxl-4 {
+    margin: 1rem;
+  }
+  .marg-xxl-5 {
+    margin: 1.25rem;
+  }
+  .marg-xxl-6 {
+    margin: 1.5rem;
+  }
+  .marg-xxl-7 {
+    margin: 1.75rem;
+  }
+  .marg-xxl-8 {
+    margin: 2rem;
+  }
+
   .marg-xxl-t, .marg-xxl-t-1 {
     margin-top: 0.25rem;
   }
@@ -455,9 +470,6 @@
     margin-top: 2rem;
   }
 
-  /**
-  *   marg-xxl  b ---------------------
-  */
   .marg-xxl-b, .marg-xxl-b-1 {
     margin-bottom: 0.25rem;
   }
@@ -483,9 +495,6 @@
     margin-bottom: 2rem;
   }
 
-  /**
-  *   marg-xxl  l ---------------------
-  */
   .marg-xxl-l, .marg-xxl-l-1 {
     margin-left: 0.25rem;
   }
@@ -511,9 +520,6 @@
     margin-left: 2rem;
   }
 
-  /**
-  *   marg-xxl  r ---------------------
-  */
   .marg-xxl-r, .marg-xxl-r-1 {
     margin-right: 0.25rem;
   }
@@ -539,9 +545,6 @@
     margin-right: 2rem;
   }
 
-  /**
-  *   marg-xxl  all ---------------------
-  */
   .marg-xxl-all, .marg-xxl-all-1 {
     margin: 0.25rem;
   }
@@ -567,9 +570,6 @@
     margin: 2rem;
   }
 
-  /**
-  *   marg-xxl  u ---------------------
-  */
   .marg-xxl-u, .marg-xxl-u-1 {
     margin-bottom: 0.25rem;
     margin-left: 0.25rem;
@@ -611,9 +611,6 @@
     margin-right: 2rem;
   }
 
-  /**
-  *   marg-xxl  ii ---------------------
-  */
   .marg-xxl-ii, .marg-xxl-ii-1 {
     margin-left: 0.25rem;
     margin-right: 0.25rem;
@@ -647,9 +644,6 @@
     margin-right: 2rem;
   }
 
-  /**
-  *   marg-xxl  tb ---------------------
-  */
   .marg-xxl-tb, .marg-xxl-tb-1 {
     margin-top: 0.25rem;
     margin-bottom: 0.25rem;
@@ -773,9 +767,22 @@
   }
 }
 @media only screen and (max-width: 80rem) {
-  /**
-  *   border-xl  t ---------------------
-  */
+  .border-xl, .border-xl-1 {
+    border: 1px solid #ccc;
+  }
+  .border-xl-2 {
+    border: 2px solid #ccc;
+  }
+  .border-xl-3 {
+    border: 3px solid #ccc;
+  }
+  .border-xl-4 {
+    border: 4px solid #ccc;
+  }
+  .border-xl-5 {
+    border: 5px solid #ccc;
+  }
+
   .border-xl-t, .border-xl-t-1 {
     border-top: 1px solid #ccc;
   }
@@ -792,9 +799,6 @@
     border-top: 5px solid #ccc;
   }
 
-  /**
-  *   border-xl  b ---------------------
-  */
   .border-xl-b, .border-xl-b-1 {
     border-bottom: 1px solid #ccc;
   }
@@ -811,9 +815,6 @@
     border-bottom: 5px solid #ccc;
   }
 
-  /**
-  *   border-xl  l ---------------------
-  */
   .border-xl-l, .border-xl-l-1 {
     border-left: 1px solid #ccc;
   }
@@ -830,9 +831,6 @@
     border-left: 5px solid #ccc;
   }
 
-  /**
-  *   border-xl  r ---------------------
-  */
   .border-xl-r, .border-xl-r-1 {
     border-right: 1px solid #ccc;
   }
@@ -849,9 +847,6 @@
     border-right: 5px solid #ccc;
   }
 
-  /**
-  *   border-xl  all ---------------------
-  */
   .border-xl-all, .border-xl-all-1 {
     border: 1px solid #ccc;
   }
@@ -868,9 +863,6 @@
     border: 5px solid #ccc;
   }
 
-  /**
-  *   border-xl  u ---------------------
-  */
   .border-xl-u, .border-xl-u-1 {
     border-bottom: 1px solid #ccc;
     border-left: 1px solid #ccc;
@@ -897,9 +889,6 @@
     border-right: 5px solid #ccc;
   }
 
-  /**
-  *   border-xl  ii ---------------------
-  */
   .border-xl-ii, .border-xl-ii-1 {
     border-left: 1px solid #ccc;
     border-right: 1px solid #ccc;
@@ -921,9 +910,6 @@
     border-right: 5px solid #ccc;
   }
 
-  /**
-  *   border-xl  tb ---------------------
-  */
   .border-xl-tb, .border-xl-tb-1 {
     border-top: 1px solid #ccc;
     border-bottom: 1px solid #ccc;
@@ -945,9 +931,31 @@
     border-bottom: 5px solid #ccc;
   }
 
-  /**
-  *   pad-xl  t ---------------------
-  */
+  .pad-xl, .pad-xl-1 {
+    padding: 0.25rem;
+  }
+  .pad-xl-2 {
+    padding: 0.5rem;
+  }
+  .pad-xl-3 {
+    padding: 0.75rem;
+  }
+  .pad-xl-4 {
+    padding: 1rem;
+  }
+  .pad-xl-5 {
+    padding: 1.25rem;
+  }
+  .pad-xl-6 {
+    padding: 1.5rem;
+  }
+  .pad-xl-7 {
+    padding: 1.75rem;
+  }
+  .pad-xl-8 {
+    padding: 2rem;
+  }
+
   .pad-xl-t, .pad-xl-t-1 {
     padding-top: 0.25rem;
   }
@@ -973,9 +981,6 @@
     padding-top: 2rem;
   }
 
-  /**
-  *   pad-xl  b ---------------------
-  */
   .pad-xl-b, .pad-xl-b-1 {
     padding-bottom: 0.25rem;
   }
@@ -1001,9 +1006,6 @@
     padding-bottom: 2rem;
   }
 
-  /**
-  *   pad-xl  l ---------------------
-  */
   .pad-xl-l, .pad-xl-l-1 {
     padding-left: 0.25rem;
   }
@@ -1029,9 +1031,6 @@
     padding-left: 2rem;
   }
 
-  /**
-  *   pad-xl  r ---------------------
-  */
   .pad-xl-r, .pad-xl-r-1 {
     padding-right: 0.25rem;
   }
@@ -1057,9 +1056,6 @@
     padding-right: 2rem;
   }
 
-  /**
-  *   pad-xl  all ---------------------
-  */
   .pad-xl-all, .pad-xl-all-1 {
     padding: 0.25rem;
   }
@@ -1085,9 +1081,6 @@
     padding: 2rem;
   }
 
-  /**
-  *   pad-xl  u ---------------------
-  */
   .pad-xl-u, .pad-xl-u-1 {
     padding-bottom: 0.25rem;
     padding-left: 0.25rem;
@@ -1129,9 +1122,6 @@
     padding-right: 2rem;
   }
 
-  /**
-  *   pad-xl  ii ---------------------
-  */
   .pad-xl-ii, .pad-xl-ii-1 {
     padding-left: 0.25rem;
     padding-right: 0.25rem;
@@ -1165,9 +1155,6 @@
     padding-right: 2rem;
   }
 
-  /**
-  *   pad-xl  tb ---------------------
-  */
   .pad-xl-tb, .pad-xl-tb-1 {
     padding-top: 0.25rem;
     padding-bottom: 0.25rem;
@@ -1201,9 +1188,31 @@
     padding-bottom: 2rem;
   }
 
-  /**
-  *   marg-xl  t ---------------------
-  */
+  .marg-xl, .marg-xl-1 {
+    margin: 0.25rem;
+  }
+  .marg-xl-2 {
+    margin: 0.5rem;
+  }
+  .marg-xl-3 {
+    margin: 0.75rem;
+  }
+  .marg-xl-4 {
+    margin: 1rem;
+  }
+  .marg-xl-5 {
+    margin: 1.25rem;
+  }
+  .marg-xl-6 {
+    margin: 1.5rem;
+  }
+  .marg-xl-7 {
+    margin: 1.75rem;
+  }
+  .marg-xl-8 {
+    margin: 2rem;
+  }
+
   .marg-xl-t, .marg-xl-t-1 {
     margin-top: 0.25rem;
   }
@@ -1229,9 +1238,6 @@
     margin-top: 2rem;
   }
 
-  /**
-  *   marg-xl  b ---------------------
-  */
   .marg-xl-b, .marg-xl-b-1 {
     margin-bottom: 0.25rem;
   }
@@ -1257,9 +1263,6 @@
     margin-bottom: 2rem;
   }
 
-  /**
-  *   marg-xl  l ---------------------
-  */
   .marg-xl-l, .marg-xl-l-1 {
     margin-left: 0.25rem;
   }
@@ -1285,9 +1288,6 @@
     margin-left: 2rem;
   }
 
-  /**
-  *   marg-xl  r ---------------------
-  */
   .marg-xl-r, .marg-xl-r-1 {
     margin-right: 0.25rem;
   }
@@ -1313,9 +1313,6 @@
     margin-right: 2rem;
   }
 
-  /**
-  *   marg-xl  all ---------------------
-  */
   .marg-xl-all, .marg-xl-all-1 {
     margin: 0.25rem;
   }
@@ -1341,9 +1338,6 @@
     margin: 2rem;
   }
 
-  /**
-  *   marg-xl  u ---------------------
-  */
   .marg-xl-u, .marg-xl-u-1 {
     margin-bottom: 0.25rem;
     margin-left: 0.25rem;
@@ -1385,9 +1379,6 @@
     margin-right: 2rem;
   }
 
-  /**
-  *   marg-xl  ii ---------------------
-  */
   .marg-xl-ii, .marg-xl-ii-1 {
     margin-left: 0.25rem;
     margin-right: 0.25rem;
@@ -1421,9 +1412,6 @@
     margin-right: 2rem;
   }
 
-  /**
-  *   marg-xl  tb ---------------------
-  */
   .marg-xl-tb, .marg-xl-tb-1 {
     margin-top: 0.25rem;
     margin-bottom: 0.25rem;
@@ -1547,9 +1535,22 @@
   }
 }
 @media only screen and (max-width: 64rem) {
-  /**
-  *   border-lg  t ---------------------
-  */
+  .border-lg, .border-lg-1 {
+    border: 1px solid #ccc;
+  }
+  .border-lg-2 {
+    border: 2px solid #ccc;
+  }
+  .border-lg-3 {
+    border: 3px solid #ccc;
+  }
+  .border-lg-4 {
+    border: 4px solid #ccc;
+  }
+  .border-lg-5 {
+    border: 5px solid #ccc;
+  }
+
   .border-lg-t, .border-lg-t-1 {
     border-top: 1px solid #ccc;
   }
@@ -1566,9 +1567,6 @@
     border-top: 5px solid #ccc;
   }
 
-  /**
-  *   border-lg  b ---------------------
-  */
   .border-lg-b, .border-lg-b-1 {
     border-bottom: 1px solid #ccc;
   }
@@ -1585,9 +1583,6 @@
     border-bottom: 5px solid #ccc;
   }
 
-  /**
-  *   border-lg  l ---------------------
-  */
   .border-lg-l, .border-lg-l-1 {
     border-left: 1px solid #ccc;
   }
@@ -1604,9 +1599,6 @@
     border-left: 5px solid #ccc;
   }
 
-  /**
-  *   border-lg  r ---------------------
-  */
   .border-lg-r, .border-lg-r-1 {
     border-right: 1px solid #ccc;
   }
@@ -1623,9 +1615,6 @@
     border-right: 5px solid #ccc;
   }
 
-  /**
-  *   border-lg  all ---------------------
-  */
   .border-lg-all, .border-lg-all-1 {
     border: 1px solid #ccc;
   }
@@ -1642,9 +1631,6 @@
     border: 5px solid #ccc;
   }
 
-  /**
-  *   border-lg  u ---------------------
-  */
   .border-lg-u, .border-lg-u-1 {
     border-bottom: 1px solid #ccc;
     border-left: 1px solid #ccc;
@@ -1671,9 +1657,6 @@
     border-right: 5px solid #ccc;
   }
 
-  /**
-  *   border-lg  ii ---------------------
-  */
   .border-lg-ii, .border-lg-ii-1 {
     border-left: 1px solid #ccc;
     border-right: 1px solid #ccc;
@@ -1695,9 +1678,6 @@
     border-right: 5px solid #ccc;
   }
 
-  /**
-  *   border-lg  tb ---------------------
-  */
   .border-lg-tb, .border-lg-tb-1 {
     border-top: 1px solid #ccc;
     border-bottom: 1px solid #ccc;
@@ -1719,9 +1699,31 @@
     border-bottom: 5px solid #ccc;
   }
 
-  /**
-  *   pad-lg  t ---------------------
-  */
+  .pad-lg, .pad-lg-1 {
+    padding: 0.25rem;
+  }
+  .pad-lg-2 {
+    padding: 0.5rem;
+  }
+  .pad-lg-3 {
+    padding: 0.75rem;
+  }
+  .pad-lg-4 {
+    padding: 1rem;
+  }
+  .pad-lg-5 {
+    padding: 1.25rem;
+  }
+  .pad-lg-6 {
+    padding: 1.5rem;
+  }
+  .pad-lg-7 {
+    padding: 1.75rem;
+  }
+  .pad-lg-8 {
+    padding: 2rem;
+  }
+
   .pad-lg-t, .pad-lg-t-1 {
     padding-top: 0.25rem;
   }
@@ -1747,9 +1749,6 @@
     padding-top: 2rem;
   }
 
-  /**
-  *   pad-lg  b ---------------------
-  */
   .pad-lg-b, .pad-lg-b-1 {
     padding-bottom: 0.25rem;
   }
@@ -1775,9 +1774,6 @@
     padding-bottom: 2rem;
   }
 
-  /**
-  *   pad-lg  l ---------------------
-  */
   .pad-lg-l, .pad-lg-l-1 {
     padding-left: 0.25rem;
   }
@@ -1803,9 +1799,6 @@
     padding-left: 2rem;
   }
 
-  /**
-  *   pad-lg  r ---------------------
-  */
   .pad-lg-r, .pad-lg-r-1 {
     padding-right: 0.25rem;
   }
@@ -1831,9 +1824,6 @@
     padding-right: 2rem;
   }
 
-  /**
-  *   pad-lg  all ---------------------
-  */
   .pad-lg-all, .pad-lg-all-1 {
     padding: 0.25rem;
   }
@@ -1859,9 +1849,6 @@
     padding: 2rem;
   }
 
-  /**
-  *   pad-lg  u ---------------------
-  */
   .pad-lg-u, .pad-lg-u-1 {
     padding-bottom: 0.25rem;
     padding-left: 0.25rem;
@@ -1903,9 +1890,6 @@
     padding-right: 2rem;
   }
 
-  /**
-  *   pad-lg  ii ---------------------
-  */
   .pad-lg-ii, .pad-lg-ii-1 {
     padding-left: 0.25rem;
     padding-right: 0.25rem;
@@ -1939,9 +1923,6 @@
     padding-right: 2rem;
   }
 
-  /**
-  *   pad-lg  tb ---------------------
-  */
   .pad-lg-tb, .pad-lg-tb-1 {
     padding-top: 0.25rem;
     padding-bottom: 0.25rem;
@@ -1975,9 +1956,31 @@
     padding-bottom: 2rem;
   }
 
-  /**
-  *   marg-lg  t ---------------------
-  */
+  .marg-lg, .marg-lg-1 {
+    margin: 0.25rem;
+  }
+  .marg-lg-2 {
+    margin: 0.5rem;
+  }
+  .marg-lg-3 {
+    margin: 0.75rem;
+  }
+  .marg-lg-4 {
+    margin: 1rem;
+  }
+  .marg-lg-5 {
+    margin: 1.25rem;
+  }
+  .marg-lg-6 {
+    margin: 1.5rem;
+  }
+  .marg-lg-7 {
+    margin: 1.75rem;
+  }
+  .marg-lg-8 {
+    margin: 2rem;
+  }
+
   .marg-lg-t, .marg-lg-t-1 {
     margin-top: 0.25rem;
   }
@@ -2003,9 +2006,6 @@
     margin-top: 2rem;
   }
 
-  /**
-  *   marg-lg  b ---------------------
-  */
   .marg-lg-b, .marg-lg-b-1 {
     margin-bottom: 0.25rem;
   }
@@ -2031,9 +2031,6 @@
     margin-bottom: 2rem;
   }
 
-  /**
-  *   marg-lg  l ---------------------
-  */
   .marg-lg-l, .marg-lg-l-1 {
     margin-left: 0.25rem;
   }
@@ -2059,9 +2056,6 @@
     margin-left: 2rem;
   }
 
-  /**
-  *   marg-lg  r ---------------------
-  */
   .marg-lg-r, .marg-lg-r-1 {
     margin-right: 0.25rem;
   }
@@ -2087,9 +2081,6 @@
     margin-right: 2rem;
   }
 
-  /**
-  *   marg-lg  all ---------------------
-  */
   .marg-lg-all, .marg-lg-all-1 {
     margin: 0.25rem;
   }
@@ -2115,9 +2106,6 @@
     margin: 2rem;
   }
 
-  /**
-  *   marg-lg  u ---------------------
-  */
   .marg-lg-u, .marg-lg-u-1 {
     margin-bottom: 0.25rem;
     margin-left: 0.25rem;
@@ -2159,9 +2147,6 @@
     margin-right: 2rem;
   }
 
-  /**
-  *   marg-lg  ii ---------------------
-  */
   .marg-lg-ii, .marg-lg-ii-1 {
     margin-left: 0.25rem;
     margin-right: 0.25rem;
@@ -2195,9 +2180,6 @@
     margin-right: 2rem;
   }
 
-  /**
-  *   marg-lg  tb ---------------------
-  */
   .marg-lg-tb, .marg-lg-tb-1 {
     margin-top: 0.25rem;
     margin-bottom: 0.25rem;
@@ -2321,9 +2303,22 @@
   }
 }
 @media only screen and (max-width: 48rem) {
-  /**
-  *   border-md  t ---------------------
-  */
+  .border-md, .border-md-1 {
+    border: 1px solid #ccc;
+  }
+  .border-md-2 {
+    border: 2px solid #ccc;
+  }
+  .border-md-3 {
+    border: 3px solid #ccc;
+  }
+  .border-md-4 {
+    border: 4px solid #ccc;
+  }
+  .border-md-5 {
+    border: 5px solid #ccc;
+  }
+
   .border-md-t, .border-md-t-1 {
     border-top: 1px solid #ccc;
   }
@@ -2340,9 +2335,6 @@
     border-top: 5px solid #ccc;
   }
 
-  /**
-  *   border-md  b ---------------------
-  */
   .border-md-b, .border-md-b-1 {
     border-bottom: 1px solid #ccc;
   }
@@ -2359,9 +2351,6 @@
     border-bottom: 5px solid #ccc;
   }
 
-  /**
-  *   border-md  l ---------------------
-  */
   .border-md-l, .border-md-l-1 {
     border-left: 1px solid #ccc;
   }
@@ -2378,9 +2367,6 @@
     border-left: 5px solid #ccc;
   }
 
-  /**
-  *   border-md  r ---------------------
-  */
   .border-md-r, .border-md-r-1 {
     border-right: 1px solid #ccc;
   }
@@ -2397,9 +2383,6 @@
     border-right: 5px solid #ccc;
   }
 
-  /**
-  *   border-md  all ---------------------
-  */
   .border-md-all, .border-md-all-1 {
     border: 1px solid #ccc;
   }
@@ -2416,9 +2399,6 @@
     border: 5px solid #ccc;
   }
 
-  /**
-  *   border-md  u ---------------------
-  */
   .border-md-u, .border-md-u-1 {
     border-bottom: 1px solid #ccc;
     border-left: 1px solid #ccc;
@@ -2445,9 +2425,6 @@
     border-right: 5px solid #ccc;
   }
 
-  /**
-  *   border-md  ii ---------------------
-  */
   .border-md-ii, .border-md-ii-1 {
     border-left: 1px solid #ccc;
     border-right: 1px solid #ccc;
@@ -2469,9 +2446,6 @@
     border-right: 5px solid #ccc;
   }
 
-  /**
-  *   border-md  tb ---------------------
-  */
   .border-md-tb, .border-md-tb-1 {
     border-top: 1px solid #ccc;
     border-bottom: 1px solid #ccc;
@@ -2493,9 +2467,31 @@
     border-bottom: 5px solid #ccc;
   }
 
-  /**
-  *   pad-md  t ---------------------
-  */
+  .pad-md, .pad-md-1 {
+    padding: 0.25rem;
+  }
+  .pad-md-2 {
+    padding: 0.5rem;
+  }
+  .pad-md-3 {
+    padding: 0.75rem;
+  }
+  .pad-md-4 {
+    padding: 1rem;
+  }
+  .pad-md-5 {
+    padding: 1.25rem;
+  }
+  .pad-md-6 {
+    padding: 1.5rem;
+  }
+  .pad-md-7 {
+    padding: 1.75rem;
+  }
+  .pad-md-8 {
+    padding: 2rem;
+  }
+
   .pad-md-t, .pad-md-t-1 {
     padding-top: 0.25rem;
   }
@@ -2521,9 +2517,6 @@
     padding-top: 2rem;
   }
 
-  /**
-  *   pad-md  b ---------------------
-  */
   .pad-md-b, .pad-md-b-1 {
     padding-bottom: 0.25rem;
   }
@@ -2549,9 +2542,6 @@
     padding-bottom: 2rem;
   }
 
-  /**
-  *   pad-md  l ---------------------
-  */
   .pad-md-l, .pad-md-l-1 {
     padding-left: 0.25rem;
   }
@@ -2577,9 +2567,6 @@
     padding-left: 2rem;
   }
 
-  /**
-  *   pad-md  r ---------------------
-  */
   .pad-md-r, .pad-md-r-1 {
     padding-right: 0.25rem;
   }
@@ -2605,9 +2592,6 @@
     padding-right: 2rem;
   }
 
-  /**
-  *   pad-md  all ---------------------
-  */
   .pad-md-all, .pad-md-all-1 {
     padding: 0.25rem;
   }
@@ -2633,9 +2617,6 @@
     padding: 2rem;
   }
 
-  /**
-  *   pad-md  u ---------------------
-  */
   .pad-md-u, .pad-md-u-1 {
     padding-bottom: 0.25rem;
     padding-left: 0.25rem;
@@ -2677,9 +2658,6 @@
     padding-right: 2rem;
   }
 
-  /**
-  *   pad-md  ii ---------------------
-  */
   .pad-md-ii, .pad-md-ii-1 {
     padding-left: 0.25rem;
     padding-right: 0.25rem;
@@ -2713,9 +2691,6 @@
     padding-right: 2rem;
   }
 
-  /**
-  *   pad-md  tb ---------------------
-  */
   .pad-md-tb, .pad-md-tb-1 {
     padding-top: 0.25rem;
     padding-bottom: 0.25rem;
@@ -2749,9 +2724,31 @@
     padding-bottom: 2rem;
   }
 
-  /**
-  *   marg-md  t ---------------------
-  */
+  .marg-md, .marg-md-1 {
+    margin: 0.25rem;
+  }
+  .marg-md-2 {
+    margin: 0.5rem;
+  }
+  .marg-md-3 {
+    margin: 0.75rem;
+  }
+  .marg-md-4 {
+    margin: 1rem;
+  }
+  .marg-md-5 {
+    margin: 1.25rem;
+  }
+  .marg-md-6 {
+    margin: 1.5rem;
+  }
+  .marg-md-7 {
+    margin: 1.75rem;
+  }
+  .marg-md-8 {
+    margin: 2rem;
+  }
+
   .marg-md-t, .marg-md-t-1 {
     margin-top: 0.25rem;
   }
@@ -2777,9 +2774,6 @@
     margin-top: 2rem;
   }
 
-  /**
-  *   marg-md  b ---------------------
-  */
   .marg-md-b, .marg-md-b-1 {
     margin-bottom: 0.25rem;
   }
@@ -2805,9 +2799,6 @@
     margin-bottom: 2rem;
   }
 
-  /**
-  *   marg-md  l ---------------------
-  */
   .marg-md-l, .marg-md-l-1 {
     margin-left: 0.25rem;
   }
@@ -2833,9 +2824,6 @@
     margin-left: 2rem;
   }
 
-  /**
-  *   marg-md  r ---------------------
-  */
   .marg-md-r, .marg-md-r-1 {
     margin-right: 0.25rem;
   }
@@ -2861,9 +2849,6 @@
     margin-right: 2rem;
   }
 
-  /**
-  *   marg-md  all ---------------------
-  */
   .marg-md-all, .marg-md-all-1 {
     margin: 0.25rem;
   }
@@ -2889,9 +2874,6 @@
     margin: 2rem;
   }
 
-  /**
-  *   marg-md  u ---------------------
-  */
   .marg-md-u, .marg-md-u-1 {
     margin-bottom: 0.25rem;
     margin-left: 0.25rem;
@@ -2933,9 +2915,6 @@
     margin-right: 2rem;
   }
 
-  /**
-  *   marg-md  ii ---------------------
-  */
   .marg-md-ii, .marg-md-ii-1 {
     margin-left: 0.25rem;
     margin-right: 0.25rem;
@@ -2969,9 +2948,6 @@
     margin-right: 2rem;
   }
 
-  /**
-  *   marg-md  tb ---------------------
-  */
   .marg-md-tb, .marg-md-tb-1 {
     margin-top: 0.25rem;
     margin-bottom: 0.25rem;
@@ -3095,9 +3071,22 @@
   }
 }
 @media only screen and (max-width: 35.7rem) {
-  /**
-  *   border-sm  t ---------------------
-  */
+  .border-sm, .border-sm-1 {
+    border: 1px solid #ccc;
+  }
+  .border-sm-2 {
+    border: 2px solid #ccc;
+  }
+  .border-sm-3 {
+    border: 3px solid #ccc;
+  }
+  .border-sm-4 {
+    border: 4px solid #ccc;
+  }
+  .border-sm-5 {
+    border: 5px solid #ccc;
+  }
+
   .border-sm-t, .border-sm-t-1 {
     border-top: 1px solid #ccc;
   }
@@ -3114,9 +3103,6 @@
     border-top: 5px solid #ccc;
   }
 
-  /**
-  *   border-sm  b ---------------------
-  */
   .border-sm-b, .border-sm-b-1 {
     border-bottom: 1px solid #ccc;
   }
@@ -3133,9 +3119,6 @@
     border-bottom: 5px solid #ccc;
   }
 
-  /**
-  *   border-sm  l ---------------------
-  */
   .border-sm-l, .border-sm-l-1 {
     border-left: 1px solid #ccc;
   }
@@ -3152,9 +3135,6 @@
     border-left: 5px solid #ccc;
   }
 
-  /**
-  *   border-sm  r ---------------------
-  */
   .border-sm-r, .border-sm-r-1 {
     border-right: 1px solid #ccc;
   }
@@ -3171,9 +3151,6 @@
     border-right: 5px solid #ccc;
   }
 
-  /**
-  *   border-sm  all ---------------------
-  */
   .border-sm-all, .border-sm-all-1 {
     border: 1px solid #ccc;
   }
@@ -3190,9 +3167,6 @@
     border: 5px solid #ccc;
   }
 
-  /**
-  *   border-sm  u ---------------------
-  */
   .border-sm-u, .border-sm-u-1 {
     border-bottom: 1px solid #ccc;
     border-left: 1px solid #ccc;
@@ -3219,9 +3193,6 @@
     border-right: 5px solid #ccc;
   }
 
-  /**
-  *   border-sm  ii ---------------------
-  */
   .border-sm-ii, .border-sm-ii-1 {
     border-left: 1px solid #ccc;
     border-right: 1px solid #ccc;
@@ -3243,9 +3214,6 @@
     border-right: 5px solid #ccc;
   }
 
-  /**
-  *   border-sm  tb ---------------------
-  */
   .border-sm-tb, .border-sm-tb-1 {
     border-top: 1px solid #ccc;
     border-bottom: 1px solid #ccc;
@@ -3267,9 +3235,31 @@
     border-bottom: 5px solid #ccc;
   }
 
-  /**
-  *   pad-sm  t ---------------------
-  */
+  .pad-sm, .pad-sm-1 {
+    padding: 0.25rem;
+  }
+  .pad-sm-2 {
+    padding: 0.5rem;
+  }
+  .pad-sm-3 {
+    padding: 0.75rem;
+  }
+  .pad-sm-4 {
+    padding: 1rem;
+  }
+  .pad-sm-5 {
+    padding: 1.25rem;
+  }
+  .pad-sm-6 {
+    padding: 1.5rem;
+  }
+  .pad-sm-7 {
+    padding: 1.75rem;
+  }
+  .pad-sm-8 {
+    padding: 2rem;
+  }
+
   .pad-sm-t, .pad-sm-t-1 {
     padding-top: 0.25rem;
   }
@@ -3295,9 +3285,6 @@
     padding-top: 2rem;
   }
 
-  /**
-  *   pad-sm  b ---------------------
-  */
   .pad-sm-b, .pad-sm-b-1 {
     padding-bottom: 0.25rem;
   }
@@ -3323,9 +3310,6 @@
     padding-bottom: 2rem;
   }
 
-  /**
-  *   pad-sm  l ---------------------
-  */
   .pad-sm-l, .pad-sm-l-1 {
     padding-left: 0.25rem;
   }
@@ -3351,9 +3335,6 @@
     padding-left: 2rem;
   }
 
-  /**
-  *   pad-sm  r ---------------------
-  */
   .pad-sm-r, .pad-sm-r-1 {
     padding-right: 0.25rem;
   }
@@ -3379,9 +3360,6 @@
     padding-right: 2rem;
   }
 
-  /**
-  *   pad-sm  all ---------------------
-  */
   .pad-sm-all, .pad-sm-all-1 {
     padding: 0.25rem;
   }
@@ -3407,9 +3385,6 @@
     padding: 2rem;
   }
 
-  /**
-  *   pad-sm  u ---------------------
-  */
   .pad-sm-u, .pad-sm-u-1 {
     padding-bottom: 0.25rem;
     padding-left: 0.25rem;
@@ -3451,9 +3426,6 @@
     padding-right: 2rem;
   }
 
-  /**
-  *   pad-sm  ii ---------------------
-  */
   .pad-sm-ii, .pad-sm-ii-1 {
     padding-left: 0.25rem;
     padding-right: 0.25rem;
@@ -3487,9 +3459,6 @@
     padding-right: 2rem;
   }
 
-  /**
-  *   pad-sm  tb ---------------------
-  */
   .pad-sm-tb, .pad-sm-tb-1 {
     padding-top: 0.25rem;
     padding-bottom: 0.25rem;
@@ -3523,9 +3492,31 @@
     padding-bottom: 2rem;
   }
 
-  /**
-  *   marg-sm  t ---------------------
-  */
+  .marg-sm, .marg-sm-1 {
+    margin: 0.25rem;
+  }
+  .marg-sm-2 {
+    margin: 0.5rem;
+  }
+  .marg-sm-3 {
+    margin: 0.75rem;
+  }
+  .marg-sm-4 {
+    margin: 1rem;
+  }
+  .marg-sm-5 {
+    margin: 1.25rem;
+  }
+  .marg-sm-6 {
+    margin: 1.5rem;
+  }
+  .marg-sm-7 {
+    margin: 1.75rem;
+  }
+  .marg-sm-8 {
+    margin: 2rem;
+  }
+
   .marg-sm-t, .marg-sm-t-1 {
     margin-top: 0.25rem;
   }
@@ -3551,9 +3542,6 @@
     margin-top: 2rem;
   }
 
-  /**
-  *   marg-sm  b ---------------------
-  */
   .marg-sm-b, .marg-sm-b-1 {
     margin-bottom: 0.25rem;
   }
@@ -3579,9 +3567,6 @@
     margin-bottom: 2rem;
   }
 
-  /**
-  *   marg-sm  l ---------------------
-  */
   .marg-sm-l, .marg-sm-l-1 {
     margin-left: 0.25rem;
   }
@@ -3607,9 +3592,6 @@
     margin-left: 2rem;
   }
 
-  /**
-  *   marg-sm  r ---------------------
-  */
   .marg-sm-r, .marg-sm-r-1 {
     margin-right: 0.25rem;
   }
@@ -3635,9 +3617,6 @@
     margin-right: 2rem;
   }
 
-  /**
-  *   marg-sm  all ---------------------
-  */
   .marg-sm-all, .marg-sm-all-1 {
     margin: 0.25rem;
   }
@@ -3663,9 +3642,6 @@
     margin: 2rem;
   }
 
-  /**
-  *   marg-sm  u ---------------------
-  */
   .marg-sm-u, .marg-sm-u-1 {
     margin-bottom: 0.25rem;
     margin-left: 0.25rem;
@@ -3707,9 +3683,6 @@
     margin-right: 2rem;
   }
 
-  /**
-  *   marg-sm  ii ---------------------
-  */
   .marg-sm-ii, .marg-sm-ii-1 {
     margin-left: 0.25rem;
     margin-right: 0.25rem;
@@ -3743,9 +3716,6 @@
     margin-right: 2rem;
   }
 
-  /**
-  *   marg-sm  tb ---------------------
-  */
   .marg-sm-tb, .marg-sm-tb-1 {
     margin-top: 0.25rem;
     margin-bottom: 0.25rem;

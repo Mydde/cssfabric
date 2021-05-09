@@ -1,58 +1,40 @@
+import jsonConfig              from "../_generated/export.variables.json" ;
+import listCssfabricClassNames from "./cssfabricClassNames";
 
+export type IFabricConfModulePart = Record<string, any>;
+export type IFabricConfModuleDataPart = Record<string, any>;
+export type IFabricConfModuleMetaDataPart = Record<string, any>;
+export type IFabricConfModuleDocsPart = Record<string, any>;
+export type TFabricConfModuleDocsAttributesPart = Record<string, any>;
 
-import jsonConfig from "../_generated/export.variables.json" ;
-// import from "../../cssfabric.json"
-
-export interface IFabricConfModulePart {
-    [key: string]: any;
-}
-
-export interface IFabricConfModuleDataPart {
-    [key: string]: any;
-}
-
-export interface IFabricConfModuleMetaDataPart {
-    [key: string]: any;
-}
-export interface IFabricConfModuleDocsPart {
-    [key: string]: any;
-}
-
-export interface IFabricConfModuleDocsAttributesPart {
-    [key: string]: any;
-}
-
-const getCssFile = () => {
-    return "cssFile";
-};
 //
-const getModuleList = ():any  => {
-    return jsonConfig["cssfabric"]?.["modules"]  || {};
+const getModuleList = (): any => {
+    return jsonConfig["cssfabric"]?.["modules"] || {};
 };
 
-const getModuleConfig = (module?: string):IFabricConfModulePart => {
+const getModuleConfig = (module?: string): IFabricConfModulePart => {
     if (module) return jsonConfig["cssfabric"]?.["modules"]?.[module] || {};
     return jsonConfig;
 };
 
-const getModuleData = (module?: string):IFabricConfModuleDataPart => {
+const getModuleData = (module?: string): IFabricConfModuleDataPart => {
     if (module) return jsonConfig["cssfabric"]?.["modules"]?.[module]?.["_data"] || {};
     return jsonConfig;
 };
 
-const getModuleMetaData = (module?: string):IFabricConfModuleMetaDataPart => {
+const getModuleMetaData = (module?: string): IFabricConfModuleMetaDataPart => {
     if (module)
         return jsonConfig["cssfabric"]?.["modules"]?.[module]?.["_metadata"] || {};
     return jsonConfig;
 };
 
-const getModuleDocs = (module?: string):IFabricConfModuleDocsPart => {
+const getModuleDocs = (module?: string): IFabricConfModuleDocsPart => {
     if (module)
         return jsonConfig["cssfabric"]?.["modules"]?.[module]?.["_docs"] || {};
     return jsonConfig;
 };
 
-const getModuleDocsAttributes = (module?: string):IFabricConfModuleDocsAttributesPart => {
+const getModuleDocsAttributes = (module?: string): TFabricConfModuleDocsAttributesPart => {
     if (module)
         return jsonConfig["cssfabric"]?.["modules"]?.[module]?.["_docs"]?.["attributes"] || {};
     return jsonConfig;
@@ -60,10 +42,10 @@ const getModuleDocsAttributes = (module?: string):IFabricConfModuleDocsAttribute
 
 export default {
     getModuleList,
-    getSassConfig: getCssFile,
     getModuleConfig,
     getModuleData,
     getModuleMetaData,
     getModuleDocs,
-    getModuleDocsAttributes
+    getModuleDocsAttributes,
+    getClassNames: listCssfabricClassNames
 };

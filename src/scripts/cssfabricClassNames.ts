@@ -1,30 +1,26 @@
 import cssfabric from "./cssfabric"
 import utils     from "./utils";
 
-interface IExamples {
+export interface IListCssfabricClassNamesProps {
     module: string;
     moduleAttribute: any;
 }
 
-Object.keys(cssfabric.getModuleList());
-
-type TModule = string | 'box' | 'shadow';
-type TFabricTag = string | 'pad' | 'marg' | 'border';
-type TClassName = string;
-type TClassNameFragment = string;
+type TFabricClassName = string;
+type TClassNameFragment = string | number;
 
 type TCollect = string[];
-type TClassNameList = TClassName[][];
+type TFabricClassNameList = TFabricClassName[];
+type TFabricClassNameListFragments = TClassNameFragment[];
 
 type TGuess = any;
 type TLevelKey = string;
 
 type level = string[];
 
-type IModuleLevels = level | level[] | any;
+type IModuleLevels = level | level[] | [] | any[] | Record<string, any[]>;
 
-
-export default function getClassNames(props: IExamples) {
+function listCssfabricClassNames(props: IListCssfabricClassNamesProps) {
     
     const {module, moduleAttribute} = props;
     const moduleAttributes          = cssfabric.getModuleDocsAttributes(module);
@@ -36,13 +32,31 @@ export default function getClassNames(props: IExamples) {
     const moduleLevelsDeclined        = fabricAttributes["levelsDeclin"] || undefined;
     const moduleClassNames            = fabricAttributes["classNames"] || {};
     
-    let MAIN_COLLECT: TCollect = [];
+    let MAIN_COLLECT: TCollect            = [];
+    let SKEL_COLLECT: Record<string, any> = {};
     
+    finalParse();
+    
+    function finalParse() {
+        parseKeys();
+        parseLevelsWithoutKeys();
+        parseLevels();
+        parseClassNames();
+        
+        console.log({SKEL_COLLECT});
+    }
+    
+    function buildMainConcat(classNameList) {
+        MAIN_COLLECT = MAIN_COLLECT.concat(classNameList);
+    }
+    
+    function buildSkelConcat(classNameList, key = "_default") {
+        SKEL_COLLECT[key] = classNameList;
+    }
     
     function parseKeys() {
         // if keys
         if (moduleKeys.length) {
-            console.log(" moduleKeys " + qualify(moduleKeys));
             
             switch (qualify(moduleKeys)) {
                 case "arrayOfstrings":
@@ -52,19 +66,19 @@ export default function getClassNames(props: IExamples) {
                         if (Boolean(moduleLevels[levelKey])) {
                             parseLinkedLevel(levelKey);
                         }
-                        return moduleTag + "-" + levelKey;
+                        return (levelKey === '_') ? moduleTag : moduleTag + "-" + levelKey;
                     });
                     
-                    parseLevelWithKeys(classNameList);
+                    parseLevelWithFabricKeys(classNameList);
                     
-                    MAIN_COLLECT = MAIN_COLLECT.concat(classNameList);
+                    buildMainConcat(classNameList);
+                    buildSkelConcat(classNameList);
                     
                     break;
                 case "arrayOfobjects":
                     break;
                 case "arrayOfarrays":
                     // flatten ?
-                    
                     let out = moduleKeys.flat().map((levelKey: TLevelKey) => {
                         if (moduleLevels[levelKey]) {
                             parseLinkedLevel(levelKey);
@@ -73,31 +87,60 @@ export default function getClassNames(props: IExamples) {
                     });
                     
                     MAIN_COLLECT = MAIN_COLLECT.concat(out);
+                    buildMainConcat(out);
+                    buildSkelConcat(out);
                     
                     break;
+            }
+            
+            if (!moduleKeys || !moduleKeys.length) {
+                parseLevels();
             }
             
             // console.log('parseKeys', classNameList)
         }
     }
     
-    function parseLevelWithKeys(classNameList: TClassNameList): void {
-        console.log({classNameList});
-        //return;
+    function parseLevelWithFabricKeys(classNameList: TFabricClassNameListFragments): void {
+        
         if (!classNameList) return;
         if (Array.isArray(moduleLevels)) {
-            let out: any = moduleLevels
-                               .map((x: TClassNameFragment) => {
-                                   return classNameList.map((y) => {
-                                       if (y.map) return y.map((z) => z + "-" + x);
-                                       else console.log(y);
-                                   });
-                               })
-                               .flat(2) || [];
-            
-            MAIN_COLLECT = MAIN_COLLECT.concat(out);
+            if (['strings', 'numbers'].includes(utils.isArrayOfTypes(moduleLevels))) {
+                let out: any = moduleLevels.map((levelName: any) => {
+                                               let pp = classNameList.map((className) => {
+                                                   return (levelName === '_') ? className : [className, levelName].join('-');
+                                               });
+                    
+                                               buildSkelConcat(pp, levelName);
+                                               return pp;
+                                           })
+                                           .flat(2) || [];
+                
+                buildMainConcat(out);
+            }
         } else {
-            console.log("SHOULD BE parseLevelWithKeys");
+            if (['arrays'].includes(utils.isObjectOfTypes(moduleLevels))) {
+                
+                let out: any = Object.keys(moduleLevels).map((levelKey: TLevelKey) => {
+                    const level = moduleLevels[levelKey];
+                    
+                    return classNameList.map((className) => {
+                        
+                        return level.map((levelName: string) => {
+                                             return levelName === '_' ? className + '-' + levelKey : className + '-' + levelKey + '-' + levelName
+                                         }
+                        )
+                    });
+                    
+                    
+                }).flat(2)
+                
+                buildMainConcat(out);
+                
+            } else {
+                
+                console.log("SHOULD BE parseLevelWithFabricKeys");
+            }
         }
     }
     
@@ -109,7 +152,8 @@ export default function getClassNames(props: IExamples) {
             if (moduleKeys.includes(levelKey) || levelKey.charAt(0) === "_") {
                 let laliste = level.map((x: TClassNameFragment) => moduleTag + "-" + levelKey + "-" + x);
                 
-                MAIN_COLLECT = MAIN_COLLECT.concat(laliste);
+                buildMainConcat(laliste);
+                
                 parseDeclinatedLevel(levelKey, laliste);
             }
         } else {
@@ -127,42 +171,24 @@ export default function getClassNames(props: IExamples) {
                 })
                 .flat(2);
             
-            MAIN_COLLECT = MAIN_COLLECT.concat(out);
+            buildMainConcat(out);
         }
     }
     
+    // only if no keys
     function parseLevels(actionType = null) {
         // parse levels
-        console.log(" moduleLevels " + qualify(moduleLevels));
+        if (moduleKeys && moduleKeys.length) return;
         
-        let out: any[] = [];
-        
-        switch (qualify(moduleKeys)) {
-            case "arrayOfstrings":
-            case "arrayOfnumbers":
-                if (
-                    ["numbers", "strings"].includes(utils.isArrayOfTypes(moduleLevels))
-                ) {
-                    let te = moduleKeys.map((x: string) => {
-                        return moduleLevels.map((y: TClassNameFragment) => {
-                            return x + "-" + y;
-                        });
-                    });
-                    
-                    out = out.concat(te);
-                }
-                
-                if (qualify(moduleLevels) === "objectOfarrays") {
-                }
-                
-                break;
-            case "arrayOfobjects":
-                break;
-            case "arrayOfarrays":
-                break;
+        // module levels string[]
+        if (Array.isArray(moduleLevels) && ["numbers", "strings"].includes(utils.isArrayOfTypes(moduleLevels))) {
+            
+            let out = moduleLevels.map((y: TClassNameFragment) => {
+                return moduleTag + "-" + y;
+            });
+            //
+            buildMainConcat(out);
         }
-        
-        console.log("parseLevels", out);
     }
     
     function parseLevelsWithoutKeys() {
@@ -179,7 +205,7 @@ export default function getClassNames(props: IExamples) {
                                  })
                                  .flat(2);
                 
-                MAIN_COLLECT = MAIN_COLLECT.concat(test);
+                buildMainConcat(test);
             }
         }
     }
@@ -194,19 +220,11 @@ export default function getClassNames(props: IExamples) {
         }
     }
     
-    function fromTag() {
-        
-        parseKeys();
-        parseLevelsWithoutKeys();
-        parseClassNames();
-        
-        return MAIN_COLLECT.flat().map((x) => x)
-    }
     
-    
-    return {
-        fromModule: (module: TModule, fabricTag: TFabricTag) => {
-            return fromTag();
-        }
-    }
+    return MAIN_COLLECT;
+}
+
+export default {
+    getModuleTagClassNames: listCssfabricClassNames,
+    getOther:               listCssfabricClassNames
 }
