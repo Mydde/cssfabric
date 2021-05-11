@@ -92,14 +92,6 @@ $text-docs: (
                 text-shadow:(
                         tag: text-shad,
                         keys: utils.getObjectKeys(map-get($cssProps, text-shadow))
-                ),
-                color:(
-                        tag: text,
-                        keys: (
-                               utils.getObjectKeys(loader.getFabricSharedParams(scheme)),
-                               utils.getObjectKeys(loader.getFabricSharedParams(palette)),
-                               utils.getObjectKeys(loader.getFabricSharedParams(gray))
-                        )
                 )
         )
 );

@@ -75,11 +75,11 @@ $grid-docs: (// add align-middle non generated className // grow + shrink
                         tag: grid,
                         keys: (w, h),
                         classNames: (
-                                grid:utils.getObjectKeys(map-get($_cssProps, flexWrap)), // inline !
-                                grid-align: $_grid-align,
-                                grid-items: utils.getObjectKeys(map-get($_cssProps, grid-items)),
-                                grid-content:utils.getObjectKeys(map-get($_cssProps, grid-content)),
-                                grid-justify:utils.getObjectKeys(map-get($_cssProps, grid-justify))
+                                "_":utils.getObjectKeys(map-get($_cssProps, flexWrap)), // add inline !
+                                align: $_grid-align,
+                                items: utils.getObjectKeys(map-get($_cssProps, grid-items)),
+                                content:utils.getObjectKeys(map-get($_cssProps, grid-content)),
+                                justify:utils.getObjectKeys(map-get($_cssProps, grid-justify))
                         ),
                         about: "a so classic grid system, and hey, it gets height !"
                 ),

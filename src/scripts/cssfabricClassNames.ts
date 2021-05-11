@@ -20,208 +20,171 @@ type level = string[];
 
 type IModuleLevels = level | level[] | [] | any[] | Record<string, any[]>;
 
+
+export interface ILoopIt {
+    module: string;
+}
+
+function loopIt(props: ILoopIt) {
+    
+    const {module}         = props;
+    const moduleAttributes = cssfabric.getModuleDocsAttributes(module);
+    
+}
+
 function listCssfabricClassNames(props: IListCssfabricClassNamesProps) {
     
     const {module, moduleAttribute} = props;
     const moduleAttributes          = cssfabric.getModuleDocsAttributes(module);
     
-    const fabricAttributes            = moduleAttributes[moduleAttribute];
-    const moduleTag                   = fabricAttributes["tag"];
-    const moduleKeys                  = fabricAttributes["keys"] || [];
-    const moduleLevels: IModuleLevels = fabricAttributes["levels"] || [];
-    const moduleLevelsDeclined        = fabricAttributes["levelsDeclin"] || undefined;
-    const moduleClassNames            = fabricAttributes["classNames"] || {};
+    const fabricAttributes                  = moduleAttributes[moduleAttribute];
+    const moduleTag                         = fabricAttributes["tag"];
+    const moduleKeys: any[]                 = fabricAttributes["keys"] || undefined;
+    const moduleLevels: IModuleLevels       = fabricAttributes["levels"] || undefined;
+    const moduleLevelsLinked: IModuleLevels = fabricAttributes["levelsLinked"] || undefined;
+    const moduleLevelsExtended              = fabricAttributes["levelsDeclin"] || undefined;
+    const moduleClassNames                  = fabricAttributes["classNames"] || undefined;
     
-    let MAIN_COLLECT: TCollect            = [];
-    let SKEL_COLLECT: Record<string, any> = {};
+    let MAIN_COLLECT: TCollect = [];
     
-    finalParse();
     
-    function finalParse() {
-        parseKeys();
-        parseLevelsWithoutKeys();
-        parseLevels();
-        parseClassNames();
+    return doParse();
+    
+    function doParse() {
         
-        console.log({SKEL_COLLECT});
-    }
-    
-    function buildMainConcat(classNameList) {
-        MAIN_COLLECT = MAIN_COLLECT.concat(classNameList);
-    }
-    
-    function buildSkelConcat(classNameList, key = "_default") {
-        SKEL_COLLECT[key] = classNameList;
-    }
-    
-    function parseKeys() {
-        // if keys
-        if (moduleKeys.length) {
-            
-            switch (qualify(moduleKeys)) {
-                case "arrayOfstrings":
-                case "arrayOfnumbers":
-                    
-                    const classNameList = moduleKeys.map((levelKey: TLevelKey) => {
-                        if (Boolean(moduleLevels[levelKey])) {
-                            parseLinkedLevel(levelKey);
-                        }
-                        return (levelKey === '_') ? moduleTag : moduleTag + "-" + levelKey;
-                    });
-                    
-                    parseLevelWithFabricKeys(classNameList);
-                    
-                    buildMainConcat(classNameList);
-                    buildSkelConcat(classNameList);
-                    
-                    break;
-                case "arrayOfobjects":
-                    break;
-                case "arrayOfarrays":
-                    // flatten ?
-                    let out = moduleKeys.flat().map((levelKey: TLevelKey) => {
-                        if (moduleLevels[levelKey]) {
-                            parseLinkedLevel(levelKey);
-                        }
-                        return moduleTag + "-" + levelKey;
-                    });
-                    
-                    MAIN_COLLECT = MAIN_COLLECT.concat(out);
-                    buildMainConcat(out);
-                    buildSkelConcat(out);
-                    
-                    break;
-            }
-            
-            if (!moduleKeys || !moduleKeys.length) {
-                parseLevels();
-            }
-            
-            // console.log('parseKeys', classNameList)
+        let keyList,
+            levelList,
+            levelListLinked,
+            levelListDeclin;
+        
+        const finalOut = [];
+        const debugOut = {};
+        
+        if (moduleKeys && moduleKeys.length) {
+            // beware of any [][]
+            keyList = concatenateWithKey(moduleTag, moduleKeys);
         }
-    }
-    
-    function parseLevelWithFabricKeys(classNameList: TFabricClassNameListFragments): void {
         
-        if (!classNameList) return;
-        if (Array.isArray(moduleLevels)) {
-            if (['strings', 'numbers'].includes(utils.isArrayOfTypes(moduleLevels))) {
-                let out: any = moduleLevels.map((levelName: any) => {
-                                               let pp = classNameList.map((className) => {
-                                                   return (levelName === '_') ? className : [className, levelName].join('-');
-                                               });
+        if (moduleLevels && Object.keys(moduleLevels).length) { // object !!!
+            levelList = Object.keys(moduleLevels).map((level) => {
+                let val = moduleLevels[level]
+                return concatenateWithKey(level, val);
+            }).flat();
+        }
+        
+        if (moduleLevelsLinked && Object.keys(moduleLevelsLinked).length) {
+            levelListLinked = Object.keys(moduleLevelsLinked).map((level) => {
+                let val = moduleLevelsLinked[level]
+                return concatenateWithKey(level, val);
+            }).flat();
+        }
+        
+        
+        if (moduleLevelsExtended && Object.keys(moduleLevelsExtended).length) {
+            levelListDeclin = Object.keys(moduleLevelsExtended).map((level) => {
+                let val = moduleLevelsLinked[level]
+                return concatenateWithKey(level, val);
+            }).flat();
+        }
+        
+        // prefix all now , and link
+        // colors :
+        if (keyList && !moduleLevels && !moduleLevelsLinked) {
+            // export
+            finalOut.push(keyList);
+            debugOut['_default'] = keyList;
+        }
+        
+        if (moduleKeys && (moduleLevels || moduleLevelsLinked)) {
+            // base
+            if (moduleLevels) {
+                let tg = keyList.map(x => {
                     
-                                               buildSkelConcat(pp, levelName);
-                                               return pp;
-                                           })
-                                           .flat(2) || [];
-                
-                buildMainConcat(out);
-            }
-        } else {
-            if (['arrays'].includes(utils.isObjectOfTypes(moduleLevels))) {
-                
-                let out: any = Object.keys(moduleLevels).map((levelKey: TLevelKey) => {
-                    const level = moduleLevels[levelKey];
-                    
-                    return classNameList.map((className) => {
+                    let tre = Object.keys(moduleLevels).map((level) => {
+                        let val = moduleLevels[level]
                         
-                        return level.map((levelName: string) => {
-                                             return levelName === '_' ? className + '-' + levelKey : className + '-' + levelKey + '-' + levelName
-                                         }
-                        )
-                    });
+                        return concatenateWithKey(level, val);
+                    }).flat(4)
                     
+                    debugOut['_base-' + x] =  concatenateWithKey(x, tre);
                     
-                }).flat(2)
-                
-                buildMainConcat(out);
-                
-            } else {
-                
-                console.log("SHOULD BE parseLevelWithFabricKeys");
+                    return concatenateWithKey(x, tre);
+                    
+                });
+                // is it declinated ? only colors, so nope
+                // export
+                finalOut.push(tg.flat());
             }
-        }
-    }
-    
-    function parseLinkedLevel(levelKey: TLevelKey) {
-        // object of arrays
-        if (utils.isObjectOfTypes(moduleLevels) === "arrays") {
-            let level = moduleLevels[levelKey];
-            
-            if (moduleKeys.includes(levelKey) || levelKey.charAt(0) === "_") {
-                let laliste = level.map((x: TClassNameFragment) => moduleTag + "-" + levelKey + "-" + x);
+            // if moduleLevelsLinked // only color ?
+            if (moduleLevelsLinked) {
+                //
+                let yt = Object.values(moduleKeys).map(moduleKey => {
+                    
+                    if (moduleKeys.includes(moduleKey)) {
+                        let out = [];
+                        
+                        debugOut['_linked-' + moduleKey] = {}
+                        
+                        out.push(concatenateWithKey(moduleKey, moduleLevelsLinked[moduleKey]));
+                        // is it declinated ?
+                        if (moduleLevelsExtended && moduleLevelsExtended[moduleKey]) {
+                            //
+                            out.push(moduleLevelsLinked[moduleKey].map((z) => {
+                                
+                                debugOut['_linked-' + moduleKey][z] = concatenateWithKey(z, moduleLevelsExtended[moduleKey]);
+                                return concatenateWithKey(z, moduleLevelsExtended[moduleKey]);
+                            }).flat(2))
+                        }
+                        
+                        // flatten for group here
+                        return out.flat(2);
+                    }
+                }).flat();
                 
-                buildMainConcat(laliste);
+                // export
+                finalOut.push(concatenateWithKey(moduleTag, yt));
                 
-                parseDeclinatedLevel(levelKey, laliste);
             }
-        } else {
-            console.log("SHOULD BE parseLinkedLevel");
-        }
-    }
-    
-    function parseDeclinatedLevel(levelKey: TLevelKey, laliste: any[]) {
-        if (moduleLevels[levelKey] && moduleLevelsDeclined[levelKey]) {
-            const out = laliste
-                .map((x: string) => {
-                    return moduleLevelsDeclined[levelKey].map((y: TClassNameFragment) => {
-                        return y === "_" ? x : [x, y].join("-");
-                    });
-                })
-                .flat(2);
+            if (levelListDeclin) {
+            } // only colors ? don't go there
             
-            buildMainConcat(out);
         }
-    }
-    
-    // only if no keys
-    function parseLevels(actionType = null) {
-        // parse levels
-        if (moduleKeys && moduleKeys.length) return;
+        if (!keyList && levelList) {
+            // export
+            let kkk = concatenateWithKey(moduleTag, levelList);
+            finalOut.push(kkk);
+            debugOut['_naked'] = kkk;
+        }
         
-        // module levels string[]
-        if (Array.isArray(moduleLevels) && ["numbers", "strings"].includes(utils.isArrayOfTypes(moduleLevels))) {
+        if (moduleClassNames) {
+            let kk  = parseClassNames();
+            let kkk = concatenateWithKey(moduleTag, kk);
             
-            let out = moduleLevels.map((y: TClassNameFragment) => {
-                return moduleTag + "-" + y;
-            });
-            //
-            buildMainConcat(out);
+            // export
+            finalOut.push(kkk);
+            debugOut['_classNames'] = kkk;
         }
-    }
-    
-    function parseLevelsWithoutKeys() {
+        
+        console.log(debugOut)
+        return finalOut.flat(2);
     }
     
     function parseClassNames() {
-        if (Object.keys(moduleClassNames).length) {
-            if (utils.isObjectOfTypes(moduleClassNames) === "arrays") {
-                let test = Object.keys(moduleClassNames)
-                                 .map((classNameKey: string) => {
-                                     let classNameValues = moduleClassNames[classNameKey];
-                                     //
-                                     return classNameValues.map((x: TClassNameFragment) => classNameKey + "-" + x);
-                                 })
-                                 .flat(2);
-                
-                buildMainConcat(test);
-            }
-        }
-    }
-    
-    function qualify(vars: TGuess) {
-        if (Array.isArray(vars)) {
-            return "arrayOf" + utils.isArrayOfTypes(vars);
-        }
-        
-        if (typeof vars === "object") {
-            return "objectOf" + utils.isObjectOfTypes(vars);
-        }
+        return Object.keys(moduleClassNames).map((klass) => {
+            return concatenateWithKey(klass, moduleClassNames[klass]);
+        }).flat();
     }
     
     
-    return MAIN_COLLECT;
+    function concatenateWithKey(key, levelLine: string[]) {
+        return levelLine.map((levelTag: string) => {
+            return [key, levelTag].filter((val) => {
+                return (val !== '_' && val.toString().charAt(0) !== '_')
+            }).filter(x => Boolean(x)).join('-');
+        })
+    }
+    
+    
 }
 
 export default {

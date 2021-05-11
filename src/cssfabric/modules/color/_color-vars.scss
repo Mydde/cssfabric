@@ -24,7 +24,7 @@ $color-docs: (
                 color:(
                         tag: color,
                         keys: (scheme palette gray),
-                        levels: (
+                        levelsLinked: (
                                 scheme: utils.getObjectKeys(loader.getFabricSharedParams(scheme)),
                                 palette: utils.getObjectKeys(loader.getFabricSharedParams(palette)),
                                 gray: utils.getObjectKeys(loader.getFabricSharedParams(gray))
@@ -37,7 +37,7 @@ $color-docs: (
                 background-color:(
                         tag: bg,
                         keys: (scheme palette gray),
-                        levels: (
+                        levelsLinked: (
                                 scheme: utils.getObjectKeys(loader.getFabricSharedParams(scheme)),
                                 palette: utils.getObjectKeys(loader.getFabricSharedParams(palette)),
                                 gray: utils.getObjectKeys(loader.getFabricSharedParams(gray))
@@ -50,11 +50,16 @@ $color-docs: (
                 background-themed:(
                         tag: "bg-themed",
                         keys: (scheme palette gray),
-                        levels: (
+                        levelsLinked: (
+                                gray: utils.getObjectKeys(loader.getFabricSharedParams(gray)),
+                                scheme: utils.getObjectKeys(loader.getFabricSharedParams(scheme)),
+                                palette: utils.getObjectKeys(loader.getFabricSharedParams(palette))
+                        ),
+                        /*levels: (
                                 scheme: utils.getObjectKeys(loader.getFabricSharedParams(scheme)),
                                 palette: utils.getObjectKeys(loader.getFabricSharedParams(palette)),
                                 gray: utils.getObjectKeys(loader.getFabricSharedParams(gray))
-                        ),
+                        ),*/
                         levelsDeclin:(
                                 palette : $_color-tint
                         ),

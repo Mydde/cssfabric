@@ -62,28 +62,13 @@ $scale-docs: (
         attributes:(
                 scale: (
                         tag: scale,
-                        keys: (w , h),
-                        levels: 134
-                ),
-                width:(
-                        tag: w,
-                        keys: (vild fro),
+                        keys: (w, h),
                         levels:(
                                 _size : utils.getObjectKeys(map-get($_cssProps, size)),
                                 _content: utils.getObjectKeys(map-get($_cssProps, content)),
                                 _defined-steps: utils.getObjectKeys(map-get($_cssProps, defined-steps)),
                                 _grid-5: utils.getObjectKeys(utils.cssDimensionPropertyBuilder(h, 5)),
                                 _grid-12: utils.getObjectKeys(utils.cssDimensionPropertyBuilder(h, 12))
-                        )
-                ),
-                height:(
-                        tag: h,
-                        levels:(
-                                _size : utils.getObjectKeys(map-get($_cssProps, size)),
-                                _content: utils.getObjectKeys(map-get($_cssProps, content)),
-                                _defined-steps: utils.getObjectKeys(map-get($_cssProps, defined-steps)),
-                                _dubide: utils.getObjectKeys(utils.cssDimensionPropertyBuilder(h, 5)),
-                                _dubidou: utils.getObjectKeys(utils.cssDimensionPropertyBuilder(h, 12))
                         )
                 )
         )
