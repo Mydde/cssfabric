@@ -60,8 +60,8 @@
                   (
                           light: lighten($color, 15%),
                           lighter: lighten($color, 30%),
-                          dark: darken($color, 15%),
-                          darker: darken($color, 30%),
+                          dark: darken($color, 10%),
+                          darker: darken($color, 25%),
                           complement: complement($color),
                           invert: invert($color)
                   ),

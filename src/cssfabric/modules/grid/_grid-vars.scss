@@ -68,6 +68,28 @@ $grid-config: (
 
 $grid-docs: (// add align-middle non generated className // grow + shrink
         attributes:(
+                grid-test:(
+                        tag: grid,
+                        keys: (w, h),
+                        levels:(
+                                wrap: utils.getObjectKeys(map-get($_cssProps, flexWrap)),
+                                //"_": (align items content justify)
+                        ),
+                        // levelsLinked:(
+                                // : $_grid-align,
+                                // items: utils.getObjectKeys(map-get($_cssProps, grid-items)),
+                                // content:utils.getObjectKeys(map-get($_cssProps, grid-content)),
+                                // justify:utils.getObjectKeys(map-get($_cssProps, grid-justify))
+                        // ),
+                        classNames: (
+                                "_":utils.getObjectKeys(map-get($_cssProps, flexWrap)), // add inline !
+                                align: $_grid-align,
+                                items: utils.getObjectKeys(map-get($_cssProps, grid-items)),
+                                content:utils.getObjectKeys(map-get($_cssProps, grid-content)),
+                                justify:utils.getObjectKeys(map-get($_cssProps, grid-justify))
+                        ),
+                        about: "a classic grid system, and hey, it gets height !"
+                ),
                 grid:(
                         tag: grid,
                         keys: (w, h),
