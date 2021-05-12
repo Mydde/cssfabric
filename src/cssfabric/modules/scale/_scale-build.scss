@@ -23,7 +23,7 @@ $weight-config: map-get($scale-config, weight-config)!default;
 $unit-tag-config: map-get($scale-config, unit-tag-config)!default;
 
 /// css dimensions rules builder
-@mixin css_dimension_property_builder($scale_prop, $size_code, $size_value, $media_query_code) {
+@mixin scale-classname-builder($scale_prop, $size_code, $size_value, $media_query_code) {
 
   $scale_prop_short: map-get($unit-tag-config, $scale_prop);
 
@@ -32,7 +32,7 @@ $unit-tag-config: map-get($scale-config, unit-tag-config)!default;
                   #{$scale_prop_short}-#{$media_query_code}-#{$size_code},
                   #{$scale_prop_short}-#{$size_code}
   );
-  .#{$tag} {
+  .#{$tag}, .scale-#{$tag} {
     #{$scale_prop}: $size_value;
 
     @if ($_has_dimensions_max) {
@@ -58,7 +58,7 @@ $unit-tag-config: map-get($scale-config, unit-tag-config)!default;
 // loop on shorthands
 @mixin play_shorthand_loop($scale_prop, $mq_size_key) {
   @each $scale_shorthand, $scale_shorthand_value in $scale-sizes {
-    @include css_dimension_property_builder(
+    @include scale-classname-builder(
                     $scale_prop,
                     $scale_shorthand,
                     map-get($scale-sizes, $scale_shorthand),
@@ -71,7 +71,7 @@ $unit-tag-config: map-get($scale-config, unit-tag-config)!default;
 @mixin play_dimensions_loop($scale_prop, $mq_size_key) {
   // loop on dimensions
   @each $scale_css_key , $scale_css_value in $scale-content {
-    @include css_dimension_property_builder($scale_prop, $scale_css_key, $scale_css_value, $mq_size_key);
+    @include scale-classname-builder($scale_prop, $scale_css_key, $scale_css_value, $mq_size_key);
   }
 }
 
@@ -88,7 +88,7 @@ $unit-tag-config: map-get($scale-config, unit-tag-config)!default;
 
     $loop_turn: $loop_turn * $multiplier;
 
-    @include css_dimension_property_builder(
+    @include scale-classname-builder(
                     $scale_prop,
                     $scale_defined_step,
                     $scale_defined_step + #{$scale-defined-step-unit},
@@ -102,7 +102,7 @@ $unit-tag-config: map-get($scale-config, unit-tag-config)!default;
   // loop on ratio dimensions
   @each $dimensions_grid_ratio in $scale-grid-ratios-config {
     @for $z_value from 1 through $dimensions_grid_ratio {
-      @include css_dimension_property_builder(
+      @include scale-classname-builder(
                       $scale_prop,
                       $z_value + "-" + $dimensions_grid_ratio,
                       (($z_value / $dimensions_grid_ratio) * 100) +#{"%"},

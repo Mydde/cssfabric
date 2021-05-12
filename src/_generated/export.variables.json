@@ -567,56 +567,6 @@
             }
 
             ,
-            "theme": {
-                "_data": {
-
-                    "moduleName": "theme",
-                    "moduleNameShort": "theme",
-                    "color-default-config": {
-                        "primary": "orange", "foreground": "#333", "background": "#ededed"
-                    }
-
-                    ,
-                    "declinations-config": ["primary",
-                    "secondary",
-                    "tertiary"],
-                    "theme-level-config": ["light",
-                    "lighter",
-                    "dark",
-                    "darker",
-                    "complement",
-                    "invert"],
-                    "theme-properties-apply-config": ["text",
-                    "bg",
-                    "border"],
-                    "color": {
-                        "primary": "orange", "primary-light": "#ffc04d", "primary-lighter": "#ffdb99", "primary-dark": "#b37400", "primary-darker": "#664200", "primary-complement": "#005aff", "primary-invert": "#005aff", "secondary": "#005aff", "secondary-light": "#4d8cff", "secondary-lighter": "#99bdff", "secondary-dark": "#003fb3", "secondary-darker": "#002466", "secondary-complement": "orange", "secondary-invert": "orange", "tertiary": "orange", "tertiary-light": "#ffc04d", "tertiary-lighter": "#ffdb99", "tertiary-dark": "#b37400", "tertiary-darker": "#664200", "tertiary-complement": "#005aff", "tertiary-invert": "#005aff"
-                    }
-                }
-
-                ,
-                "_metadata": {
-                    "title": "theme", "description": ""
-                }
-
-                ,
-                "_docs": {
-                    "attributes": {
-                        "theme": {
-
-                            "tag": "theme",
-                            "keys": ["text",
-                            "bg",
-                            "border"],
-                            "levels": {
-                                "primary": ["_", "light", "lighter", "dark", "darker", "complement", "invert"], "secondary": ["_", "light", "lighter", "dark", "darker", "complement", "invert"], "tertiary": ["_", "light", "lighter", "dark", "darker", "complement", "invert"]
-                            }
-                        }
-                    }
-                }
-            }
-
-            ,
             "text": {
                 "_data": {
 
@@ -684,6 +634,56 @@
                         ,
                         "text-shadow": {
                             "tag": "text-shad", "keys": []
+                        }
+                    }
+                }
+            }
+
+            ,
+            "theme": {
+                "_data": {
+
+                    "moduleName": "theme",
+                    "moduleNameShort": "theme",
+                    "color-default-config": {
+                        "primary": "orange", "foreground": "#333", "background": "#ededed"
+                    }
+
+                    ,
+                    "declinations-config": ["primary",
+                    "secondary",
+                    "tertiary"],
+                    "theme-level-config": ["light",
+                    "lighter",
+                    "dark",
+                    "darker",
+                    "complement",
+                    "invert"],
+                    "theme-properties-apply-config": ["text",
+                    "bg",
+                    "border"],
+                    "color": {
+                        "primary": "orange", "primary-light": "#ffc04d", "primary-lighter": "#ffdb99", "primary-dark": "#b37400", "primary-darker": "#664200", "primary-complement": "#005aff", "primary-invert": "#005aff", "secondary": "#005aff", "secondary-light": "#4d8cff", "secondary-lighter": "#99bdff", "secondary-dark": "#003fb3", "secondary-darker": "#002466", "secondary-complement": "orange", "secondary-invert": "orange", "tertiary": "orange", "tertiary-light": "#ffc04d", "tertiary-lighter": "#ffdb99", "tertiary-dark": "#b37400", "tertiary-darker": "#664200", "tertiary-complement": "#005aff", "tertiary-invert": "#005aff"
+                    }
+                }
+
+                ,
+                "_metadata": {
+                    "title": "theme", "description": ""
+                }
+
+                ,
+                "_docs": {
+                    "attributes": {
+                        "theme": {
+
+                            "tag": "theme",
+                            "keys": ["text",
+                            "bg",
+                            "border"],
+                            "levels": {
+                                "primary": ["_", "light", "lighter", "dark", "darker", "complement", "invert"], "secondary": ["_", "light", "lighter", "dark", "darker", "complement", "invert"], "tertiary": ["_", "light", "lighter", "dark", "darker", "complement", "invert"]
+                            }
                         }
                     }
                 }
