@@ -43,11 +43,8 @@ $_cssProps: (
 
 $_cssItemsProps: (
         self: (
-                auto: auto,
                 start: flex-start,
                 end: flex-end,
-                center: flex-center,
-                baseline: baseline,
                 stretch: stretch
         )
 );
@@ -81,7 +78,7 @@ $grid-docs: (// add align-middle non generated className // grow + shrink
                                 content:utils.getObjectKeys(map-get($_cssProps, grid-content)),
                                 justify:utils.getObjectKeys(map-get($_cssProps, grid-justify))
                         ),
-                        about: "a so classic grid system, and hey, it gets height !"
+                        about: "a classic grid system, and hey, it gets height !"
                 ),
                 self:(
                         tag: self,

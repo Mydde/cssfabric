@@ -75,28 +75,6 @@
             }
 
             ,
-            "base": {
-                "_data": {
-
-                    "cfg-has-dimension-strict": true,
-                    "CFG_HAS_DIMENSION_MIN": true,
-                    "CFG_HAS_DIMENSION_MAX": true,
-                    "size_step": "0.25rem",
-                    "sizes": {
-                        "tiny": 32, "small": 64, "medium": 256, "large": 250, "full": "100%"
-                    }
-                }
-
-                ,
-                "_metadata": {
-                    "title": "base", "tag": "base", "description": "cssfabric base config variables"
-                }
-
-                ,
-                "_docs": []
-            }
-
-            ,
             "box": {
                 "_data": {
 
@@ -237,6 +215,28 @@
             }
 
             ,
+            "base": {
+                "_data": {
+
+                    "cfg-has-dimension-strict": true,
+                    "CFG_HAS_DIMENSION_MIN": true,
+                    "CFG_HAS_DIMENSION_MAX": true,
+                    "size_step": "0.25rem",
+                    "sizes": {
+                        "tiny": 32, "small": 64, "medium": 256, "large": 250, "full": "100%"
+                    }
+                }
+
+                ,
+                "_metadata": {
+                    "title": "base", "tag": "base", "description": "cssfabric base config variables"
+                }
+
+                ,
+                "_docs": []
+            }
+
+            ,
             "color": {
                 "_data": {
                     "gray-config": {
@@ -371,7 +371,7 @@
                     ,
                     "cssItemsProps": {
                         "self": {
-                            "auto": "auto", "start": "flex-start", "end": "flex-end", "center": "flex-center", "baseline": "baseline", "stretch": "stretch"
+                            "start": "flex-start", "end": "flex-end", "stretch": "stretch"
                         }
                     }
                 }
@@ -394,91 +394,12 @@
                             }
 
                             ,
-                            "about": "a so classic grid system, and hey, it gets height !"
+                            "about": "a classic grid system, and hey, it gets height !"
                         }
 
                         ,
                         "self": {
-                            "tag": "self", "keys": ["auto", "start", "end", "center", "baseline", "stretch"], "about": "grid children specific classnames"
-                        }
-                    }
-                }
-            }
-
-            ,
-            "menu": {
-                "_data": {
-
-                    "menu_class_name": "menu",
-                    "menu_class_name_short": "ul",
-                    "orientations": {
-                        "v": "vertical", "h": "horizontal"
-                    }
-
-                    ,
-                    "menu_item_class_name": "menu-item",
-                    "menu_item_class_name_short": "li",
-                    "menu_item_disabled_tag": "disabled",
-                    "menu_item_selected_tag": "selected",
-                    "menu_dropdown_tag": "drop",
-                    "menu_dropdown_open": "open",
-                    "menu_dropdown_close": "close"
-                }
-
-                ,
-                "_metadata": {
-                    "title": "menu", "tag": "ul", "description": "cssfabric menu module to set menu style"
-                }
-
-                ,
-                "_docs": {
-                    "attributes": {
-                        "menu": {
-                            "tag": "menu", "keys": ["h", "v"]
-                        }
-                    }
-                }
-            }
-
-            ,
-            "overflow": {
-                "_data": {
-
-                    "overflow_props": ["overflow",
-                    "overflow-x",
-                    "overflow-y"],
-                    "overflow_values": ["visible",
-                    "hidden",
-                    "clip",
-                    "scroll",
-                    "auto"],
-                    "cssProps": {
-                        "overflow": {
-                            "visible": "visible", "hidden": "hidden", "clip": "clip", "scroll": "scroll", "_": "auto"
-                        }
-                    }
-                }
-
-                ,
-                "_metadata": {
-                    "title": "overflow", "tag": "flow", "description": "cssfabric overflow module to set overflow styles on all html elements"
-                }
-
-                ,
-                "_docs": {
-                    "attributes": {
-                        "overflow": {
-                            "tag": "flow", "keys": ["visible", "hidden", "clip", "scroll", "auto"]
-                        }
-
-                        ,
-                        "overflowX": {
-                            "tag": "flowX", "keys": ["visible", "hidden", "clip", "scroll", "auto"]
-                        }
-
-                        ,
-                        "overflowY": {
-                            "tag": "flowY", "keys": ["visible", "hidden", "clip", "scroll", "auto"]
+                            "tag": "self", "keys": ["start", "end", "stretch"], "about": "grid children specific classnames"
                         }
                     }
                 }
@@ -564,6 +485,85 @@
 
                 ,
                 "_docs": []
+            }
+
+            ,
+            "menu": {
+                "_data": {
+
+                    "menu_class_name": "menu",
+                    "menu_class_name_short": "ul",
+                    "orientations": {
+                        "v": "vertical", "h": "horizontal"
+                    }
+
+                    ,
+                    "menu_item_class_name": "menu-item",
+                    "menu_item_class_name_short": "li",
+                    "menu_item_disabled_tag": "disabled",
+                    "menu_item_selected_tag": "selected",
+                    "menu_dropdown_tag": "drop",
+                    "menu_dropdown_open": "open",
+                    "menu_dropdown_close": "close"
+                }
+
+                ,
+                "_metadata": {
+                    "title": "menu", "tag": "ul", "description": "cssfabric menu module to set menu style"
+                }
+
+                ,
+                "_docs": {
+                    "attributes": {
+                        "menu": {
+                            "tag": "menu", "keys": ["h", "v"]
+                        }
+                    }
+                }
+            }
+
+            ,
+            "overflow": {
+                "_data": {
+
+                    "overflow_props": ["overflow",
+                    "overflow-x",
+                    "overflow-y"],
+                    "overflow_values": ["visible",
+                    "hidden",
+                    "clip",
+                    "scroll",
+                    "auto"],
+                    "cssProps": {
+                        "overflow": {
+                            "visible": "visible", "hidden": "hidden", "clip": "clip", "scroll": "scroll", "_": "auto"
+                        }
+                    }
+                }
+
+                ,
+                "_metadata": {
+                    "title": "overflow", "tag": "flow", "description": "cssfabric overflow module to set overflow styles on all html elements"
+                }
+
+                ,
+                "_docs": {
+                    "attributes": {
+                        "overflow": {
+                            "tag": "flow", "keys": ["visible", "hidden", "clip", "scroll", "auto"]
+                        }
+
+                        ,
+                        "overflowX": {
+                            "tag": "flowX", "keys": ["visible", "hidden", "clip", "scroll", "auto"]
+                        }
+
+                        ,
+                        "overflowY": {
+                            "tag": "flowY", "keys": ["visible", "hidden", "clip", "scroll", "auto"]
+                        }
+                    }
+                }
             }
 
             ,
