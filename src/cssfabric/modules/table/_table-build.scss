@@ -14,7 +14,8 @@ $table_border_color_header: map-get($table-config, table-border-color-header);
 $table_border_color_main: map-get($table-config, table-border-color-main);
 $table_border_color_second: map-get($table-config, table-border-color-second);
 
-@mixin bg_strip($prefix_short,$nb_strips) {
+//  .table-bg-strip-2
+@mixin bg-strip($prefix_short,$nb_strips) {
   &.#{$prefix_short}-bg-strip-#{$nb_strips} {
     @for $nb_strip from 1 through $nb_strips {
       tr:nth-child(#{$nb_strips}n + #{$nb_strip}) td {
@@ -30,7 +31,7 @@ $table_border_color_second: map-get($table-config, table-border-color-second);
   }
 }
 
-
+// .table-sticky
 @mixin sticky($table_prefix_short) {
   &.#{$table_prefix_short}-sticky {
     position: relative;
@@ -48,7 +49,7 @@ $table_border_color_second: map-get($table-config, table-border-color-second);
     }
   }
 }
-
+// -layout -h-line -v-line border
 @mixin fabric_table($mq_size_key: null) {
   /** cssfabric : #{$TABLE_PREFIX_SHORT}*/
   $prefix_short: if($mq_size_key, #{$TABLE_PREFIX_SHORT}-#{$mq_size_key}, $TABLE_PREFIX_SHORT);
@@ -119,8 +120,8 @@ $table_border_color_second: map-get($table-config, table-border-color-second);
       }
     }
 
-    @include bg_strip($prefix_short, 2);
-    @include bg_strip($prefix_short, 5);
+    @include bg-strip($prefix_short, 2);
+    @include bg-strip($prefix_short, 5);
 
     @include sticky($prefix_short);
   }

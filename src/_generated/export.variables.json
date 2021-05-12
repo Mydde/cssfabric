@@ -75,6 +75,129 @@
             }
 
             ,
+            "base": {
+                "_data": {
+
+                    "cfg-has-dimension-strict": true,
+                    "CFG_HAS_DIMENSION_MIN": true,
+                    "CFG_HAS_DIMENSION_MAX": true,
+                    "size_step": "0.25rem",
+                    "sizes": {
+                        "tiny": 32, "small": 64, "medium": 256, "large": 250, "full": "100%"
+                    }
+                }
+
+                ,
+                "_metadata": {
+                    "title": "base", "tag": "base", "description": "cssfabric base config variables"
+                }
+
+                ,
+                "_docs": []
+            }
+
+            ,
+            "color": {
+                "_data": {
+                    "gray-config": {
+                        "start": "#ededed", "end": "#333333", "steps": 9
+                    }
+
+                    ,
+                    "color-types-config": ["color",
+                    "bg",
+                    "bg-themed"],
+                    "theme": {
+                        "primary": "orange", "foreground": "#333", "background": "#ededed"
+                    }
+
+                    ,
+                    "scheme": {
+                        "info": "yellow", "alert": "orange", "error": "red", "warning": "#ffdd57", "discrete": "gray", "success": "#23d160"
+                    }
+
+                    ,
+                    "palette": {
+                        "yellow": "#ffb900", "orange": "#d83b01", "red": "#d13438", "magenta": "#b4009e", "purple": "#5c2d91", "green": "#107c10", "teal": "#008272", "blue": "#0078d4"
+                    }
+
+                    ,
+                    "gray": {
+                        "100": "#d8d8d8", "200": "#c4c4c4", "300": "#afafaf", "400": "#9a9a9a", "500": "#868686", "600": "#717171", "700": "#5c5c5c", "800": "#484848", "900": "#333333"
+                    }
+                }
+
+                ,
+                "_metadata": {
+                    "title": "color", "title_tag": "its about colors", "description": "cssfabric color system: its about colors"
+                }
+
+                ,
+                "_docs": {
+                    "attributes": {
+                        "color": {
+
+                            "tag": "color",
+                            "keys": ["scheme",
+                            "palette",
+                            "gray"],
+                            "levelsLinked": {
+                                "scheme": ["info", "alert", "error", "warning", "discrete", "success"], "palette": ["yellow", "orange", "red", "magenta", "purple", "green", "teal", "blue"], "gray": ["100", "200", "300", "400", "500", "600", "700", "800", "900"]
+                            }
+
+                            ,
+                            "levelsDeclin": {
+                                "palette": ["_", "light", "lighter", "dark", "darker", "complement", "invert"]
+                            }
+
+                            ,
+                            "about": "color for text level html elements"
+                        }
+
+                        ,
+                        "background-color": {
+
+                            "tag": "bg",
+                            "keys": ["scheme",
+                            "palette",
+                            "gray"],
+                            "levelsLinked": {
+                                "scheme": ["info", "alert", "error", "warning", "discrete", "success"], "palette": ["yellow", "orange", "red", "magenta", "purple", "green", "teal", "blue"], "gray": ["100", "200", "300", "400", "500", "600", "700", "800", "900"]
+                            }
+
+                            ,
+                            "levelsDeclin": {
+                                "palette": ["_", "light", "lighter", "dark", "darker", "complement", "invert"]
+                            }
+
+                            ,
+                            "about": "background colors"
+                        }
+
+                        ,
+                        "background-themed": {
+
+                            "tag": "bg-themed",
+                            "keys": ["scheme",
+                            "palette",
+                            "gray"],
+                            "levelsLinked": {
+                                "gray": ["100", "200", "300", "400", "500", "600", "700", "800", "900"], "scheme": ["info", "alert", "error", "warning", "discrete", "success"], "palette": ["yellow", "orange", "red", "magenta", "purple", "green", "teal", "blue"]
+                            }
+
+                            ,
+                            "levelsDeclin": {
+                                "palette": ["_", "light", "lighter", "dark", "darker", "complement", "invert"]
+                            }
+
+                            ,
+                            "about": "same as background-color, but with added contrasted color to text"
+                        }
+                    }
+                }
+            }
+
+            ,
             "box": {
                 "_data": {
 
@@ -215,129 +338,6 @@
             }
 
             ,
-            "base": {
-                "_data": {
-
-                    "cfg-has-dimension-strict": true,
-                    "CFG_HAS_DIMENSION_MIN": true,
-                    "CFG_HAS_DIMENSION_MAX": true,
-                    "size_step": "0.25rem",
-                    "sizes": {
-                        "tiny": 32, "small": 64, "medium": 256, "large": 250, "full": "100%"
-                    }
-                }
-
-                ,
-                "_metadata": {
-                    "title": "base", "tag": "base", "description": "cssfabric base config variables"
-                }
-
-                ,
-                "_docs": []
-            }
-
-            ,
-            "color": {
-                "_data": {
-                    "gray-config": {
-                        "start": "#ededed", "end": "#333333", "steps": 9
-                    }
-
-                    ,
-                    "color-types-config": ["color",
-                    "bg",
-                    "bg-themed"],
-                    "theme": {
-                        "primary": "orange", "foreground": "#333", "background": "#ededed"
-                    }
-
-                    ,
-                    "scheme": {
-                        "info": "yellow", "alert": "orange", "error": "red", "warning": "#ffdd57", "discrete": "gray", "success": "#23d160"
-                    }
-
-                    ,
-                    "palette": {
-                        "yellow": "#ffb900", "orange": "#d83b01", "red": "#d13438", "magenta": "#b4009e", "purple": "#5c2d91", "green": "#107c10", "teal": "#008272", "blue": "#0078d4"
-                    }
-
-                    ,
-                    "gray": {
-                        "100": "#d8d8d8", "200": "#c4c4c4", "300": "#afafaf", "400": "#9a9a9a", "500": "#868686", "600": "#717171", "700": "#5c5c5c", "800": "#484848", "900": "#333333"
-                    }
-                }
-
-                ,
-                "_metadata": {
-                    "title": "color", "title_tag": "its about colors", "description": "cssfabric color system: its about colors"
-                }
-
-                ,
-                "_docs": {
-                    "attributes": {
-                        "color": {
-
-                            "tag": "color",
-                            "keys": ["scheme",
-                            "palette",
-                            "gray"],
-                            "levelsLinked": {
-                                "scheme": ["info", "alert", "error", "warning", "discrete", "success"], "palette": ["yellow", "orange", "red", "magenta", "purple", "green", "teal", "blue"], "gray": ["100", "200", "300", "400", "500", "600", "700", "800", "900"]
-                            }
-
-                            ,
-                            "levelsDeclin": {
-                                "palette": ["_", "light", "lighter", "dark", "darker", "complement", "invert"]
-                            }
-
-                            ,
-                            "about": "color for text level html elements"
-                        }
-
-                        ,
-                        "background-color": {
-
-                            "tag": "bg",
-                            "keys": ["scheme",
-                            "palette",
-                            "gray"],
-                            "levelsLinked": {
-                                "scheme": ["info", "alert", "error", "warning", "discrete", "success"], "palette": ["yellow", "orange", "red", "magenta", "purple", "green", "teal", "blue"], "gray": ["100", "200", "300", "400", "500", "600", "700", "800", "900"]
-                            }
-
-                            ,
-                            "levelsDeclin": {
-                                "palette": ["_", "light", "lighter", "dark", "darker", "complement", "invert"]
-                            }
-
-                            ,
-                            "about": "background colors"
-                        }
-
-                        ,
-                        "background-themed": {
-
-                            "tag": "bg-themed",
-                            "keys": ["scheme",
-                            "palette",
-                            "gray"],
-                            "levelsLinked": {
-                                "gray": ["100", "200", "300", "400", "500", "600", "700", "800", "900"], "scheme": ["info", "alert", "error", "warning", "discrete", "success"], "palette": ["yellow", "orange", "red", "magenta", "purple", "green", "teal", "blue"]
-                            }
-
-                            ,
-                            "levelsDeclin": {
-                                "palette": ["_", "light", "lighter", "dark", "darker", "complement", "invert"]
-                            }
-
-                            ,
-                            "about": "same as background-color, but with added contrasted color to text"
-                        }
-                    }
-                }
-            }
-
-            ,
             "grid": {
                 "_data": {
 
@@ -400,6 +400,50 @@
                         ,
                         "self": {
                             "tag": "self", "keys": ["start", "end", "stretch"], "about": "grid children specific classnames"
+                        }
+                    }
+                }
+            }
+
+            ,
+            "overflow": {
+                "_data": {
+
+                    "overflow_props": ["overflow",
+                    "overflow-x",
+                    "overflow-y"],
+                    "overflow_values": ["visible",
+                    "hidden",
+                    "clip",
+                    "scroll",
+                    "auto"],
+                    "cssProps": {
+                        "overflow": {
+                            "visible": "visible", "hidden": "hidden", "clip": "clip", "scroll": "scroll", "_": "auto"
+                        }
+                    }
+                }
+
+                ,
+                "_metadata": {
+                    "title": "overflow", "tag": "flow", "description": "cssfabric overflow module to set overflow styles on all html elements"
+                }
+
+                ,
+                "_docs": {
+                    "attributes": {
+                        "overflow": {
+                            "tag": "flow", "keys": ["visible", "hidden", "clip", "scroll", "auto"]
+                        }
+
+                        ,
+                        "overflowX": {
+                            "tag": "flowX", "keys": ["visible", "hidden", "clip", "scroll", "auto"]
+                        }
+
+                        ,
+                        "overflowY": {
+                            "tag": "flowY", "keys": ["visible", "hidden", "clip", "scroll", "auto"]
                         }
                     }
                 }
@@ -473,6 +517,56 @@
             }
 
             ,
+            "theme": {
+                "_data": {
+
+                    "moduleName": "theme",
+                    "moduleNameShort": "theme",
+                    "color-default-config": {
+                        "primary": "orange", "foreground": "#333", "background": "#ededed"
+                    }
+
+                    ,
+                    "declinations-config": ["primary",
+                    "secondary",
+                    "tertiary"],
+                    "theme-level-config": ["light",
+                    "lighter",
+                    "dark",
+                    "darker",
+                    "complement",
+                    "invert"],
+                    "theme-properties-apply-config": ["text",
+                    "bg",
+                    "border"],
+                    "color": {
+                        "primary": "orange", "primary-light": "#ffc04d", "primary-lighter": "#ffdb99", "primary-dark": "#b37400", "primary-darker": "#664200", "primary-complement": "#005aff", "primary-invert": "#005aff", "secondary": "#005aff", "secondary-light": "#4d8cff", "secondary-lighter": "#99bdff", "secondary-dark": "#003fb3", "secondary-darker": "#002466", "secondary-complement": "orange", "secondary-invert": "orange", "tertiary": "orange", "tertiary-light": "#ffc04d", "tertiary-lighter": "#ffdb99", "tertiary-dark": "#b37400", "tertiary-darker": "#664200", "tertiary-complement": "#005aff", "tertiary-invert": "#005aff"
+                    }
+                }
+
+                ,
+                "_metadata": {
+                    "title": "theme", "description": ""
+                }
+
+                ,
+                "_docs": {
+                    "attributes": {
+                        "theme": {
+
+                            "tag": "theme",
+                            "keys": ["text",
+                            "bg",
+                            "border"],
+                            "levels": {
+                                "primary": ["_", "light", "lighter", "dark", "darker", "complement", "invert"], "secondary": ["_", "light", "lighter", "dark", "darker", "complement", "invert"], "tertiary": ["_", "light", "lighter", "dark", "darker", "complement", "invert"]
+                            }
+                        }
+                    }
+                }
+            }
+
+            ,
             "table": {
                 "_data": {
                     "className": "table", "classNameShort": "tbl", "table_class_name": "table", "table_class_name_short": "tbl", "table-bg-color-head": "#f4f4f4", "table-bg-color-strip-main": "#ededed", "table-bg-color-strip-second": "#f5f5f5", "table-border-color-header": "#ccc", "table-border-color-main": "#ededed", "table-border-color-second": "#f5f5f5"
@@ -484,83 +578,17 @@
                 }
 
                 ,
-                "_docs": []
-            }
-
-            ,
-            "menu": {
-                "_data": {
-
-                    "menu_class_name": "menu",
-                    "menu_class_name_short": "ul",
-                    "orientations": {
-                        "v": "vertical", "h": "horizontal"
-                    }
-
-                    ,
-                    "menu_item_class_name": "menu-item",
-                    "menu_item_class_name_short": "li",
-                    "menu_item_disabled_tag": "disabled",
-                    "menu_item_selected_tag": "selected",
-                    "menu_dropdown_tag": "drop",
-                    "menu_dropdown_open": "open",
-                    "menu_dropdown_close": "close"
-                }
-
-                ,
-                "_metadata": {
-                    "title": "menu", "tag": "ul", "description": "cssfabric menu module to set menu style"
-                }
-
-                ,
                 "_docs": {
                     "attributes": {
-                        "menu": {
-                            "tag": "menu", "keys": ["h", "v"]
-                        }
-                    }
-                }
-            }
+                        "table": {
 
-            ,
-            "overflow": {
-                "_data": {
+                            "tag": "table",
+                            "classNames": {
+                                "_": ["bg-strip-2", "bg-strip-5"], "_pos": ["sticky", "layout"], "_deco": ["h-line", "v-line", "border"]
+                            }
 
-                    "overflow_props": ["overflow",
-                    "overflow-x",
-                    "overflow-y"],
-                    "overflow_values": ["visible",
-                    "hidden",
-                    "clip",
-                    "scroll",
-                    "auto"],
-                    "cssProps": {
-                        "overflow": {
-                            "visible": "visible", "hidden": "hidden", "clip": "clip", "scroll": "scroll", "_": "auto"
-                        }
-                    }
-                }
-
-                ,
-                "_metadata": {
-                    "title": "overflow", "tag": "flow", "description": "cssfabric overflow module to set overflow styles on all html elements"
-                }
-
-                ,
-                "_docs": {
-                    "attributes": {
-                        "overflow": {
-                            "tag": "flow", "keys": ["visible", "hidden", "clip", "scroll", "auto"]
-                        }
-
-                        ,
-                        "overflowX": {
-                            "tag": "flowX", "keys": ["visible", "hidden", "clip", "scroll", "auto"]
-                        }
-
-                        ,
-                        "overflowY": {
-                            "tag": "flowY", "keys": ["visible", "hidden", "clip", "scroll", "auto"]
+                            ,
+                            "about": "is a table"
                         }
                     }
                 }
@@ -640,50 +668,35 @@
             }
 
             ,
-            "theme": {
+            "menu": {
                 "_data": {
 
-                    "moduleName": "theme",
-                    "moduleNameShort": "theme",
-                    "color-default-config": {
-                        "primary": "orange", "foreground": "#333", "background": "#ededed"
+                    "menu_class_name": "menu",
+                    "menu_class_name_short": "ul",
+                    "orientations": {
+                        "v": "vertical", "h": "horizontal"
                     }
 
                     ,
-                    "declinations-config": ["primary",
-                    "secondary",
-                    "tertiary"],
-                    "theme-level-config": ["light",
-                    "lighter",
-                    "dark",
-                    "darker",
-                    "complement",
-                    "invert"],
-                    "theme-properties-apply-config": ["text",
-                    "bg",
-                    "border"],
-                    "color": {
-                        "primary": "orange", "primary-light": "#ffc04d", "primary-lighter": "#ffdb99", "primary-dark": "#b37400", "primary-darker": "#664200", "primary-complement": "#005aff", "primary-invert": "#005aff", "secondary": "#005aff", "secondary-light": "#4d8cff", "secondary-lighter": "#99bdff", "secondary-dark": "#003fb3", "secondary-darker": "#002466", "secondary-complement": "orange", "secondary-invert": "orange", "tertiary": "orange", "tertiary-light": "#ffc04d", "tertiary-lighter": "#ffdb99", "tertiary-dark": "#b37400", "tertiary-darker": "#664200", "tertiary-complement": "#005aff", "tertiary-invert": "#005aff"
-                    }
+                    "menu_item_class_name": "menu-item",
+                    "menu_item_class_name_short": "li",
+                    "menu_item_disabled_tag": "disabled",
+                    "menu_item_selected_tag": "selected",
+                    "menu_dropdown_tag": "drop",
+                    "menu_dropdown_open": "open",
+                    "menu_dropdown_close": "close"
                 }
 
                 ,
                 "_metadata": {
-                    "title": "theme", "description": ""
+                    "title": "menu", "tag": "ul", "description": "cssfabric menu module to set menu style"
                 }
 
                 ,
                 "_docs": {
                     "attributes": {
-                        "theme": {
-
-                            "tag": "theme",
-                            "keys": ["text",
-                            "bg",
-                            "border"],
-                            "levels": {
-                                "primary": ["_", "light", "lighter", "dark", "darker", "complement", "invert"], "secondary": ["_", "light", "lighter", "dark", "darker", "complement", "invert"], "tertiary": ["_", "light", "lighter", "dark", "darker", "complement", "invert"]
-                            }
+                        "menu": {
+                            "tag": "menu", "keys": ["h", "v"]
                         }
                     }
                 }
