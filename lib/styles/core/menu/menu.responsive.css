@@ -23,7 +23,7 @@ ul li.active {
         }
     }
 }*/
-@media only screen and (max-width: 120rem) {
+@media only screen and (max-width: 0rem) {
   ul.menu-xxl {
     list-style: none;
     list-style-type: none;

@@ -1,13 +1,13 @@
 @use '../utils' as utils;
 
-$cssfabric-metadata: (
+$cssfabric-metadata: ( 
     title: "cssfabric",
     tag: "cssfabric",
     description: "cssfabric global config variables"
 );
 
 $cssfabric-config: (
-    cfg-has-dimension-strict: true,
+    cfg-has-dimension-strict: true, 
     CFG_HAS_DIMENSION_MIN: true,
     CFG_HAS_DIMENSION_MAX: true,
     size_step: 0.25rem,

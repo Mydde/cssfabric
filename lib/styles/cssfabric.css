@@ -193,13 +193,7 @@ h6 {
   margin-inline-end: 0 !important;
 }
 
-.txt-ellipsis {
-  text-overflow: ellipsis;
-  overflow: hidden;
-  white-space: nowrap;
-}
-
-label {
+label, .label {
   padding: 0.125rem 0.5rem;
   border: 1px solid #ccc;
   display: inline-block;
@@ -6301,6 +6295,12 @@ ul.menu-h li {
   position: sticky;
   top: 0;
 }
+.text-ellipsis {
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
 /** cssfabric : txt*/
 .h1,
 h1 {

@@ -26,13 +26,13 @@ $cssProps: (
                 center: center,
                 justify: justify
         ),
-        text-shadow:()
+        text-shadow: ()
 );
 
 $text-metadata: (
         title: text,
         tag: text,
-        description: "cssfabric text module to set text style on all html elements",
+        description: "cssfabric text module to set text style on all html elements"
 );
 
 $text-config: (
@@ -43,7 +43,7 @@ $text-config: (
         font-sizes-h1-rem-config: 3,
         font-size-h-min-rem-config: 0.6,
         text-ellipsis-tag-config: ellipsis,
-        cssProps:(
+        cssProps: (
                 textTransform: (
                         cap: capitalize,
                         up: uppercase,
@@ -60,7 +60,7 @@ $text-config: (
                         light: lighter,
                         cap: normal,
                         bold: bold,
-                        bolder: bolder
+                        bolder: bolder  
                 ),
                 textAlign: (
                         l: left,
@@ -74,24 +74,28 @@ $text-config: (
         gray: loader.getFabricSharedParams(gray)
 );
 
-
 $text-docs: (
-        attributes:(
-                text-transform:(
+        attributes: (
+                text-transform: (
                         tag: text,
                         keys: utils.getObjectKeys(map-get($cssProps, text-transform))
                 ),
-                font-weight:(
+                font-weight: (
                         tag: text,
                         keys: utils.getObjectKeys(map-get($cssProps, font-weight))
                 ),
-                text-align:(
+                text-align: (
                         tag: text,
                         keys: utils.getObjectKeys(map-get($cssProps, text-align))
                 ),
-                text-shadow:(
+                text-shadow: (
                         tag: text-shad,
                         keys: utils.getObjectKeys(map-get($cssProps, text-shadow))
+                )
+        ),
+        classNames: (
+                "_": (
+                        "ellipsis" ,"tagged" ,'test'
                 )
         )
 );

@@ -64,6 +64,82 @@
                 },
                 "_docs": []
             },
+            "color": {
+                "_data": {
+                    "gray-config": {
+                        "start": "#ededed", "end": "#333333", "steps": 9
+                    },
+                    "color-types-config": ["color",
+                        "bg",
+                        "bg-themed"],
+                    "theme": {
+                        "primary": "orange", "foreground": "#333", "background": "#ededed"
+                    },
+                    "scheme": {
+                        "info": "yellow", "alert": "orange", "error": "red", "warning": "#ffdd57", "discrete": "gray", "success": "#23d160"
+                    },
+                    "palette": {
+                        "yellow": "#ffb900", "orange": "#d83b01", "red": "#d13438", "magenta": "#b4009e", "purple": "#5c2d91", "green": "#107c10", "teal": "#008272", "blue": "#0078d4"
+                    },
+                    "gray": {
+                        "100": "#d8d8d8", "200": "#c4c4c4", "300": "#afafaf", "400": "#9a9a9a", "500": "#868686", "600": "#717171", "700": "#5c5c5c", "800": "#484848", "900": "#333333"
+                    }
+                },
+                "_metadata": {
+                    "title": "color", "title_tag": "its about colors", "description": "cssfabric color system: its about colors"
+                },
+                "_docs": {
+                    "attributes": {
+                        "color": {
+                            "tag": "color",
+                            "keys": ["scheme",
+                                "palette",
+                                "gray"],
+                            "levelsLinked": {
+                                "scheme": ["info", "alert", "error", "warning", "discrete", "success"], "palette": ["yellow", "orange", "red", "magenta", "purple", "green", "teal", "blue"], "gray": ["100", "200", "300", "400", "500", "600", "700", "800", "900"]
+                            },
+                            "levelsDeclin": {
+                                "palette": ["_", "lighter", "light", "dark", "darker", "complement"]
+                            },
+                            "about": "color for text level html elements"
+                        },
+                        "background-color": {
+                            "tag": "bg",
+                            "keys": ["scheme",
+                                "palette",
+                                "gray"],
+                            "levelsLinked": {
+                                "scheme": ["info", "alert", "error", "warning", "discrete", "success"], "palette": ["yellow", "orange", "red", "magenta", "purple", "green", "teal", "blue"], "gray": ["100", "200", "300", "400", "500", "600", "700", "800", "900"]
+                            },
+                            "levelsDeclin": {
+                                "palette": ["_", "lighter", "light", "dark", "darker", "complement"]
+                            },
+                            "about": "background colors"
+                        },
+                        "background-themed": {
+                            "tag": "bg-themed",
+                            "keys": ["scheme",
+                                "palette",
+                                "gray"],
+                            "levelsLinked": {
+                                "gray": ["100", "200", "300", "400", "500", "600", "700", "800", "900"], "scheme": ["info", "alert", "error", "warning", "discrete", "success"], "palette": ["yellow", "orange", "red", "magenta", "purple", "green", "teal", "blue"]
+                            },
+                            "levelsDeclin": {
+                                "palette": ["_", "lighter", "light", "dark", "darker", "complement"]
+                            },
+                            "about": "same as background-color, but with added contrasted color to text"
+                        },
+                        "border-color": {
+                            "tag": "brd-col",
+                            "keys": ["palette",
+                                "gray"],
+                            "levels": {
+                                "koi": ["the", "flower", "is", "born", "again"]
+                            }
+                        }
+                    }
+                }
+            },
             "box": {
                 "_data": {
                     "unit-config": "rem",
@@ -163,82 +239,6 @@
                                 "_": [2, 4, 8, 16, 32, 64, 128, 256]
                             },
                             "about": "applying shadows give depth and levels to your design"
-                        }
-                    }
-                }
-            },
-            "color": {
-                "_data": {
-                    "gray-config": {
-                        "start": "#ededed", "end": "#333333", "steps": 9
-                    },
-                    "color-types-config": ["color",
-                        "bg",
-                        "bg-themed"],
-                    "theme": {
-                        "primary": "orange", "foreground": "#333", "background": "#ededed"
-                    },
-                    "scheme": {
-                        "info": "yellow", "alert": "orange", "error": "red", "warning": "#ffdd57", "discrete": "gray", "success": "#23d160"
-                    },
-                    "palette": {
-                        "yellow": "#ffb900", "orange": "#d83b01", "red": "#d13438", "magenta": "#b4009e", "purple": "#5c2d91", "green": "#107c10", "teal": "#008272", "blue": "#0078d4"
-                    },
-                    "gray": {
-                        "100": "#d8d8d8", "200": "#c4c4c4", "300": "#afafaf", "400": "#9a9a9a", "500": "#868686", "600": "#717171", "700": "#5c5c5c", "800": "#484848", "900": "#333333"
-                    }
-                },
-                "_metadata": {
-                    "title": "color", "title_tag": "its about colors", "description": "cssfabric color system: its about colors"
-                },
-                "_docs": {
-                    "attributes": {
-                        "color": {
-                            "tag": "color",
-                            "keys": ["scheme",
-                                "palette",
-                                "gray"],
-                            "levelsLinked": {
-                                "scheme": ["info", "alert", "error", "warning", "discrete", "success"], "palette": ["yellow", "orange", "red", "magenta", "purple", "green", "teal", "blue"], "gray": ["100", "200", "300", "400", "500", "600", "700", "800", "900"]
-                            },
-                            "levelsDeclin": {
-                                "palette": ["_", "lighter", "light", "dark", "darker", "complement"]
-                            },
-                            "about": "color for text level html elements"
-                        },
-                        "background-color": {
-                            "tag": "bg",
-                            "keys": ["scheme",
-                                "palette",
-                                "gray"],
-                            "levelsLinked": {
-                                "scheme": ["info", "alert", "error", "warning", "discrete", "success"], "palette": ["yellow", "orange", "red", "magenta", "purple", "green", "teal", "blue"], "gray": ["100", "200", "300", "400", "500", "600", "700", "800", "900"]
-                            },
-                            "levelsDeclin": {
-                                "palette": ["_", "lighter", "light", "dark", "darker", "complement"]
-                            },
-                            "about": "background colors"
-                        },
-                        "background-themed": {
-                            "tag": "bg-themed",
-                            "keys": ["scheme",
-                                "palette",
-                                "gray"],
-                            "levelsLinked": {
-                                "gray": ["100", "200", "300", "400", "500", "600", "700", "800", "900"], "scheme": ["info", "alert", "error", "warning", "discrete", "success"], "palette": ["yellow", "orange", "red", "magenta", "purple", "green", "teal", "blue"]
-                            },
-                            "levelsDeclin": {
-                                "palette": ["_", "lighter", "light", "dark", "darker", "complement"]
-                            },
-                            "about": "same as background-color, but with added contrasted color to text"
-                        },
-                        "border-color": {
-                            "tag": "brd-col",
-                            "keys": ["palette",
-                                "gray"],
-                            "levels": {
-                                "koi": ["the", "flower", "is", "born", "again"]
-                            }
                         }
                     }
                 }
@@ -453,7 +453,7 @@
                     }
                 },
                 "_metadata": {
-                    "title": "text", "tag": "txt", "description": "cssfabric text module to set text style on all html elements"
+                    "title": "text", "tag": "text", "description": "cssfabric text module to set text style on all html elements"
                 },
                 "_docs": {
                     "attributes": {
@@ -469,6 +469,9 @@
                         "text-shadow": {
                             "tag": "text-shad", "keys": []
                         }
+                    },
+                    "classNames": {
+                        "_": ["ellipsis", "tagged", "test"]
                     }
                 }
             },

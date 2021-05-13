@@ -1,4 +1,4 @@
-@media only screen and (max-width: 120rem) {
+@media only screen and (max-width: 0rem) {
   .border-xxl, .border-xxl-1 {
     border: 1px solid #ccc;
   }
@@ -21168,7 +21168,7 @@
     box-shadow: 0 26.6666666667px 55.1724137931px 0 rgba(0, 0, 0, 0.15), 0 4.8854961832px 14.8837209302px 0 rgba(0, 0, 0, 0.1);
   }
 }
-@media only screen and (max-width: 120rem) {
+@media only screen and (max-width: 0rem) {
   /**
   color ?
    */
@@ -25018,7 +25018,7 @@
     background-color: #333333;
   }
 }
-@media only screen and (max-width: 120rem) {
+@media only screen and (max-width: 0rem) {
   .grid-xxl-h {
     display: flex;
     flex-direction: row;
@@ -26063,7 +26063,7 @@ ul li.active {
         }
     }
 }*/
-@media only screen and (max-width: 120rem) {
+@media only screen and (max-width: 0rem) {
   ul.menu-xxl {
     list-style: none;
     list-style-type: none;
@@ -26454,7 +26454,7 @@ ul.menu-sm-h li .active {
   }
 }
 /* css overflow rules */
-@media only screen and (max-width: 120rem) {
+@media only screen and (max-width: 0rem) {
   .overflow-xxl-visible {
     overflow: visible;
   }
@@ -26759,7 +26759,7 @@ ul.menu-sm-h li .active {
     overflow: auto;
   }
 }
-@media only screen and (max-width: 120rem) {
+@media only screen and (max-width: 0rem) {
   .w-xxl-full, .scale-w-xxl-full {
     width: 100%;
   }
@@ -29964,7 +29964,7 @@ ul.menu-sm-h li .active {
     min-height: 100%;
   }
 }
-@media only screen and (max-width: 120rem) {
+@media only screen and (max-width: 0rem) {
   /** cssfabric : tbl*/
   .table {
     border-collapse: collapse;
@@ -30334,7 +30334,13 @@ ul.menu-sm-h li .active {
     top: 0;
   }
 }
-@media only screen and (max-width: 120rem) {
+.text-ellipsis {
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+@media only screen and (max-width: 0rem) {
   /** cssfabric : txt-xxl*/
   .h1,
 h1 {

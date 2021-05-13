@@ -1,4 +1,10 @@
-@media only screen and (max-width: 120rem) {
+.text-ellipsis {
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+@media only screen and (max-width: 0rem) {
   /** cssfabric : txt-xxl*/
   .h1,
 h1 {
