@@ -1,4 +1,4 @@
-@media only screen and (max-width: 140rem) {
+@media only screen and (max-width: 120rem) {
   /** cssfabric : tbl*/
   .table {
     border-collapse: collapse;
@@ -7,13 +7,15 @@
   .table thead,
 .table .thead {
     position: relative;
+    margin-bottom: 2rem;
   }
   .table.tbl-xxl-head thead tr th {
     background-color: table_bg_color_head;
   }
   .table thead tr th,
 .table .thead .tr .th {
-    padding: 0.25em;
+    padding: 0.5rem 0.25rem;
+    font-weight: normal;
   }
   .table tbody tr td,
 .table .tbody .tr .td {
@@ -70,7 +72,7 @@
     top: 0;
   }
 }
-@media only screen and (max-width: 80rem) {
+@media only screen and (max-width: 100rem) {
   /** cssfabric : tbl*/
   .table {
     border-collapse: collapse;
@@ -79,13 +81,15 @@
   .table thead,
 .table .thead {
     position: relative;
+    margin-bottom: 2rem;
   }
   .table.tbl-xl-head thead tr th {
     background-color: table_bg_color_head;
   }
   .table thead tr th,
 .table .thead .tr .th {
-    padding: 0.25em;
+    padding: 0.5rem 0.25rem;
+    font-weight: normal;
   }
   .table tbody tr td,
 .table .tbody .tr .td {
@@ -151,13 +155,15 @@
   .table thead,
 .table .thead {
     position: relative;
+    margin-bottom: 2rem;
   }
   .table.tbl-lg-head thead tr th {
     background-color: table_bg_color_head;
   }
   .table thead tr th,
 .table .thead .tr .th {
-    padding: 0.25em;
+    padding: 0.5rem 0.25rem;
+    font-weight: normal;
   }
   .table tbody tr td,
 .table .tbody .tr .td {
@@ -223,13 +229,15 @@
   .table thead,
 .table .thead {
     position: relative;
+    margin-bottom: 2rem;
   }
   .table.tbl-md-head thead tr th {
     background-color: table_bg_color_head;
   }
   .table thead tr th,
 .table .thead .tr .th {
-    padding: 0.25em;
+    padding: 0.5rem 0.25rem;
+    font-weight: normal;
   }
   .table tbody tr td,
 .table .tbody .tr .td {
@@ -295,13 +303,15 @@
   .table thead,
 .table .thead {
     position: relative;
+    margin-bottom: 2rem;
   }
   .table.tbl-sm-head thead tr th {
     background-color: table_bg_color_head;
   }
   .table thead tr th,
 .table .thead .tr .th {
-    padding: 0.25em;
+    padding: 0.5rem 0.25rem;
+    font-weight: normal;
   }
   .table tbody tr td,
 .table .tbody .tr .td {

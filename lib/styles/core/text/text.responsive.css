@@ -1,4 +1,4 @@
-@media only screen and (max-width: 140rem) {
+@media only screen and (max-width: 120rem) {
   /** cssfabric : txt-xxl*/
   .h1,
 h1 {
@@ -208,7 +208,7 @@ h6 {
     text-shadow: 0 0 0.125em #0078d4;
   }
 }
-@media only screen and (max-width: 80rem) {
+@media only screen and (max-width: 100rem) {
   /** cssfabric : txt-xl*/
   .h1,
 h1 {

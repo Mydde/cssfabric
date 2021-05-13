@@ -2,7 +2,7 @@
 @use '../../utils';
 
 $_color-types-config: (color bg bg-themed);
-$_color-tint: ( _ light lighter dark darker complement invert);
+$_color-tint: (_ lighter light dark darker complement); // invert
 
 
 $color-metadata: (
@@ -40,7 +40,7 @@ $color-docs: (
                         levelsLinked: (
                                 scheme: utils.getObjectKeys(loader.getFabricSharedParams(scheme)),
                                 palette: utils.getObjectKeys(loader.getFabricSharedParams(palette)),
-                                gray: utils.getObjectKeys(loader.getFabricSharedParams(gray))
+                                gray: utils.getObjectKeys(loader.getFabricSharedParams(gray)) // prefix with gray
                         ),
                         levelsDeclin:(
                                 palette : $_color-tint
@@ -55,15 +55,15 @@ $color-docs: (
                                 scheme: utils.getObjectKeys(loader.getFabricSharedParams(scheme)),
                                 palette: utils.getObjectKeys(loader.getFabricSharedParams(palette))
                         ),
-                        /*levels: (
-                                scheme: utils.getObjectKeys(loader.getFabricSharedParams(scheme)),
-                                palette: utils.getObjectKeys(loader.getFabricSharedParams(palette)),
-                                gray: utils.getObjectKeys(loader.getFabricSharedParams(gray))
-                        ),*/
                         levelsDeclin:(
                                 palette : $_color-tint
                         ),
                         about: "same as background-color, but with added contrasted color to text"
+                ),
+                border-color:(
+                        tag: brd-col,
+                        keys: (palette gray),
+                        levels:(koi:(the flower is born again))
                 )
         )
 );

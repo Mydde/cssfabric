@@ -121,10 +121,8 @@ $css-shorthands: (
   $unit: map-get($_args, unit);
   $fabric_key_shorthands: map-get($_args, fabric_key_shorthands);
   $write_rule: map-get($_args, write_rule);
-  /**
-*   #{$css_prop_short} #{$css_prop} ---------------------
-*/
-  @each $fabric_box_prop, $fabric_key_shorthand in $fabric_key_shorthands {
+
+  @each $fabric_key_shorthand , $fabric_box_prop   in $fabric_key_shorthands {
     // css property
     $prop_re: #{$css_prop_short}-#{$fabric_key_shorthand};
 

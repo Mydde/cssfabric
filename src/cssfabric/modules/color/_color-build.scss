@@ -15,85 +15,87 @@ $color-schemes: map-get($color-config, scheme);
 $color-palette: map-get($color-config, palette);
 
 // COLOR THEME 
-$color-theme: map-get($color-config, theme); 
+$color-theme: map-get($color-config, theme);
 
 // GRAYS
 $gray-config: map-get($color-config, gray-config) !default;
 $color-gray-start: map-get($gray-config, start) !default;
 $color-gray-end: map-get($gray-config, end) !default;
 $color-gray-steps: map-get($gray-config, steps) !default;
-$gray-schemes: utils.getGraySteps($color-gray-steps,$color-gray-start,$color-gray-end);
+$gray-schemes: utils.getGraySteps($color-gray-steps, $color-gray-start, $color-gray-end);
 
 @function text-contrast($n) {
-    $color-brightness: round((red($n) * 299) + (green($n) * 587) + (blue($n) * 114) / 1000);
-    $light-color: round((red(#ffffff) * 299) + (green(#ffffff) * 587) + (blue(#ffffff) * 114) / 1000);
-    $color: black;
+  $color-brightness: round((red($n) * 299) + (green($n) * 587) + (blue($n) * 114) / 1000);
+  $light-color: round((red(#ffffff) * 299) + (green(#ffffff) * 587) + (blue(#ffffff) * 114) / 1000);
+  $color: black;
 
-    @if abs($color-brightness) < ($light-color/2) {
-        $color: white;
-    }
+  @if abs($color-brightness) < ($light-color/2) {
+    $color: white;
+  }
 
-    @return $color;
+  @return $color;
 }
 
 @mixin colorFactory($tag_short, $color_prop) {
-    $switch-tag_short: utils.getColorPropertyType($tag_short);
+  $switch-tag_short: utils.getColorPropertyType($tag_short);
 
-    @each $colorTint in (light lighter dark darker complement invert) {
+  @each $colorTint in (light lighter dark darker complement invert) {
 
-        $newColor: utils.applyColorEffect($colorTint, $color_prop);
+    $newColor: utils.applyColorEffect($colorTint, $color_prop);
 
-        &-#{$colorTint} {
-            @if $tag_short== "bg-themed" {
-                color: text-contrast($newColor);
-            }
-            #{$switch-tag_short}: $newColor;
-        }
+    &-#{$colorTint} {
+      @if $tag_short== "bg-themed" {
+        color: text-contrast($newColor);
+      }
+      #{$switch-tag_short}: $newColor;
     }
+  }
 }
 
-@mixin fabricColors($type, $tag_short, $mq_key, $has_color_factory:null) {
+@mixin fabricColors($color-type,$color-type-list, $color-type-key, $mq-key, $has-color-factory:null) {
 
-    $switch-tag_short: utils.getColorPropertyType($tag_short);
+  $switch-tag_short: utils.getColorPropertyType($color-type-key);
 
-    $prop: "";
+  $prop: "";
 
-    $property_key: #{$tag_short}+ if($mq_key, -#{$mq_key}, "");
-
-    .#{$property_key} {
-        @each $color_key, $color_prop in $type {
-            &#{"-" + $color_key} {
-                @if $tag_short==color {
-                    color: $color_prop;
-                    @if $has_color_factory {
-                        @include colorFactory($tag_short, $color_prop);
-                    }
-                }
-
-                @if $tag_short==bg {
-                    background-color: $color_prop;
-                    @if $has_color_factory {
-                        @include colorFactory($tag_short, $color_prop);
-                    }
-                }
-
-                @if $tag_short == "bg-themed" {
-                    color: text-contrast($color_prop);
-                    text-shadow: 0 0 0.125rem utils.applyColorEffect("dark", $color_prop);
-                    background-color: $color_prop;
-                    @if $has_color_factory {
-                        @include colorFactory($tag_short, $color_prop);
-                    }
-                }
-            }
+  $property_key: #{$color-type-key}-#{$color-type} + if($mq-key, -#{$mq-key}, "");
+  /**
+  #{$color-type-key} ?
+   */
+  .#{$property_key} {
+    @each $type-key, $type-prop in $color-type-list {
+      &#{"-" + $type-key} {
+        @if $color-type-key==color { // nope for gray
+          color: $type-prop;
+          @if $has-color-factory {
+            @include colorFactory($color-type-key, $type-prop);
+          }
         }
-    }
-} 
 
-@mixin buildColor($mq_size_key) {
-    @each $key in $color-types-config {
-        @include fabricColors($color-palette, $key, $mq_size_key, true);
-        @include fabricColors($color-schemes, $key, $mq_size_key);
-        @include fabricColors($gray-schemes, $key, $mq_size_key);
+        @if $color-type-key==bg {
+          background-color: $type-prop;
+          @if $has-color-factory {
+            @include colorFactory($color-type-key, $type-prop);
+          }
+        }
+
+        @if $color-type-key == "bg-themed" {
+          color: text-contrast($type-prop);
+          text-shadow: 0 0 0.125rem utils.applyColorEffect("dark", $type-prop);
+          background-color: $type-prop;
+          @if $has-color-factory {
+            @include colorFactory($color-type-key, $type-prop);
+          }
+        }
+      }
     }
+  }
+}
+
+@mixin buildColor($mq_size_key:null) {
+  @each $color-type-key in $color-types-config {
+    @include fabricColors("palette", $color-palette, $color-type-key, $mq_size_key, true);
+    @include fabricColors("scheme", $color-schemes, $color-type-key, $mq_size_key);
+    @include fabricColors("gray", $gray-schemes, $color-type-key, $mq_size_key);
+  }
 }

@@ -1,5 +1,5 @@
 import jsonConfig              from "../_generated/export.variables.json" ;
-import listCssfabricClassNames from "./cssfabricClassNames";
+import cssfabricClassNames from "./cssfabricClassNames";
 
 export type IFabricConfModulePart = Record<string, any>;
 export type IFabricConfModuleDataPart = Record<string, any>;
@@ -47,5 +47,8 @@ export default {
     getModuleMetaData,
     getModuleDocs,
     getModuleDocsAttributes,
-    getClassNames: listCssfabricClassNames
+    getClassNames: cssfabricClassNames,
+    getModuleClassNames: cssfabricClassNames,
+    getModuleTagClassNames: cssfabricClassNames.getModuleTagClassNames,
+    getModuleTagDebug: cssfabricClassNames.getModuleTagDebug,
 };

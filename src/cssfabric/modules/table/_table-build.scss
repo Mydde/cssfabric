@@ -61,6 +61,7 @@ $table_border_color_second: map-get($table-config, table-border-color-second);
     thead,
     .thead {
       position: relative;
+      margin-bottom:2rem;
     }
 
     &.#{$prefix_short}-head thead tr th {
@@ -69,7 +70,8 @@ $table_border_color_second: map-get($table-config, table-border-color-second);
 
     thead tr th,
     .thead .tr .th {
-      padding: 0.25em;
+      padding: 0.5rem 0.25rem;
+      font-weight: normal;
     }
 
     tbody tr td,

@@ -1,4 +1,4 @@
-@media only screen and (max-width: 140rem) {
+@media only screen and (max-width: 120rem) {
   .w-xxl-full, .scale-w-xxl-full {
     width: 100%;
   }
@@ -639,7 +639,7 @@
     min-height: 100%;
   }
 }
-@media only screen and (max-width: 80rem) {
+@media only screen and (max-width: 100rem) {
   .w-xl-full, .scale-w-xl-full {
     width: 100%;
   }

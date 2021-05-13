@@ -43,7 +43,7 @@ $grid-code-sep: #{$grid-code}#{$sep};
     }
 
     .align-top, .#{$grid-code-sep}align-top {
-      align-items: flex-end;
+      align-items: flex-start;
     }
 
     .align-left, .#{$grid-code-sep}align-left {
@@ -114,11 +114,11 @@ $grid-code-sep: #{$grid-code}#{$sep};
     }
 
     @for $i from 1 through $grow-shrink-steps {
-      &.#{$grid-code-sep}grow#{$sep}#{$i} {
+      & .#{$grid-code-sep}grow#{$sep}#{$i} {
         flex-grow: $i;
       }
 
-      &.#{$grid-code-sep}shrink#{$sep}#{$i} {
+      & .#{$grid-code-sep}shrink#{$sep}#{$i} {
         flex-shrink: $i;
       }
     }
@@ -135,21 +135,21 @@ $grid-code-sep: #{$grid-code}#{$sep};
     }
 
     // justify content rules */
-    &.just, .grid-justify {
+    &.just, &.grid-justify {
       @each $fabricRule, $value in map-get($cssProps, grid-justify) {
         @include utils.fabricAttributes('&'+$sep, $fabricRule, 'justify-content', $value);
       }
     }
 
     // align-items rules */
-    &.items, .grid-items {
+    &.items, &.grid-items {
       @each $fabricRule, $value in map-get($cssProps, grid-items) {
         @include utils.fabricAttributes('&'+$sep, $fabricRule, 'align-items', $value);
       }
     }
 
     // align-content rules */
-    &.content, .grid-content {
+    &.content, &.grid-content {
       @each $fabricRule, $value in map-get($cssProps, grid-content) {
         $tag: content#{$sep}start;
         @include utils.fabricAttributes('&'+$sep, $fabricRule, 'align-content', $value);

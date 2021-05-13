@@ -11,8 +11,14 @@ declare const _default: {
     getModuleDocs: (module?: string) => IFabricConfModuleDocsPart;
     getModuleDocsAttributes: (module?: string) => TFabricConfModuleDocsAttributesPart;
     getClassNames: {
-        getModuleTagClassNames: (props: import("./cssfabricClassNames").IListCssfabricClassNamesProps) => any[];
-        getOther: (props: import("./cssfabricClassNames").IListCssfabricClassNamesProps) => any[];
+        getModuleTagClassNames: (props: import("./cssfabricClassNames").IListCssfabricClassNamesProps) => Record<string, any>;
+        getModuleTagDebug: (props: import("./cssfabricClassNames").IListCssfabricClassNamesProps) => Record<string, any>;
     };
+    getModuleClassNames: {
+        getModuleTagClassNames: (props: import("./cssfabricClassNames").IListCssfabricClassNamesProps) => Record<string, any>;
+        getModuleTagDebug: (props: import("./cssfabricClassNames").IListCssfabricClassNamesProps) => Record<string, any>;
+    };
+    getModuleTagClassNames: (props: import("./cssfabricClassNames").IListCssfabricClassNamesProps) => Record<string, any>;
+    getModuleTagDebug: (props: import("./cssfabricClassNames").IListCssfabricClassNamesProps) => Record<string, any>;
 };
 export default _default;
