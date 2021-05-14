@@ -20,67 +20,68 @@ $textTransform: map-get($cssProps, textTransform);
 $fontWeight: map-get($cssProps, fontWeight);
 $textAlign: map-get($cssProps, textAlign);
 
-$title-size-declination-config: map-get($text-config, title-size-declination-config)!default;
-$font-size-unit-config: map-get($text-config, font-size-unit-config)!default;
-$font-sizes-h1-rem-config: map-get($text-config, font-sizes-h1-rem-config)!default;
-$font-size-h-min-rem-config: map-get($text-config, font-size-h-min-rem-config)!default;
+$font-size-unit-config: map-get($text-config, font-size-unit-config) !default;
+$font-size-h-steps: map-get($text-config, title-size-declination-config) !default;
+$font-size-h-max-config: map-get($text-config, font-sizes-h1-rem-config) !default;
+$font-size-h-min-config: map-get($text-config, font-size-h-min-rem-config) !default;
 
-$h1-size: $font-sizes-h1-rem-config;
-$ratio: $h1-size/$title-size-declination-config;
+$size-diff: $font-size-h-max-config - $font-size-h-min-config   ;
+$steps: $font-size-h-steps - 1;
+
+$step-size: $size-diff / $steps;
 
 @mixin fabric_text($tag_short) {
 
-  @for $title-size-value from 1 through $title-size-declination-config {
-    //
-    $size: $title-size-value * 1;
-    $index: $title-size-declination-config - $title-size-value + 1;
-    $font-size: $index * $ratio;
+  $acc: 1 - $step-size ;
 
-    .h#{$size},
-    h#{$size} {
-      font-size: #{$font-size + $font-size-unit-config};
+  @for $size-index from 1 through $font-size-h-steps {
+    //
+    $acc:  (( $font-size-h-steps - $size-index) * $step-size) + 1;
+
+    .h#{$size-index},
+    h#{$size-index} {
+      font-size: #{$acc + $font-size-unit-config};
       line-height: 1.2;
       font-weight: 400;
     }
   }
 
   .#{$tag_short} {
-
     @each $fabricRule, $value in $textTransform {
-      @include utils.fabricAttributes('&'+$sep, $fabricRule, 'text-transform', $value);
+      @include utils.fabricAttributes("&" + $sep, $fabricRule, "text-transform", $value);
     }
 
     @each $fabricRule, $value in $fontWeight {
-      @include utils.fabricAttributes('&'+$sep, $fabricRule, 'font-weight', $value);
+      @include utils.fabricAttributes("&" + $sep, $fabricRule, "font-weight", $value);
     }
 
     @each $fabricRule, $value in $textAlign {
-      @include utils.fabricAttributes('&'+$sep, $fabricRule, 'text-align', $value);
+      @include utils.fabricAttributes("&" + $sep, $fabricRule, "text-align", $value);
     }
 
     @each $fabricRule, $value in $color-schemes {
-      @include utils.fabricAttributes('&'+$sep, $fabricRule, 'color', $value);
+      @include utils.fabricAttributes("&" + $sep, $fabricRule, "color", $value);
     }
 
     @each $fabricRule, $value in $color-palette-props {
-      @include utils.fabricAttributes('&'+$sep, $fabricRule, 'color', $value);
+      @include utils.fabricAttributes("&" + $sep, $fabricRule, "color", $value);
     }
 
-    // grays 
+    // grays
     @each $fabricRule, $value in $gray-list {
-      @include utils.fabricAttributes('&-gray'+$sep, $fabricRule, 'color', $value);
+      @include utils.fabricAttributes("&-gray" + $sep, $fabricRule, "color", $value);
     }
 
     // text shadows color_schemes
     @each $fabricRule, $value in $color-schemes {
       $cast-value: 0 0 0.125em #{$value};
-      @include utils.fabricAttributes('&'+$sep+shad+$sep, $fabricRule, 'text-shadow', $cast-value);
+      @include utils.fabricAttributes("&" + $sep + shad + $sep, $fabricRule, "text-shadow", $cast-value);
     }
 
     // text shadows color_palette_props
     @each $fabricRule, $value in $color-palette-props {
       $cast-value: 0 0 0.125em #{$value};
-      @include utils.fabricAttributes('&'+$sep+shad+$sep, $fabricRule, 'text-shadow', $cast-value);
+      @include utils.fabricAttributes("&" + $sep + shad + $sep, $fabricRule, "text-shadow", $cast-value);
     }
   }
 }

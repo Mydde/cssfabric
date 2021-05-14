@@ -63,8 +63,14 @@ $gray-schemes: utils.getGraySteps($color-gray-steps, $color-gray-start, $color-g
   #{$color-type-key} ?
    */
   .#{$property_key} {
-    @each $type-key, $type-prop in $color-type-list {
+    @each $type-key, $type-prop in $color-type-list { 
       &#{"-" + $type-key} {
+
+        // border-color: ;
+        @if $color-type-key==border-color { 
+            border-color: utils.applyColorEffect('dark',$type-prop)!important;
+        }
+
         @if $color-type-key==color { // nope for gray
           color: $type-prop;
           @if $has-color-factory {
@@ -77,7 +83,7 @@ $gray-schemes: utils.getGraySteps($color-gray-steps, $color-gray-start, $color-g
           @if $has-color-factory {
             @include colorFactory($color-type-key, $type-prop);
           }
-        }
+        } 
 
         @if $color-type-key == "bg-themed" {
           color: text-contrast($type-prop);

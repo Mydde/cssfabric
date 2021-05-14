@@ -40,8 +40,8 @@ $text-config: (
         moduleNameShort: txt,
         title-size-declination-config: 6,
         font-size-unit-config: rem,
-        font-sizes-h1-rem-config: 3,
-        font-size-h-min-rem-config: 0.6,
+        font-sizes-h1-rem-config: 3.1,
+        font-size-h-min-rem-config: 1,
         text-ellipsis-tag-config: ellipsis,
         cssProps: (
                 textTransform: (
@@ -51,23 +51,8 @@ $text-config: (
                         none: none,
                         full: full-width
                 ),
-                fontWeight: (
-                        50: 50,
-                        100: 100,
-                        300: 400,
-                        500: 500,
-                        900: 900,
-                        light: lighter,
-                        cap: normal,
-                        bold: bold,
-                        bolder: bolder  
-                ),
-                textAlign: (
-                        l: left,
-                        r: right,
-                        c: center,
-                        j: justify
-                )
+                fontWeight: map-get($cssProps, "font-weight"),
+                textAlign: map-get($cssProps, "text-align")
         ),
         scheme: loader.getFabricSharedParams(scheme),
         palette: loader.getFabricSharedParams(palette),
@@ -95,7 +80,9 @@ $text-docs: (
         ),
         classNames: (
                 "_": (
-                        "ellipsis" ,"tagged" ,'test'
+                        "ellipsis",
+                        "tagged",
+                        "test"
                 )
         )
 );

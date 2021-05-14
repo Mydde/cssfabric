@@ -7,42 +7,42 @@
 /** cssfabric : txt*/
 .h1,
 h1 {
-  font-size: 3rem;
+  font-size: 3.1rem;
   line-height: 1.2;
   font-weight: 400;
 }
 
 .h2,
 h2 {
-  font-size: 2.5rem;
+  font-size: 2.68rem;
   line-height: 1.2;
   font-weight: 400;
 }
 
 .h3,
 h3 {
-  font-size: 2rem;
+  font-size: 2.26rem;
   line-height: 1.2;
   font-weight: 400;
 }
 
 .h4,
 h4 {
-  font-size: 1.5rem;
+  font-size: 1.84rem;
   line-height: 1.2;
   font-weight: 400;
 }
 
 .h5,
 h5 {
-  font-size: 1rem;
+  font-size: 1.42rem;
   line-height: 1.2;
   font-weight: 400;
 }
 
 .h6,
 h6 {
-  font-size: 0.5rem;
+  font-size: 1rem;
   line-height: 1.2;
   font-weight: 400;
 }
@@ -95,29 +95,29 @@ h6 {
 .txt-r {
   text-align: right;
 }
-.txt-c {
+.txt-center {
   text-align: center;
 }
-.txt-j {
+.txt-justify {
   text-align: justify;
-}
-.txt-info {
-  color: yellow;
-}
-.txt-alert {
-  color: orange;
-}
-.txt-error {
-  color: red;
-}
-.txt-warning {
-  color: #ffdd57;
 }
 .txt-discrete {
   color: gray;
 }
+.txt-info {
+  color: #dbedff;
+}
+.txt-alert {
+  color: orange;
+}
+.txt-warning {
+  color: #fffbdd;
+}
 .txt-success {
-  color: #23d160;
+  color: #dcffe4;
+}
+.txt-error {
+  color: #ffe3e6;
 }
 .txt-yellow {
   color: #ffb900;
@@ -170,23 +170,23 @@ h6 {
 .txt-gray-900 {
   color: #333333;
 }
+.txt-shad-discrete {
+  text-shadow: 0 0 0.125em gray;
+}
 .txt-shad-info {
-  text-shadow: 0 0 0.125em yellow;
+  text-shadow: 0 0 0.125em #dbedff;
 }
 .txt-shad-alert {
   text-shadow: 0 0 0.125em orange;
 }
-.txt-shad-error {
-  text-shadow: 0 0 0.125em red;
-}
 .txt-shad-warning {
-  text-shadow: 0 0 0.125em #ffdd57;
-}
-.txt-shad-discrete {
-  text-shadow: 0 0 0.125em gray;
+  text-shadow: 0 0 0.125em #fffbdd;
 }
 .txt-shad-success {
-  text-shadow: 0 0 0.125em #23d160;
+  text-shadow: 0 0 0.125em #dcffe4;
+}
+.txt-shad-error {
+  text-shadow: 0 0 0.125em #ffe3e6;
 }
 .txt-shad-yellow {
   text-shadow: 0 0 0.125em #ffb900;
