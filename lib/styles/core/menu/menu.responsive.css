@@ -1,6 +1,3 @@
-ul {
-  border-bottom: 1px solid red;
-}
 ul li {
   margin: 0 4px;
 }
@@ -26,7 +23,7 @@ ul li.active {
         }
     }
 }*/
-@media only screen and (max-width: 140rem) {
+@media only screen and (max-width: 0rem) {
   ul.menu-xxl {
     list-style: none;
     list-style-type: none;
@@ -34,10 +31,27 @@ ul li.active {
   ul.menu-xxl-v {
     padding: 0;
     margin: 0;
+    line-height: 1rem;
+  }
+  ul.menu-xxl-v li.menu-item,
+ul.menu-xxl-v li {
+    display: block;
+    border-bottom: 1px solid #ededed;
+    margin: 0 1rem;
+    width: auto;
+    transition-property: all;
+    transition-duration: 0.125s;
+    padding: 1rem;
   }
   ul.menu-xxl-v li.menu-item:hover,
 ul.menu-xxl-v li:hover {
+    border-radius: 4px;
     background-color: #ededed;
+    text-align: center;
+  }
+  ul.menu-xxl-v li.menu-item .active,
+ul.menu-xxl-v li .active {
+    font-weight: bold;
   }
   ul.menu-xxl-v li {
     list-style: none;
@@ -45,6 +59,7 @@ ul.menu-xxl-v li:hover {
   ul.menu-xxl-h {
     padding: 0;
     margin: 0;
+    line-height: 1rem;
     display: flex;
     padding: 0 4rem;
     position: relative;
@@ -61,19 +76,32 @@ ul.menu-xxl-v li:hover {
   }
   ul.menu-xxl-h li.menu-item,
 ul.menu-xxl-h li {
+    display: block;
+    border-bottom: 1px solid #ededed;
+    margin: 0 1rem;
+    width: auto;
+    transition-property: all;
+    transition-duration: 0.125s;
+    padding: 1rem;
     flex: 1 1 0;
     border-left: 1px solid #ededed;
     text-align: center;
   }
   ul.menu-xxl-h li.menu-item:hover,
 ul.menu-xxl-h li:hover {
+    border-radius: 4px;
     background-color: #ededed;
+    text-align: center;
+  }
+  ul.menu-xxl-h li.menu-item .active,
+ul.menu-xxl-h li .active {
+    font-weight: bold;
   }
   ul.menu-xxl-h li {
     list-style: none;
   }
 }
-@media only screen and (max-width: 80rem) {
+@media only screen and (max-width: 100rem) {
   ul.menu-xl {
     list-style: none;
     list-style-type: none;
@@ -81,10 +109,27 @@ ul.menu-xxl-h li:hover {
   ul.menu-xl-v {
     padding: 0;
     margin: 0;
+    line-height: 1rem;
+  }
+  ul.menu-xl-v li.menu-item,
+ul.menu-xl-v li {
+    display: block;
+    border-bottom: 1px solid #ededed;
+    margin: 0 1rem;
+    width: auto;
+    transition-property: all;
+    transition-duration: 0.125s;
+    padding: 1rem;
   }
   ul.menu-xl-v li.menu-item:hover,
 ul.menu-xl-v li:hover {
+    border-radius: 4px;
     background-color: #ededed;
+    text-align: center;
+  }
+  ul.menu-xl-v li.menu-item .active,
+ul.menu-xl-v li .active {
+    font-weight: bold;
   }
   ul.menu-xl-v li {
     list-style: none;
@@ -92,6 +137,7 @@ ul.menu-xl-v li:hover {
   ul.menu-xl-h {
     padding: 0;
     margin: 0;
+    line-height: 1rem;
     display: flex;
     padding: 0 4rem;
     position: relative;
@@ -108,13 +154,26 @@ ul.menu-xl-v li:hover {
   }
   ul.menu-xl-h li.menu-item,
 ul.menu-xl-h li {
+    display: block;
+    border-bottom: 1px solid #ededed;
+    margin: 0 1rem;
+    width: auto;
+    transition-property: all;
+    transition-duration: 0.125s;
+    padding: 1rem;
     flex: 1 1 0;
     border-left: 1px solid #ededed;
     text-align: center;
   }
   ul.menu-xl-h li.menu-item:hover,
 ul.menu-xl-h li:hover {
+    border-radius: 4px;
     background-color: #ededed;
+    text-align: center;
+  }
+  ul.menu-xl-h li.menu-item .active,
+ul.menu-xl-h li .active {
+    font-weight: bold;
   }
   ul.menu-xl-h li {
     list-style: none;
@@ -128,10 +187,27 @@ ul.menu-xl-h li:hover {
   ul.menu-lg-v {
     padding: 0;
     margin: 0;
+    line-height: 1rem;
+  }
+  ul.menu-lg-v li.menu-item,
+ul.menu-lg-v li {
+    display: block;
+    border-bottom: 1px solid #ededed;
+    margin: 0 1rem;
+    width: auto;
+    transition-property: all;
+    transition-duration: 0.125s;
+    padding: 1rem;
   }
   ul.menu-lg-v li.menu-item:hover,
 ul.menu-lg-v li:hover {
+    border-radius: 4px;
     background-color: #ededed;
+    text-align: center;
+  }
+  ul.menu-lg-v li.menu-item .active,
+ul.menu-lg-v li .active {
+    font-weight: bold;
   }
   ul.menu-lg-v li {
     list-style: none;
@@ -139,6 +215,7 @@ ul.menu-lg-v li:hover {
   ul.menu-lg-h {
     padding: 0;
     margin: 0;
+    line-height: 1rem;
     display: flex;
     padding: 0 4rem;
     position: relative;
@@ -155,13 +232,26 @@ ul.menu-lg-v li:hover {
   }
   ul.menu-lg-h li.menu-item,
 ul.menu-lg-h li {
+    display: block;
+    border-bottom: 1px solid #ededed;
+    margin: 0 1rem;
+    width: auto;
+    transition-property: all;
+    transition-duration: 0.125s;
+    padding: 1rem;
     flex: 1 1 0;
     border-left: 1px solid #ededed;
     text-align: center;
   }
   ul.menu-lg-h li.menu-item:hover,
 ul.menu-lg-h li:hover {
+    border-radius: 4px;
     background-color: #ededed;
+    text-align: center;
+  }
+  ul.menu-lg-h li.menu-item .active,
+ul.menu-lg-h li .active {
+    font-weight: bold;
   }
   ul.menu-lg-h li {
     list-style: none;
@@ -175,10 +265,27 @@ ul.menu-lg-h li:hover {
   ul.menu-md-v {
     padding: 0;
     margin: 0;
+    line-height: 1rem;
+  }
+  ul.menu-md-v li.menu-item,
+ul.menu-md-v li {
+    display: block;
+    border-bottom: 1px solid #ededed;
+    margin: 0 1rem;
+    width: auto;
+    transition-property: all;
+    transition-duration: 0.125s;
+    padding: 1rem;
   }
   ul.menu-md-v li.menu-item:hover,
 ul.menu-md-v li:hover {
+    border-radius: 4px;
     background-color: #ededed;
+    text-align: center;
+  }
+  ul.menu-md-v li.menu-item .active,
+ul.menu-md-v li .active {
+    font-weight: bold;
   }
   ul.menu-md-v li {
     list-style: none;
@@ -186,6 +293,7 @@ ul.menu-md-v li:hover {
   ul.menu-md-h {
     padding: 0;
     margin: 0;
+    line-height: 1rem;
     display: flex;
     padding: 0 4rem;
     position: relative;
@@ -202,13 +310,26 @@ ul.menu-md-v li:hover {
   }
   ul.menu-md-h li.menu-item,
 ul.menu-md-h li {
+    display: block;
+    border-bottom: 1px solid #ededed;
+    margin: 0 1rem;
+    width: auto;
+    transition-property: all;
+    transition-duration: 0.125s;
+    padding: 1rem;
     flex: 1 1 0;
     border-left: 1px solid #ededed;
     text-align: center;
   }
   ul.menu-md-h li.menu-item:hover,
 ul.menu-md-h li:hover {
+    border-radius: 4px;
     background-color: #ededed;
+    text-align: center;
+  }
+  ul.menu-md-h li.menu-item .active,
+ul.menu-md-h li .active {
+    font-weight: bold;
   }
   ul.menu-md-h li {
     list-style: none;
@@ -222,10 +343,27 @@ ul.menu-md-h li:hover {
   ul.menu-sm-v {
     padding: 0;
     margin: 0;
+    line-height: 1rem;
+  }
+  ul.menu-sm-v li.menu-item,
+ul.menu-sm-v li {
+    display: block;
+    border-bottom: 1px solid #ededed;
+    margin: 0 1rem;
+    width: auto;
+    transition-property: all;
+    transition-duration: 0.125s;
+    padding: 1rem;
   }
   ul.menu-sm-v li.menu-item:hover,
 ul.menu-sm-v li:hover {
+    border-radius: 4px;
     background-color: #ededed;
+    text-align: center;
+  }
+  ul.menu-sm-v li.menu-item .active,
+ul.menu-sm-v li .active {
+    font-weight: bold;
   }
   ul.menu-sm-v li {
     list-style: none;
@@ -233,6 +371,7 @@ ul.menu-sm-v li:hover {
   ul.menu-sm-h {
     padding: 0;
     margin: 0;
+    line-height: 1rem;
     display: flex;
     padding: 0 4rem;
     position: relative;
@@ -249,13 +388,26 @@ ul.menu-sm-v li:hover {
   }
   ul.menu-sm-h li.menu-item,
 ul.menu-sm-h li {
+    display: block;
+    border-bottom: 1px solid #ededed;
+    margin: 0 1rem;
+    width: auto;
+    transition-property: all;
+    transition-duration: 0.125s;
+    padding: 1rem;
     flex: 1 1 0;
     border-left: 1px solid #ededed;
     text-align: center;
   }
   ul.menu-sm-h li.menu-item:hover,
 ul.menu-sm-h li:hover {
+    border-radius: 4px;
     background-color: #ededed;
+    text-align: center;
+  }
+  ul.menu-sm-h li.menu-item .active,
+ul.menu-sm-h li .active {
+    font-weight: bold;
   }
   ul.menu-sm-h li {
     list-style: none;

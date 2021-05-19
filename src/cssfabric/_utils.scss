@@ -4,7 +4,12 @@
 // css dimensions rules builder responsive
 @mixin fabricResponsiveEncloser($mq_size_value, $mq_min_size_value: null) {
   // and (min-width: $mq_min_size_value + rem)
-  @media only screen and (max-width: $mq_size_value + rem) {
+  // @debug $mq_size_value $mq_min_size_value;
+  $type-width: if($mq_size_value==120 , max , max);
+  $width: if($mq_size_value==120 , $mq_min_size_value , $mq_size_value);
+
+  // @debug  (#{$type-width}-width: $width + rem) ;
+  @media only screen and (#{$type-width}-width: $width + rem) {
     @content;
   }
 }
@@ -60,8 +65,8 @@
                   (
                           light: lighten($color, 15%),
                           lighter: lighten($color, 30%),
-                          dark: darken($color, 15%),
-                          darker: darken($color, 30%),
+                          dark: darken($color, 10%),
+                          darker: darken($color, 25%),
                           complement: complement($color),
                           invert: invert($color)
                   ),
@@ -114,7 +119,7 @@
 }
 
 @function getBoxIterator($iterator, $unit-config,$_unit-size-config) {
-  $out: ();
+  $out: ("_": "_"  );
 
   @for $grid_size_value from 1 through $iterator {
     $css_size_value: ($grid_size_value * $_unit-size-config) + $unit-config;
@@ -144,10 +149,23 @@
     $v_val_2: $acc / $v_fact_2;
     $h_val_2: $acc / $h_fact_2;
 
-    $out: map.set($out, $acc, #{$v_val} + #{$h_val} );
+    $out: map.set($out, $acc, #{$v_val} + #{$h_val});
   }
 
   @return $out;
+}
+
+@function cssDimensionPropertyBuilder($scale_prop,$dimensions_grid_ratio) {
+  $out: ();
+
+  @for $z_value from 1 through $dimensions_grid_ratio {
+    $key: $z_value + "-" + $dimensions_grid_ratio;
+    $val: (($z_value / $dimensions_grid_ratio) * 100) +#{"%"};
+
+    $out: map.set($out, $key, $val);
+  }
+
+  @return $out
 }
 
 @function getObjectKeys($object) {

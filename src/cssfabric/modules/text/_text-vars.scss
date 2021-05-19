@@ -26,13 +26,13 @@ $cssProps: (
                 center: center,
                 justify: justify
         ),
-        text-shadow:()
+        text-shadow: ()
 );
 
 $text-metadata: (
         title: text,
-        tag: txt,
-        description: "cssfabric text module to set text style on all html elements",
+        tag: text,
+        description: "cssfabric text module to set text style on all html elements"
 );
 
 $text-config: (
@@ -40,10 +40,10 @@ $text-config: (
         moduleNameShort: txt,
         title-size-declination-config: 6,
         font-size-unit-config: rem,
-        font-sizes-h1-rem-config: 3,
-        font-size-h-min-rem-config: 0.6,
+        font-sizes-h1-rem-config: 3.1,
+        font-size-h-min-rem-config: 1,
         text-ellipsis-tag-config: ellipsis,
-        cssProps:(
+        cssProps: (
                 textTransform: (
                         cap: capitalize,
                         up: uppercase,
@@ -51,55 +51,38 @@ $text-config: (
                         none: none,
                         full: full-width
                 ),
-                fontWeight: (
-                        50: 50,
-                        100: 100,
-                        300: 400,
-                        500: 500,
-                        900: 900,
-                        light: lighter,
-                        cap: normal,
-                        bold: bold,
-                        bolder: bolder
-                ),
-                textAlign: (
-                        l: left,
-                        r: right,
-                        c: center,
-                        j: justify
-                )
+                fontWeight: map-get($cssProps, "font-weight"),
+                textAlign: map-get($cssProps, "text-align")
         ),
         scheme: loader.getFabricSharedParams(scheme),
         palette: loader.getFabricSharedParams(palette),
         gray: loader.getFabricSharedParams(gray)
 );
 
-
 $text-docs: (
-        attributes:(
-                text-transform:(
+        attributes: (
+                text-transform: (
                         tag: text,
                         keys: utils.getObjectKeys(map-get($cssProps, text-transform))
                 ),
-                font-weight:(
+                font-weight: (
                         tag: text,
                         keys: utils.getObjectKeys(map-get($cssProps, font-weight))
                 ),
-                text-align:(
+                text-align: (
                         tag: text,
                         keys: utils.getObjectKeys(map-get($cssProps, text-align))
                 ),
-                text-shadow:(
+                text-shadow: (
                         tag: text-shad,
                         keys: utils.getObjectKeys(map-get($cssProps, text-shadow))
-                ),
-                color:(
-                        tag: text,
-                        keys: (
-                               utils.getObjectKeys(loader.getFabricSharedParams(scheme)),
-                               utils.getObjectKeys(loader.getFabricSharedParams(palette)),
-                               utils.getObjectKeys(loader.getFabricSharedParams(gray))
-                        )
+                )
+        ),
+        classNames: (
+                "_": (
+                        "ellipsis",
+                        "tagged",
+                        "test"
                 )
         )
 );

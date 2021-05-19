@@ -192,14 +192,8 @@ h6 {
   margin-inline-end: 0 !important;
 }
 
-.txt-ellipsis {
-  text-overflow: ellipsis;
-  overflow: hidden;
-  white-space: nowrap;
-}
-
-label {
-  padding: 0.2rem 0.5rem;
+label, .label {
+  padding: 0.125rem 0.5rem;
   border: 1px solid #ccc;
   display: inline-block;
   border-radius: 4px;

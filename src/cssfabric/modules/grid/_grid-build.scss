@@ -17,6 +17,8 @@ $cssItemsProps: map-get($grid-config, cssItemsProps);
 
 $gridFullWidth: map-get($grid-config, gridFullWidth);
 
+$grow-shrink-steps: map-get($grid-config, grow-shrink-steps);
+
 $grid-code-sep: #{$grid-code}#{$sep};
 
 @mixin makeGrid($mqKey) {
@@ -32,14 +34,32 @@ $grid-code-sep: #{$grid-code}#{$sep};
     display: flex;
     flex-direction: row;
 
-    & > .#{$grid-code}#{$sep}#{$gridFullWidth} {
+    & > .#{$grid-code-sep}#{$gridFullWidth} {
       flex: 1 1 0;
-      width: 100%;
-      max-width: 100%;
     }
 
-    .align-middle{
+    .align-middle, .#{$grid-code-sep}align-middle {
       align-items: center;
+    }
+
+    .align-top, .#{$grid-code-sep}align-top {
+      align-items: flex-start;
+    }
+
+    .align-left, .#{$grid-code-sep}align-left {
+      justify-content: flex-start;
+    }
+
+    .align-right, .#{$grid-code-sep}align-right {
+      justify-content: flex-end;
+    }
+
+    .align-bottom, .#{$grid-code-sep}align-bottom {
+      align-items: flex-end;
+    }
+
+    .align-center, .#{$grid-code-sep}align-center {
+      justify-content: center;
     }
   }
 
@@ -47,13 +67,33 @@ $grid-code-sep: #{$grid-code}#{$sep};
     display: flex;
     flex-direction: column;
 
-    & > .#{$grid-code}#{$sep}#{$gridFullWidth} {
+    & > .#{$grid-code-sep}#{$gridFullWidth} {
       flex: 1 1 0;
       max-height: 100%;
     }
 
-    .align-middle{
+    .align-middle, .#{$grid-code-sep}align-middle {
       justify-content: center;
+    }
+
+    .align-top, .#{$grid-code-sep}align-top {
+      justify-content: flex-start;
+    }
+
+    .align-left, .#{$grid-code-sep}align-left {
+      align-items: flex-start;
+    }
+
+    .align-right, .#{$grid-code-sep}align-right {
+      align-items: flex-end;
+    }
+
+    .align-bottom, .#{$grid-code-sep}align-bottom {
+      justify-content: flex-end;
+    }
+
+    .align-center, .#{$grid-code-sep}align-center {
+      align-items: center;
     }
   }
 
@@ -73,17 +113,12 @@ $grid-code-sep: #{$grid-code}#{$sep};
       display: inline-flex;
     }
 
-    & .align-middle {
-      // justify-content: center;
-     //  align-items: center;
-    }
-
-    @for $i from 1 through 4 {
-      &.#{$grid-code-sep}grow#{$sep}#{$i} {
+    @for $i from 1 through $grow-shrink-steps {
+      & .#{$grid-code-sep}grow#{$sep}#{$i} {
         flex-grow: $i;
       }
 
-      &.#{$grid-code-sep}shrink#{$sep}#{$i} {
+      & .#{$grid-code-sep}shrink#{$sep}#{$i} {
         flex-shrink: $i;
       }
     }
@@ -100,22 +135,22 @@ $grid-code-sep: #{$grid-code}#{$sep};
     }
 
     // justify content rules */
-    &.just {
-      @each $fabricRule, $value in map-get($cssProps, just) {
+    &.just, &.grid-justify {
+      @each $fabricRule, $value in map-get($cssProps, grid-justify) {
         @include utils.fabricAttributes('&'+$sep, $fabricRule, 'justify-content', $value);
       }
     }
 
     // align-items rules */
-    &.items {
-      @each $fabricRule, $value in map-get($cssProps, items) {
+    &.items, &.grid-items {
+      @each $fabricRule, $value in map-get($cssProps, grid-items) {
         @include utils.fabricAttributes('&'+$sep, $fabricRule, 'align-items', $value);
       }
     }
 
     // align-content rules */
-    &.content {
-      @each $fabricRule, $value in map-get($cssProps, content) {
+    &.content, &.grid-content {
+      @each $fabricRule, $value in map-get($cssProps, grid-content) {
         $tag: content#{$sep}start;
         @include utils.fabricAttributes('&'+$sep, $fabricRule, 'align-content', $value);
       }

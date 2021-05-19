@@ -1,6 +1,19 @@
-/**
-*   border  t ---------------------
-*/
+.border, .border-1 {
+  border: 1px solid #ccc;
+}
+.border-2 {
+  border: 2px solid #ccc;
+}
+.border-3 {
+  border: 3px solid #ccc;
+}
+.border-4 {
+  border: 4px solid #ccc;
+}
+.border-5 {
+  border: 5px solid #ccc;
+}
+
 .border-t, .border-t-1 {
   border-top: 1px solid #ccc;
 }
@@ -17,9 +30,6 @@
   border-top: 5px solid #ccc;
 }
 
-/**
-*   border  b ---------------------
-*/
 .border-b, .border-b-1 {
   border-bottom: 1px solid #ccc;
 }
@@ -36,9 +46,6 @@
   border-bottom: 5px solid #ccc;
 }
 
-/**
-*   border  l ---------------------
-*/
 .border-l, .border-l-1 {
   border-left: 1px solid #ccc;
 }
@@ -55,9 +62,6 @@
   border-left: 5px solid #ccc;
 }
 
-/**
-*   border  r ---------------------
-*/
 .border-r, .border-r-1 {
   border-right: 1px solid #ccc;
 }
@@ -74,9 +78,6 @@
   border-right: 5px solid #ccc;
 }
 
-/**
-*   border  all ---------------------
-*/
 .border-all, .border-all-1 {
   border: 1px solid #ccc;
 }
@@ -93,9 +94,6 @@
   border: 5px solid #ccc;
 }
 
-/**
-*   border  u ---------------------
-*/
 .border-u, .border-u-1 {
   border-bottom: 1px solid #ccc;
   border-left: 1px solid #ccc;
@@ -122,9 +120,6 @@
   border-right: 5px solid #ccc;
 }
 
-/**
-*   border  ii ---------------------
-*/
 .border-ii, .border-ii-1 {
   border-left: 1px solid #ccc;
   border-right: 1px solid #ccc;
@@ -146,9 +141,6 @@
   border-right: 5px solid #ccc;
 }
 
-/**
-*   border  tb ---------------------
-*/
 .border-tb, .border-tb-1 {
   border-top: 1px solid #ccc;
   border-bottom: 1px solid #ccc;
@@ -170,9 +162,31 @@
   border-bottom: 5px solid #ccc;
 }
 
-/**
-*   pad  t ---------------------
-*/
+.pad, .pad-1 {
+  padding: 0.25rem;
+}
+.pad-2 {
+  padding: 0.5rem;
+}
+.pad-3 {
+  padding: 0.75rem;
+}
+.pad-4 {
+  padding: 1rem;
+}
+.pad-5 {
+  padding: 1.25rem;
+}
+.pad-6 {
+  padding: 1.5rem;
+}
+.pad-7 {
+  padding: 1.75rem;
+}
+.pad-8 {
+  padding: 2rem;
+}
+
 .pad-t, .pad-t-1 {
   padding-top: 0.25rem;
 }
@@ -198,9 +212,6 @@
   padding-top: 2rem;
 }
 
-/**
-*   pad  b ---------------------
-*/
 .pad-b, .pad-b-1 {
   padding-bottom: 0.25rem;
 }
@@ -226,9 +237,6 @@
   padding-bottom: 2rem;
 }
 
-/**
-*   pad  l ---------------------
-*/
 .pad-l, .pad-l-1 {
   padding-left: 0.25rem;
 }
@@ -254,9 +262,6 @@
   padding-left: 2rem;
 }
 
-/**
-*   pad  r ---------------------
-*/
 .pad-r, .pad-r-1 {
   padding-right: 0.25rem;
 }
@@ -282,9 +287,6 @@
   padding-right: 2rem;
 }
 
-/**
-*   pad  all ---------------------
-*/
 .pad-all, .pad-all-1 {
   padding: 0.25rem;
 }
@@ -310,9 +312,6 @@
   padding: 2rem;
 }
 
-/**
-*   pad  u ---------------------
-*/
 .pad-u, .pad-u-1 {
   padding-bottom: 0.25rem;
   padding-left: 0.25rem;
@@ -354,9 +353,6 @@
   padding-right: 2rem;
 }
 
-/**
-*   pad  ii ---------------------
-*/
 .pad-ii, .pad-ii-1 {
   padding-left: 0.25rem;
   padding-right: 0.25rem;
@@ -390,9 +386,6 @@
   padding-right: 2rem;
 }
 
-/**
-*   pad  tb ---------------------
-*/
 .pad-tb, .pad-tb-1 {
   padding-top: 0.25rem;
   padding-bottom: 0.25rem;
@@ -426,9 +419,31 @@
   padding-bottom: 2rem;
 }
 
-/**
-*   marg  t ---------------------
-*/
+.marg, .marg-1 {
+  margin: 0.25rem;
+}
+.marg-2 {
+  margin: 0.5rem;
+}
+.marg-3 {
+  margin: 0.75rem;
+}
+.marg-4 {
+  margin: 1rem;
+}
+.marg-5 {
+  margin: 1.25rem;
+}
+.marg-6 {
+  margin: 1.5rem;
+}
+.marg-7 {
+  margin: 1.75rem;
+}
+.marg-8 {
+  margin: 2rem;
+}
+
 .marg-t, .marg-t-1 {
   margin-top: 0.25rem;
 }
@@ -454,9 +469,6 @@
   margin-top: 2rem;
 }
 
-/**
-*   marg  b ---------------------
-*/
 .marg-b, .marg-b-1 {
   margin-bottom: 0.25rem;
 }
@@ -482,9 +494,6 @@
   margin-bottom: 2rem;
 }
 
-/**
-*   marg  l ---------------------
-*/
 .marg-l, .marg-l-1 {
   margin-left: 0.25rem;
 }
@@ -510,9 +519,6 @@
   margin-left: 2rem;
 }
 
-/**
-*   marg  r ---------------------
-*/
 .marg-r, .marg-r-1 {
   margin-right: 0.25rem;
 }
@@ -538,9 +544,6 @@
   margin-right: 2rem;
 }
 
-/**
-*   marg  all ---------------------
-*/
 .marg-all, .marg-all-1 {
   margin: 0.25rem;
 }
@@ -566,9 +569,6 @@
   margin: 2rem;
 }
 
-/**
-*   marg  u ---------------------
-*/
 .marg-u, .marg-u-1 {
   margin-bottom: 0.25rem;
   margin-left: 0.25rem;
@@ -610,9 +610,6 @@
   margin-right: 2rem;
 }
 
-/**
-*   marg  ii ---------------------
-*/
 .marg-ii, .marg-ii-1 {
   margin-left: 0.25rem;
   margin-right: 0.25rem;
@@ -646,9 +643,6 @@
   margin-right: 2rem;
 }
 
-/**
-*   marg  tb ---------------------
-*/
 .marg-tb, .marg-tb-1 {
   margin-top: 0.25rem;
   margin-bottom: 0.25rem;
@@ -682,75 +676,62 @@
   margin-bottom: 2rem;
 }
 
-/**
-*   dsp display ---------------------
-*/
 .dsp-block {
   display: block;
 }
 
 .dsp-none {
-  display: none;
+  display: "";
 }
 
 .dsp-inline {
-  display: inline;
+  display: "";
 }
 
 .dsp-block-inline {
-  display: inline-block;
+  display: "";
 }
 
 .dsp-flex-inline {
-  display: inline-flex;
+  display: "";
 }
 
 .dsp-tbl {
-  display: table;
+  display: "";
 }
 
 .dsp-tbl-row {
-  display: table;
+  display: "";
 }
 
 .dsp-tbl-cell {
-  display: table;
+  display: "";
 }
 
 .dsp-tbl-column {
-  display: table-column;
+  display: "";
 }
 
-.dsp-unset {
-  display: unset;
-}
-
-/**
-*   pos position ---------------------
-*/
 .pos-abs {
   position: absolute;
 }
 
 .pos-rel {
-  position: relative;
+  position: "";
 }
 
 .pos-stat {
-  position: static;
+  position: "";
 }
 
 .pos-fix {
-  position: fixed;
+  position: "";
 }
 
 .pos-sticky {
-  position: sticky;
+  position: "";
 }
 
-/**
-*   box shadows ---------------------
-*/
 .shad-2 {
   box-shadow: 0 0.8333333333px 1.724137931px 0 rgba(0, 0, 0, 0.15), 0 0.1526717557px 0.4651162791px 0 rgba(0, 0, 0, 0.1);
 }

@@ -1,126 +1,99 @@
-
 @use 'text-vars';
 @use "../cssfabric-vars";
 @use '../../_utils';
+
+// load general config variables
+$cssfabric-config: cssfabric-vars.$cssfabric-config;
+$sep: map-get($cssfabric-config, sep);
+
 $text-config: text-vars.$text-config;
+$moduleName: map-get($text-config, moduleName);
+$moduleNameShort: map-get($text-config, moduleNameShort);
 
-// load general config variables 
-$_base: cssfabric-vars.$cssfabric-config;
+$cssProps: map-get($text-config, cssProps);
+$color-schemes: map-get($text-config, scheme);
+$color-palette-props: map-get($text-config, palette);
 
-$text_class_name: map-get($text-config, text_class_name);
-$text_class_name_short: map-get($text-config, text_class_name_short);
+$gray-list: map-get($text-config, gray);
 
-$color_schemes: map-get($_base, color_schemes_props);
-$color_palette_props: map-get($_base, color_palette_props);
-$color_grays: map-get($_base, color_grays);
+$textTransform: map-get($cssProps, textTransform);
+$fontWeight: map-get($cssProps, fontWeight);
+$textAlign: map-get($cssProps, textAlign);
 
-$font_sizes: map-get($text-config, font_sizes);
-$font_sizes_unit: map-get($text-config, font_sizes_unit);
-$font_sizes_h1_em: map-get($text-config, font_sizes_h1_em);
-$font_sizes_h_min_em: map-get($text-config, font_sizes_h_min_em);
+$font-size-unit-config: map-get($text-config, font-size-unit-config) !default;
+$font-size-h-steps: map-get($text-config, title-size-declination-config) !default;
+$font-size-h-max-config: map-get($text-config, font-sizes-h1-rem-config) !default;
+$font-size-h-min-config: map-get($text-config, font-size-h-min-rem-config) !default;
 
-$text_transform: map-get($text-config, text_transform);
-$font_weights: map-get($text-config, font_weights);
+$size-diff: $font-size-h-max-config - $font-size-h-min-config   ;
+$steps: $font-size-h-steps - 1;
 
-$text_align: map-get($text-config, text_align);
-
-$scale_props: ("width":"w", "height":"h");
-$scale_grid_ratios: (8, 24);
-
-$h1_size: $font_sizes_h1_em;
-$ratio: $h1_size/$font_sizes;
-$ratio_max_min: $font_sizes_h1_em / $font_sizes_h_min_em;
+$step-size: $size-diff / $steps;
 
 @mixin fabric_text($tag_short) {
 
-    @for $grid_size_value from 1 through $font_sizes {
-        //
-        $size: $grid_size_value * 1;
-        $index: $font_sizes - $grid_size_value + 1;
-        $font_size: $index * $ratio;
+  $acc: 1 - $step-size ;
 
-        .h#{$size},
-        h#{$size} {
-            font-size: $font_size+rem;
-            line-height: 1.2;
-            font-weight: 400;
-        }
+  @for $size-index from 1 through $font-size-h-steps {
+    //
+    $acc:  (( $font-size-h-steps - $size-index) * $step-size) + 1;
+
+    .h#{$size-index},
+    h#{$size-index} {
+      font-size: #{$acc + $font-size-unit-config};
+      line-height: 1.2;
+      font-weight: 400;
+    }
+  }
+
+  .#{$tag_short} {
+    @each $fabricRule, $value in $textTransform {
+      @include utils.fabricAttributes("&" + $sep, $fabricRule, "text-transform", $value);
     }
 
-    .#{$tag_short} { 
-        @each $transform_key,
-        $transform_prop in $text_transform {
-            &-#{$transform_key} {
-                text-transform: $transform_prop;
-            }
-        }
-
-        @each $transform_key,
-        $transform_prop in $font_weights {
-            &-#{$transform_key} {
-                font-weight: $transform_prop;
-            }
-        }
-
-        @each $transform_key,
-        $transform_prop in $text_align {
-            &-#{$transform_key} {
-                text-align: $transform_prop;
-            }
-        }
-
-        // text color_schemes
-        @each $color_key,
-        $color_prop in $color_schemes {
-
-            &#{"-"+$color_key} {
-                color: $color_prop;
-            }
-        }
-
-        // text color_palette_props
-        @each $color_palette_key,
-        $color_palette_prop in $color_palette_props {
-            &#{"-"+$color_palette_key} {
-                color: $color_palette_prop;
-            }
-        }
-
-        // text shadows color_schemes
-        @each $color_key,
-        $color_prop in $color_schemes {
-            &#{"-shad-"+$color_key} {
-                text-shadow: 0 0 0.125em $color_prop;
-            }
-        }
-
-        // text shadows color_palette_props
-        @each $color_palette_key,
-        $color_palette_prop in $color_palette_props {
-            &#{"-shad-"+$color_palette_key} {
-                text-shadow: 0 0 0.125em $color_palette_prop;
-            }
-        }
-
-        $gray_start: map-get($color_grays, gray_start);
-        $gray_end: map-get($color_grays, gray_end);
-        $gray_steps: map-get($color_grays, gray_steps);
-
-        @for $i from 1 through $gray_steps {
-            &-gray-#{($i+1)*100} {
-                color: mix($gray_end, $gray_start, $i / $gray_steps * 100%);
-            }
-        }
-
+    @each $fabricRule, $value in $fontWeight {
+      @include utils.fabricAttributes("&" + $sep, $fabricRule, "font-weight", $value);
     }
+
+    @each $fabricRule, $value in $textAlign {
+      @include utils.fabricAttributes("&" + $sep, $fabricRule, "text-align", $value);
+    }
+
+    @each $fabricRule, $value in $color-schemes {
+      @include utils.fabricAttributes("&" + $sep, $fabricRule, "color", $value);
+    }
+
+    @each $fabricRule, $value in $color-palette-props {
+      @include utils.fabricAttributes("&" + $sep, $fabricRule, "color", $value);
+    }
+
+    // grays
+    @each $fabricRule, $value in $gray-list {
+      @include utils.fabricAttributes("&-gray" + $sep, $fabricRule, "color", $value);
+    }
+
+    // text shadows color_schemes
+    @each $fabricRule, $value in $color-schemes {
+      $cast-value: 0 0 0.125em #{$value};
+      @include utils.fabricAttributes("&" + $sep + shad + $sep, $fabricRule, "text-shadow", $cast-value);
+    }
+
+    // text shadows color_palette_props
+    @each $fabricRule, $value in $color-palette-props {
+      $cast-value: 0 0 0.125em #{$value};
+      @include utils.fabricAttributes("&" + $sep + shad + $sep, $fabricRule, "text-shadow", $cast-value);
+    }
+  }
 }
 
+.text-ellipsis {
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
 
-
-
-@mixin buildText($mq_size_key) {
-
-    $property_key: if($mq_size_key, #{$text_class_name_short}-#{$mq_size_key}, #{$text_class_name_short});
-    /** cssfabric : #{$property_key}*/
-    @include fabric_text($property_key);
+@mixin buildText($mq_size_key: null) {
+  $property_key: if($mq_size_key, #{$moduleNameShort}-#{$mq_size_key}, #{$moduleNameShort});
+  /** cssfabric : #{$property_key}*/
+  @include fabric_text($property_key);
 }

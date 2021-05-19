@@ -12,13 +12,13 @@
                         "tiny": 32, "small": 64, "medium": 256, "large": 250, "full": "100%"
                     },
                     "media_quey_sizes": {
-                        "xxl": 140, "xl": 80, "lg": 64, "md": 48, "sm": 35.7
+                        "xxl": 120, "xl": 100, "lg": 64, "md": 48, "sm": 35.7
                     },
                     "theme": {
                         "primary": "orange", "foreground": "#333", "background": "#ededed"
                     },
                     "scheme": {
-                        "info": "yellow", "alert": "orange", "error": "red", "warning": "#ffdd57", "discrete": "gray", "success": "#23d160"
+                        "discrete": "gray", "info": "#dbedff", "alert": "orange", "warning": "#fffbdd", "success": "#dcffe4", "error": "#ffe3e6"
                     },
                     "palette": {
                         "yellow": "#ffb900", "orange": "#d83b01", "red": "#d13438", "magenta": "#b4009e", "purple": "#5c2d91", "green": "#107c10", "teal": "#008272", "blue": "#0078d4"
@@ -67,7 +67,7 @@
                     "margin-shorthand-config": "marg",
                     "cssProps": {
                         "borderShorthands": {
-                            "t": "top", "b": "bottom", "l": "left", "r": "right", "all": ["top", "bottom", "left", "right"], "u": ["bottom", "left", "right"], "ii": ["left", "right"], "tb": ["top", "bottom"]
+                            "_": ["top", "bottom", "left", "right"], "t": "top", "b": "bottom", "l": "left", "r": "right", "all": ["top", "bottom", "left", "right"], "u": ["bottom", "left", "right"], "ii": ["left", "right"], "tb": ["top", "bottom"]
                         },
                         "positionProps": {
                             "abs": "absolute", "rel": "relative", "stat": "static", "fix": "fixed", "sticky": "sticky"
@@ -84,7 +84,8 @@
                     "attributes": {
                         "padding": {
                             "tag": "pad",
-                            "keys": ["t",
+                            "keys": ["_",
+                                "t",
                                 "b",
                                 "l",
                                 "r",
@@ -93,21 +94,17 @@
                                 "ii",
                                 "tb"],
                             "values": {
-                                "1": "0.25rem", "2": "0.5rem", "3": "0.75rem", "4": "1rem", "5": "1.25rem", "6": "1.5rem", "7": "1.75rem", "8": "2rem"
+                                "_": "_", "1": "0.25rem", "2": "0.5rem", "3": "0.75rem", "4": "1rem", "5": "1.25rem", "6": "1.5rem", "7": "1.75rem", "8": "2rem"
                             },
-                            "levels": [1,
-                                2,
-                                3,
-                                4,
-                                5,
-                                6,
-                                7,
-                                8],
+                            "levels": {
+                                "_": ["_", 1, 2, 3, 4, 5, 6, 7, 8]
+                            },
                             "about": "padding properties for html elements"
                         },
                         "margin": {
                             "tag": "marg",
-                            "keys": ["t",
+                            "keys": ["_",
+                                "t",
                                 "b",
                                 "l",
                                 "r",
@@ -116,21 +113,17 @@
                                 "ii",
                                 "tb"],
                             "values": {
-                                "1": "0.25rem", "2": "0.5rem", "3": "0.75rem", "4": "1rem", "5": "1.25rem", "6": "1.5rem", "7": "1.75rem", "8": "2rem"
+                                "_": "_", "1": "0.25rem", "2": "0.5rem", "3": "0.75rem", "4": "1rem", "5": "1.25rem", "6": "1.5rem", "7": "1.75rem", "8": "2rem"
                             },
-                            "levels": [1,
-                                2,
-                                3,
-                                4,
-                                5,
-                                6,
-                                7,
-                                8],
+                            "levels": {
+                                "_": ["_", 1, 2, 3, 4, 5, 6, 7, 8]
+                            },
                             "about": "margin properties for html elements"
                         },
                         "border": {
                             "tag": "border",
-                            "keys": ["t",
+                            "keys": ["_",
+                                "t",
                                 "b",
                                 "l",
                                 "r",
@@ -139,17 +132,22 @@
                                 "ii",
                                 "tb"],
                             "values": {
-                                "1": "1px", "2": "2px", "3": "3px", "4": "4px", "5": "5px"
+                                "_": "_", "1": "1px", "2": "2px", "3": "3px", "4": "4px", "5": "5px"
                             },
-                            "levels": [1,
-                                2,
-                                3,
-                                4,
-                                5],
+                            "levels": {
+                                "_": ["_", 1, 2, 3, 4, 5]
+                            },
                             "about": "border properties for html elements"
                         },
                         "shadow": {
-                            "tag": "shad", "levels": [2, 4, 8, 16, 32, 64, 128, 256], "about": "applying shadows give depth and levels to your design"
+                            "tag": "shad",
+                            "values": {
+                                "2": "0.83333333331.724137931", "4": "1.66666666673.4482758621", "8": "3.33333333336.8965517241", "16": "6.666666666713.7931034483", "32": "13.333333333327.5862068966", "64": "26.666666666755.1724137931", "128": "53.3333333333110.3448275862", "256": "106.6666666667220.6896551724"
+                            },
+                            "levels": {
+                                "_": [2, 4, 8, 16, 32, 64, 128, 256]
+                            },
+                            "about": "applying shadows give depth and levels to your design"
                         }
                     }
                 }
@@ -176,12 +174,13 @@
                     },
                     "color-types-config": ["color",
                         "bg",
-                        "bg-themed"],
+                        "bg-themed",
+                        "border-color"],
                     "theme": {
                         "primary": "orange", "foreground": "#333", "background": "#ededed"
                     },
                     "scheme": {
-                        "info": "yellow", "alert": "orange", "error": "red", "warning": "#ffdd57", "discrete": "gray", "success": "#23d160"
+                        "discrete": "gray", "info": "#dbedff", "alert": "orange", "warning": "#fffbdd", "success": "#dcffe4", "error": "#ffe3e6"
                     },
                     "palette": {
                         "yellow": "#ffb900", "orange": "#d83b01", "red": "#d13438", "magenta": "#b4009e", "purple": "#5c2d91", "green": "#107c10", "teal": "#008272", "blue": "#0078d4"
@@ -200,11 +199,11 @@
                             "keys": ["scheme",
                                 "palette",
                                 "gray"],
-                            "levels": {
-                                "scheme": ["info", "alert", "error", "warning", "discrete", "success"], "palette": ["yellow", "orange", "red", "magenta", "purple", "green", "teal", "blue"], "gray": ["100", "200", "300", "400", "500", "600", "700", "800", "900"]
+                            "levelsLinked": {
+                                "scheme": ["discrete", "info", "alert", "warning", "success", "error"], "palette": ["yellow", "orange", "red", "magenta", "purple", "green", "teal", "blue"], "gray": ["100", "200", "300", "400", "500", "600", "700", "800", "900"]
                             },
                             "levelsDeclin": {
-                                "palette": ["_", "light", "lighter", "dark", "darker", "complement", "invert"]
+                                "palette": ["_", "lighter", "light", "dark", "darker", "complement"]
                             },
                             "about": "color for text level html elements"
                         },
@@ -213,11 +212,11 @@
                             "keys": ["scheme",
                                 "palette",
                                 "gray"],
-                            "levels": {
-                                "scheme": ["info", "alert", "error", "warning", "discrete", "success"], "palette": ["yellow", "orange", "red", "magenta", "purple", "green", "teal", "blue"], "gray": ["100", "200", "300", "400", "500", "600", "700", "800", "900"]
+                            "levelsLinked": {
+                                "scheme": ["discrete", "info", "alert", "warning", "success", "error"], "palette": ["yellow", "orange", "red", "magenta", "purple", "green", "teal", "blue"], "gray": ["100", "200", "300", "400", "500", "600", "700", "800", "900"]
                             },
                             "levelsDeclin": {
-                                "palette": ["_", "light", "lighter", "dark", "darker", "complement", "invert"]
+                                "palette": ["_", "lighter", "light", "dark", "darker", "complement"]
                             },
                             "about": "background colors"
                         },
@@ -226,13 +225,22 @@
                             "keys": ["scheme",
                                 "palette",
                                 "gray"],
-                            "levels": {
-                                "scheme": ["info", "alert", "error", "warning", "discrete", "success"], "palette": ["yellow", "orange", "red", "magenta", "purple", "green", "teal", "blue"], "gray": ["100", "200", "300", "400", "500", "600", "700", "800", "900"]
+                            "levelsLinked": {
+                                "gray": ["100", "200", "300", "400", "500", "600", "700", "800", "900"], "scheme": ["discrete", "info", "alert", "warning", "success", "error"], "palette": ["yellow", "orange", "red", "magenta", "purple", "green", "teal", "blue"]
                             },
                             "levelsDeclin": {
-                                "palette": ["_", "light", "lighter", "dark", "darker", "complement", "invert"]
+                                "palette": ["_", "lighter", "light", "dark", "darker", "complement"]
                             },
                             "about": "same as background-color, but with added contrasted color to text"
+                        },
+                        "border-color": {
+                            "tag": "border-color",
+                            "keys": ["palette",
+                                "gray"],
+                            "levelsLinked": {
+                                "gray": ["100", "200", "300", "400", "500", "600", "700", "800", "900"], "scheme": ["discrete", "info", "alert", "warning", "success", "error"], "palette": ["yellow", "orange", "red", "magenta", "purple", "green", "teal", "blue"]
+                            },
+                            "about": "border colors are slightly darker to maximize surrounding effect"
                         }
                     }
                 }
@@ -244,23 +252,24 @@
                     "horCode": "h",
                     "vertCode": "v",
                     "gridFullWidth": "main",
+                    "grow-shrink-steps": 4,
                     "cssProps": {
                         "flexWrap": {
                             "wrap-reverse": "wrap-reverse", "wrap": "wrap", "nowrap": "nowrap"
                         },
-                        "just": {
+                        "grid-justify": {
                             "start": "flex-start", "end": "flex-end", "between": "space-between", "stretch": "stretch", "center": "flex-center"
                         },
-                        "items": {
+                        "grid-items": {
                             "baseline": "baseline", "stretch": "stretch", "start": "flex-start", "center": "center", "end": "flex-end"
                         },
-                        "content": {
+                        "grid-content": {
                             "start": "flex-start", "center": "center", "end": "flex-end", "between": "space-between", "equal": "space-evenly"
                         }
                     },
                     "cssItemsProps": {
                         "self": {
-                            "auto": "auto", "start": "flex-start", "end": "flex-end", "center": "flex-center", "baseline": "baseline", "stretch": "stretch"
+                            "start": "flex-start", "end": "flex-end", "stretch": "stretch"
                         }
                     }
                 },
@@ -270,10 +279,16 @@
                 "_docs": {
                     "attributes": {
                         "grid": {
-                            "tag": "grid", "keys": ["w", "h"], "about": "a so classic grid system, and, hey, it gets height !"
+                            "tag": "grid",
+                            "keys": ["v",
+                                "h"],
+                            "classNames": {
+                                "_": ["wrap-reverse", "wrap", "nowrap"], "align": ["top", "middle", "bottom", "left", "right", "center", "center-middle"], "items": ["baseline", "stretch", "start", "center", "end"], "content": ["start", "center", "end", "between", "equal"], "justify": ["start", "end", "between", "stretch", "center"]
+                            },
+                            "about": "a classic grid system, and hey, it gets height !"
                         },
                         "self": {
-                            "tag": "self", "keys": ["auto", "start", "end", "center", "baseline", "stretch"], "about": "grid children specific classnames"
+                            "tag": "self", "keys": ["start", "end", "stretch"], "about": "grid children specific classnames"
                         }
                     }
                 }
@@ -362,7 +377,16 @@
                         },
                         "content": {
                             "content-max": "max-content", "content-min": "min-content"
-                        }
+                        },
+                        "defined-steps": [1,
+                            2,
+                            4,
+                            8,
+                            16,
+                            24,
+                            32,
+                            48,
+                            64]
                     }
                 },
                 "_metadata": {
@@ -370,11 +394,13 @@
                 },
                 "_docs": {
                     "attributes": {
-                        "width": {
-                            "tag": "w", "levels": [1, 2, 4, 8, 16, 24, 32, 48, 64, "content-max", "content-min"]
-                        },
-                        "height": {
-                            "tag": "h", "levels": [["145 exist", "and 151"], ["999 exist", "and 666"]]
+                        "scale": {
+                            "tag": "scale",
+                            "keys": ["w",
+                                "h"],
+                            "levels": {
+                                "_size": ["full", "mid", "quarter", "tiers"], "_content": ["content-max", "content-min"], "_defined-steps": [1, 2, 4, 8, 16, 24, 32, 48, 64], "_grid-5": ["1-5", "2-5", "3-5", "4-5", "5-5"], "_grid-12": ["1-12", "2-12", "3-12", "4-12", "5-12", "6-12", "7-12", "8-12", "9-12", "10-12", "11-12", "12-12"]
+                            }
                         }
                     }
                 }
@@ -386,7 +412,17 @@
                 "_metadata": {
                     "title": "table", "tag": "table", "description": "cssfabric table module to set different table styles"
                 },
-                "_docs": []
+                "_docs": {
+                    "attributes": {
+                        "table": {
+                            "tag": "table",
+                            "classNames": {
+                                "_": ["bg-strip-2", "bg-strip-5"], "_pos": ["sticky", "layout"], "_deco": ["h-line", "v-line", "border"]
+                            },
+                            "about": "is a table"
+                        }
+                    }
+                }
             },
             "text": {
                 "_data": {
@@ -394,8 +430,8 @@
                     "moduleNameShort": "txt",
                     "title-size-declination-config": 6,
                     "font-size-unit-config": "rem",
-                    "font-sizes-h1-rem-config": 3,
-                    "font-size-h-min-rem-config": 0.6,
+                    "font-sizes-h1-rem-config": 3.1,
+                    "font-size-h-min-rem-config": 1,
                     "text-ellipsis-tag-config": "ellipsis",
                     "cssProps": {
                         "textTransform": {
@@ -405,11 +441,11 @@
                             "50": 50, "100": 100, "300": 400, "500": 500, "900": 900, "light": "lighter", "cap": "normal", "bold": "bold", "bolder": "bolder"
                         },
                         "textAlign": {
-                            "l": "left", "r": "right", "c": "center", "j": "justify"
+                            "l": "left", "r": "right", "center": "center", "justify": "justify"
                         }
                     },
                     "scheme": {
-                        "info": "yellow", "alert": "orange", "error": "red", "warning": "#ffdd57", "discrete": "gray", "success": "#23d160"
+                        "discrete": "gray", "info": "#dbedff", "alert": "orange", "warning": "#fffbdd", "success": "#dcffe4", "error": "#ffe3e6"
                     },
                     "palette": {
                         "yellow": "#ffb900", "orange": "#d83b01", "red": "#d13438", "magenta": "#b4009e", "purple": "#5c2d91", "green": "#107c10", "teal": "#008272", "blue": "#0078d4"
@@ -419,7 +455,7 @@
                     }
                 },
                 "_metadata": {
-                    "title": "text", "tag": "txt", "description": "cssfabric text module to set text style on all html elements"
+                    "title": "text", "tag": "text", "description": "cssfabric text module to set text style on all html elements"
                 },
                 "_docs": {
                     "attributes": {
@@ -434,22 +470,11 @@
                         },
                         "text-shadow": {
                             "tag": "text-shad", "keys": []
-                        },
-                        "color": {
-                            "tag": "text", "keys": [["info", "alert", "error", "warning", "discrete", "success"], ["yellow", "orange", "red", "magenta", "purple", "green", "teal", "blue"], ["100", "200", "300", "400", "500", "600", "700", "800", "900"]]
                         }
+                    },
+                    "classNames": {
+                        "_": ["ellipsis", "tagged", "test"]
                     }
-                }
-            },
-            "zindex": {
-                "_data": {
-                    "z_groups": ["a", "b", "c", "d", "e", "f", "g"]
-                },
-                "_metadata": {
-                    "title": "zindex", "tag": "zI", "description": "cssfabric zindex module to set z-index on all html elements"
-                },
-                "_docs": {
-                    "z_groups": "_"
                 }
             },
             "theme": {
@@ -472,7 +497,7 @@
                         "bg",
                         "border"],
                     "color": {
-                        "primary": "orange", "primary-light": "#ffc04d", "primary-lighter": "#ffdb99", "primary-dark": "#b37400", "primary-darker": "#664200", "primary-complement": "#005aff", "primary-invert": "#005aff", "secondary": "#005aff", "secondary-light": "#4d8cff", "secondary-lighter": "#99bdff", "secondary-dark": "#003fb3", "secondary-darker": "#002466", "secondary-complement": "orange", "secondary-invert": "orange", "tertiary": "orange", "tertiary-light": "#ffc04d", "tertiary-lighter": "#ffdb99", "tertiary-dark": "#b37400", "tertiary-darker": "#664200", "tertiary-complement": "#005aff", "tertiary-invert": "#005aff"
+                        "primary": "orange", "primary-light": "#ffc04d", "primary-lighter": "#ffdb99", "primary-dark": "#cc8400", "primary-darker": "#805300", "primary-complement": "#005aff", "primary-invert": "#005aff", "secondary": "#005aff", "secondary-light": "#4d8cff", "secondary-lighter": "#99bdff", "secondary-dark": "#0048cc", "secondary-darker": "#002d80", "secondary-complement": "orange", "secondary-invert": "orange", "tertiary": "orange", "tertiary-light": "#ffc04d", "tertiary-lighter": "#ffdb99", "tertiary-dark": "#cc8400", "tertiary-darker": "#805300", "tertiary-complement": "#005aff", "tertiary-invert": "#005aff"
                     }
                 },
                 "_metadata": {
@@ -490,6 +515,17 @@
                             }
                         }
                     }
+                }
+            },
+            "zindex": {
+                "_data": {
+                    "z_groups": ["a", "b", "c", "d", "e", "f", "g"]
+                },
+                "_metadata": {
+                    "title": "zindex", "tag": "zI", "description": "cssfabric zindex module to set z-index on all html elements"
+                },
+                "_docs": {
+                    "z_groups": "_"
                 }
             }
         }

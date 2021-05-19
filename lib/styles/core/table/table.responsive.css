@@ -1,4 +1,5 @@
-@media only screen and (max-width: 140rem) {
+@media only screen and (max-width: 0rem) {
+  /** cssfabric : tbl*/
   .table {
     border-collapse: collapse;
     border-spacing: 0;
@@ -6,13 +7,15 @@
   .table thead,
 .table .thead {
     position: relative;
+    margin-bottom: 2rem;
   }
   .table.tbl-xxl-head thead tr th {
     background-color: table_bg_color_head;
   }
   .table thead tr th,
 .table .thead .tr .th {
-    padding: 0.25em;
+    padding: 0.5rem 0.25rem;
+    font-weight: normal;
   }
   .table tbody tr td,
 .table .tbody .tr .td {
@@ -69,7 +72,8 @@
     top: 0;
   }
 }
-@media only screen and (max-width: 80rem) {
+@media only screen and (max-width: 100rem) {
+  /** cssfabric : tbl*/
   .table {
     border-collapse: collapse;
     border-spacing: 0;
@@ -77,13 +81,15 @@
   .table thead,
 .table .thead {
     position: relative;
+    margin-bottom: 2rem;
   }
   .table.tbl-xl-head thead tr th {
     background-color: table_bg_color_head;
   }
   .table thead tr th,
 .table .thead .tr .th {
-    padding: 0.25em;
+    padding: 0.5rem 0.25rem;
+    font-weight: normal;
   }
   .table tbody tr td,
 .table .tbody .tr .td {
@@ -141,6 +147,7 @@
   }
 }
 @media only screen and (max-width: 64rem) {
+  /** cssfabric : tbl*/
   .table {
     border-collapse: collapse;
     border-spacing: 0;
@@ -148,13 +155,15 @@
   .table thead,
 .table .thead {
     position: relative;
+    margin-bottom: 2rem;
   }
   .table.tbl-lg-head thead tr th {
     background-color: table_bg_color_head;
   }
   .table thead tr th,
 .table .thead .tr .th {
-    padding: 0.25em;
+    padding: 0.5rem 0.25rem;
+    font-weight: normal;
   }
   .table tbody tr td,
 .table .tbody .tr .td {
@@ -212,6 +221,7 @@
   }
 }
 @media only screen and (max-width: 48rem) {
+  /** cssfabric : tbl*/
   .table {
     border-collapse: collapse;
     border-spacing: 0;
@@ -219,13 +229,15 @@
   .table thead,
 .table .thead {
     position: relative;
+    margin-bottom: 2rem;
   }
   .table.tbl-md-head thead tr th {
     background-color: table_bg_color_head;
   }
   .table thead tr th,
 .table .thead .tr .th {
-    padding: 0.25em;
+    padding: 0.5rem 0.25rem;
+    font-weight: normal;
   }
   .table tbody tr td,
 .table .tbody .tr .td {
@@ -283,6 +295,7 @@
   }
 }
 @media only screen and (max-width: 35.7rem) {
+  /** cssfabric : tbl*/
   .table {
     border-collapse: collapse;
     border-spacing: 0;
@@ -290,13 +303,15 @@
   .table thead,
 .table .thead {
     position: relative;
+    margin-bottom: 2rem;
   }
   .table.tbl-sm-head thead tr th {
     background-color: table_bg_color_head;
   }
   .table thead tr th,
 .table .thead .tr .th {
-    padding: 0.25em;
+    padding: 0.5rem 0.25rem;
+    font-weight: normal;
   }
   .table tbody tr td,
 .table .tbody .tr .td {

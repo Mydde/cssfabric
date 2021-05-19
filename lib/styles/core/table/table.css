@@ -5,13 +5,15 @@
 .table thead,
 .table .thead {
   position: relative;
+  margin-bottom: 2rem;
 }
 .table.tbl-head thead tr th {
   background-color: table_bg_color_head;
 }
 .table thead tr th,
 .table .thead .tr .th {
-  padding: 0.25em;
+  padding: 0.5rem 0.25rem;
+  font-weight: normal;
 }
 .table tbody tr td,
 .table .tbody .tr .td {

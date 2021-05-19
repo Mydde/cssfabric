@@ -1,5 +1,5 @@
 /* css overflow rules */
-@media only screen and (max-width: 140rem) {
+@media only screen and (max-width: 0rem) {
   .overflow-xxl-visible {
     overflow: visible;
   }
@@ -84,7 +84,7 @@
     overflow: unset;
   }
 }
-@media only screen and (max-width: 80rem) {
+@media only screen and (max-width: 100rem) {
   .overflow-xl-visible {
     overflow: visible;
   }
