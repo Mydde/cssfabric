@@ -30,10 +30,11 @@ $box-shadows-steps: map-get($box-config, shadows-steps) !default;
 $box-shadows-step-multiplier: map-get($box-config, shadows-step_multiplier) !default;
 
 $css-shorthands: (
-  border: $box-border-shorthand-config,
-  padding: $box-padding-shorthand-config,
-  margin: $box-margin-shorthand-config
+        border: $box-border-shorthand-config,
+        padding: $box-padding-shorthand-config,
+        margin: $box-margin-shorthand-config
 );
+
 
 // adding {border}-{r} shorthand css rule for .{border}-{r}-1
 @function raw_size_tag_rule($condition) {
@@ -51,10 +52,6 @@ $css-shorthands: (
 
   $computed_value: "";
 
-  // simply write method: value
-  @if $rule_type== "position_display" {
-    $computed_value: $rule_value;
-  }
 
   // complex write method: 1px value
   @if ($css_prop== "padding" or $css_prop== "margin") {
@@ -89,18 +86,19 @@ $css-shorthands: (
         #{raw_size_tag_rule($grid_size_value)} &-#{$grid_size_value} {
           @if length($rule) ==4 {
             $_args: (
-              rule_value: $css_size_value,
-              rule_type: "pmb",
-              css_prop: $fabric_box_position_prop
+                    rule_value: $css_size_value,
+                    rule_type: "pmb",
+                    css_prop: $fabric_box_position_prop
             );
 
             #{$fabric_box_position_prop}: write-box-rule($_args);
           } @else {
+            
             @each $grid_size_value in $rule {
               $_args: (
-                rule_value: $css_size_value,
-                rule_type: "pmb",
-                css_prop: $fabric_box_position_prop
+                      rule_value: $css_size_value,
+                      rule_type: "pmb",
+                      css_prop: $fabric_box_position_prop
               );
 
               #{$fabric_box_position_prop}-#{$grid_size_value}: write-box-rule($_args);
@@ -108,27 +106,6 @@ $css-shorthands: (
           }
         }
       }
-    }
-  }
-}
-
-@mixin fabric_property($_args) {
-  $css_prop: map-get($_args, css_prop);
-  $css_prop_short: map-get($_args, css_prop_short);
-  $fabric_key_shorthands: map-get($_args, fabric_key_shorthands);
-
-  @each $fabric_key_shorthand, $fabric_box_prop in $fabric_key_shorthands {
-    // css property
-    $prop_re: #{$css_prop_short}-#{$fabric_key_shorthand};
-
-    .#{$prop_re} {
-      $_args: (
-        rule_value: $fabric_box_prop,
-        rule_type: map-get($_args, write_rule),
-        css_prop: map-get($_args, css_prop)
-      );
-
-      #{$css_prop}: write-box-rule($_args);
     }
   }
 }
@@ -148,28 +125,28 @@ $css-shorthands: (
 
   $shorthand: if($mq_key, #{$box-display-shorthand-config}-#{$mq_key}, #{$box-display-shorthand-config});
 
-  @include fabric_property(
-    (
-      css_prop: "display",
-      css_prop_short: $shorthand,
-      fabric_key_shorthands: $box-display-props,
-      write_rule: "position_display"
-    )
-  );
+  @each $css-shorthand, $css-value in $box-display-props {
+    // css property
+    $prop_re: #{$shorthand}-#{$css-shorthand};
+
+    .#{$prop_re} {
+      display: $css-value;
+    }
+  }
 }
 
 // position property
 @mixin position($mq_key) {
   $shorthand: if($mq_key, #{$box-position-shorthand-config}-#{$mq_key}, #{$box-position-shorthand-config});
 
-  @include fabric_property(
-    (
-      css_prop: "position",
-      css_prop_short: $shorthand,
-      fabric_key_shorthands: $box-position-props,
-      write_rule: "position_display"
-    )
-  );
+  @each $css-shorthand, $css-value in $box-position-props {
+    // css property
+    $prop_re: #{$shorthand}-#{$css-shorthand};
+
+    .#{$prop_re} {
+      position: $css-value;
+    }
+  }
 }
 
 @mixin shadows($mq_key) {

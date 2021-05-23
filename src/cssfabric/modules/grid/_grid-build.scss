@@ -38,27 +38,27 @@ $grid-code-sep: #{$grid-code}#{$sep};
       flex: 1 1 0;
     }
 
-    .align-middle, .#{$grid-code-sep}align-middle {
+    &.align-middle, &.#{$grid-code-sep}align-middle {
       align-items: center;
     }
 
-    .align-top, .#{$grid-code-sep}align-top {
+    &.align-top, &.#{$grid-code-sep}align-top {
       align-items: flex-start;
     }
 
-    .align-left, .#{$grid-code-sep}align-left {
+    &.align-left, &.#{$grid-code-sep}align-left {
       justify-content: flex-start;
     }
 
-    .align-right, .#{$grid-code-sep}align-right {
+    &.align-right, &.#{$grid-code-sep}align-right {
       justify-content: flex-end;
     }
 
-    .align-bottom, .#{$grid-code-sep}align-bottom {
+    &.align-bottom, &.#{$grid-code-sep}align-bottom {
       align-items: flex-end;
     }
 
-    .align-center, .#{$grid-code-sep}align-center {
+    &.align-center, &.#{$grid-code-sep}align-center {
       justify-content: center;
     }
   }
@@ -72,27 +72,27 @@ $grid-code-sep: #{$grid-code}#{$sep};
       max-height: 100%;
     }
 
-    .align-middle, .#{$grid-code-sep}align-middle {
+    &.align-middle, &.#{$grid-code-sep}align-middle {
       justify-content: center;
     }
 
-    .align-top, .#{$grid-code-sep}align-top {
+    &.align-top, &.#{$grid-code-sep}align-top {
       justify-content: flex-start;
     }
 
-    .align-left, .#{$grid-code-sep}align-left {
+    &.align-left, &.#{$grid-code-sep}align-left {
       align-items: flex-start;
     }
 
-    .align-right, .#{$grid-code-sep}align-right {
+    &.align-right, &.#{$grid-code-sep}align-right {
       align-items: flex-end;
     }
 
-    .align-bottom, .#{$grid-code-sep}align-bottom {
+    &.align-bottom, &.#{$grid-code-sep}align-bottom {
       justify-content: flex-end;
     }
 
-    .align-center, .#{$grid-code-sep}align-center {
+    &.align-center, &.#{$grid-code-sep}align-center {
       align-items: center;
     }
   }
