@@ -145,6 +145,11 @@ $css-shorthands: (
 
     .#{$prop_re} {
       position: $css-value;
+      // if sticky
+      @if sticky == $css-value {
+        top: 0;
+        margin-top: 0;
+      }
     }
   }
 }

@@ -731,6 +731,8 @@
 
   .pos-xxxl-sticky {
     position: sticky;
+    top: 0;
+    margin-top: 0;
   }
 
   .shad-xxxl-2 {
@@ -1490,6 +1492,8 @@
 
   .pos-xxl-sticky {
     position: sticky;
+    top: 0;
+    margin-top: 0;
   }
 
   .shad-xxl-2 {
@@ -2249,6 +2253,8 @@
 
   .pos-xl-sticky {
     position: sticky;
+    top: 0;
+    margin-top: 0;
   }
 
   .shad-xl-2 {
@@ -3008,6 +3014,8 @@
 
   .pos-lg-sticky {
     position: sticky;
+    top: 0;
+    margin-top: 0;
   }
 
   .shad-lg-2 {
@@ -3767,6 +3775,8 @@
 
   .pos-md-sticky {
     position: sticky;
+    top: 0;
+    margin-top: 0;
   }
 
   .shad-md-2 {
@@ -4526,6 +4536,8 @@
 
   .pos-sm-sticky {
     position: sticky;
+    top: 0;
+    margin-top: 0;
   }
 
   .shad-sm-2 {

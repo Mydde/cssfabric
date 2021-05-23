@@ -75,6 +75,28 @@
             }
 
             ,
+            "base": {
+                "_data": {
+
+                    "cfg-has-dimension-strict": true,
+                    "CFG_HAS_DIMENSION_MIN": true,
+                    "CFG_HAS_DIMENSION_MAX": true,
+                    "size_step": "0.25rem",
+                    "sizes": {
+                        "tiny": 32, "small": 64, "medium": 256, "large": 250, "full": "100%"
+                    }
+                }
+
+                ,
+                "_metadata": {
+                    "title": "base", "tag": "base", "description": "cssfabric base config variables"
+                }
+
+                ,
+                "_docs": []
+            }
+
+            ,
             "box": {
                 "_data": {
 
@@ -328,28 +350,6 @@
                         }
                     }
                 }
-            }
-
-            ,
-            "base": {
-                "_data": {
-
-                    "cfg-has-dimension-strict": true,
-                    "CFG_HAS_DIMENSION_MIN": true,
-                    "CFG_HAS_DIMENSION_MAX": true,
-                    "size_step": "0.25rem",
-                    "sizes": {
-                        "tiny": 32, "small": 64, "medium": 256, "large": 250, "full": "100%"
-                    }
-                }
-
-                ,
-                "_metadata": {
-                    "title": "base", "tag": "base", "description": "cssfabric base config variables"
-                }
-
-                ,
-                "_docs": []
             }
 
             ,
