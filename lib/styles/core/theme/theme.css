@@ -11,7 +11,7 @@
   color: #cc8400;
 }
 .theme-text-primary-darker {
-  color: #805300;
+  color: #996300;
 }
 .theme-text-primary-complement {
   color: #005aff;
@@ -33,7 +33,7 @@
   background-color: #cc8400;
 }
 .theme-bg-primary-darker {
-  background-color: #805300;
+  background-color: #996300;
 }
 .theme-bg-primary-complement {
   background-color: #005aff;
@@ -55,7 +55,7 @@
   border-color: #cc8400;
 }
 .theme-border-primary-darker {
-  border-color: #805300;
+  border-color: #996300;
 }
 .theme-border-primary-complement {
   border-color: #005aff;
@@ -77,7 +77,7 @@
   color: #0048cc;
 }
 .theme-text-secondary-darker {
-  color: #002d80;
+  color: #003699;
 }
 .theme-text-secondary-complement {
   color: orange;
@@ -99,7 +99,7 @@
   background-color: #0048cc;
 }
 .theme-bg-secondary-darker {
-  background-color: #002d80;
+  background-color: #003699;
 }
 .theme-bg-secondary-complement {
   background-color: orange;
@@ -121,7 +121,7 @@
   border-color: #0048cc;
 }
 .theme-border-secondary-darker {
-  border-color: #002d80;
+  border-color: #003699;
 }
 .theme-border-secondary-complement {
   border-color: orange;
@@ -143,7 +143,7 @@
   color: #cc8400;
 }
 .theme-text-tertiary-darker {
-  color: #805300;
+  color: #996300;
 }
 .theme-text-tertiary-complement {
   color: #005aff;
@@ -165,7 +165,7 @@
   background-color: #cc8400;
 }
 .theme-bg-tertiary-darker {
-  background-color: #805300;
+  background-color: #996300;
 }
 .theme-bg-tertiary-complement {
   background-color: #005aff;
@@ -187,7 +187,7 @@
   border-color: #cc8400;
 }
 .theme-border-tertiary-darker {
-  border-color: #805300;
+  border-color: #996300;
 }
 .theme-border-tertiary-complement {
   border-color: #005aff;

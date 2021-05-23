@@ -25,7 +25,7 @@
 
                     ,
                     "scheme": {
-                        "discrete": "gray", "info": "#dbedff", "alert": "orange", "warning": "#fffbdd", "success": "#dcffe4", "error": "#ffe3e6"
+                        "discrete": "#ccc", "success": "green", "info": "#ffdd57", "warning": "#e6b905", "alert": "#ff7300", "error": "red"
                     }
 
                     ,
@@ -35,12 +35,12 @@
 
                     ,
                     "gray": {
-                        "100": "#d8d8d8", "200": "#c4c4c4", "300": "#afafaf", "400": "#9a9a9a", "500": "#868686", "600": "#717171", "700": "#5c5c5c", "800": "#484848", "900": "#333333"
+                        "100": "#f4f4f4", "200": "#e9e9e9", "300": "#dddddd", "400": "#d2d2d2", "500": "#c7c7c7", "600": "#bbbbbb", "700": "#b0b0b0", "800": "#a4a4a4", "900": "#999999"
                     }
 
                     ,
                     "gray-config": {
-                        "start": "#ededed", "end": "#333333", "steps": 9
+                        "start": "#f4f4f4", "end": "#999", "steps": 8
                     }
                 }
 
@@ -240,7 +240,7 @@
             "color": {
                 "_data": {
                     "gray-config": {
-                        "start": "#ededed", "end": "#333333", "steps": 9
+                        "start": "#f4f4f4", "end": "#999", "steps": 8
                     }
 
                     ,
@@ -254,7 +254,7 @@
 
                     ,
                     "scheme": {
-                        "discrete": "gray", "info": "#dbedff", "alert": "orange", "warning": "#fffbdd", "success": "#dcffe4", "error": "#ffe3e6"
+                        "discrete": "#ccc", "success": "green", "info": "#ffdd57", "warning": "#e6b905", "alert": "#ff7300", "error": "red"
                     }
 
                     ,
@@ -264,7 +264,7 @@
 
                     ,
                     "gray": {
-                        "100": "#d8d8d8", "200": "#c4c4c4", "300": "#afafaf", "400": "#9a9a9a", "500": "#868686", "600": "#717171", "700": "#5c5c5c", "800": "#484848", "900": "#333333"
+                        "100": "#f4f4f4", "200": "#e9e9e9", "300": "#dddddd", "400": "#d2d2d2", "500": "#c7c7c7", "600": "#bbbbbb", "700": "#b0b0b0", "800": "#a4a4a4", "900": "#999999"
                     }
                 }
 
@@ -283,7 +283,7 @@
                             "palette",
                             "gray"],
                             "levelsLinked": {
-                                "scheme": ["discrete", "info", "alert", "warning", "success", "error"], "palette": ["yellow", "orange", "red", "magenta", "purple", "green", "teal", "blue"], "gray": ["100", "200", "300", "400", "500", "600", "700", "800", "900"]
+                                "scheme": ["discrete", "success", "info", "warning", "alert", "error"], "palette": ["yellow", "orange", "red", "magenta", "purple", "green", "teal", "blue"], "gray": ["100", "200", "300", "400", "500", "600", "700", "800", "900"]
                             }
 
                             ,
@@ -303,7 +303,7 @@
                             "palette",
                             "gray"],
                             "levelsLinked": {
-                                "scheme": ["discrete", "info", "alert", "warning", "success", "error"], "palette": ["yellow", "orange", "red", "magenta", "purple", "green", "teal", "blue"], "gray": ["100", "200", "300", "400", "500", "600", "700", "800", "900"]
+                                "scheme": ["discrete", "success", "info", "warning", "alert", "error"], "palette": ["yellow", "orange", "red", "magenta", "purple", "green", "teal", "blue"], "gray": ["100", "200", "300", "400", "500", "600", "700", "800", "900"]
                             }
 
                             ,
@@ -323,7 +323,7 @@
                             "palette",
                             "gray"],
                             "levelsLinked": {
-                                "gray": ["100", "200", "300", "400", "500", "600", "700", "800", "900"], "scheme": ["discrete", "info", "alert", "warning", "success", "error"], "palette": ["yellow", "orange", "red", "magenta", "purple", "green", "teal", "blue"]
+                                "gray": ["100", "200", "300", "400", "500", "600", "700", "800", "900"], "scheme": ["discrete", "success", "info", "warning", "alert", "error"], "palette": ["yellow", "orange", "red", "magenta", "purple", "green", "teal", "blue"]
                             }
 
                             ,
@@ -342,7 +342,7 @@
                             "keys": ["palette",
                             "gray"],
                             "levelsLinked": {
-                                "gray": ["100", "200", "300", "400", "500", "600", "700", "800", "900"], "scheme": ["discrete", "info", "alert", "warning", "success", "error"], "palette": ["yellow", "orange", "red", "magenta", "purple", "green", "teal", "blue"]
+                                "gray": ["100", "200", "300", "400", "500", "600", "700", "800", "900"], "scheme": ["discrete", "success", "info", "warning", "alert", "error"], "palette": ["yellow", "orange", "red", "magenta", "purple", "green", "teal", "blue"]
                             }
 
                             ,
@@ -456,50 +456,6 @@
             }
 
             ,
-            "overflow": {
-                "_data": {
-
-                    "overflow_props": ["overflow",
-                    "overflow-x",
-                    "overflow-y"],
-                    "overflow_values": ["visible",
-                    "hidden",
-                    "clip",
-                    "scroll",
-                    "auto"],
-                    "cssProps": {
-                        "overflow": {
-                            "visible": "visible", "hidden": "hidden", "clip": "clip", "scroll": "scroll", "_": "auto"
-                        }
-                    }
-                }
-
-                ,
-                "_metadata": {
-                    "title": "overflow", "tag": "flow", "description": "cssfabric overflow module to set overflow styles on all html elements"
-                }
-
-                ,
-                "_docs": {
-                    "attributes": {
-                        "overflow": {
-                            "tag": "flow", "keys": ["visible", "hidden", "clip", "scroll", "auto"]
-                        }
-
-                        ,
-                        "overflowX": {
-                            "tag": "flowX", "keys": ["visible", "hidden", "clip", "scroll", "auto"]
-                        }
-
-                        ,
-                        "overflowY": {
-                            "tag": "flowY", "keys": ["visible", "hidden", "clip", "scroll", "auto"]
-                        }
-                    }
-                }
-            }
-
-            ,
             "scale": {
                 "_data": {
 
@@ -567,28 +523,44 @@
             }
 
             ,
-            "table": {
+            "overflow": {
                 "_data": {
-                    "className": "table", "classNameShort": "tbl", "table_class_name": "table", "table_class_name_short": "tbl", "table-bg-color-head": "#f4f4f4", "table-bg-color-strip-main": "#ededed", "table-bg-color-strip-second": "#f5f5f5", "table-border-color-header": "#ccc", "table-border-color-main": "#ededed", "table-border-color-second": "#f5f5f5"
+
+                    "overflow_props": ["overflow",
+                    "overflow-x",
+                    "overflow-y"],
+                    "overflow_values": ["visible",
+                    "hidden",
+                    "clip",
+                    "scroll",
+                    "auto"],
+                    "cssProps": {
+                        "overflow": {
+                            "visible": "visible", "hidden": "hidden", "clip": "clip", "scroll": "scroll", "_": "auto"
+                        }
+                    }
                 }
 
                 ,
                 "_metadata": {
-                    "title": "table", "tag": "table", "description": "cssfabric table module to set different table styles"
+                    "title": "overflow", "tag": "flow", "description": "cssfabric overflow module to set overflow styles on all html elements"
                 }
 
                 ,
                 "_docs": {
                     "attributes": {
-                        "table": {
+                        "overflow": {
+                            "tag": "flow", "keys": ["visible", "hidden", "clip", "scroll", "auto"]
+                        }
 
-                            "tag": "table",
-                            "classNames": {
-                                "_": ["bg-strip-2", "bg-strip-5"], "_pos": ["sticky", "layout"], "_deco": ["h-line", "v-line", "border"]
-                            }
+                        ,
+                        "overflowX": {
+                            "tag": "flowX", "keys": ["visible", "hidden", "clip", "scroll", "auto"]
+                        }
 
-                            ,
-                            "about": "is a table"
+                        ,
+                        "overflowY": {
+                            "tag": "flowY", "keys": ["visible", "hidden", "clip", "scroll", "auto"]
                         }
                     }
                 }
@@ -623,7 +595,7 @@
 
                     ,
                     "scheme": {
-                        "discrete": "gray", "info": "#dbedff", "alert": "orange", "warning": "#fffbdd", "success": "#dcffe4", "error": "#ffe3e6"
+                        "discrete": "#ccc", "success": "green", "info": "#ffdd57", "warning": "#e6b905", "alert": "#ff7300", "error": "red"
                     }
 
                     ,
@@ -633,7 +605,7 @@
 
                     ,
                     "gray": {
-                        "100": "#d8d8d8", "200": "#c4c4c4", "300": "#afafaf", "400": "#9a9a9a", "500": "#868686", "600": "#717171", "700": "#5c5c5c", "800": "#484848", "900": "#333333"
+                        "100": "#f4f4f4", "200": "#e9e9e9", "300": "#dddddd", "400": "#d2d2d2", "500": "#c7c7c7", "600": "#bbbbbb", "700": "#b0b0b0", "800": "#a4a4a4", "900": "#999999"
                     }
                 }
 
@@ -673,6 +645,34 @@
             }
 
             ,
+            "table": {
+                "_data": {
+                    "className": "table", "classNameShort": "tbl", "table_class_name": "table", "table_class_name_short": "tbl", "table-bg-color-head": "#f4f4f4", "table-bg-color-strip-main": "#ededed", "table-bg-color-strip-second": "#f5f5f5", "table-border-color-header": "#ccc", "table-border-color-main": "#ededed", "table-border-color-second": "#f5f5f5"
+                }
+
+                ,
+                "_metadata": {
+                    "title": "table", "tag": "table", "description": "cssfabric table module to set different table styles"
+                }
+
+                ,
+                "_docs": {
+                    "attributes": {
+                        "table": {
+
+                            "tag": "table",
+                            "classNames": {
+                                "_": ["bg-strip-2", "bg-strip-5"], "_pos": ["sticky", "layout"], "_deco": ["h-line", "v-line", "border"]
+                            }
+
+                            ,
+                            "about": "is a table"
+                        }
+                    }
+                }
+            }
+
+            ,
             "theme": {
                 "_data": {
 
@@ -696,7 +696,7 @@
                     "bg",
                     "border"],
                     "color": {
-                        "primary": "orange", "primary-light": "#ffc04d", "primary-lighter": "#ffdb99", "primary-dark": "#cc8400", "primary-darker": "#805300", "primary-complement": "#005aff", "primary-invert": "#005aff", "secondary": "#005aff", "secondary-light": "#4d8cff", "secondary-lighter": "#99bdff", "secondary-dark": "#0048cc", "secondary-darker": "#002d80", "secondary-complement": "orange", "secondary-invert": "orange", "tertiary": "orange", "tertiary-light": "#ffc04d", "tertiary-lighter": "#ffdb99", "tertiary-dark": "#cc8400", "tertiary-darker": "#805300", "tertiary-complement": "#005aff", "tertiary-invert": "#005aff"
+                        "primary": "orange", "primary-light": "#ffc04d", "primary-lighter": "#ffdb99", "primary-dark": "#cc8400", "primary-darker": "#996300", "primary-complement": "#005aff", "primary-invert": "#005aff", "secondary": "#005aff", "secondary-light": "#4d8cff", "secondary-lighter": "#99bdff", "secondary-dark": "#0048cc", "secondary-darker": "#003699", "secondary-complement": "orange", "secondary-invert": "orange", "tertiary": "orange", "tertiary-light": "#ffc04d", "tertiary-lighter": "#ffdb99", "tertiary-dark": "#cc8400", "tertiary-darker": "#996300", "tertiary-complement": "#005aff", "tertiary-invert": "#005aff"
                     }
                 }
 

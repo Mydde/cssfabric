@@ -102,22 +102,22 @@ h6 {
   text-align: justify;
 }
 .text-discrete {
-  color: gray;
-}
-.text-info {
-  color: #dbedff;
-}
-.text-alert {
-  color: orange;
-}
-.text-warning {
-  color: #fffbdd;
+  color: #ccc;
 }
 .text-success {
-  color: #dcffe4;
+  color: green;
+}
+.text-info {
+  color: #ffdd57;
+}
+.text-warning {
+  color: #e6b905;
+}
+.text-alert {
+  color: #ff7300;
 }
 .text-error {
-  color: #ffe3e6;
+  color: red;
 }
 .text-yellow {
   color: #ffb900;
@@ -144,49 +144,49 @@ h6 {
   color: #0078d4;
 }
 .text-gray-100 {
-  color: #d8d8d8;
+  color: #f4f4f4;
 }
 .text-gray-200 {
-  color: #c4c4c4;
+  color: #e9e9e9;
 }
 .text-gray-300 {
-  color: #afafaf;
+  color: #dddddd;
 }
 .text-gray-400 {
-  color: #9a9a9a;
+  color: #d2d2d2;
 }
 .text-gray-500 {
-  color: #868686;
+  color: #c7c7c7;
 }
 .text-gray-600 {
-  color: #717171;
+  color: #bbbbbb;
 }
 .text-gray-700 {
-  color: #5c5c5c;
+  color: #b0b0b0;
 }
 .text-gray-800 {
-  color: #484848;
+  color: #a4a4a4;
 }
 .text-gray-900 {
-  color: #333333;
+  color: #999999;
 }
 .text-shad-discrete {
-  text-shadow: 0 0 0.125em gray;
-}
-.text-shad-info {
-  text-shadow: 0 0 0.125em #dbedff;
-}
-.text-shad-alert {
-  text-shadow: 0 0 0.125em orange;
-}
-.text-shad-warning {
-  text-shadow: 0 0 0.125em #fffbdd;
+  text-shadow: 0 0 0.125em #ccc;
 }
 .text-shad-success {
-  text-shadow: 0 0 0.125em #dcffe4;
+  text-shadow: 0 0 0.125em green;
+}
+.text-shad-info {
+  text-shadow: 0 0 0.125em #ffdd57;
+}
+.text-shad-warning {
+  text-shadow: 0 0 0.125em #e6b905;
+}
+.text-shad-alert {
+  text-shadow: 0 0 0.125em #ff7300;
 }
 .text-shad-error {
-  text-shadow: 0 0 0.125em #ffe3e6;
+  text-shadow: 0 0 0.125em red;
 }
 .text-shad-yellow {
   text-shadow: 0 0 0.125em #ffb900;
