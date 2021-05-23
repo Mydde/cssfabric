@@ -4,7 +4,7 @@ export declare type IFabricConfModuleMetaDataPart = Record<string, any>;
 export declare type IFabricConfModuleDocsPart = Record<string, any>;
 export declare type TFabricConfModuleDocsAttributesPart = Record<string, any>;
 declare const _default: {
-    getModuleList: () => any;
+    getModuleList: () => Record<string, any>;
     getModuleConfig: (module?: string) => IFabricConfModulePart;
     getModuleData: (module?: string) => IFabricConfModuleDataPart;
     getModuleMetaData: (module?: string) => IFabricConfModuleMetaDataPart;

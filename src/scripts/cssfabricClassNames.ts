@@ -46,7 +46,7 @@ function cssfabricClassNames(props: IListCssfabricClassNamesProps) {
     const moduleLevelsExtended              = fabricAttributes["levelsDeclin"] || undefined;
     const moduleClassNames                  = fabricAttributes["classNames"] || undefined;
     
-    let finalOutput: TCollect      = [];
+    let finalOutput: TCollect                 = [];
     let finalOutputDebug: Record<string, any> = {};
     
     
@@ -94,7 +94,7 @@ function cssfabricClassNames(props: IListCssfabricClassNamesProps) {
         if (keyList && !moduleLevels && !moduleLevelsLinked) {
             // export
             finalOut.push(keyList);
-            registerDebug('default',keyList);
+            registerDebug('default', keyList);
         }
         
         if (moduleKeys && (moduleLevels || moduleLevelsLinked)) {
@@ -104,9 +104,9 @@ function cssfabricClassNames(props: IListCssfabricClassNamesProps) {
                     
                     let tre = Object.keys(moduleLevels).map((level) => {
                         let val = moduleLevels[level]
-
-                        let debugKey = (x !== '_' && x.toString().charAt(0) !== '_')? x  : level ;
-                        registerDebug(x,concatenateWithKey(debugKey, val),level);
+                        
+                        let debugKey = (x !== '_' && x.toString().charAt(0) !== '_') ? x : level;
+                        registerDebug(x, concatenateWithKey(debugKey + '-' + level, val), level);
                         
                         return concatenateWithKey(level, val);
                     }).flat(4)
@@ -126,7 +126,7 @@ function cssfabricClassNames(props: IListCssfabricClassNamesProps) {
                     if (moduleKeys.includes(moduleKey)) {
                         let out = [];
                         // linked are here !!
-                        registerDebug('linked'  , concatenateWithKey(moduleTag+'-'+moduleKey, moduleLevelsLinked[moduleKey]),moduleKey );
+                        registerDebug('linked', concatenateWithKey(moduleTag + '-' + moduleKey, moduleLevelsLinked[moduleKey]), moduleKey);
                         
                         out.push(concatenateWithKey(moduleKey, moduleLevelsLinked[moduleKey]));
                         // is it declinated ?
@@ -134,7 +134,7 @@ function cssfabricClassNames(props: IListCssfabricClassNamesProps) {
                             //
                             out.push(moduleLevelsLinked[moduleKey].map((z) => {
                                 // iddem
-                                registerDebug('declinated-' ,concatenateWithKey(moduleTag + '-' + moduleKey+'-'+z, moduleLevelsExtended[moduleKey]),z);
+                                registerDebug('declinated', concatenateWithKey(moduleTag + '-' + moduleKey + '-' + z, moduleLevelsExtended[moduleKey]), z);
                                 
                                 return concatenateWithKey(z, moduleLevelsExtended[moduleKey]);
                             }).flat(2))
@@ -162,9 +162,9 @@ function cssfabricClassNames(props: IListCssfabricClassNamesProps) {
         if (moduleClassNames) {
             let kk  = parseClassNames();
             let kkk = concatenateWithKey(moduleTag, kk);
-    
-            registerDebug('classnames' ,kk);
-    
+            
+            registerDebug('classnames', kk);
+            
             // export
             finalOut.push(kkk);
         }
@@ -177,13 +177,13 @@ function cssfabricClassNames(props: IListCssfabricClassNamesProps) {
         }
     }
     
-    function registerDebug(tag: string, data: string[], nestedTag?:string) {
-        if(nestedTag){
-            if(!finalOutputDebug[tag]) finalOutputDebug[tag] = {}
+    function registerDebug(tag: string, data: string[], nestedTag?: string) {
+        if (nestedTag) {
+            if (!finalOutputDebug[tag]) finalOutputDebug[tag] = {}
             finalOutputDebug[tag][nestedTag] = finalOutputDebug[tag][nestedTag] ? finalOutputDebug[tag][nestedTag].concat(data) : data;
             
-        }else{
-    
+        } else {
+            
             finalOutputDebug[tag] = finalOutputDebug[tag] ? finalOutputDebug[tag].concat(data) : data;
         }
     }
