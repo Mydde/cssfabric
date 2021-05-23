@@ -93,7 +93,7 @@ $css-shorthands: (
 
             #{$fabric_box_position_prop}: write-box-rule($_args);
           } @else {
-            
+
             @each $grid_size_value in $rule {
               $_args: (
                       rule_value: $css_size_value,

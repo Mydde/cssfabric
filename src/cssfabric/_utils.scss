@@ -5,8 +5,8 @@
 @mixin fabricResponsiveEncloser($mq_size_value, $mq_min_size_value: null) {
   // and (min-width: $mq_min_size_value + rem)
   // @debug $mq_size_value $mq_min_size_value;
-  $type-width: if($mq_size_value==120 , max , max);
-  $width: if($mq_size_value==120 , $mq_min_size_value , $mq_size_value);
+  $type-width: if($mq_size_value==180 , max , max);
+  $width: if($mq_size_value==180 , $mq_min_size_value , $mq_size_value);
 
   // @debug  (#{$type-width}-width: $width + rem) ;
   @media only screen and (#{$type-width}-width: $width + rem) {
