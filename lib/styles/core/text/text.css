@@ -4,7 +4,7 @@
   white-space: nowrap;
 }
 
-/** cssfabric : txt*/
+/** cssfabric : text*/
 .h1,
 h1 {
   font-size: 3.1rem;
@@ -47,168 +47,168 @@ h6 {
   font-weight: 400;
 }
 
-.txt-cap {
+.text-cap {
   text-transform: capitalize;
 }
-.txt-up {
+.text-up {
   text-transform: uppercase;
 }
-.txt-low {
+.text-low {
   text-transform: lowercase;
 }
-.txt-none {
+.text-none {
   text-transform: none;
 }
-.txt-full {
+.text-full {
   text-transform: full-width;
 }
-.txt-50 {
+.text-50 {
   font-weight: 50;
 }
-.txt-100 {
+.text-100 {
   font-weight: 100;
 }
-.txt-300 {
+.text-300 {
   font-weight: 400;
 }
-.txt-500 {
+.text-500 {
   font-weight: 500;
 }
-.txt-900 {
+.text-900 {
   font-weight: 900;
 }
-.txt-light {
+.text-light {
   font-weight: lighter;
 }
-.txt-cap {
+.text-cap {
   font-weight: normal;
 }
-.txt-bold {
+.text-bold {
   font-weight: bold;
 }
-.txt-bolder {
+.text-bolder {
   font-weight: bolder;
 }
-.txt-l {
+.text-l {
   text-align: left;
 }
-.txt-r {
+.text-r {
   text-align: right;
 }
-.txt-center {
+.text-center {
   text-align: center;
 }
-.txt-justify {
+.text-justify {
   text-align: justify;
 }
-.txt-discrete {
+.text-discrete {
   color: gray;
 }
-.txt-info {
+.text-info {
   color: #dbedff;
 }
-.txt-alert {
+.text-alert {
   color: orange;
 }
-.txt-warning {
+.text-warning {
   color: #fffbdd;
 }
-.txt-success {
+.text-success {
   color: #dcffe4;
 }
-.txt-error {
+.text-error {
   color: #ffe3e6;
 }
-.txt-yellow {
+.text-yellow {
   color: #ffb900;
 }
-.txt-orange {
+.text-orange {
   color: #d83b01;
 }
-.txt-red {
+.text-red {
   color: #d13438;
 }
-.txt-magenta {
+.text-magenta {
   color: #b4009e;
 }
-.txt-purple {
+.text-purple {
   color: #5c2d91;
 }
-.txt-green {
+.text-green {
   color: #107c10;
 }
-.txt-teal {
+.text-teal {
   color: #008272;
 }
-.txt-blue {
+.text-blue {
   color: #0078d4;
 }
-.txt-gray-100 {
+.text-gray-100 {
   color: #d8d8d8;
 }
-.txt-gray-200 {
+.text-gray-200 {
   color: #c4c4c4;
 }
-.txt-gray-300 {
+.text-gray-300 {
   color: #afafaf;
 }
-.txt-gray-400 {
+.text-gray-400 {
   color: #9a9a9a;
 }
-.txt-gray-500 {
+.text-gray-500 {
   color: #868686;
 }
-.txt-gray-600 {
+.text-gray-600 {
   color: #717171;
 }
-.txt-gray-700 {
+.text-gray-700 {
   color: #5c5c5c;
 }
-.txt-gray-800 {
+.text-gray-800 {
   color: #484848;
 }
-.txt-gray-900 {
+.text-gray-900 {
   color: #333333;
 }
-.txt-shad-discrete {
+.text-shad-discrete {
   text-shadow: 0 0 0.125em gray;
 }
-.txt-shad-info {
+.text-shad-info {
   text-shadow: 0 0 0.125em #dbedff;
 }
-.txt-shad-alert {
+.text-shad-alert {
   text-shadow: 0 0 0.125em orange;
 }
-.txt-shad-warning {
+.text-shad-warning {
   text-shadow: 0 0 0.125em #fffbdd;
 }
-.txt-shad-success {
+.text-shad-success {
   text-shadow: 0 0 0.125em #dcffe4;
 }
-.txt-shad-error {
+.text-shad-error {
   text-shadow: 0 0 0.125em #ffe3e6;
 }
-.txt-shad-yellow {
+.text-shad-yellow {
   text-shadow: 0 0 0.125em #ffb900;
 }
-.txt-shad-orange {
+.text-shad-orange {
   text-shadow: 0 0 0.125em #d83b01;
 }
-.txt-shad-red {
+.text-shad-red {
   text-shadow: 0 0 0.125em #d13438;
 }
-.txt-shad-magenta {
+.text-shad-magenta {
   text-shadow: 0 0 0.125em #b4009e;
 }
-.txt-shad-purple {
+.text-shad-purple {
   text-shadow: 0 0 0.125em #5c2d91;
 }
-.txt-shad-green {
+.text-shad-green {
   text-shadow: 0 0 0.125em #107c10;
 }
-.txt-shad-teal {
+.text-shad-teal {
   text-shadow: 0 0 0.125em #008272;
 }
-.txt-shad-blue {
+.text-shad-blue {
   text-shadow: 0 0 0.125em #0078d4;
 }
