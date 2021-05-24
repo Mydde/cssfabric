@@ -172,46 +172,46 @@ h6 {
     color: #999999;
   }
   .text-xxxl-shad-discrete {
-    text-shadow: 0 0 0.125em #ccc;
+    text-shad: 0 0 0.125em #ccc;
   }
   .text-xxxl-shad-success {
-    text-shadow: 0 0 0.125em green;
+    text-shad: 0 0 0.125em green;
   }
   .text-xxxl-shad-info {
-    text-shadow: 0 0 0.125em #ffdd57;
+    text-shad: 0 0 0.125em #ffdd57;
   }
   .text-xxxl-shad-warning {
-    text-shadow: 0 0 0.125em #e6b905;
+    text-shad: 0 0 0.125em #e6b905;
   }
   .text-xxxl-shad-alert {
-    text-shadow: 0 0 0.125em #ff7300;
+    text-shad: 0 0 0.125em #ff7300;
   }
   .text-xxxl-shad-error {
-    text-shadow: 0 0 0.125em red;
+    text-shad: 0 0 0.125em red;
   }
   .text-xxxl-shad-yellow {
-    text-shadow: 0 0 0.125em #ffb900;
+    text-shad: 0 0 0.125em #ffb900;
   }
   .text-xxxl-shad-orange {
-    text-shadow: 0 0 0.125em #d83b01;
+    text-shad: 0 0 0.125em #d83b01;
   }
   .text-xxxl-shad-red {
-    text-shadow: 0 0 0.125em #d13438;
+    text-shad: 0 0 0.125em #d13438;
   }
   .text-xxxl-shad-magenta {
-    text-shadow: 0 0 0.125em #b4009e;
+    text-shad: 0 0 0.125em #b4009e;
   }
   .text-xxxl-shad-purple {
-    text-shadow: 0 0 0.125em #5c2d91;
+    text-shad: 0 0 0.125em #5c2d91;
   }
   .text-xxxl-shad-green {
-    text-shadow: 0 0 0.125em #107c10;
+    text-shad: 0 0 0.125em #107c10;
   }
   .text-xxxl-shad-teal {
-    text-shadow: 0 0 0.125em #008272;
+    text-shad: 0 0 0.125em #008272;
   }
   .text-xxxl-shad-blue {
-    text-shadow: 0 0 0.125em #0078d4;
+    text-shad: 0 0 0.125em #0078d4;
   }
 }
 @media only screen and (max-width: 120rem) {
@@ -382,46 +382,46 @@ h6 {
     color: #999999;
   }
   .text-xxl-shad-discrete {
-    text-shadow: 0 0 0.125em #ccc;
+    text-shad: 0 0 0.125em #ccc;
   }
   .text-xxl-shad-success {
-    text-shadow: 0 0 0.125em green;
+    text-shad: 0 0 0.125em green;
   }
   .text-xxl-shad-info {
-    text-shadow: 0 0 0.125em #ffdd57;
+    text-shad: 0 0 0.125em #ffdd57;
   }
   .text-xxl-shad-warning {
-    text-shadow: 0 0 0.125em #e6b905;
+    text-shad: 0 0 0.125em #e6b905;
   }
   .text-xxl-shad-alert {
-    text-shadow: 0 0 0.125em #ff7300;
+    text-shad: 0 0 0.125em #ff7300;
   }
   .text-xxl-shad-error {
-    text-shadow: 0 0 0.125em red;
+    text-shad: 0 0 0.125em red;
   }
   .text-xxl-shad-yellow {
-    text-shadow: 0 0 0.125em #ffb900;
+    text-shad: 0 0 0.125em #ffb900;
   }
   .text-xxl-shad-orange {
-    text-shadow: 0 0 0.125em #d83b01;
+    text-shad: 0 0 0.125em #d83b01;
   }
   .text-xxl-shad-red {
-    text-shadow: 0 0 0.125em #d13438;
+    text-shad: 0 0 0.125em #d13438;
   }
   .text-xxl-shad-magenta {
-    text-shadow: 0 0 0.125em #b4009e;
+    text-shad: 0 0 0.125em #b4009e;
   }
   .text-xxl-shad-purple {
-    text-shadow: 0 0 0.125em #5c2d91;
+    text-shad: 0 0 0.125em #5c2d91;
   }
   .text-xxl-shad-green {
-    text-shadow: 0 0 0.125em #107c10;
+    text-shad: 0 0 0.125em #107c10;
   }
   .text-xxl-shad-teal {
-    text-shadow: 0 0 0.125em #008272;
+    text-shad: 0 0 0.125em #008272;
   }
   .text-xxl-shad-blue {
-    text-shadow: 0 0 0.125em #0078d4;
+    text-shad: 0 0 0.125em #0078d4;
   }
 }
 @media only screen and (max-width: 90rem) {
@@ -592,46 +592,46 @@ h6 {
     color: #999999;
   }
   .text-xl-shad-discrete {
-    text-shadow: 0 0 0.125em #ccc;
+    text-shad: 0 0 0.125em #ccc;
   }
   .text-xl-shad-success {
-    text-shadow: 0 0 0.125em green;
+    text-shad: 0 0 0.125em green;
   }
   .text-xl-shad-info {
-    text-shadow: 0 0 0.125em #ffdd57;
+    text-shad: 0 0 0.125em #ffdd57;
   }
   .text-xl-shad-warning {
-    text-shadow: 0 0 0.125em #e6b905;
+    text-shad: 0 0 0.125em #e6b905;
   }
   .text-xl-shad-alert {
-    text-shadow: 0 0 0.125em #ff7300;
+    text-shad: 0 0 0.125em #ff7300;
   }
   .text-xl-shad-error {
-    text-shadow: 0 0 0.125em red;
+    text-shad: 0 0 0.125em red;
   }
   .text-xl-shad-yellow {
-    text-shadow: 0 0 0.125em #ffb900;
+    text-shad: 0 0 0.125em #ffb900;
   }
   .text-xl-shad-orange {
-    text-shadow: 0 0 0.125em #d83b01;
+    text-shad: 0 0 0.125em #d83b01;
   }
   .text-xl-shad-red {
-    text-shadow: 0 0 0.125em #d13438;
+    text-shad: 0 0 0.125em #d13438;
   }
   .text-xl-shad-magenta {
-    text-shadow: 0 0 0.125em #b4009e;
+    text-shad: 0 0 0.125em #b4009e;
   }
   .text-xl-shad-purple {
-    text-shadow: 0 0 0.125em #5c2d91;
+    text-shad: 0 0 0.125em #5c2d91;
   }
   .text-xl-shad-green {
-    text-shadow: 0 0 0.125em #107c10;
+    text-shad: 0 0 0.125em #107c10;
   }
   .text-xl-shad-teal {
-    text-shadow: 0 0 0.125em #008272;
+    text-shad: 0 0 0.125em #008272;
   }
   .text-xl-shad-blue {
-    text-shadow: 0 0 0.125em #0078d4;
+    text-shad: 0 0 0.125em #0078d4;
   }
 }
 @media only screen and (max-width: 64rem) {
@@ -802,46 +802,46 @@ h6 {
     color: #999999;
   }
   .text-lg-shad-discrete {
-    text-shadow: 0 0 0.125em #ccc;
+    text-shad: 0 0 0.125em #ccc;
   }
   .text-lg-shad-success {
-    text-shadow: 0 0 0.125em green;
+    text-shad: 0 0 0.125em green;
   }
   .text-lg-shad-info {
-    text-shadow: 0 0 0.125em #ffdd57;
+    text-shad: 0 0 0.125em #ffdd57;
   }
   .text-lg-shad-warning {
-    text-shadow: 0 0 0.125em #e6b905;
+    text-shad: 0 0 0.125em #e6b905;
   }
   .text-lg-shad-alert {
-    text-shadow: 0 0 0.125em #ff7300;
+    text-shad: 0 0 0.125em #ff7300;
   }
   .text-lg-shad-error {
-    text-shadow: 0 0 0.125em red;
+    text-shad: 0 0 0.125em red;
   }
   .text-lg-shad-yellow {
-    text-shadow: 0 0 0.125em #ffb900;
+    text-shad: 0 0 0.125em #ffb900;
   }
   .text-lg-shad-orange {
-    text-shadow: 0 0 0.125em #d83b01;
+    text-shad: 0 0 0.125em #d83b01;
   }
   .text-lg-shad-red {
-    text-shadow: 0 0 0.125em #d13438;
+    text-shad: 0 0 0.125em #d13438;
   }
   .text-lg-shad-magenta {
-    text-shadow: 0 0 0.125em #b4009e;
+    text-shad: 0 0 0.125em #b4009e;
   }
   .text-lg-shad-purple {
-    text-shadow: 0 0 0.125em #5c2d91;
+    text-shad: 0 0 0.125em #5c2d91;
   }
   .text-lg-shad-green {
-    text-shadow: 0 0 0.125em #107c10;
+    text-shad: 0 0 0.125em #107c10;
   }
   .text-lg-shad-teal {
-    text-shadow: 0 0 0.125em #008272;
+    text-shad: 0 0 0.125em #008272;
   }
   .text-lg-shad-blue {
-    text-shadow: 0 0 0.125em #0078d4;
+    text-shad: 0 0 0.125em #0078d4;
   }
 }
 @media only screen and (max-width: 48rem) {
@@ -1012,46 +1012,46 @@ h6 {
     color: #999999;
   }
   .text-md-shad-discrete {
-    text-shadow: 0 0 0.125em #ccc;
+    text-shad: 0 0 0.125em #ccc;
   }
   .text-md-shad-success {
-    text-shadow: 0 0 0.125em green;
+    text-shad: 0 0 0.125em green;
   }
   .text-md-shad-info {
-    text-shadow: 0 0 0.125em #ffdd57;
+    text-shad: 0 0 0.125em #ffdd57;
   }
   .text-md-shad-warning {
-    text-shadow: 0 0 0.125em #e6b905;
+    text-shad: 0 0 0.125em #e6b905;
   }
   .text-md-shad-alert {
-    text-shadow: 0 0 0.125em #ff7300;
+    text-shad: 0 0 0.125em #ff7300;
   }
   .text-md-shad-error {
-    text-shadow: 0 0 0.125em red;
+    text-shad: 0 0 0.125em red;
   }
   .text-md-shad-yellow {
-    text-shadow: 0 0 0.125em #ffb900;
+    text-shad: 0 0 0.125em #ffb900;
   }
   .text-md-shad-orange {
-    text-shadow: 0 0 0.125em #d83b01;
+    text-shad: 0 0 0.125em #d83b01;
   }
   .text-md-shad-red {
-    text-shadow: 0 0 0.125em #d13438;
+    text-shad: 0 0 0.125em #d13438;
   }
   .text-md-shad-magenta {
-    text-shadow: 0 0 0.125em #b4009e;
+    text-shad: 0 0 0.125em #b4009e;
   }
   .text-md-shad-purple {
-    text-shadow: 0 0 0.125em #5c2d91;
+    text-shad: 0 0 0.125em #5c2d91;
   }
   .text-md-shad-green {
-    text-shadow: 0 0 0.125em #107c10;
+    text-shad: 0 0 0.125em #107c10;
   }
   .text-md-shad-teal {
-    text-shadow: 0 0 0.125em #008272;
+    text-shad: 0 0 0.125em #008272;
   }
   .text-md-shad-blue {
-    text-shadow: 0 0 0.125em #0078d4;
+    text-shad: 0 0 0.125em #0078d4;
   }
 }
 @media only screen and (max-width: 35.7rem) {
@@ -1222,45 +1222,45 @@ h6 {
     color: #999999;
   }
   .text-sm-shad-discrete {
-    text-shadow: 0 0 0.125em #ccc;
+    text-shad: 0 0 0.125em #ccc;
   }
   .text-sm-shad-success {
-    text-shadow: 0 0 0.125em green;
+    text-shad: 0 0 0.125em green;
   }
   .text-sm-shad-info {
-    text-shadow: 0 0 0.125em #ffdd57;
+    text-shad: 0 0 0.125em #ffdd57;
   }
   .text-sm-shad-warning {
-    text-shadow: 0 0 0.125em #e6b905;
+    text-shad: 0 0 0.125em #e6b905;
   }
   .text-sm-shad-alert {
-    text-shadow: 0 0 0.125em #ff7300;
+    text-shad: 0 0 0.125em #ff7300;
   }
   .text-sm-shad-error {
-    text-shadow: 0 0 0.125em red;
+    text-shad: 0 0 0.125em red;
   }
   .text-sm-shad-yellow {
-    text-shadow: 0 0 0.125em #ffb900;
+    text-shad: 0 0 0.125em #ffb900;
   }
   .text-sm-shad-orange {
-    text-shadow: 0 0 0.125em #d83b01;
+    text-shad: 0 0 0.125em #d83b01;
   }
   .text-sm-shad-red {
-    text-shadow: 0 0 0.125em #d13438;
+    text-shad: 0 0 0.125em #d13438;
   }
   .text-sm-shad-magenta {
-    text-shadow: 0 0 0.125em #b4009e;
+    text-shad: 0 0 0.125em #b4009e;
   }
   .text-sm-shad-purple {
-    text-shadow: 0 0 0.125em #5c2d91;
+    text-shad: 0 0 0.125em #5c2d91;
   }
   .text-sm-shad-green {
-    text-shadow: 0 0 0.125em #107c10;
+    text-shad: 0 0 0.125em #107c10;
   }
   .text-sm-shad-teal {
-    text-shadow: 0 0 0.125em #008272;
+    text-shad: 0 0 0.125em #008272;
   }
   .text-sm-shad-blue {
-    text-shadow: 0 0 0.125em #0078d4;
+    text-shad: 0 0 0.125em #0078d4;
   }
 }

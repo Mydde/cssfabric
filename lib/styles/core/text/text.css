@@ -171,44 +171,44 @@ h6 {
   color: #999999;
 }
 .text-shad-discrete {
-  text-shadow: 0 0 0.125em #ccc;
+  text-shad: 0 0 0.125em #ccc;
 }
 .text-shad-success {
-  text-shadow: 0 0 0.125em green;
+  text-shad: 0 0 0.125em green;
 }
 .text-shad-info {
-  text-shadow: 0 0 0.125em #ffdd57;
+  text-shad: 0 0 0.125em #ffdd57;
 }
 .text-shad-warning {
-  text-shadow: 0 0 0.125em #e6b905;
+  text-shad: 0 0 0.125em #e6b905;
 }
 .text-shad-alert {
-  text-shadow: 0 0 0.125em #ff7300;
+  text-shad: 0 0 0.125em #ff7300;
 }
 .text-shad-error {
-  text-shadow: 0 0 0.125em red;
+  text-shad: 0 0 0.125em red;
 }
 .text-shad-yellow {
-  text-shadow: 0 0 0.125em #ffb900;
+  text-shad: 0 0 0.125em #ffb900;
 }
 .text-shad-orange {
-  text-shadow: 0 0 0.125em #d83b01;
+  text-shad: 0 0 0.125em #d83b01;
 }
 .text-shad-red {
-  text-shadow: 0 0 0.125em #d13438;
+  text-shad: 0 0 0.125em #d13438;
 }
 .text-shad-magenta {
-  text-shadow: 0 0 0.125em #b4009e;
+  text-shad: 0 0 0.125em #b4009e;
 }
 .text-shad-purple {
-  text-shadow: 0 0 0.125em #5c2d91;
+  text-shad: 0 0 0.125em #5c2d91;
 }
 .text-shad-green {
-  text-shadow: 0 0 0.125em #107c10;
+  text-shad: 0 0 0.125em #107c10;
 }
 .text-shad-teal {
-  text-shadow: 0 0 0.125em #008272;
+  text-shad: 0 0 0.125em #008272;
 }
 .text-shad-blue {
-  text-shadow: 0 0 0.125em #0078d4;
+  text-shad: 0 0 0.125em #0078d4;
 }

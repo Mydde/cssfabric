@@ -13,7 +13,7 @@
     align-items: flex-start;
   }
   .grid-xxxl-h.align-left, .grid-xxxl-h.grid-align-left {
-    justify-content: flex-start;
+    align-items: flex-start;
   }
   .grid-xxxl-h.align-right, .grid-xxxl-h.grid-align-right {
     justify-content: flex-end;
@@ -23,6 +23,15 @@
   }
   .grid-xxxl-h.align-center, .grid-xxxl-h.grid-align-center {
     justify-content: center;
+  }
+  .grid-xxxl-h.align-middle-center, .grid-xxxl-h.grid-align-middle-center {
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+  }
+  .grid-xxxl-h.align-stretch, .grid-xxxl-h.grid-align-stretch {
+    color: blue;
+    align-items: stretch;
   }
 
   .grid-xxxl-v {
@@ -50,6 +59,14 @@
   }
   .grid-xxxl-v.align-center, .grid-xxxl-v.grid-align-center {
     align-items: center;
+  }
+  .grid-xxxl-v.align-middle-center, .grid-xxxl-v.grid-align-middle-center {
+    align-items: center;
+    justify-content: center;
+  }
+  .grid-xxxl-v.align-stretch, .grid-xxxl-v.grid-align-stretch {
+    color: red;
+    align-items: stretch;
   }
 
   .grid-xxxl-h,
@@ -102,92 +119,32 @@
   }
 
   /** raw css properties distribution */
-  .grid-xxxl-h.grid-wrap-reverse,
-.grid-xxxl-v.grid-wrap-reverse {
-    flex-wrap: wrap-reverse;
+  .grid-xxxl-h,
+.grid-xxxl-v {
+    /*&.just, &.grid-justify {
+      @each $fabricRule, $value in map-get($cssProps, grid-justify) {
+        @include utils.fabricAttributes('&'+$sep, $fabricRule, 'justify-content', $value);
+      }
+    }*/
+    /*&.items, &.grid-items {
+      @each $fabricRule, $value in map-get($cssProps, grid-items) {
+        @include utils.fabricAttributes('&'+$sep, $fabricRule, 'align-items', $value);
+      }
+    }*/
+    /*&.content, &.grid-content {
+      @each $fabricRule, $value in map-get($cssProps, grid-content) {
+        $tag: content-start;
+        @include utils.fabricAttributes('&'+$sep, $fabricRule, 'align-content', $value);
+      }
+    }*/
   }
   .grid-xxxl-h.grid-wrap,
 .grid-xxxl-v.grid-wrap {
     flex-wrap: wrap;
   }
-  .grid-xxxl-h.grid-nowrap,
-.grid-xxxl-v.grid-nowrap {
-    flex-wrap: nowrap;
-  }
-  .grid-xxxl-h.just-start, .grid-xxxl-h.grid-justify-start,
-.grid-xxxl-v.just-start,
-.grid-xxxl-v.grid-justify-start {
-    justify-content: flex-start;
-  }
-  .grid-xxxl-h.just-end, .grid-xxxl-h.grid-justify-end,
-.grid-xxxl-v.just-end,
-.grid-xxxl-v.grid-justify-end {
-    justify-content: flex-end;
-  }
-  .grid-xxxl-h.just-between, .grid-xxxl-h.grid-justify-between,
-.grid-xxxl-v.just-between,
-.grid-xxxl-v.grid-justify-between {
-    justify-content: space-between;
-  }
-  .grid-xxxl-h.just-stretch, .grid-xxxl-h.grid-justify-stretch,
-.grid-xxxl-v.just-stretch,
-.grid-xxxl-v.grid-justify-stretch {
-    justify-content: stretch;
-  }
-  .grid-xxxl-h.just-center, .grid-xxxl-h.grid-justify-center,
-.grid-xxxl-v.just-center,
-.grid-xxxl-v.grid-justify-center {
-    justify-content: flex-center;
-  }
-  .grid-xxxl-h.items-baseline, .grid-xxxl-h.grid-items-baseline,
-.grid-xxxl-v.items-baseline,
-.grid-xxxl-v.grid-items-baseline {
-    align-items: baseline;
-  }
-  .grid-xxxl-h.items-stretch, .grid-xxxl-h.grid-items-stretch,
-.grid-xxxl-v.items-stretch,
-.grid-xxxl-v.grid-items-stretch {
-    align-items: stretch;
-  }
-  .grid-xxxl-h.items-start, .grid-xxxl-h.grid-items-start,
-.grid-xxxl-v.items-start,
-.grid-xxxl-v.grid-items-start {
-    align-items: flex-start;
-  }
-  .grid-xxxl-h.items-center, .grid-xxxl-h.grid-items-center,
-.grid-xxxl-v.items-center,
-.grid-xxxl-v.grid-items-center {
-    align-items: center;
-  }
-  .grid-xxxl-h.items-end, .grid-xxxl-h.grid-items-end,
-.grid-xxxl-v.items-end,
-.grid-xxxl-v.grid-items-end {
-    align-items: flex-end;
-  }
-  .grid-xxxl-h.content-start, .grid-xxxl-h.grid-content-start,
-.grid-xxxl-v.content-start,
-.grid-xxxl-v.grid-content-start {
-    align-content: flex-start;
-  }
-  .grid-xxxl-h.content-center, .grid-xxxl-h.grid-content-center,
-.grid-xxxl-v.content-center,
-.grid-xxxl-v.grid-content-center {
-    align-content: center;
-  }
-  .grid-xxxl-h.content-end, .grid-xxxl-h.grid-content-end,
-.grid-xxxl-v.content-end,
-.grid-xxxl-v.grid-content-end {
-    align-content: flex-end;
-  }
-  .grid-xxxl-h.content-between, .grid-xxxl-h.grid-content-between,
-.grid-xxxl-v.content-between,
-.grid-xxxl-v.grid-content-between {
-    align-content: space-between;
-  }
-  .grid-xxxl-h.content-equal, .grid-xxxl-h.grid-content-equal,
-.grid-xxxl-v.content-equal,
-.grid-xxxl-v.grid-content-equal {
-    align-content: space-evenly;
+  .grid-xxxl-h.grid-wrap-reverse,
+.grid-xxxl-v.grid-wrap-reverse {
+    flex-wrap: wrap-reverse;
   }
   .grid-xxxl-h .self-start,
 .grid-xxxl-v .self-start {
@@ -217,7 +174,7 @@
     align-items: flex-start;
   }
   .grid-xxl-h.align-left, .grid-xxl-h.grid-align-left {
-    justify-content: flex-start;
+    align-items: flex-start;
   }
   .grid-xxl-h.align-right, .grid-xxl-h.grid-align-right {
     justify-content: flex-end;
@@ -227,6 +184,15 @@
   }
   .grid-xxl-h.align-center, .grid-xxl-h.grid-align-center {
     justify-content: center;
+  }
+  .grid-xxl-h.align-middle-center, .grid-xxl-h.grid-align-middle-center {
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+  }
+  .grid-xxl-h.align-stretch, .grid-xxl-h.grid-align-stretch {
+    color: blue;
+    align-items: stretch;
   }
 
   .grid-xxl-v {
@@ -254,6 +220,14 @@
   }
   .grid-xxl-v.align-center, .grid-xxl-v.grid-align-center {
     align-items: center;
+  }
+  .grid-xxl-v.align-middle-center, .grid-xxl-v.grid-align-middle-center {
+    align-items: center;
+    justify-content: center;
+  }
+  .grid-xxl-v.align-stretch, .grid-xxl-v.grid-align-stretch {
+    color: red;
+    align-items: stretch;
   }
 
   .grid-xxl-h,
@@ -306,92 +280,32 @@
   }
 
   /** raw css properties distribution */
-  .grid-xxl-h.grid-wrap-reverse,
-.grid-xxl-v.grid-wrap-reverse {
-    flex-wrap: wrap-reverse;
+  .grid-xxl-h,
+.grid-xxl-v {
+    /*&.just, &.grid-justify {
+      @each $fabricRule, $value in map-get($cssProps, grid-justify) {
+        @include utils.fabricAttributes('&'+$sep, $fabricRule, 'justify-content', $value);
+      }
+    }*/
+    /*&.items, &.grid-items {
+      @each $fabricRule, $value in map-get($cssProps, grid-items) {
+        @include utils.fabricAttributes('&'+$sep, $fabricRule, 'align-items', $value);
+      }
+    }*/
+    /*&.content, &.grid-content {
+      @each $fabricRule, $value in map-get($cssProps, grid-content) {
+        $tag: content-start;
+        @include utils.fabricAttributes('&'+$sep, $fabricRule, 'align-content', $value);
+      }
+    }*/
   }
   .grid-xxl-h.grid-wrap,
 .grid-xxl-v.grid-wrap {
     flex-wrap: wrap;
   }
-  .grid-xxl-h.grid-nowrap,
-.grid-xxl-v.grid-nowrap {
-    flex-wrap: nowrap;
-  }
-  .grid-xxl-h.just-start, .grid-xxl-h.grid-justify-start,
-.grid-xxl-v.just-start,
-.grid-xxl-v.grid-justify-start {
-    justify-content: flex-start;
-  }
-  .grid-xxl-h.just-end, .grid-xxl-h.grid-justify-end,
-.grid-xxl-v.just-end,
-.grid-xxl-v.grid-justify-end {
-    justify-content: flex-end;
-  }
-  .grid-xxl-h.just-between, .grid-xxl-h.grid-justify-between,
-.grid-xxl-v.just-between,
-.grid-xxl-v.grid-justify-between {
-    justify-content: space-between;
-  }
-  .grid-xxl-h.just-stretch, .grid-xxl-h.grid-justify-stretch,
-.grid-xxl-v.just-stretch,
-.grid-xxl-v.grid-justify-stretch {
-    justify-content: stretch;
-  }
-  .grid-xxl-h.just-center, .grid-xxl-h.grid-justify-center,
-.grid-xxl-v.just-center,
-.grid-xxl-v.grid-justify-center {
-    justify-content: flex-center;
-  }
-  .grid-xxl-h.items-baseline, .grid-xxl-h.grid-items-baseline,
-.grid-xxl-v.items-baseline,
-.grid-xxl-v.grid-items-baseline {
-    align-items: baseline;
-  }
-  .grid-xxl-h.items-stretch, .grid-xxl-h.grid-items-stretch,
-.grid-xxl-v.items-stretch,
-.grid-xxl-v.grid-items-stretch {
-    align-items: stretch;
-  }
-  .grid-xxl-h.items-start, .grid-xxl-h.grid-items-start,
-.grid-xxl-v.items-start,
-.grid-xxl-v.grid-items-start {
-    align-items: flex-start;
-  }
-  .grid-xxl-h.items-center, .grid-xxl-h.grid-items-center,
-.grid-xxl-v.items-center,
-.grid-xxl-v.grid-items-center {
-    align-items: center;
-  }
-  .grid-xxl-h.items-end, .grid-xxl-h.grid-items-end,
-.grid-xxl-v.items-end,
-.grid-xxl-v.grid-items-end {
-    align-items: flex-end;
-  }
-  .grid-xxl-h.content-start, .grid-xxl-h.grid-content-start,
-.grid-xxl-v.content-start,
-.grid-xxl-v.grid-content-start {
-    align-content: flex-start;
-  }
-  .grid-xxl-h.content-center, .grid-xxl-h.grid-content-center,
-.grid-xxl-v.content-center,
-.grid-xxl-v.grid-content-center {
-    align-content: center;
-  }
-  .grid-xxl-h.content-end, .grid-xxl-h.grid-content-end,
-.grid-xxl-v.content-end,
-.grid-xxl-v.grid-content-end {
-    align-content: flex-end;
-  }
-  .grid-xxl-h.content-between, .grid-xxl-h.grid-content-between,
-.grid-xxl-v.content-between,
-.grid-xxl-v.grid-content-between {
-    align-content: space-between;
-  }
-  .grid-xxl-h.content-equal, .grid-xxl-h.grid-content-equal,
-.grid-xxl-v.content-equal,
-.grid-xxl-v.grid-content-equal {
-    align-content: space-evenly;
+  .grid-xxl-h.grid-wrap-reverse,
+.grid-xxl-v.grid-wrap-reverse {
+    flex-wrap: wrap-reverse;
   }
   .grid-xxl-h .self-start,
 .grid-xxl-v .self-start {
@@ -421,7 +335,7 @@
     align-items: flex-start;
   }
   .grid-xl-h.align-left, .grid-xl-h.grid-align-left {
-    justify-content: flex-start;
+    align-items: flex-start;
   }
   .grid-xl-h.align-right, .grid-xl-h.grid-align-right {
     justify-content: flex-end;
@@ -431,6 +345,15 @@
   }
   .grid-xl-h.align-center, .grid-xl-h.grid-align-center {
     justify-content: center;
+  }
+  .grid-xl-h.align-middle-center, .grid-xl-h.grid-align-middle-center {
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+  }
+  .grid-xl-h.align-stretch, .grid-xl-h.grid-align-stretch {
+    color: blue;
+    align-items: stretch;
   }
 
   .grid-xl-v {
@@ -458,6 +381,14 @@
   }
   .grid-xl-v.align-center, .grid-xl-v.grid-align-center {
     align-items: center;
+  }
+  .grid-xl-v.align-middle-center, .grid-xl-v.grid-align-middle-center {
+    align-items: center;
+    justify-content: center;
+  }
+  .grid-xl-v.align-stretch, .grid-xl-v.grid-align-stretch {
+    color: red;
+    align-items: stretch;
   }
 
   .grid-xl-h,
@@ -510,92 +441,32 @@
   }
 
   /** raw css properties distribution */
-  .grid-xl-h.grid-wrap-reverse,
-.grid-xl-v.grid-wrap-reverse {
-    flex-wrap: wrap-reverse;
+  .grid-xl-h,
+.grid-xl-v {
+    /*&.just, &.grid-justify {
+      @each $fabricRule, $value in map-get($cssProps, grid-justify) {
+        @include utils.fabricAttributes('&'+$sep, $fabricRule, 'justify-content', $value);
+      }
+    }*/
+    /*&.items, &.grid-items {
+      @each $fabricRule, $value in map-get($cssProps, grid-items) {
+        @include utils.fabricAttributes('&'+$sep, $fabricRule, 'align-items', $value);
+      }
+    }*/
+    /*&.content, &.grid-content {
+      @each $fabricRule, $value in map-get($cssProps, grid-content) {
+        $tag: content-start;
+        @include utils.fabricAttributes('&'+$sep, $fabricRule, 'align-content', $value);
+      }
+    }*/
   }
   .grid-xl-h.grid-wrap,
 .grid-xl-v.grid-wrap {
     flex-wrap: wrap;
   }
-  .grid-xl-h.grid-nowrap,
-.grid-xl-v.grid-nowrap {
-    flex-wrap: nowrap;
-  }
-  .grid-xl-h.just-start, .grid-xl-h.grid-justify-start,
-.grid-xl-v.just-start,
-.grid-xl-v.grid-justify-start {
-    justify-content: flex-start;
-  }
-  .grid-xl-h.just-end, .grid-xl-h.grid-justify-end,
-.grid-xl-v.just-end,
-.grid-xl-v.grid-justify-end {
-    justify-content: flex-end;
-  }
-  .grid-xl-h.just-between, .grid-xl-h.grid-justify-between,
-.grid-xl-v.just-between,
-.grid-xl-v.grid-justify-between {
-    justify-content: space-between;
-  }
-  .grid-xl-h.just-stretch, .grid-xl-h.grid-justify-stretch,
-.grid-xl-v.just-stretch,
-.grid-xl-v.grid-justify-stretch {
-    justify-content: stretch;
-  }
-  .grid-xl-h.just-center, .grid-xl-h.grid-justify-center,
-.grid-xl-v.just-center,
-.grid-xl-v.grid-justify-center {
-    justify-content: flex-center;
-  }
-  .grid-xl-h.items-baseline, .grid-xl-h.grid-items-baseline,
-.grid-xl-v.items-baseline,
-.grid-xl-v.grid-items-baseline {
-    align-items: baseline;
-  }
-  .grid-xl-h.items-stretch, .grid-xl-h.grid-items-stretch,
-.grid-xl-v.items-stretch,
-.grid-xl-v.grid-items-stretch {
-    align-items: stretch;
-  }
-  .grid-xl-h.items-start, .grid-xl-h.grid-items-start,
-.grid-xl-v.items-start,
-.grid-xl-v.grid-items-start {
-    align-items: flex-start;
-  }
-  .grid-xl-h.items-center, .grid-xl-h.grid-items-center,
-.grid-xl-v.items-center,
-.grid-xl-v.grid-items-center {
-    align-items: center;
-  }
-  .grid-xl-h.items-end, .grid-xl-h.grid-items-end,
-.grid-xl-v.items-end,
-.grid-xl-v.grid-items-end {
-    align-items: flex-end;
-  }
-  .grid-xl-h.content-start, .grid-xl-h.grid-content-start,
-.grid-xl-v.content-start,
-.grid-xl-v.grid-content-start {
-    align-content: flex-start;
-  }
-  .grid-xl-h.content-center, .grid-xl-h.grid-content-center,
-.grid-xl-v.content-center,
-.grid-xl-v.grid-content-center {
-    align-content: center;
-  }
-  .grid-xl-h.content-end, .grid-xl-h.grid-content-end,
-.grid-xl-v.content-end,
-.grid-xl-v.grid-content-end {
-    align-content: flex-end;
-  }
-  .grid-xl-h.content-between, .grid-xl-h.grid-content-between,
-.grid-xl-v.content-between,
-.grid-xl-v.grid-content-between {
-    align-content: space-between;
-  }
-  .grid-xl-h.content-equal, .grid-xl-h.grid-content-equal,
-.grid-xl-v.content-equal,
-.grid-xl-v.grid-content-equal {
-    align-content: space-evenly;
+  .grid-xl-h.grid-wrap-reverse,
+.grid-xl-v.grid-wrap-reverse {
+    flex-wrap: wrap-reverse;
   }
   .grid-xl-h .self-start,
 .grid-xl-v .self-start {
@@ -625,7 +496,7 @@
     align-items: flex-start;
   }
   .grid-lg-h.align-left, .grid-lg-h.grid-align-left {
-    justify-content: flex-start;
+    align-items: flex-start;
   }
   .grid-lg-h.align-right, .grid-lg-h.grid-align-right {
     justify-content: flex-end;
@@ -635,6 +506,15 @@
   }
   .grid-lg-h.align-center, .grid-lg-h.grid-align-center {
     justify-content: center;
+  }
+  .grid-lg-h.align-middle-center, .grid-lg-h.grid-align-middle-center {
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+  }
+  .grid-lg-h.align-stretch, .grid-lg-h.grid-align-stretch {
+    color: blue;
+    align-items: stretch;
   }
 
   .grid-lg-v {
@@ -662,6 +542,14 @@
   }
   .grid-lg-v.align-center, .grid-lg-v.grid-align-center {
     align-items: center;
+  }
+  .grid-lg-v.align-middle-center, .grid-lg-v.grid-align-middle-center {
+    align-items: center;
+    justify-content: center;
+  }
+  .grid-lg-v.align-stretch, .grid-lg-v.grid-align-stretch {
+    color: red;
+    align-items: stretch;
   }
 
   .grid-lg-h,
@@ -714,92 +602,32 @@
   }
 
   /** raw css properties distribution */
-  .grid-lg-h.grid-wrap-reverse,
-.grid-lg-v.grid-wrap-reverse {
-    flex-wrap: wrap-reverse;
+  .grid-lg-h,
+.grid-lg-v {
+    /*&.just, &.grid-justify {
+      @each $fabricRule, $value in map-get($cssProps, grid-justify) {
+        @include utils.fabricAttributes('&'+$sep, $fabricRule, 'justify-content', $value);
+      }
+    }*/
+    /*&.items, &.grid-items {
+      @each $fabricRule, $value in map-get($cssProps, grid-items) {
+        @include utils.fabricAttributes('&'+$sep, $fabricRule, 'align-items', $value);
+      }
+    }*/
+    /*&.content, &.grid-content {
+      @each $fabricRule, $value in map-get($cssProps, grid-content) {
+        $tag: content-start;
+        @include utils.fabricAttributes('&'+$sep, $fabricRule, 'align-content', $value);
+      }
+    }*/
   }
   .grid-lg-h.grid-wrap,
 .grid-lg-v.grid-wrap {
     flex-wrap: wrap;
   }
-  .grid-lg-h.grid-nowrap,
-.grid-lg-v.grid-nowrap {
-    flex-wrap: nowrap;
-  }
-  .grid-lg-h.just-start, .grid-lg-h.grid-justify-start,
-.grid-lg-v.just-start,
-.grid-lg-v.grid-justify-start {
-    justify-content: flex-start;
-  }
-  .grid-lg-h.just-end, .grid-lg-h.grid-justify-end,
-.grid-lg-v.just-end,
-.grid-lg-v.grid-justify-end {
-    justify-content: flex-end;
-  }
-  .grid-lg-h.just-between, .grid-lg-h.grid-justify-between,
-.grid-lg-v.just-between,
-.grid-lg-v.grid-justify-between {
-    justify-content: space-between;
-  }
-  .grid-lg-h.just-stretch, .grid-lg-h.grid-justify-stretch,
-.grid-lg-v.just-stretch,
-.grid-lg-v.grid-justify-stretch {
-    justify-content: stretch;
-  }
-  .grid-lg-h.just-center, .grid-lg-h.grid-justify-center,
-.grid-lg-v.just-center,
-.grid-lg-v.grid-justify-center {
-    justify-content: flex-center;
-  }
-  .grid-lg-h.items-baseline, .grid-lg-h.grid-items-baseline,
-.grid-lg-v.items-baseline,
-.grid-lg-v.grid-items-baseline {
-    align-items: baseline;
-  }
-  .grid-lg-h.items-stretch, .grid-lg-h.grid-items-stretch,
-.grid-lg-v.items-stretch,
-.grid-lg-v.grid-items-stretch {
-    align-items: stretch;
-  }
-  .grid-lg-h.items-start, .grid-lg-h.grid-items-start,
-.grid-lg-v.items-start,
-.grid-lg-v.grid-items-start {
-    align-items: flex-start;
-  }
-  .grid-lg-h.items-center, .grid-lg-h.grid-items-center,
-.grid-lg-v.items-center,
-.grid-lg-v.grid-items-center {
-    align-items: center;
-  }
-  .grid-lg-h.items-end, .grid-lg-h.grid-items-end,
-.grid-lg-v.items-end,
-.grid-lg-v.grid-items-end {
-    align-items: flex-end;
-  }
-  .grid-lg-h.content-start, .grid-lg-h.grid-content-start,
-.grid-lg-v.content-start,
-.grid-lg-v.grid-content-start {
-    align-content: flex-start;
-  }
-  .grid-lg-h.content-center, .grid-lg-h.grid-content-center,
-.grid-lg-v.content-center,
-.grid-lg-v.grid-content-center {
-    align-content: center;
-  }
-  .grid-lg-h.content-end, .grid-lg-h.grid-content-end,
-.grid-lg-v.content-end,
-.grid-lg-v.grid-content-end {
-    align-content: flex-end;
-  }
-  .grid-lg-h.content-between, .grid-lg-h.grid-content-between,
-.grid-lg-v.content-between,
-.grid-lg-v.grid-content-between {
-    align-content: space-between;
-  }
-  .grid-lg-h.content-equal, .grid-lg-h.grid-content-equal,
-.grid-lg-v.content-equal,
-.grid-lg-v.grid-content-equal {
-    align-content: space-evenly;
+  .grid-lg-h.grid-wrap-reverse,
+.grid-lg-v.grid-wrap-reverse {
+    flex-wrap: wrap-reverse;
   }
   .grid-lg-h .self-start,
 .grid-lg-v .self-start {
@@ -829,7 +657,7 @@
     align-items: flex-start;
   }
   .grid-md-h.align-left, .grid-md-h.grid-align-left {
-    justify-content: flex-start;
+    align-items: flex-start;
   }
   .grid-md-h.align-right, .grid-md-h.grid-align-right {
     justify-content: flex-end;
@@ -839,6 +667,15 @@
   }
   .grid-md-h.align-center, .grid-md-h.grid-align-center {
     justify-content: center;
+  }
+  .grid-md-h.align-middle-center, .grid-md-h.grid-align-middle-center {
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+  }
+  .grid-md-h.align-stretch, .grid-md-h.grid-align-stretch {
+    color: blue;
+    align-items: stretch;
   }
 
   .grid-md-v {
@@ -866,6 +703,14 @@
   }
   .grid-md-v.align-center, .grid-md-v.grid-align-center {
     align-items: center;
+  }
+  .grid-md-v.align-middle-center, .grid-md-v.grid-align-middle-center {
+    align-items: center;
+    justify-content: center;
+  }
+  .grid-md-v.align-stretch, .grid-md-v.grid-align-stretch {
+    color: red;
+    align-items: stretch;
   }
 
   .grid-md-h,
@@ -918,92 +763,32 @@
   }
 
   /** raw css properties distribution */
-  .grid-md-h.grid-wrap-reverse,
-.grid-md-v.grid-wrap-reverse {
-    flex-wrap: wrap-reverse;
+  .grid-md-h,
+.grid-md-v {
+    /*&.just, &.grid-justify {
+      @each $fabricRule, $value in map-get($cssProps, grid-justify) {
+        @include utils.fabricAttributes('&'+$sep, $fabricRule, 'justify-content', $value);
+      }
+    }*/
+    /*&.items, &.grid-items {
+      @each $fabricRule, $value in map-get($cssProps, grid-items) {
+        @include utils.fabricAttributes('&'+$sep, $fabricRule, 'align-items', $value);
+      }
+    }*/
+    /*&.content, &.grid-content {
+      @each $fabricRule, $value in map-get($cssProps, grid-content) {
+        $tag: content-start;
+        @include utils.fabricAttributes('&'+$sep, $fabricRule, 'align-content', $value);
+      }
+    }*/
   }
   .grid-md-h.grid-wrap,
 .grid-md-v.grid-wrap {
     flex-wrap: wrap;
   }
-  .grid-md-h.grid-nowrap,
-.grid-md-v.grid-nowrap {
-    flex-wrap: nowrap;
-  }
-  .grid-md-h.just-start, .grid-md-h.grid-justify-start,
-.grid-md-v.just-start,
-.grid-md-v.grid-justify-start {
-    justify-content: flex-start;
-  }
-  .grid-md-h.just-end, .grid-md-h.grid-justify-end,
-.grid-md-v.just-end,
-.grid-md-v.grid-justify-end {
-    justify-content: flex-end;
-  }
-  .grid-md-h.just-between, .grid-md-h.grid-justify-between,
-.grid-md-v.just-between,
-.grid-md-v.grid-justify-between {
-    justify-content: space-between;
-  }
-  .grid-md-h.just-stretch, .grid-md-h.grid-justify-stretch,
-.grid-md-v.just-stretch,
-.grid-md-v.grid-justify-stretch {
-    justify-content: stretch;
-  }
-  .grid-md-h.just-center, .grid-md-h.grid-justify-center,
-.grid-md-v.just-center,
-.grid-md-v.grid-justify-center {
-    justify-content: flex-center;
-  }
-  .grid-md-h.items-baseline, .grid-md-h.grid-items-baseline,
-.grid-md-v.items-baseline,
-.grid-md-v.grid-items-baseline {
-    align-items: baseline;
-  }
-  .grid-md-h.items-stretch, .grid-md-h.grid-items-stretch,
-.grid-md-v.items-stretch,
-.grid-md-v.grid-items-stretch {
-    align-items: stretch;
-  }
-  .grid-md-h.items-start, .grid-md-h.grid-items-start,
-.grid-md-v.items-start,
-.grid-md-v.grid-items-start {
-    align-items: flex-start;
-  }
-  .grid-md-h.items-center, .grid-md-h.grid-items-center,
-.grid-md-v.items-center,
-.grid-md-v.grid-items-center {
-    align-items: center;
-  }
-  .grid-md-h.items-end, .grid-md-h.grid-items-end,
-.grid-md-v.items-end,
-.grid-md-v.grid-items-end {
-    align-items: flex-end;
-  }
-  .grid-md-h.content-start, .grid-md-h.grid-content-start,
-.grid-md-v.content-start,
-.grid-md-v.grid-content-start {
-    align-content: flex-start;
-  }
-  .grid-md-h.content-center, .grid-md-h.grid-content-center,
-.grid-md-v.content-center,
-.grid-md-v.grid-content-center {
-    align-content: center;
-  }
-  .grid-md-h.content-end, .grid-md-h.grid-content-end,
-.grid-md-v.content-end,
-.grid-md-v.grid-content-end {
-    align-content: flex-end;
-  }
-  .grid-md-h.content-between, .grid-md-h.grid-content-between,
-.grid-md-v.content-between,
-.grid-md-v.grid-content-between {
-    align-content: space-between;
-  }
-  .grid-md-h.content-equal, .grid-md-h.grid-content-equal,
-.grid-md-v.content-equal,
-.grid-md-v.grid-content-equal {
-    align-content: space-evenly;
+  .grid-md-h.grid-wrap-reverse,
+.grid-md-v.grid-wrap-reverse {
+    flex-wrap: wrap-reverse;
   }
   .grid-md-h .self-start,
 .grid-md-v .self-start {
@@ -1033,7 +818,7 @@
     align-items: flex-start;
   }
   .grid-sm-h.align-left, .grid-sm-h.grid-align-left {
-    justify-content: flex-start;
+    align-items: flex-start;
   }
   .grid-sm-h.align-right, .grid-sm-h.grid-align-right {
     justify-content: flex-end;
@@ -1043,6 +828,15 @@
   }
   .grid-sm-h.align-center, .grid-sm-h.grid-align-center {
     justify-content: center;
+  }
+  .grid-sm-h.align-middle-center, .grid-sm-h.grid-align-middle-center {
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+  }
+  .grid-sm-h.align-stretch, .grid-sm-h.grid-align-stretch {
+    color: blue;
+    align-items: stretch;
   }
 
   .grid-sm-v {
@@ -1070,6 +864,14 @@
   }
   .grid-sm-v.align-center, .grid-sm-v.grid-align-center {
     align-items: center;
+  }
+  .grid-sm-v.align-middle-center, .grid-sm-v.grid-align-middle-center {
+    align-items: center;
+    justify-content: center;
+  }
+  .grid-sm-v.align-stretch, .grid-sm-v.grid-align-stretch {
+    color: red;
+    align-items: stretch;
   }
 
   .grid-sm-h,
@@ -1122,92 +924,32 @@
   }
 
   /** raw css properties distribution */
-  .grid-sm-h.grid-wrap-reverse,
-.grid-sm-v.grid-wrap-reverse {
-    flex-wrap: wrap-reverse;
+  .grid-sm-h,
+.grid-sm-v {
+    /*&.just, &.grid-justify {
+      @each $fabricRule, $value in map-get($cssProps, grid-justify) {
+        @include utils.fabricAttributes('&'+$sep, $fabricRule, 'justify-content', $value);
+      }
+    }*/
+    /*&.items, &.grid-items {
+      @each $fabricRule, $value in map-get($cssProps, grid-items) {
+        @include utils.fabricAttributes('&'+$sep, $fabricRule, 'align-items', $value);
+      }
+    }*/
+    /*&.content, &.grid-content {
+      @each $fabricRule, $value in map-get($cssProps, grid-content) {
+        $tag: content-start;
+        @include utils.fabricAttributes('&'+$sep, $fabricRule, 'align-content', $value);
+      }
+    }*/
   }
   .grid-sm-h.grid-wrap,
 .grid-sm-v.grid-wrap {
     flex-wrap: wrap;
   }
-  .grid-sm-h.grid-nowrap,
-.grid-sm-v.grid-nowrap {
-    flex-wrap: nowrap;
-  }
-  .grid-sm-h.just-start, .grid-sm-h.grid-justify-start,
-.grid-sm-v.just-start,
-.grid-sm-v.grid-justify-start {
-    justify-content: flex-start;
-  }
-  .grid-sm-h.just-end, .grid-sm-h.grid-justify-end,
-.grid-sm-v.just-end,
-.grid-sm-v.grid-justify-end {
-    justify-content: flex-end;
-  }
-  .grid-sm-h.just-between, .grid-sm-h.grid-justify-between,
-.grid-sm-v.just-between,
-.grid-sm-v.grid-justify-between {
-    justify-content: space-between;
-  }
-  .grid-sm-h.just-stretch, .grid-sm-h.grid-justify-stretch,
-.grid-sm-v.just-stretch,
-.grid-sm-v.grid-justify-stretch {
-    justify-content: stretch;
-  }
-  .grid-sm-h.just-center, .grid-sm-h.grid-justify-center,
-.grid-sm-v.just-center,
-.grid-sm-v.grid-justify-center {
-    justify-content: flex-center;
-  }
-  .grid-sm-h.items-baseline, .grid-sm-h.grid-items-baseline,
-.grid-sm-v.items-baseline,
-.grid-sm-v.grid-items-baseline {
-    align-items: baseline;
-  }
-  .grid-sm-h.items-stretch, .grid-sm-h.grid-items-stretch,
-.grid-sm-v.items-stretch,
-.grid-sm-v.grid-items-stretch {
-    align-items: stretch;
-  }
-  .grid-sm-h.items-start, .grid-sm-h.grid-items-start,
-.grid-sm-v.items-start,
-.grid-sm-v.grid-items-start {
-    align-items: flex-start;
-  }
-  .grid-sm-h.items-center, .grid-sm-h.grid-items-center,
-.grid-sm-v.items-center,
-.grid-sm-v.grid-items-center {
-    align-items: center;
-  }
-  .grid-sm-h.items-end, .grid-sm-h.grid-items-end,
-.grid-sm-v.items-end,
-.grid-sm-v.grid-items-end {
-    align-items: flex-end;
-  }
-  .grid-sm-h.content-start, .grid-sm-h.grid-content-start,
-.grid-sm-v.content-start,
-.grid-sm-v.grid-content-start {
-    align-content: flex-start;
-  }
-  .grid-sm-h.content-center, .grid-sm-h.grid-content-center,
-.grid-sm-v.content-center,
-.grid-sm-v.grid-content-center {
-    align-content: center;
-  }
-  .grid-sm-h.content-end, .grid-sm-h.grid-content-end,
-.grid-sm-v.content-end,
-.grid-sm-v.grid-content-end {
-    align-content: flex-end;
-  }
-  .grid-sm-h.content-between, .grid-sm-h.grid-content-between,
-.grid-sm-v.content-between,
-.grid-sm-v.grid-content-between {
-    align-content: space-between;
-  }
-  .grid-sm-h.content-equal, .grid-sm-h.grid-content-equal,
-.grid-sm-v.content-equal,
-.grid-sm-v.grid-content-equal {
-    align-content: space-evenly;
+  .grid-sm-h.grid-wrap-reverse,
+.grid-sm-v.grid-wrap-reverse {
+    flex-wrap: wrap-reverse;
   }
   .grid-sm-h .self-start,
 .grid-sm-v .self-start {

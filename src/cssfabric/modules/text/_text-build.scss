@@ -75,13 +75,13 @@ $step-size: $size-diff / $steps;
     // text shadows color_schemes
     @each $fabricRule, $value in $color-schemes {
       $cast-value: 0 0 0.125em #{$value};
-      @include utils.fabricAttributes("&" + $sep + shad + $sep, $fabricRule, "text-shadow", $cast-value);
+      @include utils.fabricAttributes("&" + $sep + shad + $sep, $fabricRule, "text-shad", $cast-value);
     }
 
     // text shadows color_palette_props
     @each $fabricRule, $value in $color-palette-props {
       $cast-value: 0 0 0.125em #{$value};
-      @include utils.fabricAttributes("&" + $sep + shad + $sep, $fabricRule, "text-shadow", $cast-value);
+      @include utils.fabricAttributes("&" + $sep + shad + $sep, $fabricRule, "text-shad", $cast-value);
     }
   }
 }

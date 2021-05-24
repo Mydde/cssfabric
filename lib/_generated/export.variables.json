@@ -255,7 +255,7 @@
                     "grow-shrink-steps": 4,
                     "cssProps": {
                         "flexWrap": {
-                            "wrap-reverse": "wrap-reverse", "wrap": "wrap", "nowrap": "nowrap"
+                            "wrap": "wrap", "wrap-reverse": "wrap-reverse"
                         },
                         "grid-justify": {
                             "start": "flex-start", "end": "flex-end", "between": "space-between", "stretch": "stretch", "center": "flex-center"
@@ -283,7 +283,7 @@
                             "keys": ["v",
                                 "h"],
                             "classNames": {
-                                "_": ["wrap-reverse", "wrap", "nowrap"], "align": ["top", "middle", "bottom", "left", "right", "center", "center-middle"], "items": ["baseline", "stretch", "start", "center", "end"], "content": ["start", "center", "end", "between", "equal"], "justify": ["start", "end", "between", "stretch", "center"]
+                                "align": ["top", "middle", "bottom", "left", "right", "center", "middle-center", "stretch"], "grid": ["wrap", "wrap-reverse"]
                             },
                             "about": "a classic grid system, and hey, it gets height !"
                         },
@@ -315,6 +315,39 @@
                     "attributes": {
                         "menu": {
                             "tag": "menu", "keys": ["h", "v"]
+                        }
+                    }
+                }
+            },
+            "overflow": {
+                "_data": {
+                    "overflow_props": ["overflow",
+                        "overflow-x",
+                        "overflow-y"],
+                    "overflow_values": ["visible",
+                        "hidden",
+                        "clip",
+                        "scroll",
+                        "auto"],
+                    "cssProps": {
+                        "overflow": {
+                            "visible": "visible", "hidden": "hidden", "clip": "clip", "scroll": "scroll", "_": "auto"
+                        }
+                    }
+                },
+                "_metadata": {
+                    "title": "overflow", "tag": "flow", "description": "cssfabric overflow module to set overflow styles on all html elements"
+                },
+                "_docs": {
+                    "attributes": {
+                        "overflow": {
+                            "tag": "flow", "keys": ["visible", "hidden", "clip", "scroll", "auto"]
+                        },
+                        "overflowX": {
+                            "tag": "flowX", "keys": ["visible", "hidden", "clip", "scroll", "auto"]
+                        },
+                        "overflowY": {
+                            "tag": "flowY", "keys": ["visible", "hidden", "clip", "scroll", "auto"]
                         }
                     }
                 }
@@ -372,35 +405,21 @@
                     }
                 }
             },
-            "overflow": {
+            "table": {
                 "_data": {
-                    "overflow_props": ["overflow",
-                        "overflow-x",
-                        "overflow-y"],
-                    "overflow_values": ["visible",
-                        "hidden",
-                        "clip",
-                        "scroll",
-                        "auto"],
-                    "cssProps": {
-                        "overflow": {
-                            "visible": "visible", "hidden": "hidden", "clip": "clip", "scroll": "scroll", "_": "auto"
-                        }
-                    }
+                    "className": "table", "classNameShort": "tbl", "table_class_name": "table", "table_class_name_short": "tbl", "table-bg-color-head": "#f4f4f4", "table-bg-color-strip-main": "#ededed", "table-bg-color-strip-second": "#f5f5f5", "table-border-color-header": "#ccc", "table-border-color-main": "#ededed", "table-border-color-second": "#f5f5f5"
                 },
                 "_metadata": {
-                    "title": "overflow", "tag": "flow", "description": "cssfabric overflow module to set overflow styles on all html elements"
+                    "title": "table", "tag": "table", "description": "cssfabric table module to set different table styles"
                 },
                 "_docs": {
                     "attributes": {
-                        "overflow": {
-                            "tag": "flow", "keys": ["visible", "hidden", "clip", "scroll", "auto"]
-                        },
-                        "overflowX": {
-                            "tag": "flowX", "keys": ["visible", "hidden", "clip", "scroll", "auto"]
-                        },
-                        "overflowY": {
-                            "tag": "flowY", "keys": ["visible", "hidden", "clip", "scroll", "auto"]
+                        "table": {
+                            "tag": "table",
+                            "classNames": {
+                                "_": ["bg-strip-2", "bg-strip-5"], "_pos": ["sticky", "layout"], "_deco": ["h-line", "v-line", "border"]
+                            },
+                            "about": "is a table"
                         }
                     }
                 }
@@ -450,29 +469,12 @@
                             "tag": "text", "keys": ["l", "r", "center", "justify"]
                         },
                         "text-shadow": {
-                            "tag": "text-shad", "keys": []
+                            "tag": "text-shad", "keys": ["palette"]
                         }
                     },
                     "classNames": {
-                        "_": ["ellipsis", "tagged", "test"]
-                    }
-                }
-            },
-            "table": {
-                "_data": {
-                    "className": "table", "classNameShort": "tbl", "table_class_name": "table", "table_class_name_short": "tbl", "table-bg-color-head": "#f4f4f4", "table-bg-color-strip-main": "#ededed", "table-bg-color-strip-second": "#f5f5f5", "table-border-color-header": "#ccc", "table-border-color-main": "#ededed", "table-border-color-second": "#f5f5f5"
-                },
-                "_metadata": {
-                    "title": "table", "tag": "table", "description": "cssfabric table module to set different table styles"
-                },
-                "_docs": {
-                    "attributes": {
-                        "table": {
-                            "tag": "table",
-                            "classNames": {
-                                "_": ["bg-strip-2", "bg-strip-5"], "_pos": ["sticky", "layout"], "_deco": ["h-line", "v-line", "border"]
-                            },
-                            "about": "is a table"
+                        "_": {
+                            "et": "ellipsis"
                         }
                     }
                 }

@@ -53,8 +53,6 @@
   $gray-schemes: ();
 
   @for $i from 0 through $steps {
-    @debug $i;
-    @debug $i / $steps * 100%  ;
 
     $color: mix($gray-end, $gray-start, $i / $steps * 100%);
 
