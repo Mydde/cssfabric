@@ -681,35 +681,35 @@
 }
 
 .dsp-none {
-  display: "";
+  display: none;
 }
 
 .dsp-inline {
-  display: "";
+  display: inline;
 }
 
 .dsp-block-inline {
-  display: "";
+  display: inline-block;
 }
 
 .dsp-flex-inline {
-  display: "";
+  display: inline-flex;
 }
 
 .dsp-tbl {
-  display: "";
+  display: table;
 }
 
 .dsp-tbl-row {
-  display: "";
+  display: table-row;
 }
 
 .dsp-tbl-cell {
-  display: "";
+  display: table-cell;
 }
 
 .dsp-tbl-column {
-  display: "";
+  display: table-column;
 }
 
 .pos-abs {
@@ -717,19 +717,21 @@
 }
 
 .pos-rel {
-  position: "";
+  position: relative;
 }
 
 .pos-stat {
-  position: "";
+  position: static;
 }
 
 .pos-fix {
-  position: "";
+  position: fixed;
 }
 
 .pos-sticky {
-  position: "";
+  position: sticky;
+  top: 0;
+  margin-top: 0;
 }
 
 .shad-2 {

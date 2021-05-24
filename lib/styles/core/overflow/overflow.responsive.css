@@ -1,5 +1,66 @@
 /* css overflow rules */
 @media only screen and (max-width: 0rem) {
+  .overflow-xxxl-visible {
+    overflow: visible;
+  }
+
+  .overflow-xxxl-hidden {
+    overflow: hidden;
+  }
+
+  .overflow-xxxl-clip {
+    overflow: clip;
+  }
+
+  .overflow-xxxl-scroll {
+    overflow: scroll;
+  }
+
+  .overflow-xxxl-auto {
+    overflow: auto;
+  }
+
+  .overflow-x-xxxl-visible {
+    overflow: visible;
+  }
+
+  .overflow-x-xxxl-hidden {
+    overflow: hidden;
+  }
+
+  .overflow-x-xxxl-clip {
+    overflow: clip;
+  }
+
+  .overflow-x-xxxl-scroll {
+    overflow: scroll;
+  }
+
+  .overflow-x-xxxl-auto {
+    overflow: auto;
+  }
+
+  .overflow-y-xxxl-visible {
+    overflow: visible;
+  }
+
+  .overflow-y-xxxl-hidden {
+    overflow: hidden;
+  }
+
+  .overflow-y-xxxl-clip {
+    overflow: clip;
+  }
+
+  .overflow-y-xxxl-scroll {
+    overflow: scroll;
+  }
+
+  .overflow-y-xxxl-auto {
+    overflow: auto;
+  }
+}
+@media only screen and (max-width: 120rem) {
   .overflow-xxl-visible {
     overflow: visible;
   }
@@ -84,7 +145,7 @@
     overflow: unset;
   }
 }
-@media only screen and (max-width: 100rem) {
+@media only screen and (max-width: 90rem) {
   .overflow-xl-visible {
     overflow: visible;
   }

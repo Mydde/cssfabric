@@ -8,7 +8,7 @@ export type IFabricConfModuleDocsPart = Record<string, any>;
 export type TFabricConfModuleDocsAttributesPart = Record<string, any>;
 
 //
-const getModuleList = (): any => {
+const getModuleList = (): Record<string, any> => {
     return jsonConfig["cssfabric"]?.["modules"] || {};
 };
 

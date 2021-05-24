@@ -38,28 +38,41 @@ $grid-code-sep: #{$grid-code}#{$sep};
       flex: 1 1 0;
     }
 
-    .align-middle, .#{$grid-code-sep}align-middle {
+    &.align-middle, &.#{$grid-code-sep}align-middle {
       align-items: center;
     }
 
-    .align-top, .#{$grid-code-sep}align-top {
+    &.align-top, &.#{$grid-code-sep}align-top {
       align-items: flex-start;
     }
 
-    .align-left, .#{$grid-code-sep}align-left {
-      justify-content: flex-start;
+    &.align-left, &.#{$grid-code-sep}align-left {
+      // justify-content: flex-start;
+      align-items: flex-start;
     }
 
-    .align-right, .#{$grid-code-sep}align-right {
+    &.align-right, &.#{$grid-code-sep}align-right {
       justify-content: flex-end;
+      // align-items: end;
     }
 
-    .align-bottom, .#{$grid-code-sep}align-bottom {
+    &.align-bottom, &.#{$grid-code-sep}align-bottom {
       align-items: flex-end;
     }
 
-    .align-center, .#{$grid-code-sep}align-center {
+    &.align-center, &.#{$grid-code-sep}align-center {
       justify-content: center;
+    }
+
+    &.align-middle-center, &.#{$grid-code-sep}align-middle-center {
+      justify-content: center;
+      align-content: center;
+      align-items: center;
+    }
+
+    &.align-stretch , &.#{$grid-code-sep}align-stretch {
+      color: blue;
+      align-items: stretch;
     }
   }
 
@@ -72,28 +85,38 @@ $grid-code-sep: #{$grid-code}#{$sep};
       max-height: 100%;
     }
 
-    .align-middle, .#{$grid-code-sep}align-middle {
+    &.align-middle, &.#{$grid-code-sep}align-middle {
       justify-content: center;
     }
 
-    .align-top, .#{$grid-code-sep}align-top {
+    &.align-top, &.#{$grid-code-sep}align-top {
       justify-content: flex-start;
     }
 
-    .align-left, .#{$grid-code-sep}align-left {
+    &.align-left, &.#{$grid-code-sep}align-left {
       align-items: flex-start;
     }
 
-    .align-right, .#{$grid-code-sep}align-right {
+    &.align-right, &.#{$grid-code-sep}align-right {
       align-items: flex-end;
     }
 
-    .align-bottom, .#{$grid-code-sep}align-bottom {
+    &.align-bottom, &.#{$grid-code-sep}align-bottom {
       justify-content: flex-end;
     }
 
-    .align-center, .#{$grid-code-sep}align-center {
+    &.align-center, &.#{$grid-code-sep}align-center {
       align-items: center;
+    }
+
+    &.align-middle-center, &.#{$grid-code-sep}align-middle-center {
+      align-items: center;
+      justify-content: center;
+    }
+
+    &.align-stretch, &.#{$grid-code-sep}align-stretch {
+      color: red;
+      align-items: stretch;
     }
   }
 
@@ -135,26 +158,26 @@ $grid-code-sep: #{$grid-code}#{$sep};
     }
 
     // justify content rules */
-    &.just, &.grid-justify {
+    /*&.just, &.grid-justify {
       @each $fabricRule, $value in map-get($cssProps, grid-justify) {
         @include utils.fabricAttributes('&'+$sep, $fabricRule, 'justify-content', $value);
       }
-    }
+    }*/
 
     // align-items rules */
-    &.items, &.grid-items {
+    /*&.items, &.grid-items {
       @each $fabricRule, $value in map-get($cssProps, grid-items) {
         @include utils.fabricAttributes('&'+$sep, $fabricRule, 'align-items', $value);
       }
-    }
+    }*/
 
     // align-content rules */
-    &.content, &.grid-content {
+    /*&.content, &.grid-content {
       @each $fabricRule, $value in map-get($cssProps, grid-content) {
         $tag: content#{$sep}start;
         @include utils.fabricAttributes('&'+$sep, $fabricRule, 'align-content', $value);
       }
-    }
+    }*/
 
     // align-self rules for children */
     & .self {

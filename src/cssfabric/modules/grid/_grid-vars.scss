@@ -4,19 +4,17 @@
 $_grow-shrink-steps: 4;
 
 
-$_grid-align: (top middle bottom left right center center-middle);
+$_grid-align: (top middle bottom left right center middle-center stretch);
 
 $_classNames: (
-        wrap-reverse: wrap-reverse,
         wrap: wrap,
-        nowrap: nowrap
+        wrap-reverse: wrap-reverse
 );
 
 $_cssProps: (
         flexWrap: (
-                wrap-reverse: wrap-reverse,
                 wrap: wrap,
-                nowrap: nowrap
+                wrap-reverse: wrap-reverse
         ),
         grid-justify: (
                 start: flex-start,
@@ -72,11 +70,11 @@ $grid-docs: (// add align-middle non generated className // grow + shrink
                         tag: grid,
                         keys: (v, h),
                         classNames: (
-                                "_":utils.getObjectKeys(map-get($_cssProps, flexWrap)), // add inline !
                                 align: $_grid-align,
-                                items: utils.getObjectKeys(map-get($_cssProps, grid-items)),
-                                content:utils.getObjectKeys(map-get($_cssProps, grid-content)),
-                                justify:utils.getObjectKeys(map-get($_cssProps, grid-justify))
+                                grid:utils.getObjectKeys(map-get($_cssProps, flexWrap)), // add inline !
+                          //items: utils.getObjectKeys(map-get($_cssProps, grid-items)),
+                          //content:utils.getObjectKeys(map-get($_cssProps, grid-content)),
+                          //justify:utils.getObjectKeys(map-get($_cssProps, grid-justify))
                         ),
                         about: "a classic grid system, and hey, it gets height !"
                 ),

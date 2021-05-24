@@ -1,60 +1,61 @@
 @use '../utils' as utils;
 
-$cssfabric-metadata: ( 
-    title: "cssfabric",
-    tag: "cssfabric",
-    description: "cssfabric global config variables"
+$cssfabric-metadata: (
+        title: "cssfabric",
+        tag: "cssfabric",
+        description: "cssfabric global config variables"
 );
 
 $cssfabric-config: (
-    cfg-has-dimension-strict: true, 
-    CFG_HAS_DIMENSION_MIN: true,
-    CFG_HAS_DIMENSION_MAX: true,
-    size_step: 0.25rem,
-    sep: "-",
-    sizes: (
-        tiny: 32,
-        small: 64,
-        medium: 256,
-        large: 250,
-        full: 100%
-    ),
-    media_quey_sizes: (
-        xxl: 120,
-        xl: 100,
-        lg: 64,
-        md: 48,
-        sm: 35.7
-    ),
-    theme: (
-        primary: orange,
-        foreground: #333,
-        background: #ededed
-    ),
-    scheme: (
-        discrete: gray,
-        info: rgb(219, 237, 255),
-        alert: orange,
-        warning: rgb(255, 251, 221),
-        success: rgb(220, 255, 228),
-        error: rgb(255, 227, 230)
-    ),
-	palette: (
-		yellow: #ffb900,
-		orange: #d83b01,
-		red: #d13438,
-		magenta: #b4009e,
-		purple: #5c2d91,
-		green: #107c10,
-		teal: #008272,
-		blue: #0078d4
-	),
-    gray: utils.getGraySteps(9, #ededed, #333333),
-	gray-config: (
-		start: #ededed,
-		end: #333333,
-		steps: 9
-	)
+        cfg-has-dimension-strict: true,
+        CFG_HAS_DIMENSION_MIN: true,
+        CFG_HAS_DIMENSION_MAX: true,
+        size_step: 0.25rem,
+        sep: "-",
+        sizes: (
+                tiny: 32,
+                small: 64,
+                medium: 256,
+                large: 250,
+                full: 100%
+        ),
+        media_quey_sizes: (
+                xxxl: 180,
+                xxl: 120,
+                xl: 90,
+                lg: 64,
+                md: 48,
+                sm: 35.7
+        ),
+        theme: (
+                primary: orange,
+                foreground: #333,
+                background: #ededed
+        ),
+        scheme: (
+                discrete: #ccc,
+                success: green,
+                info: hsl(48, 100%, 67%),
+                warning: hsl(48, 96%, 46%),
+                alert: hsl(27, 100%, 50%),
+                error: red
+        ),
+        palette: (
+                yellow: #ffb900,
+                orange: #d83b01,
+                red: #d13438,
+                magenta: #b4009e,
+                purple: #5c2d91,
+                green: #107c10,
+                teal: #008272,
+                blue: #0078d4
+        ),
+        gray: utils.getGraySteps(8, #f4f4f4, #999),
+        gray-config: (
+                start: #f4f4f4,
+                end: #999,
+                steps: 8
+        )
 );
 
 $cssfabric-docs: ();
