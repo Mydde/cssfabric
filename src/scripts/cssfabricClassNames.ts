@@ -106,7 +106,7 @@ function cssfabricClassNames(props: IListCssfabricClassNamesProps) {
                         let val = moduleLevels[level]
                         
                         let debugKey = (x !== '_' && x.toString().charAt(0) !== '_') ? x : level;
-                        debugKey = (level==='_')? debugKey : debugKey + '-' + level
+                        debugKey = (level.toString().charAt(0)==='_')? debugKey : debugKey + '-' + level
                         registerDebug(x, concatenateWithKey(debugKey , val), level);
                         
                         return concatenateWithKey(level, val);
