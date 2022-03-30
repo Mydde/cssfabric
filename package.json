@@ -1,5 +1,5 @@
 {
-  "name": "cssfabric",
+  "name": "@medyll/cssfabric",
   "version": "0.0.2",
   "private": true,
   "main": "./lib",
@@ -19,6 +19,7 @@
     "gulp-sass-json": "^1.0.1",
     "gulp-sort": "^2.0.0",
     "JSON": "^1.0.0",
+    "node-sass": "^6.0.0",
     "sass": "^1.32.12",
     "unescape-js": "^1.1.4"
   },
@@ -55,11 +56,11 @@
     "sass-loader": "^11.0.1",
     "sass-parser": "^0.1.2",
     "sassdoc": "^2.7.3",
-    "scss-to-json": "^2.0.0",
     "style-loader": "^2.0.0",
     "terminal": "^0.1.4",
     "through2": "^4.0.2",
     "tsconfig-paths": "^3.9.0",
-    "webpack": "^5.36.2"
+    "webpack": "^5.36.2",
+    "scss-to-json": "^2.0.0"
   }
 }

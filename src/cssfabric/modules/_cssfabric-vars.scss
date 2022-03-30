@@ -10,13 +10,13 @@ $cssfabric-config: (
         cfg-has-dimension-strict: true,
         CFG_HAS_DIMENSION_MIN: true,
         CFG_HAS_DIMENSION_MAX: true,
-        size_step: 0.25rem,
+        size_step: 0.5rem,
         sep: "-",
         sizes: (
                 tiny: 32,
                 small: 64,
-                medium: 256,
-                large: 250,
+                medium: 128,
+                large: 256,
                 full: 100%
         ),
         media_quey_sizes: (

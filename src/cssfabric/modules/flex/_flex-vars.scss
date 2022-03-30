@@ -1,0 +1,87 @@
+@use '../../utils';
+
+
+$_grow-shrink-steps: 4;
+
+
+$_grid-align: (top middle bottom left right center middle-center stretch);
+
+$_classNames: (
+        wrap: wrap,
+        wrap-reverse: wrap-reverse
+);
+
+$_cssProps: (
+        flexWrap: (
+                wrap: wrap,
+                wrap-reverse: wrap-reverse
+        ),
+        grid-justify: (
+                start: flex-start,
+                end: flex-end,
+                between: space-between,
+                stretch: stretch,
+                center: flex-center
+        ),
+        grid-items: (
+                baseline: baseline,
+                stretch: stretch,
+                start: flex-start,
+                center: center,
+                end: flex-end
+        ),
+        grid-content: (
+                start: flex-start,
+                center: center,
+                end: flex-end,
+                between: space-between,
+                equal: space-evenly
+        )
+); 
+
+$_cssItemsProps: (
+        self: (
+                start: flex-start,
+                end: flex-end,
+                stretch: stretch
+        )
+);
+
+$flex-metadata: (
+        title: "flex",
+        tag: "flex",
+        description: "cssfabric flex system module"
+);
+
+$flex-config: (
+        moduleName: flex,
+        moduleNameShort: flex,
+        horCode: h,
+        vertCode: v,
+        gridFullWidth: main,
+        grow-shrink-steps:$_grow-shrink-steps,
+        cssProps: $_cssProps,
+        cssItemsProps: $_cssItemsProps
+);
+
+$flex-docs: (// add align-middle non generated className // grow + shrink
+        attributes:(
+                grid:(
+                        tag: flex,
+                        keys: (v, h),
+                        classNames: (
+                                align: $_grid-align,
+                                grid:utils.getObjectKeys(map-get($_cssProps, flexWrap)), // add inline !
+                          //items: utils.getObjectKeys(map-get($_cssProps, grid-items)),
+                          //content:utils.getObjectKeys(map-get($_cssProps, grid-content)),
+                          //justify:utils.getObjectKeys(map-get($_cssProps, grid-justify))
+                        ),
+                        about: "a classic grid system, and hey, it gets height !"
+                ),
+                self:(
+                        tag: self,
+                        keys: utils.getObjectKeys(map-get($_cssItemsProps, self)),
+                        about: "grid children specific classnames"
+                )
+        )
+);

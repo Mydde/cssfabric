@@ -1,0 +1,69 @@
+@use "../_utils";
+@use "sass:color";
+
+/* cssFabric vars */
+
+$color-text: #282230;
+$color-background: #f1f1f1;
+$color-paper: #ededed;
+
+$color-primary: #0288d1;
+$color-secondary: complement($color-primary);
+$color-tertiary: complement(invert($color-primary));
+
+:root {
+  /* primary colors*/
+  --theme-color-primary: #{$color-primary};
+  --theme-color-primary-light: #{utils.applyColorEffect('light',$color-primary)};
+  --theme-color-primary-lighter: #{utils.applyColorEffect('lighter',$color-primary)};
+  --theme-color-primary-dark: #{utils.applyColorEffect('dark',$color-primary)};
+  --theme-color-primary-darker: #{utils.applyColorEffect('darker',$color-primary)};
+  --theme-color-primary-complement: #{utils.applyColorEffect('complement',$color-primary)};
+  --theme-color-primary-invert: #{utils.applyColorEffect('invert',$color-primary)};
+
+  --theme-color-primary-alpha-low: #{color.change($color-primary,$alpha:0.8)};
+  --theme-color-primary-alpha-mid: #{color.change($color-primary,$alpha:0.3)};
+  --theme-color-primary-alpha-high: #{color.change($color-primary,$alpha:0.1)};
+
+  /* secondary colors*/
+  --theme-color-secondary: #{$color-secondary};
+  --theme-color-secondary-light: #{utils.applyColorEffect('light',$color-secondary)};
+  --theme-color-secondary-lighter: #{utils.applyColorEffect('lighter',$color-secondary)};
+  --theme-color-secondary-dark: #{utils.applyColorEffect('dark',$color-secondary)};
+  --theme-color-secondary-darker: #{utils.applyColorEffect('darker',$color-secondary)};
+  --theme-color-secondary-complement: #{utils.applyColorEffect('complement',$color-secondary)};
+  --theme-color-secondary-invert: #{utils.applyColorEffect('invert',$color-secondary)};
+
+  --theme-color-secondary-alpha-low: #{color.change($color-secondary,$alpha:0.8)};
+  --theme-color-secondary-alpha-mid: #{color.change($color-secondary,$alpha:0.3)};
+  --theme-color-secondary-alpha-high: #{color.change($color-secondary,$alpha:0.1)};
+
+  /* tertiary colors*/
+  --theme-color-tertiary: #{$color-tertiary};
+  --theme-color-tertiary-light: #{utils.applyColorEffect('light',$color-tertiary)};
+  --theme-color-tertiary-lighter: #{utils.applyColorEffect('lighter',$color-tertiary)};
+  --theme-color-tertiary-dark: #{utils.applyColorEffect('dark',$color-tertiary)};
+  --theme-color-tertiary-darker: #{utils.applyColorEffect('darker',$color-tertiary)};
+  --theme-color-tertiary-complement: #{utils.applyColorEffect('complement',$color-tertiary)};
+  --theme-color-tertiary-invert: #{utils.applyColorEffect('invert',$color-tertiary)};
+
+  --theme-color-tertiary-alpha-low: #{color.change($color-secondary,$alpha:0.8)};
+  --theme-color-tertiary-alpha-mid: #{color.change($color-secondary,$alpha:0.3)};
+  --theme-color-tertiary-alpha-high: #{color.change($color-secondary,$alpha:0.1)};
+
+
+  &[theme=light] {
+
+    --theme-color-foreground: #{$color-text};
+    --theme-color-text: #{$color-text};
+    --theme-color-background: #{$color-background};
+    --theme-color-background-paper: #{$color-paper};
+
+    --theme-color-border: var(--theme-color-primary-alpha-mid);
+    --theme-color-overlay: #{$color-paper};
+
+  }
+}
+
+
+

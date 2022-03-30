@@ -1,6 +1,7 @@
 @use 'text-vars';
 @use "../cssfabric-vars";
 @use '../../_utils';
+@use "sass:math";
 
 // load general config variables
 $cssfabric-config: cssfabric-vars.$cssfabric-config;
@@ -28,7 +29,7 @@ $font-size-h-min-config: map-get($text-config, font-size-h-min-rem-config) !defa
 $size-diff: $font-size-h-max-config - $font-size-h-min-config   ;
 $steps: $font-size-h-steps - 1;
 
-$step-size: $size-diff / $steps;
+$step-size: math.div($size-diff , $steps);
 
 @mixin fabric_text($tag_short) {
 

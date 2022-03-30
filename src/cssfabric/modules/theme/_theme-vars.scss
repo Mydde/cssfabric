@@ -1,4 +1,8 @@
 @use '../../utils' as utils;
+@use "../cssfabric-vars";
+
+
+$config: cssfabric-vars.$cssfabric-config;
 
 $_color-primary: orange;
 $_declinations-config: (primary, secondary, tertiary);

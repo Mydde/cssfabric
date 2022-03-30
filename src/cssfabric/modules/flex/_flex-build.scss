@@ -1,37 +1,37 @@
 // load scss config file
 @use '../../_utils';
 @use '../cssfabric-vars' as cssfabric-vars;
-@use 'grid-vars';
+@use 'flex-vars';
 
-$grid-config: grid-vars.$grid-config;
+$flex-config: flex-vars.$flex-config;
 $cssfabric-config: cssfabric-vars.$cssfabric-config;
 
 $sep: map-get($cssfabric-config, sep);
 // read variables
-$grid-code: map-get($grid-config, moduleNameShort);
-$grid-h: map-get($grid-config, horCode);
-$grid-v: map-get($grid-config, vertCode);
+$grid-code: map-get($flex-config, moduleNameShort);
+$grid-h: map-get($flex-config, horCode);
+$grid-v: map-get($flex-config, vertCode);
 
-$cssProps: map-get($grid-config, cssProps);
-$cssItemsProps: map-get($grid-config, cssItemsProps);
+$cssProps: map-get($flex-config, cssProps);
+$cssItemsProps: map-get($flex-config, cssItemsProps);
 
-$gridFullWidth: map-get($grid-config, gridFullWidth);
+$gridFullWidth: map-get($flex-config, gridFullWidth);
 
-$grow-shrink-steps: map-get($grid-config, grow-shrink-steps);
+$grow-shrink-steps: map-get($flex-config, grow-shrink-steps);
 
 $grid-code-sep: #{$grid-code}#{$sep};
 
-@mixin makeGrid($mqKey) {
+@mixin makeGrid($mqKey) { 
   $prefix: if($mqKey, #{$grid-code}-#{$mqKey}, #{$grid-code});
   $h_prop: #{$prefix}#{$sep}#{$grid-h};
   $v_prop: #{$prefix}#{$sep}#{$grid-v};
 
   %flex {
-    display: grid; 
+    display: flex;
   }
 
   .#{$h_prop} {
-    display: grid;
+    display: flex;
     flex-direction: row;
 
     & > .#{$grid-code-sep}#{$gridFullWidth} {
@@ -77,7 +77,7 @@ $grid-code-sep: #{$grid-code}#{$sep};
   }
 
   .#{$v_prop} {
-    display: grid;
+    display: flex;
     flex-direction: column;
 
     & > .#{$grid-code-sep}#{$gridFullWidth} {
@@ -139,7 +139,7 @@ $grid-code-sep: #{$grid-code}#{$sep};
     @for $i from 1 through $grow-shrink-steps {
       & .#{$grid-code-sep}grow#{$sep}#{$i} {
         flex-grow: $i;
-      } 
+      }
 
       & .#{$grid-code-sep}shrink#{$sep}#{$i} {
         flex-shrink: $i;
