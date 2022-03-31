@@ -3,9 +3,9 @@
 // load scss config file
 @use '../../_utils'; 
 @use 'color-build' as build; 
-@use "../cssfabric-vars";
+@use "../cssfabric-config";
 // load general config variables
-$config: cssfabric-vars.$cssfabric-config;
+$config: cssfabric-config.$cssfabric-config;
 
 // load general config variables
 // media queries sizes, in rem

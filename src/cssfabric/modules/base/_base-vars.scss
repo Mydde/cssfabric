@@ -1,4 +1,4 @@
-@use '../../_loader';
+@use '../../_utils';
 
 $base-metadata: (
     title: "base",
@@ -11,7 +11,7 @@ $base-config: (
     CFG_HAS_DIMENSION_MIN: true,
     CFG_HAS_DIMENSION_MAX: true,
     size_step: 0.5rem,
-    sizes: loader.getFabricSharedParams(sizes)
+    sizes: utils.get_fabric_conf(sizes)
 );
 
 $base-docs: ();

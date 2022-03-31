@@ -1,16 +1,19 @@
 @use '../../utils' as utils;
-@use "../cssfabric-vars";
+@use "../cssfabric-config";
 
 
-$config: cssfabric-vars.$cssfabric-config;
+$config: cssfabric-config.$cssfabric-config;
 
-$_color-primary: orange;
+$theme: map-get($config, theme);
+
+$_color-primary: map-get($theme, primary) !default;
+$_foreground: map-get($theme, foreground) !default;
+$_background: map-get($theme, background) !default;
+
 $_declinations-config: (primary, secondary, tertiary);
 $_theme-levels: (light lighter dark darker complement invert);
 $_theme-properties-apply: (text, bg, border);
 
-$_theme-default-foreground: #333333;
-$_theme-default-background: #ededed;
 
 $theme-metadata: (
         "title": "theme",
@@ -26,8 +29,8 @@ $theme-config: (
         moduleNameShort: theme,
         color-default-config: (
                 primary: $_color-primary,
-                foreground: #333,
-                background: #ededed
+                foreground: $_foreground,
+                background: $_background
         ),
         declinations-config:$_declinations-config,
         theme-level-config:$_theme-levels,

@@ -1,5 +1,4 @@
-@use '../../_loader';
-@use '../../utils';
+@use '../../_utils';
 
 $_color-types-config: (color bg bg-themed border-color);
 $_color-tint: (_ lighter light dark darker complement); // invert
@@ -10,12 +9,12 @@ $color-metadata: (
         description: "cssfabric color system: its about colors"
 );
 $color-config: (
-        gray-config: loader.getFabricSharedParams(gray-config),
+        gray-config: utils.get_fabric_conf(gray-config),
         color-types-config: $_color-types-config,
-        theme: loader.getFabricSharedParams(theme),
-        scheme: loader.getFabricSharedParams(scheme),
-        palette: loader.getFabricSharedParams(palette),
-        gray: loader.getFabricSharedParams(gray)
+        theme: utils.get_fabric_conf(theme),
+        scheme: utils.get_fabric_conf(scheme),
+        palette: utils.get_fabric_conf(palette),
+        gray: utils.get_fabric_conf(gray)
 );
 
 $color-docs: (
@@ -26,9 +25,9 @@ $color-docs: (
                                 scheme palette gray
                         ),
                         levelsLinked: (
-                                scheme: utils.getObjectKeys(loader.getFabricSharedParams(scheme)),
-                                palette: utils.getObjectKeys(loader.getFabricSharedParams(palette)),
-                                gray: utils.getObjectKeys(loader.getFabricSharedParams(gray))
+                                scheme: utils.getObjectKeys(utils.get_fabric_conf(scheme)),
+                                palette: utils.getObjectKeys(utils.get_fabric_conf(palette)),
+                                gray: utils.getObjectKeys(utils.get_fabric_conf(gray))
                         ),
                         levelsDeclin: (
                                 palette: $_color-tint
@@ -41,9 +40,9 @@ $color-docs: (
                                 scheme palette gray
                         ),
                         levelsLinked: (
-                                scheme: utils.getObjectKeys(loader.getFabricSharedParams(scheme)),
-                                palette: utils.getObjectKeys(loader.getFabricSharedParams(palette)),
-                                gray: utils.getObjectKeys(loader.getFabricSharedParams(gray)) // prefix with gray
+                                scheme: utils.getObjectKeys(utils.get_fabric_conf(scheme)),
+                                palette: utils.getObjectKeys(utils.get_fabric_conf(palette)),
+                                gray: utils.getObjectKeys(utils.get_fabric_conf(gray)) // prefix with gray
                         ),
                         levelsDeclin: (
                                 palette: $_color-tint
@@ -56,9 +55,9 @@ $color-docs: (
                                 scheme palette gray
                         ),
                         levelsLinked: (
-                                gray: utils.getObjectKeys(loader.getFabricSharedParams(gray)),
-                                scheme: utils.getObjectKeys(loader.getFabricSharedParams(scheme)),
-                                palette: utils.getObjectKeys(loader.getFabricSharedParams(palette))
+                                gray: utils.getObjectKeys(utils.get_fabric_conf(gray)),
+                                scheme: utils.getObjectKeys(utils.get_fabric_conf(scheme)),
+                                palette: utils.getObjectKeys(utils.get_fabric_conf(palette))
                         ),
                         levelsDeclin: (
                                 palette: $_color-tint
@@ -71,9 +70,9 @@ $color-docs: (
                                 palette gray
                         ), 
                         levelsLinked: (
-                                gray: utils.getObjectKeys(loader.getFabricSharedParams(gray)),
-                                scheme: utils.getObjectKeys(loader.getFabricSharedParams(scheme)),
-                                palette: utils.getObjectKeys(loader.getFabricSharedParams(palette))
+                                gray: utils.getObjectKeys(utils.get_fabric_conf(gray)),
+                                scheme: utils.getObjectKeys(utils.get_fabric_conf(scheme)),
+                                palette: utils.getObjectKeys(utils.get_fabric_conf(palette))
                         ),
                         about: "border colors are slightly darker to maximize surrounding effect"
                 )

@@ -1,8 +1,9 @@
 @use "sass:map";
 @use "sass:math";
 @use '../../_utils';
-@use "../cssfabric-vars";
+@use "../cssfabric-config";
 @use "box-vars" as box;
+
 $box-config: box.$box-config;
 $box-docs: box.$box-docs;
 
@@ -49,13 +50,14 @@ $css-shorthands: (
   $rule_value: map-get($_args, rule_value);
   $rule_type: map-get($_args, rule_type);
   $css_prop: map-get($_args, css_prop);
+  $grid_size_value: map-get($_args, grid_size_value);
 
   $computed_value: "";
 
 
-  // complex write method: 1px value
+  //
   @if ($css_prop== "padding" or $css_prop== "margin") {
-    $computed_value: $rule_value;
+    $computed_value: var(--box-sp-#{$grid_size_value});
   }
 
   // complex write method: 1px value
@@ -64,6 +66,14 @@ $css-shorthands: (
   }
 
   @return $computed_value;
+}
+
+@mixin pmbCssVars() {
+  $iterator: $box-sizes-config;
+  @for $grid_size_value from 1 through $iterator {
+    $css_size_value: ($grid_size_value * $box-unit-size-config) + $box-unit-config;
+    --box-sp-#{$grid_size_value} : #{$css_size_value};
+  }
 }
 
 // prop : ...top bottom for  border | margin | padding
@@ -88,20 +98,22 @@ $css-shorthands: (
             $_args: (
                     rule_value: $css_size_value,
                     rule_type: "pmb",
-                    css_prop: $fabric_box_position_prop
+                    css_prop: $fabric_box_position_prop,
+                    grid_size_value: $grid_size_value
             );
 
             #{$fabric_box_position_prop}: write-box-rule($_args);
           } @else {
 
-            @each $grid_size_value in $rule {
+            @each $rule_value in $rule {
               $_args: (
                       rule_value: $css_size_value,
                       rule_type: "pmb",
-                      css_prop: $fabric_box_position_prop
+                      css_prop: $fabric_box_position_prop,
+                      grid_size_value: $grid_size_value
               );
 
-              #{$fabric_box_position_prop}-#{$grid_size_value}: write-box-rule($_args);
+              #{$fabric_box_position_prop}-#{$rule_value}: write-box-rule($_args);
             }
           }
         }
@@ -154,9 +166,7 @@ $css-shorthands: (
   }
 }
 
-@mixin shadows($mq_key) {
-  $shorthand: if($mq_key, #{$box-shadow-shorthand-config}-#{$mq_key}, #{$box-shadow-shorthand-config});
-
+@function buildShadowsValues($shadows_step:0) {
   $v_fact: 2.4;
   $h_fact: 1.16;
 
@@ -165,19 +175,35 @@ $css-shorthands: (
 
   $acc: 1;
 
+  $acc: $acc * $shadows_step * 2;
+  $v: $shadows_step * 2;
+
+  $v_val: math.div($acc, $v_fact);
+  $h_val: math.div($acc, $h_fact);
+
+  $v_val_2: math.div($acc, $v_fact_2);
+  $h_val_2: math.div($acc, $h_fact_2);
+
+  @return 0 #{$v_val}px #{$h_val}px 0 rgb(0 0 0 / 15%), 0 #{$v_val_2}px #{$h_val_2}px 0 rgb(0 0 0 / 10%);
+}
+
+@mixin shadows($mq_key) {
+  $shorthand: if($mq_key, #{$box-shadow-shorthand-config}-#{$mq_key}, #{$box-shadow-shorthand-config});
+
   @for $shadows_step from 1 through $box-shadows-steps {
-    $acc: $acc * 2;
-    $v: $shadows_step * 2;
 
-    $v_val: math.div($acc , $v_fact);
-    $h_val: math.div($acc , $h_fact);
-
-    $v_val_2: math.div($acc , $v_fact_2);
-    $h_val_2: math.div($acc , $h_fact_2);
-
-    .#{$shorthand}-#{$acc} {
-      box-shadow: 0 #{$v_val}px #{$h_val}px 0 rgb(0 0 0 / 15%), 0 #{$v_val_2}px #{$h_val_2}px 0 rgb(0 0 0 / 10%);
+    .#{$shorthand}-#{$shadows_step} {
+      box-shadow: var(--box-#{$shorthand}-#{$shadows_step});
     }
+  }
+}
+
+// css vars rendered in :root
+@mixin shadowsCssVars($mq_key:null) {
+  $shorthand: if($mq_key, #{$box-shadow-shorthand-config}-#{$mq_key}, #{$box-shadow-shorthand-config});
+
+  @for $shadows_step from 1 through $box-shadows-steps {
+    --box-#{$shorthand}-#{$shadows_step}: #{buildShadowsValues($shadows_step)};
   }
 }
 

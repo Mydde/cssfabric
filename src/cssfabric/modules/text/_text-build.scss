@@ -1,10 +1,10 @@
 @use 'text-vars';
-@use "../cssfabric-vars";
+@use "../cssfabric-config";
 @use '../../_utils';
 @use "sass:math";
 
 // load general config variables
-$cssfabric-config: cssfabric-vars.$cssfabric-config;
+$cssfabric-config: cssfabric-config.$cssfabric-config;
 $sep: map-get($cssfabric-config, sep);
 
 $text-config: text-vars.$text-config;
@@ -26,22 +26,28 @@ $font-size-h-steps: map-get($text-config, title-size-declination-config) !defaul
 $font-size-h-max-config: map-get($text-config, font-sizes-h1-rem-config) !default;
 $font-size-h-min-config: map-get($text-config, font-size-h-min-rem-config) !default;
 
-$size-diff: $font-size-h-max-config - $font-size-h-min-config   ;
+$size-diff: $font-size-h-max-config - $font-size-h-min-config;
 $steps: $font-size-h-steps - 1;
 
-$step-size: math.div($size-diff , $steps);
+$step-size: math.div($size-diff, $steps);
 
 @mixin fabric_text($tag_short) {
 
   $acc: 1 - $step-size ;
 
+  .#{$tag_short}-ellipsis {
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+  }
+
   @for $size-index from 1 through $font-size-h-steps {
     //
-    $acc:  (( $font-size-h-steps - $size-index) * $step-size) + 1;
+    $acc: (( $font-size-h-steps - $size-index) * $step-size) + 1;
 
     .h#{$size-index},
     h#{$size-index} {
-      font-size: #{$acc + $font-size-unit-config};
+      font-size: var(--font-size-h#{$size-index});
       line-height: 1.2;
       font-weight: 400;
     }
@@ -52,49 +58,52 @@ $step-size: math.div($size-diff , $steps);
       @include utils.fabricAttributes("&" + $sep, $fabricRule, "text-transform", $value);
     }
 
-    @each $fabricRule, $value in $fontWeight {
-      @include utils.fabricAttributes("&" + $sep, $fabricRule, "font-weight", $value);
-    }
-
     @each $fabricRule, $value in $textAlign {
       @include utils.fabricAttributes("&" + $sep, $fabricRule, "text-align", $value);
     }
 
-    @each $fabricRule, $value in $color-schemes {
-      @include utils.fabricAttributes("&" + $sep, $fabricRule, "color", $value);
-    }
-
-    @each $fabricRule, $value in $color-palette-props {
-      @include utils.fabricAttributes("&" + $sep, $fabricRule, "color", $value);
-    }
-
-    // grays
-    @each $fabricRule, $value in $gray-list {
-      @include utils.fabricAttributes("&-gray" + $sep, $fabricRule, "color", $value);
+    @each $fabricRule, $value in $fontWeight {
+      @include utils.fabricAttributes("&" + $sep, $fabricRule, "font-weight", var(--font-weight-#{$fabricRule}));
     }
 
     // text shadows color_schemes
     @each $fabricRule, $value in $color-schemes {
-      $cast-value: 0 0 0.125em #{$value};
-      @include utils.fabricAttributes("&" + $sep + shad + $sep, $fabricRule, "text-shad", $cast-value);
+      @include utils.fabricAttributes("&" + $sep + shad + $sep, $fabricRule, "text-shadow",  var(--text-shadow-#{$fabricRule}));
     }
 
     // text shadows color_palette_props
     @each $fabricRule, $value in $color-palette-props {
-      $cast-value: 0 0 0.125em #{$value};
-      @include utils.fabricAttributes("&" + $sep + shad + $sep, $fabricRule, "text-shad", $cast-value);
+      @include utils.fabricAttributes("&" + $sep+ shad + $sep, $fabricRule, "text-shadow", var(--text-shadow-#{$fabricRule}));
     }
   }
 }
 
-.text-ellipsis {
-  text-overflow: ellipsis;
-  overflow: hidden;
-  white-space: nowrap;
+@mixin textCssVars() {
+  /*Hs*/
+  @for $size-index from 1 through $font-size-h-steps {
+    $acc: (( $font-size-h-steps - $size-index) * $step-size) + 1;
+    --font-size-h#{$size-index}: #{$acc + $font-size-unit-config};
+  }
+  /*weight*/
+  @each $fabricRule, $value in $fontWeight {
+    --font-weight-#{$fabricRule}: #{$value};
+  }
+  /*text shadows color_schemes*/
+  @each $fabricRule, $value in $color-schemes {
+    $cast-value: 0 0 0.125em #{$value};
+    --text-shadow-#{$fabricRule}: #{$cast-value};
+  }
+  /*text-shadows color_palette */
+  @each $fabricRule, $value in $color-palette-props {
+    $cast-value: 0 0 0.125em #{$value};
+    --text-shadow-#{$fabricRule}: #{$cast-value};
+  }
 }
 
+
 @mixin buildText($mq_size_key: null) {
+
   $property_key: if($mq_size_key, #{$moduleNameShort}-#{$mq_size_key}, #{$moduleNameShort});
-  /** cssfabric : #{$property_key}*/
+
   @include fabric_text($property_key);
 }

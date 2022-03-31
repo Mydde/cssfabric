@@ -1,6 +1,6 @@
 // load scss config file
 @use '../../_utils';
-@use '../cssfabric-vars' as cssfabric-vars;
+@use '../cssfabric-config' as cssfabric-vars;
 @use 'flex-vars';
 
 $flex-config: flex-vars.$flex-config;

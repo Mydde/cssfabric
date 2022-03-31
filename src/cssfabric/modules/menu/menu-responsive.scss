@@ -1,9 +1,9 @@
 
 @use '../../_utils';
 @use '_menu-build'as build;
-@use "../cssfabric-vars";
+@use "../cssfabric-config";
 // load general config variables
-$config: cssfabric-vars.$cssfabric-config;
+$config: cssfabric-config.$cssfabric-config;
 
 $_media_quey_sizes: map-get($config, media_quey_sizes);
 

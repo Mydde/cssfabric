@@ -517,8 +517,8 @@ function task_sass2css(cb) {
             .pipe(gulpIgnore.exclude("**/*css-fabric*"))
             .pipe(
                 gulpRename(function (path) {
-                    path.dirname = path.dirname;
-                    path.extname = path.extname;
+                    /*path.dirname = path.dirname;
+                    path.extname = path.extname;*/
                     path.basename = path.basename.replace("-", ".");
                 })
             )
@@ -535,7 +535,7 @@ function task_sass2css(cb) {
             )
             .pipe(
                 gulpRename(function (path) {
-                    path.dirname = path.dirname;
+                    /*path.dirname = path.dirname;*/
                     path.extname = ".min.css";
                     path.basename = path.basename.replace("-", ".");
                 })

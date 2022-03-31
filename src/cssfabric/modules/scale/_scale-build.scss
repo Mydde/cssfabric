@@ -1,10 +1,9 @@
 @use 'scale-vars';
 @use '../../_utils';
-@use '../../_loader';
 @use "sass:math";
 
 $scale-config: scale-vars.$scale-config;
-$_cfg: loader.get_fabric_conf();
+$_cfg: utils.get_fabric_conf();
 $cssProps: map-get($scale-config, cssProps);
 
 // read variables

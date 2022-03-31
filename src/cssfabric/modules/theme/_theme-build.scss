@@ -1,7 +1,7 @@
 @use "theme-vars";
-@use "../cssfabric-vars";
+@use "../cssfabric-config";
 @use "../../_utils";
-
+@use "sass:color";
 
 $theme-config: theme-vars.$theme-config;
 
@@ -13,6 +13,8 @@ $theme-levels: map-get($theme-config, theme-level-config);
 $theme-properties-apply-config: map-get($theme-config, theme-properties-apply-config);
 
 $color-primary: map-get($color-themes, primary);
+$color-secondary: complement($color-primary);
+$color-tertiary: complement(invert($color-primary));
 
 $declinations-config: map-get($theme-config, declinations-config);
 
@@ -28,12 +30,9 @@ $declinations-config: map-get($theme-config, declinations-config);
       $switch-tag-type: utils.getColorPropertyType($text-or-bg-or-border);
 
       .#{$moduleNameShort}-#{$property_key}-#{$color-grade} {
-        #{$switch-tag-type}: var(--theme-color-#{$color-grade}); // #{$switch-color-grad};
-        // #{$switch-tag-type}: #{$switch-color-grad};
-        // @debug #{$switch-color-grad};
+        #{$switch-tag-type}: var(--theme-color-#{$color-grade});
+
         @each $theme-level in $theme-levels {
-          // $newColor: utils.applyColorEffect($theme-level, $switch-color-grad);
-          // build css vars
           $newColor: var(--theme-color-#{$color-grade}-#{$theme-level});
 
           @include utils.fabricAttributes("&-", $theme-level, #{$switch-tag-type}, $newColor);
@@ -41,6 +40,36 @@ $declinations-config: map-get($theme-config, declinations-config);
       }
     }
   }
+}
+
+@mixin themeCssVars() {
+  /* theme primary colors*/
+  --theme-color-primary: #{$color-primary};
+  @each $theme-level in $theme-levels {
+    --theme-color-primary-#{$theme-level}: #{utils.applyColorEffect($theme-level,$color-primary)};
+  }
+  --theme-color-primary-alpha-low: #{color.change($color-primary,$alpha:0.8)};
+  --theme-color-primary-alpha-mid: #{color.change($color-primary,$alpha:0.3)};
+  --theme-color-primary-alpha-high: #{color.change($color-primary,$alpha:0.1)};
+
+  /* theme secondary colors*/
+  --theme-color-secondary: #{$color-secondary};
+  @each $theme-level in $theme-levels {
+    --theme-color-secondary-#{$theme-level}: #{utils.applyColorEffect($theme-level,$color-secondary)};
+  }
+  --theme-color-secondary-alpha-low: #{color.change($color-secondary,$alpha:0.8)};
+  --theme-color-secondary-alpha-mid: #{color.change($color-secondary,$alpha:0.3)};
+  --theme-color-secondary-alpha-high: #{color.change($color-secondary,$alpha:0.1)};
+
+  /* theme tertiary colors*/
+  --theme-color-tertiary: #{$color-tertiary};
+  @each $theme-level in $theme-levels {
+    --theme-color-tertiary-#{$theme-level}: #{utils.applyColorEffect($theme-level,$color-tertiary)};
+  }
+  --theme-color-tertiary-alpha-low: #{color.change($color-tertiary,$alpha:0.8)};
+  --theme-color-tertiary-alpha-mid: #{color.change($color-tertiary,$alpha:0.3)};
+  --theme-color-tertiary-alpha-high: #{color.change($color-tertiary,$alpha:0.1)};
+
 }
 
 @mixin buildTheme($mq_size_key: null) {

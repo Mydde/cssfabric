@@ -170,6 +170,27 @@
   .color-palette-xxxl-blue-invert {
     color: #ff872b;
   }
+  .color-palette-xxxl-dark {
+    color: #323232;
+  }
+  .color-palette-xxxl-dark-light {
+    color: #585858;
+  }
+  .color-palette-xxxl-dark-lighter {
+    color: #7f7f7f;
+  }
+  .color-palette-xxxl-dark-dark {
+    color: #191919;
+  }
+  .color-palette-xxxl-dark-darker {
+    color: black;
+  }
+  .color-palette-xxxl-dark-complement {
+    color: #323232;
+  }
+  .color-palette-xxxl-dark-invert {
+    color: #cdcdcd;
+  }
 
   /**
   color ?
@@ -394,6 +415,27 @@
   }
   .bg-palette-xxxl-blue-invert {
     background-color: #ff872b;
+  }
+  .bg-palette-xxxl-dark {
+    background-color: #323232;
+  }
+  .bg-palette-xxxl-dark-light {
+    background-color: #585858;
+  }
+  .bg-palette-xxxl-dark-lighter {
+    background-color: #7f7f7f;
+  }
+  .bg-palette-xxxl-dark-dark {
+    background-color: #191919;
+  }
+  .bg-palette-xxxl-dark-darker {
+    background-color: black;
+  }
+  .bg-palette-xxxl-dark-complement {
+    background-color: #323232;
+  }
+  .bg-palette-xxxl-dark-invert {
+    background-color: #cdcdcd;
   }
 
   /**
@@ -684,6 +726,35 @@
     color: black;
     background-color: #ff872b;
   }
+  .bg-themed-palette-xxxl-dark {
+    color: white;
+    text-shadow: 0 0 0.125rem #191919;
+    background-color: #323232;
+  }
+  .bg-themed-palette-xxxl-dark-light {
+    color: white;
+    background-color: #585858;
+  }
+  .bg-themed-palette-xxxl-dark-lighter {
+    color: white;
+    background-color: #7f7f7f;
+  }
+  .bg-themed-palette-xxxl-dark-dark {
+    color: white;
+    background-color: #191919;
+  }
+  .bg-themed-palette-xxxl-dark-darker {
+    color: white;
+    background-color: black;
+  }
+  .bg-themed-palette-xxxl-dark-complement {
+    color: white;
+    background-color: #323232;
+  }
+  .bg-themed-palette-xxxl-dark-invert {
+    color: black;
+    background-color: #cdcdcd;
+  }
 
   /**
   bg-themed ?
@@ -794,6 +865,9 @@
   }
   .border-color-palette-xxxl-blue {
     border-color: #005ba1 !important;
+  }
+  .border-color-palette-xxxl-dark {
+    border-color: #191919 !important;
   }
 
   /**
@@ -1021,6 +1095,27 @@
   .color-palette-xxl-blue-invert {
     color: #ff872b;
   }
+  .color-palette-xxl-dark {
+    color: #323232;
+  }
+  .color-palette-xxl-dark-light {
+    color: #585858;
+  }
+  .color-palette-xxl-dark-lighter {
+    color: #7f7f7f;
+  }
+  .color-palette-xxl-dark-dark {
+    color: #191919;
+  }
+  .color-palette-xxl-dark-darker {
+    color: black;
+  }
+  .color-palette-xxl-dark-complement {
+    color: #323232;
+  }
+  .color-palette-xxl-dark-invert {
+    color: #cdcdcd;
+  }
 
   /**
   color ?
@@ -1245,6 +1340,27 @@
   }
   .bg-palette-xxl-blue-invert {
     background-color: #ff872b;
+  }
+  .bg-palette-xxl-dark {
+    background-color: #323232;
+  }
+  .bg-palette-xxl-dark-light {
+    background-color: #585858;
+  }
+  .bg-palette-xxl-dark-lighter {
+    background-color: #7f7f7f;
+  }
+  .bg-palette-xxl-dark-dark {
+    background-color: #191919;
+  }
+  .bg-palette-xxl-dark-darker {
+    background-color: black;
+  }
+  .bg-palette-xxl-dark-complement {
+    background-color: #323232;
+  }
+  .bg-palette-xxl-dark-invert {
+    background-color: #cdcdcd;
   }
 
   /**
@@ -1535,6 +1651,35 @@
     color: black;
     background-color: #ff872b;
   }
+  .bg-themed-palette-xxl-dark {
+    color: white;
+    text-shadow: 0 0 0.125rem #191919;
+    background-color: #323232;
+  }
+  .bg-themed-palette-xxl-dark-light {
+    color: white;
+    background-color: #585858;
+  }
+  .bg-themed-palette-xxl-dark-lighter {
+    color: white;
+    background-color: #7f7f7f;
+  }
+  .bg-themed-palette-xxl-dark-dark {
+    color: white;
+    background-color: #191919;
+  }
+  .bg-themed-palette-xxl-dark-darker {
+    color: white;
+    background-color: black;
+  }
+  .bg-themed-palette-xxl-dark-complement {
+    color: white;
+    background-color: #323232;
+  }
+  .bg-themed-palette-xxl-dark-invert {
+    color: black;
+    background-color: #cdcdcd;
+  }
 
   /**
   bg-themed ?
@@ -1645,6 +1790,9 @@
   }
   .border-color-palette-xxl-blue {
     border-color: #005ba1 !important;
+  }
+  .border-color-palette-xxl-dark {
+    border-color: #191919 !important;
   }
 
   /**
@@ -1872,6 +2020,27 @@
   .color-palette-xl-blue-invert {
     color: #ff872b;
   }
+  .color-palette-xl-dark {
+    color: #323232;
+  }
+  .color-palette-xl-dark-light {
+    color: #585858;
+  }
+  .color-palette-xl-dark-lighter {
+    color: #7f7f7f;
+  }
+  .color-palette-xl-dark-dark {
+    color: #191919;
+  }
+  .color-palette-xl-dark-darker {
+    color: black;
+  }
+  .color-palette-xl-dark-complement {
+    color: #323232;
+  }
+  .color-palette-xl-dark-invert {
+    color: #cdcdcd;
+  }
 
   /**
   color ?
@@ -2096,6 +2265,27 @@
   }
   .bg-palette-xl-blue-invert {
     background-color: #ff872b;
+  }
+  .bg-palette-xl-dark {
+    background-color: #323232;
+  }
+  .bg-palette-xl-dark-light {
+    background-color: #585858;
+  }
+  .bg-palette-xl-dark-lighter {
+    background-color: #7f7f7f;
+  }
+  .bg-palette-xl-dark-dark {
+    background-color: #191919;
+  }
+  .bg-palette-xl-dark-darker {
+    background-color: black;
+  }
+  .bg-palette-xl-dark-complement {
+    background-color: #323232;
+  }
+  .bg-palette-xl-dark-invert {
+    background-color: #cdcdcd;
   }
 
   /**
@@ -2386,6 +2576,35 @@
     color: black;
     background-color: #ff872b;
   }
+  .bg-themed-palette-xl-dark {
+    color: white;
+    text-shadow: 0 0 0.125rem #191919;
+    background-color: #323232;
+  }
+  .bg-themed-palette-xl-dark-light {
+    color: white;
+    background-color: #585858;
+  }
+  .bg-themed-palette-xl-dark-lighter {
+    color: white;
+    background-color: #7f7f7f;
+  }
+  .bg-themed-palette-xl-dark-dark {
+    color: white;
+    background-color: #191919;
+  }
+  .bg-themed-palette-xl-dark-darker {
+    color: white;
+    background-color: black;
+  }
+  .bg-themed-palette-xl-dark-complement {
+    color: white;
+    background-color: #323232;
+  }
+  .bg-themed-palette-xl-dark-invert {
+    color: black;
+    background-color: #cdcdcd;
+  }
 
   /**
   bg-themed ?
@@ -2496,6 +2715,9 @@
   }
   .border-color-palette-xl-blue {
     border-color: #005ba1 !important;
+  }
+  .border-color-palette-xl-dark {
+    border-color: #191919 !important;
   }
 
   /**
@@ -2723,6 +2945,27 @@
   .color-palette-lg-blue-invert {
     color: #ff872b;
   }
+  .color-palette-lg-dark {
+    color: #323232;
+  }
+  .color-palette-lg-dark-light {
+    color: #585858;
+  }
+  .color-palette-lg-dark-lighter {
+    color: #7f7f7f;
+  }
+  .color-palette-lg-dark-dark {
+    color: #191919;
+  }
+  .color-palette-lg-dark-darker {
+    color: black;
+  }
+  .color-palette-lg-dark-complement {
+    color: #323232;
+  }
+  .color-palette-lg-dark-invert {
+    color: #cdcdcd;
+  }
 
   /**
   color ?
@@ -2947,6 +3190,27 @@
   }
   .bg-palette-lg-blue-invert {
     background-color: #ff872b;
+  }
+  .bg-palette-lg-dark {
+    background-color: #323232;
+  }
+  .bg-palette-lg-dark-light {
+    background-color: #585858;
+  }
+  .bg-palette-lg-dark-lighter {
+    background-color: #7f7f7f;
+  }
+  .bg-palette-lg-dark-dark {
+    background-color: #191919;
+  }
+  .bg-palette-lg-dark-darker {
+    background-color: black;
+  }
+  .bg-palette-lg-dark-complement {
+    background-color: #323232;
+  }
+  .bg-palette-lg-dark-invert {
+    background-color: #cdcdcd;
   }
 
   /**
@@ -3237,6 +3501,35 @@
     color: black;
     background-color: #ff872b;
   }
+  .bg-themed-palette-lg-dark {
+    color: white;
+    text-shadow: 0 0 0.125rem #191919;
+    background-color: #323232;
+  }
+  .bg-themed-palette-lg-dark-light {
+    color: white;
+    background-color: #585858;
+  }
+  .bg-themed-palette-lg-dark-lighter {
+    color: white;
+    background-color: #7f7f7f;
+  }
+  .bg-themed-palette-lg-dark-dark {
+    color: white;
+    background-color: #191919;
+  }
+  .bg-themed-palette-lg-dark-darker {
+    color: white;
+    background-color: black;
+  }
+  .bg-themed-palette-lg-dark-complement {
+    color: white;
+    background-color: #323232;
+  }
+  .bg-themed-palette-lg-dark-invert {
+    color: black;
+    background-color: #cdcdcd;
+  }
 
   /**
   bg-themed ?
@@ -3347,6 +3640,9 @@
   }
   .border-color-palette-lg-blue {
     border-color: #005ba1 !important;
+  }
+  .border-color-palette-lg-dark {
+    border-color: #191919 !important;
   }
 
   /**
@@ -3574,6 +3870,27 @@
   .color-palette-md-blue-invert {
     color: #ff872b;
   }
+  .color-palette-md-dark {
+    color: #323232;
+  }
+  .color-palette-md-dark-light {
+    color: #585858;
+  }
+  .color-palette-md-dark-lighter {
+    color: #7f7f7f;
+  }
+  .color-palette-md-dark-dark {
+    color: #191919;
+  }
+  .color-palette-md-dark-darker {
+    color: black;
+  }
+  .color-palette-md-dark-complement {
+    color: #323232;
+  }
+  .color-palette-md-dark-invert {
+    color: #cdcdcd;
+  }
 
   /**
   color ?
@@ -3798,6 +4115,27 @@
   }
   .bg-palette-md-blue-invert {
     background-color: #ff872b;
+  }
+  .bg-palette-md-dark {
+    background-color: #323232;
+  }
+  .bg-palette-md-dark-light {
+    background-color: #585858;
+  }
+  .bg-palette-md-dark-lighter {
+    background-color: #7f7f7f;
+  }
+  .bg-palette-md-dark-dark {
+    background-color: #191919;
+  }
+  .bg-palette-md-dark-darker {
+    background-color: black;
+  }
+  .bg-palette-md-dark-complement {
+    background-color: #323232;
+  }
+  .bg-palette-md-dark-invert {
+    background-color: #cdcdcd;
   }
 
   /**
@@ -4088,6 +4426,35 @@
     color: black;
     background-color: #ff872b;
   }
+  .bg-themed-palette-md-dark {
+    color: white;
+    text-shadow: 0 0 0.125rem #191919;
+    background-color: #323232;
+  }
+  .bg-themed-palette-md-dark-light {
+    color: white;
+    background-color: #585858;
+  }
+  .bg-themed-palette-md-dark-lighter {
+    color: white;
+    background-color: #7f7f7f;
+  }
+  .bg-themed-palette-md-dark-dark {
+    color: white;
+    background-color: #191919;
+  }
+  .bg-themed-palette-md-dark-darker {
+    color: white;
+    background-color: black;
+  }
+  .bg-themed-palette-md-dark-complement {
+    color: white;
+    background-color: #323232;
+  }
+  .bg-themed-palette-md-dark-invert {
+    color: black;
+    background-color: #cdcdcd;
+  }
 
   /**
   bg-themed ?
@@ -4198,6 +4565,9 @@
   }
   .border-color-palette-md-blue {
     border-color: #005ba1 !important;
+  }
+  .border-color-palette-md-dark {
+    border-color: #191919 !important;
   }
 
   /**
@@ -4425,6 +4795,27 @@
   .color-palette-sm-blue-invert {
     color: #ff872b;
   }
+  .color-palette-sm-dark {
+    color: #323232;
+  }
+  .color-palette-sm-dark-light {
+    color: #585858;
+  }
+  .color-palette-sm-dark-lighter {
+    color: #7f7f7f;
+  }
+  .color-palette-sm-dark-dark {
+    color: #191919;
+  }
+  .color-palette-sm-dark-darker {
+    color: black;
+  }
+  .color-palette-sm-dark-complement {
+    color: #323232;
+  }
+  .color-palette-sm-dark-invert {
+    color: #cdcdcd;
+  }
 
   /**
   color ?
@@ -4649,6 +5040,27 @@
   }
   .bg-palette-sm-blue-invert {
     background-color: #ff872b;
+  }
+  .bg-palette-sm-dark {
+    background-color: #323232;
+  }
+  .bg-palette-sm-dark-light {
+    background-color: #585858;
+  }
+  .bg-palette-sm-dark-lighter {
+    background-color: #7f7f7f;
+  }
+  .bg-palette-sm-dark-dark {
+    background-color: #191919;
+  }
+  .bg-palette-sm-dark-darker {
+    background-color: black;
+  }
+  .bg-palette-sm-dark-complement {
+    background-color: #323232;
+  }
+  .bg-palette-sm-dark-invert {
+    background-color: #cdcdcd;
   }
 
   /**
@@ -4939,6 +5351,35 @@
     color: black;
     background-color: #ff872b;
   }
+  .bg-themed-palette-sm-dark {
+    color: white;
+    text-shadow: 0 0 0.125rem #191919;
+    background-color: #323232;
+  }
+  .bg-themed-palette-sm-dark-light {
+    color: white;
+    background-color: #585858;
+  }
+  .bg-themed-palette-sm-dark-lighter {
+    color: white;
+    background-color: #7f7f7f;
+  }
+  .bg-themed-palette-sm-dark-dark {
+    color: white;
+    background-color: #191919;
+  }
+  .bg-themed-palette-sm-dark-darker {
+    color: white;
+    background-color: black;
+  }
+  .bg-themed-palette-sm-dark-complement {
+    color: white;
+    background-color: #323232;
+  }
+  .bg-themed-palette-sm-dark-invert {
+    color: black;
+    background-color: #cdcdcd;
+  }
 
   /**
   bg-themed ?
@@ -5049,6 +5490,9 @@
   }
   .border-color-palette-sm-blue {
     border-color: #005ba1 !important;
+  }
+  .border-color-palette-sm-dark {
+    border-color: #191919 !important;
   }
 
   /**

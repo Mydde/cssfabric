@@ -1,4 +1,5 @@
-@use '../utils' as utils;
+@use "sass:map";
+@use "sass:math";
 
 $cssfabric-metadata: (
         title: "cssfabric",
@@ -27,10 +28,22 @@ $cssfabric-config: (
                 md: 48,
                 sm: 35.7
         ),
+        themes:(
+                light:(
+                        foreground: #282230,
+                        background: #f1f1f1,
+                        paper: #ededed
+                ),
+                dark:(
+                        foreground: #282230,
+                        background: #f1f1f1,
+                        paper: #ededed
+                ),
+        ),
         theme: (
-                primary: orange,
-                foreground: #333,
-                background: #ededed
+                primary: #0288d1,
+                foreground: #282230,
+                background: #f1f1f1,
         ),
         scheme: (
                 discrete: #ccc,
@@ -48,14 +61,29 @@ $cssfabric-config: (
                 purple: #5c2d91,
                 green: #107c10,
                 teal: #008272,
-                blue: #0078d4
+                blue: #0078d4,
+                dark: #323232,
         ),
-        gray: utils.getGraySteps(8, #f4f4f4, #999),
+        gray: getGraySteps(8, #f4f4f4, #999),
         gray-config: (
                 start: #f4f4f4,
                 end: #999,
                 steps: 8
         )
 );
+
+@function getGraySteps($steps, $gray-start, $gray-end) {
+        $gray-schemes: ();
+
+        @for $i from 0 through $steps {
+
+                $color: mix($gray-end, $gray-start, math.div($i , $steps) * 100%);
+
+                $gray-schemes: map.set($gray-schemes, #{($i+1) * 100}, $color);
+        }
+@debug $gray-schemes;
+
+        @return $gray-schemes;
+}
 
 $cssfabric-docs: ();

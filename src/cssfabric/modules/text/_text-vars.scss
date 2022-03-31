@@ -1,5 +1,4 @@
-@use '../../_loader';
-@use '../../utils';
+@use '../../_utils';
 
 $cssProps: (
         text-transform: (
@@ -56,9 +55,9 @@ $text-config: (
                 fontWeight: map-get($cssProps, "font-weight"),
                 textAlign: map-get($cssProps, "text-align")
         ),
-        scheme: loader.getFabricSharedParams(scheme),
-        palette: loader.getFabricSharedParams(palette),
-        gray: loader.getFabricSharedParams(gray)
+        scheme: utils.get_fabric_conf(scheme),
+        palette: utils.get_fabric_conf(palette),
+        gray: utils.get_fabric_conf(gray)
 );
 
 $text-docs: (

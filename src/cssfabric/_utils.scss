@@ -1,6 +1,22 @@
 @use "sass:string";
 @use "sass:map";
 @use "sass:math";
+// load main fabric vars
+@use 'modules/cssfabric-config' as cssfabric-config;
+
+// link to fabric conf scss file, which often move ;)
+@function get_fabric_conf($prop: null,$val: null) {
+  @if not $prop {
+    @return cssfabric-config.$cssfabric-config;
+  }
+  @if  $prop and not $val {
+    @return  map-get(cssfabric-config.$cssfabric-config, $prop);
+  }
+  @if  $val {
+    $in: map-get(cssfabric-config.$cssfabric-config, $prop);
+    @return  map-get($in, $prop,$val);
+  }
+}
 
 // css dimensions rules builder responsive
 @mixin fabricResponsiveEncloser($mq_size_value, $mq_min_size_value: null) {

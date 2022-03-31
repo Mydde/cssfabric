@@ -1,10 +1,10 @@
 // load scss config file
 @use '../../_utils';
-@use '../cssfabric-vars' as cssfabric-vars;
+@use '../cssfabric-config';
 @use 'grid-vars';
 
 $grid-config: grid-vars.$grid-config;
-$cssfabric-config: cssfabric-vars.$cssfabric-config;
+$cssfabric-config: cssfabric-config.$cssfabric-config;
 
 $sep: map-get($cssfabric-config, sep);
 // read variables
@@ -38,42 +38,7 @@ $grid-code-sep: #{$grid-code}#{$sep};
       flex: 1 1 0;
     }
 
-    &.align-middle, &.#{$grid-code-sep}align-middle {
-      align-items: center;
-    }
 
-    &.align-top, &.#{$grid-code-sep}align-top {
-      align-items: flex-start;
-    }
-
-    &.align-left, &.#{$grid-code-sep}align-left {
-      // justify-content: flex-start;
-      align-items: flex-start;
-    }
-
-    &.align-right, &.#{$grid-code-sep}align-right {
-      justify-content: flex-end;
-      // align-items: end;
-    }
-
-    &.align-bottom, &.#{$grid-code-sep}align-bottom {
-      align-items: flex-end;
-    }
-
-    &.align-center, &.#{$grid-code-sep}align-center {
-      justify-content: center;
-    }
-
-    &.align-middle-center, &.#{$grid-code-sep}align-middle-center {
-      justify-content: center;
-      align-content: center;
-      align-items: center;
-    }
-
-    &.align-stretch , &.#{$grid-code-sep}align-stretch {
-      color: blue;
-      align-items: stretch;
-    }
   }
 
   .#{$v_prop} {
@@ -89,62 +54,19 @@ $grid-code-sep: #{$grid-code}#{$sep};
       justify-content: center;
     }
 
-    &.align-top, &.#{$grid-code-sep}align-top {
-      justify-content: flex-start;
-    }
-
-    &.align-left, &.#{$grid-code-sep}align-left {
-      align-items: flex-start;
-    }
-
-    &.align-right, &.#{$grid-code-sep}align-right {
-      align-items: flex-end;
-    }
-
-    &.align-bottom, &.#{$grid-code-sep}align-bottom {
-      justify-content: flex-end;
-    }
-
-    &.align-center, &.#{$grid-code-sep}align-center {
-      align-items: center;
-    }
-
-    &.align-middle-center, &.#{$grid-code-sep}align-middle-center {
-      align-items: center;
-      justify-content: center;
-    }
-
-    &.align-stretch, &.#{$grid-code-sep}align-stretch {
-      color: red;
-      align-items: stretch;
-    }
   }
 
   .#{$h_prop},
   .#{$v_prop} {
-    box-sizing: border-box;
-
-    & > * {
-      box-sizing: border-box;
-    }
 
     & > *:not(.#{$grid-code-sep}#{$gridFullWidth}) {
       flex: 0 0 auto;
     }
 
     &.#{$grid-code-sep}inline {
-      display: inline-flex;
+      display: inline-grid;
     }
 
-    @for $i from 1 through $grow-shrink-steps {
-      & .#{$grid-code-sep}grow#{$sep}#{$i} {
-        flex-grow: $i;
-      } 
-
-      & .#{$grid-code-sep}shrink#{$sep}#{$i} {
-        flex-shrink: $i;
-      }
-    }
   }
 
   /** raw css properties distribution */
