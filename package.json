@@ -1,8 +1,9 @@
 {
   "name": "@medyll/cssfabric",
-  "version": "0.0.1",
-  "private": true,
+  "version": "0.0.11",
+  "private": false,
   "main": "./lib",
+  "repository": "https://github.com/medyll/cssfabric",
   "scripts": {
     "dev": "tsc -w || exit 1",
     "build": "",
@@ -13,6 +14,7 @@
     "watch-readme": "gulp watchReadme",
     "task-download": "gulp taskDownload"
   },
+  "type": "module",
   "dependencies": {
     "chokidar": "^3.5.1",
     "gulp-filelist": "^2.0.5",

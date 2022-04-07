@@ -88,8 +88,8 @@ ul.menu-xxxl-v li.active {
     padding: 0 0;
     position: relative;
     border-bottom: 1px solid #ededed;
-    overflow-X: auto;
-    overflow-Y: hidden;
+    overflow-x: auto;
+    overflow-y: hidden;
   }
   ul.menu-xxxl-h li.menu-item,
 ul.menu-xxxl-h li {
@@ -169,8 +169,8 @@ ul.menu-xxl-v li.active {
     padding: 0 0;
     position: relative;
     border-bottom: 1px solid #ededed;
-    overflow-X: auto;
-    overflow-Y: hidden;
+    overflow-x: auto;
+    overflow-y: hidden;
   }
   ul.menu-xxl-h li.menu-item,
 ul.menu-xxl-h li {
@@ -250,8 +250,8 @@ ul.menu-xl-v li.active {
     padding: 0 0;
     position: relative;
     border-bottom: 1px solid #ededed;
-    overflow-X: auto;
-    overflow-Y: hidden;
+    overflow-x: auto;
+    overflow-y: hidden;
   }
   ul.menu-xl-h li.menu-item,
 ul.menu-xl-h li {
@@ -331,8 +331,8 @@ ul.menu-lg-v li.active {
     padding: 0 0;
     position: relative;
     border-bottom: 1px solid #ededed;
-    overflow-X: auto;
-    overflow-Y: hidden;
+    overflow-x: auto;
+    overflow-y: hidden;
   }
   ul.menu-lg-h li.menu-item,
 ul.menu-lg-h li {
@@ -412,8 +412,8 @@ ul.menu-md-v li.active {
     padding: 0 0;
     position: relative;
     border-bottom: 1px solid #ededed;
-    overflow-X: auto;
-    overflow-Y: hidden;
+    overflow-x: auto;
+    overflow-y: hidden;
   }
   ul.menu-md-h li.menu-item,
 ul.menu-md-h li {
@@ -493,8 +493,8 @@ ul.menu-sm-v li.active {
     padding: 0 0;
     position: relative;
     border-bottom: 1px solid #ededed;
-    overflow-X: auto;
-    overflow-Y: hidden;
+    overflow-x: auto;
+    overflow-y: hidden;
   }
   ul.menu-sm-h li.menu-item,
 ul.menu-sm-h li {

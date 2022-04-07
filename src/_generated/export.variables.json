@@ -580,6 +580,34 @@
             }
 
             ,
+            "table": {
+                "_data": {
+                    "className": "table", "classNameShort": "tbl", "table_class_name": "table", "table_class_name_short": "tbl", "table-bg-color-head": "#f4f4f4", "table-bg-color-strip-main": "#ededed", "table-bg-color-strip-second": "#f5f5f5", "table-border-color-header": "#ccc", "table-border-color-main": "#ededed", "table-border-color-second": "#f5f5f5"
+                }
+
+                ,
+                "_metadata": {
+                    "title": "table", "tag": "table", "description": "cssfabric table module to set different table styles"
+                }
+
+                ,
+                "_docs": {
+                    "attributes": {
+                        "table": {
+
+                            "tag": "table",
+                            "classNames": {
+                                "_": ["bg-strip-2", "bg-strip-5"], "_pos": ["sticky", "layout"], "_deco": ["h-line", "v-line", "border"]
+                            }
+
+                            ,
+                            "about": "is a table"
+                        }
+                    }
+                }
+            }
+
+            ,
             "text": {
                 "_data": {
 
@@ -652,34 +680,6 @@
                     "classNames": {
                         "_": {
                             "et": "ellipsis"
-                        }
-                    }
-                }
-            }
-
-            ,
-            "table": {
-                "_data": {
-                    "className": "table", "classNameShort": "tbl", "table_class_name": "table", "table_class_name_short": "tbl", "table-bg-color-head": "#f4f4f4", "table-bg-color-strip-main": "#ededed", "table-bg-color-strip-second": "#f5f5f5", "table-border-color-header": "#ccc", "table-border-color-main": "#ededed", "table-border-color-second": "#f5f5f5"
-                }
-
-                ,
-                "_metadata": {
-                    "title": "table", "tag": "table", "description": "cssfabric table module to set different table styles"
-                }
-
-                ,
-                "_docs": {
-                    "attributes": {
-                        "table": {
-
-                            "tag": "table",
-                            "classNames": {
-                                "_": ["bg-strip-2", "bg-strip-5"], "_pos": ["sticky", "layout"], "_deco": ["h-line", "v-line", "border"]
-                            }
-
-                            ,
-                            "about": "is a table"
                         }
                     }
                 }

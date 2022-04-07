@@ -87,8 +87,8 @@ ul.menu-h {
   padding: 0 0;
   position: relative;
   border-bottom: 1px solid #ededed;
-  overflow-X: auto;
-  overflow-Y: hidden;
+  overflow-x: auto;
+  overflow-y: hidden;
 }
 ul.menu-h li.menu-item,
 ul.menu-h li {

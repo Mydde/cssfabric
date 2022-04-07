@@ -55,7 +55,7 @@ $unit-tag-config: map-get($scale-config, unit-tag-config)!default;
   }
 }
 
-// loop on shorthands
+// loop on shorthands // ok
 @mixin play_shorthand_loop($scale_prop, $mq_size_key) {
   @each $scale_shorthand, $scale_shorthand_value in $scale-sizes {
     @include scale-classname-builder(
