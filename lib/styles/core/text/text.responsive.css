@@ -1,153 +1,4 @@
-@media only screen and (max-width: 0rem) {
-  .text-xxxl-ellipsis {
-    text-overflow: ellipsis;
-    overflow: hidden;
-    white-space: nowrap;
-  }
-
-  .h1,
-h1 {
-    font-size: var(--font-size-h1);
-    line-height: 1.2;
-    font-weight: 400;
-  }
-
-  .h2,
-h2 {
-    font-size: var(--font-size-h2);
-    line-height: 1.2;
-    font-weight: 400;
-  }
-
-  .h3,
-h3 {
-    font-size: var(--font-size-h3);
-    line-height: 1.2;
-    font-weight: 400;
-  }
-
-  .h4,
-h4 {
-    font-size: var(--font-size-h4);
-    line-height: 1.2;
-    font-weight: 400;
-  }
-
-  .h5,
-h5 {
-    font-size: var(--font-size-h5);
-    line-height: 1.2;
-    font-weight: 400;
-  }
-
-  .h6,
-h6 {
-    font-size: var(--font-size-h6);
-    line-height: 1.2;
-    font-weight: 400;
-  }
-
-  .text-xxxl-cap {
-    text-transform: capitalize;
-  }
-  .text-xxxl-up {
-    text-transform: uppercase;
-  }
-  .text-xxxl-low {
-    text-transform: lowercase;
-  }
-  .text-xxxl-none {
-    text-transform: none;
-  }
-  .text-xxxl-full {
-    text-transform: full-width;
-  }
-  .text-xxxl-l {
-    text-align: left;
-  }
-  .text-xxxl-r {
-    text-align: right;
-  }
-  .text-xxxl-center {
-    text-align: center;
-  }
-  .text-xxxl-justify {
-    text-align: justify;
-  }
-  .text-xxxl-50 {
-    font-weight: var(--font-weight-50);
-  }
-  .text-xxxl-100 {
-    font-weight: var(--font-weight-100);
-  }
-  .text-xxxl-300 {
-    font-weight: var(--font-weight-300);
-  }
-  .text-xxxl-500 {
-    font-weight: var(--font-weight-500);
-  }
-  .text-xxxl-900 {
-    font-weight: var(--font-weight-900);
-  }
-  .text-xxxl-light {
-    font-weight: var(--font-weight-light);
-  }
-  .text-xxxl-cap {
-    font-weight: var(--font-weight-cap);
-  }
-  .text-xxxl-bold {
-    font-weight: var(--font-weight-bold);
-  }
-  .text-xxxl-bolder {
-    font-weight: var(--font-weight-bolder);
-  }
-  .text-xxxl-shad-discrete {
-    text-shadow: var(--text-shadow-discrete);
-  }
-  .text-xxxl-shad-success {
-    text-shadow: var(--text-shadow-success);
-  }
-  .text-xxxl-shad-info {
-    text-shadow: var(--text-shadow-info);
-  }
-  .text-xxxl-shad-warning {
-    text-shadow: var(--text-shadow-warning);
-  }
-  .text-xxxl-shad-alert {
-    text-shadow: var(--text-shadow-alert);
-  }
-  .text-xxxl-shad-error {
-    text-shadow: var(--text-shadow-error);
-  }
-  .text-xxxl-shad-yellow {
-    text-shadow: var(--text-shadow-yellow);
-  }
-  .text-xxxl-shad-orange {
-    text-shadow: var(--text-shadow-orange);
-  }
-  .text-xxxl-shad-red {
-    text-shadow: var(--text-shadow-red);
-  }
-  .text-xxxl-shad-magenta {
-    text-shadow: var(--text-shadow-magenta);
-  }
-  .text-xxxl-shad-purple {
-    text-shadow: var(--text-shadow-purple);
-  }
-  .text-xxxl-shad-green {
-    text-shadow: var(--text-shadow-green);
-  }
-  .text-xxxl-shad-teal {
-    text-shadow: var(--text-shadow-teal);
-  }
-  .text-xxxl-shad-blue {
-    text-shadow: var(--text-shadow-blue);
-  }
-  .text-xxxl-shad-dark {
-    text-shadow: var(--text-shadow-dark);
-  }
-}
-@media only screen and (max-width: 120rem) {
+@media only screen and (max-width: 1300px) {
   .text-xxl-ellipsis {
     text-overflow: ellipsis;
     overflow: hidden;
@@ -296,7 +147,7 @@ h6 {
     text-shadow: var(--text-shadow-dark);
   }
 }
-@media only screen and (max-width: 90rem) {
+@media only screen and (max-width: 1200px) {
   .text-xl-ellipsis {
     text-overflow: ellipsis;
     overflow: hidden;
@@ -445,7 +296,7 @@ h6 {
     text-shadow: var(--text-shadow-dark);
   }
 }
-@media only screen and (max-width: 64rem) {
+@media only screen and (max-width: 960px) {
   .text-lg-ellipsis {
     text-overflow: ellipsis;
     overflow: hidden;
@@ -594,7 +445,7 @@ h6 {
     text-shadow: var(--text-shadow-dark);
   }
 }
-@media only screen and (max-width: 48rem) {
+@media only screen and (max-width: 760px) {
   .text-md-ellipsis {
     text-overflow: ellipsis;
     overflow: hidden;
@@ -743,7 +594,7 @@ h6 {
     text-shadow: var(--text-shadow-dark);
   }
 }
-@media only screen and (max-width: 35.7rem) {
+@media only screen and (max-width: 0px) {
   .text-sm-ellipsis {
     text-overflow: ellipsis;
     overflow: hidden;

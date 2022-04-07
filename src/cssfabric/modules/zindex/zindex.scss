@@ -5,15 +5,11 @@ $zindex-config: zindex-vars.$zindex-config;
 @use '../../_utils';
 
 // read variables
-$z_groups: map-get($zindex-config, z_groups); 
- 
+$z_groups: map-get($zindex-config, z_groups);
 
-@each $z_group in $z_groups {
-  $i: index($z_groups, $z-group);
-  @for $z_value from 0 through 9 {
-    .zI-#{$z_group}-#{$z_value} {
-      /* set zIndex value */
-      z-index: ($i * 100) + (($z_value + 1) * 10);
-    }
+
+@for $z_value from 0 through 10 {
+  .zI-#{$z_value} {
+    z-index: (($z_value) * 100);
   }
 }

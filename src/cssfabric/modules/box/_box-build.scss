@@ -57,7 +57,7 @@ $css-shorthands: (
 
   //
   @if ($css_prop== "padding" or $css_prop== "margin") {
-    $computed_value: var(--box-sp-#{$grid_size_value});
+    $computed_value: var(--box-unit-#{$grid_size_value});
   }
 
   // complex write method: 1px value
@@ -72,7 +72,7 @@ $css-shorthands: (
   $iterator: $box-sizes-config;
   @for $grid_size_value from 1 through $iterator {
     $css_size_value: ($grid_size_value * $box-unit-size-config) + $box-unit-config;
-    --box-sp-#{$grid_size_value} : #{$css_size_value};
+    --box-unit-#{$grid_size_value} : #{$css_size_value};
   }
 }
 

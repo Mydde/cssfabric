@@ -35,7 +35,9 @@ $declinations-config: map-get($theme-config, declinations-config);
 
           @include utils.fabricAttributes("&-", $theme-level, #{$switch-tag-type}, $newColor);
         }
+      }
     }
+  }
 }
 
 @mixin themeCssVars() {

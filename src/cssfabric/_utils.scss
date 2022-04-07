@@ -26,7 +26,7 @@
   $width: if($mq_size_value==180 , $mq_min_size_value , $mq_size_value);
 
   // @debug  (#{$type-width}-width: $width + rem) ;
-  @media only screen and (#{$type-width}-width: $width + rem) {
+  @media only screen and (#{$type-width}-width: $width + px) {
     @content;
   }
 }

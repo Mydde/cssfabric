@@ -1,6 +1,6 @@
 {
   "name": "@medyll/cssfabric",
-  "version": "0.0.14",
+  "version": "0.0.14 ",
   "private": false,
   "main": "./lib",
   "repository": "https://github.com/medyll/cssfabric",

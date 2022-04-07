@@ -50,9 +50,8 @@ $box-shadow-shorthand-config: map-get($box-config, shadow-shorthand-config) !def
   --theme-color-background: #{map-get($theme-light, background)};
   --theme-color-paper: #{map-get($theme-light, paper)};
 
-  --theme-color-border: var(--theme-color-primary-alpha-mid);
-  --theme-color-overlay: '';
-
+  --theme-color-border: rgba(208, 191, 151, 0.3);
+  --theme-color-overlay: rgba(208, 191, 151, 0.2);
 
   /* color-scheme */
   @each $type-key, $type-prop in $color-schemes {
@@ -111,8 +110,8 @@ $box-shadow-shorthand-config: map-get($box-config, shadow-shorthand-config) !def
   --theme-color-background: #{map-get($theme-dark, background)};
   --theme-color-paper: #{map-get($theme-dark, paper)};
 
-  --theme-color-border: var(--theme-color-primary-alpha-mid);
-  --theme-color-overlay: '';
+  --theme-color-border: rgba(255, 255, 255, 0.2);
+  --theme-color-overlay: rgba(255,255,255,0.1);
 }
 
 

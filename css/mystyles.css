@@ -37,8 +37,8 @@
   --theme-color-text: #282230;
   --theme-color-background: #f1f1f1;
   --theme-color-paper: #ededed;
-  --theme-color-border: rgba(208, 191, 151, 0.3);
-  --theme-color-overlay: rgba(208, 191, 151, 0.2);
+  --theme-color-border: var(--theme-color-primary-alpha-mid);
+  --theme-color-overlay: "";
   /* color-scheme */
   --color-scheme-discrete: #ccc;
   --color-scheme-discrete-light: #f2f2f2;
@@ -189,38 +189,38 @@
   --box-shad-9: 0 7.5px 15.5172413793px 0 rgba(0, 0, 0, 0.15), 0 1.3740458015px 4.1860465116px 0 rgba(0, 0, 0, 0.1);
   --box-shad-10: 0 8.3333333333px 17.2413793103px 0 rgba(0, 0, 0, 0.15), 0 1.5267175573px 4.6511627907px 0 rgba(0, 0, 0, 0.1);
   /* boxes */
-  --box-unit-1: 0.5rem;
-  --box-unit-2: 1rem;
-  --box-unit-3: 1.5rem;
-  --box-unit-4: 2rem;
-  --box-unit-5: 2.5rem;
-  --box-unit-6: 3rem;
-  --box-unit-7: 3.5rem;
-  --box-unit-8: 4rem;
-  --box-unit-9: 4.5rem;
-  --box-unit-10: 5rem;
-  --box-unit-11: 5.5rem;
-  --box-unit-12: 6rem;
-  --box-unit-13: 6.5rem;
-  --box-unit-14: 7rem;
-  --box-unit-15: 7.5rem;
-  --box-unit-16: 8rem;
-  --box-unit-17: 8.5rem;
-  --box-unit-18: 9rem;
-  --box-unit-19: 9.5rem;
-  --box-unit-20: 10rem;
-  --box-unit-21: 10.5rem;
-  --box-unit-22: 11rem;
-  --box-unit-23: 11.5rem;
-  --box-unit-24: 12rem;
-  --box-unit-25: 12.5rem;
-  --box-unit-26: 13rem;
-  --box-unit-27: 13.5rem;
-  --box-unit-28: 14rem;
-  --box-unit-29: 14.5rem;
-  --box-unit-30: 15rem;
-  --box-unit-31: 15.5rem;
-  --box-unit-32: 16rem;
+  --box-sp-1: 0.5rem;
+  --box-sp-2: 1rem;
+  --box-sp-3: 1.5rem;
+  --box-sp-4: 2rem;
+  --box-sp-5: 2.5rem;
+  --box-sp-6: 3rem;
+  --box-sp-7: 3.5rem;
+  --box-sp-8: 4rem;
+  --box-sp-9: 4.5rem;
+  --box-sp-10: 5rem;
+  --box-sp-11: 5.5rem;
+  --box-sp-12: 6rem;
+  --box-sp-13: 6.5rem;
+  --box-sp-14: 7rem;
+  --box-sp-15: 7.5rem;
+  --box-sp-16: 8rem;
+  --box-sp-17: 8.5rem;
+  --box-sp-18: 9rem;
+  --box-sp-19: 9.5rem;
+  --box-sp-20: 10rem;
+  --box-sp-21: 10.5rem;
+  --box-sp-22: 11rem;
+  --box-sp-23: 11.5rem;
+  --box-sp-24: 12rem;
+  --box-sp-25: 12.5rem;
+  --box-sp-26: 13rem;
+  --box-sp-27: 13.5rem;
+  --box-sp-28: 14rem;
+  --box-sp-29: 14.5rem;
+  --box-sp-30: 15rem;
+  --box-sp-31: 15.5rem;
+  --box-sp-32: 16rem;
   /* text */
   /*Hs*/
   --font-size-h1: 3.1rem;
@@ -273,6 +273,8 @@
   --theme-color-text: #f1f1f1;
   --theme-color-background: #27323a;
   --theme-color-paper: #3a3b3b;
-  --theme-color-border: rgba(255, 255, 255, 0.2);
-  --theme-color-overlay: rgba(255,255,255,0.1);
+  --theme-color-border: var(--theme-color-primary-alpha-mid);
+  --theme-color-overlay: "";
 }
+
+/*# sourceMappingURL=mystyles.css.map */

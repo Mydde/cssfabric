@@ -1,66 +1,5 @@
 /* css overflow rules */
-@media only screen and (max-width: 0rem) {
-  .overflow-xxxl-visible {
-    overflow: visible;
-  }
-
-  .overflow-xxxl-hidden {
-    overflow: hidden;
-  }
-
-  .overflow-xxxl-clip {
-    overflow: clip;
-  }
-
-  .overflow-xxxl-scroll {
-    overflow: scroll;
-  }
-
-  .overflow-xxxl-auto {
-    overflow: auto;
-  }
-
-  .overflow-x-xxxl-visible {
-    overflow: visible;
-  }
-
-  .overflow-x-xxxl-hidden {
-    overflow: hidden;
-  }
-
-  .overflow-x-xxxl-clip {
-    overflow: clip;
-  }
-
-  .overflow-x-xxxl-scroll {
-    overflow: scroll;
-  }
-
-  .overflow-x-xxxl-auto {
-    overflow: auto;
-  }
-
-  .overflow-y-xxxl-visible {
-    overflow: visible;
-  }
-
-  .overflow-y-xxxl-hidden {
-    overflow: hidden;
-  }
-
-  .overflow-y-xxxl-clip {
-    overflow: clip;
-  }
-
-  .overflow-y-xxxl-scroll {
-    overflow: scroll;
-  }
-
-  .overflow-y-xxxl-auto {
-    overflow: auto;
-  }
-}
-@media only screen and (max-width: 120rem) {
+@media only screen and (max-width: 1300px) {
   .overflow-xxl-visible {
     overflow: visible;
   }
@@ -79,14 +18,6 @@
 
   .overflow-xxl-auto {
     overflow: auto;
-  }
-
-  .overflow-xxl-initial {
-    overflow: initial;
-  }
-
-  .overflow-xxl-unset {
-    overflow: unset;
   }
 
   .overflow-x-xxl-visible {
@@ -109,14 +40,6 @@
     overflow: auto;
   }
 
-  .overflow-x-xxl-initial {
-    overflow: initial;
-  }
-
-  .overflow-x-xxl-unset {
-    overflow: unset;
-  }
-
   .overflow-y-xxl-visible {
     overflow: visible;
   }
@@ -136,16 +59,8 @@
   .overflow-y-xxl-auto {
     overflow: auto;
   }
-
-  .overflow-y-xxl-initial {
-    overflow: initial;
-  }
-
-  .overflow-y-xxl-unset {
-    overflow: unset;
-  }
 }
-@media only screen and (max-width: 90rem) {
+@media only screen and (max-width: 1200px) {
   .overflow-xl-visible {
     overflow: visible;
   }
@@ -164,14 +79,6 @@
 
   .overflow-xl-auto {
     overflow: auto;
-  }
-
-  .overflow-xl-initial {
-    overflow: initial;
-  }
-
-  .overflow-xl-unset {
-    overflow: unset;
   }
 
   .overflow-x-xl-visible {
@@ -194,14 +101,6 @@
     overflow: auto;
   }
 
-  .overflow-x-xl-initial {
-    overflow: initial;
-  }
-
-  .overflow-x-xl-unset {
-    overflow: unset;
-  }
-
   .overflow-y-xl-visible {
     overflow: visible;
   }
@@ -221,16 +120,8 @@
   .overflow-y-xl-auto {
     overflow: auto;
   }
-
-  .overflow-y-xl-initial {
-    overflow: initial;
-  }
-
-  .overflow-y-xl-unset {
-    overflow: unset;
-  }
 }
-@media only screen and (max-width: 64rem) {
+@media only screen and (max-width: 960px) {
   .overflow-lg-visible {
     overflow: visible;
   }
@@ -249,14 +140,6 @@
 
   .overflow-lg-auto {
     overflow: auto;
-  }
-
-  .overflow-lg-initial {
-    overflow: initial;
-  }
-
-  .overflow-lg-unset {
-    overflow: unset;
   }
 
   .overflow-x-lg-visible {
@@ -279,14 +162,6 @@
     overflow: auto;
   }
 
-  .overflow-x-lg-initial {
-    overflow: initial;
-  }
-
-  .overflow-x-lg-unset {
-    overflow: unset;
-  }
-
   .overflow-y-lg-visible {
     overflow: visible;
   }
@@ -306,16 +181,8 @@
   .overflow-y-lg-auto {
     overflow: auto;
   }
-
-  .overflow-y-lg-initial {
-    overflow: initial;
-  }
-
-  .overflow-y-lg-unset {
-    overflow: unset;
-  }
 }
-@media only screen and (max-width: 48rem) {
+@media only screen and (max-width: 760px) {
   .overflow-md-visible {
     overflow: visible;
   }
@@ -334,14 +201,6 @@
 
   .overflow-md-auto {
     overflow: auto;
-  }
-
-  .overflow-md-initial {
-    overflow: initial;
-  }
-
-  .overflow-md-unset {
-    overflow: unset;
   }
 
   .overflow-x-md-visible {
@@ -364,14 +223,6 @@
     overflow: auto;
   }
 
-  .overflow-x-md-initial {
-    overflow: initial;
-  }
-
-  .overflow-x-md-unset {
-    overflow: unset;
-  }
-
   .overflow-y-md-visible {
     overflow: visible;
   }
@@ -391,16 +242,8 @@
   .overflow-y-md-auto {
     overflow: auto;
   }
-
-  .overflow-y-md-initial {
-    overflow: initial;
-  }
-
-  .overflow-y-md-unset {
-    overflow: unset;
-  }
 }
-@media only screen and (max-width: 35.7rem) {
+@media only screen and (max-width: 0px) {
   .overflow-sm-visible {
     overflow: visible;
   }
@@ -419,14 +262,6 @@
 
   .overflow-sm-auto {
     overflow: auto;
-  }
-
-  .overflow-sm-initial {
-    overflow: initial;
-  }
-
-  .overflow-sm-unset {
-    overflow: unset;
   }
 
   .overflow-x-sm-visible {
@@ -449,14 +284,6 @@
     overflow: auto;
   }
 
-  .overflow-x-sm-initial {
-    overflow: initial;
-  }
-
-  .overflow-x-sm-unset {
-    overflow: unset;
-  }
-
   .overflow-y-sm-visible {
     overflow: visible;
   }
@@ -475,13 +302,5 @@
 
   .overflow-y-sm-auto {
     overflow: auto;
-  }
-
-  .overflow-y-sm-initial {
-    overflow: initial;
-  }
-
-  .overflow-y-sm-unset {
-    overflow: unset;
   }
 }
