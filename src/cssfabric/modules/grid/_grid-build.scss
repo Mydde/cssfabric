@@ -19,6 +19,9 @@ $gridFullWidth: map-get($grid-config, gridFullWidth);
 
 $grow-shrink-steps: map-get($grid-config, grow-shrink-steps);
 
+$grid-max-cols: map-get($grid-config, grid-max-cols);
+$grid-max-rows: map-get($grid-config, grid-max-rows);
+
 $grid-code-sep: #{$grid-code}#{$sep};
 
 @mixin makeGrid($mqKey) {
@@ -26,66 +29,56 @@ $grid-code-sep: #{$grid-code}#{$sep};
   $h_prop: #{$prefix}#{$sep}#{$grid-h};
   $v_prop: #{$prefix}#{$sep}#{$grid-v};
 
-  %flex {
-    display: grid; 
-  }
-
-  .#{$h_prop} {
+  .#{$grid-code} {
     display: grid;
-    flex-direction: row;
+    &-auto-flow-cols {
+      grid-auto-flow: column;
+    }
+    &-auto-cols-auto {
+      grid-auto-columns: auto;
+    }
+    &-auto-cols-min	 {
+      grid-auto-columns: min-content;
+    }
+    &-auto-cols-max {
+      grid-auto-columns: max-content;
+    }
+    &-auto-cols {
+      grid-auto-columns: minmax(0, 1fr);
+    }
 
-    & > .#{$grid-code-sep}#{$gridFullWidth} {
-      flex: 1 1 0;
+    &-auto-flow-rows {
+      grid-auto-flow: row;
+    }
+    &-auto-rows-auto {
+      grid-auto-rows: auto;
+    }
+    &-auto-rows-min	 {
+      grid-auto-rows: min-content;
+    }
+    &-auto-rows-max {
+      grid-auto-rows: max-content;
+    }
+    &-auto-rows {
+      grid-auto-rows: minmax(0, 1fr);
     }
 
 
   }
 
-  .#{$v_prop} {
-    display: grid;
-    flex-direction: column;
-
-    & > .#{$grid-code-sep}#{$gridFullWidth} {
-      flex: 1 1 0;
-      max-height: 100%;
-    }
-
-    &.align-middle, &.#{$grid-code-sep}align-middle {
-      justify-content: center;
-    }
-
+  .#{$grid-code-sep}inline {
+    display: inline-grid;
   }
-
-  .#{$h_prop},
-  .#{$v_prop} {
-
-    & > *:not(.#{$grid-code-sep}#{$gridFullWidth}) {
-      flex: 0 0 auto;
-    }
-
-    &.#{$grid-code-sep}inline {
-      display: inline-grid;
-    }
-
-  }
-
-  /** raw css properties distribution */
-  .#{$h_prop},
-  .#{$v_prop} {
-    // wrap rules
-    &.#{$grid-code} {
-      @each $fabricRule, $value in map-get($cssProps, flexWrap) {
-        @include utils.fabricAttributes('&'+$sep, $fabricRule, 'flex-wrap', $value);
-      }
-    }
-
-    // align-self rules for children */
-    & .self {
-      @each $fabricRule, $value in map-get($cssItemsProps, self) {
-        @include utils.fabricAttributes('&-', $fabricRule, 'align-self', $value);
-      }
+  /* template-columns */
+  @for $col-row from 1 through $grid-max-cols {
+    .#{$grid-code}-cols-#{$col-row} {
+      grid-template-columns: repeat(#{$col-row}, minmax(0, 1fr));
     }
   }
-
-
+  /* template-rows */
+  @for $col-row from 1 through $grid-max-rows {
+    .#{$grid-code}-rows-#{$col-row} {
+      grid-template-rows: repeat(#{$col-row}, minmax(0, 1fr));
+    }
+  }
 }

@@ -21,12 +21,11 @@ $cssfabric-config: (
                 full: 100%
         ),
         media_quey_sizes: (
-                xxxl: 180,
-                xxl: 120,
-                xl: 90,
-                lg: 64,
-                md: 48,
-                sm: 35.7
+                xxl: 1300,
+                xl: 1200,
+                lg: 960,
+                md: 760,
+                sm: 0
         ),
         themes:(
                 light:(
@@ -42,6 +41,8 @@ $cssfabric-config: (
         ),
         theme: (
                 primary: #0288d1,
+                secondary: #D14B02,
+                tertiary: #88D102,
                 foreground: #282230,
                 background: #f1f1f1,
         ),
@@ -73,17 +74,17 @@ $cssfabric-config: (
 );
 
 @function getGraySteps($steps, $gray-start, $gray-end) {
-        $gray-schemes: ();
+  $gray-schemes: ();
 
-        @for $i from 0 through $steps {
+  @for $i from 0 through $steps {
 
-                $color: mix($gray-end, $gray-start, math.div($i , $steps) * 100%);
+    $color: mix($gray-end, $gray-start, math.div($i , $steps) * 100%);
 
-                $gray-schemes: map.set($gray-schemes, #{($i+1) * 100}, $color);
-        }
-@debug $gray-schemes;
+    $gray-schemes: map.set($gray-schemes, #{($i+1) * 100}, $color);
+  }
+  @debug $gray-schemes;
 
-        @return $gray-schemes;
+  @return $gray-schemes;
 }
 
 $cssfabric-docs: ();

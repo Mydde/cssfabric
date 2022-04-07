@@ -1,7 +1,7 @@
 @use '../../utils';
 
 
-$_grow-shrink-steps: 4;
+$_grow-shrink-steps: 2;
 
 
 $_grid-align: (top middle bottom left right center middle-center stretch);
@@ -72,16 +72,13 @@ $flex-docs: (// add align-middle non generated className // grow + shrink
                         classNames: (
                                 align: $_grid-align,
                                 grid:utils.getObjectKeys(map-get($_cssProps, flexWrap)), // add inline !
-                          //items: utils.getObjectKeys(map-get($_cssProps, grid-items)),
-                          //content:utils.getObjectKeys(map-get($_cssProps, grid-content)),
-                          //justify:utils.getObjectKeys(map-get($_cssProps, grid-justify))
                         ),
-                        about: "a classic grid system, and hey, it gets height !"
+                        about: "a classic flex grid system, and hey, it gets height !"
                 ),
                 self:(
                         tag: self,
                         keys: utils.getObjectKeys(map-get($_cssItemsProps, self)),
-                        about: "grid children specific classnames"
+                        about: "flex children specific classnames"
                 )
         )
 );

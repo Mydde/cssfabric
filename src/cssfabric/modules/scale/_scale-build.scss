@@ -32,7 +32,7 @@ $unit-tag-config: map-get($scale-config, unit-tag-config)!default;
                   #{$scale_prop_short}-#{$media_query_code}-#{$size_code},
                   #{$scale_prop_short}-#{$size_code}
   );
-  .#{$tag}, .scale-#{$tag} {
+  .#{$tag} { // , .scale-#{$tag}
     #{$scale_prop}: $size_value;
 
     @if ($_has_dimensions_max) {

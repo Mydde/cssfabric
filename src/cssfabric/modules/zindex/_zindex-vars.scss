@@ -1,19 +1,14 @@
 $zindex-metadata: (
-    title: zindex,
-    tag: zI,
-    description: "cssfabric zindex module to set z-index on all html elements",
+        title: zindex,
+        tag: zI,
+        description: "cssfabric zindex module to set z-index on all html elements",
 );
 $zindex-config: (
-    z_groups: (
-        a,
-        b,
-        c,
-        d,
-        e,
-        f,
-        g,
-    ),
+        z_groups: (
+                a,
+                z
+        ),
 );
 $zindex-docs: (
-    z_groups: _,
+        z_groups: _,
 );

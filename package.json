@@ -1,6 +1,6 @@
 {
   "name": "@medyll/cssfabric",
-  "version": "0.0.11",
+  "version": "0.0.14 ",
   "private": false,
   "main": "./lib",
   "repository": "https://github.com/medyll/cssfabric",
@@ -12,9 +12,9 @@
     "watch-json": "gulp watchJson",
     "watch-include": "gulp watchInclude",
     "watch-readme": "gulp watchReadme",
-    "task-download": "gulp taskDownload"
+    "task-download": "gulp taskDownload",
+    "css-build": "sass   src/cssfabric/modules/vars.scss css/mystyles.css"
   },
-  "type": "module",
   "dependencies": {
     "chokidar": "^3.5.1",
     "gulp-filelist": "^2.0.5",

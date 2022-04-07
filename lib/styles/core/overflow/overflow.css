@@ -19,14 +19,6 @@
   overflow: auto;
 }
 
-.overflow-initial {
-  overflow: initial;
-}
-
-.overflow-unset {
-  overflow: unset;
-}
-
 .overflow-x-visible {
   overflow: visible;
 }
@@ -47,14 +39,6 @@
   overflow: auto;
 }
 
-.overflow-x-initial {
-  overflow: initial;
-}
-
-.overflow-x-unset {
-  overflow: unset;
-}
-
 .overflow-y-visible {
   overflow: visible;
 }
@@ -73,12 +57,4 @@
 
 .overflow-y-auto {
   overflow: auto;
-}
-
-.overflow-y-initial {
-  overflow: initial;
-}
-
-.overflow-y-unset {
-  overflow: unset;
 }

@@ -21,7 +21,7 @@ $grow-shrink-steps: map-get($flex-config, grow-shrink-steps);
 
 $grid-code-sep: #{$grid-code}#{$sep};
 
-@mixin makeGrid($mqKey) { 
+@mixin makeGrid($mqKey) {
   $prefix: if($mqKey, #{$grid-code}-#{$mqKey}, #{$grid-code});
   $h_prop: #{$prefix}#{$sep}#{$grid-h};
   $v_prop: #{$prefix}#{$sep}#{$grid-v};
@@ -30,6 +30,7 @@ $grid-code-sep: #{$grid-code}#{$sep};
     display: flex;
   }
 
+  .#{$grid-code},
   .#{$h_prop} {
     display: flex;
     flex-direction: row;
@@ -38,39 +39,37 @@ $grid-code-sep: #{$grid-code}#{$sep};
       flex: 1 1 0;
     }
 
-    &.align-middle, &.#{$grid-code-sep}align-middle {
+    &.#{$grid-code-sep}align-middle {
       align-items: center;
     }
 
-    &.align-top, &.#{$grid-code-sep}align-top {
+    &.#{$grid-code-sep}align-top {
       align-items: flex-start;
     }
 
-    &.align-left, &.#{$grid-code-sep}align-left {
-      // justify-content: flex-start;
+    &.#{$grid-code-sep}align-left {
       align-items: flex-start;
     }
 
-    &.align-right, &.#{$grid-code-sep}align-right {
+    &.#{$grid-code-sep}align-right {
       justify-content: flex-end;
-      // align-items: end;
     }
 
-    &.align-bottom, &.#{$grid-code-sep}align-bottom {
+    &.#{$grid-code-sep}align-bottom {
       align-items: flex-end;
     }
 
-    &.align-center, &.#{$grid-code-sep}align-center {
+    &.#{$grid-code-sep}align-center {
       justify-content: center;
     }
 
-    &.align-middle-center, &.#{$grid-code-sep}align-middle-center {
+    &.#{$grid-code-sep}align-middle-center {
       justify-content: center;
       align-content: center;
       align-items: center;
     }
 
-    &.align-stretch , &.#{$grid-code-sep}align-stretch {
+    &.#{$grid-code-sep}align-stretch {
       color: blue;
       align-items: stretch;
     }
@@ -85,85 +84,67 @@ $grid-code-sep: #{$grid-code}#{$sep};
       max-height: 100%;
     }
 
-    &.align-middle, &.#{$grid-code-sep}align-middle {
+    &.#{$grid-code-sep}align-middle {
       justify-content: center;
     }
 
-    &.align-top, &.#{$grid-code-sep}align-top {
+    &.#{$grid-code-sep}align-top {
       justify-content: flex-start;
     }
 
-    &.align-left, &.#{$grid-code-sep}align-left {
+    &.#{$grid-code-sep}align-left {
       align-items: flex-start;
     }
 
-    &.align-right, &.#{$grid-code-sep}align-right {
+    &.#{$grid-code-sep}align-right {
       align-items: flex-end;
     }
 
-    &.align-bottom, &.#{$grid-code-sep}align-bottom {
+    &.#{$grid-code-sep}align-bottom {
       justify-content: flex-end;
     }
 
-    &.align-center, &.#{$grid-code-sep}align-center {
+    &.#{$grid-code-sep}align-center {
       align-items: center;
     }
 
-    &.align-middle-center, &.#{$grid-code-sep}align-middle-center {
+    &.#{$grid-code-sep}align-middle-center {
       align-items: center;
       justify-content: center;
     }
 
-    &.align-stretch, &.#{$grid-code-sep}align-stretch {
+    &.#{$grid-code-sep}align-stretch {
       color: red;
       align-items: stretch;
     }
   }
 
-  .#{$h_prop},
-  .#{$v_prop} {
-    box-sizing: border-box;
 
-    & > * {
-      box-sizing: border-box;
-    }
+  .#{$grid-code-sep}inline {
+    display: inline-flex;
+  }
 
-    & > *:not(.#{$grid-code-sep}#{$gridFullWidth}) {
-      flex: 0 0 auto;
-    }
-
-    &.#{$grid-code-sep}inline {
-      display: inline-flex;
-    }
-
-    @for $i from 1 through $grow-shrink-steps {
-      & .#{$grid-code-sep}grow#{$sep}#{$i} {
-        flex-grow: $i;
-      }
-
-      & .#{$grid-code-sep}shrink#{$sep}#{$i} {
-        flex-shrink: $i;
-      }
+  // wrap rules
+  .#{$grid-code} {
+    @each $fabricRule, $value in map-get($cssProps, flexWrap) {
+      @include utils.fabricAttributes('&'+$sep, $fabricRule, 'flex-wrap', $value);
     }
   }
 
-  /** raw css properties distribution */
-  .#{$h_prop},
-  .#{$v_prop} {
-    // wrap rules
-    &.#{$grid-code} {
-      @each $fabricRule, $value in map-get($cssProps, flexWrap) {
-        @include utils.fabricAttributes('&'+$sep, $fabricRule, 'flex-wrap', $value);
-      }
-    }
-
-    // align-self rules for children */
-    & .self {
-      @each $fabricRule, $value in map-get($cssItemsProps, self) {
-        @include utils.fabricAttributes('&-', $fabricRule, 'align-self', $value);
-      }
+  // align-self rules for children */
+  .self {
+    @each $fabricRule, $value in map-get($cssItemsProps, self) {
+      @include utils.fabricAttributes('&-', $fabricRule, 'align-self', $value);
     }
   }
+  @for $i from 0 through $grow-shrink-steps {
+    .#{$grid-code-sep}grow#{$sep}#{$i} {
+      flex-grow: #{$i};
+    }
 
+    .#{$grid-code-sep}shrink#{$sep}#{$i} {
+      flex-shrink: $i;
+    }
+  }
 
 }
