@@ -12,7 +12,7 @@ $min_value: 0;
 
 @each $mq_size_key,
 $mq_size_value in $_media_quey_sizes {
-    @include utils.fabricResponsiveEncloser($mq_size_value, $min_value) {
+    @include utils.responsive_encloser($mq_size_value, $min_value) {
         @include build.buildMenu($mq_size_key);
     }
     $min_value: $mq_size_value;

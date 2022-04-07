@@ -1,3 +1,6 @@
-@use 'menu-build' as build;
 
-@include build.buildMenu(null);
+// load scss config file
+@use 'menu-build' as build; 
+
+
+@include build.buildMenu(null)
