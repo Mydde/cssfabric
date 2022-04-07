@@ -13,16 +13,14 @@ $theme-levels: map-get($theme-config, theme-level-config);
 $theme-properties-apply-config: map-get($theme-config, theme-properties-apply-config);
 
 $color-primary: map-get($color-themes, primary);
-$color-secondary: complement($color-primary);
-$color-tertiary: complement(invert($color-primary));
+$color-secondary: map-get($color-themes, secondary);
+$color-tertiary: map-get($color-themes, tertiary);
 
 $declinations-config: map-get($theme-config, declinations-config);
 
 @mixin fabric_theme($mq_size_key: null) {
   // loop on each color grades
   @each $color-grade in $declinations-config {
-    $switch-color-grad: utils.themeDeclinationColors($color-grade, $color-primary);
-
 
     @each $text-or-bg-or-border in $theme-properties-apply-config {
       $property_key: if($mq_size_key, #{$text-or-bg-or-border}-#{$mq_size_key}, #{$text-or-bg-or-border});

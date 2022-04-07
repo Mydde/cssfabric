@@ -196,7 +196,7 @@
                     "bg-themed",
                     "border-color"],
                     "theme": {
-                        "primary": "#0288d1", "foreground": "#282230", "background": "#f1f1f1"
+                        "primary": "#0288d1", "secondary": "#0288d1", "tertiary": "#0288d1", "foreground": "#282230", "background": "#f1f1f1"
                     }
 
                     ,
@@ -692,7 +692,7 @@
                     "moduleName": "theme",
                     "moduleNameShort": "theme",
                     "color-default-config": {
-                        "primary": "#0288d1", "foreground": "#282230", "background": "#f1f1f1"
+                        "primary": "#0288d1", "secondary": "#0288d1", "tertiary": "#0288d1", "foreground": "#282230", "background": "#f1f1f1"
                     }
 
                     ,
@@ -709,7 +709,7 @@
                     "bg",
                     "border"],
                     "color": {
-                        "primary": "#0288d1", "primary-light": "#23b0fd", "primary-lighter": "#6ecbfe", "primary-dark": "#02679e", "primary-darker": "#01466c", "primary-complement": "#d14b02", "primary-invert": "#fd772e", "secondary": "#d14b02", "secondary-light": "#fd7023", "secondary-lighter": "#fea16e", "secondary-dark": "#9e3902", "secondary-darker": "#6c2701", "secondary-complement": "#0288d1", "secondary-invert": "#2eb4fd", "tertiary": "#0288d1", "tertiary-light": "#23b0fd", "tertiary-lighter": "#6ecbfe", "tertiary-dark": "#02679e", "tertiary-darker": "#01466c", "tertiary-complement": "#d14b02", "tertiary-invert": "#fd772e"
+                        "primary": "#0288d1", "primary-light": "#23b0fd", "primary-lighter": "#6ecbfe", "primary-dark": "#02679e", "primary-darker": "#01466c", "primary-complement": "#d14b02", "primary-invert": "#fd772e", "secondary": "#0288d1", "secondary-light": "#23b0fd", "secondary-lighter": "#6ecbfe", "secondary-dark": "#02679e", "secondary-darker": "#01466c", "secondary-complement": "#d14b02", "secondary-invert": "#fd772e", "tertiary": "#0288d1", "tertiary-light": "#23b0fd", "tertiary-lighter": "#6ecbfe", "tertiary-dark": "#02679e", "tertiary-darker": "#01466c", "tertiary-complement": "#d14b02", "tertiary-invert": "#fd772e"
                     }
                 }
 

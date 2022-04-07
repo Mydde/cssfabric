@@ -95,19 +95,6 @@
   @return $switch-named;
 }
 
-@function themeDeclinationColors($theme-color: primary, $theme-color-primary) {
-  $switch-theme-color: map-get(
-                  (
-                          primary: $theme-color-primary,
-                          secondary: complement($theme-color-primary),
-                          tertiary: complement(complement($theme-color-primary))
-                  ),
-                  $theme-color
-  );
-
-  @return $switch-theme-color;
-}
-
 @function getColorPropertyType($fabric-tag) {
   /** get property for #{$fabric-tag} */
   @return map-get(
@@ -124,8 +111,9 @@
 
 @function getThemeLevels($declinations-config, $color_primary) {
   $out: ();
-  @each $color-grade in $declinations-config {
-    $color: themeDeclinationColors($color-grade, $color_primary);
+  // primary secondary tertiary
+  @each $color-grade,$color-value in $declinations-config {
+    $color: $color-value;
     $out: map.set($out, $color-grade, $color);
     @each $theme-level in (light lighter dark darker complement invert) {
       $new-theme-level: #{$color-grade}-#{$theme-level};

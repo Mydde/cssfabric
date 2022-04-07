@@ -7,6 +7,7 @@
 @use "../../cssfabric/modules/theme/theme-build" as themeBuild;
 @use "../../cssfabric/modules/text/text-build" as textBuild;
 
+
 $config: cssfabric-config.$cssfabric-config;
 /* cssFabric vars */
 
@@ -51,8 +52,6 @@ $box-shadow-shorthand-config: map-get($box-config, shadow-shorthand-config) !def
 
   --theme-color-border: var(--theme-color-primary-alpha-mid);
   --theme-color-overlay: '';
-
-
 
 
   /* color-scheme */

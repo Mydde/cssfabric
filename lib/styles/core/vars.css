@@ -12,7 +12,7 @@
   --theme-color-primary-alpha-mid: rgba(2, 136, 209, 0.3);
   --theme-color-primary-alpha-high: rgba(2, 136, 209, 0.1);
   /* theme secondary colors*/
-  --theme-color-secondary: #d14b02;
+  --theme-color-secondary: #D14B02;
   --theme-color-secondary-light: #fd7023;
   --theme-color-secondary-lighter: #fea16e;
   --theme-color-secondary-dark: #9e3902;
@@ -23,16 +23,16 @@
   --theme-color-secondary-alpha-mid: rgba(209, 75, 2, 0.3);
   --theme-color-secondary-alpha-high: rgba(209, 75, 2, 0.1);
   /* theme tertiary colors*/
-  --theme-color-tertiary: #2eb4fd;
-  --theme-color-tertiary-light: #7acffe;
-  --theme-color-tertiary-lighter: #c6eafe;
-  --theme-color-tertiary-dark: #02a0f6;
-  --theme-color-tertiary-darker: #027fc3;
-  --theme-color-tertiary-complement: #fd772e;
-  --theme-color-tertiary-invert: #d14b02;
-  --theme-color-tertiary-alpha-low: rgba(46, 180, 253, 0.8);
-  --theme-color-tertiary-alpha-mid: rgba(46, 180, 253, 0.3);
-  --theme-color-tertiary-alpha-high: rgba(46, 180, 253, 0.1);
+  --theme-color-tertiary: #88D102;
+  --theme-color-tertiary-light: #b0fd23;
+  --theme-color-tertiary-lighter: #cbfe6e;
+  --theme-color-tertiary-dark: #679e02;
+  --theme-color-tertiary-darker: #466c01;
+  --theme-color-tertiary-complement: #4b02d1;
+  --theme-color-tertiary-invert: #772efd;
+  --theme-color-tertiary-alpha-low: rgba(136, 209, 2, 0.8);
+  --theme-color-tertiary-alpha-mid: rgba(136, 209, 2, 0.3);
+  --theme-color-tertiary-alpha-high: rgba(136, 209, 2, 0.1);
   --theme-color-foreground: #282230;
   --theme-color-text: #282230;
   --theme-color-background: #f1f1f1;

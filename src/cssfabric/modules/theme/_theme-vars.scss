@@ -6,11 +6,16 @@ $config: cssfabric-config.$cssfabric-config;
 
 $theme: map-get($config, theme);
 
-$_color-primary: map-get($theme, primary) !default;
+$color-primary: map-get($theme, primary) !default;
+$color-secondary: map-get($theme, secondary) !default;
+$color-tertiary: map-get($theme, tertiary) !default;
+
 $_foreground: map-get($theme, foreground) !default;
 $_background: map-get($theme, background) !default;
 
 $_declinations-config: (primary, secondary, tertiary);
+$themeii: (primary: $color-primary, secondary:$color-secondary, tertiary:$color-tertiary);
+
 $_theme-levels: (light lighter dark darker complement invert);
 $_theme-properties-apply: (text, bg, border);
 
@@ -28,14 +33,17 @@ $theme-config: (
         moduleName: theme,
         moduleNameShort: theme,
         color-default-config: (
-                primary: $_color-primary,
+                primary: $color-primary,
+                secondary: $color-secondary,
+                tertiary: $color-tertiary,
                 foreground: $_foreground,
                 background: $_background
         ),
         declinations-config:$_declinations-config,
         theme-level-config:$_theme-levels,
         theme-properties-apply-config:$_theme-properties-apply,
-        color: utils.getThemeLevels($_declinations-config, $_color-primary)
+        // primary secondary tertiary
+        color: utils.getThemeLevels($themeii, $color-primary)
 );
 
 $theme-docs: (attributes:(
