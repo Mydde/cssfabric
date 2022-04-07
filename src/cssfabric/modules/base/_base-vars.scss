@@ -1,5 +1,6 @@
+ 
 @use '../../_utils';
-
+ 
 $base-metadata: (
     title: "base",
     tag: "base",
@@ -14,4 +15,5 @@ $base-config: (
     sizes: utils.get_fabric_conf(sizes)
 );
 
-$base-docs: ();
+$base-docs: ( 
+);
