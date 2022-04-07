@@ -6,7 +6,7 @@
                     "cfg-has-dimension-strict": true,
                     "CFG_HAS_DIMENSION_MIN": true,
                     "CFG_HAS_DIMENSION_MAX": true,
-                    "size_step": "0.25rem",
+                    "size_step": "0.5rem",
                     "sep": "-",
                     "sizes": {
                         "tiny": 32, "small": 64, "medium": 256, "large": 250, "full": "100%"
@@ -54,7 +54,7 @@
                     "cfg-has-dimension-strict": true,
                     "CFG_HAS_DIMENSION_MIN": true,
                     "CFG_HAS_DIMENSION_MAX": true,
-                    "size_step": "0.25rem",
+                    "size_step": "0.5rem",
                     "sizes": {
                         "tiny": 32, "small": 64, "medium": 256, "large": 250, "full": "100%"
                     }
@@ -68,11 +68,11 @@
                 "_data": {
                     "unit-config": "rem",
                     "border-unit-config": "px",
-                    "unit-size-config": 0.25,
+                    "unit-size-config": 0.5,
                     "unit-border-size-config": 1,
-                    "sizes-config": 8,
+                    "sizes-config": 20,
                     "border-sizes-px-config": 5,
-                    "shadows-steps": 6,
+                    "shadows-steps": 10,
                     "shadows_step_multiplier": 2,
                     "position-shorthand-config": "pos",
                     "display-shorthand-config": "dsp",
@@ -109,10 +109,10 @@
                                 "ii",
                                 "tb"],
                             "values": {
-                                "_": "_", "1": "0.25rem", "2": "0.5rem", "3": "0.75rem", "4": "1rem", "5": "1.25rem", "6": "1.5rem", "7": "1.75rem", "8": "2rem"
+                                "_": "_", "1": "0.5rem", "2": "1rem", "3": "1.5rem", "4": "2rem", "5": "2.5rem", "6": "3rem", "7": "3.5rem", "8": "4rem", "9": "4.5rem", "10": "5rem", "11": "5.5rem", "12": "6rem", "13": "6.5rem", "14": "7rem", "15": "7.5rem", "16": "8rem", "17": "8.5rem", "18": "9rem", "19": "9.5rem", "20": "10rem"
                             },
                             "levels": {
-                                "_": ["_", 1, 2, 3, 4, 5, 6, 7, 8]
+                                "_": ["_", 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20]
                             },
                             "about": "padding properties for html elements"
                         },
@@ -128,10 +128,10 @@
                                 "ii",
                                 "tb"],
                             "values": {
-                                "_": "_", "1": "0.25rem", "2": "0.5rem", "3": "0.75rem", "4": "1rem", "5": "1.25rem", "6": "1.5rem", "7": "1.75rem", "8": "2rem"
+                                "_": "_", "1": "0.5rem", "2": "1rem", "3": "1.5rem", "4": "2rem", "5": "2.5rem", "6": "3rem", "7": "3.5rem", "8": "4rem", "9": "4.5rem", "10": "5rem", "11": "5.5rem", "12": "6rem", "13": "6.5rem", "14": "7rem", "15": "7.5rem", "16": "8rem", "17": "8.5rem", "18": "9rem", "19": "9.5rem", "20": "10rem"
                             },
                             "levels": {
-                                "_": ["_", 1, 2, 3, 4, 5, 6, 7, 8]
+                                "_": ["_", 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20]
                             },
                             "about": "margin properties for html elements"
                         },
@@ -245,6 +245,54 @@
                     }
                 }
             },
+            "flex": {
+                "_data": {
+                    "moduleName": "flex",
+                    "moduleNameShort": "flex",
+                    "horCode": "h",
+                    "vertCode": "v",
+                    "gridFullWidth": "main",
+                    "grow-shrink-steps": 4,
+                    "cssProps": {
+                        "flexWrap": {
+                            "wrap": "wrap", "wrap-reverse": "wrap-reverse"
+                        },
+                        "grid-justify": {
+                            "start": "flex-start", "end": "flex-end", "between": "space-between", "stretch": "stretch", "center": "flex-center"
+                        },
+                        "grid-items": {
+                            "baseline": "baseline", "stretch": "stretch", "start": "flex-start", "center": "center", "end": "flex-end"
+                        },
+                        "grid-content": {
+                            "start": "flex-start", "center": "center", "end": "flex-end", "between": "space-between", "equal": "space-evenly"
+                        }
+                    },
+                    "cssItemsProps": {
+                        "self": {
+                            "start": "flex-start", "end": "flex-end", "stretch": "stretch"
+                        }
+                    }
+                },
+                "_metadata": {
+                    "title": "flex", "tag": "flex", "description": "cssfabric flex system module"
+                },
+                "_docs": {
+                    "attributes": {
+                        "grid": {
+                            "tag": "flex",
+                            "keys": ["v",
+                                "h"],
+                            "classNames": {
+                                "align": ["top", "middle", "bottom", "left", "right", "center", "middle-center", "stretch"], "grid": ["wrap", "wrap-reverse"]
+                            },
+                            "about": "a classic grid system, and hey, it gets height !"
+                        },
+                        "self": {
+                            "tag": "self", "keys": ["start", "end", "stretch"], "about": "grid children specific classnames"
+                        }
+                    }
+                }
+            },
             "grid": {
                 "_data": {
                     "moduleName": "grid",
@@ -352,6 +400,25 @@
                     }
                 }
             },
+            "table": {
+                "_data": {
+                    "className": "table", "classNameShort": "tbl", "table_class_name": "table", "table_class_name_short": "tbl", "table-bg-color-head": "#f4f4f4", "table-bg-color-strip-main": "#ededed", "table-bg-color-strip-second": "#f5f5f5", "table-border-color-header": "#ccc", "table-border-color-main": "#ededed", "table-border-color-second": "#f5f5f5"
+                },
+                "_metadata": {
+                    "title": "table", "tag": "table", "description": "cssfabric table module to set different table styles"
+                },
+                "_docs": {
+                    "attributes": {
+                        "table": {
+                            "tag": "table",
+                            "classNames": {
+                                "_": ["bg-strip-2", "bg-strip-5"], "_pos": ["sticky", "layout"], "_deco": ["h-line", "v-line", "border"]
+                            },
+                            "about": "is a table"
+                        }
+                    }
+                }
+            },
             "scale": {
                 "_data": {
                     "weight-config": "1em",
@@ -401,25 +468,6 @@
                             "levels": {
                                 "_size": ["full", "mid", "quarter", "tiers"], "_content": ["content-max", "content-min"], "_defined-steps": [1, 2, 4, 8, 16, 24, 32, 48, 64], "_grid-5": ["1-5", "2-5", "3-5", "4-5", "5-5"], "_grid-12": ["1-12", "2-12", "3-12", "4-12", "5-12", "6-12", "7-12", "8-12", "9-12", "10-12", "11-12", "12-12"]
                             }
-                        }
-                    }
-                }
-            },
-            "table": {
-                "_data": {
-                    "className": "table", "classNameShort": "tbl", "table_class_name": "table", "table_class_name_short": "tbl", "table-bg-color-head": "#f4f4f4", "table-bg-color-strip-main": "#ededed", "table-bg-color-strip-second": "#f5f5f5", "table-border-color-header": "#ccc", "table-border-color-main": "#ededed", "table-border-color-second": "#f5f5f5"
-                },
-                "_metadata": {
-                    "title": "table", "tag": "table", "description": "cssfabric table module to set different table styles"
-                },
-                "_docs": {
-                    "attributes": {
-                        "table": {
-                            "tag": "table",
-                            "classNames": {
-                                "_": ["bg-strip-2", "bg-strip-5"], "_pos": ["sticky", "layout"], "_deco": ["h-line", "v-line", "border"]
-                            },
-                            "about": "is a table"
                         }
                     }
                 }

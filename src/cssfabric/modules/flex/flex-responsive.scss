@@ -2,7 +2,7 @@
 
 // load scss config file
 @use '../../_utils';
-@use '_grid-build' as build;
+@use '_flex-build' as build;
 @use "../cssfabric-config";
 // load general config variables
 $config: cssfabric-config.$cssfabric-config;
@@ -11,13 +11,13 @@ $config: cssfabric-config.$cssfabric-config;
 // media queries sizes, in rem
 $_media_quey_sizes: map-get($config, media_quey_sizes);
  
-
+ 
 // builder responsive  
 $min_value: 0;
 
 @each $mq_size_key,
 $mq_size_value in $_media_quey_sizes {
-  @include utils.responsive_encloser($mq_size_value,$min_value) {
+  @include utils.fabricResponsiveEncloser($mq_size_value,$min_value) {
     @include build.makeGrid($mq_size_key);
   }
   $min_value: $mq_size_value;

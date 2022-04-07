@@ -1,9 +1,9 @@
 @use 'scale-vars';
 @use '../../_utils';
-@use '../../_loader';
+@use "sass:math";
 
 $scale-config: scale-vars.$scale-config;
-$_cfg: loader.get_fabric_conf();
+$_cfg: utils.get_fabric_conf();
 $cssProps: map-get($scale-config, cssProps);
 
 // read variables
@@ -55,7 +55,7 @@ $unit-tag-config: map-get($scale-config, unit-tag-config)!default;
   }
 }
 
-// loop on shorthands
+// loop on shorthands // ok
 @mixin play_shorthand_loop($scale_prop, $mq_size_key) {
   @each $scale_shorthand, $scale_shorthand_value in $scale-sizes {
     @include scale-classname-builder(
@@ -105,7 +105,7 @@ $unit-tag-config: map-get($scale-config, unit-tag-config)!default;
       @include scale-classname-builder(
                       $scale_prop,
                       $z_value + "-" + $dimensions_grid_ratio,
-                      (($z_value / $dimensions_grid_ratio) * 100) +#{"%"},
+                      (math.div($z_value , $dimensions_grid_ratio) * 100) +#{"%"},
                       $mq_size_key
       );
     }

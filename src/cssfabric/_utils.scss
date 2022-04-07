@@ -1,5 +1,22 @@
 @use "sass:string";
 @use "sass:map";
+@use "sass:math";
+// load main fabric vars
+@use 'modules/cssfabric-config' as cssfabric-config;
+
+// link to fabric conf scss file, which often move ;)
+@function get_fabric_conf($prop: null,$val: null) {
+  @if not $prop {
+    @return cssfabric-config.$cssfabric-config;
+  }
+  @if  $prop and not $val {
+    @return  map-get(cssfabric-config.$cssfabric-config, $prop);
+  }
+  @if  $val {
+    $in: map-get(cssfabric-config.$cssfabric-config, $prop);
+    @return  map-get($in, $prop,$val);
+  }
+}
 
 // css dimensions rules builder responsive
 @mixin fabricResponsiveEncloser($mq_size_value, $mq_min_size_value: null) {
@@ -54,7 +71,7 @@
 
   @for $i from 0 through $steps {
 
-    $color: mix($gray-end, $gray-start, $i / $steps * 100%);
+    $color: mix($gray-end, $gray-start, math.div($i , $steps) * 100%);
 
     $gray-schemes: map.set($gray-schemes, #{($i+1) * 100}, $color);
   }
@@ -145,11 +162,11 @@
     $acc: $acc * 2;
     $v: $shadows_step * 2;
 
-    $v_val: $acc / $v_fact;
-    $h_val: $acc / $h_fact;
+    $v_val: math.div($acc , $v_fact);
+    $h_val: math.div($acc , $h_fact);
 
-    $v_val_2: $acc / $v_fact_2;
-    $h_val_2: $acc / $h_fact_2;
+    $v_val_2: math.div($acc , $v_fact_2);
+    $h_val_2: math.div($acc , $h_fact_2);
 
     $out: map.set($out, $acc, #{$v_val} + #{$h_val});
   }
@@ -162,7 +179,7 @@
 
   @for $z_value from 1 through $dimensions_grid_ratio {
     $key: $z_value + "-" + $dimensions_grid_ratio;
-    $val: (($z_value / $dimensions_grid_ratio) * 100) +#{"%"};
+    $val: (math.div($z_value , $dimensions_grid_ratio) * 100) +#{"%"};
 
     $out: map.set($out, $key, $val);
   }

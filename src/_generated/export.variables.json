@@ -1,59 +1,6 @@
 {
     "cssfabric": {
         "modules": {
-            "cssfabric": {
-                "_data": {
-
-                    "cfg-has-dimension-strict": true,
-                    "CFG_HAS_DIMENSION_MIN": true,
-                    "CFG_HAS_DIMENSION_MAX": true,
-                    "size_step": "0.25rem",
-                    "sep": "-",
-                    "sizes": {
-                        "tiny": 32, "small": 64, "medium": 256, "large": 250, "full": "100%"
-                    }
-
-                    ,
-                    "media_quey_sizes": {
-                        "xxxl": 180, "xxl": 120, "xl": 90, "lg": 64, "md": 48, "sm": 35.7
-                    }
-
-                    ,
-                    "theme": {
-                        "primary": "orange", "foreground": "#333", "background": "#ededed"
-                    }
-
-                    ,
-                    "scheme": {
-                        "discrete": "#ccc", "success": "green", "info": "#ffdd57", "warning": "#e6b905", "alert": "#ff7300", "error": "red"
-                    }
-
-                    ,
-                    "palette": {
-                        "yellow": "#ffb900", "orange": "#d83b01", "red": "#d13438", "magenta": "#b4009e", "purple": "#5c2d91", "green": "#107c10", "teal": "#008272", "blue": "#0078d4"
-                    }
-
-                    ,
-                    "gray": {
-                        "100": "#f4f4f4", "200": "#e9e9e9", "300": "#dddddd", "400": "#d2d2d2", "500": "#c7c7c7", "600": "#bbbbbb", "700": "#b0b0b0", "800": "#a4a4a4", "900": "#999999"
-                    }
-
-                    ,
-                    "gray-config": {
-                        "start": "#f4f4f4", "end": "#999", "steps": 8
-                    }
-                }
-
-                ,
-                "_metadata": {
-                    "title": "cssfabric", "tag": "cssfabric", "description": "cssfabric global config variables"
-                }
-
-                ,
-                "_docs": []
-            }
-
-            ,
             "animation": {
                 "_data": {
 
@@ -81,9 +28,9 @@
                     "cfg-has-dimension-strict": true,
                     "CFG_HAS_DIMENSION_MIN": true,
                     "CFG_HAS_DIMENSION_MAX": true,
-                    "size_step": "0.25rem",
+                    "size_step": "0.5rem",
                     "sizes": {
-                        "tiny": 32, "small": 64, "medium": 256, "large": 250, "full": "100%"
+                        "tiny": 32, "small": 64, "medium": 128, "large": 256, "full": "100%"
                     }
                 }
 
@@ -102,11 +49,11 @@
 
                     "unit-config": "rem",
                     "border-unit-config": "px",
-                    "unit-size-config": 0.25,
+                    "unit-size-config": 0.5,
                     "unit-border-size-config": 1,
-                    "sizes-config": 8,
+                    "sizes-config": 32,
                     "border-sizes-px-config": 5,
-                    "shadows-steps": 6,
+                    "shadows-steps": 10,
                     "shadows_step_multiplier": 2,
                     "position-shorthand-config": "pos",
                     "display-shorthand-config": "dsp",
@@ -152,12 +99,12 @@
                             "ii",
                             "tb"],
                             "values": {
-                                "_": "_", "1": "0.25rem", "2": "0.5rem", "3": "0.75rem", "4": "1rem", "5": "1.25rem", "6": "1.5rem", "7": "1.75rem", "8": "2rem"
+                                "_": "_", "1": "0.5rem", "2": "1rem", "3": "1.5rem", "4": "2rem", "5": "2.5rem", "6": "3rem", "7": "3.5rem", "8": "4rem", "9": "4.5rem", "10": "5rem", "11": "5.5rem", "12": "6rem", "13": "6.5rem", "14": "7rem", "15": "7.5rem", "16": "8rem", "17": "8.5rem", "18": "9rem", "19": "9.5rem", "20": "10rem", "21": "10.5rem", "22": "11rem", "23": "11.5rem", "24": "12rem", "25": "12.5rem", "26": "13rem", "27": "13.5rem", "28": "14rem", "29": "14.5rem", "30": "15rem", "31": "15.5rem", "32": "16rem"
                             }
 
                             ,
                             "levels": {
-                                "_": ["_", 1, 2, 3, 4, 5, 6, 7, 8]
+                                "_": ["_", 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32]
                             }
 
                             ,
@@ -178,12 +125,12 @@
                             "ii",
                             "tb"],
                             "values": {
-                                "_": "_", "1": "0.25rem", "2": "0.5rem", "3": "0.75rem", "4": "1rem", "5": "1.25rem", "6": "1.5rem", "7": "1.75rem", "8": "2rem"
+                                "_": "_", "1": "0.5rem", "2": "1rem", "3": "1.5rem", "4": "2rem", "5": "2.5rem", "6": "3rem", "7": "3.5rem", "8": "4rem", "9": "4.5rem", "10": "5rem", "11": "5.5rem", "12": "6rem", "13": "6.5rem", "14": "7rem", "15": "7.5rem", "16": "8rem", "17": "8.5rem", "18": "9rem", "19": "9.5rem", "20": "10rem", "21": "10.5rem", "22": "11rem", "23": "11.5rem", "24": "12rem", "25": "12.5rem", "26": "13rem", "27": "13.5rem", "28": "14rem", "29": "14.5rem", "30": "15rem", "31": "15.5rem", "32": "16rem"
                             }
 
                             ,
                             "levels": {
-                                "_": ["_", 1, 2, 3, 4, 5, 6, 7, 8]
+                                "_": ["_", 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32]
                             }
 
                             ,
@@ -249,7 +196,7 @@
                     "bg-themed",
                     "border-color"],
                     "theme": {
-                        "primary": "orange", "foreground": "#333", "background": "#ededed"
+                        "primary": "#0288d1", "foreground": "#282230", "background": "#f1f1f1"
                     }
 
                     ,
@@ -259,13 +206,11 @@
 
                     ,
                     "palette": {
-                        "yellow": "#ffb900", "orange": "#d83b01", "red": "#d13438", "magenta": "#b4009e", "purple": "#5c2d91", "green": "#107c10", "teal": "#008272", "blue": "#0078d4"
+                        "yellow": "#ffb900", "orange": "#d83b01", "red": "#d13438", "magenta": "#b4009e", "purple": "#5c2d91", "green": "#107c10", "teal": "#008272", "blue": "#0078d4", "dark": "#323232"
                     }
 
                     ,
-                    "gray": {
-                        "100": "#f4f4f4", "200": "#e9e9e9", "300": "#dddddd", "400": "#d2d2d2", "500": "#c7c7c7", "600": "#bbbbbb", "700": "#b0b0b0", "800": "#a4a4a4", "900": "#999999"
-                    }
+                    "gray": "getGraySteps(8, #f4f4f4, #999)"
                 }
 
                 ,
@@ -283,7 +228,7 @@
                             "palette",
                             "gray"],
                             "levelsLinked": {
-                                "scheme": ["discrete", "success", "info", "warning", "alert", "error"], "palette": ["yellow", "orange", "red", "magenta", "purple", "green", "teal", "blue"], "gray": ["100", "200", "300", "400", "500", "600", "700", "800", "900"]
+                                "scheme": ["discrete", "success", "info", "warning", "alert", "error"], "palette": ["yellow", "orange", "red", "magenta", "purple", "green", "teal", "blue", "dark"], "gray": ["getGraySteps(8, #f4f4f4, #999)"]
                             }
 
                             ,
@@ -303,7 +248,7 @@
                             "palette",
                             "gray"],
                             "levelsLinked": {
-                                "scheme": ["discrete", "success", "info", "warning", "alert", "error"], "palette": ["yellow", "orange", "red", "magenta", "purple", "green", "teal", "blue"], "gray": ["100", "200", "300", "400", "500", "600", "700", "800", "900"]
+                                "scheme": ["discrete", "success", "info", "warning", "alert", "error"], "palette": ["yellow", "orange", "red", "magenta", "purple", "green", "teal", "blue", "dark"], "gray": ["getGraySteps(8, #f4f4f4, #999)"]
                             }
 
                             ,
@@ -323,7 +268,7 @@
                             "palette",
                             "gray"],
                             "levelsLinked": {
-                                "gray": ["100", "200", "300", "400", "500", "600", "700", "800", "900"], "scheme": ["discrete", "success", "info", "warning", "alert", "error"], "palette": ["yellow", "orange", "red", "magenta", "purple", "green", "teal", "blue"]
+                                "gray": ["getGraySteps(8, #f4f4f4, #999)"], "scheme": ["discrete", "success", "info", "warning", "alert", "error"], "palette": ["yellow", "orange", "red", "magenta", "purple", "green", "teal", "blue", "dark"]
                             }
 
                             ,
@@ -342,11 +287,79 @@
                             "keys": ["palette",
                             "gray"],
                             "levelsLinked": {
-                                "gray": ["100", "200", "300", "400", "500", "600", "700", "800", "900"], "scheme": ["discrete", "success", "info", "warning", "alert", "error"], "palette": ["yellow", "orange", "red", "magenta", "purple", "green", "teal", "blue"]
+                                "gray": ["getGraySteps(8, #f4f4f4, #999)"], "scheme": ["discrete", "success", "info", "warning", "alert", "error"], "palette": ["yellow", "orange", "red", "magenta", "purple", "green", "teal", "blue", "dark"]
                             }
 
                             ,
                             "about": "border colors are slightly darker to maximize surrounding effect"
+                        }
+                    }
+                }
+            }
+
+            ,
+            "flex": {
+                "_data": {
+
+                    "moduleName": "flex",
+                    "moduleNameShort": "flex",
+                    "horCode": "h",
+                    "vertCode": "v",
+                    "gridFullWidth": "main",
+                    "grow-shrink-steps": 4,
+                    "cssProps": {
+                        "flexWrap": {
+                            "wrap": "wrap", "wrap-reverse": "wrap-reverse"
+                        }
+
+                        ,
+                        "grid-justify": {
+                            "start": "flex-start", "end": "flex-end", "between": "space-between", "stretch": "stretch", "center": "flex-center"
+                        }
+
+                        ,
+                        "grid-items": {
+                            "baseline": "baseline", "stretch": "stretch", "start": "flex-start", "center": "center", "end": "flex-end"
+                        }
+
+                        ,
+                        "grid-content": {
+                            "start": "flex-start", "center": "center", "end": "flex-end", "between": "space-between", "equal": "space-evenly"
+                        }
+                    }
+
+                    ,
+                    "cssItemsProps": {
+                        "self": {
+                            "start": "flex-start", "end": "flex-end", "stretch": "stretch"
+                        }
+                    }
+                }
+
+                ,
+                "_metadata": {
+                    "title": "flex", "tag": "flex", "description": "cssfabric flex system module"
+                }
+
+                ,
+                "_docs": {
+                    "attributes": {
+                        "grid": {
+
+                            "tag": "flex",
+                            "keys": ["v",
+                            "h"],
+                            "classNames": {
+                                "align": ["top", "middle", "bottom", "left", "right", "center", "middle-center", "stretch"], "grid": ["wrap", "wrap-reverse"]
+                            }
+
+                            ,
+                            "about": "a classic grid system, and hey, it gets height !"
+                        }
+
+                        ,
+                        "self": {
+                            "tag": "self", "keys": ["start", "end", "stretch"], "about": "grid children specific classnames"
                         }
                     }
                 }
@@ -628,13 +641,11 @@
 
                     ,
                     "palette": {
-                        "yellow": "#ffb900", "orange": "#d83b01", "red": "#d13438", "magenta": "#b4009e", "purple": "#5c2d91", "green": "#107c10", "teal": "#008272", "blue": "#0078d4"
+                        "yellow": "#ffb900", "orange": "#d83b01", "red": "#d13438", "magenta": "#b4009e", "purple": "#5c2d91", "green": "#107c10", "teal": "#008272", "blue": "#0078d4", "dark": "#323232"
                     }
 
                     ,
-                    "gray": {
-                        "100": "#f4f4f4", "200": "#e9e9e9", "300": "#dddddd", "400": "#d2d2d2", "500": "#c7c7c7", "600": "#bbbbbb", "700": "#b0b0b0", "800": "#a4a4a4", "900": "#999999"
-                    }
+                    "gray": "getGraySteps(8, #f4f4f4, #999)"
                 }
 
                 ,
@@ -681,7 +692,7 @@
                     "moduleName": "theme",
                     "moduleNameShort": "theme",
                     "color-default-config": {
-                        "primary": "orange", "foreground": "#333", "background": "#ededed"
+                        "primary": "#0288d1", "foreground": "#282230", "background": "#f1f1f1"
                     }
 
                     ,
@@ -698,7 +709,7 @@
                     "bg",
                     "border"],
                     "color": {
-                        "primary": "orange", "primary-light": "#ffc04d", "primary-lighter": "#ffdb99", "primary-dark": "#cc8400", "primary-darker": "#996300", "primary-complement": "#005aff", "primary-invert": "#005aff", "secondary": "#005aff", "secondary-light": "#4d8cff", "secondary-lighter": "#99bdff", "secondary-dark": "#0048cc", "secondary-darker": "#003699", "secondary-complement": "orange", "secondary-invert": "orange", "tertiary": "orange", "tertiary-light": "#ffc04d", "tertiary-lighter": "#ffdb99", "tertiary-dark": "#cc8400", "tertiary-darker": "#996300", "tertiary-complement": "#005aff", "tertiary-invert": "#005aff"
+                        "primary": "#0288d1", "primary-light": "#23b0fd", "primary-lighter": "#6ecbfe", "primary-dark": "#02679e", "primary-darker": "#01466c", "primary-complement": "#d14b02", "primary-invert": "#fd772e", "secondary": "#d14b02", "secondary-light": "#fd7023", "secondary-lighter": "#fea16e", "secondary-dark": "#9e3902", "secondary-darker": "#6c2701", "secondary-complement": "#0288d1", "secondary-invert": "#2eb4fd", "tertiary": "#0288d1", "tertiary-light": "#23b0fd", "tertiary-lighter": "#6ecbfe", "tertiary-dark": "#02679e", "tertiary-darker": "#01466c", "tertiary-complement": "#d14b02", "tertiary-invert": "#fd772e"
                     }
                 }
 

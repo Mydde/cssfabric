@@ -1,0 +1,120 @@
+@use "../_utils";
+@use "sass:color";
+@use 'cssfabric-config';
+@use '../../cssfabric/modules/color/color-vars';
+@use "../../cssfabric/modules/box/box-vars" as box;
+@use "../../cssfabric/modules/box/box-build" as boxBuild;
+@use "../../cssfabric/modules/theme/theme-build" as themeBuild;
+@use "../../cssfabric/modules/text/text-build" as textBuild;
+
+$config: cssfabric-config.$cssfabric-config;
+/* cssFabric vars */
+
+$tru: utils.get_fabric_conf('themes','light');
+
+// COLOR config
+$color-config: color-vars.$color-config;
+// COLOR SCHEMES
+$color-schemes: map-get($color-config, scheme);
+// COLOR PALETTE
+$color-palette: map-get($color-config, palette);
+// COLOR TYPES
+$color-types-config: map-get($color-config, color-types-config);
+
+$themes: map-get($config, themes) !default;
+$theme-light: map-get($themes, light) !default;
+$theme-dark: map-get($themes, dark) !default;
+
+// GRAYS
+$gray-config: map-get($color-config, gray-config) !default;
+$color-gray-start: map-get($gray-config, start) !default;
+$color-gray-end: map-get($gray-config, end) !default;
+$color-gray-steps: map-get($gray-config, steps) !default;
+$gray-schemes: utils.getGraySteps($color-gray-steps, $color-gray-start, $color-gray-end);
+
+
+// BOX config
+$box-config: box.$box-config;
+
+$box-shadows-steps: map-get($box-config, shadows-steps) !default;
+$box-shadows-step-multiplier: map-get($box-config, shadows-step_multiplier) !default;
+$box-shadow-shorthand-config: map-get($box-config, shadow-shorthand-config) !default;
+
+:root {
+
+  @include themeBuild.themeCssVars();
+
+  --theme-color-foreground: #{map-get($theme-light, foreground)};
+  --theme-color-text: #{map-get($theme-light, foreground)};
+  --theme-color-background: #{map-get($theme-light, background)};
+  --theme-color-paper: #{map-get($theme-light, paper)};
+
+  --theme-color-border: var(--theme-color-primary-alpha-mid);
+  --theme-color-overlay: '';
+
+
+
+
+  /* color-scheme */
+  @each $type-key, $type-prop in $color-schemes {
+    --color-scheme-#{$type-key} : #{$type-prop};
+    --color-scheme-#{$type-key}-light: #{utils.applyColorEffect('light',$type-prop)};
+    --color-scheme-#{$type-key}-dark: #{utils.applyColorEffect('dark',$type-prop)};
+  }
+
+  /* color-palette */
+  @each $type-key, $type-prop in $color-palette {
+    /* color-palette #{$type-key} */
+    --color-palette-#{$type-key} : #{$type-prop};
+
+    --color-palette-#{$type-key}-lighter: #{utils.applyColorEffect('lighter',$type-prop)};
+    --color-palette-#{$type-key}-light: #{utils.applyColorEffect('light',$type-prop)};
+    --color-palette-#{$type-key}-dark: #{utils.applyColorEffect('dark',$type-prop)};
+    --color-palette-#{$type-key}-darker: #{utils.applyColorEffect('darker',$type-prop)};
+    --color-palette-#{$type-key}-complement: #{utils.applyColorEffect('complement',$type-prop)};
+    --color-palette-#{$type-key}-invert: #{utils.applyColorEffect('invert',$type-prop)};
+
+    --color-palette-#{$type-key}-alpha-low: #{color.change($type-prop,$alpha:0.8)};
+    --color-palette-#{$type-key}-alpha-mid: #{color.change($type-prop,$alpha:0.3)};
+    --color-palette-#{$type-key}-alpha-high: #{color.change($type-prop,$alpha:0.1)};
+  }
+
+  /* grays */
+  @each $type-key, $type-prop in $gray-schemes {
+    --color-gray-#{$type-key} : #{$type-prop};
+    --color-gray-#{$type-key}-alpha-low: #{color.change($type-prop,$alpha:0.8)};
+  }
+
+  /* shadows */
+  @include boxBuild.shadowsCssVars();
+  /* boxes */
+  @include boxBuild.pmbCssVars();
+  /* text */
+  @include textBuild.textCssVars();
+
+}
+
+/*[data-theme="light"] {
+
+  --theme-color-foreground: #{map-get($theme-light, foreground)};
+  --theme-color-text: #{map-get($theme-light, foreground)};
+  --theme-color-background: #{map-get($theme-light, background)};
+  --theme-color-paper: #{map-get($theme-light, paper)};
+
+  --theme-color-border: var(--theme-color-primary-alpha-mid);
+  --theme-color-overlay: '';
+}*/
+
+[data-theme="dark"] {
+
+  --theme-color-foreground: #{map-get($theme-dark, foreground)};
+  --theme-color-text: #{map-get($theme-dark, foreground)};
+  --theme-color-background: #{map-get($theme-dark, background)};
+  --theme-color-paper: #{map-get($theme-dark, paper)};
+
+  --theme-color-border: var(--theme-color-primary-alpha-mid);
+  --theme-color-overlay: '';
+}
+
+
+
