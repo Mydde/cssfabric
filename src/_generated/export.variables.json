@@ -184,6 +184,120 @@
             }
 
             ,
+            "color": {
+                "_data": {
+                    "gray-config": {
+                        "start": "#f4f4f4", "end": "#999", "steps": 8
+                    }
+
+                    ,
+                    "color-types-config": ["color",
+                    "bg",
+                    "bg-themed",
+                    "border-color"],
+                    "theme": {
+                        "primary": "#0288d1", "secondary": "#D14B02", "tertiary": "#88D102", "foreground": "#282230", "background": "#f1f1f1"
+                    }
+
+                    ,
+                    "scheme": {
+                        "discrete": "#ccc", "success": "green", "info": "#ffdd57", "warning": "#e6b905", "alert": "#ff7300", "error": "red"
+                    }
+
+                    ,
+                    "palette": {
+                        "yellow": "#ffb900", "orange": "#d83b01", "red": "#d13438", "magenta": "#b4009e", "purple": "#5c2d91", "green": "#107c10", "teal": "#008272", "blue": "#0078d4", "dark": "#323232"
+                    }
+
+                    ,
+                    "gray": "getGraySteps(8, #f4f4f4, #999)"
+                }
+
+                ,
+                "_metadata": {
+                    "title": "color", "title_tag": "its about colors", "description": "cssfabric color system: its about colors"
+                }
+
+                ,
+                "_docs": {
+                    "attributes": {
+                        "color": {
+
+                            "tag": "color",
+                            "keys": ["scheme",
+                            "palette",
+                            "gray"],
+                            "levelsLinked": {
+                                "scheme": ["discrete", "success", "info", "warning", "alert", "error"], "palette": ["yellow", "orange", "red", "magenta", "purple", "green", "teal", "blue", "dark"], "gray": ["getGraySteps(8, #f4f4f4, #999)"]
+                            }
+
+                            ,
+                            "levelsDeclin": {
+                                "palette": ["_", "lighter", "light", "dark", "darker", "complement"]
+                            }
+
+                            ,
+                            "about": "color for text level html elements"
+                        }
+
+                        ,
+                        "background-color": {
+
+                            "tag": "bg",
+                            "keys": ["scheme",
+                            "palette",
+                            "gray"],
+                            "levelsLinked": {
+                                "scheme": ["discrete", "success", "info", "warning", "alert", "error"], "palette": ["yellow", "orange", "red", "magenta", "purple", "green", "teal", "blue", "dark"], "gray": ["getGraySteps(8, #f4f4f4, #999)"]
+                            }
+
+                            ,
+                            "levelsDeclin": {
+                                "palette": ["_", "lighter", "light", "dark", "darker", "complement"]
+                            }
+
+                            ,
+                            "about": "background colors"
+                        }
+
+                        ,
+                        "background-themed": {
+
+                            "tag": "bg-themed",
+                            "keys": ["scheme",
+                            "palette",
+                            "gray"],
+                            "levelsLinked": {
+                                "gray": ["getGraySteps(8, #f4f4f4, #999)"], "scheme": ["discrete", "success", "info", "warning", "alert", "error"], "palette": ["yellow", "orange", "red", "magenta", "purple", "green", "teal", "blue", "dark"]
+                            }
+
+                            ,
+                            "levelsDeclin": {
+                                "palette": ["_", "lighter", "light", "dark", "darker", "complement"]
+                            }
+
+                            ,
+                            "about": "same as background-color, but with added contrasted color to text"
+                        }
+
+                        ,
+                        "border-color": {
+
+                            "tag": "border-color",
+                            "keys": ["palette",
+                            "gray"],
+                            "levelsLinked": {
+                                "gray": ["getGraySteps(8, #f4f4f4, #999)"], "scheme": ["discrete", "success", "info", "warning", "alert", "error"], "palette": ["yellow", "orange", "red", "magenta", "purple", "green", "teal", "blue", "dark"]
+                            }
+
+                            ,
+                            "about": "border colors are slightly darker to maximize surrounding effect"
+                        }
+                    }
+                }
+            }
+
+            ,
             "flex": {
                 "_data": {
 
@@ -576,6 +690,23 @@
             }
 
             ,
+            "zindex": {
+                "_data": {
+                    "z_groups": ["a", "z"]
+                }
+
+                ,
+                "_metadata": {
+                    "title": "zindex", "tag": "zI", "description": "cssfabric zindex module to set z-index on all html elements"
+                }
+
+                ,
+                "_docs": {
+                    "z_groups": "_"
+                }
+            }
+
+            ,
             "theme": {
                 "_data": {
 
@@ -620,137 +751,6 @@
                             "levels": {
                                 "primary": ["_", "light", "lighter", "dark", "darker", "complement", "invert"], "secondary": ["_", "light", "lighter", "dark", "darker", "complement", "invert"], "tertiary": ["_", "light", "lighter", "dark", "darker", "complement", "invert"]
                             }
-                        }
-                    }
-                }
-            }
-
-            ,
-            "zindex": {
-                "_data": {
-                    "z_groups": ["a", "z"]
-                }
-
-                ,
-                "_metadata": {
-                    "title": "zindex", "tag": "zI", "description": "cssfabric zindex module to set z-index on all html elements"
-                }
-
-                ,
-                "_docs": {
-                    "z_groups": "_"
-                }
-            }
-
-            ,
-            "color": {
-                "_data": {
-                    "gray-config": {
-                        "start": "#f4f4f4", "end": "#999", "steps": 8
-                    }
-
-                    ,
-                    "color-types-config": ["color",
-                    "bg",
-                    "bg-themed",
-                    "border-color"],
-                    "theme": {
-                        "primary": "#0288d1", "secondary": "#D14B02", "tertiary": "#88D102", "foreground": "#282230", "background": "#f1f1f1"
-                    }
-
-                    ,
-                    "scheme": {
-                        "discrete": "#ccc", "success": "green", "info": "#ffdd57", "warning": "#e6b905", "alert": "#ff7300", "error": "red"
-                    }
-
-                    ,
-                    "palette": {
-                        "yellow": "#ffb900", "orange": "#d83b01", "red": "#d13438", "magenta": "#b4009e", "purple": "#5c2d91", "green": "#107c10", "teal": "#008272", "blue": "#0078d4", "dark": "#323232"
-                    }
-
-                    ,
-                    "gray": "getGraySteps(8, #f4f4f4, #999)"
-                }
-
-                ,
-                "_metadata": {
-                    "title": "color", "title_tag": "its about colors", "description": "cssfabric color system: its about colors"
-                }
-
-                ,
-                "_docs": {
-                    "attributes": {
-                        "color": {
-
-                            "tag": "color",
-                            "keys": ["scheme",
-                            "palette",
-                            "gray"],
-                            "levelsLinked": {
-                                "scheme": ["discrete", "success", "info", "warning", "alert", "error"], "palette": ["yellow", "orange", "red", "magenta", "purple", "green", "teal", "blue", "dark"], "gray": ["getGraySteps(8, #f4f4f4, #999)"]
-                            }
-
-                            ,
-                            "levelsDeclin": {
-                                "palette": ["_", "lighter", "light", "dark", "darker", "complement"]
-                            }
-
-                            ,
-                            "about": "color for text level html elements"
-                        }
-
-                        ,
-                        "background-color": {
-
-                            "tag": "bg",
-                            "keys": ["scheme",
-                            "palette",
-                            "gray"],
-                            "levelsLinked": {
-                                "scheme": ["discrete", "success", "info", "warning", "alert", "error"], "palette": ["yellow", "orange", "red", "magenta", "purple", "green", "teal", "blue", "dark"], "gray": ["getGraySteps(8, #f4f4f4, #999)"]
-                            }
-
-                            ,
-                            "levelsDeclin": {
-                                "palette": ["_", "lighter", "light", "dark", "darker", "complement"]
-                            }
-
-                            ,
-                            "about": "background colors"
-                        }
-
-                        ,
-                        "background-themed": {
-
-                            "tag": "bg-themed",
-                            "keys": ["scheme",
-                            "palette",
-                            "gray"],
-                            "levelsLinked": {
-                                "gray": ["getGraySteps(8, #f4f4f4, #999)"], "scheme": ["discrete", "success", "info", "warning", "alert", "error"], "palette": ["yellow", "orange", "red", "magenta", "purple", "green", "teal", "blue", "dark"]
-                            }
-
-                            ,
-                            "levelsDeclin": {
-                                "palette": ["_", "lighter", "light", "dark", "darker", "complement"]
-                            }
-
-                            ,
-                            "about": "same as background-color, but with added contrasted color to text"
-                        }
-
-                        ,
-                        "border-color": {
-
-                            "tag": "border-color",
-                            "keys": ["palette",
-                            "gray"],
-                            "levelsLinked": {
-                                "gray": ["getGraySteps(8, #f4f4f4, #999)"], "scheme": ["discrete", "success", "info", "warning", "alert", "error"], "palette": ["yellow", "orange", "red", "magenta", "purple", "green", "teal", "blue", "dark"]
-                            }
-
-                            ,
-                            "about": "border colors are slightly darker to maximize surrounding effect"
                         }
                     }
                 }

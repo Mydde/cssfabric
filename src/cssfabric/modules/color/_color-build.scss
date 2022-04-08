@@ -103,6 +103,6 @@ $gray-schemes: utils.getGraySteps($color-gray-steps, $color-gray-start, $color-g
   @each $color-type-key in $color-types-config {
     @include fabricColors("palette", $color-palette, $color-type-key, $mq_size_key, true);
     @include fabricColors("scheme", $color-schemes, $color-type-key, $mq_size_key);
-    @include fabricColors("gray", $gray-schemes, $color-type-key, $mq_size_key);
+    @include fabricColors("grey", $gray-schemes, $color-type-key, $mq_size_key);
   }
 }
