@@ -1,9 +1,10 @@
 @use "sass:map";
 @use "sass:math";
 @use '../../_utils';
-@use "../cssfabric-config";
+@use "../cssfabric-config" as fabricConfig;
 @use "box-vars" as box;
 
+$fabric-config: fabricConfig.$cssfabric-config;
 $box-config: box.$box-config;
 $box-docs: box.$box-docs;
 
@@ -29,6 +30,8 @@ $box-margin-shorthand-config: map-get($box-config, margin-shorthand-config) !def
 
 $box-shadows-steps: map-get($box-config, shadows-steps) !default;
 $box-shadows-step-multiplier: map-get($box-config, shadows-step_multiplier) !default;
+
+$box-radius: map-get($fabric-config, border-radius);
 
 $css-shorthands: (
         border: $box-border-shorthand-config,
@@ -70,7 +73,7 @@ $css-shorthands: (
 
 @mixin pmbCssVars() {
   $iterator: $box-sizes-config;
-  @for $grid_size_value from 1 through $iterator {
+  @for $grid_size_value from 0 through $iterator {
     $css_size_value: ($grid_size_value * $box-unit-size-config) + $box-unit-config;
     --box-unit-#{$grid_size_value} : #{$css_size_value};
   }
@@ -129,6 +132,54 @@ $css-shorthands: (
     $shorthand: if($mq_key, #{$box_pmb_shorthand}-#{$mq_key}, #{$box_pmb_shorthand});
 
     @include fabric-pmb($box_pmb_shorthand_value, $shorthand);
+  }
+}
+
+// radius
+@mixin radius($mq_key) {
+  $shorthand: if($mq_key, radius-#{$mq_key}, radius);
+
+  @debug $box-radius;
+  /*radius*/
+  @each $radius, $value in $box-radius {
+    .#{$shorthand}-#{$radius} {
+      border-radius: #{$value};
+
+      &-t {
+        border-top-left-radius: #{$value};
+        border-top-right-radius: #{$value}
+      }
+
+      &-b {
+        border-bottom-left-radius: #{$value};
+        border-bottom-right-radius: #{$value}
+      }
+
+      &-l {
+        border-top-left-radius: #{$value};
+        border-bottom-left-radius: #{$value}
+      }
+
+      &-r {
+        border-top-right-radius: #{$value};
+        border-bottom-right-radius: #{$value}
+      }
+    }
+  }
+}
+
+// placement property -- top-0/8
+@mixin placement($mq_key) {
+  $shorthand: if($mq_key, #{$mq_key}-, '');
+  $places: (top, right, bottom, left);
+
+  /*placement*/
+  @each $place in $places {
+    @for $size from 0 through 8 {
+      .#{$place}-#{$shorthand}#{$size} {
+        #{$place}: var(--box-unit-#{$size});
+      }
+    }
   }
 }
 
@@ -211,5 +262,7 @@ $css-shorthands: (
   @include padding-margin-border($mq_key);
   @include display($mq_key);
   @include position($mq_key);
+  @include placement($mq_key);
+  @include radius($mq_key);
   @include shadows($mq_key);
 }

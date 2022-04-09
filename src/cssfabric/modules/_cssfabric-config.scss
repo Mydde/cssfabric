@@ -65,6 +65,9 @@ $cssfabric-config: (
                 blue: #0078d4,
                 dark: #323232,
         ),
+        border-radius:(
+                tiny:4px, small:8px, medium:16px
+        ),
         gray: getGraySteps(8, #f4f4f4, #999),
         gray-config: (
                 start: #f4f4f4,

@@ -1,2 +1,7 @@
 #! /usr/bin/env node
-console.log("npx done");
+
+const fsx = require('fs-extra');
+
+let createDir = './cssfabric/cssfabric.scss';
+
+fsx.ensureFile(createDir);

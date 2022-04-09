@@ -1,11 +1,14 @@
 {
   "name": "@medyll/cssfabric",
-  "version": "0.0.16",
+  "version": "0.1.0",
   "private": false,
   "bin": {
     "@medyll/cssfabric": "./bin/index.js"
   },
-  "repository": "https://github.com/medyll/cssfabric",
+  "repository": {
+    "type" : "git",
+    "url": "https://github.com/medyll/cssfabric.git"
+  },
   "scripts": {
     "dev": "tsc -w || exit 1",
     "build": "",
@@ -19,7 +22,9 @@
   },
   "dependencies": {
     "chokidar": "^3.5.1",
+    "fs-extra": "^10.0.1",
     "gulp-filelist": "^2.0.5",
+    "gulp-jsbeautifier": "^3.0.1",
     "gulp-sort": "^2.0.0",
     "JSON": "^1.0.0",
     "node-sass": "^6.0.0",

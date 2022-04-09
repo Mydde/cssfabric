@@ -44,6 +44,120 @@
             }
 
             ,
+            "color": {
+                "_data": {
+                    "gray-config": {
+                        "start": "#f4f4f4", "end": "#999", "steps": 8
+                    }
+
+                    ,
+                    "color-types-config": ["color",
+                    "bg",
+                    "bg-themed",
+                    "border-color"],
+                    "theme": {
+                        "primary": "#0288d1", "secondary": "#D14B02", "tertiary": "#88D102", "foreground": "#282230", "background": "#f1f1f1"
+                    }
+
+                    ,
+                    "scheme": {
+                        "discrete": "#ccc", "success": "green", "info": "#ffdd57", "warning": "#e6b905", "alert": "#ff7300", "error": "red"
+                    }
+
+                    ,
+                    "palette": {
+                        "yellow": "#ffb900", "orange": "#d83b01", "red": "#d13438", "magenta": "#b4009e", "purple": "#5c2d91", "green": "#107c10", "teal": "#008272", "blue": "#0078d4", "dark": "#323232"
+                    }
+
+                    ,
+                    "gray": "getGraySteps(8, #f4f4f4, #999)"
+                }
+
+                ,
+                "_metadata": {
+                    "title": "color", "title_tag": "its about colors", "description": "cssfabric color system: its about colors"
+                }
+
+                ,
+                "_docs": {
+                    "attributes": {
+                        "color": {
+
+                            "tag": "color",
+                            "keys": ["scheme",
+                            "palette",
+                            "gray"],
+                            "levelsLinked": {
+                                "scheme": ["discrete", "success", "info", "warning", "alert", "error"], "palette": ["yellow", "orange", "red", "magenta", "purple", "green", "teal", "blue", "dark"], "gray": ["getGraySteps(8, #f4f4f4, #999)"]
+                            }
+
+                            ,
+                            "levelsDeclin": {
+                                "palette": ["_", "lighter", "light", "dark", "darker", "complement"]
+                            }
+
+                            ,
+                            "about": "color for text level html elements"
+                        }
+
+                        ,
+                        "background-color": {
+
+                            "tag": "bg",
+                            "keys": ["scheme",
+                            "palette",
+                            "gray"],
+                            "levelsLinked": {
+                                "scheme": ["discrete", "success", "info", "warning", "alert", "error"], "palette": ["yellow", "orange", "red", "magenta", "purple", "green", "teal", "blue", "dark"], "gray": ["getGraySteps(8, #f4f4f4, #999)"]
+                            }
+
+                            ,
+                            "levelsDeclin": {
+                                "palette": ["_", "lighter", "light", "dark", "darker", "complement"]
+                            }
+
+                            ,
+                            "about": "background colors"
+                        }
+
+                        ,
+                        "background-themed": {
+
+                            "tag": "bg-themed",
+                            "keys": ["scheme",
+                            "palette",
+                            "gray"],
+                            "levelsLinked": {
+                                "gray": ["getGraySteps(8, #f4f4f4, #999)"], "scheme": ["discrete", "success", "info", "warning", "alert", "error"], "palette": ["yellow", "orange", "red", "magenta", "purple", "green", "teal", "blue", "dark"]
+                            }
+
+                            ,
+                            "levelsDeclin": {
+                                "palette": ["_", "lighter", "light", "dark", "darker", "complement"]
+                            }
+
+                            ,
+                            "about": "same as background-color, but with added contrasted color to text"
+                        }
+
+                        ,
+                        "border-color": {
+
+                            "tag": "border-color",
+                            "keys": ["palette",
+                            "gray"],
+                            "levelsLinked": {
+                                "gray": ["getGraySteps(8, #f4f4f4, #999)"], "scheme": ["discrete", "success", "info", "warning", "alert", "error"], "palette": ["yellow", "orange", "red", "magenta", "purple", "green", "teal", "blue", "dark"]
+                            }
+
+                            ,
+                            "about": "border colors are slightly darker to maximize surrounding effect"
+                        }
+                    }
+                }
+            }
+
+            ,
             "box": {
                 "_data": {
 
@@ -53,7 +167,7 @@
                     "unit-border-size-config": 1,
                     "sizes-config": 32,
                     "border-sizes-px-config": 5,
-                    "shadows-steps": 10,
+                    "shadows-steps": 5,
                     "shadows_step_multiplier": 2,
                     "position-shorthand-config": "pos",
                     "display-shorthand-config": "dsp",
@@ -184,188 +298,6 @@
             }
 
             ,
-            "color": {
-                "_data": {
-                    "gray-config": {
-                        "start": "#f4f4f4", "end": "#999", "steps": 8
-                    }
-
-                    ,
-                    "color-types-config": ["color",
-                    "bg",
-                    "bg-themed",
-                    "border-color"],
-                    "theme": {
-                        "primary": "#0288d1", "secondary": "#D14B02", "tertiary": "#88D102", "foreground": "#282230", "background": "#f1f1f1"
-                    }
-
-                    ,
-                    "scheme": {
-                        "discrete": "#ccc", "success": "green", "info": "#ffdd57", "warning": "#e6b905", "alert": "#ff7300", "error": "red"
-                    }
-
-                    ,
-                    "palette": {
-                        "yellow": "#ffb900", "orange": "#d83b01", "red": "#d13438", "magenta": "#b4009e", "purple": "#5c2d91", "green": "#107c10", "teal": "#008272", "blue": "#0078d4", "dark": "#323232"
-                    }
-
-                    ,
-                    "gray": "getGraySteps(8, #f4f4f4, #999)"
-                }
-
-                ,
-                "_metadata": {
-                    "title": "color", "title_tag": "its about colors", "description": "cssfabric color system: its about colors"
-                }
-
-                ,
-                "_docs": {
-                    "attributes": {
-                        "color": {
-
-                            "tag": "color",
-                            "keys": ["scheme",
-                            "palette",
-                            "gray"],
-                            "levelsLinked": {
-                                "scheme": ["discrete", "success", "info", "warning", "alert", "error"], "palette": ["yellow", "orange", "red", "magenta", "purple", "green", "teal", "blue", "dark"], "gray": ["getGraySteps(8, #f4f4f4, #999)"]
-                            }
-
-                            ,
-                            "levelsDeclin": {
-                                "palette": ["_", "lighter", "light", "dark", "darker", "complement"]
-                            }
-
-                            ,
-                            "about": "color for text level html elements"
-                        }
-
-                        ,
-                        "background-color": {
-
-                            "tag": "bg",
-                            "keys": ["scheme",
-                            "palette",
-                            "gray"],
-                            "levelsLinked": {
-                                "scheme": ["discrete", "success", "info", "warning", "alert", "error"], "palette": ["yellow", "orange", "red", "magenta", "purple", "green", "teal", "blue", "dark"], "gray": ["getGraySteps(8, #f4f4f4, #999)"]
-                            }
-
-                            ,
-                            "levelsDeclin": {
-                                "palette": ["_", "lighter", "light", "dark", "darker", "complement"]
-                            }
-
-                            ,
-                            "about": "background colors"
-                        }
-
-                        ,
-                        "background-themed": {
-
-                            "tag": "bg-themed",
-                            "keys": ["scheme",
-                            "palette",
-                            "gray"],
-                            "levelsLinked": {
-                                "gray": ["getGraySteps(8, #f4f4f4, #999)"], "scheme": ["discrete", "success", "info", "warning", "alert", "error"], "palette": ["yellow", "orange", "red", "magenta", "purple", "green", "teal", "blue", "dark"]
-                            }
-
-                            ,
-                            "levelsDeclin": {
-                                "palette": ["_", "lighter", "light", "dark", "darker", "complement"]
-                            }
-
-                            ,
-                            "about": "same as background-color, but with added contrasted color to text"
-                        }
-
-                        ,
-                        "border-color": {
-
-                            "tag": "border-color",
-                            "keys": ["palette",
-                            "gray"],
-                            "levelsLinked": {
-                                "gray": ["getGraySteps(8, #f4f4f4, #999)"], "scheme": ["discrete", "success", "info", "warning", "alert", "error"], "palette": ["yellow", "orange", "red", "magenta", "purple", "green", "teal", "blue", "dark"]
-                            }
-
-                            ,
-                            "about": "border colors are slightly darker to maximize surrounding effect"
-                        }
-                    }
-                }
-            }
-
-            ,
-            "flex": {
-                "_data": {
-
-                    "moduleName": "flex",
-                    "moduleNameShort": "flex",
-                    "horCode": "h",
-                    "vertCode": "v",
-                    "gridFullWidth": "main",
-                    "grow-shrink-steps": 2,
-                    "cssProps": {
-                        "flexWrap": {
-                            "wrap": "wrap", "wrap-reverse": "wrap-reverse"
-                        }
-
-                        ,
-                        "grid-justify": {
-                            "start": "flex-start", "end": "flex-end", "between": "space-between", "stretch": "stretch", "center": "flex-center"
-                        }
-
-                        ,
-                        "grid-items": {
-                            "baseline": "baseline", "stretch": "stretch", "start": "flex-start", "center": "center", "end": "flex-end"
-                        }
-
-                        ,
-                        "grid-content": {
-                            "start": "flex-start", "center": "center", "end": "flex-end", "between": "space-between", "equal": "space-evenly"
-                        }
-                    }
-
-                    ,
-                    "cssItemsProps": {
-                        "self": {
-                            "start": "flex-start", "end": "flex-end", "stretch": "stretch"
-                        }
-                    }
-                }
-
-                ,
-                "_metadata": {
-                    "title": "flex", "tag": "flex", "description": "cssfabric flex system module"
-                }
-
-                ,
-                "_docs": {
-                    "attributes": {
-                        "grid": {
-
-                            "tag": "flex",
-                            "keys": ["v",
-                            "h"],
-                            "classNames": {
-                                "align": ["top", "middle", "bottom", "left", "right", "center", "middle-center", "stretch"], "grid": ["wrap", "wrap-reverse"]
-                            }
-
-                            ,
-                            "about": "a classic flex grid system, and hey, it gets height !"
-                        }
-
-                        ,
-                        "self": {
-                            "tag": "self", "keys": ["start", "end", "stretch"], "about": "flex children specific classnames"
-                        }
-                    }
-                }
-            }
-
-            ,
             "grid": {
                 "_data": {
 
@@ -467,6 +399,74 @@
                     "attributes": {
                         "menu": {
                             "tag": "menu", "keys": ["h", "v"]
+                        }
+                    }
+                }
+            }
+
+            ,
+            "flex": {
+                "_data": {
+
+                    "moduleName": "flex",
+                    "moduleNameShort": "flex",
+                    "horCode": "h",
+                    "vertCode": "v",
+                    "gridFullWidth": "main",
+                    "grow-shrink-steps": 2,
+                    "cssProps": {
+                        "flexWrap": {
+                            "wrap": "wrap", "wrap-reverse": "wrap-reverse"
+                        }
+
+                        ,
+                        "grid-justify": {
+                            "start": "flex-start", "end": "flex-end", "between": "space-between", "stretch": "stretch", "center": "flex-center"
+                        }
+
+                        ,
+                        "grid-items": {
+                            "baseline": "baseline", "stretch": "stretch", "start": "flex-start", "center": "center", "end": "flex-end"
+                        }
+
+                        ,
+                        "grid-content": {
+                            "start": "flex-start", "center": "center", "end": "flex-end", "between": "space-between", "equal": "space-evenly"
+                        }
+                    }
+
+                    ,
+                    "cssItemsProps": {
+                        "self": {
+                            "start": "flex-start", "end": "flex-end", "stretch": "stretch"
+                        }
+                    }
+                }
+
+                ,
+                "_metadata": {
+                    "title": "flex", "tag": "flex", "description": "cssfabric flex system module"
+                }
+
+                ,
+                "_docs": {
+                    "attributes": {
+                        "grid": {
+
+                            "tag": "flex",
+                            "keys": ["v",
+                            "h"],
+                            "classNames": {
+                                "align": ["top", "middle", "bottom", "left", "right", "center", "middle-center", "stretch"], "grid": ["wrap", "wrap-reverse"]
+                            }
+
+                            ,
+                            "about": "a classic flex grid system, and hey, it gets height !"
+                        }
+
+                        ,
+                        "self": {
+                            "tag": "self", "keys": ["start", "end", "stretch"], "about": "flex children specific classnames"
                         }
                     }
                 }
@@ -690,23 +690,6 @@
             }
 
             ,
-            "zindex": {
-                "_data": {
-                    "z_groups": ["a", "z"]
-                }
-
-                ,
-                "_metadata": {
-                    "title": "zindex", "tag": "zI", "description": "cssfabric zindex module to set z-index on all html elements"
-                }
-
-                ,
-                "_docs": {
-                    "z_groups": "_"
-                }
-            }
-
-            ,
             "theme": {
                 "_data": {
 
@@ -753,6 +736,23 @@
                             }
                         }
                     }
+                }
+            }
+
+            ,
+            "zindex": {
+                "_data": {
+                    "z_groups": ["a", "z"]
+                }
+
+                ,
+                "_metadata": {
+                    "title": "zindex", "tag": "zI", "description": "cssfabric zindex module to set z-index on all html elements"
+                }
+
+                ,
+                "_docs": {
+                    "z_groups": "_"
                 }
             }
         }
