@@ -26,7 +26,7 @@ $themes: map-get($config, themes) !default;
 $theme-light: map-get($themes, light) !default;
 $theme-dark: map-get($themes, dark) !default;
 
-// GRAYS
+// GREYS
 $gray-config: map-get($color-config, gray-config) !default;
 $color-gray-start: map-get($gray-config, start) !default;
 $color-gray-end: map-get($gray-config, end) !default;

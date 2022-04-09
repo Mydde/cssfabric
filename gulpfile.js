@@ -1,22 +1,15 @@
 // ## WIP
 
 const gulp = require("gulp"),
-    unescapeJs = require("unescape-js"),
     jsonTransform = require("gulp-json-transform"),
     cache = require("gulp-cached"),
     gulpSass = require("gulp-sass"),
-    // sassExport = require("gulp-sass-export"),
-    mergeJson = require("gulp-merge-json"),
     gulFileList = require("gulp-filelist"),
     minifyCss = require("gulp-minify-css"),
     fs = require("fs"),
     gulpRename = require("gulp-rename"),
     gulpDownload = require("gulp-download-stream"),
     gulpConcat = require("gulp-concat-util"),
-    sassJson = require("gulp-sass-json"),
-    sassExport = require("gulp-sass-export"),
-    sassVarsToJs = require("gulp-sass-vars-to-js"),
-    parse = require("sass-parser")(),
     gulpJsBeautifier = require('gulp-jsbeautifier'),
     modifyFile = require("gulp-modify-file"),
     json2md = require("json2md"),
@@ -558,25 +551,20 @@ function taskDownload(cb) {
 }
 
 function watchSassTask(cb) {
-    // scss , css , scss
     gulp.watch(
         fabricModuleDir + "/**/*.scss",
-        gulp.series(task_sass2css, task_mergeInclude, task_varsExport)  // watchCssExportVars
-    ); // task_varsExport
-
+        gulp.series(task_sass2css, task_mergeInclude, task_varsExport)
+    );
     cb();
 }
 
 // todo change to styleDir
 function watchInclude(cb) {
-    // gulp.watch(fabricStylesDir, task_mergeInclude);
-    //gulp.watch(fabricModuleDir, task_mergeInclude);
 
     cb();
 }
 
 function watchReadme(cb) {
-    // console.log([fabricModuleDir,"!"+fabricModuleDir + "/**/_*.scss"])
     gulp.watch(
         [fabricModuleDir, "!" + fabricModuleDir + "/**/_*.scss"],
         task_readme
@@ -597,7 +585,7 @@ function watchCssExportVars(cb) {
     cb();
 }
 
-// oly one called by npm
+// only one called by npm
 exports.watchSass = watchSassTask;
 
 exports.watchInclude = watchInclude;
