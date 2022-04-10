@@ -1,6 +1,65 @@
 @use "sass:map";
 @use "sass:math";
 
+// prefix ?
+// scoped ?
+
+// dimensions
+
+// border-color
+$has-border-color-theme: true;
+$has-border-color-theme-responsive: true;
+$has-border-color-scheme: true;
+$has-border-color-scheme-responsive: true;
+$has-border-color-palette: true;
+$has-border-color-palette-responsive: true;
+$has-border-color-gray: true;
+$has-border-color-gray-responsive: true;
+// grays
+$has-color-gray: true;
+$has-color-gray-responsive: true;
+// text
+$has-text-transform: true;
+$has-text-transform-responsive: false;
+$has-text-align: true;
+$has-text-align-responsive: false;
+$has-text-font: true;
+$has-text-font-responsive: false;
+$has-text-shadow-color-scheme: true;
+$has-text-shadow-color-scheme-responsive: false;
+$has-text-shadow-color-palette: true;
+$has-text-shadow-color-palette-responsive: false;
+
+// color
+$has-color-theme: true;
+$has-color-theme-responsive: true;
+// background-color-theme
+$has-background-color-theme: true;
+$has-background-color-theme-responsive: true;
+// background-color-scheme
+$has-background-color-scheme: true;
+$has-background-color-scheme-responsive: true;
+// background-color-palette
+$has-background-color-palette: true;
+$has-background-color-palette-responsive: true;
+// density
+
+$theme-color-primary: rgb(67, 23, 0) !default;
+$theme-color-secondary: #D14B02 !default;
+$theme-color-tertiary: #88D102 !default;
+
+$theme-color-foreground: #282230 !default;
+$theme-color-background: #ffffff !default;
+$theme-color-paper: #f1f1f1 !default;
+
+$theme-dark-color-foreground: #f1f1f1 !default;
+$theme-dark-color-background: #27323a !default;
+$theme-dark-color-paper: #3a3b3b !default;
+
+$gray-start: #f4f4f4 !default;
+$gray-end: #999 !default;
+$gray-steps: 5 !default;
+
 $cssfabric-metadata: (
         title: "cssfabric",
         tag: "cssfabric",
@@ -40,11 +99,11 @@ $cssfabric-config: (
                 ),
         ),
         theme: (
-                primary: #0288d1,
-                secondary: #D14B02,
-                tertiary: #88D102,
-                foreground: #282230,
-                background: #f1f1f1,
+                primary: $theme-color-primary,
+                secondary: $theme-color-secondary,
+                tertiary: $theme-color-tertiary,
+                foreground: $theme-color-foreground,
+                background: $theme-color-background,
         ),
         scheme: (
                 discrete: #ccc,
@@ -68,11 +127,11 @@ $cssfabric-config: (
         border-radius:(
                 tiny:4px, small:8px, medium:16px
         ),
-        gray: getGraySteps(8, #f4f4f4, #999),
+        gray: getGraySteps($gray-steps, $gray-start, $gray-end),
         gray-config: (
-                start: #f4f4f4,
-                end: #999,
-                steps: 8
+                start: $gray-start,
+                end: $gray-end,
+                steps: $gray-steps
         )
 );
 

@@ -1,28 +1,26 @@
 @use "sass:map";
-// load scss config file
-@use '../../_utils';
 @use 'color-vars';
 @use "sass:math";
+// load scss config file
+@use '../../_utils';
+@use '../cssfabric-config';
 
 $color-config: color-vars.$color-config;
 
 // COLOR TYPES
 $color-types-config: map-get($color-config, color-types-config);
-
 // COLOR SCHEMES
-$color-schemes: map-get($color-config, scheme);
-
+$color-schemes: map-get($color-config, scheme) !default;
 // COLOR PALETTE
-$color-palette: map-get($color-config, palette);
-
+$color-palette: map-get($color-config, palette) !default;
 // COLOR THEME 
-$color-theme: map-get($color-config, theme);
+$color-theme: map-get($color-config, theme) !default;
+
 
 // GRAYS
-$gray-config: map-get($color-config, gray-config) !default;
-$color-gray-start: map-get($gray-config, start) !default;
-$color-gray-end: map-get($gray-config, end) !default;
-$color-gray-steps: map-get($gray-config, steps) !default;
+$color-gray-start: cssfabric-config.$gray-start !default;
+$color-gray-end: cssfabric-config.$gray-end !default;
+$color-gray-steps: cssfabric-config.$gray-steps !default;
 $gray-schemes: utils.getGraySteps($color-gray-steps, $color-gray-start, $color-gray-end);
 
 @function text-contrast($n) {
@@ -35,6 +33,41 @@ $gray-schemes: utils.getGraySteps($color-gray-steps, $color-gray-start, $color-g
   }
 
   @return $color;
+}
+
+@mixin buildColorCssVars() {
+
+  /* color-scheme primary secondary tertiary */
+  @each $type-key, $type-prop in $color-schemes {
+    --color-scheme-#{$type-key} : #{$type-prop};
+    --color-scheme-#{$type-key}-light: #{utils.applyColorEffect('light',$type-prop)};
+    --color-scheme-#{$type-key}-dark: #{utils.applyColorEffect('dark',$type-prop)};
+    @include utils.alphaTize(--color-scheme-#{$type-key}, $type-prop);
+  }
+
+  /* color-palette */
+  @each $type-key, $type-prop in $color-palette {
+    --color-palette-#{$type-key} : #{$type-prop};
+    @include utils.alphaTize(--color-palette-#{$type-key}, $type-prop);
+
+    --color-palette-#{$type-key}-lighter: #{utils.applyColorEffect('lighter',$type-prop)};
+    --color-palette-#{$type-key}-light: #{utils.applyColorEffect('light',$type-prop)};
+    --color-palette-#{$type-key}-dark: #{utils.applyColorEffect('dark',$type-prop)};
+    --color-palette-#{$type-key}-darker: #{utils.applyColorEffect('darker',$type-prop)};
+
+    --color-palette-#{$type-key}-complement: #{utils.applyColorEffect('complement',$type-prop)};
+    @include utils.alphaTize(--color-palette-#{$type-key}-complement, utils.applyColorEffect('complement', $type-prop));
+
+    --color-palette-#{$type-key}-invert: #{utils.applyColorEffect('invert',$type-prop)};
+    @include utils.alphaTize(--color-palette-#{$type-key}-invert, utils.applyColorEffect('invert', $type-prop));
+    // backdrop-filter: blur(5px);
+  }
+
+  /* grays */
+  @each $type-key, $type-prop in $gray-schemes {
+    --color-gray-#{$type-key} : #{$type-prop};
+    @include utils.alphaTize(--color-gray-#{$type-key}, $type-prop);
+  }
 }
 
 @mixin colorFactory($tag_short, $color_prop) {
@@ -64,12 +97,12 @@ $gray-schemes: utils.getGraySteps($color-gray-steps, $color-gray-start, $color-g
   #{$color-type-key} ?
    */
   .#{$property_key} {
-    @each $type-key, $type-prop in $color-type-list { 
+    @each $type-key, $type-prop in $color-type-list {
       &#{"-" + $type-key} {
 
         // border-color: ;
-        @if $color-type-key==border-color { 
-            border-color: utils.applyColorEffect('dark',$type-prop)!important;
+        @if $color-type-key==border-color {
+          border-color: utils.applyColorEffect('dark', $type-prop) !important;
         }
 
         @if $color-type-key==color { // nope for gray
@@ -84,7 +117,7 @@ $gray-schemes: utils.getGraySteps($color-gray-steps, $color-gray-start, $color-g
           @if $has-color-factory {
             @include colorFactory($color-type-key, $type-prop);
           }
-        } 
+        }
 
         @if $color-type-key == "bg-themed" {
           color: text-contrast($type-prop);

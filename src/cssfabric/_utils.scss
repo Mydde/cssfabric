@@ -1,6 +1,8 @@
 @use "sass:string";
 @use "sass:map";
 @use "sass:math";
+@use "sass:color";
+
 // load main fabric vars
 @use 'modules/cssfabric-config' as cssfabric-config;
 
@@ -9,12 +11,12 @@
   @if not $prop {
     @return cssfabric-config.$cssfabric-config;
   }
-  @if  $prop and not $val {
-    @return  map-get(cssfabric-config.$cssfabric-config, $prop);
+  @if $prop and not $val {
+    @return map-get(cssfabric-config.$cssfabric-config, $prop);
   }
-  @if  $val {
+  @if $val {
     $in: map-get(cssfabric-config.$cssfabric-config, $prop);
-    @return  map-get($in, $prop,$val);
+    @return map-get($in, $prop, $val);
   }
 }
 
@@ -22,8 +24,8 @@
 @mixin fabricResponsiveEncloser($mq_size_value, $mq_min_size_value: null) {
   // and (min-width: $mq_min_size_value + rem)
   // @debug $mq_size_value $mq_min_size_value;
-  $type-width: if($mq_size_value==180 , max , max);
-  $width: if($mq_size_value==180 , $mq_min_size_value , $mq_size_value);
+  $type-width: if($mq_size_value==180, max, max);
+  $width: if($mq_size_value==180, $mq_min_size_value, $mq_size_value);
 
   // @debug  (#{$type-width}-width: $width + rem) ;
   @media only screen and (#{$type-width}-width: $width + px) {
@@ -63,6 +65,13 @@
       $key: #{$module}-#{$red};
       --cssfabric-#{$key}: #{string.slice(#{#ss($rt)}, 4)};
     }
+  }
+}
+
+@mixin alphaTize($key,$color,$ranges: (_:0.3,low:0.8,high:0.1)) {
+  @each $range, $val in $ranges {
+    $rg: if($range==_,'',-#{$range});
+    #{$key}-alpha#{$rg} : #{color.change($color,$alpha:$val)};
   }
 }
 
@@ -112,7 +121,7 @@
 @function getThemeLevels($declinations-config, $color_primary) {
   $out: ();
   // primary secondary tertiary
-  @each $color-grade,$color-value in $declinations-config {
+  @each $color-grade, $color-value in $declinations-config {
     $color: $color-value;
     $out: map.set($out, $color-grade, $color);
     @each $theme-level in (light lighter dark darker complement invert) {
@@ -126,7 +135,7 @@
 }
 
 @function getBoxIterator($iterator, $unit-config,$_unit-size-config) {
-  $out: ("_": "_"  );
+  $out: ("_": "_");
 
   @for $grid_size_value from 1 through $iterator {
     $css_size_value: ($grid_size_value * $_unit-size-config) + $unit-config;
@@ -150,11 +159,11 @@
     $acc: $acc * 2;
     $v: $shadows_step * 2;
 
-    $v_val: math.div($acc , $v_fact);
-    $h_val: math.div($acc , $h_fact);
+    $v_val: math.div($acc, $v_fact);
+    $h_val: math.div($acc, $h_fact);
 
-    $v_val_2: math.div($acc , $v_fact_2);
-    $h_val_2: math.div($acc , $h_fact_2);
+    $v_val_2: math.div($acc, $v_fact_2);
+    $h_val_2: math.div($acc, $h_fact_2);
 
     $out: map.set($out, $acc, #{$v_val} + #{$h_val});
   }

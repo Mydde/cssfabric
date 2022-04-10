@@ -53,25 +53,45 @@ $step-size: math.div($size-diff, $steps);
     }
   }
 
+
+}
+
+@mixin textBuildTransform($tag_short) {
   .#{$tag_short} {
     @each $fabricRule, $value in $textTransform {
       @include utils.fabricAttributes("&" + $sep, $fabricRule, "text-transform", $value);
     }
+  }
+}
 
+@mixin textBuildAlign($tag_short) {
+  .#{$tag_short} {
     @each $fabricRule, $value in $textAlign {
       @include utils.fabricAttributes("&" + $sep, $fabricRule, "text-align", $value);
     }
+  }
+}
 
+@mixin textBuildFontWeight($tag_short) {
+  .#{$tag_short} {
     @each $fabricRule, $value in $fontWeight {
       @include utils.fabricAttributes("&" + $sep, $fabricRule, "font-weight", var(--font-weight-#{$fabricRule}));
     }
+  }
+}
 
-    // text shadows color_schemes
+@mixin textBuildShadowColorScheme($tag_short) {
+  // text shadows color_schemes
+  .#{$tag_short} {
     @each $fabricRule, $value in $color-schemes {
-      @include utils.fabricAttributes("&" + $sep + shad + $sep, $fabricRule, "text-shadow",  var(--text-shadow-#{$fabricRule}));
+      @include utils.fabricAttributes("&" + $sep + shad + $sep, $fabricRule, "text-shadow", var(--text-shadow-#{$fabricRule}));
     }
+  }
+}
 
-    // text shadows color_palette_props
+@mixin textBuildShadowPalette($tag_short) {
+  // text shadows color_palette_props
+  .#{$tag_short} {
     @each $fabricRule, $value in $color-palette-props {
       @include utils.fabricAttributes("&" + $sep+ shad + $sep, $fabricRule, "text-shadow", var(--text-shadow-#{$fabricRule}));
     }
@@ -106,4 +126,41 @@ $step-size: math.div($size-diff, $steps);
   $property_key: if($mq_size_key, #{$moduleNameShort}-#{$mq_size_key}, #{$moduleNameShort});
 
   @include fabric_text($property_key);
+
+  @if ($mq_size_key == null) {
+    @if (cssfabric-config.$has-text-transform) {
+      @include textBuildTransform($property_key)
+    }
+    @if (cssfabric-config.$has-text-align) {
+      @include textBuildAlign($property_key)
+    }
+    @if (cssfabric-config.$has-text-font) {
+      @include textBuildFontWeight($property_key)
+    }
+    @if (cssfabric-config.$has-text-shadow-color-scheme) {
+      @include textBuildShadowColorScheme($property_key)
+    }
+    @if (cssfabric-config.$has-text-shadow-color-palette) {
+      @include textBuildShadowPalette($property_key)
+    }
+  }
+
+  @if ($mq_size_key != null) {
+    @if (cssfabric-config.$has-text-transform-responsive) {
+      @include textBuildTransform($property_key)
+    }
+    @if (cssfabric-config.$has-text-align-responsive) {
+      @include textBuildAlign($property_key)
+    }
+    @if (cssfabric-config.$has-text-font-responsive) {
+      @include textBuildFontWeight($property_key)
+    }
+    @if (cssfabric-config.$has-text-shadow-color-scheme-responsive) {
+      @include textBuildShadowColorScheme($property_key)
+    }
+    @if (cssfabric-config.$has-text-shadow-color-palette-responsive) {
+      @include textBuildShadowPalette($property_key)
+    }
+  }
+
 }

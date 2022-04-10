@@ -47,7 +47,7 @@
             "color": {
                 "_data": {
                     "gray-config": {
-                        "start": "#f4f4f4", "end": "#999", "steps": 8
+                        "start": "#f4f4f4", "end": "#999", "steps": 5
                     }
 
                     ,
@@ -56,7 +56,7 @@
                     "bg-themed",
                     "border-color"],
                     "theme": {
-                        "primary": "#0288d1", "secondary": "#D14B02", "tertiary": "#88D102", "foreground": "#282230", "background": "#f1f1f1"
+                        "primary": "#431700", "secondary": "#D14B02", "tertiary": "#88D102", "foreground": "#282230", "background": "#ffffff"
                     }
 
                     ,
@@ -70,7 +70,7 @@
                     }
 
                     ,
-                    "gray": "getGraySteps(8, #f4f4f4, #999)"
+                    "gray": "getGraySteps(5, #f4f4f4, #999)"
                 }
 
                 ,
@@ -88,7 +88,7 @@
                             "palette",
                             "gray"],
                             "levelsLinked": {
-                                "scheme": ["discrete", "success", "info", "warning", "alert", "error"], "palette": ["yellow", "orange", "red", "magenta", "purple", "green", "teal", "blue", "dark"], "gray": ["getGraySteps(8, #f4f4f4, #999)"]
+                                "scheme": ["discrete", "success", "info", "warning", "alert", "error"], "palette": ["yellow", "orange", "red", "magenta", "purple", "green", "teal", "blue", "dark"], "gray": ["getGraySteps(5, #f4f4f4, #999)"]
                             }
 
                             ,
@@ -108,7 +108,7 @@
                             "palette",
                             "gray"],
                             "levelsLinked": {
-                                "scheme": ["discrete", "success", "info", "warning", "alert", "error"], "palette": ["yellow", "orange", "red", "magenta", "purple", "green", "teal", "blue", "dark"], "gray": ["getGraySteps(8, #f4f4f4, #999)"]
+                                "scheme": ["discrete", "success", "info", "warning", "alert", "error"], "palette": ["yellow", "orange", "red", "magenta", "purple", "green", "teal", "blue", "dark"], "gray": ["getGraySteps(5, #f4f4f4, #999)"]
                             }
 
                             ,
@@ -128,7 +128,7 @@
                             "palette",
                             "gray"],
                             "levelsLinked": {
-                                "gray": ["getGraySteps(8, #f4f4f4, #999)"], "scheme": ["discrete", "success", "info", "warning", "alert", "error"], "palette": ["yellow", "orange", "red", "magenta", "purple", "green", "teal", "blue", "dark"]
+                                "gray": ["getGraySteps(5, #f4f4f4, #999)"], "scheme": ["discrete", "success", "info", "warning", "alert", "error"], "palette": ["yellow", "orange", "red", "magenta", "purple", "green", "teal", "blue", "dark"]
                             }
 
                             ,
@@ -147,7 +147,7 @@
                             "keys": ["palette",
                             "gray"],
                             "levelsLinked": {
-                                "gray": ["getGraySteps(8, #f4f4f4, #999)"], "scheme": ["discrete", "success", "info", "warning", "alert", "error"], "palette": ["yellow", "orange", "red", "magenta", "purple", "green", "teal", "blue", "dark"]
+                                "gray": ["getGraySteps(5, #f4f4f4, #999)"], "scheme": ["discrete", "success", "info", "warning", "alert", "error"], "palette": ["yellow", "orange", "red", "magenta", "purple", "green", "teal", "blue", "dark"]
                             }
 
                             ,
@@ -298,6 +298,74 @@
             }
 
             ,
+            "flex": {
+                "_data": {
+
+                    "moduleName": "flex",
+                    "moduleNameShort": "flex",
+                    "horCode": "h",
+                    "vertCode": "v",
+                    "gridFullWidth": "main",
+                    "grow-shrink-steps": 2,
+                    "cssProps": {
+                        "flexWrap": {
+                            "wrap": "wrap", "wrap-reverse": "wrap-reverse"
+                        }
+
+                        ,
+                        "grid-justify": {
+                            "start": "flex-start", "end": "flex-end", "between": "space-between", "stretch": "stretch", "center": "flex-center"
+                        }
+
+                        ,
+                        "grid-items": {
+                            "baseline": "baseline", "stretch": "stretch", "start": "flex-start", "center": "center", "end": "flex-end"
+                        }
+
+                        ,
+                        "grid-content": {
+                            "start": "flex-start", "center": "center", "end": "flex-end", "between": "space-between", "equal": "space-evenly"
+                        }
+                    }
+
+                    ,
+                    "cssItemsProps": {
+                        "self": {
+                            "start": "flex-start", "end": "flex-end", "stretch": "stretch"
+                        }
+                    }
+                }
+
+                ,
+                "_metadata": {
+                    "title": "flex", "tag": "flex", "description": "cssfabric flex system module"
+                }
+
+                ,
+                "_docs": {
+                    "attributes": {
+                        "grid": {
+
+                            "tag": "flex",
+                            "keys": ["v",
+                            "h"],
+                            "classNames": {
+                                "align": ["top", "middle", "bottom", "left", "right", "center", "middle-center", "stretch"], "grid": ["wrap", "wrap-reverse"]
+                            }
+
+                            ,
+                            "about": "a classic flex grid system, and hey, it gets height !"
+                        }
+
+                        ,
+                        "self": {
+                            "tag": "self", "keys": ["start", "end", "stretch"], "about": "flex children specific classnames"
+                        }
+                    }
+                }
+            }
+
+            ,
             "grid": {
                 "_data": {
 
@@ -399,74 +467,6 @@
                     "attributes": {
                         "menu": {
                             "tag": "menu", "keys": ["h", "v"]
-                        }
-                    }
-                }
-            }
-
-            ,
-            "flex": {
-                "_data": {
-
-                    "moduleName": "flex",
-                    "moduleNameShort": "flex",
-                    "horCode": "h",
-                    "vertCode": "v",
-                    "gridFullWidth": "main",
-                    "grow-shrink-steps": 2,
-                    "cssProps": {
-                        "flexWrap": {
-                            "wrap": "wrap", "wrap-reverse": "wrap-reverse"
-                        }
-
-                        ,
-                        "grid-justify": {
-                            "start": "flex-start", "end": "flex-end", "between": "space-between", "stretch": "stretch", "center": "flex-center"
-                        }
-
-                        ,
-                        "grid-items": {
-                            "baseline": "baseline", "stretch": "stretch", "start": "flex-start", "center": "center", "end": "flex-end"
-                        }
-
-                        ,
-                        "grid-content": {
-                            "start": "flex-start", "center": "center", "end": "flex-end", "between": "space-between", "equal": "space-evenly"
-                        }
-                    }
-
-                    ,
-                    "cssItemsProps": {
-                        "self": {
-                            "start": "flex-start", "end": "flex-end", "stretch": "stretch"
-                        }
-                    }
-                }
-
-                ,
-                "_metadata": {
-                    "title": "flex", "tag": "flex", "description": "cssfabric flex system module"
-                }
-
-                ,
-                "_docs": {
-                    "attributes": {
-                        "grid": {
-
-                            "tag": "flex",
-                            "keys": ["v",
-                            "h"],
-                            "classNames": {
-                                "align": ["top", "middle", "bottom", "left", "right", "center", "middle-center", "stretch"], "grid": ["wrap", "wrap-reverse"]
-                            }
-
-                            ,
-                            "about": "a classic flex grid system, and hey, it gets height !"
-                        }
-
-                        ,
-                        "self": {
-                            "tag": "self", "keys": ["start", "end", "stretch"], "about": "flex children specific classnames"
                         }
                     }
                 }
@@ -649,7 +649,7 @@
                     }
 
                     ,
-                    "gray": "getGraySteps(8, #f4f4f4, #999)"
+                    "gray": "getGraySteps(5, #f4f4f4, #999)"
                 }
 
                 ,
@@ -696,7 +696,7 @@
                     "moduleName": "theme",
                     "moduleNameShort": "theme",
                     "color-default-config": {
-                        "primary": "#0288d1", "secondary": "#D14B02", "tertiary": "#88D102", "foreground": "#282230", "background": "#f1f1f1"
+                        "primary": "#431700", "secondary": "#D14B02", "tertiary": "#88D102", "foreground": "#282230", "background": "#ffffff"
                     }
 
                     ,
@@ -713,7 +713,7 @@
                     "bg",
                     "border"],
                     "color": {
-                        "primary": "#0288d1", "primary-light": "#23b0fd", "primary-lighter": "#6ecbfe", "primary-dark": "#02679e", "primary-darker": "#01466c", "primary-complement": "#d14b02", "primary-invert": "#fd772e", "secondary": "#D14B02", "secondary-light": "#fd7023", "secondary-lighter": "#fea16e", "secondary-dark": "#9e3902", "secondary-darker": "#6c2701", "secondary-complement": "#0288d1", "secondary-invert": "#2eb4fd", "tertiary": "#88D102", "tertiary-light": "#b0fd23", "tertiary-lighter": "#cbfe6e", "tertiary-dark": "#679e02", "tertiary-darker": "#466c01", "tertiary-complement": "#4b02d1", "tertiary-invert": "#772efd"
+                        "primary": "#431700", "primary-light": "#903100", "primary-lighter": "#dc4c00", "primary-dark": "#100500", "primary-darker": "black", "primary-complement": "#002c43", "primary-invert": "#bce8ff", "secondary": "#D14B02", "secondary-light": "#fd7023", "secondary-lighter": "#fea16e", "secondary-dark": "#9e3902", "secondary-darker": "#6c2701", "secondary-complement": "#0288d1", "secondary-invert": "#2eb4fd", "tertiary": "#88D102", "tertiary-light": "#b0fd23", "tertiary-lighter": "#cbfe6e", "tertiary-dark": "#679e02", "tertiary-darker": "#466c01", "tertiary-complement": "#4b02d1", "tertiary-invert": "#772efd"
                     }
                 }
 
