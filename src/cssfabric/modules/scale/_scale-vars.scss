@@ -51,15 +51,11 @@ $scale-metadata: (
         description: "cssfabric scale module to set dimensions and ratios on all html elements"
 );
 
-$scale-config: (
-        weight-config: 1em,
-        unit-tag-config: $scale-shorthands,
-        grid-ratios-config: $scale-grid-ratios-config,
-        defined-step-size: 2,
-        defined-step-unit: rem,
-        defined-steps: $scale-defined-steps,
-        cssProps:$_cssProps
-);
+$scale-font-weight-config: 1em;
+$scale-grid-ratios-config: $scale-grid-ratios-config;
+$scale-defined-step-size: 2;
+$scale-defined-step-unit: rem;
+$scale-grid-ratios-config: $scale-grid-ratios-config;
 
 
 $scale-docs: (

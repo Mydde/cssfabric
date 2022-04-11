@@ -2,7 +2,6 @@
 @use '../../_utils';
 @use "sass:math";
 
-$scale-config: scale-vars.$scale-config;
 $_cfg: utils.get_fabric_conf();
 
 // read variables
@@ -11,14 +10,14 @@ $_has_dimensions_min: true; // map-get($_cfg, has_dimensions_min);
 $_has_dimensions_max: true; // map-get($_cfg, has_dimensions_max);
 
 $scale-defined-steps: scale-vars.$scale-defined-steps;
-$scale-defined-step-unit: map-get($scale-config, defined-step-unit);
-$scale-defined-step-size: map-get($scale-config, defined-step-size);
-$scale-grid-ratios-config: map-get($scale-config, grid-ratios-config);
+$scale-defined-step-unit: scale-vars.$scale-defined-step-unit;
+$scale-defined-step-size: scale-vars.$scale-defined-step-size;
+$scale-grid-ratios-config: scale-vars.$scale-grid-ratios-config;
 
 $scale-sizes: scale-vars.$scale-sizes-config;
 $scale-content: scale-vars.$scale-content-config;
 
-$weight-config: map-get($scale-config, weight-config);
+$weight-config: scale-vars.$scale-font-weight-config ;
 $unit-tag-config: scale-vars.$scale-shorthands;
 $scale-sizes-preset-config: scale-vars.$scale-sizes-preset-config;
 
@@ -96,6 +95,7 @@ $scale-sizes-preset-config: scale-vars.$scale-sizes-preset-config;
     );
   }
 }
+$--var-oi: yt;
 
 // loop on ratio dimensions
 @mixin play_ratio_dimensions_loop($scale_prop, $mq_size_key) {
