@@ -93,9 +93,8 @@ $gray-schemes: utils.getGraySteps($color-gray-steps, $color-gray-start, $color-g
   $prop: "";
 
   $property_key: #{$color-type-key}-#{$color-type} + if($mq-key, -#{$mq-key}, "");
-  /**
-  #{$color-type-key} ?
-   */
+
+
   .#{$property_key} {
     @each $type-key, $type-prop in $color-type-list {
       &#{"-" + $type-key} {
@@ -105,7 +104,7 @@ $gray-schemes: utils.getGraySteps($color-gray-steps, $color-gray-start, $color-g
           border-color: utils.applyColorEffect('dark', $type-prop) !important;
         }
 
-        @if $color-type-key==color { // nope for gray
+        @if $color-type-key==foreground {
           color: $type-prop;
           @if $has-color-factory {
             @include colorFactory($color-type-key, $type-prop);
@@ -133,9 +132,61 @@ $gray-schemes: utils.getGraySteps($color-gray-steps, $color-gray-start, $color-g
 }
 
 @mixin buildColor($mq_size_key:null) {
-  @each $color-type-key in $color-types-config {
-    @include fabricColors("palette", $color-palette, $color-type-key, $mq_size_key, true);
-    @include fabricColors("scheme", $color-schemes, $color-type-key, $mq_size_key);
-    @include fabricColors("grey", $gray-schemes, $color-type-key, $mq_size_key);
+  // "foreground"  ,
+  // "bg",
+  // "bg-themed",
+  // "border-color"
+
+  // $has-color-palette
+  @if ((cssfabric-config.$has-color-palette==true) or ($mq_size_key!=null and cssfabric-config.$has-color-palette-responsive==true)) {
+    // $has-color-foreground
+    @if (cssfabric-config.$has-color-foreground) {
+      @include fabricColors("palette", $color-palette, foreground, $mq_size_key, true);
+    }
+    // $has-color-bg
+    @if (cssfabric-config.$has-color-bg) {
+      @include fabricColors("palette", $color-palette, bg, $mq_size_key, true);
+    }
+    // $has-color-bg-themed
+    @if (cssfabric-config.$has-color-bg-themed) {
+      @include fabricColors("palette", $color-palette, bg-themed, $mq_size_key, true);
+    }
+    // $has-color-border
+    @if (cssfabric-config.$has-color-border) {
+      @include fabricColors("palette", $color-palette, border-color, $mq_size_key, true);
+    }
   }
+
+  // $has-color-scheme
+  @if ((cssfabric-config.$has-color-scheme==true) or ($mq_size_key!=null and cssfabric-config.$has-color-scheme-responsive==true)) {
+    @if (cssfabric-config.$has-color-foreground) {
+      @include fabricColors("scheme", $color-schemes, foreground, $mq_size_key, true);
+    }
+    @if (cssfabric-config.$has-color-bg) {
+      @include fabricColors("scheme", $color-schemes, bg, $mq_size_key, true);
+    }
+    @if (cssfabric-config.$has-color-bg-themed) {
+      @include fabricColors("palette", $color-schemes, bg-themed, $mq_size_key, true);
+    }
+    @if (cssfabric-config.$has-color-border) {
+      @include fabricColors("scheme", $color-schemes, border-color, $mq_size_key);
+    }
+  }
+
+  // $has-color-gray
+  @if ((cssfabric-config.$has-color-gray==true) or ($mq_size_key!=null and cssfabric-config.$has-color-gray-responsive==true)) {
+    @if (cssfabric-config.$has-color-foreground) {
+      @include fabricColors("grey", $gray-schemes, foreground, $mq_size_key, true);
+    }
+    @if (cssfabric-config.$has-color-bg) {
+      @include fabricColors("grey", $gray-schemes, bg, $mq_size_key, true);
+    }
+    @if (cssfabric-config.$has-color-bg-themed) {
+      @include fabricColors("palette", $gray-schemes, bg-themed, $mq_size_key, true);
+    }
+    @if (cssfabric-config.$has-color-border) {
+      @include fabricColors("grey", $gray-schemes, border-color, $mq_size_key);
+    }
+  }
+
 }

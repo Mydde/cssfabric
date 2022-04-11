@@ -44,6 +44,146 @@
             }
 
             ,
+            "box": {
+                "_data": {
+
+                    "unit-config": "rem",
+                    "border-unit-config": "px",
+                    "unit-size-config": 0.5,
+                    "unit-border-size-config": 1,
+                    "sizes-config": 12,
+                    "border-sizes-px-config": 3,
+                    "shadows-steps": 5,
+                    "shadows_step_multiplier": 2,
+                    "position-shorthand-config": "pos",
+                    "display-shorthand-config": "dsp",
+                    "shadow-shorthand-config": "shad",
+                    "border-shorthand-config": "border",
+                    "padding-shorthand-config": "pad",
+                    "margin-shorthand-config": "marg",
+                    "cssProps": {
+                        "borderShorthands": {
+                            "_": ["top", "bottom", "left", "right"], "t": "top", "b": "bottom", "l": "left", "r": "right", "all": ["top", "bottom", "left", "right"], "u": ["bottom", "left", "right"], "ii": ["left", "right"], "tb": ["top", "bottom"]
+                        }
+
+                        ,
+                        "positionProps": {
+                            "abs": "absolute", "rel": "relative", "stat": "static", "fix": "fixed", "sticky": "sticky"
+                        }
+
+                        ,
+                        "displayProps": {
+                            "block": "block", "none": "none", "inline": "inline", "block-inline": "inline-block", "flex-inline": "inline-flex", "tbl": "table", "tbl-row": "table-row", "tbl-cell": "table-cell", "tbl-column": "table-column"
+                        }
+                    }
+                }
+
+                ,
+                "_metadata": {
+                    "title": "box", "tag": "box", "description": "cssfabric box module to set heights, paddings, margins and shadows on all html elements"
+                }
+
+                ,
+                "_docs": {
+                    "attributes": {
+                        "padding": {
+
+                            "tag": "pad",
+                            "keys": ["_",
+                            "t",
+                            "b",
+                            "l",
+                            "r",
+                            "all",
+                            "u",
+                            "ii",
+                            "tb"],
+                            "values": {
+                                "_": "_", "1": "0.5rem", "2": "1rem", "3": "1.5rem", "4": "2rem", "5": "2.5rem", "6": "3rem", "7": "3.5rem", "8": "4rem", "9": "4.5rem", "10": "5rem", "11": "5.5rem", "12": "6rem"
+                            }
+
+                            ,
+                            "levels": {
+                                "_": ["_", 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
+                            }
+
+                            ,
+                            "about": "padding properties for html elements"
+                        }
+
+                        ,
+                        "margin": {
+
+                            "tag": "marg",
+                            "keys": ["_",
+                            "t",
+                            "b",
+                            "l",
+                            "r",
+                            "all",
+                            "u",
+                            "ii",
+                            "tb"],
+                            "values": {
+                                "_": "_", "1": "0.5rem", "2": "1rem", "3": "1.5rem", "4": "2rem", "5": "2.5rem", "6": "3rem", "7": "3.5rem", "8": "4rem", "9": "4.5rem", "10": "5rem", "11": "5.5rem", "12": "6rem"
+                            }
+
+                            ,
+                            "levels": {
+                                "_": ["_", 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
+                            }
+
+                            ,
+                            "about": "margin properties for html elements"
+                        }
+
+                        ,
+                        "border": {
+
+                            "tag": "border",
+                            "keys": ["_",
+                            "t",
+                            "b",
+                            "l",
+                            "r",
+                            "all",
+                            "u",
+                            "ii",
+                            "tb"],
+                            "values": {
+                                "_": "_", "1": "1px", "2": "2px", "3": "3px"
+                            }
+
+                            ,
+                            "levels": {
+                                "_": ["_", 1, 2, 3]
+                            }
+
+                            ,
+                            "about": "border properties for html elements"
+                        }
+
+                        ,
+                        "shadow": {
+
+                            "tag": "shad",
+                            "values": {
+                                "2": "0.83333333331.724137931", "4": "1.66666666673.4482758621", "8": "3.33333333336.8965517241", "16": "6.666666666713.7931034483", "32": "13.333333333327.5862068966"
+                            }
+
+                            ,
+                            "levels": {
+                                "_": [2, 4, 8, 16, 32]
+                            }
+
+                            ,
+                            "about": "applying shadows give depth and levels to your design"
+                        }
+                    }
+                }
+            }
+
+            ,
             "color": {
                 "_data": {
                     "gray-config": {
@@ -152,146 +292,6 @@
 
                             ,
                             "about": "border colors are slightly darker to maximize surrounding effect"
-                        }
-                    }
-                }
-            }
-
-            ,
-            "box": {
-                "_data": {
-
-                    "unit-config": "rem",
-                    "border-unit-config": "px",
-                    "unit-size-config": 0.5,
-                    "unit-border-size-config": 1,
-                    "sizes-config": 32,
-                    "border-sizes-px-config": 5,
-                    "shadows-steps": 5,
-                    "shadows_step_multiplier": 2,
-                    "position-shorthand-config": "pos",
-                    "display-shorthand-config": "dsp",
-                    "shadow-shorthand-config": "shad",
-                    "border-shorthand-config": "border",
-                    "padding-shorthand-config": "pad",
-                    "margin-shorthand-config": "marg",
-                    "cssProps": {
-                        "borderShorthands": {
-                            "_": ["top", "bottom", "left", "right"], "t": "top", "b": "bottom", "l": "left", "r": "right", "all": ["top", "bottom", "left", "right"], "u": ["bottom", "left", "right"], "ii": ["left", "right"], "tb": ["top", "bottom"]
-                        }
-
-                        ,
-                        "positionProps": {
-                            "abs": "absolute", "rel": "relative", "stat": "static", "fix": "fixed", "sticky": "sticky"
-                        }
-
-                        ,
-                        "displayProps": {
-                            "block": "block", "none": "none", "inline": "inline", "block-inline": "inline-block", "flex-inline": "inline-flex", "tbl": "table", "tbl-row": "table-row", "tbl-cell": "table-cell", "tbl-column": "table-column"
-                        }
-                    }
-                }
-
-                ,
-                "_metadata": {
-                    "title": "box", "tag": "box", "description": "cssfabric box module to set heights, paddings, margins and shadows on all html elements"
-                }
-
-                ,
-                "_docs": {
-                    "attributes": {
-                        "padding": {
-
-                            "tag": "pad",
-                            "keys": ["_",
-                            "t",
-                            "b",
-                            "l",
-                            "r",
-                            "all",
-                            "u",
-                            "ii",
-                            "tb"],
-                            "values": {
-                                "_": "_", "1": "0.5rem", "2": "1rem", "3": "1.5rem", "4": "2rem", "5": "2.5rem", "6": "3rem", "7": "3.5rem", "8": "4rem", "9": "4.5rem", "10": "5rem", "11": "5.5rem", "12": "6rem", "13": "6.5rem", "14": "7rem", "15": "7.5rem", "16": "8rem", "17": "8.5rem", "18": "9rem", "19": "9.5rem", "20": "10rem", "21": "10.5rem", "22": "11rem", "23": "11.5rem", "24": "12rem", "25": "12.5rem", "26": "13rem", "27": "13.5rem", "28": "14rem", "29": "14.5rem", "30": "15rem", "31": "15.5rem", "32": "16rem"
-                            }
-
-                            ,
-                            "levels": {
-                                "_": ["_", 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32]
-                            }
-
-                            ,
-                            "about": "padding properties for html elements"
-                        }
-
-                        ,
-                        "margin": {
-
-                            "tag": "marg",
-                            "keys": ["_",
-                            "t",
-                            "b",
-                            "l",
-                            "r",
-                            "all",
-                            "u",
-                            "ii",
-                            "tb"],
-                            "values": {
-                                "_": "_", "1": "0.5rem", "2": "1rem", "3": "1.5rem", "4": "2rem", "5": "2.5rem", "6": "3rem", "7": "3.5rem", "8": "4rem", "9": "4.5rem", "10": "5rem", "11": "5.5rem", "12": "6rem", "13": "6.5rem", "14": "7rem", "15": "7.5rem", "16": "8rem", "17": "8.5rem", "18": "9rem", "19": "9.5rem", "20": "10rem", "21": "10.5rem", "22": "11rem", "23": "11.5rem", "24": "12rem", "25": "12.5rem", "26": "13rem", "27": "13.5rem", "28": "14rem", "29": "14.5rem", "30": "15rem", "31": "15.5rem", "32": "16rem"
-                            }
-
-                            ,
-                            "levels": {
-                                "_": ["_", 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32]
-                            }
-
-                            ,
-                            "about": "margin properties for html elements"
-                        }
-
-                        ,
-                        "border": {
-
-                            "tag": "border",
-                            "keys": ["_",
-                            "t",
-                            "b",
-                            "l",
-                            "r",
-                            "all",
-                            "u",
-                            "ii",
-                            "tb"],
-                            "values": {
-                                "_": "_", "1": "1px", "2": "2px", "3": "3px", "4": "4px", "5": "5px"
-                            }
-
-                            ,
-                            "levels": {
-                                "_": ["_", 1, 2, 3, 4, 5]
-                            }
-
-                            ,
-                            "about": "border properties for html elements"
-                        }
-
-                        ,
-                        "shadow": {
-
-                            "tag": "shad",
-                            "values": {
-                                "2": "0.83333333331.724137931", "4": "1.66666666673.4482758621", "8": "3.33333333336.8965517241", "16": "6.666666666713.7931034483", "32": "13.333333333327.5862068966", "64": "26.666666666755.1724137931", "128": "53.3333333333110.3448275862", "256": "106.6666666667220.6896551724"
-                            }
-
-                            ,
-                            "levels": {
-                                "_": [2, 4, 8, 16, 32, 64, 128, 256]
-                            }
-
-                            ,
-                            "about": "applying shadows give depth and levels to your design"
                         }
                     }
                 }
@@ -526,8 +526,7 @@
                     }
 
                     ,
-                    "grid-ratios-config": [5,
-                    12],
+                    "grid-ratios-config": 16,
                     "defined-step-size": 2,
                     "defined-step-unit": "rem",
                     "defined-steps": [1,
@@ -576,36 +575,8 @@
                             "keys": ["w",
                             "h"],
                             "levels": {
-                                "_size": ["full", "mid", "quarter", "tiers"], "_content": ["content-max", "content-min"], "_defined-steps": [1, 2, 4, 8, 16, 24, 32, 48, 64], "_grid-5": ["1-5", "2-5", "3-5", "4-5", "5-5"], "_grid-12": ["1-12", "2-12", "3-12", "4-12", "5-12", "6-12", "7-12", "8-12", "9-12", "10-12", "11-12", "12-12"]
+                                "_size": ["full", "mid", "quarter", "tiers"], "_content": ["content-max", "content-min"], "_defined-steps": [1, 2, 4, 8, 16, 24, 32, 48, 64], "_grid-16": ["1-16", "2-16", "3-16", "4-16", "5-16", "6-16", "7-16", "8-16", "9-16", "10-16", "11-16", "12-16", "13-16", "14-16", "15-16", "16-16"]
                             }
-                        }
-                    }
-                }
-            }
-
-            ,
-            "table": {
-                "_data": {
-                    "className": "table", "classNameShort": "tbl", "table_class_name": "table", "table_class_name_short": "tbl", "table-bg-color-head": "#f4f4f4", "table-bg-color-strip-main": "#ededed", "table-bg-color-strip-second": "#f5f5f5", "table-border-color-header": "#ccc", "table-border-color-main": "#ededed", "table-border-color-second": "#f5f5f5"
-                }
-
-                ,
-                "_metadata": {
-                    "title": "table", "tag": "table", "description": "cssfabric table module to set different table styles"
-                }
-
-                ,
-                "_docs": {
-                    "attributes": {
-                        "table": {
-
-                            "tag": "table",
-                            "classNames": {
-                                "_": ["bg-strip-2", "bg-strip-5"], "_pos": ["sticky", "layout"], "_deco": ["h-line", "v-line", "border"]
-                            }
-
-                            ,
-                            "about": "is a table"
                         }
                     }
                 }
@@ -753,6 +724,34 @@
                 ,
                 "_docs": {
                     "z_groups": "_"
+                }
+            }
+
+            ,
+            "table": {
+                "_data": {
+                    "className": "table", "classNameShort": "tbl", "table_class_name": "table", "table_class_name_short": "tbl", "table-bg-color-head": "#f4f4f4", "table-bg-color-strip-main": "#ededed", "table-bg-color-strip-second": "#f5f5f5", "table-border-color-header": "#ccc", "table-border-color-main": "#ededed", "table-border-color-second": "#f5f5f5"
+                }
+
+                ,
+                "_metadata": {
+                    "title": "table", "tag": "table", "description": "cssfabric table module to set different table styles"
+                }
+
+                ,
+                "_docs": {
+                    "attributes": {
+                        "table": {
+
+                            "tag": "table",
+                            "classNames": {
+                                "_": ["bg-strip-2", "bg-strip-5"], "_pos": ["sticky", "layout"], "_deco": ["h-line", "v-line", "border"]
+                            }
+
+                            ,
+                            "about": "is a table"
+                        }
+                    }
                 }
             }
         }

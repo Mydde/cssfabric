@@ -28,6 +28,7 @@ $theme-dark: map-get($themes, dark) !default;
   @include boxBuild.shadowsCssVars();
   /* themes */
   @include themeBuild.themeBaseVars($theme-light);
+
   &,[data-theme="light"] {
     @include themeBuild.themeBaseVars($theme-light);
 

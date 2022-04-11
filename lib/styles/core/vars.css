@@ -241,39 +241,23 @@
   --color-gray-600-alpha-low: rgba(153, 153, 153, 0.8);
   --color-gray-600-alpha-high: rgba(153, 153, 153, 0.1);
   /* boxes */
-  --box-unit-0: 0rem;
-  --box-unit-1: 0.5rem;
-  --box-unit-2: 1rem;
-  --box-unit-3: 1.5rem;
-  --box-unit-4: 2rem;
-  --box-unit-5: 2.5rem;
-  --box-unit-6: 3rem;
-  --box-unit-7: 3.5rem;
-  --box-unit-8: 4rem;
-  --box-unit-9: 4.5rem;
-  --box-unit-10: 5rem;
-  --box-unit-11: 5.5rem;
-  --box-unit-12: 6rem;
-  --box-unit-13: 6.5rem;
-  --box-unit-14: 7rem;
-  --box-unit-15: 7.5rem;
-  --box-unit-16: 8rem;
-  --box-unit-17: 8.5rem;
-  --box-unit-18: 9rem;
-  --box-unit-19: 9.5rem;
-  --box-unit-20: 10rem;
-  --box-unit-21: 10.5rem;
-  --box-unit-22: 11rem;
-  --box-unit-23: 11.5rem;
-  --box-unit-24: 12rem;
-  --box-unit-25: 12.5rem;
-  --box-unit-26: 13rem;
-  --box-unit-27: 13.5rem;
-  --box-unit-28: 14rem;
-  --box-unit-29: 14.5rem;
-  --box-unit-30: 15rem;
-  --box-unit-31: 15.5rem;
-  --box-unit-32: 16rem;
+  --box-density-0: 0rem;
+  --box-density-1: 0.5rem;
+  --box-density-2: 1rem;
+  --box-density-3: 1.5rem;
+  --box-density-4: 2rem;
+  --box-density-5: 2.5rem;
+  --box-density-6: 3rem;
+  --box-density-7: 3.5rem;
+  --box-density-8: 4rem;
+  --box-density-9: 4.5rem;
+  --box-density-10: 5rem;
+  --box-density-11: 5.5rem;
+  --box-density-12: 6rem;
+  --box-density-preset-tiny: 0.25rem;
+  --box-density-preset-small: 0.5rem;
+  --box-density-preset-medium: 1.5rem;
+  --box-density-preset-large: 2rem;
   /* text */
   /*Hs*/
   --font-size-h1: 3.1rem;
@@ -322,14 +306,71 @@
   --theme-color-foreground-alpha: rgba(40, 34, 48, 0.3);
   --theme-color-foreground-alpha-low: rgba(40, 34, 48, 0.8);
   --theme-color-foreground-alpha-high: rgba(40, 34, 48, 0.1);
-  --theme-color-background: #f1f1f1;
+  --theme-color-background: #ffffff;
   --theme-color-background-alpha: rgba(40, 34, 48, 0.3);
   --theme-color-background-alpha-low: rgba(40, 34, 48, 0.8);
   --theme-color-background-alpha-high: rgba(40, 34, 48, 0.1);
-  --theme-color-paper: #ededed;
-  --theme-color-paper-alpha: rgba(237, 237, 237, 0.3);
-  --theme-color-paper-alpha-low: rgba(237, 237, 237, 0.8);
-  --theme-color-paper-alpha-high: rgba(237, 237, 237, 0.1);
+  --theme-color-paper: #f1f1f1;
+  --theme-color-paper-alpha: rgba(241, 241, 241, 0.3);
+  --theme-color-paper-alpha-low: rgba(241, 241, 241, 0.8);
+  --theme-color-paper-alpha-high: rgba(241, 241, 241, 0.1);
+}
+:root [density=small] {
+  --box-density-0: 0rem;
+  --box-density-1: 0.25rem;
+  --box-density-2: 0.5rem;
+  --box-density-3: 0.75rem;
+  --box-density-4: 1rem;
+  --box-density-5: 1.25rem;
+  --box-density-6: 1.5rem;
+  --box-density-7: 1.75rem;
+  --box-density-8: 2rem;
+  --box-density-9: 2.25rem;
+  --box-density-10: 2.5rem;
+  --box-density-11: 2.75rem;
+  --box-density-12: 3rem;
+  --box-density-preset-tiny: 0.125rem;
+  --box-density-preset-small: 0.25rem;
+  --box-density-preset-medium: 0.75rem;
+  --box-density-preset-large: 1rem;
+}
+:root [density=default] {
+  --box-density-0: 0rem;
+  --box-density-1: 0.5rem;
+  --box-density-2: 1rem;
+  --box-density-3: 1.5rem;
+  --box-density-4: 2rem;
+  --box-density-5: 2.5rem;
+  --box-density-6: 3rem;
+  --box-density-7: 3.5rem;
+  --box-density-8: 4rem;
+  --box-density-9: 4.5rem;
+  --box-density-10: 5rem;
+  --box-density-11: 5.5rem;
+  --box-density-12: 6rem;
+  --box-density-preset-tiny: 0.25rem;
+  --box-density-preset-small: 0.5rem;
+  --box-density-preset-medium: 1.5rem;
+  --box-density-preset-large: 2rem;
+}
+:root [density=large] {
+  --box-density-0: 0rem;
+  --box-density-1: 0.875rem;
+  --box-density-2: 1.75rem;
+  --box-density-3: 2.625rem;
+  --box-density-4: 3.5rem;
+  --box-density-5: 4.375rem;
+  --box-density-6: 5.25rem;
+  --box-density-7: 6.125rem;
+  --box-density-8: 7rem;
+  --box-density-9: 7.875rem;
+  --box-density-10: 8.75rem;
+  --box-density-11: 9.625rem;
+  --box-density-12: 10.5rem;
+  --box-density-preset-tiny: 0.4375rem;
+  --box-density-preset-small: 0.875rem;
+  --box-density-preset-medium: 2.625rem;
+  --box-density-preset-large: 3.5rem;
 }
 :root, :root [data-theme=light] {
   /* theme base colors*/
@@ -338,15 +379,15 @@
   --theme-color-foreground-alpha: rgba(40, 34, 48, 0.3);
   --theme-color-foreground-alpha-low: rgba(40, 34, 48, 0.8);
   --theme-color-foreground-alpha-high: rgba(40, 34, 48, 0.1);
-  --theme-color-background: #f1f1f1;
+  --theme-color-background: #ffffff;
   --theme-color-background-alpha: rgba(40, 34, 48, 0.3);
   --theme-color-background-alpha-low: rgba(40, 34, 48, 0.8);
   --theme-color-background-alpha-high: rgba(40, 34, 48, 0.1);
-  --theme-color-paper: #ededed;
-  --theme-color-paper-alpha: rgba(237, 237, 237, 0.3);
-  --theme-color-paper-alpha-low: rgba(237, 237, 237, 0.8);
-  --theme-color-paper-alpha-high: rgba(237, 237, 237, 0.1);
-  --theme-color-border: rgba(237, 237, 237, 0.2);
+  --theme-color-paper: #f1f1f1;
+  --theme-color-paper-alpha: rgba(241, 241, 241, 0.3);
+  --theme-color-paper-alpha-low: rgba(241, 241, 241, 0.8);
+  --theme-color-paper-alpha-high: rgba(241, 241, 241, 0.1);
+  --theme-color-border: rgba(241, 241, 241, 0.2);
   --theme-color-overlay: rgba(208, 191, 151, 0.2);
 }
 :root [data-theme=dark] {
@@ -360,7 +401,7 @@
   --theme-color-background-alpha: rgba(241, 241, 241, 0.3);
   --theme-color-background-alpha-low: rgba(241, 241, 241, 0.8);
   --theme-color-background-alpha-high: rgba(241, 241, 241, 0.1);
-  --theme-color-paper: #ededed;
+  --theme-color-paper: #f1f1f1;
   --theme-color-paper-alpha: rgba(58, 59, 59, 0.3);
   --theme-color-paper-alpha-low: rgba(58, 59, 59, 0.8);
   --theme-color-paper-alpha-high: rgba(58, 59, 59, 0.1);

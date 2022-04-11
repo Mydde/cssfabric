@@ -1,44 +1,39 @@
 @use "sass:map";
 @use "sass:math";
 @use '../../_utils';
-@use "../cssfabric-config" as fabricConfig;
+@use "../cssfabric-config";
 @use "box-vars" as box;
 
-$fabric-config: fabricConfig.$cssfabric-config;
+$fabric-config: cssfabric-config.$cssfabric-config;
 $box-config: box.$box-config;
 $box-docs: box.$box-docs;
 
-$cssProps: map-get($box-config, cssProps);
-$box-border-shorthands: map-get($cssProps, borderShorthands);
-$box-position-props: map-get($cssProps, positionProps);
-$box-display-props: map-get($cssProps, displayProps);
+$box-border-shorthands: box.$box-border-shorthands;
+$box-position-props: box.$box-position-shorthands;
+$box-display-props: box.$box-display-shorthands;
 
-$box-unit-config: map-get($box-config, unit-config);
-$box-border-unit-config: map-get($box-config, border-unit-config);
-$box-unit-size-config: map-get($box-config, unit-size-config);
-$box-unit-border-size-config: map-get($box-config, unit-border-size-config);
-$box-sizes-config: map-get($box-config, sizes-config);
-$box-border-sizes-px-config: map-get($box-config, border-sizes-px-config);
+$box-unit-config: box.$box-unit-config;
+$box-border-unit-config: box.$box-border-unit-config;
+$box-unit-size-config: box.$box-unit-size-config;
+$box-unit-border-size-config: box.$box-unit-border-size-config;
+$box-sizes-config: box.$box-sizes-config;
+$box-border-sizes-px-config: box.$box-sizes-border-config;
 
-$box-position-shorthand-config: map-get($box-config, position-shorthand-config) !default;
-$box-display-shorthand-config: map-get($box-config, display-shorthand-config) !default;
-$box-shadow-shorthand-config: map-get($box-config, shadow-shorthand-config) !default;
+$box-position-shorthand-config: cssfabric-config.$box-position-shorthand !default;
+$box-display-shorthand-config: cssfabric-config.$box-display-shorthand !default;
+$box-shadow-shorthand-config: cssfabric-config.$box-shadow-shorthand !default;
 
-$box-border-shorthand-config: map-get($box-config, border-shorthand-config) !default;
-$box-padding-shorthand-config: map-get($box-config, padding-shorthand-config) !default;
-$box-margin-shorthand-config: map-get($box-config, margin-shorthand-config) !default;
+$box-border-shorthand-config: cssfabric-config.$box-border-shorthand !default;
+$box-padding-shorthand-config: cssfabric-config.$box-padding-shorthand !default;
+$box-margin-shorthand-config: cssfabric-config.$box-margin-shorthand !default;
 
-$box-shadows-steps: map-get($box-config, shadows-steps) !default;
-$box-shadows-step-multiplier: map-get($box-config, shadows-step_multiplier) !default;
+$box-shadows-steps: box.$box-shadows-steps !default;
+$box-shadows-step-multiplier: box.$box-shadows-step-multiplier !default;
 
-$box-radius: map-get($fabric-config, border-radius);
+$box-radius: cssfabric-config.$box-radius;
+$box-unit-presets: cssfabric-config.$box-unit-presets;
 
-$css-shorthands: (
-        border: $box-border-shorthand-config,
-        padding: $box-padding-shorthand-config,
-        margin: $box-margin-shorthand-config
-);
-
+$densities-ratios : cssfabric-config.$densities-ratios;
 
 // adding {border}-{r} shorthand css rule for .{border}-{r}-1
 @function raw_size_tag_rule($condition) {
@@ -49,74 +44,59 @@ $css-shorthands: (
   }
 }
 
-@function write-box-rule($_args) {
-  $rule_value: map-get($_args, rule_value);
-  $rule_type: map-get($_args, rule_type);
-  $css_prop: map-get($_args, css_prop);
-  $grid_size_value: map-get($_args, grid_size_value);
-
-  $computed_value: "";
-
-
-  //
-  @if ($css_prop== "padding" or $css_prop== "margin") {
-    $computed_value: var(--box-unit-#{$grid_size_value});
-  }
-
-  // complex write method: 1px value
-  @if ($css_prop== "border") {
-    $computed_value: $rule_value + " solid #ccc";
-  }
-
-  @return $computed_value;
-}
-
+// support ratios
+// for paddings margins positions
 @mixin pmbCssVars() {
   $iterator: $box-sizes-config;
   @for $grid_size_value from 0 through $iterator {
     $css_size_value: ($grid_size_value * $box-unit-size-config) + $box-unit-config;
-    --box-unit-#{$grid_size_value} : #{$css_size_value};
+    --box-density-#{$grid_size_value} : #{$css_size_value};
+  }
+
+  // presets
+  @each $preset, $preset-value in $box-unit-presets{
+    $value: ($preset-value * $box-unit-size-config) + $box-unit-config;
+    --box-density-preset-#{$preset}: #{$value};
+  }
+
+  // $ratios: tiny small medium large full
+  @each $ratio, $val in $densities-ratios {
+    [density=#{$ratio}] {
+      @for $grid_size_value from 0 through $iterator {
+        $css_size_value: (($grid_size_value * $box-unit-size-config)*$val) + $box-unit-config;
+        --box-density-#{$grid_size_value} : #{$css_size_value};
+      }
+      // presets
+      @each $preset, $preset-value in $box-unit-presets{
+        $value: (($preset-value * $box-unit-size-config)*$val) + $box-unit-config;
+        --box-density-preset-#{$preset}: #{$value};
+      }
+    }
   }
 }
 
-// prop : ...top bottom for  border | margin | padding
+//  border
 @mixin fabric-pmb($fabric_box_position_prop, $fabric_box_position_prop_short) {
   @each $fabric_box_pmb_side_shorthand, $rule in $box-border-shorthands {
-    $iterator: if($fabric_box_position_prop== border, $box-border-sizes-px-config, $box-sizes-config);
-    $unit: if($fabric_box_position_prop== border, $box-border-unit-config, $box-unit-config);
-    // box_unit_border_size
-    $unit_size: if($fabric_box_position_prop== border, $box-unit-border-size-config, $box-unit-size-config);
 
-    // css property name
-    // remove _ is present
+    // remove _ if present
     $shorthand: if($fabric_box_pmb_side_shorthand== "_", "", -#{$fabric_box_pmb_side_shorthand});
 
     .#{$fabric_box_position_prop_short}#{$shorthand} {
-      // todo use utils.getBoxIterator
-      @for $grid_size_value from 1 through $iterator {
-        $css_size_value: ($grid_size_value * $unit_size) + $unit;
-        // css property name is aggregated with size value $i
-        #{raw_size_tag_rule($grid_size_value)} &-#{$grid_size_value} {
-          @if length($rule) ==4 {
-            $_args: (
-                    rule_value: $css_size_value,
-                    rule_type: "pmb",
-                    css_prop: $fabric_box_position_prop,
-                    grid_size_value: $grid_size_value
-            );
 
-            #{$fabric_box_position_prop}: write-box-rule($_args);
+      @for $grid_size_value from 1 through $box-border-sizes-px-config {
+        $css_size_value: ($grid_size_value * $box-unit-border-size-config) + $box-border-unit-config;
+        // css property name is aggregated with size value $i
+
+        $computed_value: $css_size_value + " solid #ededed";
+
+        #{raw_size_tag_rule($grid_size_value)} &-#{$grid_size_value} {
+          @if length($rule) == 4 {
+            #{$fabric_box_position_prop}: #{$computed_value};
           } @else {
 
             @each $rule_value in $rule {
-              $_args: (
-                      rule_value: $css_size_value,
-                      rule_type: "pmb",
-                      css_prop: $fabric_box_position_prop,
-                      grid_size_value: $grid_size_value
-              );
-
-              #{$fabric_box_position_prop}-#{$rule_value}: write-box-rule($_args);
+              #{$fabric_box_position_prop}-#{$rule_value}: #{$computed_value};
             }
           }
         }
@@ -125,21 +105,60 @@ $css-shorthands: (
   }
 }
 
-// stupid, make three calls
-// pmb as padding margin border property
-@mixin padding-margin-border($mq_key) {
-  @each $box_pmb_shorthand_value, $box_pmb_shorthand in $css-shorthands {
-    $shorthand: if($mq_key, #{$box_pmb_shorthand}-#{$mq_key}, #{$box_pmb_shorthand});
+// prop : ... margin | padding
+@mixin fabric-pm($fabric_box_position_prop, $fabric_box_position_prop_short) {
+  @each $fabric_box_pmb_side_shorthand, $rule in $box-border-shorthands {
 
-    @include fabric-pmb($box_pmb_shorthand_value, $shorthand);
+    $shorthand: if($fabric_box_pmb_side_shorthand== "_", "", -#{$fabric_box_pmb_side_shorthand});
+
+    .#{$fabric_box_position_prop_short}#{$shorthand} {
+
+      // presets
+      @each $preset, $preset-value in $box-unit-presets{
+        .#{$fabric_box_position_prop_short}#{$shorthand}-#{$preset}{
+          #{$fabric_box_position_prop}: --box-density-preset-#{$preset};
+        }
+      }
+
+      @for $grid_size_value from 1 through $box-sizes-config {
+        $css_size_value: ($grid_size_value * $box-unit-size-config) + $box-unit-config;
+        // css property name is aggregated with size value $i
+
+        $computed_value: var(--box-density-#{$grid_size_value});
+
+        #{raw_size_tag_rule($grid_size_value)} &-#{$grid_size_value} {
+          @if length($rule) == 4 {
+            #{$fabric_box_position_prop}: #{$computed_value};
+          } @else {
+            @each $rule_value in $rule {
+              #{$fabric_box_position_prop}-#{$rule_value}: #{$computed_value};
+            }
+          }
+        }
+      }
+    }
   }
+}
+
+// pmb as padding margin border property
+// padding-tiny padding-small padding
+@mixin padding-margin-border($mq_key) {
+
+  $shorthand: if($mq_key, #{$box-margin-shorthand-config}-#{$mq_key}, #{$box-margin-shorthand-config});
+  @include fabric-pm(margin, $shorthand);
+
+  $shorthand: if($mq_key, #{$box-padding-shorthand-config}-#{$mq_key}, #{$box-padding-shorthand-config});
+  @include fabric-pm(padding, $shorthand);
+
+  $shorthand: if($mq_key, #{$box-border-shorthand-config}-#{$mq_key}, #{$box-border-shorthand-config});
+  @include fabric-pmb(border, $shorthand);
+
 }
 
 // radius
 @mixin radius($mq_key) {
   $shorthand: if($mq_key, radius-#{$mq_key}, radius);
 
-  @debug $box-radius;
   /*radius*/
   @each $radius, $value in $box-radius {
     .#{$shorthand}-#{$radius} {
@@ -177,7 +196,7 @@ $css-shorthands: (
   @each $place in $places {
     @for $size from 0 through 8 {
       .#{$place}-#{$shorthand}#{$size} {
-        #{$place}: var(--box-unit-#{$size});
+        #{$place}: var(--box-density-#{$size});
       }
     }
   }

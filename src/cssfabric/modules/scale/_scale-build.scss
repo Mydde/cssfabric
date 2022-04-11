@@ -4,23 +4,23 @@
 
 $scale-config: scale-vars.$scale-config;
 $_cfg: utils.get_fabric_conf();
-$cssProps: map-get($scale-config, cssProps);
 
 // read variables
 $_has_dimensions_strict: map-get($_cfg, has_dimensions_strict);
 $_has_dimensions_min: true; // map-get($_cfg, has_dimensions_min);
 $_has_dimensions_max: true; // map-get($_cfg, has_dimensions_max);
 
-$scale-defined-steps: map-get($scale-config, defined-steps);
+$scale-defined-steps: scale-vars.$scale-defined-steps;
 $scale-defined-step-unit: map-get($scale-config, defined-step-unit);
 $scale-defined-step-size: map-get($scale-config, defined-step-size);
 $scale-grid-ratios-config: map-get($scale-config, grid-ratios-config);
 
-$scale-sizes: map-get($cssProps, size);
-$scale-content: map-get($cssProps, content);
+$scale-sizes: scale-vars.$scale-sizes-config;
+$scale-content: scale-vars.$scale-content-config;
 
-$weight-config: map-get($scale-config, weight-config)!default;
-$unit-tag-config: map-get($scale-config, unit-tag-config)!default;
+$weight-config: map-get($scale-config, weight-config);
+$unit-tag-config: scale-vars.$scale-shorthands;
+$scale-sizes-preset-config: scale-vars.$scale-sizes-preset-config;
 
 /// css dimensions rules builder
 @mixin scale-classname-builder($scale_prop, $size_code, $size_value, $media_query_code) {
@@ -67,10 +67,10 @@ $unit-tag-config: map-get($scale-config, unit-tag-config)!default;
   }
 }
 
-// loop on dimensions
+// content-max-min
 @mixin play_dimensions_loop($scale_prop, $mq_size_key) {
   // loop on dimensions
-  @each $scale_css_key , $scale_css_value in $scale-content {
+  @each $scale_css_key, $scale_css_value in $scale-content {
     @include scale-classname-builder($scale_prop, $scale_css_key, $scale_css_value, $mq_size_key);
   }
 }
@@ -112,14 +112,27 @@ $unit-tag-config: map-get($scale-config, unit-tag-config)!default;
   }
 }
 
+@mixin play_preset_loop($scale_prop, $mq_size_key) {
+
+  @each $preset, $value in $scale-sizes-preset-config {
+    @include scale-classname-builder(
+                    $scale_prop,
+                    $preset,
+                    $value + #{$scale-defined-step-unit},
+                    $mq_size_key
+    );
+  }
+}
+
 @mixin buildScale($mq_size_key:null) {
   @each $scale_prop, $scale_prop_short in $unit-tag-config {
-    // loop on shorthands
+    // loop on shorthands   mid tiers ...
     @include play_shorthand_loop($scale_prop, $mq_size_key);
 
     // loop on dimensions
     @include play_dimensions_loop($scale_prop, $mq_size_key);
 
+    @include play_preset_loop($scale_prop, $mq_size_key);
     // loop on defined dimensions
     @include play_defined_dimensions_loop($scale_prop, $mq_size_key);
 

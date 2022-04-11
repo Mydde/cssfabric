@@ -6,19 +6,10 @@
 
 // dimensions
 
-// border-color
-$has-border-color-theme: true;
-$has-border-color-theme-responsive: true;
-$has-border-color-scheme: true;
-$has-border-color-scheme-responsive: true;
-$has-border-color-palette: true;
-$has-border-color-palette-responsive: true;
-$has-border-color-gray: true;
-$has-border-color-gray-responsive: true;
 // grays
 $has-color-gray: true;
 $has-color-gray-responsive: true;
-// text
+// text - done conditionals
 $has-text-transform: true;
 $has-text-transform-responsive: false;
 $has-text-align: true;
@@ -30,19 +21,19 @@ $has-text-shadow-color-scheme-responsive: false;
 $has-text-shadow-color-palette: true;
 $has-text-shadow-color-palette-responsive: false;
 
-// color
-$has-color-theme: true;
-$has-color-theme-responsive: true;
-// background-color-theme
-$has-background-color-theme: true;
-$has-background-color-theme-responsive: true;
-// background-color-scheme
-$has-background-color-scheme: true;
-$has-background-color-scheme-responsive: true;
-// background-color-palette
-$has-background-color-palette: true;
-$has-background-color-palette-responsive: true;
-// density
+// colors
+$has-color-palette: true;
+$has-color-palette-responsive: false;
+$has-color-scheme: true;
+$has-color-scheme-responsive: false;
+$has-color-gray: true;
+$has-color-gray-responsive: false;
+
+$has-color-foreground: true;
+$has-color-bg: true;
+$has-color-bg-themed: true;
+$has-color-border: true;
+
 
 $theme-color-primary: rgb(67, 23, 0) !default;
 $theme-color-secondary: #D14B02 !default;
@@ -60,17 +51,37 @@ $gray-start: #f4f4f4 !default;
 $gray-end: #999 !default;
 $gray-steps: 5 !default;
 
+$densities-ratios: (small:0.5, default:1, large:1.75);
+
+$box-position-shorthand: pos !default;
+$box-display-shorthand: dsp !default;
+$box-shadow-shorthand: shad !default;
+$box-border-shorthand: border !default;
+$box-padding-shorthand: pad !default;
+$box-margin-shorthand: marg !default;
+
+$box-unit-presets: (tiny:0.5, small:1, medium:3, large:4) !default;
+$box-radius: (tiny:4px, small:8px, medium:16px) !default;
+
+$scale-tag-width-shorthand: w!default;
+$scale-tag-height-shorthand: h!default;;
+
 $cssfabric-metadata: (
         title: "cssfabric",
         tag: "cssfabric",
         description: "cssfabric global config variables"
 );
 
+// vars
+$vars-box-density: --box-density!default;
+$vars-box-density-preset: --box-density-preset!default;
+
 $cssfabric-config: (
         cfg-has-dimension-strict: true,
         CFG_HAS_DIMENSION_MIN: true,
         CFG_HAS_DIMENSION_MAX: true,
         size_step: 0.5rem,
+        size-step-unit: rem,
         sep: "-",
         sizes: (
                 tiny: 32,
@@ -83,19 +94,19 @@ $cssfabric-config: (
                 xxl: 1300,
                 xl: 1200,
                 lg: 960,
-                md: 760,
-                sm: 0
+                md: 760
         ),
+        densities-ratios: $densities-ratios,
         themes:(
                 light:(
-                        foreground: #282230,
-                        background: #f1f1f1,
-                        paper: #ededed
+                        foreground: $theme-color-foreground,
+                        background: $theme-color-background,
+                        paper: $theme-color-paper,
                 ),
                 dark:(
-                        foreground: #f1f1f1,
-                        background: #27323a,
-                        paper: #3a3b3b
+                        foreground: $theme-dark-color-foreground,
+                        background: $theme-dark-color-background,
+                        paper: $theme-dark-color-paper
                 ),
         ),
         theme: (

@@ -1,28 +1,48 @@
 @use '../../utils';
+@use "../cssfabric-config";
 
+$scale-sizes-config: (
+        full: 100%,
+        mid: 50%,
+        quarter: 25%,
+        tiers: 33%
+);
+$scale-content-config: (
+        content-max: max-content,
+        content-min: min-content
+);
+
+$scale-sizes-preset-config: (
+        tiny: 2,
+        small: 4,
+        medium: 8,
+        large: 16,
+        wide: 32,
+);
+
+$scale-grid-ratios-config: (16);
+
+$scale-defined-steps: (
+        1,
+        2,
+        4,
+        8,
+        16,
+        24,
+        32,
+        48,
+        64
+);
+
+$scale-shorthands: (
+        width: cssfabric-config.$scale-tag-width-shorthand,
+        height: cssfabric-config.$scale-tag-height-shorthand
+);
 
 $_cssProps: (
-        size: (
-                full: 100%,
-                mid: 50%,
-                quarter: 25%,
-                tiers: 33%
-        ),
-        content:(
-                content-max: max-content,
-                content-min: min-content
-        ),
-        defined-steps: (
-                1,
-                2,
-                4,
-                8,
-                16,
-                24,
-                32,
-                48,
-                64
-        )
+        size: $scale-sizes-config,
+        content:$scale-content-config,
+        defined-steps: $scale-defined-steps
 );
 
 $scale-metadata: (
@@ -33,27 +53,11 @@ $scale-metadata: (
 
 $scale-config: (
         weight-config: 1em,
-        unit-tag-config: (
-                width: w,
-                height: h
-        ),
-        grid-ratios-config: (
-                5,
-                12
-        ),
+        unit-tag-config: $scale-shorthands,
+        grid-ratios-config: $scale-grid-ratios-config,
         defined-step-size: 2,
         defined-step-unit: rem,
-        defined-steps: (
-                1,
-                2,
-                4,
-                8,
-                16,
-                24,
-                32,
-                48,
-                64
-        ),
+        defined-steps: $scale-defined-steps,
         cssProps:$_cssProps
 );
 
@@ -64,11 +68,10 @@ $scale-docs: (
                         tag: scale,
                         keys: (w, h),
                         levels:(
-                                _size : utils.getObjectKeys(map-get($_cssProps, size)),
-                                _content: utils.getObjectKeys(map-get($_cssProps, content)),
-                                _defined-steps: utils.getObjectKeys(map-get($_cssProps, defined-steps)),
-                                _grid-5: utils.getObjectKeys(utils.cssDimensionPropertyBuilder(h, 5)),
-                                _grid-12: utils.getObjectKeys(utils.cssDimensionPropertyBuilder(h, 12))
+                                _size : utils.getObjectKeys($scale-sizes-config),
+                                _content: utils.getObjectKeys($scale-content-config),
+                                _defined-steps: utils.getObjectKeys($scale-defined-steps),
+                                _grid-16: utils.getObjectKeys(utils.cssDimensionPropertyBuilder(h, 16)),
                         )
                 )
         )

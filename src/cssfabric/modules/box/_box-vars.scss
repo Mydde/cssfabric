@@ -1,15 +1,16 @@
 @use '../../utils';
+@use "../cssfabric-config";
 
-$_unit-config: rem;
-$_border-unit-config: px;
-$_unit-size-config: 0.5;
-$_unit-border-size-config: 1;
+$box-unit-config: rem;
+$box-border-unit-config: px;
+$box-unit-size-config: 0.5;
+$box-unit-border-size-config: 1;
 
-$_sizes-config: 32;
-$_sizes-border-config: 5;
+$box-sizes-config: 12;
+$box-sizes-border-config: 3;
 
-$_shadows-steps: 5;
-$_shadows-step-multiplier: 2;
+$box-shadows-steps: 5;
+$box-shadows-step-multiplier: 2;
 
 $_shadows-v_fact: 2.4;
 $_shadows-h_fact: 1.16;
@@ -22,9 +23,9 @@ $shadow-factors: (
         h_fact:$_shadows-h_fact,
         v_fact_2:$_shadows-v_fact_2,
         h_fact_2:$_shadows-h_fact_2,
-);
+)!default;
 
-$_border-shorthands: (
+$box-border-shorthands: (
         _: top bottom left right,
         t: top,
         b: bottom,
@@ -34,17 +35,17 @@ $_border-shorthands: (
         u: bottom left right,
         ii: left right,
         tb: top bottom
-);
+)!default;
 
-$_position-props: (
+$box-position-shorthands: (
         abs: absolute,
         rel: relative,
         stat: static,
         fix: fixed,
         sticky: sticky
-);
+)!default;
 
-$_display-props: (
+$box-display-shorthands: (
         block: block,
         none: none,
         inline: inline,
@@ -63,25 +64,26 @@ $box-metadata: (
 );
 
 $box-config: (
-        unit-config: $_unit-config,
-        border-unit-config: $_border-unit-config,
-        unit-size-config: $_unit-size-config,
-        unit-border-size-config: $_unit-border-size-config,
-        sizes-config: $_sizes-config,
-        border-sizes-px-config: 5,
-        shadows-steps: $_shadows-steps,
-        shadows_step_multiplier: $_shadows-step-multiplier,
+        unit-config: $box-unit-config,
+        border-unit-config: $box-border-unit-config,
+        unit-size-config: $box-unit-size-config,
+        unit-border-size-config: $box-unit-border-size-config,
+        sizes-config: $box-sizes-config,
+        border-sizes-px-config: $box-sizes-border-config,
+        shadows-steps: $box-shadows-steps,
+        shadows_step_multiplier: $box-shadows-step-multiplier,
   //
-        position-shorthand-config: pos,
-        display-shorthand-config: dsp,
-        shadow-shorthand-config: shad,
-        border-shorthand-config: border,
-        padding-shorthand-config: pad,
-        margin-shorthand-config: marg,
+        position-shorthand-config: cssfabric-config.$box-position-shorthand,
+        display-shorthand-config: cssfabric-config.$box-display-shorthand,
+        shadow-shorthand-config:cssfabric-config.$box-shadow-shorthand,
+        border-shorthand-config: cssfabric-config.$box-border-shorthand,
+        padding-shorthand-config: cssfabric-config.$box-padding-shorthand,
+        margin-shorthand-config: cssfabric-config.$box-margin-shorthand,
+
         cssProps:(
-                borderShorthands: $_border-shorthands,
-                positionProps: $_position-props,
-                displayProps: $_display-props
+                borderShorthands: $box-border-shorthands,
+                positionProps: $box-position-shorthands,
+                displayProps: $box-display-shorthands
         )
 );
 
@@ -89,30 +91,30 @@ $box-config: (
 $box-docs: (
         attributes:(
                 padding: (
-                        tag: map-get($box-config, padding-shorthand-config),
-                        keys: utils.getObjectKeys($_border-shorthands),
-                        values: utils.getBoxIterator($_sizes-config, $_unit-config, $_unit-size-config),
-                        levels: ("_":utils.getObjectKeys(utils.getBoxIterator($_sizes-config, $_unit-config, $_unit-size-config))),
+                        tag:  cssfabric-config.$box-padding-shorthand,
+                        keys: utils.getObjectKeys($box-border-shorthands),
+                        values: utils.getBoxIterator($box-sizes-config, $box-unit-config, $box-unit-size-config),
+                        levels: ("_":utils.getObjectKeys(utils.getBoxIterator($box-sizes-config, $box-unit-config, $box-unit-size-config))),
                         about: "padding properties for html elements"
                 ),
                 margin: (
-                        tag: map-get($box-config, margin-shorthand-config),
-                        keys: utils.getObjectKeys($_border-shorthands),
-                        values: utils.getBoxIterator($_sizes-config, $_unit-config, $_unit-size-config),
-                        levels: ("_":utils.getObjectKeys(utils.getBoxIterator($_sizes-config, $_unit-config, $_unit-size-config))),
+                        tag: cssfabric-config.$box-margin-shorthand,
+                        keys: utils.getObjectKeys($box-border-shorthands),
+                        values: utils.getBoxIterator($box-sizes-config, $box-unit-config, $box-unit-size-config),
+                        levels: ("_":utils.getObjectKeys(utils.getBoxIterator($box-sizes-config, $box-unit-config, $box-unit-size-config))),
                         about: "margin properties for html elements"
                 ),
                 border: (
-                        tag: map-get($box-config, border-shorthand-config),
-                        keys: utils.getObjectKeys($_border-shorthands),
-                        values: utils.getBoxIterator($_sizes-border-config, $_border-unit-config, $_unit-border-size-config),
-                        levels: ("_":utils.getObjectKeys(utils.getBoxIterator($_sizes-border-config, $_border-unit-config, $_unit-border-size-config))),
+                        tag: cssfabric-config.$box-border-shorthand,
+                        keys: utils.getObjectKeys($box-border-shorthands),
+                        values: utils.getBoxIterator($box-sizes-border-config, $box-border-unit-config, $box-unit-border-size-config),
+                        levels: ("_":utils.getObjectKeys(utils.getBoxIterator($box-sizes-border-config, $box-border-unit-config, $box-unit-border-size-config))),
                         about: "border properties for html elements"
                 ),
                 shadow: (
-                        tag: map-get($box-config, shadow-shorthand-config),
-                        values: utils.getShadowIterator($shadow-factors, 8),
-                        levels:("_": utils.getObjectKeys(utils.getShadowIterator($shadow-factors, 8))
+                        tag: cssfabric-config.$box-shadow-shorthand,
+                        values: utils.getShadowIterator($shadow-factors, $box-shadows-steps),
+                        levels:("_": utils.getObjectKeys(utils.getShadowIterator($shadow-factors, $box-shadows-steps))
                         ),
                         about: "applying shadows give depth and levels to your design"
                 )
