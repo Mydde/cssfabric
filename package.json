@@ -1,6 +1,6 @@
 {
   "name": "@medyll/cssfabric",
-  "version": "0.1.1",
+  "version": "0.1.12",
   "private": false,
   "bin": {
     "@medyll/cssfabric": "./bin/index.js"
