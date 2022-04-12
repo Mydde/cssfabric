@@ -23,6 +23,10 @@ $color-gray-end: cssfabric-config.$gray-end !default;
 $color-gray-steps: cssfabric-config.$gray-steps !default;
 $gray-schemes: utils.getGraySteps($color-gray-steps, $color-gray-start, $color-gray-end);
 
+
+
+
+
 @function text-contrast($n) {
   $color-brightness: round((red($n) * 299) + (green($n) * 587) +  math.div(blue(#ffffff) * 114, 1000));
   $light-color: round((red(#ffffff) * 299) + (green(#ffffff) * 587) + math.div(blue(#ffffff) * 114, 1000));

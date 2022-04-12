@@ -711,10 +711,10 @@
   color: #ff7fff;
 }
 .foreground-scheme-info {
-  color: #ffdd57;
+  color: #FFDD57FF;
 }
 .foreground-scheme-info-light {
-  color: #ffeda3;
+  color: #ffeca4;
 }
 .foreground-scheme-info-lighter {
   color: #fffcf0;
@@ -723,10 +723,10 @@
   color: #ffd324;
 }
 .foreground-scheme-info-darker {
-  color: #f0c000;
+  color: #f0bf00;
 }
 .foreground-scheme-info-complement {
-  color: #5778ff;
+  color: #5779ff;
 }
 .foreground-scheme-info-invert {
   color: #0022a8;
@@ -838,10 +838,10 @@
   background-color: #ff7fff;
 }
 .bg-scheme-info {
-  background-color: #ffdd57;
+  background-color: #FFDD57FF;
 }
 .bg-scheme-info-light {
-  background-color: #ffeda3;
+  background-color: #ffeca4;
 }
 .bg-scheme-info-lighter {
   background-color: #fffcf0;
@@ -850,10 +850,10 @@
   background-color: #ffd324;
 }
 .bg-scheme-info-darker {
-  background-color: #f0c000;
+  background-color: #f0bf00;
 }
 .bg-scheme-info-complement {
-  background-color: #5778ff;
+  background-color: #5779ff;
 }
 .bg-scheme-info-invert {
   background-color: #0022a8;
@@ -983,11 +983,11 @@
 .bg-themed-palette-info {
   color: black;
   text-shadow: 0 0 0.125rem #ffd324;
-  background-color: #ffdd57;
+  background-color: #FFDD57FF;
 }
 .bg-themed-palette-info-light {
   color: black;
-  background-color: #ffeda3;
+  background-color: #ffeca4;
 }
 .bg-themed-palette-info-lighter {
   color: black;
@@ -999,11 +999,11 @@
 }
 .bg-themed-palette-info-darker {
   color: black;
-  background-color: #f0c000;
+  background-color: #f0bf00;
 }
 .bg-themed-palette-info-complement {
   color: white;
-  background-color: #5778ff;
+  background-color: #5779ff;
 }
 .bg-themed-palette-info-invert {
   color: white;

@@ -52,11 +52,21 @@ $scale-metadata: (
 );
 
 $scale-font-weight-config: 1em;
-$scale-grid-ratios-config: $scale-grid-ratios-config;
 $scale-defined-step-size: 2;
 $scale-defined-step-unit: rem;
-$scale-grid-ratios-config: $scale-grid-ratios-config;
 
+$scale-config: (
+        weight-config: $scale-font-weight-config,
+        unit-tag-config: (
+                width: w,
+                height: h
+        ),
+        grid-ratios-config: $scale-grid-ratios-config,
+        defined-step-size: $scale-defined-step-size,
+        defined-step-unit: $scale-defined-step-unit,
+        defined-steps: $scale-defined-steps,
+        cssProps:$_cssProps
+);
 
 $scale-docs: (
         attributes:(

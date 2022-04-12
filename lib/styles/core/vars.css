@@ -1,16 +1,16 @@
-/* cssFabric vars */
+/* cssFabric vars yes */
 :root {
   /* theme primary colors*/
-  --theme-color-primary: #431700;
-  --theme-color-primary-light: #903100;
-  --theme-color-primary-lighter: #dc4c00;
-  --theme-color-primary-dark: #100500;
+  --theme-color-primary: #201700;
+  --theme-color-primary-light: #6d4e00;
+  --theme-color-primary-lighter: #b98500;
+  --theme-color-primary-dark: black;
   --theme-color-primary-darker: black;
-  --theme-color-primary-complement: #002c43;
-  --theme-color-primary-invert: #bce8ff;
-  --theme-color-primary-alpha-low: rgba(67, 23, 0, 0.8);
-  --theme-color-primary-alpha: rgba(67, 23, 0, 0.3);
-  --theme-color-primary-alpha-high: rgba(67, 23, 0, 0.1);
+  --theme-color-primary-complement: #000920;
+  --theme-color-primary-invert: #dfe8ff;
+  --theme-color-primary-alpha-low: rgba(32, 23, 0, 0.8);
+  --theme-color-primary-alpha: rgba(32, 23, 0, 0.3);
+  --theme-color-primary-alpha-high: rgba(32, 23, 0, 0.1);
   /* theme secondary colors*/
   --theme-color-secondary: #D14B02;
   --theme-color-secondary-light: #fd7023;
@@ -46,8 +46,8 @@
   --color-scheme-success-alpha: rgba(0, 128, 0, 0.3);
   --color-scheme-success-alpha-low: rgba(0, 128, 0, 0.8);
   --color-scheme-success-alpha-high: rgba(0, 128, 0, 0.1);
-  --color-scheme-info: #ffdd57;
-  --color-scheme-info-light: #ffeda3;
+  --color-scheme-info: #FFDD57FF;
+  --color-scheme-info-light: #ffeca4;
   --color-scheme-info-dark: #ffd324;
   --color-scheme-info-alpha: rgba(255, 221, 87, 0.3);
   --color-scheme-info-alpha-low: rgba(255, 221, 87, 0.8);
@@ -279,7 +279,7 @@
   /*text shadows color_schemes*/
   --text-shadow-discrete: 0 0 0.125em #ccc;
   --text-shadow-success: 0 0 0.125em green;
-  --text-shadow-info: 0 0 0.125em #ffdd57;
+  --text-shadow-info: 0 0 0.125em #FFDD57FF;
   --text-shadow-warning: 0 0 0.125em #e6b905;
   --text-shadow-alert: 0 0 0.125em #ff7300;
   --text-shadow-error: 0 0 0.125em red;

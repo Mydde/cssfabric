@@ -25,6 +25,7 @@ module.exports = {
             loader: "sass-loader",
             options: {
               sourceMap: isDevelopment,
+              sassOptions: { quietDeps: true },
             },
           },
         ],
@@ -39,6 +40,7 @@ module.exports = {
             loader: "sass-loader",
             options: {
               sourceMap: isDevelopment,
+              sassOptions: { quietDeps: true },
             },
           },
         ],

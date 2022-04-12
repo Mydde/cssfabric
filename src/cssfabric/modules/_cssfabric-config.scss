@@ -1,6 +1,7 @@
 @use "sass:map";
 @use "sass:math";
 
+
 // prefix ?
 // scoped ?
 
@@ -34,8 +35,7 @@ $has-color-bg: true;
 $has-color-bg-themed: true;
 $has-color-border: true;
 
-
-$theme-color-primary: rgb(67, 23, 0) !default;
+$theme-color-primary: rgb(32, 23, 0) !default;
 $theme-color-secondary: #D14B02 !default;
 $theme-color-tertiary: #88D102 !default;
 
@@ -115,25 +115,26 @@ $cssfabric-config: (
                 tertiary: $theme-color-tertiary,
                 foreground: $theme-color-foreground,
                 background: $theme-color-background,
+                paper: $theme-color-paper,
         ),
         scheme: (
                 discrete: #ccc,
                 success: green,
-                info: hsl(48, 100%, 67%),
+                info: #FFDD57FF,
                 warning: hsl(48, 96%, 46%),
                 alert: hsl(27, 100%, 50%),
                 error: red
         ),
         palette: (
-                yellow: #ffb900,
-                orange: #d83b01,
-                red: #d13438,
-                magenta: #b4009e,
-                purple: #5c2d91,
-                green: #107c10,
-                teal: #008272,
-                blue: #0078d4,
-                dark: #323232,
+                'yellow': #ffb900,
+                'orange': #d83b01,
+                'red': #d13438,
+                'magenta': #b4009e,
+                'purple': #5c2d91,
+                'green': #107c10,
+                'teal': #008272,
+                'blue': #0078d4,
+                'dark': #323232,
         ),
         border-radius:(
                 tiny:4px, small:8px, medium:16px
@@ -155,7 +156,6 @@ $cssfabric-config: (
 
     $gray-schemes: map.set($gray-schemes, #{($i+1) * 100}, $color);
   }
-  @debug $gray-schemes;
 
   @return $gray-schemes;
 }
