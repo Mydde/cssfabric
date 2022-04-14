@@ -1,40 +1,6 @@
 {
     "cssfabric": {
         "modules": {
-            "cssfabric": {
-                "_data": {
-                    "cfg-has-dimension-strict": true,
-                    "CFG_HAS_DIMENSION_MIN": true,
-                    "CFG_HAS_DIMENSION_MAX": true,
-                    "size_step": "0.5rem",
-                    "sep": "-",
-                    "sizes": {
-                        "tiny": 32, "small": 64, "medium": 256, "large": 250, "full": "100%"
-                    },
-                    "media_quey_sizes": {
-                        "xxxl": 180, "xxl": 120, "xl": 90, "lg": 64, "md": 48, "sm": 35.7
-                    },
-                    "theme": {
-                        "primary": "orange", "foreground": "#333", "background": "#ededed"
-                    },
-                    "scheme": {
-                        "discrete": "#ccc", "success": "green", "info": "#ffdd57", "warning": "#e6b905", "alert": "#ff7300", "error": "red"
-                    },
-                    "palette": {
-                        "yellow": "#ffb900", "orange": "#d83b01", "red": "#d13438", "magenta": "#b4009e", "purple": "#5c2d91", "green": "#107c10", "teal": "#008272", "blue": "#0078d4"
-                    },
-                    "gray": {
-                        "100": "#f4f4f4", "200": "#e9e9e9", "300": "#dddddd", "400": "#d2d2d2", "500": "#c7c7c7", "600": "#bbbbbb", "700": "#b0b0b0", "800": "#a4a4a4", "900": "#999999"
-                    },
-                    "gray-config": {
-                        "start": "#f4f4f4", "end": "#999", "steps": 8
-                    }
-                },
-                "_metadata": {
-                    "title": "cssfabric", "tag": "cssfabric", "description": "cssfabric global config variables"
-                },
-                "_docs": []
-            },
             "animation": {
                 "_data": {
                     "attention_props": [],
@@ -56,7 +22,7 @@
                     "CFG_HAS_DIMENSION_MAX": true,
                     "size_step": "0.5rem",
                     "sizes": {
-                        "tiny": 32, "small": 64, "medium": 256, "large": 250, "full": "100%"
+                        "tiny": 32, "small": 64, "medium": 128, "large": 256, "full": "100%"
                     }
                 },
                 "_metadata": {
@@ -70,9 +36,9 @@
                     "border-unit-config": "px",
                     "unit-size-config": 0.5,
                     "unit-border-size-config": 1,
-                    "sizes-config": 20,
-                    "border-sizes-px-config": 5,
-                    "shadows-steps": 10,
+                    "sizes-config": 12,
+                    "border-sizes-px-config": 3,
+                    "shadows-steps": 5,
                     "shadows_step_multiplier": 2,
                     "position-shorthand-config": "pos",
                     "display-shorthand-config": "dsp",
@@ -109,10 +75,10 @@
                                 "ii",
                                 "tb"],
                             "values": {
-                                "_": "_", "1": "0.5rem", "2": "1rem", "3": "1.5rem", "4": "2rem", "5": "2.5rem", "6": "3rem", "7": "3.5rem", "8": "4rem", "9": "4.5rem", "10": "5rem", "11": "5.5rem", "12": "6rem", "13": "6.5rem", "14": "7rem", "15": "7.5rem", "16": "8rem", "17": "8.5rem", "18": "9rem", "19": "9.5rem", "20": "10rem"
+                                "_": "_", "1": "0.5rem", "2": "1rem", "3": "1.5rem", "4": "2rem", "5": "2.5rem", "6": "3rem", "7": "3.5rem", "8": "4rem", "9": "4.5rem", "10": "5rem", "11": "5.5rem", "12": "6rem"
                             },
                             "levels": {
-                                "_": ["_", 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20]
+                                "_": ["_", 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
                             },
                             "about": "padding properties for html elements"
                         },
@@ -128,10 +94,10 @@
                                 "ii",
                                 "tb"],
                             "values": {
-                                "_": "_", "1": "0.5rem", "2": "1rem", "3": "1.5rem", "4": "2rem", "5": "2.5rem", "6": "3rem", "7": "3.5rem", "8": "4rem", "9": "4.5rem", "10": "5rem", "11": "5.5rem", "12": "6rem", "13": "6.5rem", "14": "7rem", "15": "7.5rem", "16": "8rem", "17": "8.5rem", "18": "9rem", "19": "9.5rem", "20": "10rem"
+                                "_": "_", "1": "0.5rem", "2": "1rem", "3": "1.5rem", "4": "2rem", "5": "2.5rem", "6": "3rem", "7": "3.5rem", "8": "4rem", "9": "4.5rem", "10": "5rem", "11": "5.5rem", "12": "6rem"
                             },
                             "levels": {
-                                "_": ["_", 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20]
+                                "_": ["_", 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
                             },
                             "about": "margin properties for html elements"
                         },
@@ -147,20 +113,20 @@
                                 "ii",
                                 "tb"],
                             "values": {
-                                "_": "_", "1": "1px", "2": "2px", "3": "3px", "4": "4px", "5": "5px"
+                                "_": "_", "1": "1px", "2": "2px", "3": "3px"
                             },
                             "levels": {
-                                "_": ["_", 1, 2, 3, 4, 5]
+                                "_": ["_", 1, 2, 3]
                             },
                             "about": "border properties for html elements"
                         },
                         "shadow": {
                             "tag": "shad",
                             "values": {
-                                "2": "0.83333333331.724137931", "4": "1.66666666673.4482758621", "8": "3.33333333336.8965517241", "16": "6.666666666713.7931034483", "32": "13.333333333327.5862068966", "64": "26.666666666755.1724137931", "128": "53.3333333333110.3448275862", "256": "106.6666666667220.6896551724"
+                                "2": "0.83333333331.724137931", "4": "1.66666666673.4482758621", "8": "3.33333333336.8965517241", "16": "6.666666666713.7931034483", "32": "13.333333333327.5862068966"
                             },
                             "levels": {
-                                "_": [2, 4, 8, 16, 32, 64, 128, 256]
+                                "_": [2, 4, 8, 16, 32]
                             },
                             "about": "applying shadows give depth and levels to your design"
                         }
@@ -170,24 +136,22 @@
             "color": {
                 "_data": {
                     "gray-config": {
-                        "start": "#f4f4f4", "end": "#999", "steps": 8
+                        "start": "#f4f4f4", "end": "#999", "steps": 5
                     },
                     "color-types-config": ["color",
                         "bg",
                         "bg-themed",
                         "border-color"],
                     "theme": {
-                        "primary": "orange", "foreground": "#333", "background": "#ededed"
+                        "primary": "#201700", "secondary": "#D14B02", "tertiary": "#88D102", "foreground": "#282230", "background": "#ffffff", "paper": "#f1f1f1"
                     },
                     "scheme": {
-                        "discrete": "#ccc", "success": "green", "info": "#ffdd57", "warning": "#e6b905", "alert": "#ff7300", "error": "red"
+                        "discrete": "#ccc", "success": "green", "info": "#FFDD57FF", "warning": "#e6b905", "alert": "#ff7300", "error": "red"
                     },
                     "palette": {
-                        "yellow": "#ffb900", "orange": "#d83b01", "red": "#d13438", "magenta": "#b4009e", "purple": "#5c2d91", "green": "#107c10", "teal": "#008272", "blue": "#0078d4"
+                        "yellow": "#ffb900", "orange": "#d83b01", "red": "#d13438", "magenta": "#b4009e", "purple": "#5c2d91", "green": "#107c10", "teal": "#008272", "blue": "#0078d4", "dark": "#323232"
                     },
-                    "gray": {
-                        "100": "#f4f4f4", "200": "#e9e9e9", "300": "#dddddd", "400": "#d2d2d2", "500": "#c7c7c7", "600": "#bbbbbb", "700": "#b0b0b0", "800": "#a4a4a4", "900": "#999999"
-                    }
+                    "gray": "getGraySteps(5, #f4f4f4, #999)"
                 },
                 "_metadata": {
                     "title": "color", "title_tag": "its about colors", "description": "cssfabric color system: its about colors"
@@ -200,7 +164,7 @@
                                 "palette",
                                 "gray"],
                             "levelsLinked": {
-                                "scheme": ["discrete", "success", "info", "warning", "alert", "error"], "palette": ["yellow", "orange", "red", "magenta", "purple", "green", "teal", "blue"], "gray": ["100", "200", "300", "400", "500", "600", "700", "800", "900"]
+                                "scheme": ["discrete", "success", "info", "warning", "alert", "error"], "palette": ["yellow", "orange", "red", "magenta", "purple", "green", "teal", "blue", "dark"], "gray": ["getGraySteps(5, #f4f4f4, #999)"]
                             },
                             "levelsDeclin": {
                                 "palette": ["_", "lighter", "light", "dark", "darker", "complement"]
@@ -213,7 +177,7 @@
                                 "palette",
                                 "gray"],
                             "levelsLinked": {
-                                "scheme": ["discrete", "success", "info", "warning", "alert", "error"], "palette": ["yellow", "orange", "red", "magenta", "purple", "green", "teal", "blue"], "gray": ["100", "200", "300", "400", "500", "600", "700", "800", "900"]
+                                "scheme": ["discrete", "success", "info", "warning", "alert", "error"], "palette": ["yellow", "orange", "red", "magenta", "purple", "green", "teal", "blue", "dark"], "gray": ["getGraySteps(5, #f4f4f4, #999)"]
                             },
                             "levelsDeclin": {
                                 "palette": ["_", "lighter", "light", "dark", "darker", "complement"]
@@ -226,7 +190,7 @@
                                 "palette",
                                 "gray"],
                             "levelsLinked": {
-                                "gray": ["100", "200", "300", "400", "500", "600", "700", "800", "900"], "scheme": ["discrete", "success", "info", "warning", "alert", "error"], "palette": ["yellow", "orange", "red", "magenta", "purple", "green", "teal", "blue"]
+                                "gray": ["getGraySteps(5, #f4f4f4, #999)"], "scheme": ["discrete", "success", "info", "warning", "alert", "error"], "palette": ["yellow", "orange", "red", "magenta", "purple", "green", "teal", "blue", "dark"]
                             },
                             "levelsDeclin": {
                                 "palette": ["_", "lighter", "light", "dark", "darker", "complement"]
@@ -238,7 +202,7 @@
                             "keys": ["palette",
                                 "gray"],
                             "levelsLinked": {
-                                "gray": ["100", "200", "300", "400", "500", "600", "700", "800", "900"], "scheme": ["discrete", "success", "info", "warning", "alert", "error"], "palette": ["yellow", "orange", "red", "magenta", "purple", "green", "teal", "blue"]
+                                "gray": ["getGraySteps(5, #f4f4f4, #999)"], "scheme": ["discrete", "success", "info", "warning", "alert", "error"], "palette": ["yellow", "orange", "red", "magenta", "purple", "green", "teal", "blue", "dark"]
                             },
                             "about": "border colors are slightly darker to maximize surrounding effect"
                         }
@@ -252,7 +216,7 @@
                     "horCode": "h",
                     "vertCode": "v",
                     "gridFullWidth": "main",
-                    "grow-shrink-steps": 4,
+                    "grow-shrink-steps": 2,
                     "cssProps": {
                         "flexWrap": {
                             "wrap": "wrap", "wrap-reverse": "wrap-reverse"
@@ -285,10 +249,10 @@
                             "classNames": {
                                 "align": ["top", "middle", "bottom", "left", "right", "center", "middle-center", "stretch"], "grid": ["wrap", "wrap-reverse"]
                             },
-                            "about": "a classic grid system, and hey, it gets height !"
+                            "about": "a classic flex grid system, and hey, it gets height !"
                         },
                         "self": {
-                            "tag": "self", "keys": ["start", "end", "stretch"], "about": "grid children specific classnames"
+                            "tag": "self", "keys": ["start", "end", "stretch"], "about": "flex children specific classnames"
                         }
                     }
                 }
@@ -319,7 +283,9 @@
                         "self": {
                             "start": "flex-start", "end": "flex-end", "stretch": "stretch"
                         }
-                    }
+                    },
+                    "grid-max-rows": 8,
+                    "grid-max-cols": 12
                 },
                 "_metadata": {
                     "title": "grid", "tag": "grid", "description": "cssfabric flex grid system module"
@@ -333,7 +299,7 @@
                             "classNames": {
                                 "align": ["top", "middle", "bottom", "left", "right", "center", "middle-center", "stretch"], "grid": ["wrap", "wrap-reverse"]
                             },
-                            "about": "a classic grid system, and hey, it gets height !"
+                            "about": "a classic grid system"
                         },
                         "self": {
                             "tag": "self", "keys": ["start", "end", "stretch"], "about": "grid children specific classnames"
@@ -400,33 +366,13 @@
                     }
                 }
             },
-            "table": {
-                "_data": {
-                    "className": "table", "classNameShort": "tbl", "table_class_name": "table", "table_class_name_short": "tbl", "table-bg-color-head": "#f4f4f4", "table-bg-color-strip-main": "#ededed", "table-bg-color-strip-second": "#f5f5f5", "table-border-color-header": "#ccc", "table-border-color-main": "#ededed", "table-border-color-second": "#f5f5f5"
-                },
-                "_metadata": {
-                    "title": "table", "tag": "table", "description": "cssfabric table module to set different table styles"
-                },
-                "_docs": {
-                    "attributes": {
-                        "table": {
-                            "tag": "table",
-                            "classNames": {
-                                "_": ["bg-strip-2", "bg-strip-5"], "_pos": ["sticky", "layout"], "_deco": ["h-line", "v-line", "border"]
-                            },
-                            "about": "is a table"
-                        }
-                    }
-                }
-            },
             "scale": {
                 "_data": {
                     "weight-config": "1em",
                     "unit-tag-config": {
                         "width": "w", "height": "h"
                     },
-                    "grid-ratios-config": [5,
-                        12],
+                    "grid-ratios-config": 16,
                     "defined-step-size": 2,
                     "defined-step-unit": "rem",
                     "defined-steps": [1,
@@ -466,8 +412,27 @@
                             "keys": ["w",
                                 "h"],
                             "levels": {
-                                "_size": ["full", "mid", "quarter", "tiers"], "_content": ["content-max", "content-min"], "_defined-steps": [1, 2, 4, 8, 16, 24, 32, 48, 64], "_grid-5": ["1-5", "2-5", "3-5", "4-5", "5-5"], "_grid-12": ["1-12", "2-12", "3-12", "4-12", "5-12", "6-12", "7-12", "8-12", "9-12", "10-12", "11-12", "12-12"]
+                                "_size": ["full", "mid", "quarter", "tiers"], "_content": ["content-max", "content-min"], "_defined-steps": [1, 2, 4, 8, 16, 24, 32, 48, 64], "_grid-16": ["1-16", "2-16", "3-16", "4-16", "5-16", "6-16", "7-16", "8-16", "9-16", "10-16", "11-16", "12-16", "13-16", "14-16", "15-16", "16-16"]
                             }
+                        }
+                    }
+                }
+            },
+            "table": {
+                "_data": {
+                    "className": "table", "classNameShort": "tbl", "table_class_name": "table", "table_class_name_short": "tbl", "table-bg-color-head": "#f4f4f4", "table-bg-color-strip-main": "#ededed", "table-bg-color-strip-second": "#f5f5f5", "table-border-color-header": "#ccc", "table-border-color-main": "#ededed", "table-border-color-second": "#f5f5f5"
+                },
+                "_metadata": {
+                    "title": "table", "tag": "table", "description": "cssfabric table module to set different table styles"
+                },
+                "_docs": {
+                    "attributes": {
+                        "table": {
+                            "tag": "table",
+                            "classNames": {
+                                "_": ["bg-strip-2", "bg-strip-5"], "_pos": ["sticky", "layout"], "_deco": ["h-line", "v-line", "border"]
+                            },
+                            "about": "is a table"
                         }
                     }
                 }
@@ -493,14 +458,12 @@
                         }
                     },
                     "scheme": {
-                        "discrete": "#ccc", "success": "green", "info": "#ffdd57", "warning": "#e6b905", "alert": "#ff7300", "error": "red"
+                        "discrete": "#ccc", "success": "green", "info": "#FFDD57FF", "warning": "#e6b905", "alert": "#ff7300", "error": "red"
                     },
                     "palette": {
-                        "yellow": "#ffb900", "orange": "#d83b01", "red": "#d13438", "magenta": "#b4009e", "purple": "#5c2d91", "green": "#107c10", "teal": "#008272", "blue": "#0078d4"
+                        "yellow": "#ffb900", "orange": "#d83b01", "red": "#d13438", "magenta": "#b4009e", "purple": "#5c2d91", "green": "#107c10", "teal": "#008272", "blue": "#0078d4", "dark": "#323232"
                     },
-                    "gray": {
-                        "100": "#f4f4f4", "200": "#e9e9e9", "300": "#dddddd", "400": "#d2d2d2", "500": "#c7c7c7", "600": "#bbbbbb", "700": "#b0b0b0", "800": "#a4a4a4", "900": "#999999"
-                    }
+                    "gray": "getGraySteps(5, #f4f4f4, #999)"
                 },
                 "_metadata": {
                     "title": "text", "tag": "text", "description": "cssfabric text module to set text style on all html elements"
@@ -532,7 +495,7 @@
                     "moduleName": "theme",
                     "moduleNameShort": "theme",
                     "color-default-config": {
-                        "primary": "orange", "foreground": "#333", "background": "#ededed"
+                        "primary": "#201700", "secondary": "#D14B02", "tertiary": "#88D102", "foreground": "#282230", "background": "#ffffff", "paper": "#f1f1f1"
                     },
                     "declinations-config": ["primary",
                         "secondary",
@@ -547,7 +510,7 @@
                         "bg",
                         "border"],
                     "color": {
-                        "primary": "orange", "primary-light": "#ffc04d", "primary-lighter": "#ffdb99", "primary-dark": "#cc8400", "primary-darker": "#996300", "primary-complement": "#005aff", "primary-invert": "#005aff", "secondary": "#005aff", "secondary-light": "#4d8cff", "secondary-lighter": "#99bdff", "secondary-dark": "#0048cc", "secondary-darker": "#003699", "secondary-complement": "orange", "secondary-invert": "orange", "tertiary": "orange", "tertiary-light": "#ffc04d", "tertiary-lighter": "#ffdb99", "tertiary-dark": "#cc8400", "tertiary-darker": "#996300", "tertiary-complement": "#005aff", "tertiary-invert": "#005aff"
+                        "primary": "#201700", "primary-light": "#6d4e00", "primary-lighter": "#b98500", "primary-dark": "black", "primary-darker": "black", "primary-complement": "#000920", "primary-invert": "#dfe8ff", "secondary": "#D14B02", "secondary-light": "#fd7023", "secondary-lighter": "#fea16e", "secondary-dark": "#9e3902", "secondary-darker": "#6c2701", "secondary-complement": "#0288d1", "secondary-invert": "#2eb4fd", "tertiary": "#88D102", "tertiary-light": "#b0fd23", "tertiary-lighter": "#cbfe6e", "tertiary-dark": "#679e02", "tertiary-darker": "#466c01", "tertiary-complement": "#4b02d1", "tertiary-invert": "#772efd"
                     }
                 },
                 "_metadata": {
@@ -569,7 +532,7 @@
             },
             "zindex": {
                 "_data": {
-                    "z_groups": ["a", "b", "c", "d", "e", "f", "g"]
+                    "z_groups": ["a", "z"]
                 },
                 "_metadata": {
                     "title": "zindex", "tag": "zI", "description": "cssfabric zindex module to set z-index on all html elements"

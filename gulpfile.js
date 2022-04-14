@@ -531,6 +531,7 @@ function task_sass2css(cb) {
                     /*path.dirname = path.dirname;*/
                     path.extname = ".min.css";
                     path.basename = path.basename.replace("-", ".");
+                    console.log(path)
                 })
             )
             .pipe(gulp.dest(`${fabricStylesDir}/core`))

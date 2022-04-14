@@ -35,18 +35,24 @@ $has-color-bg: true;
 $has-color-bg-themed: true;
 $has-color-border: true;
 
+
 $theme-color-primary: rgb(32, 23, 0) !default;
 $theme-color-secondary: #D14B02 !default;
 $theme-color-tertiary: #88D102 !default;
-
+//light theme
 $theme-color-foreground: #282230 !default;
 $theme-color-background: #ffffff !default;
 $theme-color-paper: #f1f1f1 !default;
 
+$theme-color-shadow: green !default;
+// dark theme
 $theme-dark-color-foreground: #f1f1f1 !default;
 $theme-dark-color-background: #27323a !default;
 $theme-dark-color-paper: #3a3b3b !default;
 
+$theme-dark-color-shadow: black !default;
+
+// grays
 $gray-start: #f4f4f4 !default;
 $gray-end: #999 !default;
 $gray-steps: 5 !default;
@@ -63,8 +69,8 @@ $box-margin-shorthand: marg !default;
 $box-unit-presets: (tiny:0.5, small:1, medium:3, large:4) !default;
 $box-radius: (tiny:4px, small:8px, medium:16px) !default;
 
-$scale-tag-width-shorthand: w!default;
-$scale-tag-height-shorthand: h!default;;
+$scale-tag-width-shorthand: w !default;
+$scale-tag-height-shorthand: h !default;
 
 $cssfabric-metadata: (
         title: "cssfabric",
@@ -73,8 +79,11 @@ $cssfabric-metadata: (
 );
 
 // vars
-$vars-box-density: --box-density!default;
-$vars-box-density-preset: --box-density-preset!default;
+$vars-box-density: --box-density !default;
+$vars-box-density-preset: --box-density-preset !default;
+
+$vars-theme-color-shadow: --theme-color-shadow !default;
+$vars-theme-dark-color-shadow: --theme-dark-color-shadow !default;
 
 $cssfabric-config: (
         cfg-has-dimension-strict: true,

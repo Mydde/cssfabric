@@ -88,7 +88,7 @@ $densities-ratios : cssfabric-config.$densities-ratios;
         $css_size_value: ($grid_size_value * $box-unit-border-size-config) + $box-border-unit-config;
         // css property name is aggregated with size value $i
 
-        $computed_value: $css_size_value + " solid #ededed";
+        $computed_value: $css_size_value + " solid var(--theme-color-border)";
 
         #{raw_size_tag_rule($grid_size_value)} &-#{$grid_size_value} {
           @if length($rule) == 4 {
@@ -116,7 +116,7 @@ $densities-ratios : cssfabric-config.$densities-ratios;
       // presets
       @each $preset, $preset-value in $box-unit-presets{
         .#{$fabric_box_position_prop_short}#{$shorthand}-#{$preset}{
-          #{$fabric_box_position_prop}: --box-density-preset-#{$preset};
+          #{$fabric_box_position_prop}: var(--box-density-preset-#{$preset});
         }
       }
 
@@ -236,7 +236,7 @@ $densities-ratios : cssfabric-config.$densities-ratios;
   }
 }
 
-@function buildShadowsValues($shadows_step:0) {
+@function buildShadowsValues($shadows_step:0,$shadow-color: null) {
   $v_fact: 2.4;
   $h_fact: 1.16;
 

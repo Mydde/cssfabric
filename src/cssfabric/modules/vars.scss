@@ -27,17 +27,18 @@ $theme-dark: map-get($themes, dark) !default;
   /* themes */
   @include themeBuild.themeBaseVars($theme-light);
 
+  --theme-color-border:  #{color.change($theme-color-foreground,$alpha:0.2)};
   &,[data-theme="light"] {
     @include themeBuild.themeBaseVars($theme-light);
 
-    --theme-color-border:  #{color.change(map-get($theme-light, paper),$alpha:0.2)};
+    --theme-color-border: #{color.change($theme-color-foreground,$alpha:0.2)};
     --theme-color-overlay: rgba(208, 191, 151, 0.2);
   }
 
   [data-theme="dark"] {
     @include themeBuild.themeBaseVars($theme-dark);
 
-    --theme-color-border:  #{color.change(map-get($theme-dark, paper),$alpha:0.2)};
+    --theme-color-border:  #{color.change($theme-dark-color-foreground,$alpha:0.3)};
     --theme-color-overlay: rgba(255, 255, 255, 0.1);
   }
 }
