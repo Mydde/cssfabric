@@ -1,4 +1,4 @@
-{
+export const cssFabricSassConf =  {
     "fabricRootDir": "./src/cssfabric",
     "fabricConfDir": "./src/cssfabric/_config",
     "fabricModuleDir": "./src/cssfabric/modules",
