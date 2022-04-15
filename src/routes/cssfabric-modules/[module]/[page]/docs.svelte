@@ -1,7 +1,9 @@
 <script lang="ts">
-  import cssfabric from '../../lib/scripts/cssfabric';
-  import utils from '../../lib/scripts/utils';
-  import {htmlUtils} from '../../utils';
+
+  
+  import cssfabric from '$lib/scripts/cssfabric';
+  import utils from '$lib/scripts/utils';
+  import {htmlUtils} from '../../../../utils';
 
   export let module      = '';
   const moduleAttributes = cssfabric.getModuleDocsAttributes(module);
