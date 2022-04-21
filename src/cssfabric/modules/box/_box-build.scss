@@ -59,6 +59,12 @@ $densities-ratios : cssfabric-config.$densities-ratios;
     --box-density-preset-#{$preset}: #{$value};
   }
 
+  // radius
+  @each $radius, $value in $box-radius{
+    @debug #{$value};
+    --radius-#{$radius}: #{$value};
+  }
+
   // $ratios: tiny small medium large full
   @each $ratio, $val in $densities-ratios {
     [density=#{$ratio}] {

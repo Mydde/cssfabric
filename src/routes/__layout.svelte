@@ -1,9 +1,17 @@
+
+<script context="module" lang="ts">
+
+	export const prerender = true;
+</script>
 <script lang="ts">
 	import Header from '$lib/../components/header/Header.svelte';
 	import '../app.css';
 </script>
 
-<main>
+<main  class={"w-full"}>
+	<!--<h4 class={"flex-v flex-align-center flex-align-middle pad"}>
+		cssfabric
+	</h4>-->
 	<slot />
 </main>
 
@@ -14,9 +22,7 @@
 		flex: 1;
 		display: flex;
 		flex-direction: column;
-		padding: 1rem;
 		width: 100%;
-		max-width: 1024px;
 		margin: 0 auto;
 		box-sizing: border-box;
 	}

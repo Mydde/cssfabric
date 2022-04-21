@@ -13,16 +13,11 @@
     <title>cssFabric home</title>
 
 </svelte:head>
-<div class={"flex-v  flex-align-center h-full theme-color-background  overflow-auto  "}>
-
-    <h1 class={"flex-v flex-align-center flex-align-middle scale-h-16"}>
-        cssfabric
-    </h1>
     <h6>actually in early version</h6>
     <div class={"flex-main flex-align-middle scale-w-sm-full scale-w-lg-32 scale-w-64 pad-all"}>
         <div title={"a css framework"}>
             <p>
-                <strong>cssfabric</strong> is another css framework, semantically driven and fully responsive<br/>
+                <strong>cssfabric</strong> is a css framework built around css properties<br/>
                 it's goal is to permit you to achieve of all your design task, from single page applications to frontend web sites
             </p>
         </div>
@@ -38,7 +33,6 @@
             {/each}
         </div>
     </div>
-</div>
 
 <style lang="scss">
   section {
