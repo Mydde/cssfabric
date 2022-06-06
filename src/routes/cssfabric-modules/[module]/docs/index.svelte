@@ -13,14 +13,18 @@
     };
   }
 </script>
-<script>
+<script lang="ts">
+    import { HighlightAuto  } from "svelte-highlight";
+    import "svelte-highlight/styles/github.css";
     import Docs from "../../../../components/docs/Docs.svelte";
 
     export let moduleTag  = '';
     export let modulePage = 'docs';
+
+    let code = `let a = 123; let fr = 'red'; const red = function(args:any){}`
 </script>
-<code>
-    code
-    code vrvdvd vfdvfdvfd
-</code>
+<HighlightAuto  code={`<div class="noclass"></div>`} />
+<HighlightAuto  code={`npm i @medyll/cssfabric`} />
+<HighlightAuto  code={code} />
+
 <Docs module={moduleTag}  />

@@ -6,7 +6,6 @@ import cache from "gulp-cached"
 import gulFileList from "gulp-filelist"
 import gulpConcat from "gulp-concat-util"
 import gulpRename from "gulp-rename"
-import gulpJsBeautifier from 'gulp-jsbeautifier'
 import json2md from "json2md"
 import gulpIgnore from "gulp-ignore"
 import {cssFabricSassConf} from "./cssfabric.sass.js";
@@ -362,7 +361,6 @@ function task_varsExport(cb) {
             }
             cb(null, file);
         }))
-        .pipe(gulpJsBeautifier())
         .pipe(
             gulpRename(function (path) {
                 path.dirname = path.dirname;
@@ -408,7 +406,8 @@ export function task_readme(cb) {
 function task_mergeInclude(cb) {
     //
     const dest = fabricStylesDir;
-    const dir = fabricStylesDir + "/core";
+    // const dir = fabricStylesDir + "/core";
+    const dir = fabricStylesDir ;
 
     const steps = [];
     // normal stylesheets
@@ -498,7 +497,7 @@ function task_sass2css(cb) {
             .pipe(
                 sass({outputStyle: "expanded"}).on("error", sass.logError)
             )
-            .pipe(gulp.dest(`${fabricStylesDir}/core`))
+            .pipe(gulp.dest(`${fabricStylesDir}`))
             // to css and minify and to /core
             .pipe(sass({outputStyle:'compressed'}))
             .pipe(
@@ -507,7 +506,7 @@ function task_sass2css(cb) {
                     path.basename = path.basename.replace("-", "."); 
                 })
             )
-            .pipe(gulp.dest(`${fabricStylesDir}/core`))
+            .pipe(gulp.dest(`${fabricStylesDir}`))
             .on("end", () => {
                 return cb();
             })

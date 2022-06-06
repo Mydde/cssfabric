@@ -1,6 +1,6 @@
 {
   "name": "@medyll/cssfabric",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "private": false,
   "bin": {
     "@medyll/cssfabric": "./bin/index.js"
@@ -24,26 +24,19 @@
     "css-build": "sass   src/cssfabric/modules/vars.scss css/mystyles.css"
   },
   "dependencies": {
-    "@fontsource/fira-mono": "^4.5.0",
     "@lukeed/uuid": "^2.0.0",
-    "chokidar": "^3.5.1",
     "cookie": "^0.4.1",
-    "fs-extra": "^10.0.1",
     "gulp-concat-util": "^0.5.5",
     "gulp-filelist": "^2.0.5",
-    "gulp-jsbeautifier": "^3.0.1",
-    "gulp-sort": "^2.0.0",
-    "gulp-string-replace": "^1.1.2",
-    "gulp-util": "^3.0.8",
     "JSON": "^1.0.0",
     "sass": "^1.32.12",
-    "svelte-highlight": "^6.0.1",
     "svelte2tsx": "^0.5.9"
   },
   "devDependencies": {
     "@sveltejs/adapter-auto": "next",
     "@sveltejs/kit": "next",
     "@types/cookie": "^0.4.1",
+    "chokidar": "^3.5.3",
     "cross-spawn": "^7.0.3",
     "css-loader": "^5.2.4",
     "gulp": "^4.0.2",
@@ -55,6 +48,7 @@
     "gulp-json-transform": "^0.4.7",
     "gulp-rename": "^2.0.0",
     "gulp-sass": "^5.1.0",
+    "gulp-util": "^3.0.8",
     "json-to-scss": "^1.6.2",
     "json2md": "^1.10.0",
     "mini-css-extract-plugin": "^1.6.0",
@@ -63,6 +57,7 @@
     "style-loader": "^2.0.0",
     "svelte": "^3.46.0",
     "svelte-check": "^2.2.6",
+    "svelte-highlight": "^6.0.1",
     "svelte-preprocess": "^4.10.1",
     "through2": "^4.0.2",
     "tsconfig-paths": "^3.9.0",
