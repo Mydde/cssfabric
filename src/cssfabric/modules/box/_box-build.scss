@@ -63,7 +63,6 @@ $densities-ratios : cssfabric-config.$densities-ratios;
 
   // radius
   @each $radius, $value in $box-radius{
-    @debug #{$value};
     --radius-#{$radius}: #{$value};
   }
 
@@ -152,7 +151,6 @@ $densities-ratios : cssfabric-config.$densities-ratios;
   $shorthand: if($mq_key, #{$box-gap-shorthand}-#{$mq_key}, #{$box-gap-shorthand});
   // presets
   @each $preset, $preset-value in $box-unit-presets{
-    @debug #{$shorthand}-#{$preset};
     .#{$shorthand}-#{$preset}{
       #{$shorthand}: var(--box-density-preset-#{$preset});
     }
