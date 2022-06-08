@@ -13,7 +13,7 @@ $themes: map-get($cssfabric-config, themes) !default;
 $theme-light: map-get($themes, light) !default;
 $theme-dark: map-get($themes, dark) !default;
 
-/* cssFabric vars yes */
+/* cssFabric vars yes  */
 :root {
   @include themeBuild.themeCssVars($theme-color-primary,$theme-color-secondary,$theme-color-tertiary);
   @include colorBuild.buildColorCssVars();
@@ -21,7 +21,6 @@ $theme-dark: map-get($themes, dark) !default;
   @include boxBuild.pmbCssVars();
   /* text */
   @include textBuild.textCssVars();
-
   /* shadows */
   @include boxBuild.shadowsCssVars();
   /* themes */
