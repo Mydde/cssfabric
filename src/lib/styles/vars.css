@@ -1,5 +1,7 @@
-/* cssFabric vars yes  */
+/* primary,secondary with alphas */
+/* cssFabric vars */
 :root {
+  /* --theme-color-primary|*-alpha-|* */
   /* theme primary colors*/
   --theme-color-primary: #201700;
   --theme-color-primary-light: #6d4e00;
@@ -310,9 +312,9 @@
   --theme-color-foreground-alpha-low: rgba(40, 34, 48, 0.8);
   --theme-color-foreground-alpha-high: rgba(40, 34, 48, 0.1);
   --theme-color-background: #ffffff;
-  --theme-color-background-alpha: rgba(40, 34, 48, 0.3);
-  --theme-color-background-alpha-low: rgba(40, 34, 48, 0.8);
-  --theme-color-background-alpha-high: rgba(40, 34, 48, 0.1);
+  --theme-color-background-alpha: rgba(255, 255, 255, 0.3);
+  --theme-color-background-alpha-low: rgba(255, 255, 255, 0.8);
+  --theme-color-background-alpha-high: rgba(255, 255, 255, 0.1);
   --theme-color-paper: #f1f1f1;
   --theme-color-paper-alpha: rgba(241, 241, 241, 0.3);
   --theme-color-paper-alpha-low: rgba(241, 241, 241, 0.8);
@@ -376,7 +378,8 @@
   --box-density-preset-medium: 2.625rem;
   --box-density-preset-large: 3.5rem;
 }
-:root, :root [data-theme=light] {
+:root,
+:root [data-theme=light] {
   /* theme base colors*/
   --theme-color-text: #282230;
   --theme-color-foreground: #282230;
@@ -384,9 +387,9 @@
   --theme-color-foreground-alpha-low: rgba(40, 34, 48, 0.8);
   --theme-color-foreground-alpha-high: rgba(40, 34, 48, 0.1);
   --theme-color-background: #ffffff;
-  --theme-color-background-alpha: rgba(40, 34, 48, 0.3);
-  --theme-color-background-alpha-low: rgba(40, 34, 48, 0.8);
-  --theme-color-background-alpha-high: rgba(40, 34, 48, 0.1);
+  --theme-color-background-alpha: rgba(255, 255, 255, 0.3);
+  --theme-color-background-alpha-low: rgba(255, 255, 255, 0.8);
+  --theme-color-background-alpha-high: rgba(255, 255, 255, 0.1);
   --theme-color-paper: #f1f1f1;
   --theme-color-paper-alpha: rgba(241, 241, 241, 0.3);
   --theme-color-paper-alpha-low: rgba(241, 241, 241, 0.8);
@@ -402,10 +405,10 @@
   --theme-color-foreground-alpha-low: rgba(241, 241, 241, 0.8);
   --theme-color-foreground-alpha-high: rgba(241, 241, 241, 0.1);
   --theme-color-background: #27323a;
-  --theme-color-background-alpha: rgba(241, 241, 241, 0.3);
-  --theme-color-background-alpha-low: rgba(241, 241, 241, 0.8);
-  --theme-color-background-alpha-high: rgba(241, 241, 241, 0.1);
-  --theme-color-paper: #f1f1f1;
+  --theme-color-background-alpha: rgba(39, 50, 58, 0.3);
+  --theme-color-background-alpha-low: rgba(39, 50, 58, 0.8);
+  --theme-color-background-alpha-high: rgba(39, 50, 58, 0.1);
+  --theme-color-paper: #3a3b3b;
   --theme-color-paper-alpha: rgba(58, 59, 59, 0.3);
   --theme-color-paper-alpha-low: rgba(58, 59, 59, 0.8);
   --theme-color-paper-alpha-high: rgba(58, 59, 59, 0.1);
