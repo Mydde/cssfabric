@@ -76,7 +76,6 @@ $declinations-config: map-get($theme-config, declinations-config);
   .theme-bg-paper-alpha-high{
     background-color: var(--theme-color-paper-alpha-high);
   }
-
 }
 
 @mixin themeBaseVars($theme-color-foreground,$theme-color-background,$theme-color-paper) {
