@@ -8,7 +8,9 @@
 
 @import "cssfabric-config";
 
-/* cssFabric vars */
+/* 
+cssFabric vars
+*/
 :root {
   /* --theme-color-primary|*-alpha-|* */
   @include themeBuild.themeCssVars($theme-color-primary, $theme-color-secondary, $theme-color-tertiary);
@@ -20,16 +22,16 @@
   @include textBuild.textCssVars();
   /* shadows */
   @include boxBuild.shadowsCssVars();
-  /* themes */
-  @include themeBuild.themeBaseVars($theme-color-foreground, $theme-color-background, $theme-color-paper);
+  
+  // @include themeBuild.themeBaseVars($theme-color-foreground, $theme-color-background, $theme-color-paper);
 
-  --theme-color-border: #{color.change($theme-color-foreground, $alpha: 0.2)};
+  
   &,
   [data-theme="light"] {
     @include themeBuild.themeBaseVars($theme-color-foreground, $theme-color-background, $theme-color-paper);
 
     --theme-color-border: #{color.change($theme-color-foreground, $alpha: 0.2)};
-    --theme-color-overlay: rgba(208, 191, 151, 0.2);
+    --theme-color-overlay: rgba($theme-color-foreground, 0.4);
   }
 
   [data-theme="dark"] {
@@ -40,6 +42,6 @@
     );
 
     --theme-color-border: #{color.change($theme-dark-color-foreground, $alpha: 0.3)};
-    --theme-color-overlay: rgba(255, 255, 255, 0.1);
+    --theme-color-overlay: rgba($theme-dark-color-background, 0.4);
   }
 }

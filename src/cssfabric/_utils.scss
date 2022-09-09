@@ -71,9 +71,9 @@
 @mixin alphaTize($key,$color,$ranges: (_:0.3,low:0.8,high:0.1)) {
   @each $range, $val in $ranges {
     $rg: if($range==_,'',-#{$range});
-    #{$key}-alpha#{$rg} : #{color.change($color,$alpha:$val)};
+    #{$key}-alpha#{$rg} : rgba($color,$val); // #{color.change($color,$alpha:$val)};
   }
-}
+} 
 
 @function getGraySteps($steps, $gray-start, $gray-end) {
   $gray-schemes: ();

@@ -1,10 +1,7 @@
 {
   "name": "@medyll/cssfabric",
-  "version": "0.2.4",
+  "version": "0.2.5",
   "private": false,
-  "bin": {
-    "@medyll/cssfabric": "./bin/index.js"
-  },
   "repository": {
     "type": "git",
     "url": "https://github.com/medyll/cssfabric.git"

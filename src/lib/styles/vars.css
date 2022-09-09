@@ -1,5 +1,7 @@
 /* primary,secondary with alphas */
-/* cssFabric vars */
+/* 
+cssFabric vars
+*/
 :root {
   /* --theme-color-primary|*-alpha-|* */
   /* theme primary colors*/
@@ -304,22 +306,6 @@
   --box-shad-3: 0 2.5px 5.1724137931px 0 rgba(0, 0, 0, 0.15), 0 0.4580152672px 1.3953488372px 0 rgba(0, 0, 0, 0.1);
   --box-shad-4: 0 3.3333333333px 6.8965517241px 0 rgba(0, 0, 0, 0.15), 0 0.6106870229px 1.8604651163px 0 rgba(0, 0, 0, 0.1);
   --box-shad-5: 0 4.1666666667px 8.6206896552px 0 rgba(0, 0, 0, 0.15), 0 0.7633587786px 2.3255813953px 0 rgba(0, 0, 0, 0.1);
-  /* themes */
-  /* theme base colors*/
-  --theme-color-text: #282230;
-  --theme-color-foreground: #282230;
-  --theme-color-foreground-alpha: rgba(40, 34, 48, 0.3);
-  --theme-color-foreground-alpha-low: rgba(40, 34, 48, 0.8);
-  --theme-color-foreground-alpha-high: rgba(40, 34, 48, 0.1);
-  --theme-color-background: #ffffff;
-  --theme-color-background-alpha: rgba(255, 255, 255, 0.3);
-  --theme-color-background-alpha-low: rgba(255, 255, 255, 0.8);
-  --theme-color-background-alpha-high: rgba(255, 255, 255, 0.1);
-  --theme-color-paper: #f1f1f1;
-  --theme-color-paper-alpha: rgba(241, 241, 241, 0.3);
-  --theme-color-paper-alpha-low: rgba(241, 241, 241, 0.8);
-  --theme-color-paper-alpha-high: rgba(241, 241, 241, 0.1);
-  --theme-color-border: rgba(40, 34, 48, 0.2);
 }
 :root [density=small] {
   --box-density-0: 0rem;
@@ -395,7 +381,7 @@
   --theme-color-paper-alpha-low: rgba(241, 241, 241, 0.8);
   --theme-color-paper-alpha-high: rgba(241, 241, 241, 0.1);
   --theme-color-border: rgba(40, 34, 48, 0.2);
-  --theme-color-overlay: rgba(208, 191, 151, 0.2);
+  --theme-color-overlay: rgba($theme-color-foreground, 0.4);
 }
 :root [data-theme=dark] {
   /* theme base colors*/
@@ -413,5 +399,5 @@
   --theme-color-paper-alpha-low: rgba(58, 59, 59, 0.8);
   --theme-color-paper-alpha-high: rgba(58, 59, 59, 0.1);
   --theme-color-border: rgba(241, 241, 241, 0.3);
-  --theme-color-overlay: rgba(255, 255, 255, 0.1);
+  --theme-color-overlay: rgba($theme-dark-color-background, 0.4);
 }
