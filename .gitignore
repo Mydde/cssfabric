@@ -9,3 +9,6 @@ package
 !.env.example
 .vercel
 .output
+
+#cssfabric directory 
+.cssfabric

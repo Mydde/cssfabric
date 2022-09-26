@@ -29,7 +29,7 @@ $grid-code-sep: #{$grid-code}#{$sep};
   $h_prop: #{$prefix}#{$sep}#{$grid-h};
   $v_prop: #{$prefix}#{$sep}#{$grid-v};
 
-  .#{$grid-code} {
+  .#{$prefix} {
     display: grid;
     &-auto-flow-cols {
       grid-auto-flow: column;
@@ -69,15 +69,17 @@ $grid-code-sep: #{$grid-code}#{$sep};
   .#{$grid-code-sep}inline {
     display: inline-grid;
   }
+
+
   /* template-columns */
   @for $col-row from 1 through $grid-max-cols {
-    .#{$grid-code}-cols-#{$col-row} {
+    .#{$prefix}-cols-#{$col-row} {
       grid-template-columns: repeat(#{$col-row}, minmax(0, 1fr));
     }
   }
   /* template-rows */
   @for $col-row from 1 through $grid-max-rows {
-    .#{$grid-code}-rows-#{$col-row} {
+    .#{$prefix}-rows-#{$col-row} {
       grid-template-rows: repeat(#{$col-row}, minmax(0, 1fr));
     }
   }

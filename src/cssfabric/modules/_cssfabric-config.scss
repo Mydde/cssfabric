@@ -101,10 +101,15 @@ $cssfabric-config: (
                 full: 100%
         ),
         media_quey_sizes: (
-                xxl: 1300,
+                sm:640,
+                md:768,
+                lg:1024,
+                xl:1280,
+                xxl:1540
+                /* xxl: 1300,
                 xl: 1200,
                 lg: 960,
-                md: 760
+                md: 760 */
         ),
         densities-ratios: $densities-ratios,
         themes:(
