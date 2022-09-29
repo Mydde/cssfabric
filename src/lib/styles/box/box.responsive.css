@@ -1,4 +1,4 @@
-@media only screen and (max-width: 640px) {
+@media only screen and (min-width: 640px) {
   .marg-sm .marg-sm-tiny {
     margin: var(--box-density-preset-tiny);
   }
@@ -1379,7 +1379,7 @@
     gap-sm: var(--box-density-preset-large);
   }
 }
-@media only screen and (max-width: 768px) {
+@media only screen and (min-width: 768px) {
   .marg-md .marg-md-tiny {
     margin: var(--box-density-preset-tiny);
   }
@@ -2760,7 +2760,7 @@
     gap-md: var(--box-density-preset-large);
   }
 }
-@media only screen and (max-width: 1024px) {
+@media only screen and (min-width: 1024px) {
   .marg-lg .marg-lg-tiny {
     margin: var(--box-density-preset-tiny);
   }
@@ -4141,7 +4141,7 @@
     gap-lg: var(--box-density-preset-large);
   }
 }
-@media only screen and (max-width: 1280px) {
+@media only screen and (min-width: 1280px) {
   .marg-xl .marg-xl-tiny {
     margin: var(--box-density-preset-tiny);
   }
@@ -5522,7 +5522,7 @@
     gap-xl: var(--box-density-preset-large);
   }
 }
-@media only screen and (max-width: 1540px) {
+@media only screen and (min-width: 1540px) {
   .marg-xxl .marg-xxl-tiny {
     margin: var(--box-density-preset-tiny);
   }

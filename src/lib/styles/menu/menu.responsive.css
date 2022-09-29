@@ -16,7 +16,7 @@
         }
     }
 }*/
-@media only screen and (max-width: 640px) {
+@media only screen and (min-width: 640px) {
   ul.menu-sm {
     list-style: none;
     list-style-type: none;
@@ -101,7 +101,7 @@ ul.menu-sm-h li {
     text-align: center;
   }
 }
-@media only screen and (max-width: 768px) {
+@media only screen and (min-width: 768px) {
   ul.menu-md {
     list-style: none;
     list-style-type: none;
@@ -186,7 +186,7 @@ ul.menu-md-h li {
     text-align: center;
   }
 }
-@media only screen and (max-width: 1024px) {
+@media only screen and (min-width: 1024px) {
   ul.menu-lg {
     list-style: none;
     list-style-type: none;
@@ -271,7 +271,7 @@ ul.menu-lg-h li {
     text-align: center;
   }
 }
-@media only screen and (max-width: 1280px) {
+@media only screen and (min-width: 1280px) {
   ul.menu-xl {
     list-style: none;
     list-style-type: none;
@@ -356,7 +356,7 @@ ul.menu-xl-h li {
     text-align: center;
   }
 }
-@media only screen and (max-width: 1540px) {
+@media only screen and (min-width: 1540px) {
   ul.menu-xxl {
     list-style: none;
     list-style-type: none;

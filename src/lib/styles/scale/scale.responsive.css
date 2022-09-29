@@ -1,4 +1,4 @@
-@media only screen and (max-width: 640px) {
+@media only screen and (min-width: 640px) {
   .w-sm-full {
     width: 100%;
   }
@@ -719,7 +719,7 @@
     min-height: 100%;
   }
 }
-@media only screen and (max-width: 768px) {
+@media only screen and (min-width: 768px) {
   .w-md-full {
     width: 100%;
   }
@@ -1440,7 +1440,7 @@
     min-height: 100%;
   }
 }
-@media only screen and (max-width: 1024px) {
+@media only screen and (min-width: 1024px) {
   .w-lg-full {
     width: 100%;
   }
@@ -2161,7 +2161,7 @@
     min-height: 100%;
   }
 }
-@media only screen and (max-width: 1280px) {
+@media only screen and (min-width: 1280px) {
   .w-xl-full {
     width: 100%;
   }
@@ -2882,7 +2882,7 @@
     min-height: 100%;
   }
 }
-@media only screen and (max-width: 1540px) {
+@media only screen and (min-width: 1540px) {
   .w-xxl-full {
     width: 100%;
   }

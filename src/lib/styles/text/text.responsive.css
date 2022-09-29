@@ -1,4 +1,4 @@
-@media only screen and (max-width: 640px) {
+@media only screen and (min-width: 640px) {
   .text-sm-ellipsis {
     text-overflow: ellipsis;
     overflow: hidden;
@@ -47,7 +47,7 @@ h6 {
     font-weight: 400;
   }
 }
-@media only screen and (max-width: 768px) {
+@media only screen and (min-width: 768px) {
   .text-md-ellipsis {
     text-overflow: ellipsis;
     overflow: hidden;
@@ -96,7 +96,7 @@ h6 {
     font-weight: 400;
   }
 }
-@media only screen and (max-width: 1024px) {
+@media only screen and (min-width: 1024px) {
   .text-lg-ellipsis {
     text-overflow: ellipsis;
     overflow: hidden;
@@ -145,7 +145,7 @@ h6 {
     font-weight: 400;
   }
 }
-@media only screen and (max-width: 1280px) {
+@media only screen and (min-width: 1280px) {
   .text-xl-ellipsis {
     text-overflow: ellipsis;
     overflow: hidden;
@@ -194,7 +194,7 @@ h6 {
     font-weight: 400;
   }
 }
-@media only screen and (max-width: 1540px) {
+@media only screen and (min-width: 1540px) {
   .text-xxl-ellipsis {
     text-overflow: ellipsis;
     overflow: hidden;

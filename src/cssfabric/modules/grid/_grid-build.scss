@@ -24,6 +24,7 @@ $grid-max-rows: map-get($grid-config, grid-max-rows);
 
 $grid-code-sep: #{$grid-code}#{$sep};
 
+// 
 @mixin makeGrid($mqKey) {
   $prefix: if($mqKey, #{$grid-code}-#{$mqKey}, #{$grid-code});
   $h_prop: #{$prefix}#{$sep}#{$grid-h};

@@ -1,4 +1,4 @@
-@media only screen and (max-width: 640px) {
+@media only screen and (min-width: 640px) {
   .flex,
 .flex-sm-h {
     display: flex;
@@ -124,7 +124,7 @@
     flex-shrink: 2;
   }
 }
-@media only screen and (max-width: 768px) {
+@media only screen and (min-width: 768px) {
   .flex,
 .flex-md-h {
     display: flex;
@@ -250,7 +250,7 @@
     flex-shrink: 2;
   }
 }
-@media only screen and (max-width: 1024px) {
+@media only screen and (min-width: 1024px) {
   .flex,
 .flex-lg-h {
     display: flex;
@@ -376,7 +376,7 @@
     flex-shrink: 2;
   }
 }
-@media only screen and (max-width: 1280px) {
+@media only screen and (min-width: 1280px) {
   .flex,
 .flex-xl-h {
     display: flex;
@@ -502,7 +502,7 @@
     flex-shrink: 2;
   }
 }
-@media only screen and (max-width: 1540px) {
+@media only screen and (min-width: 1540px) {
   .flex,
 .flex-xxl-h {
     display: flex;
