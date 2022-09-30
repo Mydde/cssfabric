@@ -26,11 +26,11 @@ switch (command) {
   case "--install":
   case "--install-css":
     /** import cssfabric files */
-    await install();
+    install();
     break;
   case "--uninstall":
     /** delete cssfabric files */
-    await uninstall();
+    uninstall();
     break;
 }
  
