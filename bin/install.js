@@ -55,7 +55,7 @@ var run = function (cmd) {
 /** import cssfabric files to .cssfabric */
 export const install = async () => {
 
-  if (fsx.existsSync("node_modules/@medyll/cssfabric")) {
+ /*  if (fsx.existsSync("node_modules/@medyll/cssfabric")) {
     //run("ls node_modules/@medyll/cssfabric");
     console.log('found nodemodules')
   }else{
@@ -93,7 +93,7 @@ export const install = async () => {
         )
       );
     }
-  }
+  } */
 };
 
 /** uninstall .cssfabric files */
