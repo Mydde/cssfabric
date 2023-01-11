@@ -12,14 +12,14 @@
 cssFabric vars
 */
 :root {
-  /* --theme-color-primary|*-alpha-|* */
+  /* --theme-color-primary|*-alpha-|*  */
   @include themeBuild.themeCssVars($theme-color-primary, $theme-color-secondary, $theme-color-tertiary);
 
   @include colorBuild.buildColorCssVars();
-  /* boxes */
-  @include boxBuild.pmbCssVars();
   /* text */
   @include textBuild.textCssVars();
+  /* boxes */
+  @include boxBuild.pmbCssVars();
   /* shadows */
   @include boxBuild.shadowsCssVars();
   

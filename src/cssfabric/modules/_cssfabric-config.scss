@@ -67,7 +67,7 @@ $box-padding-shorthand: pad !default;
 $box-margin-shorthand: marg !default;
 $box-gap-shorthand: gap !default;
 
-$box-unit-presets: (tiny:0.5, small:1, medium:3, large:4) !default;
+$box-unit-presets: (tight:0.25,tiny:0.25, small:0.5, default: 1,medium:1.5, large:3) !default;
 $box-radius: (tiny:4px, small:8px, medium:16px) !default;
 
 $scale-tag-width-shorthand: w !default;

@@ -32,7 +32,7 @@ $box-gap-shorthand: cssfabric-config.$box-gap-shorthand !default;
 $box-shadows-steps: box.$box-shadows-steps !default;
 $box-shadows-step-multiplier: box.$box-shadows-step-multiplier !default;
 
-$box-radius: cssfabric-config.$box-radius;
+$box-radius: cssfabric-config.$box-radius; //
 $box-unit-presets: cssfabric-config.$box-unit-presets;
 
 $densities-ratios : cssfabric-config.$densities-ratios;
@@ -46,7 +46,7 @@ $densities-ratios : cssfabric-config.$densities-ratios;
   }
 }
 
-// support ratios
+// support ratios, set densities 
 // for paddings margins positions
 @mixin pmbCssVars() {
   $iterator: $box-sizes-config;
@@ -57,7 +57,8 @@ $densities-ratios : cssfabric-config.$densities-ratios;
 
   // presets
   @each $preset, $preset-value in $box-unit-presets{
-    $value: ($preset-value * $box-unit-size-config) + $box-unit-config;
+    // $value: ($preset-value * $box-unit-size-config) + $box-unit-config;
+    $value: $preset-value + $box-unit-config;
     --box-density-preset-#{$preset}: #{$value};
   }
 

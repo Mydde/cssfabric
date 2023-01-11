@@ -3,7 +3,7 @@
 cssFabric vars
 */
 :root {
-  /* --theme-color-primary|*-alpha-|* */
+  /* --theme-color-primary|*-alpha-|*  */
   /* theme primary colors*/
   --theme-color-primary: #201700;
   --theme-color-primary-light: #6d4e00;
@@ -244,27 +244,6 @@ cssFabric vars
   --color-gray-600-alpha: rgba(153, 153, 153, 0.3);
   --color-gray-600-alpha-low: rgba(153, 153, 153, 0.8);
   --color-gray-600-alpha-high: rgba(153, 153, 153, 0.1);
-  /* boxes */
-  --box-density-0: 0rem;
-  --box-density-1: 0.5rem;
-  --box-density-2: 1rem;
-  --box-density-3: 1.5rem;
-  --box-density-4: 2rem;
-  --box-density-5: 2.5rem;
-  --box-density-6: 3rem;
-  --box-density-7: 3.5rem;
-  --box-density-8: 4rem;
-  --box-density-9: 4.5rem;
-  --box-density-10: 5rem;
-  --box-density-11: 5.5rem;
-  --box-density-12: 6rem;
-  --box-density-preset-tiny: 0.25rem;
-  --box-density-preset-small: 0.5rem;
-  --box-density-preset-medium: 1.5rem;
-  --box-density-preset-large: 2rem;
-  --radius-tiny: 4px;
-  --radius-small: 8px;
-  --radius-medium: 16px;
   /* text */
   /*Hs*/
   --font-size-h1: 3.1rem;
@@ -300,6 +279,29 @@ cssFabric vars
   --text-shadow-teal: 0 0 0.125em #008272;
   --text-shadow-blue: 0 0 0.125em #0078d4;
   --text-shadow-dark: 0 0 0.125em #323232;
+  /* boxes */
+  --box-density-0: 0rem;
+  --box-density-1: 0.5rem;
+  --box-density-2: 1rem;
+  --box-density-3: 1.5rem;
+  --box-density-4: 2rem;
+  --box-density-5: 2.5rem;
+  --box-density-6: 3rem;
+  --box-density-7: 3.5rem;
+  --box-density-8: 4rem;
+  --box-density-9: 4.5rem;
+  --box-density-10: 5rem;
+  --box-density-11: 5.5rem;
+  --box-density-12: 6rem;
+  --box-density-preset-tight: 0.25rem;
+  --box-density-preset-tiny: 0.25rem;
+  --box-density-preset-small: 0.5rem;
+  --box-density-preset-default: 1rem;
+  --box-density-preset-medium: 1.5rem;
+  --box-density-preset-large: 3rem;
+  --radius-tiny: 4px;
+  --radius-small: 8px;
+  --radius-medium: 16px;
   /* shadows */
   --box-shad-1: 0 0.8333333333px 1.724137931px 0 rgba(0, 0, 0, 0.15), 0 0.1526717557px 0.4651162791px 0 rgba(0, 0, 0, 0.1);
   --box-shad-2: 0 1.6666666667px 3.4482758621px 0 rgba(0, 0, 0, 0.15), 0 0.3053435115px 0.9302325581px 0 rgba(0, 0, 0, 0.1);
@@ -321,10 +323,12 @@ cssFabric vars
   --box-density-10: 2.5rem;
   --box-density-11: 2.75rem;
   --box-density-12: 3rem;
-  --box-density-preset-tiny: 0.125rem;
-  --box-density-preset-small: 0.25rem;
-  --box-density-preset-medium: 0.75rem;
-  --box-density-preset-large: 1rem;
+  --box-density-preset-tight: 0.0625rem;
+  --box-density-preset-tiny: 0.0625rem;
+  --box-density-preset-small: 0.125rem;
+  --box-density-preset-default: 0.25rem;
+  --box-density-preset-medium: 0.375rem;
+  --box-density-preset-large: 0.75rem;
 }
 :root [density=default] {
   --box-density-0: 0rem;
@@ -340,10 +344,12 @@ cssFabric vars
   --box-density-10: 5rem;
   --box-density-11: 5.5rem;
   --box-density-12: 6rem;
-  --box-density-preset-tiny: 0.25rem;
-  --box-density-preset-small: 0.5rem;
-  --box-density-preset-medium: 1.5rem;
-  --box-density-preset-large: 2rem;
+  --box-density-preset-tight: 0.125rem;
+  --box-density-preset-tiny: 0.125rem;
+  --box-density-preset-small: 0.25rem;
+  --box-density-preset-default: 0.5rem;
+  --box-density-preset-medium: 0.75rem;
+  --box-density-preset-large: 1.5rem;
 }
 :root [density=large] {
   --box-density-0: 0rem;
@@ -359,10 +365,12 @@ cssFabric vars
   --box-density-10: 8.75rem;
   --box-density-11: 9.625rem;
   --box-density-12: 10.5rem;
-  --box-density-preset-tiny: 0.4375rem;
-  --box-density-preset-small: 0.875rem;
-  --box-density-preset-medium: 2.625rem;
-  --box-density-preset-large: 3.5rem;
+  --box-density-preset-tight: 0.21875rem;
+  --box-density-preset-tiny: 0.21875rem;
+  --box-density-preset-small: 0.4375rem;
+  --box-density-preset-default: 0.875rem;
+  --box-density-preset-medium: 1.3125rem;
+  --box-density-preset-large: 2.625rem;
 }
 :root,
 :root [data-theme=light] {
