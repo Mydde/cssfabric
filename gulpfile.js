@@ -8,13 +8,19 @@ import gulpConcat from "gulp-concat-util"
 import gulpRename from "gulp-rename"
 import json2md from "json2md"
 import gulpIgnore from "gulp-ignore"
-import {cssFabricSassConf} from "./cssfabric.sass.js";
-import {Transform} from "stream";
+import { cssFabricSassConf } from "./cssfabric.sass.js";
+import { Transform } from "stream";
 import util from "util";
-
+import pkg from 'glob';
+const { glob, globSync, globStream, globStreamSync, Glob } = pkg;
+import path from 'path';
+import fs from "fs-extra"
 import dartSass from 'sass';
 import gulpSass from 'gulp-sass';
 import through2 from "through2";
+import minimatch from "minimatch";
+import micromatch from "micromatch";
+
 const sass = gulpSass(dartSass);
 
 const {
@@ -23,10 +29,11 @@ const {
     fabricConfDir,
     fabricModuleDir,
     fabricGeneratedDir,
+    fabricStylesTestDir
 } = cssFabricSassConf;
 
 
-const tr = new Transform({writableObjectMode: true, readableObjectMode: true});
+const tr = new Transform({ writableObjectMode: true, readableObjectMode: true });
 
 
 function TransformStream(transformFunction) {
@@ -37,7 +44,7 @@ function TransformStream(transformFunction) {
 
 util.inherits(TransformStream, Transform);
 
-TransformStream.prototype._transform = function(obj, enc, done) {
+TransformStream.prototype._transform = function (obj, enc, done) {
     return this.transformFunction(this, obj, done);
 };
 
@@ -59,7 +66,7 @@ const doFabric = {
         const content = [];
         const docContent = [];
 
-        const table = {headers: ["modules", ""]};
+        const table = { headers: ["modules", ""] };
         const rows = [];
 
         const labelIn = "<span style='width:80px;display:inline-block;overflow:visible'><b>";
@@ -70,13 +77,13 @@ const doFabric = {
 
         const eol = '<br>&nbsp;&nbsp;-&nbsp;&nbsp;';
 
-        out.push({h1: "Welcome to cssfabric"});
-        out.push({p: "Willing to bring my utility-first 2011 css framework to a more decent life !"});
-        out.push({p: "This is also a learning point about gulp, webpack, packages and friends."});
-        out.push({blockquote: "yaocf !"});
-        out.push({p: "<br/>"});
-        out.push({h2: "Incoming features"});
-        out.push({p: "<br/>"});
+        out.push({ h1: "Welcome to cssfabric" });
+        out.push({ p: "Willing to bring my utility-first 2011 css framework to a more decent life !" });
+        out.push({ p: "This is also a learning point about gulp, webpack, packages and friends." });
+        out.push({ blockquote: "yaocf !" });
+        out.push({ p: "<br/>" });
+        out.push({ h2: "Incoming features" });
+        out.push({ p: "<br/>" });
 
         Object.keys(moduleList).forEach((moduleListKey, moduleListIndex, a) => {
             const moduleListValue = moduleList[moduleListKey];
@@ -94,8 +101,8 @@ const doFabric = {
 
             if (docs?.attributes) {
 
-                docContent.push({hr: ''});
-                docContent.push({h4: `<strong>module ${title}</strong>`});
+                docContent.push({ hr: '' });
+                docContent.push({ h4: `<strong>module ${title}</strong>` });
 
 
                 Object.keys(docs.attributes).forEach((attributeCode) => {
@@ -168,8 +175,8 @@ const doFabric = {
                         }
                     }
 
-                    if (collect.title) docContent.push({h4: collect.title});
-                    if (collect.about) docContent.push({"p": collect.about});
+                    if (collect.title) docContent.push({ h4: collect.title });
+                    if (collect.about) docContent.push({ "p": collect.about });
 
                     if (collect.tag) collectContentList.push(collect.tag);
                     if (collect.keys) collectContentList.push(collect.keys);
@@ -177,7 +184,7 @@ const doFabric = {
 
                     if (nestedLevels && nestedLevels.length) collectContentList.push(nestedLevels.join('<br/>'));
 
-                    docContent.push({"ul": collectContentList});
+                    docContent.push({ "ul": collectContentList });
 
                     // docContent.push({"p":  "<br/>"}) ;
 
@@ -194,7 +201,7 @@ const doFabric = {
             let ret = '';
 
             if (!Array.isArray(arr)) {
-                console.log(Array.isArray(arr), {arr})
+                console.log(Array.isArray(arr), { arr })
             }
             if (arr.every(x => Array.isArray(x))) ret = 'arrays'
             if (arr.every(x => typeof x === 'string')) ret = 'strings'
@@ -207,11 +214,11 @@ const doFabric = {
 
         table.rows = rows;
 
-        out.push({table: table})
-        out.push({p: "<br/>"});
-        out.push({ul: content});
-        out.push({p: "<br/>"});
-        out.push({h3: "More details"});
+        out.push({ table: table })
+        out.push({ p: "<br/>" });
+        out.push({ ul: content });
+        out.push({ p: "<br/>" });
+        out.push({ h3: "More details" });
         out = out.concat(docContent);
 
         return json2md(out);
@@ -223,7 +230,7 @@ const doFabric = {
      * @returns {string}
      */
     fabricSassToJson: (file) => {
-        let {file_content, file_info} = file;
+        let { file_content, file_info } = file;
 
         let obj;
         obj = file_content.obj;
@@ -326,7 +333,7 @@ function task_varsExport(cb) {
                 removeExtensions: false,
             })
         )
-        .pipe(through2.obj(function(file, _, cb) {
+        .pipe(through2.obj(function (file, _, cb) {
             if (file.isBuffer()) {
                 const content = file.contents.toString();
                 const start = '{"obj":"';
@@ -338,12 +345,12 @@ function task_varsExport(cb) {
         }))
         .pipe(
             jsonTransform(function (file_content, file_info) {
-                return doFabric.fabricSassToJson({file_content: file_content, file_info});
+                return doFabric.fabricSassToJson({ file_content: file_content, file_info });
             })
         )
         .pipe(cache(task_varsExport))
-        .pipe(sass({outputStyle: "expanded"}).on("error", sass.logError))
-        .pipe(through2.obj(function(file, _, cb) {
+        .pipe(sass({ outputStyle: "expanded" }).on("error", sass.logError))
+        .pipe(through2.obj(function (file, _, cb) {
             if (file.isBuffer()) {
                 const content = file.contents.toString();
                 const start = '{"cssfabric":{"modules":{';
@@ -407,7 +414,7 @@ function task_mergeInclude(cb) {
     //
     const dest = fabricStylesDir;
     // const dir = fabricStylesDir + "/core";
-    const dir = fabricStylesDir ;
+    const dir = fabricStylesDir;
 
     const steps = [];
     // normal stylesheets
@@ -419,7 +426,7 @@ function task_mergeInclude(cb) {
                 `!${dir}/**/*min*.css`,
             ])
             .pipe(gulpConcat("cssfabric.css"))
-            .pipe(through2.obj(function(file, _, cb) {
+            .pipe(through2.obj(function (file, _, cb) {
                 if (file.isBuffer()) {
                     const content = file.contents.toString();
                     const start = '/** Merged by Mydde */';
@@ -495,15 +502,15 @@ function task_sass2css(cb) {
             )
             // to css and to /core
             .pipe(
-                sass({outputStyle: "expanded"}).on("error", sass.logError)
+                sass({ outputStyle: "expanded" }).on("error", sass.logError)
             )
             .pipe(gulp.dest(`${fabricStylesDir}`))
             // to css and minify and to /core
-            .pipe(sass({outputStyle:'compressed'}))
+            .pipe(sass({ outputStyle: 'compressed' }))
             .pipe(
                 gulpRename(function (path) {
                     path.extname = ".min.css";
-                    path.basename = path.basename.replace("-", "."); 
+                    path.basename = path.basename.replace("-", ".");
                 })
             )
             .pipe(gulp.dest(`${fabricStylesDir}`))
@@ -514,10 +521,95 @@ function task_sass2css(cb) {
 }
 
 
+
+async function transformSass2css() {
+    // normal stylesheets
+    const normalPattern = ['**/*.css', '!**/*responsive*.css', '!**/*min*.css'];
+    // normal minified stylesheets
+    const miniFiedPattern = [`**/*min.css`, `!**/*responsive*.css`]
+    // responsive stylesheets
+    const responsivePattern = ['**/*responsive.css*']
+    // responsive minified stylesheets
+    const responsiveMinPattern = [`**/*responsive.min.css`];
+
+
+    // ensure directory fabricStylesTestDir exists, using fs-extra
+    fs.ensureDirSync(fabricStylesTestDir);
+    // list all files from  `${fabricModuleDir}/**/*.scss`
+    // exclusion pattern : exclude `**/*css-fabric*` and exclude `**/*_*` 
+    const files = glob.sync(`${fabricModuleDir}/**/*.scss`, { ignore: [`**/*css-fabric*`, `**/!(_)*`], nodir: true });
+
+    console.log('List files')
+    // for each file
+    const promises = []
+    files.forEach(file => {
+        // run sass({outputStyle: "expanded"}).on("error", sass.logError) on the file
+        const css = dartSass.renderSync({ file: file, outputStyle: "expanded" }).css.toString();
+        const cssCompressed = dartSass.renderSync({ file: file, outputStyle: "compressed" }).css.toString();
+
+        const finalFileName = path.basename(file).replace("-", ".").replace('.scss', '.css')
+        // extract the file.basename and the file.path by removing ${fabricModuleDir}
+        const newFileObj = {
+            basename: finalFileName,
+            path: `${fabricStylesTestDir}` + path.dirname(file.replace(fabricModuleDir, ""))
+        }
+        const newFileObjCompressed = {
+            basename: finalFileName.replace('.css', '.min.css'),
+            path: `${fabricStylesTestDir}` + path.dirname(file.replace(fabricModuleDir, ""))
+        }
+
+        if (!newFileObj.basename.includes("_") && !newFileObj.basename.includes("css.fabric")) {
+            fs.ensureDirSync(newFileObj.path)
+            promises.push(fs.writeFile(`${newFileObj.path}/${newFileObj.basename}`, css).then(res => res))
+            promises.push(fs.writeFile(`${newFileObjCompressed.path}/${newFileObjCompressed.basename}`, cssCompressed).then(res => res));
+        }
+
+
+    });
+
+    await Promise.all(promises);
+
+    console.log('write modules')
+    // files have now been writed down in the /lib folder
+    // we can now merge them into 3 files : cssfabric.css, cssfabric.min.css, cssfabric.responsive.css
+    // and cssfabric.responsive.min.css
+    const libFiles = glob.sync(`${fabricStylesTestDir}/**/*.css`);
+    const fileCollector = { normalPattern: [], miniFiedPattern: [], responsivePattern: [], responsiveMinPattern: [] };
+    const fileNames = { normalPattern: 'cssfabric.css', miniFiedPattern: 'cssfabric.min.css', responsivePattern: 'cssfabric.responsive.css', responsiveMinPattern: 'cssfabric.responsive.min.css' };
+
+    libFiles.forEach(file => {
+
+        const fileContent = fs.readFileSync(file, 'utf8');
+
+        if (micromatch.all(file, normalPattern)) {
+            fileCollector.normalPattern.push(fileContent);
+        }
+        if (micromatch.all(file, miniFiedPattern)) {
+            fileCollector.miniFiedPattern.push(fileContent);
+        }
+        if (micromatch.all(file, responsivePattern)) {
+            fileCollector.responsivePattern.push(fileContent);
+        }
+        if (micromatch.all(file, responsiveMinPattern)) {
+            fileCollector.responsiveMinPattern.push(fileContent);
+        }
+    })
+    console.log('write main files')
+    // 
+    Object.keys(fileCollector).forEach(key => {
+        fs.ensureDirSync(`${fabricStylesTestDir}/`);
+        fs.writeFileSync(`${fabricStylesTestDir}/${fileNames[key]}`, fileCollector[key].join(''));
+    })
+    console.log('Done')
+
+}
+
+
 export function watchSass(cb) {
     gulp.watch(
         fabricModuleDir + "/**/*.scss",
-        gulp.series(task_sass2css, task_mergeInclude, task_varsExport)
+        gulp.series(transformSass2css)
+        // gulp.series(task_sass2css, task_mergeInclude, task_varsExport)
     );
     cb();
 }
