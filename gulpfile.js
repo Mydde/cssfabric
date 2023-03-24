@@ -1,27 +1,12 @@
-// ## WIP
-
-import gulp from "gulp";
-import jsonTransform from "gulp-json-transform"
-import cache from "gulp-cached"
-import gulFileList from "gulp-filelist"
-import gulpConcat from "gulp-concat-util"
-import gulpRename from "gulp-rename"
 import json2md from "json2md"
-import gulpIgnore from "gulp-ignore"
-import { cssFabricSassConf } from "./cssfabric.sass.js";
-import { Transform } from "stream";
-import util from "util";
+import { cssFabricSassConf } from "./cssfabric.sass.js"; 
 import pkg from 'glob';
-const { glob, globSync, globStream, globStreamSync, Glob } = pkg;
+const { glob } = pkg;
 import path from 'path';
 import fs from "fs-extra"
 import dartSass from 'sass';
-import gulpSass from 'gulp-sass';
-import through2 from "through2";
-import minimatch from "minimatch";
 import micromatch from "micromatch";
-
-const sass = gulpSass(dartSass);
+import chokidar from "chokidar";
 
 const {
     fabricRootDir,
@@ -31,23 +16,7 @@ const {
     fabricGeneratedDir,
     fabricStylesTestDir
 } = cssFabricSassConf;
-
-
-const tr = new Transform({ writableObjectMode: true, readableObjectMode: true });
-
-
-function TransformStream(transformFunction) {
-    // Set the objectMode flag here if you're planning to iterate through a set of objects rather than bytes
-    Transform.call(this, { objectMode: true });
-    this.transformFunction = transformFunction;
-}
-
-util.inherits(TransformStream, Transform);
-
-TransformStream.prototype._transform = function (obj, enc, done) {
-    return this.transformFunction(this, obj, done);
-};
-
+ 
 
 
 const doFabric = {
@@ -57,7 +26,7 @@ const doFabric = {
      * @param file_info
      * @returns {{}}
      */
-    fabricReadmeFile: (file_content, file_info) => {
+    fabricReadmeFile: (file_content) => {
         // name of the module, from path
         const fileContent = file_content || {}
         const moduleList = fileContent?.cssfabric?.modules;
@@ -126,7 +95,7 @@ const doFabric = {
                         }
                         // si keys
                         if (attributeValue?.keys) {
-                            console.log(title, 'keys isArrayOfType ', isArrayOfType(attributeValue.keys))
+
                             switch (isArrayOfType(attributeValue.keys)) {
                                 case "strings":
                                 case "numbers":
@@ -306,221 +275,56 @@ const doFabric = {
     }
 }
 
-
-function fabricVarExportFile(filePath) {
-    // name of the module, from path
-    let module_name = filePath
+/**
+ * list a directory using a glob pattern : glob.sync(pattern, options)
+ * convert each file content to a string with append and prepend options
+ * use doFabric.fabricSassToJson to cast file content to json
+ * 
+ */
+function task_varsExport_replacement() {
+    const listFiles = glob.sync(fabricModuleDir + "/**/_*-vars.scss");
+    const cleanFiles = listFiles.map(filePath => filePath
         .substring(filePath.lastIndexOf("modules/"))
         .split("\\")
         ?.pop()
         .split(".")?.[0]
-        .replace("modules/", "");
+        .replace("modules/", "")).join('|');
 
-    return module_name + "|";
+    let scssContent = doFabric.fabricSassToJson({ file_content: { obj: cleanFiles }, file_info: '' });
+    // write scss to file
+    fs.writeFileSync('temp.scss', scssContent);
+
+    const comp = dartSass.compile('temp.scss')
+    fs.removeSync('temp.scss');
+    const content = comp.css;
+    const start = '{"cssfabric":{"modules":{';
+    const end = " }}}";
+
+    const regexIn = /\/\*\! json-encode: {/gm;
+    const regexOut = /} \*\//gm;
+
+    let exp = content
+        .replace(regexIn, "")
+        .replace(regexOut, ",")
+        .replace(/,\s*$/, "");
+
+    let fileContents = `${start}${exp}${end}`
+
+    // write to fabricGeneratedDir with fileName cssFabric.vars.json
+    fs.writeFileSync(fabricGeneratedDir + '/cssFabric.vars.json', fileContents);
 }
 
+export function task_readme_new(cb) {
+    // reads cssFabric.vars.json in fabricGeneratedDir   
+    glob.sync(fabricGeneratedDir + "/cssFabric.vars.json").forEach(filePath => {
 
-// exports sass maps to json
-function task_varsExport(cb) {
-    let sourceFiles = fabricModuleDir + "/**/_*-vars.scss";
+        let file_content = fs.readFileSync(filePath, "utf8");
 
-    gulp
-        .src(sourceFiles)
-        //.pipe(cache(task_varsExport))
-        .pipe(
-            gulFileList("cssFabric-vars", {
-                destRowTemplate: fabricVarExportFile,
-                removeExtensions: false,
-            })
-        )
-        .pipe(through2.obj(function (file, _, cb) {
-            if (file.isBuffer()) {
-                const content = file.contents.toString();
-                const start = '{"obj":"';
-                const end = "\"}";
+        let readMeVal = doFabric.fabricReadmeFile(JSON.parse(file_content));
 
-                file.contents = Buffer.from(`${start}${content}${end}`)
-            }
-            cb(null, file);
-        }))
-        .pipe(
-            jsonTransform(function (file_content, file_info) {
-                return doFabric.fabricSassToJson({ file_content: file_content, file_info });
-            })
-        )
-        .pipe(cache(task_varsExport))
-        .pipe(sass({ outputStyle: "expanded" }).on("error", sass.logError))
-        .pipe(through2.obj(function (file, _, cb) {
-            if (file.isBuffer()) {
-                const content = file.contents.toString();
-                const start = '{"cssfabric":{"modules":{';
-                const end = " }}}";
-
-                const regexIn = /\/\*\! json-encode: {/gm;
-                const regexOut = /} \*\//gm;
-
-                let exp = content
-                    .replace(regexIn, "")
-                    .replace(regexOut, ",")
-                    .replace(/,\s*$/, "");
-
-                file.contents = Buffer.from(`${start}${exp}${end}`)
-            }
-            cb(null, file);
-        }))
-        .pipe(
-            gulpRename(function (path) {
-                path.dirname = path.dirname;
-                path.extname = ".json";
-                path.basename = path.basename.replace("-", ".");
-            })
-        )
-        .pipe(gulp.dest(fabricGeneratedDir))
-        .on("end", () => {
-            return cb();
-        });
-
-    return cb();
+        fs.writeFileSync(filePath.replace('.json', '.md'), readMeVal);
+    })
 }
-
-export function task_readme(cb) {
-    gulp
-        .src(fabricGeneratedDir + "/*.json")
-        .pipe(
-            jsonTransform(function (file_content, file_info) {
-                return doFabric.fabricReadmeFile(file_content, file_info);
-            })
-        )
-        .pipe(
-            gulpRename(function (path) {
-                path.dirname = path.dirname;
-                path.extname = ".md";
-                path.basename = path.basename.replace("-", ".");
-            })
-        )
-        .pipe(gulp.dest(fabricGeneratedDir))
-        .on("end", () => {
-            return cb();
-        });
-}
-
-/**
- * concatenate css files
- * by min | responsive | ...
- *
- * @param {function} cb gulp callback
- */
-function task_mergeInclude(cb) {
-    //
-    const dest = fabricStylesDir;
-    // const dir = fabricStylesDir + "/core";
-    const dir = fabricStylesDir;
-
-    const steps = [];
-    // normal stylesheets
-    steps.push(
-        gulp
-            .src([
-                `${dir}/**/*.css`,
-                `!${dir}/**/*responsive*.css`,
-                `!${dir}/**/*min*.css`,
-            ])
-            .pipe(gulpConcat("cssfabric.css"))
-            .pipe(through2.obj(function (file, _, cb) {
-                if (file.isBuffer()) {
-                    const content = file.contents.toString();
-                    const start = '/** Merged by Mydde */';
-                    file.contents = Buffer.from(`${start}${content}`)
-                }
-                cb(null, file);
-            }))
-            .pipe(cache(task_mergeInclude))
-            .pipe(gulp.dest(dest))
-            .on("end", () => {
-                return cb();
-            })
-    );
-
-    // normal minified stylesheets
-    steps.push(
-        gulp
-            .src([`${dir}/**/*min.css`, `!${dir}/**/*responsive*.css`])
-            .pipe(gulpConcat("cssfabric.min.css"))
-            .pipe(cache(task_mergeInclude))
-            .pipe(gulp.dest(dest))
-            .on("end", () => {
-                return cb();
-            })
-    );
-
-    // responsive stylesheets
-    steps.push(
-        gulp
-            .src([`${dir}/**/*responsive.css`, `!${dir}/**/*min..css`])
-            .pipe(gulpConcat("cssfabric.responsive.css"))
-            .pipe(cache(task_mergeInclude))
-            .pipe(gulp.dest(dest))
-            .on("end", () => {
-                return cb();
-            })
-    );
-
-    // responsive minified stylesheets
-    steps.push(
-        gulp
-            .src([`${dir}/**/*responsive.min.css`])
-            .pipe(gulpConcat("cssfabric.responsive.min.css"))
-            .pipe(cache(task_mergeInclude))
-            .pipe(gulp.dest(dest))
-            .on("end", () => {
-                return cb();
-            })
-    );
-
-    return [...steps];
-}
-
-/**
- * task_sass2css
- * transform scss to css
- * store files in /lib
- *
- * rename *-responsive to *.responsive, because not dot in sass file
- *
- * @param {function} cb
- * @returns function
- */
-function task_sass2css(cb) {
-    return (
-        gulp
-            .src(`${fabricModuleDir}/**/*.scss`)
-            .pipe(gulpIgnore.exclude("**/*css-fabric*"))
-            .pipe(
-                gulpRename(function (path) {
-                    path.basename = path.basename.replace("-", ".");
-                })
-            )
-            // to css and to /core
-            .pipe(
-                sass({ outputStyle: "expanded" }).on("error", sass.logError)
-            )
-            .pipe(gulp.dest(`${fabricStylesDir}`))
-            // to css and minify and to /core
-            .pipe(sass({ outputStyle: 'compressed' }))
-            .pipe(
-                gulpRename(function (path) {
-                    path.extname = ".min.css";
-                    path.basename = path.basename.replace("-", ".");
-                })
-            )
-            .pipe(gulp.dest(`${fabricStylesDir}`))
-            .on("end", () => {
-                return cb();
-            })
-    );
-}
-
-
 
 async function transformSass2css() {
     // normal stylesheets
@@ -532,12 +336,11 @@ async function transformSass2css() {
     // responsive minified stylesheets
     const responsiveMinPattern = [`**/*responsive.min.css`];
 
-
     // ensure directory fabricStylesTestDir exists, using fs-extra
     fs.ensureDirSync(fabricStylesTestDir);
     // list all files from  `${fabricModuleDir}/**/*.scss`
     // exclusion pattern : exclude `**/*css-fabric*` and exclude `**/*_*` 
-    const files = glob.sync(`${fabricModuleDir}/**/*.scss`, { ignore: [`**/*css-fabric*`, `**/!(_)*`], nodir: true });
+    const files = glob.sync(`${fabricModuleDir}/**/*.scss`, { ignore: [`**/*css-fabric*`, `**/*!(_)*`], nodir: true });
 
     console.log('List files')
     // for each file
@@ -605,20 +408,23 @@ async function transformSass2css() {
 }
 
 
-export function watchSass(cb) {
-    gulp.watch(
-        fabricModuleDir + "/**/*.scss",
-        gulp.series(transformSass2css)
-        // gulp.series(task_sass2css, task_mergeInclude, task_varsExport)
-    );
-    cb();
+export function watchSass( ) {
+
+    const watcher = chokidar.watch(fabricModuleDir + "/**/*.scss", {
+        ignored: /(^|[\/\\])temp\.scss$/, // ignore temp.scss
+        persistent: true,
+    });
+
+    watcher
+        .on('change', (path) => doIt())
+        .on('unlink', (path) => doIt());
+
+    function doIt() {
+        transformSass2css();
+        task_varsExport_replacement();
+        task_readme_new();
+    } 
+ 
 }
 
-export function watchReadme(cb) {
-    gulp.watch(
-        [fabricModuleDir, "!" + fabricModuleDir + "/**/_*.scss"],
-        task_readme
-    );
-
-    cb();
-}
+watchSass();

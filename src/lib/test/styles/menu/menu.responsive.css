@@ -27,7 +27,7 @@
     line-height: var(--box-density-2);
   }
   ul.menu-sm-v li.menu-item,
-ul.menu-sm-v li {
+  ul.menu-sm-v li {
     display: block;
     margin: 0;
     width: auto;
@@ -37,13 +37,13 @@ ul.menu-sm-v li {
     border-left: 1px solid var(--theme-color-border);
   }
   ul.menu-sm-v li.menu-item:hover,
-ul.menu-sm-v li:hover {
+  ul.menu-sm-v li:hover {
     border-radius: var(--radius-small);
     background-color: #ededed;
     border-left: 1px solid var(--theme-color-primary);
   }
   ul.menu-sm-v li.menu-item.active,
-ul.menu-sm-v li.active {
+  ul.menu-sm-v li.active {
     border-radius: var(--radius-small);
     background-color: #ededed;
     font-weight: bold;
@@ -57,7 +57,7 @@ ul.menu-sm-v li.active {
     line-height: var(--box-density-2);
   }
   ul.menu-sm-h li.menu-item,
-ul.menu-sm-h li {
+  ul.menu-sm-h li {
     display: block;
     margin: 0;
     width: auto;
@@ -67,13 +67,13 @@ ul.menu-sm-h li {
     border-left: 1px solid var(--theme-color-border);
   }
   ul.menu-sm-h li.menu-item:hover,
-ul.menu-sm-h li:hover {
+  ul.menu-sm-h li:hover {
     border-radius: var(--radius-small);
     background-color: #ededed;
     border-left: 1px solid var(--theme-color-primary);
   }
   ul.menu-sm-h li.menu-item.active,
-ul.menu-sm-h li.active {
+  ul.menu-sm-h li.active {
     border-radius: var(--radius-small);
     background-color: #ededed;
     font-weight: bold;
@@ -82,7 +82,7 @@ ul.menu-sm-h li.active {
     list-style: none;
   }
   ul.menu-sm-v li.menu-item.active,
-ul.menu-sm-v li.active {
+  ul.menu-sm-v li.active {
     font-weight: bold;
     margin-left: 1rem;
   }
@@ -96,7 +96,7 @@ ul.menu-sm-v li.active {
     overflow-y: hidden;
   }
   ul.menu-sm-h li.menu-item,
-ul.menu-sm-h li {
+  ul.menu-sm-h li {
     margin: 0;
     text-align: center;
   }
@@ -112,7 +112,7 @@ ul.menu-sm-h li {
     line-height: var(--box-density-2);
   }
   ul.menu-md-v li.menu-item,
-ul.menu-md-v li {
+  ul.menu-md-v li {
     display: block;
     margin: 0;
     width: auto;
@@ -122,13 +122,13 @@ ul.menu-md-v li {
     border-left: 1px solid var(--theme-color-border);
   }
   ul.menu-md-v li.menu-item:hover,
-ul.menu-md-v li:hover {
+  ul.menu-md-v li:hover {
     border-radius: var(--radius-small);
     background-color: #ededed;
     border-left: 1px solid var(--theme-color-primary);
   }
   ul.menu-md-v li.menu-item.active,
-ul.menu-md-v li.active {
+  ul.menu-md-v li.active {
     border-radius: var(--radius-small);
     background-color: #ededed;
     font-weight: bold;
@@ -142,7 +142,7 @@ ul.menu-md-v li.active {
     line-height: var(--box-density-2);
   }
   ul.menu-md-h li.menu-item,
-ul.menu-md-h li {
+  ul.menu-md-h li {
     display: block;
     margin: 0;
     width: auto;
@@ -152,13 +152,13 @@ ul.menu-md-h li {
     border-left: 1px solid var(--theme-color-border);
   }
   ul.menu-md-h li.menu-item:hover,
-ul.menu-md-h li:hover {
+  ul.menu-md-h li:hover {
     border-radius: var(--radius-small);
     background-color: #ededed;
     border-left: 1px solid var(--theme-color-primary);
   }
   ul.menu-md-h li.menu-item.active,
-ul.menu-md-h li.active {
+  ul.menu-md-h li.active {
     border-radius: var(--radius-small);
     background-color: #ededed;
     font-weight: bold;
@@ -167,7 +167,7 @@ ul.menu-md-h li.active {
     list-style: none;
   }
   ul.menu-md-v li.menu-item.active,
-ul.menu-md-v li.active {
+  ul.menu-md-v li.active {
     font-weight: bold;
     margin-left: 1rem;
   }
@@ -181,7 +181,7 @@ ul.menu-md-v li.active {
     overflow-y: hidden;
   }
   ul.menu-md-h li.menu-item,
-ul.menu-md-h li {
+  ul.menu-md-h li {
     margin: 0;
     text-align: center;
   }
@@ -197,7 +197,7 @@ ul.menu-md-h li {
     line-height: var(--box-density-2);
   }
   ul.menu-lg-v li.menu-item,
-ul.menu-lg-v li {
+  ul.menu-lg-v li {
     display: block;
     margin: 0;
     width: auto;
@@ -207,13 +207,13 @@ ul.menu-lg-v li {
     border-left: 1px solid var(--theme-color-border);
   }
   ul.menu-lg-v li.menu-item:hover,
-ul.menu-lg-v li:hover {
+  ul.menu-lg-v li:hover {
     border-radius: var(--radius-small);
     background-color: #ededed;
     border-left: 1px solid var(--theme-color-primary);
   }
   ul.menu-lg-v li.menu-item.active,
-ul.menu-lg-v li.active {
+  ul.menu-lg-v li.active {
     border-radius: var(--radius-small);
     background-color: #ededed;
     font-weight: bold;
@@ -227,7 +227,7 @@ ul.menu-lg-v li.active {
     line-height: var(--box-density-2);
   }
   ul.menu-lg-h li.menu-item,
-ul.menu-lg-h li {
+  ul.menu-lg-h li {
     display: block;
     margin: 0;
     width: auto;
@@ -237,13 +237,13 @@ ul.menu-lg-h li {
     border-left: 1px solid var(--theme-color-border);
   }
   ul.menu-lg-h li.menu-item:hover,
-ul.menu-lg-h li:hover {
+  ul.menu-lg-h li:hover {
     border-radius: var(--radius-small);
     background-color: #ededed;
     border-left: 1px solid var(--theme-color-primary);
   }
   ul.menu-lg-h li.menu-item.active,
-ul.menu-lg-h li.active {
+  ul.menu-lg-h li.active {
     border-radius: var(--radius-small);
     background-color: #ededed;
     font-weight: bold;
@@ -252,7 +252,7 @@ ul.menu-lg-h li.active {
     list-style: none;
   }
   ul.menu-lg-v li.menu-item.active,
-ul.menu-lg-v li.active {
+  ul.menu-lg-v li.active {
     font-weight: bold;
     margin-left: 1rem;
   }
@@ -266,7 +266,7 @@ ul.menu-lg-v li.active {
     overflow-y: hidden;
   }
   ul.menu-lg-h li.menu-item,
-ul.menu-lg-h li {
+  ul.menu-lg-h li {
     margin: 0;
     text-align: center;
   }
@@ -282,7 +282,7 @@ ul.menu-lg-h li {
     line-height: var(--box-density-2);
   }
   ul.menu-xl-v li.menu-item,
-ul.menu-xl-v li {
+  ul.menu-xl-v li {
     display: block;
     margin: 0;
     width: auto;
@@ -292,13 +292,13 @@ ul.menu-xl-v li {
     border-left: 1px solid var(--theme-color-border);
   }
   ul.menu-xl-v li.menu-item:hover,
-ul.menu-xl-v li:hover {
+  ul.menu-xl-v li:hover {
     border-radius: var(--radius-small);
     background-color: #ededed;
     border-left: 1px solid var(--theme-color-primary);
   }
   ul.menu-xl-v li.menu-item.active,
-ul.menu-xl-v li.active {
+  ul.menu-xl-v li.active {
     border-radius: var(--radius-small);
     background-color: #ededed;
     font-weight: bold;
@@ -312,7 +312,7 @@ ul.menu-xl-v li.active {
     line-height: var(--box-density-2);
   }
   ul.menu-xl-h li.menu-item,
-ul.menu-xl-h li {
+  ul.menu-xl-h li {
     display: block;
     margin: 0;
     width: auto;
@@ -322,13 +322,13 @@ ul.menu-xl-h li {
     border-left: 1px solid var(--theme-color-border);
   }
   ul.menu-xl-h li.menu-item:hover,
-ul.menu-xl-h li:hover {
+  ul.menu-xl-h li:hover {
     border-radius: var(--radius-small);
     background-color: #ededed;
     border-left: 1px solid var(--theme-color-primary);
   }
   ul.menu-xl-h li.menu-item.active,
-ul.menu-xl-h li.active {
+  ul.menu-xl-h li.active {
     border-radius: var(--radius-small);
     background-color: #ededed;
     font-weight: bold;
@@ -337,7 +337,7 @@ ul.menu-xl-h li.active {
     list-style: none;
   }
   ul.menu-xl-v li.menu-item.active,
-ul.menu-xl-v li.active {
+  ul.menu-xl-v li.active {
     font-weight: bold;
     margin-left: 1rem;
   }
@@ -351,7 +351,7 @@ ul.menu-xl-v li.active {
     overflow-y: hidden;
   }
   ul.menu-xl-h li.menu-item,
-ul.menu-xl-h li {
+  ul.menu-xl-h li {
     margin: 0;
     text-align: center;
   }
@@ -367,7 +367,7 @@ ul.menu-xl-h li {
     line-height: var(--box-density-2);
   }
   ul.menu-xxl-v li.menu-item,
-ul.menu-xxl-v li {
+  ul.menu-xxl-v li {
     display: block;
     margin: 0;
     width: auto;
@@ -377,13 +377,13 @@ ul.menu-xxl-v li {
     border-left: 1px solid var(--theme-color-border);
   }
   ul.menu-xxl-v li.menu-item:hover,
-ul.menu-xxl-v li:hover {
+  ul.menu-xxl-v li:hover {
     border-radius: var(--radius-small);
     background-color: #ededed;
     border-left: 1px solid var(--theme-color-primary);
   }
   ul.menu-xxl-v li.menu-item.active,
-ul.menu-xxl-v li.active {
+  ul.menu-xxl-v li.active {
     border-radius: var(--radius-small);
     background-color: #ededed;
     font-weight: bold;
@@ -397,7 +397,7 @@ ul.menu-xxl-v li.active {
     line-height: var(--box-density-2);
   }
   ul.menu-xxl-h li.menu-item,
-ul.menu-xxl-h li {
+  ul.menu-xxl-h li {
     display: block;
     margin: 0;
     width: auto;
@@ -407,13 +407,13 @@ ul.menu-xxl-h li {
     border-left: 1px solid var(--theme-color-border);
   }
   ul.menu-xxl-h li.menu-item:hover,
-ul.menu-xxl-h li:hover {
+  ul.menu-xxl-h li:hover {
     border-radius: var(--radius-small);
     background-color: #ededed;
     border-left: 1px solid var(--theme-color-primary);
   }
   ul.menu-xxl-h li.menu-item.active,
-ul.menu-xxl-h li.active {
+  ul.menu-xxl-h li.active {
     border-radius: var(--radius-small);
     background-color: #ededed;
     font-weight: bold;
@@ -422,7 +422,7 @@ ul.menu-xxl-h li.active {
     list-style: none;
   }
   ul.menu-xxl-v li.menu-item.active,
-ul.menu-xxl-v li.active {
+  ul.menu-xxl-v li.active {
     font-weight: bold;
     margin-left: 1rem;
   }
@@ -436,7 +436,7 @@ ul.menu-xxl-v li.active {
     overflow-y: hidden;
   }
   ul.menu-xxl-h li.menu-item,
-ul.menu-xxl-h li {
+  ul.menu-xxl-h li {
     margin: 0;
     text-align: center;
   }
