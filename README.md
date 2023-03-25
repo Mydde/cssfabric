@@ -1,38 +1,66 @@
-# create-svelte
+# @medyll/cssfabric
 
-Everything you need to build a Svelte project, powered by [`create-svelte`](https://github.com/sveltejs/kit/tree/master/packages/create-svelte).
+@medyll/cssfabric is a ready-to-use CSS utility className.  
 
-## Creating a project
+## Installation
 
-If you're seeing this, you've probably already done this step. Congrats!
-
+install @medyll/cssfabric with your preferred package manager
 ```bash
-# create a new project in the current directory
-npm init svelte
-
-# create a new project in my-app
-npm init svelte my-app
+npm install @medyll/cssfabric
+# or
+yarn add @medyll/cssfabric
+# or whatever
+...        
 ```
 
-## Developing
 
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
+## Configuration
+### Add `data-theme` attribute to `body`
 
-```bash
-npm run dev
+Add the `data-theme` attribute to the `body` in your main html file:
 
-# or start the server and open the app in a new browser tab
-npm run dev -- --open
+```html
+<body data-theme="dark">
+  <!-- Application content -->
+</body>
 ```
 
-## Building
+The `data-theme` attribute can be set to "dark" or "light" depending on your needs.
+### Add imports from @medyll/cssfabric in the main file
 
-To create a production version of your app:
+Add the following imports in the main file:
 
-```bash
-npm run build
+```js
+# example
+import "@medyll/cssfabric/src/lib/styles/cssfabric.min.css";
+# example for svelte
+import "@medyll/cssfabric/src/lib/styles/cssfabric.min.css?inline";
 ```
 
-You can preview the production build with `npm run preview`.
+### Import your theme definition 
 
-> To deploy your app, you may need to install an [adapter](https://kit.svelte.dev/docs/adapters) for your target environment.
+```html
+# example for svelte
+<style global lang="scss">
+  @import "path-to/own-cssfabric-theme.scss";
+</style>
+```
+
+
+Example of a scss theme definition:
+
+```scss
+// own-cssfabric-theme.scss
+@charset "utf-8";
+
+$theme-color-primary: #98B148;
+$theme-color-secondary: #55492B;
+$theme-color-tertiary: #9999CC;
+
+$theme-dark-color-foreground: #f1f1f1;
+$theme-dark-color-background: #27323a;
+$theme-dark-color-paper: #3a3b3b;
+
+// Overrides the default values of @medyll/cssfabric's configuration and deliver new `css properties`.
+@import "../node_modules/@medyll/cssfabric/src/cssfabric/modules/vars.scss";
+```
