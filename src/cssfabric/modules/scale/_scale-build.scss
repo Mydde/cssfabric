@@ -105,7 +105,7 @@ $--var-oi: yt;
       @include scale-classname-builder(
                       $scale_prop,
                       $z_value + "-" + $dimensions_grid_ratio,
-                      (math.div($z_value , $dimensions_grid_ratio) * 100) +#{"%"},
+                      (math.div($z_value , $dimensions_grid_ratio) * 100) + #{"%"},
                       $mq_size_key
       );
     }

@@ -177,7 +177,7 @@
 
   @for $z_value from 1 through $dimensions_grid_ratio {
     $key: $z_value + "-" + $dimensions_grid_ratio;
-    $val: (math.div($z_value , $dimensions_grid_ratio) * 100) +#{"%"};
+    $val: (math.div($z_value , $dimensions_grid_ratio) * 100) + #{"%"};
 
     $out: map.set($out, $key, $val);
   }

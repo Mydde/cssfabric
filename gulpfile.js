@@ -1,5 +1,5 @@
 import json2md from "json2md"
-import { cssFabricSassConf } from "./cssfabric.sass.js"; 
+import { cssFabricSassConf } from "./cssfabric.sass.js";
 import pkg from 'glob';
 const { glob } = pkg;
 import path from 'path';
@@ -16,7 +16,7 @@ const {
     fabricGeneratedDir,
     fabricStylesTestDir
 } = cssFabricSassConf;
- 
+
 
 
 const doFabric = {
@@ -381,22 +381,25 @@ async function transformSass2css() {
     const fileNames = { normalPattern: 'cssfabric.css', miniFiedPattern: 'cssfabric.min.css', responsivePattern: 'cssfabric.responsive.css', responsiveMinPattern: 'cssfabric.responsive.min.css' };
 
     libFiles.forEach(file => {
-
+        //  console.log(file,normalPattern);
         const fileContent = fs.readFileSync(file, 'utf8');
-
-        if (micromatch.all(file, normalPattern)) {
+        const fileNotDot = file.replace('./', '');
+ 
+        if (micromatch.all(fileNotDot, normalPattern)) { 
             fileCollector.normalPattern.push(fileContent);
         }
-        if (micromatch.all(file, miniFiedPattern)) {
+        if (micromatch.all(fileNotDot, miniFiedPattern)) {
             fileCollector.miniFiedPattern.push(fileContent);
         }
-        if (micromatch.all(file, responsivePattern)) {
+        if (micromatch.all(fileNotDot, responsivePattern)) {
             fileCollector.responsivePattern.push(fileContent);
         }
-        if (micromatch.all(file, responsiveMinPattern)) {
+        if (micromatch.all(fileNotDot, responsiveMinPattern)) {
             fileCollector.responsiveMinPattern.push(fileContent);
         }
-    })
+    });
+    // console.log(fileCollector);
+    // return;
     console.log('write main files')
     // 
     Object.keys(fileCollector).forEach(key => {
@@ -408,7 +411,7 @@ async function transformSass2css() {
 }
 
 
-export function watchSass( ) {
+export function watchSass() {
 
     const watcher = chokidar.watch(fabricModuleDir + "/**/*.scss", {
         ignored: /(^|[\/\\])temp\.scss$/, // ignore temp.scss
@@ -423,8 +426,9 @@ export function watchSass( ) {
         transformSass2css();
         task_varsExport_replacement();
         task_readme_new();
-    } 
- 
+    }
+
 }
 
-watchSass();
+ transformSass2css(); 
+ 
