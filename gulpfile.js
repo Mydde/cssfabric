@@ -9,12 +9,11 @@ import micromatch from "micromatch";
 import chokidar from "chokidar";
 
 const {
-    fabricRootDir,
-    fabricStylesDir,
+    fabricRootDir, 
     fabricConfDir,
     fabricModuleDir,
     fabricGeneratedDir,
-    fabricStylesTestDir
+    fabricStylesDir
 } = cssFabricSassConf;
 
 
@@ -292,7 +291,7 @@ function task_varsExport_replacement() {
 
     let scssContent = doFabric.fabricSassToJson({ file_content: { obj: cleanFiles }, file_info: '' });
     // write scss to file
-    fs.writeFileSync('temp.scss', scssContent);
+    fs.writeFileSync('temp.scss', scssContent,{ flag: 'w' });
 
     const comp = dartSass.compile('temp.scss')
     fs.removeSync('temp.scss');
@@ -311,7 +310,7 @@ function task_varsExport_replacement() {
     let fileContents = `${start}${exp}${end}`
 
     // write to fabricGeneratedDir with fileName cssFabric.vars.json
-    fs.writeFileSync(fabricGeneratedDir + '/cssFabric.vars.json', fileContents);
+    fs.writeFileSync(fabricGeneratedDir + '/cssFabric.vars.json', fileContents, { flag: 'w' });
 }
 
 export function task_readme_new(cb) {
@@ -322,30 +321,25 @@ export function task_readme_new(cb) {
 
         let readMeVal = doFabric.fabricReadmeFile(JSON.parse(file_content));
 
-        fs.writeFileSync(filePath.replace('.json', '.md'), readMeVal);
+        fs.writeFileSync(filePath.replace('.json', '.md'), readMeVal, { flag: 'w' });
     })
 }
 
 async function transformSass2css() {
-    // normal stylesheets
-    const normalPattern = ['**/*.css', '!**/*responsive*.css', '!**/*min*.css'];
-    // normal minified stylesheets
-    const miniFiedPattern = [`**/*min.css`, `!**/*responsive*.css`]
-    // responsive stylesheets
-    const responsivePattern = ['**/*responsive.css*']
-    // responsive minified stylesheets
-    const responsiveMinPattern = [`**/*responsive.min.css`];
 
-    // ensure directory fabricStylesTestDir exists, using fs-extra
-    fs.ensureDirSync(fabricStylesTestDir);
+
+    // ensure directory fabricStylesDir exists, using fs-extra
+    fs.ensureDirSync(fabricStylesDir);
     // list all files from  `${fabricModuleDir}/**/*.scss`
     // exclusion pattern : exclude `**/*css-fabric*` and exclude `**/*_*` 
     const files = glob.sync(`${fabricModuleDir}/**/*.scss`, { ignore: [`**/*css-fabric*`, `**/*!(_)*`], nodir: true });
 
-    console.log('List files')
+    console.log('List files')  
     // for each file
     const promises = []
-    files.forEach(file => {
+    files.sort((a,b)=>{
+        return a > b
+    }).forEach(file => {
         // run sass({outputStyle: "expanded"}).on("error", sass.logError) on the file
         const css = dartSass.renderSync({ file: file, outputStyle: "expanded" }).css.toString();
         const cssCompressed = dartSass.renderSync({ file: file, outputStyle: "compressed" }).css.toString();
@@ -354,29 +348,36 @@ async function transformSass2css() {
         // extract the file.basename and the file.path by removing ${fabricModuleDir}
         const newFileObj = {
             basename: finalFileName,
-            path: `${fabricStylesTestDir}` + path.dirname(file.replace(fabricModuleDir, ""))
+            path: `${fabricStylesDir}` + path.dirname(file.replace(fabricModuleDir, ""))
         }
         const newFileObjCompressed = {
             basename: finalFileName.replace('.css', '.min.css'),
-            path: `${fabricStylesTestDir}` + path.dirname(file.replace(fabricModuleDir, ""))
+            path: `${fabricStylesDir}` + path.dirname(file.replace(fabricModuleDir, ""))
         }
 
         if (!newFileObj.basename.includes("_") && !newFileObj.basename.includes("css.fabric")) {
             fs.ensureDirSync(newFileObj.path)
-            promises.push(fs.writeFile(`${newFileObj.path}/${newFileObj.basename}`, css).then(res => res))
-            promises.push(fs.writeFile(`${newFileObjCompressed.path}/${newFileObjCompressed.basename}`, cssCompressed).then(res => res));
+            promises.push(fs.writeFile(`${newFileObj.path}/${newFileObj.basename}`, '\r\n/**---------------------'+newFileObj.basename+"---------------------*/\r\n" + css,{flag:'w'}).then(res => res))
+            promises.push(fs.writeFile(`${newFileObjCompressed.path}/${newFileObjCompressed.basename}`, cssCompressed,{flag:'w'}).then(res => res));
         }
-
-
     });
 
     await Promise.all(promises);
 
     console.log('write modules')
+        // normal stylesheets
+    const normalPattern = ['**/*.css', '!**/*responsive*.css', '!**/*min*.css', '!**/*cssfabric*.css', '!**/*temp*.css'];
+    // normal minified stylesheets
+    const miniFiedPattern = [`**/*min.css`, `!**/*responsive*.css`, '!**/*cssfabric*.css', '!**/*temp*.css']
+    // responsive stylesheets
+    const responsivePattern = ['**/*responsive.css*', '!**/*cssfabric*.css', '!**/*temp*.css']
+    // responsive minified stylesheets
+    const responsiveMinPattern = [`**/*responsive.min.css`, '!**/*cssfabric*.css', '!**/*temp*.css'];
+
     // files have now been writed down in the /lib folder
     // we can now merge them into 3 files : cssfabric.css, cssfabric.min.css, cssfabric.responsive.css
     // and cssfabric.responsive.min.css
-    const libFiles = glob.sync(`${fabricStylesTestDir}/**/*.css`);
+    const libFiles = glob.sync(`${fabricStylesDir}/**/*.css`);
     const fileCollector = { normalPattern: [], miniFiedPattern: [], responsivePattern: [], responsiveMinPattern: [] };
     const fileNames = { normalPattern: 'cssfabric.css', miniFiedPattern: 'cssfabric.min.css', responsivePattern: 'cssfabric.responsive.css', responsiveMinPattern: 'cssfabric.responsive.min.css' };
 
@@ -403,8 +404,8 @@ async function transformSass2css() {
     console.log('write main files')
     // 
     Object.keys(fileCollector).forEach(key => {
-        fs.ensureDirSync(`${fabricStylesTestDir}/`);
-        fs.writeFileSync(`${fabricStylesTestDir}/${fileNames[key]}`, fileCollector[key].join(''));
+        fs.ensureDirSync(`${fabricStylesDir}/`);
+        fs.writeFileSync(`${fabricStylesDir}/${fileNames[key]}`, fileCollector[key].join(''),{ flag: 'w' });
     })
     console.log('Done')
 
@@ -418,11 +419,15 @@ export function watchSass() {
         persistent: true,
     });
 
+
+        console.log('watchSass, listening for changes')
+
     watcher
         .on('change', (path) => doIt())
         .on('unlink', (path) => doIt());
 
     function doIt() {
+        console.log('running')
         transformSass2css();
         task_varsExport_replacement();
         task_readme_new();
@@ -430,5 +435,5 @@ export function watchSass() {
 
 }
 
- transformSass2css(); 
+ watchSass(); 
  

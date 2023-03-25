@@ -1,3 +1,5 @@
+
+/**---------------------color.responsive.css---------------------*/
 @media only screen and (min-width: 640px) {
   .foreground-palette-sm-yellow {
     color: #ffb900;
@@ -188,7 +190,6 @@
   .foreground-palette-sm-dark-invert {
     color: #cdcdcd;
   }
-
   .bg-palette-sm-yellow {
     background-color: #ffb900;
   }
@@ -378,7 +379,6 @@
   .bg-palette-sm-dark-invert {
     background-color: #cdcdcd;
   }
-
   .bg-themed-palette-sm-yellow {
     color: black;
     text-shadow: 0 0 0.125rem #cc9400;
@@ -640,7 +640,6 @@
     color: black;
     background-color: #cdcdcd;
   }
-
   .border-color-palette-sm-yellow {
     border-color: #cc9400 !important;
   }
@@ -668,7 +667,6 @@
   .border-color-palette-sm-dark {
     border-color: #191919 !important;
   }
-
   .foreground-scheme-sm-discrete {
     color: #ccc;
   }
@@ -712,7 +710,7 @@
     color: #ff7fff;
   }
   .foreground-scheme-sm-info {
-    color: #FFDD57FF;
+    color: #ffdd57;
   }
   .foreground-scheme-sm-info-light {
     color: #ffeca4;
@@ -733,7 +731,7 @@
     color: #0022a8;
   }
   .foreground-scheme-sm-warning {
-    color: #e6b905;
+    color: hsl(48, 96%, 46%);
   }
   .foreground-scheme-sm-warning-light {
     color: #fbd53c;
@@ -754,7 +752,7 @@
     color: #1946fa;
   }
   .foreground-scheme-sm-alert {
-    color: #ff7300;
+    color: hsl(27, 100%, 50%);
   }
   .foreground-scheme-sm-alert-light {
     color: #ff9d4d;
@@ -795,7 +793,6 @@
   .foreground-scheme-sm-error-invert {
     color: aqua;
   }
-
   .bg-scheme-sm-discrete {
     background-color: #ccc;
   }
@@ -839,7 +836,7 @@
     background-color: #ff7fff;
   }
   .bg-scheme-sm-info {
-    background-color: #FFDD57FF;
+    background-color: #ffdd57;
   }
   .bg-scheme-sm-info-light {
     background-color: #ffeca4;
@@ -860,7 +857,7 @@
     background-color: #0022a8;
   }
   .bg-scheme-sm-warning {
-    background-color: #e6b905;
+    background-color: hsl(48, 96%, 46%);
   }
   .bg-scheme-sm-warning-light {
     background-color: #fbd53c;
@@ -881,7 +878,7 @@
     background-color: #1946fa;
   }
   .bg-scheme-sm-alert {
-    background-color: #ff7300;
+    background-color: hsl(27, 100%, 50%);
   }
   .bg-scheme-sm-alert-light {
     background-color: #ff9d4d;
@@ -922,7 +919,6 @@
   .bg-scheme-sm-error-invert {
     background-color: aqua;
   }
-
   .bg-themed-palette-sm-discrete {
     color: black;
     text-shadow: 0 0 0.125rem #b3b3b3;
@@ -984,7 +980,7 @@
   .bg-themed-palette-sm-info {
     color: black;
     text-shadow: 0 0 0.125rem #ffd324;
-    background-color: #FFDD57FF;
+    background-color: #ffdd57;
   }
   .bg-themed-palette-sm-info-light {
     color: black;
@@ -1013,7 +1009,7 @@
   .bg-themed-palette-sm-warning {
     color: black;
     text-shadow: 0 0 0.125rem #b49104;
-    background-color: #e6b905;
+    background-color: hsl(48, 96%, 46%);
   }
   .bg-themed-palette-sm-warning-light {
     color: black;
@@ -1042,7 +1038,7 @@
   .bg-themed-palette-sm-alert {
     color: black;
     text-shadow: 0 0 0.125rem #cc5c00;
-    background-color: #ff7300;
+    background-color: hsl(27, 100%, 50%);
   }
   .bg-themed-palette-sm-alert-light {
     color: black;
@@ -1097,7 +1093,6 @@
     color: black;
     background-color: aqua;
   }
-
   .border-color-scheme-sm-discrete {
     border-color: #b3b3b3 !important;
   }
@@ -1116,7 +1111,6 @@
   .border-color-scheme-sm-error {
     border-color: #cc0000 !important;
   }
-
   .foreground-grey-sm-100 {
     color: #f4f4f4;
   }
@@ -1243,7 +1237,6 @@
   .foreground-grey-sm-600-invert {
     color: #666666;
   }
-
   .bg-grey-sm-100 {
     background-color: #f4f4f4;
   }
@@ -1370,7 +1363,6 @@
   .bg-grey-sm-600-invert {
     background-color: #666666;
   }
-
   .bg-themed-palette-sm-100 {
     color: black;
     text-shadow: 0 0 0.125rem #dbdbdb;
@@ -1545,7 +1537,6 @@
     color: white;
     background-color: #666666;
   }
-
   .border-color-grey-sm-100 {
     border-color: #dbdbdb !important;
   }
@@ -1755,7 +1746,6 @@
   .foreground-palette-md-dark-invert {
     color: #cdcdcd;
   }
-
   .bg-palette-md-yellow {
     background-color: #ffb900;
   }
@@ -1945,7 +1935,6 @@
   .bg-palette-md-dark-invert {
     background-color: #cdcdcd;
   }
-
   .bg-themed-palette-md-yellow {
     color: black;
     text-shadow: 0 0 0.125rem #cc9400;
@@ -2207,7 +2196,6 @@
     color: black;
     background-color: #cdcdcd;
   }
-
   .border-color-palette-md-yellow {
     border-color: #cc9400 !important;
   }
@@ -2235,7 +2223,6 @@
   .border-color-palette-md-dark {
     border-color: #191919 !important;
   }
-
   .foreground-scheme-md-discrete {
     color: #ccc;
   }
@@ -2279,7 +2266,7 @@
     color: #ff7fff;
   }
   .foreground-scheme-md-info {
-    color: #FFDD57FF;
+    color: #ffdd57;
   }
   .foreground-scheme-md-info-light {
     color: #ffeca4;
@@ -2300,7 +2287,7 @@
     color: #0022a8;
   }
   .foreground-scheme-md-warning {
-    color: #e6b905;
+    color: hsl(48, 96%, 46%);
   }
   .foreground-scheme-md-warning-light {
     color: #fbd53c;
@@ -2321,7 +2308,7 @@
     color: #1946fa;
   }
   .foreground-scheme-md-alert {
-    color: #ff7300;
+    color: hsl(27, 100%, 50%);
   }
   .foreground-scheme-md-alert-light {
     color: #ff9d4d;
@@ -2362,7 +2349,6 @@
   .foreground-scheme-md-error-invert {
     color: aqua;
   }
-
   .bg-scheme-md-discrete {
     background-color: #ccc;
   }
@@ -2406,7 +2392,7 @@
     background-color: #ff7fff;
   }
   .bg-scheme-md-info {
-    background-color: #FFDD57FF;
+    background-color: #ffdd57;
   }
   .bg-scheme-md-info-light {
     background-color: #ffeca4;
@@ -2427,7 +2413,7 @@
     background-color: #0022a8;
   }
   .bg-scheme-md-warning {
-    background-color: #e6b905;
+    background-color: hsl(48, 96%, 46%);
   }
   .bg-scheme-md-warning-light {
     background-color: #fbd53c;
@@ -2448,7 +2434,7 @@
     background-color: #1946fa;
   }
   .bg-scheme-md-alert {
-    background-color: #ff7300;
+    background-color: hsl(27, 100%, 50%);
   }
   .bg-scheme-md-alert-light {
     background-color: #ff9d4d;
@@ -2489,7 +2475,6 @@
   .bg-scheme-md-error-invert {
     background-color: aqua;
   }
-
   .bg-themed-palette-md-discrete {
     color: black;
     text-shadow: 0 0 0.125rem #b3b3b3;
@@ -2551,7 +2536,7 @@
   .bg-themed-palette-md-info {
     color: black;
     text-shadow: 0 0 0.125rem #ffd324;
-    background-color: #FFDD57FF;
+    background-color: #ffdd57;
   }
   .bg-themed-palette-md-info-light {
     color: black;
@@ -2580,7 +2565,7 @@
   .bg-themed-palette-md-warning {
     color: black;
     text-shadow: 0 0 0.125rem #b49104;
-    background-color: #e6b905;
+    background-color: hsl(48, 96%, 46%);
   }
   .bg-themed-palette-md-warning-light {
     color: black;
@@ -2609,7 +2594,7 @@
   .bg-themed-palette-md-alert {
     color: black;
     text-shadow: 0 0 0.125rem #cc5c00;
-    background-color: #ff7300;
+    background-color: hsl(27, 100%, 50%);
   }
   .bg-themed-palette-md-alert-light {
     color: black;
@@ -2664,7 +2649,6 @@
     color: black;
     background-color: aqua;
   }
-
   .border-color-scheme-md-discrete {
     border-color: #b3b3b3 !important;
   }
@@ -2683,7 +2667,6 @@
   .border-color-scheme-md-error {
     border-color: #cc0000 !important;
   }
-
   .foreground-grey-md-100 {
     color: #f4f4f4;
   }
@@ -2810,7 +2793,6 @@
   .foreground-grey-md-600-invert {
     color: #666666;
   }
-
   .bg-grey-md-100 {
     background-color: #f4f4f4;
   }
@@ -2937,7 +2919,6 @@
   .bg-grey-md-600-invert {
     background-color: #666666;
   }
-
   .bg-themed-palette-md-100 {
     color: black;
     text-shadow: 0 0 0.125rem #dbdbdb;
@@ -3112,7 +3093,6 @@
     color: white;
     background-color: #666666;
   }
-
   .border-color-grey-md-100 {
     border-color: #dbdbdb !important;
   }
@@ -3322,7 +3302,6 @@
   .foreground-palette-lg-dark-invert {
     color: #cdcdcd;
   }
-
   .bg-palette-lg-yellow {
     background-color: #ffb900;
   }
@@ -3512,7 +3491,6 @@
   .bg-palette-lg-dark-invert {
     background-color: #cdcdcd;
   }
-
   .bg-themed-palette-lg-yellow {
     color: black;
     text-shadow: 0 0 0.125rem #cc9400;
@@ -3774,7 +3752,6 @@
     color: black;
     background-color: #cdcdcd;
   }
-
   .border-color-palette-lg-yellow {
     border-color: #cc9400 !important;
   }
@@ -3802,7 +3779,6 @@
   .border-color-palette-lg-dark {
     border-color: #191919 !important;
   }
-
   .foreground-scheme-lg-discrete {
     color: #ccc;
   }
@@ -3846,7 +3822,7 @@
     color: #ff7fff;
   }
   .foreground-scheme-lg-info {
-    color: #FFDD57FF;
+    color: #ffdd57;
   }
   .foreground-scheme-lg-info-light {
     color: #ffeca4;
@@ -3867,7 +3843,7 @@
     color: #0022a8;
   }
   .foreground-scheme-lg-warning {
-    color: #e6b905;
+    color: hsl(48, 96%, 46%);
   }
   .foreground-scheme-lg-warning-light {
     color: #fbd53c;
@@ -3888,7 +3864,7 @@
     color: #1946fa;
   }
   .foreground-scheme-lg-alert {
-    color: #ff7300;
+    color: hsl(27, 100%, 50%);
   }
   .foreground-scheme-lg-alert-light {
     color: #ff9d4d;
@@ -3929,7 +3905,6 @@
   .foreground-scheme-lg-error-invert {
     color: aqua;
   }
-
   .bg-scheme-lg-discrete {
     background-color: #ccc;
   }
@@ -3973,7 +3948,7 @@
     background-color: #ff7fff;
   }
   .bg-scheme-lg-info {
-    background-color: #FFDD57FF;
+    background-color: #ffdd57;
   }
   .bg-scheme-lg-info-light {
     background-color: #ffeca4;
@@ -3994,7 +3969,7 @@
     background-color: #0022a8;
   }
   .bg-scheme-lg-warning {
-    background-color: #e6b905;
+    background-color: hsl(48, 96%, 46%);
   }
   .bg-scheme-lg-warning-light {
     background-color: #fbd53c;
@@ -4015,7 +3990,7 @@
     background-color: #1946fa;
   }
   .bg-scheme-lg-alert {
-    background-color: #ff7300;
+    background-color: hsl(27, 100%, 50%);
   }
   .bg-scheme-lg-alert-light {
     background-color: #ff9d4d;
@@ -4056,7 +4031,6 @@
   .bg-scheme-lg-error-invert {
     background-color: aqua;
   }
-
   .bg-themed-palette-lg-discrete {
     color: black;
     text-shadow: 0 0 0.125rem #b3b3b3;
@@ -4118,7 +4092,7 @@
   .bg-themed-palette-lg-info {
     color: black;
     text-shadow: 0 0 0.125rem #ffd324;
-    background-color: #FFDD57FF;
+    background-color: #ffdd57;
   }
   .bg-themed-palette-lg-info-light {
     color: black;
@@ -4147,7 +4121,7 @@
   .bg-themed-palette-lg-warning {
     color: black;
     text-shadow: 0 0 0.125rem #b49104;
-    background-color: #e6b905;
+    background-color: hsl(48, 96%, 46%);
   }
   .bg-themed-palette-lg-warning-light {
     color: black;
@@ -4176,7 +4150,7 @@
   .bg-themed-palette-lg-alert {
     color: black;
     text-shadow: 0 0 0.125rem #cc5c00;
-    background-color: #ff7300;
+    background-color: hsl(27, 100%, 50%);
   }
   .bg-themed-palette-lg-alert-light {
     color: black;
@@ -4231,7 +4205,6 @@
     color: black;
     background-color: aqua;
   }
-
   .border-color-scheme-lg-discrete {
     border-color: #b3b3b3 !important;
   }
@@ -4250,7 +4223,6 @@
   .border-color-scheme-lg-error {
     border-color: #cc0000 !important;
   }
-
   .foreground-grey-lg-100 {
     color: #f4f4f4;
   }
@@ -4377,7 +4349,6 @@
   .foreground-grey-lg-600-invert {
     color: #666666;
   }
-
   .bg-grey-lg-100 {
     background-color: #f4f4f4;
   }
@@ -4504,7 +4475,6 @@
   .bg-grey-lg-600-invert {
     background-color: #666666;
   }
-
   .bg-themed-palette-lg-100 {
     color: black;
     text-shadow: 0 0 0.125rem #dbdbdb;
@@ -4679,7 +4649,6 @@
     color: white;
     background-color: #666666;
   }
-
   .border-color-grey-lg-100 {
     border-color: #dbdbdb !important;
   }
@@ -4889,7 +4858,6 @@
   .foreground-palette-xl-dark-invert {
     color: #cdcdcd;
   }
-
   .bg-palette-xl-yellow {
     background-color: #ffb900;
   }
@@ -5079,7 +5047,6 @@
   .bg-palette-xl-dark-invert {
     background-color: #cdcdcd;
   }
-
   .bg-themed-palette-xl-yellow {
     color: black;
     text-shadow: 0 0 0.125rem #cc9400;
@@ -5341,7 +5308,6 @@
     color: black;
     background-color: #cdcdcd;
   }
-
   .border-color-palette-xl-yellow {
     border-color: #cc9400 !important;
   }
@@ -5369,7 +5335,6 @@
   .border-color-palette-xl-dark {
     border-color: #191919 !important;
   }
-
   .foreground-scheme-xl-discrete {
     color: #ccc;
   }
@@ -5413,7 +5378,7 @@
     color: #ff7fff;
   }
   .foreground-scheme-xl-info {
-    color: #FFDD57FF;
+    color: #ffdd57;
   }
   .foreground-scheme-xl-info-light {
     color: #ffeca4;
@@ -5434,7 +5399,7 @@
     color: #0022a8;
   }
   .foreground-scheme-xl-warning {
-    color: #e6b905;
+    color: hsl(48, 96%, 46%);
   }
   .foreground-scheme-xl-warning-light {
     color: #fbd53c;
@@ -5455,7 +5420,7 @@
     color: #1946fa;
   }
   .foreground-scheme-xl-alert {
-    color: #ff7300;
+    color: hsl(27, 100%, 50%);
   }
   .foreground-scheme-xl-alert-light {
     color: #ff9d4d;
@@ -5496,7 +5461,6 @@
   .foreground-scheme-xl-error-invert {
     color: aqua;
   }
-
   .bg-scheme-xl-discrete {
     background-color: #ccc;
   }
@@ -5540,7 +5504,7 @@
     background-color: #ff7fff;
   }
   .bg-scheme-xl-info {
-    background-color: #FFDD57FF;
+    background-color: #ffdd57;
   }
   .bg-scheme-xl-info-light {
     background-color: #ffeca4;
@@ -5561,7 +5525,7 @@
     background-color: #0022a8;
   }
   .bg-scheme-xl-warning {
-    background-color: #e6b905;
+    background-color: hsl(48, 96%, 46%);
   }
   .bg-scheme-xl-warning-light {
     background-color: #fbd53c;
@@ -5582,7 +5546,7 @@
     background-color: #1946fa;
   }
   .bg-scheme-xl-alert {
-    background-color: #ff7300;
+    background-color: hsl(27, 100%, 50%);
   }
   .bg-scheme-xl-alert-light {
     background-color: #ff9d4d;
@@ -5623,7 +5587,6 @@
   .bg-scheme-xl-error-invert {
     background-color: aqua;
   }
-
   .bg-themed-palette-xl-discrete {
     color: black;
     text-shadow: 0 0 0.125rem #b3b3b3;
@@ -5685,7 +5648,7 @@
   .bg-themed-palette-xl-info {
     color: black;
     text-shadow: 0 0 0.125rem #ffd324;
-    background-color: #FFDD57FF;
+    background-color: #ffdd57;
   }
   .bg-themed-palette-xl-info-light {
     color: black;
@@ -5714,7 +5677,7 @@
   .bg-themed-palette-xl-warning {
     color: black;
     text-shadow: 0 0 0.125rem #b49104;
-    background-color: #e6b905;
+    background-color: hsl(48, 96%, 46%);
   }
   .bg-themed-palette-xl-warning-light {
     color: black;
@@ -5743,7 +5706,7 @@
   .bg-themed-palette-xl-alert {
     color: black;
     text-shadow: 0 0 0.125rem #cc5c00;
-    background-color: #ff7300;
+    background-color: hsl(27, 100%, 50%);
   }
   .bg-themed-palette-xl-alert-light {
     color: black;
@@ -5798,7 +5761,6 @@
     color: black;
     background-color: aqua;
   }
-
   .border-color-scheme-xl-discrete {
     border-color: #b3b3b3 !important;
   }
@@ -5817,7 +5779,6 @@
   .border-color-scheme-xl-error {
     border-color: #cc0000 !important;
   }
-
   .foreground-grey-xl-100 {
     color: #f4f4f4;
   }
@@ -5944,7 +5905,6 @@
   .foreground-grey-xl-600-invert {
     color: #666666;
   }
-
   .bg-grey-xl-100 {
     background-color: #f4f4f4;
   }
@@ -6071,7 +6031,6 @@
   .bg-grey-xl-600-invert {
     background-color: #666666;
   }
-
   .bg-themed-palette-xl-100 {
     color: black;
     text-shadow: 0 0 0.125rem #dbdbdb;
@@ -6246,7 +6205,6 @@
     color: white;
     background-color: #666666;
   }
-
   .border-color-grey-xl-100 {
     border-color: #dbdbdb !important;
   }
@@ -6456,7 +6414,6 @@
   .foreground-palette-xxl-dark-invert {
     color: #cdcdcd;
   }
-
   .bg-palette-xxl-yellow {
     background-color: #ffb900;
   }
@@ -6646,7 +6603,6 @@
   .bg-palette-xxl-dark-invert {
     background-color: #cdcdcd;
   }
-
   .bg-themed-palette-xxl-yellow {
     color: black;
     text-shadow: 0 0 0.125rem #cc9400;
@@ -6908,7 +6864,6 @@
     color: black;
     background-color: #cdcdcd;
   }
-
   .border-color-palette-xxl-yellow {
     border-color: #cc9400 !important;
   }
@@ -6936,7 +6891,6 @@
   .border-color-palette-xxl-dark {
     border-color: #191919 !important;
   }
-
   .foreground-scheme-xxl-discrete {
     color: #ccc;
   }
@@ -6980,7 +6934,7 @@
     color: #ff7fff;
   }
   .foreground-scheme-xxl-info {
-    color: #FFDD57FF;
+    color: #ffdd57;
   }
   .foreground-scheme-xxl-info-light {
     color: #ffeca4;
@@ -7001,7 +6955,7 @@
     color: #0022a8;
   }
   .foreground-scheme-xxl-warning {
-    color: #e6b905;
+    color: hsl(48, 96%, 46%);
   }
   .foreground-scheme-xxl-warning-light {
     color: #fbd53c;
@@ -7022,7 +6976,7 @@
     color: #1946fa;
   }
   .foreground-scheme-xxl-alert {
-    color: #ff7300;
+    color: hsl(27, 100%, 50%);
   }
   .foreground-scheme-xxl-alert-light {
     color: #ff9d4d;
@@ -7063,7 +7017,6 @@
   .foreground-scheme-xxl-error-invert {
     color: aqua;
   }
-
   .bg-scheme-xxl-discrete {
     background-color: #ccc;
   }
@@ -7107,7 +7060,7 @@
     background-color: #ff7fff;
   }
   .bg-scheme-xxl-info {
-    background-color: #FFDD57FF;
+    background-color: #ffdd57;
   }
   .bg-scheme-xxl-info-light {
     background-color: #ffeca4;
@@ -7128,7 +7081,7 @@
     background-color: #0022a8;
   }
   .bg-scheme-xxl-warning {
-    background-color: #e6b905;
+    background-color: hsl(48, 96%, 46%);
   }
   .bg-scheme-xxl-warning-light {
     background-color: #fbd53c;
@@ -7149,7 +7102,7 @@
     background-color: #1946fa;
   }
   .bg-scheme-xxl-alert {
-    background-color: #ff7300;
+    background-color: hsl(27, 100%, 50%);
   }
   .bg-scheme-xxl-alert-light {
     background-color: #ff9d4d;
@@ -7190,7 +7143,6 @@
   .bg-scheme-xxl-error-invert {
     background-color: aqua;
   }
-
   .bg-themed-palette-xxl-discrete {
     color: black;
     text-shadow: 0 0 0.125rem #b3b3b3;
@@ -7252,7 +7204,7 @@
   .bg-themed-palette-xxl-info {
     color: black;
     text-shadow: 0 0 0.125rem #ffd324;
-    background-color: #FFDD57FF;
+    background-color: #ffdd57;
   }
   .bg-themed-palette-xxl-info-light {
     color: black;
@@ -7281,7 +7233,7 @@
   .bg-themed-palette-xxl-warning {
     color: black;
     text-shadow: 0 0 0.125rem #b49104;
-    background-color: #e6b905;
+    background-color: hsl(48, 96%, 46%);
   }
   .bg-themed-palette-xxl-warning-light {
     color: black;
@@ -7310,7 +7262,7 @@
   .bg-themed-palette-xxl-alert {
     color: black;
     text-shadow: 0 0 0.125rem #cc5c00;
-    background-color: #ff7300;
+    background-color: hsl(27, 100%, 50%);
   }
   .bg-themed-palette-xxl-alert-light {
     color: black;
@@ -7365,7 +7317,6 @@
     color: black;
     background-color: aqua;
   }
-
   .border-color-scheme-xxl-discrete {
     border-color: #b3b3b3 !important;
   }
@@ -7384,7 +7335,6 @@
   .border-color-scheme-xxl-error {
     border-color: #cc0000 !important;
   }
-
   .foreground-grey-xxl-100 {
     color: #f4f4f4;
   }
@@ -7511,7 +7461,6 @@
   .foreground-grey-xxl-600-invert {
     color: #666666;
   }
-
   .bg-grey-xxl-100 {
     background-color: #f4f4f4;
   }
@@ -7638,7 +7587,6 @@
   .bg-grey-xxl-600-invert {
     background-color: #666666;
   }
-
   .bg-themed-palette-xxl-100 {
     color: black;
     text-shadow: 0 0 0.125rem #dbdbdb;
@@ -7813,7 +7761,6 @@
     color: white;
     background-color: #666666;
   }
-
   .border-color-grey-xxl-100 {
     border-color: #dbdbdb !important;
   }

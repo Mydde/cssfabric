@@ -1,3 +1,5 @@
+
+/**---------------------vars.css---------------------*/
 /* primary,secondary with alphas */
 /* 
 cssFabric vars
@@ -5,7 +7,7 @@ cssFabric vars
 :root {
   /* --theme-color-primary|*-alpha-|*  */
   /* theme primary colors*/
-  --theme-color-primary: #201700;
+  --theme-color-primary: rgb(32, 23, 0);
   --theme-color-primary-light: #6d4e00;
   --theme-color-primary-lighter: #b98500;
   --theme-color-primary-dark: black;
@@ -50,19 +52,19 @@ cssFabric vars
   --color-scheme-success-alpha: rgba(0, 128, 0, 0.3);
   --color-scheme-success-alpha-low: rgba(0, 128, 0, 0.8);
   --color-scheme-success-alpha-high: rgba(0, 128, 0, 0.1);
-  --color-scheme-info: #FFDD57FF;
+  --color-scheme-info: #ffdd57;
   --color-scheme-info-light: #ffeca4;
   --color-scheme-info-dark: #ffd324;
   --color-scheme-info-alpha: rgba(255, 221, 87, 0.3);
   --color-scheme-info-alpha-low: rgba(255, 221, 87, 0.8);
   --color-scheme-info-alpha-high: rgba(255, 221, 87, 0.1);
-  --color-scheme-warning: #e6b905;
+  --color-scheme-warning: hsl(48, 96%, 46%);
   --color-scheme-warning-light: #fbd53c;
   --color-scheme-warning-dark: #b49104;
   --color-scheme-warning-alpha: rgba(230, 185, 5, 0.3);
   --color-scheme-warning-alpha-low: rgba(230, 185, 5, 0.8);
   --color-scheme-warning-alpha-high: rgba(230, 185, 5, 0.1);
-  --color-scheme-alert: #ff7300;
+  --color-scheme-alert: hsl(27, 100%, 50%);
   --color-scheme-alert-light: #ff9d4d;
   --color-scheme-alert-dark: #cc5c00;
   --color-scheme-alert-alpha: rgba(255, 115, 0, 0.3);
@@ -265,9 +267,9 @@ cssFabric vars
   /*text shadows color_schemes*/
   --text-shadow-discrete: 0 0 0.125em #ccc;
   --text-shadow-success: 0 0 0.125em green;
-  --text-shadow-info: 0 0 0.125em #FFDD57FF;
-  --text-shadow-warning: 0 0 0.125em #e6b905;
-  --text-shadow-alert: 0 0 0.125em #ff7300;
+  --text-shadow-info: 0 0 0.125em #ffdd57;
+  --text-shadow-warning: 0 0 0.125em hsl(48, 96%, 46%);
+  --text-shadow-alert: 0 0 0.125em hsl(27, 100%, 50%);
   --text-shadow-error: 0 0 0.125em red;
   /*text-shadows color_palette */
   --text-shadow-yellow: 0 0 0.125em #ffb900;

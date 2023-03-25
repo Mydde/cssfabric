@@ -1,3 +1,5 @@
+
+/**---------------------table.responsive.css---------------------*/
 @media only screen and (min-width: 640px) {
   /** cssfabric : tbl*/
   .table {
@@ -5,7 +7,7 @@
     border-spacing: 0;
   }
   .table thead,
-.table .thead {
+  .table .thead {
     position: relative;
     margin-bottom: 2rem;
   }
@@ -13,21 +15,21 @@
     background-color: table_bg_color_head;
   }
   .table thead tr th,
-.table .thead .tr .th {
+  .table .thead .tr .th {
     padding: 0.5rem 0.25rem;
     font-weight: normal;
   }
   .table tbody tr td,
-.table .tbody .tr .td {
+  .table .tbody .tr .td {
     padding: 0.25em;
   }
   .table.tbl-sm-layout {
     table-layout: fixed;
   }
   .table.tbl-sm-h-line th,
-.table.tbl-sm-h-line td,
-.table.tbl-sm-h-line .th,
-.table.tbl-sm-h-line .td {
+  .table.tbl-sm-h-line td,
+  .table.tbl-sm-h-line .th,
+  .table.tbl-sm-h-line .td {
     border-bottom: 1px solid #ededed;
   }
   .table.tbl-sm-h-line:last-child {
@@ -60,13 +62,13 @@
     position: relative;
   }
   .table.tbl-sm-sticky thead tr,
-.table.tbl-sm-sticky .thead .tr {
+  .table.tbl-sm-sticky .thead .tr {
     position: static;
   }
   .table.tbl-sm-sticky thead tr th,
-.table.tbl-sm-sticky thead tr .th,
-.table.tbl-sm-sticky .thead .tr th,
-.table.tbl-sm-sticky .thead .tr .th {
+  .table.tbl-sm-sticky thead tr .th,
+  .table.tbl-sm-sticky .thead .tr th,
+  .table.tbl-sm-sticky .thead .tr .th {
     background-color: #ededed;
     position: sticky;
     top: 0;
@@ -79,7 +81,7 @@
     border-spacing: 0;
   }
   .table thead,
-.table .thead {
+  .table .thead {
     position: relative;
     margin-bottom: 2rem;
   }
@@ -87,21 +89,21 @@
     background-color: table_bg_color_head;
   }
   .table thead tr th,
-.table .thead .tr .th {
+  .table .thead .tr .th {
     padding: 0.5rem 0.25rem;
     font-weight: normal;
   }
   .table tbody tr td,
-.table .tbody .tr .td {
+  .table .tbody .tr .td {
     padding: 0.25em;
   }
   .table.tbl-md-layout {
     table-layout: fixed;
   }
   .table.tbl-md-h-line th,
-.table.tbl-md-h-line td,
-.table.tbl-md-h-line .th,
-.table.tbl-md-h-line .td {
+  .table.tbl-md-h-line td,
+  .table.tbl-md-h-line .th,
+  .table.tbl-md-h-line .td {
     border-bottom: 1px solid #ededed;
   }
   .table.tbl-md-h-line:last-child {
@@ -134,13 +136,13 @@
     position: relative;
   }
   .table.tbl-md-sticky thead tr,
-.table.tbl-md-sticky .thead .tr {
+  .table.tbl-md-sticky .thead .tr {
     position: static;
   }
   .table.tbl-md-sticky thead tr th,
-.table.tbl-md-sticky thead tr .th,
-.table.tbl-md-sticky .thead .tr th,
-.table.tbl-md-sticky .thead .tr .th {
+  .table.tbl-md-sticky thead tr .th,
+  .table.tbl-md-sticky .thead .tr th,
+  .table.tbl-md-sticky .thead .tr .th {
     background-color: #ededed;
     position: sticky;
     top: 0;
@@ -153,7 +155,7 @@
     border-spacing: 0;
   }
   .table thead,
-.table .thead {
+  .table .thead {
     position: relative;
     margin-bottom: 2rem;
   }
@@ -161,21 +163,21 @@
     background-color: table_bg_color_head;
   }
   .table thead tr th,
-.table .thead .tr .th {
+  .table .thead .tr .th {
     padding: 0.5rem 0.25rem;
     font-weight: normal;
   }
   .table tbody tr td,
-.table .tbody .tr .td {
+  .table .tbody .tr .td {
     padding: 0.25em;
   }
   .table.tbl-lg-layout {
     table-layout: fixed;
   }
   .table.tbl-lg-h-line th,
-.table.tbl-lg-h-line td,
-.table.tbl-lg-h-line .th,
-.table.tbl-lg-h-line .td {
+  .table.tbl-lg-h-line td,
+  .table.tbl-lg-h-line .th,
+  .table.tbl-lg-h-line .td {
     border-bottom: 1px solid #ededed;
   }
   .table.tbl-lg-h-line:last-child {
@@ -208,13 +210,13 @@
     position: relative;
   }
   .table.tbl-lg-sticky thead tr,
-.table.tbl-lg-sticky .thead .tr {
+  .table.tbl-lg-sticky .thead .tr {
     position: static;
   }
   .table.tbl-lg-sticky thead tr th,
-.table.tbl-lg-sticky thead tr .th,
-.table.tbl-lg-sticky .thead .tr th,
-.table.tbl-lg-sticky .thead .tr .th {
+  .table.tbl-lg-sticky thead tr .th,
+  .table.tbl-lg-sticky .thead .tr th,
+  .table.tbl-lg-sticky .thead .tr .th {
     background-color: #ededed;
     position: sticky;
     top: 0;
@@ -227,7 +229,7 @@
     border-spacing: 0;
   }
   .table thead,
-.table .thead {
+  .table .thead {
     position: relative;
     margin-bottom: 2rem;
   }
@@ -235,21 +237,21 @@
     background-color: table_bg_color_head;
   }
   .table thead tr th,
-.table .thead .tr .th {
+  .table .thead .tr .th {
     padding: 0.5rem 0.25rem;
     font-weight: normal;
   }
   .table tbody tr td,
-.table .tbody .tr .td {
+  .table .tbody .tr .td {
     padding: 0.25em;
   }
   .table.tbl-xl-layout {
     table-layout: fixed;
   }
   .table.tbl-xl-h-line th,
-.table.tbl-xl-h-line td,
-.table.tbl-xl-h-line .th,
-.table.tbl-xl-h-line .td {
+  .table.tbl-xl-h-line td,
+  .table.tbl-xl-h-line .th,
+  .table.tbl-xl-h-line .td {
     border-bottom: 1px solid #ededed;
   }
   .table.tbl-xl-h-line:last-child {
@@ -282,13 +284,13 @@
     position: relative;
   }
   .table.tbl-xl-sticky thead tr,
-.table.tbl-xl-sticky .thead .tr {
+  .table.tbl-xl-sticky .thead .tr {
     position: static;
   }
   .table.tbl-xl-sticky thead tr th,
-.table.tbl-xl-sticky thead tr .th,
-.table.tbl-xl-sticky .thead .tr th,
-.table.tbl-xl-sticky .thead .tr .th {
+  .table.tbl-xl-sticky thead tr .th,
+  .table.tbl-xl-sticky .thead .tr th,
+  .table.tbl-xl-sticky .thead .tr .th {
     background-color: #ededed;
     position: sticky;
     top: 0;
@@ -301,7 +303,7 @@
     border-spacing: 0;
   }
   .table thead,
-.table .thead {
+  .table .thead {
     position: relative;
     margin-bottom: 2rem;
   }
@@ -309,21 +311,21 @@
     background-color: table_bg_color_head;
   }
   .table thead tr th,
-.table .thead .tr .th {
+  .table .thead .tr .th {
     padding: 0.5rem 0.25rem;
     font-weight: normal;
   }
   .table tbody tr td,
-.table .tbody .tr .td {
+  .table .tbody .tr .td {
     padding: 0.25em;
   }
   .table.tbl-xxl-layout {
     table-layout: fixed;
   }
   .table.tbl-xxl-h-line th,
-.table.tbl-xxl-h-line td,
-.table.tbl-xxl-h-line .th,
-.table.tbl-xxl-h-line .td {
+  .table.tbl-xxl-h-line td,
+  .table.tbl-xxl-h-line .th,
+  .table.tbl-xxl-h-line .td {
     border-bottom: 1px solid #ededed;
   }
   .table.tbl-xxl-h-line:last-child {
@@ -356,13 +358,13 @@
     position: relative;
   }
   .table.tbl-xxl-sticky thead tr,
-.table.tbl-xxl-sticky .thead .tr {
+  .table.tbl-xxl-sticky .thead .tr {
     position: static;
   }
   .table.tbl-xxl-sticky thead tr th,
-.table.tbl-xxl-sticky thead tr .th,
-.table.tbl-xxl-sticky .thead .tr th,
-.table.tbl-xxl-sticky .thead .tr .th {
+  .table.tbl-xxl-sticky thead tr .th,
+  .table.tbl-xxl-sticky .thead .tr th,
+  .table.tbl-xxl-sticky .thead .tr .th {
     background-color: #ededed;
     position: sticky;
     top: 0;
