@@ -11,7 +11,7 @@
     "@medyll/cssfabric": "bin/index.js"
   },
   "scripts": {
-    "dev": "svelte-kit dev",
+    "dev": "svelte-kit dev --open ",
     "build": "svelte-kit build",
     "package": "svelte-kit package",
     "preview": "svelte-kit preview",
