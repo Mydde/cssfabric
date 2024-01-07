@@ -1,6 +1,6 @@
 /* rules */
 
-import { cssFabricBuilder } from './utils.js';
+import { CssFabricBuilder } from './utils.js';
 
 const steps = {
 	steps: [0, 100, 10],

@@ -1,6 +1,5 @@
 import fsExtra from 'fs-extra';
 import { harmony, triad, complement } from 'simpler-color';
-import type { R } from 'vitest/dist/reporters-qc5Smpt5.js';
 
 type Steps = [number, number, number];
 type Maskdd = [Ease, EaseTrigger];
@@ -10,24 +9,29 @@ type CssRule = string;
 type EaseTrigger = number;
 type Ease = number;
 
-type ProgressionType = {
-	property: string;
-	steps: {
-		steps: Steps;
-		presets?: string[];
-		ease: [Ease, EaseTrigger];
-		reverseValue?: boolean;
-	};
-	iteratorMask: string;
-	propertyValue?: {
-		content: [Mask, ToMask];
-		apply: string;
-	};
-};
+class CssFabricExport {
+	private cssFabricModel: string;
 
-export class cssFabricBuilder {
-	static createCssFile(content: any) {
-		fsExtra.writeFile('./file.css', content, (err) => {
+	exportPaths: Record<'css' | 'json', string> = {
+		css: './css-fabric.css',
+		json: './cssFabric.json'
+	};
+
+	constructor(cssFabricModel: cssFabricModelType, exportPaths?: CssFabricExport['exportPaths']) {
+		this.cssFabricModel = JSON.stringify(cssFabricModel);
+		this.exportPaths = { ...exportPaths, ...this.exportPaths };
+
+		return this;
+	}
+
+	public export(options: CssFabricExport['exportPaths']) {
+		this.exportPaths = { ...this.exportPaths, ...options };
+		this.createCssFile();
+		this.createJsonModel();
+	}
+
+	private createCssFile() {
+		fsExtra.writeFile(this.exportPaths.css, this.cssFabricModel, (err) => {
 			if (err) {
 				console.error(err);
 				return;
@@ -35,8 +39,8 @@ export class cssFabricBuilder {
 			console.log('File created successfully.');
 		});
 	}
-	static createJsonModel(content: any) {
-		fsExtra.writeFile('./file.json', content, (err) => {
+	private createJsonModel() {
+		fsExtra.writeFile(this.exportPaths.json, this.cssFabricModel, (err) => {
 			if (err) {
 				console.error(err);
 				return;
@@ -44,8 +48,17 @@ export class cssFabricBuilder {
 			console.log('File created successfully.');
 		});
 	}
+}
 
-	static parseModel(json: Record<string, any>, parentKey = '') {
+class CssFabricBuilder {
+	// defaultVariationSteps
+	cssFabricBuilderParams: CssFabricBuilderParams;
+
+	constructor() {
+		this.cssFabricBuilderParams = new CssFabricBuilderParams();
+	}
+
+	parseModel(json: Record<string, any>, parentKey = '') {
 		let css = parse(json, parentKey);
 		return `:root{\n${css}}`;
 		function parse(json: Record<string, any>, parentKey = '', titre = '') {
@@ -65,9 +78,25 @@ export class cssFabricBuilder {
 		}
 	}
 
-	static createProgression(options: ProgressionType, format: 'css' | 'json' = 'css') {
+	createProgression(
+		options: {
+			property: string;
+			steps: {
+				steps: Steps;
+				presets?: string[];
+				ease: [Ease, EaseTrigger];
+				reverseValue?: boolean;
+			};
+			iteratorMask: string;
+			propertyValue?: {
+				content: [Mask, ToMask];
+				apply: string;
+			};
+		},
+		format: 'css' | 'json' = 'css'
+	) {
 		const { property, iteratorMask, propertyValue } = options;
-		const { presets } = options.steps;
+		const { presets } = options.steps ?? this.cssFabricBuilderParams.defaultVariationSteps;
 		let [from, to, increment] = options.steps.steps;
 		const [ease, trigger] = options.steps.ease;
 
@@ -115,7 +144,7 @@ export class cssFabricBuilder {
 	 * @param creatorFunction - The function to create the element based on the mask key.
 	 * @param apply - The function to apply the value to the element.
 	 */
-	static dispatchHandleElements<M extends string = string, E = Element, A = any>(
+	dispatchHandleElements<M extends string = string, E = Element, A = any>(
 		inputMask: any[],
 		creatorFunction: (maskKey: M, index: number) => E,
 		apply: (element: E, value: A) => void
@@ -126,7 +155,7 @@ export class cssFabricBuilder {
 		});
 	}
 
-	static enqueue(callback: (callbackKey: string) => void, ...rest: string[][]) {
+	enqueue(callback: (callbackKey: string) => void, ...rest: string[][]) {
 		const buildObject = (rootKeys, distributionKeys, index = 0) => {
 			if (index >= distributionKeys.length) {
 				return rootKeys.reduce((acc, key) => ({ ...acc, [key]: callback(key) }), {});
@@ -141,10 +170,69 @@ export class cssFabricBuilder {
 
 		return buildObject(rest[0], rest.slice(1));
 	}
+
+	flattenIt(arr1: string[], arr2: string[], prefix: string = 'color-') {
+		const legacy: Record<string, any> = {};
+		arr1.forEach((themeColor) => {
+			legacy[themeColor] = {};
+			arr2.forEach((props2) => {
+				if (!legacy[themeColor][props2]) legacy[themeColor][props2] = {};
+				const tag = `${prefix}${[themeColor, props2].join('-')}`;
+				legacy[themeColor][props2] = { [tag]: this.makeVariation(themeColor, props2) };
+			});
+		});
+		return legacy;
+	}
+
+	makeVariation(themeColor: string, variation: string) {
+		console.log(themeColor, variation);
+		return this.cssFabricBuilderParams.variations?.[variation]
+			? this.cssFabricBuilderParams.variations[variation].replace('##', themeColor)
+			: themeColor;
+	}
+
+	makeDefaultVariations(
+		arr1: string[],
+		arr2: string[],
+		prefix: string,
+		vendor: string = '--cssfab-'
+	) {
+		const out: Record<string, any> = {};
+		arr1.forEach((themeColor) => {
+			out[themeColor] = {};
+			arr2.forEach((props2) => {
+				out[themeColor][props2] = this.createProgression(
+					{
+						property: `${vendor}${themeColor}-${props2}`,
+						iteratorMask: `color-mix(in srgb, var(${prefix}${themeColor}) ${this.cssFabricBuilderParams.correspondances[props2]} ##%);`,
+						steps: this.cssFabricBuilderParams.defaultVariationSteps
+					},
+					'json'
+				);
+			});
+		});
+
+		return out;
+	}
+
+	mainRule(vars: Record<string, any>, prefix: string) {
+		const collect: Record<string, any> = {};
+		Object.keys(vars).forEach((key) => {
+			const val = vars[key];
+			collect[key] = { [`${prefix}${key}`]: `${val};` };
+		});
+
+		return collect;
+	}
 }
 
-const legacyConfig = {
+export const config = {
 	theme: {
+		primary: '',
+		secondary: '',
+		accent: '',
+		neutral: '',
+		error: '',
 		gray: '#323130'
 	},
 	palette: {
@@ -167,134 +255,228 @@ const legacyConfig = {
 		error: 'red'
 	}
 };
-const variations = {
-	none: 'var(theme-color-##);',
-	light: 'color-mix(in srgb, var(theme-color-##) white ##%);',
-	lighter: 'color-mix(in srgb, var(##) white ##%);',
-	dark: 'color-mix(in srgb, var(##) black ##%);',
-	darker: 'color-mix(in srgb, var(##) black ##%);',
-	complement: 'color-mix(in srgb, var(##) black ##%);',
-	invert: 'color-mix(in srgb, var(##) black ##%);',
-	'alpha-low': 'color-mix(in srgb, var(##) transparent ##%);',
-	alpha: 'color-mix(in srgb, var(##) transparent ##%);',
-	'alpha-high': 'color-mix(in srgb, var(##) transparent ##%);'
-};
 
-const defaultVariationSteps = {
-	steps: [0, 100, 10],
-	ease: [2, 20]
-};
+class CssFabricBuilderParams {
+	variations = {
+		none: 'var(theme-color-##);',
+		light: 'color-mix(in srgb, var(theme-color-##) white ##%);',
+		lighter: 'color-mix(in srgb, var(theme-color-##) white ##%);',
+		dark: 'color-mix(in srgb, var(theme-color-##) black ##%);',
+		darker: 'color-mix(in srgb, var(theme-color-##) black ##%);',
+		complement: 'color-mix(in srgb, var(theme-color-##) black ##%);',
+		invert: 'color-mix(in srgb, var(theme-color-##) black ##%);',
+		'alpha-low': 'color-mix(in srgb, var(theme-color-##) transparent ##%);',
+		alpha: 'color-mix(in srgb, var(theme-color-##) transparent ##%);',
+		'alpha-high': 'color-mix(in srgb, var(theme-color-##) transparent ##%);'
+	} as const;
 
-function getVariation(themeColor: string, variation: string) {
-	return variations?.[variation] ? variations[variation].replace('##', themeColor) : themeColor;
+	defaultVariationSteps = {
+		steps: [0, 100, 10],
+		ease: [2, 20]
+	} as const;
+
+	correspondances: Record<string, any> = {
+		lighten: 'white',
+		light: 'white',
+		lighter: 'white',
+		darken: 'black',
+		dark: 'black',
+		darker: 'black',
+		gray: '#333',
+		opacity: 'transparent',
+		'alpha-high': 'transparent',
+		'alpha-low': 'transparent',
+		alpha: 'transparent'
+	};
+
+	baseColors: {
+		primary: string;
+		secondary: string;
+		accent: string;
+		neutral: string;
+		error: string;
+	};
+
+	presets = [
+		'light',
+		'lighter',
+		'dark',
+		'darker',
+		'complement',
+		'invert',
+		'alpha-low',
+		'alpha',
+		'alpha-high'
+	];
+
+	config: typeof config = {} as typeof config;
+
+	constructor() {
+		this.baseColors = harmony('#9e3902');
+		this.config = this.deepMerge<typeof config>(config, { theme: harmony('#9e3902') });
+		console.log(this.config);
+		return this;
+	}
+
+	setVariations(variations: typeof CssFabricBuilderParams.prototype.variations) {
+		this.variations = { ...this.variations, ...variations };
+	}
+
+	setDefaultVariationSteps(
+		variationSteps: typeof CssFabricBuilderParams.prototype.defaultVariationSteps
+	) {
+		this.defaultVariationSteps = { ...this.defaultVariationSteps, ...variationSteps };
+	}
+
+	private deepMerge<T>(...objects: T[]): T {
+		function objectMerge(target: T, source: T) {
+			for (const key of Object.keys(source)) {
+				const currenttarget = target[key];
+				const currentsource = source[key];
+
+				if (currenttarget) {
+					const objectsource = typeof currentsource === 'object';
+					const objecttarget = typeof currenttarget === 'object';
+
+					if (objectsource && objecttarget) {
+						void (Array.isArray(currenttarget) && Array.isArray(currentsource)
+							? void (target[key] = currenttarget.concat(currentsource))
+							: void objectMerge(currenttarget, currentsource));
+
+						continue;
+					}
+				}
+
+				target[key] = currentsource;
+			}
+
+			return target;
+		}
+		return objects.reduce(function (prev, next) {
+			return { ...prev, ...objectMerge(prev, next) };
+		}, objects[0]);
+	}
 }
 
-function flattenIt(arr1: string[], arr2: string[], prefix: string = 'color-') {
-	const legacy: Record<string, any> = {};
-	arr1.forEach((themeColor) => {
-		legacy[themeColor] = {};
-		arr2.forEach((props2) => {
-			if (!legacy[themeColor][props2]) legacy[themeColor][props2] = {};
-			const tag = `${prefix}${[themeColor, props2].join('-')}`;
-			legacy[themeColor][props2] = { [tag]: getVariation(themeColor, props2) };
+enum ModelConfigKeys {
+	base,
+	palette,
+	presets,
+	status,
+	out,
+	gray,
+	out2
+}
+type cssFabricModelKey = keyof typeof ModelConfigKeys;
+type cssFabricModelType = Record<cssFabricModelKey, any>;
+class CssFabricCore {
+	vendorName = '--cssfab-';
+	vendor = (fragment: string = '') => `${this.vendorName}${fragment}`;
+
+	cssFabricModel: cssFabricModelType = {} as cssFabricModelType;
+	cssFabricBuilderParams: CssFabricBuilderParams;
+	cssFabricBuilder: CssFabricBuilder;
+
+	constructor() {
+		this.cssFabricBuilder = new CssFabricBuilder();
+		this.cssFabricBuilderParams = new CssFabricBuilderParams();
+	}
+
+	private cleanModelKey(modelKey: string): string {
+		return modelKey.replace(/'/g, '');
+	}
+
+	setParams(params: Partial<CssFabricBuilderParams>) {
+		this.cssFabricBuilderParams = {
+			...this.cssFabricBuilderParams,
+			...params
+		} as CssFabricBuilderParams;
+	}
+
+	create(...args: cssFabricModelKey[]): CssFabricExport {
+		args.forEach((modelKey) => {
+			switch (this.cleanModelKey(modelKey)) {
+				case 'base':
+					this.cssFabricModel.base = this.cssFabricBuilder.mainRule(
+						this.cssFabricBuilderParams.config.theme,
+						this.vendor()
+					);
+					break;
+				case 'palette':
+					this.cssFabricModel.palette = this.cssFabricBuilder.mainRule(
+						this.cssFabricBuilderParams.config.palette,
+						this.vendor('palette-')
+					);
+					break;
+				case 'presets':
+					this.cssFabricModel.presets = this.cssFabricBuilder.flattenIt(
+						['primary', 'secondary', 'tertiary', 'accent'],
+						this.cssFabricBuilderParams.presets,
+						this.vendor('presets-')
+					);
+					break;
+				case 'status':
+					this.cssFabricModel.status = this.cssFabricBuilder.mainRule(
+						this.cssFabricBuilderParams.config.scheme,
+						this.vendor('status-')
+					);
+					break;
+				case 'out':
+					// assombrir et rendre opaque  'primary', 'secondary', 'tertiary'
+					this.cssFabricModel.out = this.cssFabricBuilder.makeDefaultVariations(
+						['primary', 'secondary', 'tertiary'],
+						['lighten', 'darken', 'opacity'],
+						this.vendor()
+					);
+					break;
+				case 'gray':
+					this.cssFabricModel.gray = this.cssFabricBuilder.createProgression(
+						{
+							property: this.vendor(`color-gray`),
+							iteratorMask: `color-mix(in srgb, ${this.vendor(`color-gray`)}  ${
+								this.cssFabricBuilderParams.correspondances.gray
+							} ##%);`,
+							steps: this.cssFabricBuilderParams.defaultVariationSteps
+						},
+						'json'
+					);
+					break;
+				case 'out2':
+					// assombrir et rendre opaque  'primary', 'secondary', 'tertiary'
+					this.cssFabricModel.out2 = this.cssFabricBuilder.makeDefaultVariations(
+						['foreground', 'bg'],
+						['lighten', 'darken', 'opacity'],
+						this.vendor()
+					);
+					break;
+				default:
+					console.log('default', modelKey);
+					break;
+			}
 		});
-	});
-	return legacy;
+		return new CssFabricExport(this.cssFabricModel);
+	}
 }
 
-function mainRule(vars: Record<string, any>, prefix: string) {
-	const collect: Record<string, any> = {};
-	Object.keys(vars).forEach((key) => {
-		const val = vars[key];
-		collect[key] = { [`${prefix}${key}`]: `${val};` };
-	});
+const cssFabric = new CssFabricCore();
 
-	return collect;
-}
+const model = cssFabric.create('base', 'palette', 'presets', 'status', 'out', 'gray', 'out2');
+model.export({ css: './css-fabric.css', json: './cssFabric.json' });
 
-function defaultVariation(
-	arr1: string[],
-	arr2: string[],
-	prefix: string,
-	vendor: string = '--cssfab-'
-) {
-	const out: Record<string, any> = {};
-	arr1.forEach((themeColor) => {
-		out[themeColor] = {};
-		arr2.forEach((props2) => {
-			out[themeColor][props2] = cssFabricBuilder.createProgression(
-				{
-					property: `${vendor}${themeColor}-${props2}`,
-					iteratorMask: `color-mix(in srgb, var(${prefix}${themeColor}) ${correspondances[props2]} ##%);`,
-					steps: defaultVariationSteps
-				},
-				'json'
-			);
+console.log('...', model);
+
+// receive a list of arguments as strings
+// transform it to enum
+class Utils {
+	static list<T>(...args: string[]) {
+		const enumObj: Record<string, string> = {};
+
+		args.forEach((arg: string, index) => {
+			enumObj[arg] = arg;
 		});
-	});
 
-	return out;
+		return enumObj;
+	}
 }
 
-const cssCollection: Record<string, any> = { base: '' };
-/* base */
-const baseColors = harmony('#9e3902');
-const presets = [
-	'light',
-	'lighter',
-	'dark',
-	'darker',
-	'complement',
-	'invert',
-	'alpha-low',
-	'alpha',
-	'alpha-high'
-];
-const correspondances: Record<string, any> = {
-	lighten: 'white',
-	light: 'white',
-	lighter: 'white',
-	darken: 'black',
-	dark: 'black',
-	darker: 'black',
-	gray: '#333',
-	opacity: 'transparent',
-	'alpha-high': 'transparent',
-	'alpha-low': 'transparent',
-	alpha: 'transparent'
-};
-
-const vendorName = '--cssfab-';
-const vendor = (fragment: string = '') => `${fragment}${vendorName}`;
-/* base colors */
-cssCollection.base = mainRule(baseColors, vendor());
-cssCollection.palette = mainRule(legacyConfig.palette, vendor('palette-'));
-cssCollection.presets = flattenIt(['primary', 'secondary', 'tertiary'], presets, vendor('status-'));
-cssCollection.status = mainRule(legacyConfig.scheme, vendor('scheme-'));
-
-// assombrir et rendre opaque  'primary', 'secondary', 'tertiary'
-cssCollection.out = defaultVariation(
-	['primary', 'secondary', 'tertiary'],
-	['lighten', 'darken', 'opacity'],
-	vendor()
-);
-
-cssCollection.gray = cssFabricBuilder.createProgression(
-	{
-		property: vendor(`color-gray`),
-		iteratorMask: `color-mix(in srgb, ${vendor(`color-gray`)}  ${correspondances.gray} ##%);`,
-		steps: defaultVariationSteps
-	},
-	'json'
-);
-
-// assombrir et rendre opaque  'primary', 'secondary', 'tertiary'
-cssCollection.out2 = defaultVariation(
-	['foreground', 'bg'],
-	['lighten', 'darken', 'opacity'],
-	vendor()
-);
-
-console.log(cssFabricBuilder.parseModel(cssCollection));
-cssFabricBuilder.createJsonModel(JSON.stringify(cssCollection));
-cssFabricBuilder.createCssFile(cssFabricBuilder.parseModel(cssCollection));
+Utils.list('base', 'palette', 'presets', 'status', 'out', 'gray', 'out2');
