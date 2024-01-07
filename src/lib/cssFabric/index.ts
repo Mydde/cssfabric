@@ -1,5 +1,5 @@
 import fsExtra from 'fs-extra';
-import { harmony, triad, complement } from 'simpler-color';
+import { harmony } from 'simpler-color';
 
 type Steps = [number, number, number];
 type Maskdd = [Ease, EaseTrigger];
