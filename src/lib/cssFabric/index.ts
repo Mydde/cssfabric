@@ -9,8 +9,37 @@ type CssRule = string;
 type EaseTrigger = number;
 type Ease = number;
 
+export const colorConfig = {
+	theme: {
+		primary: '',
+		secondary: '',
+		accent: '',
+		neutral: '',
+		error: '',
+		gray: '#323130'
+	},
+	palette: {
+		yellow: '#ffb900',
+		orange: '#d83b01',
+		red: '#d13438',
+		magenta: '#b4009e',
+		purple: '#5c2d91',
+		green: '#107c10',
+		teal: '#008272',
+		blue: '#0078d4',
+		dark: '#323232'
+	},
+	scheme: {
+		discrete: '#ccc',
+		success: 'green',
+		info: '#FFDD57FF',
+		warning: 'hsl(48, 96%, 46%)',
+		alert: 'hsl(27, 100%, 50%)',
+		error: '#d13438'
+	}
+};
 class CssFabricExport {
-	private cssFabricModel: string;
+	private cssFabricModel: cssFabricModelType;
 
 	exportPaths: Record<'css' | 'json', string> = {
 		css: './css-fabric.css',
@@ -18,7 +47,7 @@ class CssFabricExport {
 	};
 
 	constructor(cssFabricModel: cssFabricModelType, exportPaths?: CssFabricExport['exportPaths']) {
-		this.cssFabricModel = JSON.stringify(cssFabricModel);
+		this.cssFabricModel = cssFabricModel;
 		this.exportPaths = { ...exportPaths, ...this.exportPaths };
 
 		return this;
@@ -26,12 +55,14 @@ class CssFabricExport {
 
 	public export(options: CssFabricExport['exportPaths']) {
 		this.exportPaths = { ...this.exportPaths, ...options };
+
 		this.createCssFile();
 		this.createJsonModel();
 	}
 
 	private createCssFile() {
-		fsExtra.writeFile(this.exportPaths.css, this.cssFabricModel, (err) => {
+		// cssFabricBuilder.parseModel(cssCollection
+		fsExtra.writeFile(this.exportPaths.css, this.cssFabricModel.toString(), (err) => {
 			if (err) {
 				console.error(err);
 				return;
@@ -40,7 +71,7 @@ class CssFabricExport {
 		});
 	}
 	private createJsonModel() {
-		fsExtra.writeFile(this.exportPaths.json, this.cssFabricModel, (err) => {
+		fsExtra.writeFile(this.exportPaths.json, JSON.stringify(this.cssFabricModel), (err) => {
 			if (err) {
 				console.error(err);
 				return;
@@ -171,23 +202,26 @@ class CssFabricBuilder {
 		return buildObject(rest[0], rest.slice(1));
 	}
 
-	flattenIt(arr1: string[], arr2: string[], prefix: string = 'color-') {
+	flattenIt(arr1: string[], arr2: string[], scope: string = 'color-') {
 		const legacy: Record<string, any> = {};
 		arr1.forEach((themeColor) => {
 			legacy[themeColor] = {};
 			arr2.forEach((props2) => {
 				if (!legacy[themeColor][props2]) legacy[themeColor][props2] = {};
-				const tag = `${prefix}${[themeColor, props2].join('-')}`;
-				legacy[themeColor][props2] = { [tag]: this.makeVariation(themeColor, props2) };
+				const tag = `${scope}${[themeColor, props2].join('-')}`;
+				legacy[themeColor][props2] = {
+					[tag]: this.makeVariation(themeColor, props2)
+						.replace('##', themeColor)
+						.replace('{#vendor}', this.cssFabricBuilderParams.vendorName)
+				};
 			});
 		});
 		return legacy;
 	}
 
 	makeVariation(themeColor: string, variation: string) {
-		console.log(themeColor, variation);
 		return this.cssFabricBuilderParams.variations?.[variation]
-			? this.cssFabricBuilderParams.variations[variation].replace('##', themeColor)
+			? this.cssFabricBuilderParams.variations[variation]
 			: themeColor;
 	}
 
@@ -226,48 +260,21 @@ class CssFabricBuilder {
 	}
 }
 
-export const config = {
-	theme: {
-		primary: '',
-		secondary: '',
-		accent: '',
-		neutral: '',
-		error: '',
-		gray: '#323130'
-	},
-	palette: {
-		yellow: '#ffb900',
-		orange: '#d83b01',
-		red: '#d13438',
-		magenta: '#b4009e',
-		purple: '#5c2d91',
-		green: '#107c10',
-		teal: '#008272',
-		blue: '#0078d4',
-		dark: '#323232'
-	},
-	scheme: {
-		discrete: '#ccc',
-		success: 'green',
-		info: '#FFDD57FF',
-		warning: 'hsl(48, 96%, 46%)',
-		alert: 'hsl(27, 100%, 50%)',
-		error: 'red'
-	}
-};
-
+// primary.presets
 class CssFabricBuilderParams {
+	vendorName = '--cssfab-';
+
 	variations = {
-		none: 'var(theme-color-##);',
-		light: 'color-mix(in srgb, var(theme-color-##) white ##%);',
-		lighter: 'color-mix(in srgb, var(theme-color-##) white ##%);',
-		dark: 'color-mix(in srgb, var(theme-color-##) black ##%);',
-		darker: 'color-mix(in srgb, var(theme-color-##) black ##%);',
-		complement: 'color-mix(in srgb, var(theme-color-##) black ##%);',
-		invert: 'color-mix(in srgb, var(theme-color-##) black ##%);',
-		'alpha-low': 'color-mix(in srgb, var(theme-color-##) transparent ##%);',
-		alpha: 'color-mix(in srgb, var(theme-color-##) transparent ##%);',
-		'alpha-high': 'color-mix(in srgb, var(theme-color-##) transparent ##%);'
+		none: 'var({#vendor}-color-##);',
+		light: 'color-mix(in srgb, var({#vendor}-color-##) white ##%);',
+		lighter: 'color-mix(in srgb, var({#vendor}-color-##) white ##%);',
+		dark: 'color-mix(in srgb, var({#vendor}-color-##) black ##%);',
+		darker: 'color-mix(in srgb, var({#vendor}-color-##) black ##%);',
+		complement: 'color-mix(in srgb, var({#vendor}-color-##) black ##%);',
+		invert: 'color-mix(in srgb, var({#vendor}-color-##) black ##%);',
+		'alpha-low': 'color-mix(in srgb, var({#vendor}-color-##) transparent ##%);',
+		alpha: 'color-mix(in srgb, var({#vendor}-color-##) transparent ##%);',
+		'alpha-high': 'color-mix(in srgb, var({#vendor}-color-##) transparent ##%);'
 	} as const;
 
 	defaultVariationSteps = {
@@ -309,12 +316,12 @@ class CssFabricBuilderParams {
 		'alpha-high'
 	];
 
-	config: typeof config = {} as typeof config;
+	config: typeof colorConfig = {} as typeof colorConfig;
 
 	constructor() {
 		this.baseColors = harmony('#9e3902');
-		this.config = this.deepMerge<typeof config>(config, { theme: harmony('#9e3902') });
-		console.log(this.config);
+		this.config = this.deepMerge<typeof colorConfig>(colorConfig, { theme: harmony('#9e3902') });
+
 		return this;
 	}
 
@@ -369,9 +376,8 @@ enum ModelConfigKeys {
 }
 type cssFabricModelKey = keyof typeof ModelConfigKeys;
 type cssFabricModelType = Record<cssFabricModelKey, any>;
-class CssFabricCore {
-	vendorName = '--cssfab-';
-	vendor = (fragment: string = '') => `${this.vendorName}${fragment}`;
+class CssFabric {
+	vendor = (fragment: string = '') => `${this.cssFabricBuilderParams.vendorName}${fragment}`;
 
 	cssFabricModel: cssFabricModelType = {} as cssFabricModelType;
 	cssFabricBuilderParams: CssFabricBuilderParams;
@@ -393,7 +399,7 @@ class CssFabricCore {
 		} as CssFabricBuilderParams;
 	}
 
-	create(...args: cssFabricModelKey[]): CssFabricExport {
+	create(...args: cssFabricModelKey[]): { export: CssFabricExport['export']; css: string } {
 		args.forEach((modelKey) => {
 			switch (this.cleanModelKey(modelKey)) {
 				case 'base':
@@ -454,16 +460,18 @@ class CssFabricCore {
 					break;
 			}
 		});
-		return new CssFabricExport(this.cssFabricModel);
+
+		return {
+			export: (options) => new CssFabricExport(this.cssFabricModel, options).export(options),
+			css: JSON.stringify(this.cssFabricModel)
+		};
 	}
 }
 
-const cssFabric = new CssFabricCore();
+export const cssFabric = new CssFabric();
 
-const model = cssFabric.create('base', 'palette', 'presets', 'status', 'out', 'gray', 'out2');
-model.export({ css: './css-fabric.css', json: './cssFabric.json' });
-
-console.log('...', model);
+/* const model = cssFabric.create('base', 'palette', 'presets', 'status', 'out', 'gray', 'out2');
+model.export({ css: './css-fabric.css', json: './cssFabric.json' }); */
 
 // receive a list of arguments as strings
 // transform it to enum
