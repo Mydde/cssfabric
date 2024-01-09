@@ -1,13 +1,14 @@
 import { cssFabricSheet } from './cssFabricSheet.js';
-import fsExtra from 'fs-extra';
+// import fsExtra from 'fs-extra';
 
-type CssFabricFragment = {
+export type CssFabricFragment = {
 	description: string;
 	syntax: string; // contains | as separator
 	template: string;
 	initial: string;
 	appliesTo: string;
 	fabric: Record<'classNames' | 'declinations', Record<string, string>>;
+	variations: Record<string, string>;
 };
 
 function camelToUnderscore(str: string) {
