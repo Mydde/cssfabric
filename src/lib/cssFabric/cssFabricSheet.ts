@@ -2,32 +2,34 @@ export const cssFabricSheet = {
 	display: {
 		description: 'Specifies how an element is displayed',
 		syntax:
-			'inline | block | contents | flex | grid | inline-block | inline-flex | inline-grid | inline-table | list-item | none | run-in | table | table-caption | table-cell | table-column | table-column-group | table-footer-group | table-header-group | table-row | table-row-group',
+			'[inline | block | contents | flex | grid | inline-block | inline-flex | inline-grid | inline-table | list-item | none | run-in | table | table-caption | table-cell | table-column | table-column-group | table-footer-group | table-header-group | table-row | table-row-group]',
 		template: 'display: {display}',
 		initial: 'inline',
 		appliesTo: 'all box elements',
 		fabric: {
-			inline: 'display: inline',
-			block: 'display: block',
-			contents: 'display: contents',
-			flex: 'display: flex',
-			grid: 'display: grid',
-			'inline-block': 'display: inline-block',
-			'inline-flex': 'display: inline-flex',
-			'inline-grid': 'display: inline-grid',
-			'inline-table': 'display: inline-table',
-			'list-item': 'display: list-item',
-			none: 'display: none',
-			'run-in': 'display: run-in',
-			table: 'display: table',
-			'table-caption': 'display: table-caption',
-			'table-cell': 'display: table-cell',
-			'table-column': 'display: table-column',
-			'table-column-group': 'display: table-column-group',
-			'table-footer-group': 'display: table-footer-group',
-			'table-header-group': 'display: table-header-group',
-			'table-row': 'display: table-row',
-			'table-row-group': 'display: table-row-group'
+			classNames: {
+				inline: 'display: inline',
+				block: 'display: block',
+				contents: 'display: contents',
+				flex: 'display: flex',
+				grid: 'display: grid',
+				'inline-block': 'display: inline-block',
+				'inline-flex': 'display: inline-flex',
+				'inline-grid': 'display: inline-grid',
+				'inline-table': 'display: inline-table',
+				'list-item': 'display: list-item',
+				none: 'display: none',
+				'run-in': 'display: run-in',
+				table: 'display: table',
+				'table-caption': 'display: table-caption',
+				'table-cell': 'display: table-cell',
+				'table-column': 'display: table-column',
+				'table-column-group': 'display: table-column-group',
+				'table-footer-group': 'display: table-footer-group',
+				'table-header-group': 'display: table-header-group',
+				'table-row': 'display: table-row',
+				'table-row-group': 'display: table-row-group'
+			}
 		}
 	},
 	appearance: {
@@ -37,7 +39,9 @@ export const cssFabricSheet = {
 		initial: 'auto',
 		appliesTo: 'all elements',
 		fabric: {
-			appearance: 'appearance: {appearance}'
+			classNames: {
+				appearance: 'appearance: {appearance}'
+			}
 		}
 	},
 	'object-fit': {
@@ -48,7 +52,9 @@ export const cssFabricSheet = {
 		initial: 'fill',
 		appliesTo: 'all elements',
 		fabric: {
-			'object-fit': 'object-fit: {object-fit}'
+			classNames: {
+				'object-fit': 'object-fit: {object-fit}'
+			}
 		}
 	},
 	'mix-blend-mode': {
@@ -59,7 +65,9 @@ export const cssFabricSheet = {
 		initial: 'normal',
 		appliesTo: 'all elements',
 		fabric: {
-			'mix-blend-mode': 'mix-blend-mode: {mix-blend-mode}'
+			classNames: {
+				'mix-blend-mode': 'mix-blend-mode: {mix-blend-mode}'
+			}
 		}
 	},
 	list: {
@@ -71,10 +79,12 @@ export const cssFabricSheet = {
 			initial: 'disc outside none',
 			appliesTo: 'all elements',
 			fabric: {
-				style: 'list-style: {listStyleType} {listStylePosition} {listStyleImage}',
-				type: 'list-style-type: {listStyleType}',
-				position: 'list-style-position: {listStylePosition}',
-				image: 'list-style-image: {listStyleImage}'
+				classNames: {
+					style: 'list-style: {listStyleType} {listStylePosition} {listStyleImage}',
+					type: 'list-style-type: {listStyleType}',
+					position: 'list-style-position: {listStylePosition}',
+					image: 'list-style-image: {listStyleImage}'
+				}
 			}
 		}
 	},
@@ -96,9 +106,11 @@ export const cssFabricSheet = {
 			initial: '0 1 auto',
 			appliesTo: 'flex containers',
 			fabric: {
-				direction: 'flex-direction: {flexDirection}',
-				wrap: 'flex-wrap: {flexWrap}',
-				flow: 'flex-flow: {flexFlow}'
+				classNames: {
+					direction: 'flex-direction: {flexDirection}',
+					wrap: 'flex-wrap: {flexWrap}',
+					flow: 'flex-flow: {flexFlow}'
+				}
 			}
 		},
 		'align-content': {
@@ -109,7 +121,9 @@ export const cssFabricSheet = {
 			initial: 'normal',
 			appliesTo: 'flex containers',
 			fabric: {
-				'align-content': 'align-content: {align-content}'
+				classNames: {
+					'align-content': 'align-content: {align-content}'
+				}
 			}
 		},
 		'align-items': {
@@ -119,7 +133,9 @@ export const cssFabricSheet = {
 			initial: 'normal',
 			appliesTo: 'flex containers',
 			fabric: {
-				'align-items': 'align-items: {alignItems}'
+				classNames: {
+					'align-items': 'align-items: {alignItems}'
+				}
 			}
 		},
 		'align-self': {
@@ -129,7 +145,9 @@ export const cssFabricSheet = {
 			initial: 'auto',
 			appliesTo: 'flex items',
 			fabric: {
-				'align-self': 'align-self: {alignSelf}'
+				classNames: {
+					'align-self': 'align-self: {alignSelf}'
+				}
 			}
 		},
 		placeContent: {
@@ -140,7 +158,9 @@ export const cssFabricSheet = {
 			initial: 'normal',
 			appliesTo: 'flex containers',
 			fabric: {
-				'place-content': 'place-content: {align-content}} {justify-content}'
+				classNames: {
+					'place-content': 'place-content: {align-content}} {justify-content}'
+				}
 			}
 		},
 		placeItems: {
@@ -150,7 +170,9 @@ export const cssFabricSheet = {
 			initial: 'normal',
 			appliesTo: 'flex containers',
 			fabric: {
-				'place-items': 'place-items: {align-items} {justify-items}'
+				classNames: {
+					'place-items': 'place-items: {align-items} {justify-items}'
+				}
 			}
 		},
 		placeSelf: {
@@ -160,7 +182,9 @@ export const cssFabricSheet = {
 			initial: 'auto',
 			appliesTo: 'flex items',
 			fabric: {
-				'place-self': 'place-self: {align-self} {justify-self}'
+				classNames: {
+					'place-self': 'place-self: {align-self} {justify-self}'
+				}
 			}
 		},
 		order: {
@@ -170,7 +194,9 @@ export const cssFabricSheet = {
 			initial: '0',
 			appliesTo: 'flex items',
 			fabric: {
-				order: 'order: {order}'
+				classNames: {
+					order: 'order: {order}'
+				}
 			}
 		},
 		masonryAutoFlow: {
@@ -180,7 +206,9 @@ export const cssFabricSheet = {
 			initial: 'none',
 			appliesTo: 'masonry containers',
 			fabric: {
-				'masonry-auto-flow': 'masonry-auto-flow: {masonryAutoFlow}'
+				classNames: {
+					'masonry-auto-flow': 'masonry-auto-flow: {masonryAutoFlow}'
+				}
 			}
 		}
 	},
@@ -192,7 +220,9 @@ export const cssFabricSheet = {
 		initial: 'auto',
 		appliesTo: 'all elements',
 		fabric: {
-			'pointer-events': 'pointer-events: {pointerEvents}'
+			classNames: {
+				'pointer-events': 'pointer-events: {pointerEvents}'
+			}
 		}
 	},
 	placement: {
@@ -203,7 +233,9 @@ export const cssFabricSheet = {
 			initial: 'auto',
 			appliesTo: 'all positioned elements',
 			fabric: {
-				top: 'top: {top}'
+				classNames: {
+					top: 'top: {top}'
+				}
 			}
 		},
 		right: {
@@ -213,7 +245,9 @@ export const cssFabricSheet = {
 			initial: 'auto',
 			appliesTo: 'all positioned elements',
 			fabric: {
-				right: 'right: {right}'
+				classNames: {
+					right: 'right: {right}'
+				}
 			}
 		},
 		bottom: {
@@ -223,7 +257,9 @@ export const cssFabricSheet = {
 			initial: 'auto',
 			appliesTo: 'all positioned elements',
 			fabric: {
-				bottom: 'bottom: {bottom}'
+				classNames: {
+					bottom: 'bottom: {bottom}'
+				}
 			}
 		},
 		left: {
@@ -233,7 +269,9 @@ export const cssFabricSheet = {
 			initial: 'auto',
 			appliesTo: 'all positioned elements',
 			fabric: {
-				left: 'left: {left}'
+				classNames: {
+					left: 'left: {left}'
+				}
 			}
 		}
 	},
@@ -245,11 +283,13 @@ export const cssFabricSheet = {
 			initial: 'static',
 			appliesTo: 'all box elements',
 			fabric: {
-				static: 'position: static',
-				relative: 'position: relative',
-				absolute: 'position: absolute',
-				fixed: 'position: fixed',
-				sticky: 'position: sticky'
+				classNames: {
+					static: 'position: static',
+					relative: 'position: relative',
+					absolute: 'position: absolute',
+					fixed: 'position: fixed',
+					sticky: 'position: sticky'
+				}
 			}
 		},
 		width: {
@@ -259,21 +299,25 @@ export const cssFabricSheet = {
 			initial: 'auto',
 			appliesTo: 'all box elements',
 			fabric: {
-				width: 'width: {width}',
-				'min-width': 'min-width: {min-width}',
-				'max-width': 'max-width: {max-width}'
+				classNames: {
+					width: 'width: {width}',
+					'min-width': 'min-width: {min-width}',
+					'max-width': 'max-width: {max-width}'
+				}
 			}
 		},
 		height: {
 			description: 'Specifies the height of the content area of an element',
-			syntax: 'auto | length | percentage',
+			syntax: 'auto | length',
 			template: 'height: {height}',
 			initial: 'auto',
 			appliesTo: 'all box elements',
 			fabric: {
-				height: 'height: {height}',
-				'min-height': 'min-height: {min-height}',
-				'max-height': 'max-height: {max-height}'
+				classNames: {
+					height: 'height: {height}',
+					min: 'min-height: {min-height}',
+					max: 'max-height: {max-height}'
+				}
 			}
 		},
 		overflow: {
@@ -283,37 +327,47 @@ export const cssFabricSheet = {
 			initial: 'visible',
 			appliesTo: 'all box elements',
 			fabric: {
-				overflow: 'overflow: {overflow}',
-				x: 'overflow-x: {overflowX}',
-				y: 'overflow-y: {overflowY}'
+				classNames: {
+					overflow: 'overflow: {overflow}',
+					x: 'overflow-x: {overflowX}',
+					y: 'overflow-y: {overflowY}'
+				}
 			}
 		},
 		margin: {
 			description: 'Specifies the margin around an element',
-			syntax: '[length | auto]',
+			syntax: 'length | auto',
 			template: 'margin: {margin} {margin} {margin} {margin}',
 			initial: '0 0 0 0',
 			appliesTo: 'all box elements',
 			fabric: {
-				margin: 'margin: {margin}',
-				top: 'margin-top: {marginTop}',
-				right: 'margin-right: {marginRight}',
-				bottom: 'margin-bottom: {marginBottom}',
-				left: 'margin-left: {marginLeft}'
+				classNames: {
+					margin: 'margin: {margin}',
+					top: 'margin-top: {margin-top}',
+					right: 'margin-right: {margin-right}',
+					bottom: 'margin-bottom: {margin-bottom}',
+					left: 'margin-left: {margin-left}',
+					'top-bottom': 'margin: {margin-top-bottom} inherit',
+					'right-left': 'margin: inherit {margin-right-left}'
+				}
 			}
 		},
 		padding: {
 			description: 'Specifies the padding inside an element',
-			syntax: 'length | auto',
+			syntax: 'length',
 			template: 'padding: {padding-top} {padding-right} {padding-bottom} {padding-left}',
 			initial: '0 0 0 0',
 			appliesTo: 'all box elements',
 			fabric: {
-				padding: 'padding: {padding}',
-				top: 'padding-top: {padding-top}',
-				right: 'padding-right: {padding-right}',
-				bottom: 'padding-bottom: {padding-bottom}',
-				left: 'padding-left: {padding-left}'
+				classNames: {
+					padding: 'padding: {padding}',
+					top: 'padding-top: {padding-top}',
+					right: 'padding-right: {padding-right}',
+					bottom: 'padding-bottom: {padding-bottom}',
+					left: 'padding-left: {padding-left}',
+					'top-bottom': 'padding: {padding-top-bottom} inherit',
+					'right-left': 'padding: inherit {padding-right-left} '
+				}
 			}
 		},
 		outline: {
@@ -323,10 +377,18 @@ export const cssFabricSheet = {
 			initial: 'invert none medium',
 			appliesTo: 'all box elements',
 			fabric: {
-				outline: 'outline: {outline-width}',
-				'outline-color': 'outline-color: {outline-color}',
-				'outline-style': 'outline-style: {outline-style}',
-				'outline-width': 'outline-width: {outline-width}'
+				classNames: {
+					color: 'outline-color: {outline-color}',
+					style: 'outline-style: {outline-style}',
+					width: 'outline-width: {outline-width}'
+				}
+			},
+			variations: {
+				color: 'theme | palette | status', // arrays of colors
+				style:
+					'auto | none | hidden | dotted | dashed | solid | double | groove | ridge | inset | outset',
+
+				width: 'thin | medium | thick'
 			}
 		},
 		contain: {
@@ -336,7 +398,9 @@ export const cssFabricSheet = {
 			initial: 'none',
 			appliesTo: 'all elements',
 			fabric: {
-				contain: 'contain: {contain}'
+				classNames: {
+					contain: 'contain: {contain}'
+				}
 			}
 		},
 		container: {
@@ -346,7 +410,9 @@ export const cssFabricSheet = {
 			initial: 'none',
 			appliesTo: 'all elements',
 			fabric: {
-				container: 'container: {container}'
+				classNames: {
+					container: 'container: {container}'
+				}
 			}
 		},
 		contentVisibility: {
@@ -356,7 +422,9 @@ export const cssFabricSheet = {
 			initial: 'visible',
 			appliesTo: 'all elements',
 			fabric: {
-				'content-visibility': 'content-visibility: {contentVisibility}'
+				classNames: {
+					'content-visibility': 'content-visibility: {contentVisibility}'
+				}
 			}
 		},
 		resize: {
@@ -366,7 +434,9 @@ export const cssFabricSheet = {
 			initial: 'none',
 			appliesTo: 'all elements',
 			fabric: {
-				resize: 'resize: {resize}'
+				classNames: {
+					resize: 'resize: {resize}'
+				}
 			}
 		},
 		boxSing: {
@@ -376,7 +446,9 @@ export const cssFabricSheet = {
 			initial: 'none',
 			appliesTo: 'all elements',
 			fabric: {
-				resize: 'resize: {resize}'
+				classNames: {
+					resize: 'resize: {resize}'
+				}
 			}
 		},
 		breakAfter: {
@@ -387,7 +459,9 @@ export const cssFabricSheet = {
 			initial: 'auto',
 			appliesTo: 'all elements',
 			fabric: {
-				'break-after': 'break-after: {breakAfter}'
+				classNames: {
+					'break-after': 'break-after: {breakAfter}'
+				}
 			}
 		}
 	},
@@ -399,17 +473,19 @@ export const cssFabricSheet = {
 		initial: 'none',
 		appliesTo: 'all elements',
 		fabric: {
-			'filter-blur': 'filter-blur: blur({blur})',
-			filterBrightness: 'filter-brightness: brightness({brightness})',
-			filterContrast: 'filter-contrast: contrast({contrast})',
-			filterDropShadow: 'filter-drop-shadow: drop-shadow({dropShadow})',
-			filterGrayscale: 'filter-grayscale: grayscale({grayscale})',
-			filterHueRotate: 'filter-hue-rotate: hue-rotate({hueRotate})',
-			filterInvert: 'filter-invert: invert({invert})',
-			filterOpacity: 'filter-opacity: opacity({opacity})',
-			filterSaturate: 'filter-saturate: saturate({saturate})',
-			filterSepia: 'filter-sepia: sepia({sepia})',
-			filterUrl: 'filter-url: url({url})'
+			classNames: {
+				'filter-blur': 'filter-blur: blur({blur})',
+				filterBrightness: 'filter-brightness: brightness({brightness})',
+				filterContrast: 'filter-contrast: contrast({contrast})',
+				filterDropShadow: 'filter-drop-shadow: drop-shadow({dropShadow})',
+				filterGrayscale: 'filter-grayscale: grayscale({grayscale})',
+				filterHueRotate: 'filter-hue-rotate: hue-rotate({hueRotate})',
+				filterInvert: 'filter-invert: invert({invert})',
+				filterOpacity: 'filter-opacity: opacity({opacity})',
+				filterSaturate: 'filter-saturate: saturate({saturate})',
+				filterSepia: 'filter-sepia: sepia({sepia})',
+				filterUrl: 'filter-url: url({url})'
+			}
 		}
 	},
 	opacity: {
@@ -419,7 +495,9 @@ export const cssFabricSheet = {
 		initial: '1',
 		appliesTo: 'all elements',
 		fabric: {
-			opacity: 'opacity: {opacity}'
+			classNames: {
+				opacity: 'opacity: {opacity}'
+			}
 		}
 	},
 	transition: {
@@ -429,12 +507,14 @@ export const cssFabricSheet = {
 		initial: 'none',
 		appliesTo: 'all elements',
 		fabric: {
-			transition:
-				'transition: {transition} {transition-duration} {transition-timingFunction} {transition-delay}',
-			'transition-property': 'transition-property: {transition-property}',
-			'transition-duration': 'transition-duration: {transition-duration}',
-			'transition-timing-function': 'transition-timing-function: {transition-timingFunction}',
-			'transition-delay': 'transition-delay: {transition-delay}'
+			classNames: {
+				transition:
+					'transition: {transition} {transition-duration} {transition-timingFunction} {transition-delay}',
+				'transition-property': 'transition-property: {transition-property}',
+				'transition-duration': 'transition-duration: {transition-duration}',
+				'transition-timing-function': 'transition-timing-function: {transition-timingFunction}',
+				'transition-delay': 'transition-delay: {transition-delay}'
+			}
 		}
 	},
 	aspectRatio: {
@@ -444,7 +524,9 @@ export const cssFabricSheet = {
 		initial: '1',
 		appliesTo: 'all elements',
 		fabric: {
-			'aspect-ratio': 'aspect-ratio: {aspectRatioX} / {aspectRatioY}'
+			classNames: {
+				'aspect-ratio': 'aspect-ratio: {aspectRatioX} / {aspectRatioY}'
+			}
 		}
 	},
 	colorScheme: {
@@ -454,7 +536,9 @@ export const cssFabricSheet = {
 		initial: 'light',
 		appliesTo: 'all elements',
 		fabric: {
-			'color-scheme': 'color-scheme: {colorScheme}'
+			classNames: {
+				'color-scheme': 'color-scheme: {colorScheme}'
+			}
 		}
 	},
 	initialLetter: {
@@ -464,7 +548,9 @@ export const cssFabricSheet = {
 		initial: 'normal',
 		appliesTo: 'all elements',
 		fabric: {
-			'initial-letter': 'initial-letter: {initialLetter}'
+			classNames: {
+				'initial-letter': 'initial-letter: {initialLetter}'
+			}
 		}
 	},
 	gap: {
@@ -474,9 +560,11 @@ export const cssFabricSheet = {
 		initial: '0',
 		appliesTo: 'all elements',
 		fabric: {
-			gap: 'gap: {gap}',
-			'row-gap': 'row-gap: {rowGap}',
-			'column-gap': 'column-gap: {columnGap}'
+			classNames: {
+				gap: 'gap: {gap}',
+				'row-gap': 'row-gap: {rowGap}',
+				'column-gap': 'column-gap: {columnGap}'
+			}
 		}
 	},
 	break: {
@@ -488,7 +576,9 @@ export const cssFabricSheet = {
 			initial: 'auto',
 			appliesTo: 'all elements',
 			fabric: {
-				'break-after': 'break-after: {break-after}'
+				classNames: {
+					'break-after': 'break-after: {break-after}'
+				}
 			}
 		},
 		'break-before': {
@@ -499,7 +589,9 @@ export const cssFabricSheet = {
 			initial: 'auto',
 			appliesTo: 'all elements',
 			fabric: {
-				'break-before': 'break-before: {break-before}'
+				classNames: {
+					'break-before': 'break-before: {break-before}'
+				}
 			}
 		}
 	},
@@ -511,17 +603,19 @@ export const cssFabricSheet = {
 		initial: 'none',
 		appliesTo: 'all elements',
 		fabric: {
-			'backdrop-filter-blur': 'backdrop-filter-blur: blur({blur})',
-			backdropFilterBrightness: 'backdrop-filter-brightness: brightness({brightness})',
-			backdropFilterContrast: 'backdrop-filter-contrast: contrast({contrast})',
-			backdropFilterDropShadow: 'backdrop-filter-drop-shadow: drop-shadow({dropShadow})',
-			backdropFilterGrayscale: 'backdrop-filter-grayscale: grayscale({grayscale})',
-			backdropFilterHueRotate: 'backdrop-filter-hue-rotate: hue-rotate({hueRotate})',
-			backdropFilterInvert: 'backdrop-filter-invert: invert({invert})',
-			backdropFilterOpacity: 'backdrop-filter-opacity: opacity({opacity})',
-			backdropFilterSaturate: 'backdrop-filter-saturate: saturate({saturate})',
-			backdropFilterSepia: 'backdrop-filter-sepia: sepia({sepia})',
-			backdropFilterUrl: 'backdrop-filter-url: url({url})'
+			classNames: {
+				'backdrop-filter-blur': 'backdrop-filter-blur: blur({blur})',
+				backdropFilterBrightness: 'backdrop-filter-brightness: brightness({brightness})',
+				backdropFilterContrast: 'backdrop-filter-contrast: contrast({contrast})',
+				backdropFilterDropShadow: 'backdrop-filter-drop-shadow: drop-shadow({dropShadow})',
+				backdropFilterGrayscale: 'backdrop-filter-grayscale: grayscale({grayscale})',
+				backdropFilterHueRotate: 'backdrop-filter-hue-rotate: hue-rotate({hueRotate})',
+				backdropFilterInvert: 'backdrop-filter-invert: invert({invert})',
+				backdropFilterOpacity: 'backdrop-filter-opacity: opacity({opacity})',
+				backdropFilterSaturate: 'backdrop-filter-saturate: saturate({saturate})',
+				backdropFilterSepia: 'backdrop-filter-sepia: sepia({sepia})',
+				backdropFilterUrl: 'backdrop-filter-url: url({url})'
+			}
 		}
 	},
 	boxShadow: {
@@ -541,11 +635,13 @@ export const cssFabricSheet = {
 		initial: 'transparent none repeat scroll 0% 0%',
 		appliesTo: 'all elements',
 		fabric: {
-			'background-color': 'background-color: {backgroundColor}',
-			'background-image': 'background-image: {backgroundImage}',
-			'background-repeat': 'background-repeat: {backgroundRepeat}',
-			'background-attachment': 'background-attachment: {backgroundAttachment}',
-			'background-position': 'background-position: {backgroundPosition}'
+			classNames: {
+				'background-color': 'background-color: {backgroundColor}',
+				'background-image': 'background-image: {backgroundImage}',
+				'background-repeat': 'background-repeat: {backgroundRepeat}',
+				'background-attachment': 'background-attachment: {backgroundAttachment}',
+				'background-position': 'background-position: {backgroundPosition}'
+			}
 		}
 	},
 	'unicode-bidi': {
@@ -555,7 +651,9 @@ export const cssFabricSheet = {
 		initial: 'normal',
 		appliesTo: 'all elements',
 		fabric: {
-			'unicode-bidi': 'unicode-bidi: {unicodeBidi}'
+			classNames: {
+				'unicode-bidi': 'unicode-bidi: {unicodeBidi}'
+			}
 		}
 	},
 	'user-select': {
@@ -565,7 +663,9 @@ export const cssFabricSheet = {
 		initial: 'auto',
 		appliesTo: 'all elements',
 		fabric: {
-			'user-select': 'user-select: {userSelect}'
+			classNames: {
+				'user-select': 'user-select: {userSelect}'
+			}
 		}
 	},
 	widows: {
@@ -576,7 +676,9 @@ export const cssFabricSheet = {
 		initial: '2',
 		appliesTo: 'all elements',
 		fabric: {
-			widows: 'widows: {widows}'
+			classNames: {
+				widows: 'widows: {widows}'
+			}
 		}
 	},
 	'touch-action': {
@@ -587,7 +689,9 @@ export const cssFabricSheet = {
 		initial: 'auto',
 		appliesTo: 'all elements',
 		fabric: {
-			'touch-action': 'touch-action: {touchAction}'
+			classNames: {
+				'touch-action': 'touch-action: {touchAction}'
+			}
 		}
 	},
 	cursor: {
@@ -598,7 +702,9 @@ export const cssFabricSheet = {
 		initial: 'auto',
 		appliesTo: 'all elements',
 		fabric: {
-			cursor: 'cursor: {cursor}'
+			classNames: {
+				cursor: 'cursor: {cursor}'
+			}
 		}
 	},
 	animations: {
@@ -609,7 +715,9 @@ export const cssFabricSheet = {
 			initial: 'none',
 			appliesTo: 'all elements',
 			fabric: {
-				transform: 'transform: translate({translateX}, {translateY}), {translateZ})'
+				classNames: {
+					transform: 'transform: translate({translateX}, {translateY}), {translateZ})'
+				}
 			}
 		}
 	},
@@ -621,7 +729,9 @@ export const cssFabricSheet = {
 		initial: 'baseline',
 		appliesTo: 'all elements',
 		fabric: {
-			'vertical-align': 'vertical-align: {vertical-align}'
+			classNames: {
+				'vertical-align': 'vertical-align: {vertical-align}'
+			}
 		}
 	},
 	visibility: {
@@ -631,7 +741,9 @@ export const cssFabricSheet = {
 		initial: 'visible',
 		appliesTo: 'all elements',
 		fabric: {
-			visibility: 'visibility: {visibility}'
+			classNames: {
+				visibility: 'visibility: {visibility}'
+			}
 		}
 	},
 	borders: {
@@ -642,9 +754,11 @@ export const cssFabricSheet = {
 			initial: 'medium none currentColor',
 			appliesTo: 'all box elements',
 			fabric: {
-				'border-width': 'border-width: {border-width}',
-				'border-style': 'border-style: {border-style}',
-				'border-color': 'border-color: {border-color}'
+				classNames: {
+					'border-width': 'border-width: {border-width}',
+					'border-style': 'border-style: {border-style}',
+					'border-color': 'border-color: {border-color}'
+				}
 			}
 		},
 		radius: {
@@ -654,11 +768,13 @@ export const cssFabricSheet = {
 			initial: '0',
 			appliesTo: 'all box elements',
 			fabric: {
-				'border-radius': 'border-radius: {border-radius}',
-				'border-top-left-radius': 'border-top-left-radius: {border-top-left-radius}',
-				'border-top-right-radius': 'border-top-right-radius: {border-top-right-radius}',
-				'border-bottom-left-radius': 'border-bottom-left-radius: {border-bottom-left-radius}',
-				'border-bottom-right-radius': 'border-bottom-right-radius: {border-bottom-right-radius}'
+				classNames: {
+					'border-radius': 'border-radius: {border-radius}',
+					'border-top-left-radius': 'border-top-left-radius: {border-top-left-radius}',
+					'border-top-right-radius': 'border-top-right-radius: {border-top-right-radius}',
+					'border-bottom-left-radius': 'border-bottom-left-radius: {border-bottom-left-radius}',
+					'border-bottom-right-radius': 'border-bottom-right-radius: {border-bottom-right-radius}'
+				}
 			}
 		},
 		borderWidth: {
@@ -668,7 +784,9 @@ export const cssFabricSheet = {
 			initial: 'medium',
 			appliesTo: 'all box elements',
 			fabric: {
-				'border-width': 'border-width: {borderWidth}'
+				classNames: {
+					'border-width': 'border-width: {borderWidth}'
+				}
 			}
 		},
 		borderStyle: {
@@ -678,7 +796,9 @@ export const cssFabricSheet = {
 			initial: 'none',
 			appliesTo: 'all box elements',
 			fabric: {
-				'border-style': 'border-style: {borderStyle}'
+				classNames: {
+					'border-style': 'border-style: {borderStyle}'
+				}
 			}
 		},
 		borderColor: {
@@ -688,7 +808,9 @@ export const cssFabricSheet = {
 			initial: 'currentColor',
 			appliesTo: 'all box elements',
 			fabric: {
-				'border-color': 'border-color: {border-color}'
+				classNames: {
+					'border-color': 'border-color: {border-color}'
+				}
 			}
 		}
 	},
@@ -699,12 +821,14 @@ export const cssFabricSheet = {
 		initial: 'normal normal normal medium/normal sans-serif',
 		appliesTo: 'all elements',
 		fabric: {
-			'font-style': 'font-style: {fontStyle}',
-			'font-variant': 'font-variant: {fontVariant}',
-			'font-weight': 'font-weight: {fontWeight}',
-			'font-size': 'font-size: {fontSize}',
-			'font-family': 'font-family: {fontFamily}',
-			'line-height': 'line-height: {lineHeight}'
+			classNames: {
+				'font-style': 'font-style: {fontStyle}',
+				'font-variant': 'font-variant: {fontVariant}',
+				'font-weight': 'font-weight: {fontWeight}',
+				'font-size': 'font-size: {fontSize}',
+				'font-family': 'font-family: {fontFamily}',
+				'line-height': 'line-height: {lineHeight}'
+			}
 		}
 	},
 	rotate: {
@@ -714,7 +838,9 @@ export const cssFabricSheet = {
 		initial: '0',
 		appliesTo: 'all elements',
 		fabric: {
-			rotate: 'rotate: {rotate} {rotate} {rotate}'
+			classNames: {
+				rotate: 'rotate: {rotate} {rotate} {rotate}'
+			}
 		}
 	},
 	scale: {
@@ -724,7 +850,9 @@ export const cssFabricSheet = {
 		initial: '1',
 		appliesTo: 'all elements',
 		fabric: {
-			transform: 'transform: scale({scale})'
+			classNames: {
+				transform: 'transform: scale({scale})'
+			}
 		}
 	},
 	'scroll-snap': {
@@ -735,7 +863,9 @@ export const cssFabricSheet = {
 			initial: 'none',
 			appliesTo: 'all elements',
 			fabric: {
-				'scroll-snap-type': 'scroll-snap-type: {scroll-snap-type}'
+				classNames: {
+					'scroll-snap-type': 'scroll-snap-type: {scroll-snap-type}'
+				}
 			}
 		},
 		'scroll-snap-align': {
@@ -745,7 +875,9 @@ export const cssFabricSheet = {
 			initial: 'none',
 			appliesTo: 'all elements',
 			fabric: {
-				'scroll-snap-align': 'scroll-snap-align: {scrollSnapAlign}'
+				classNames: {
+					'scroll-snap-align': 'scroll-snap-align: {scrollSnapAlign}'
+				}
 			}
 		},
 		'scroll-margin': {
@@ -756,11 +888,13 @@ export const cssFabricSheet = {
 			initial: '0 0 0 0',
 			appliesTo: 'all elements',
 			fabric: {
-				'scroll-margin': 'scroll-margin: {scroll-margin}',
-				top: 'scroll-margin-top: {scroll-margin-top}',
-				right: 'scroll-margin-right: {scroll-margin-right}',
-				bottom: 'scroll-margin-bottom: {scroll-margin-bottom}',
-				left: 'scroll-margin-left: {scroll-margin-left}'
+				classNames: {
+					'scroll-margin': 'scroll-margin: {scroll-margin}',
+					top: 'scroll-margin-top: {scroll-margin-top}',
+					right: 'scroll-margin-right: {scroll-margin-right}',
+					bottom: 'scroll-margin-bottom: {scroll-margin-bottom}',
+					left: 'scroll-margin-left: {scroll-margin-left}'
+				}
 			}
 		},
 		'scroll-padding': {
@@ -770,11 +904,13 @@ export const cssFabricSheet = {
 			initial: '0 0 0 0',
 			appliesTo: 'all elements',
 			fabric: {
-				'scroll-padding': 'scroll-padding: {scroll-padding}',
-				top: 'scroll-padding-top: {scroll-padding-top}',
-				right: 'scroll-padding-right: {scroll-padding-right}',
-				bottom: 'scroll-padding-bottom: {scroll-padding-bottom}',
-				left: 'scroll-padding-left: {scroll-padding-left}'
+				classNames: {
+					'scroll-padding': 'scroll-padding: {scroll-padding}',
+					top: 'scroll-padding-top: {scroll-padding-top}',
+					right: 'scroll-padding-right: {scroll-padding-right}',
+					bottom: 'scroll-padding-bottom: {scroll-padding-bottom}',
+					left: 'scroll-padding-left: {scroll-padding-left}'
+				}
 			}
 		},
 		'scroll-snap-stop': {
@@ -784,7 +920,9 @@ export const cssFabricSheet = {
 			initial: 'normal',
 			appliesTo: 'all elements',
 			fabric: {
-				'scroll-snap-stop': 'scroll-snap-stop: {scrollSnapStop}'
+				classNames: {
+					'scroll-snap-stop': 'scroll-snap-stop: {scrollSnapStop}'
+				}
 			}
 		}
 	},
@@ -796,11 +934,13 @@ export const cssFabricSheet = {
 			initial: 'none none none none',
 			appliesTo: 'all text elements',
 			fabric: {
-				'text-shadow': 'text-shadow: {text-shadow}',
-				'offset-x': 'text-shadow: {offset-x}',
-				'offset-y': 'text-shadow: {offset-y}',
-				'blur-radius': 'text-shadow: {blur-radius}',
-				color: 'text-shadow: {color}'
+				classNames: {
+					'text-shadow': 'text-shadow: {text-shadow}',
+					'offset-x': 'text-shadow: {offset-x}',
+					'offset-y': 'text-shadow: {offset-y}',
+					'blur-radius': 'text-shadow: {blur-radius}',
+					color: 'text-shadow: {color}'
+				}
 			}
 		},
 		'text-justify': {
@@ -810,7 +950,9 @@ export const cssFabricSheet = {
 			initial: 'auto',
 			appliesTo: 'all elements',
 			fabric: {
-				'text-justify': 'text-justify: {textJustify}'
+				classNames: {
+					'text-justify': 'text-justify: {textJustify}'
+				}
 			}
 		},
 		'text-indent': {
@@ -820,7 +962,9 @@ export const cssFabricSheet = {
 			initial: '0',
 			appliesTo: 'all elements',
 			fabric: {
-				'text-indent': 'text-indent: {textIndent}'
+				classNames: {
+					'text-indent': 'text-indent: {textIndent}'
+				}
 			}
 		},
 		'text-align': {
@@ -830,7 +974,9 @@ export const cssFabricSheet = {
 			initial: 'left',
 			appliesTo: 'all elements',
 			fabric: {
-				'text-align': 'text-align: {textAlign}'
+				classNames: {
+					'text-align': 'text-align: {textAlign}'
+				}
 			}
 		},
 		'text-decoration': {
@@ -840,7 +986,9 @@ export const cssFabricSheet = {
 			initial: 'none',
 			appliesTo: 'all elements',
 			fabric: {
-				'text-decoration': 'text-decoration: {textDecoration}'
+				classNames: {
+					'text-decoration': 'text-decoration: {textDecoration}'
+				}
 			}
 		},
 		'text-transform': {
@@ -850,7 +998,9 @@ export const cssFabricSheet = {
 			initial: 'none',
 			appliesTo: 'all elements',
 			fabric: {
-				'text-transform': 'text-transform: {text-transform}'
+				classNames: {
+					'text-transform': 'text-transform: {text-transform}'
+				}
 			}
 		},
 		'text-overflow': {
@@ -861,7 +1011,9 @@ export const cssFabricSheet = {
 			initial: 'clip',
 			appliesTo: 'all elements',
 			fabric: {
-				'text-overflow': 'text-overflow: {text-overflow}'
+				classNames: {
+					'text-overflow': 'text-overflow: {text-overflow}'
+				}
 			}
 		},
 		whiteSpace: {
@@ -871,7 +1023,9 @@ export const cssFabricSheet = {
 			initial: 'normal',
 			appliesTo: 'all elements',
 			fabric: {
-				'white-space': 'white-space: {white-space}'
+				classNames: {
+					'white-space': 'white-space: {white-space}'
+				}
 			}
 		},
 		wordBreak: {
@@ -881,7 +1035,9 @@ export const cssFabricSheet = {
 			initial: 'normal',
 			appliesTo: 'all elements',
 			fabric: {
-				'word-break': 'word-break: {wordBreak}'
+				classNames: {
+					'word-break': 'word-break: {wordBreak}'
+				}
 			}
 		},
 		wordSpacing: {
@@ -891,7 +1047,9 @@ export const cssFabricSheet = {
 			initial: 'normal',
 			appliesTo: 'all elements',
 			fabric: {
-				'word-spacing': 'word-spacing: {wordSpacing}'
+				classNames: {
+					'word-spacing': 'word-spacing: {wordSpacing}'
+				}
 			}
 		},
 		writingMode: {
@@ -901,7 +1059,9 @@ export const cssFabricSheet = {
 			initial: 'horizontal-tb',
 			appliesTo: 'all elements',
 			fabric: {
-				'writing-mode': 'writing-mode: {writingMode}'
+				classNames: {
+					'writing-mode': 'writing-mode: {writingMode}'
+				}
 			}
 		},
 		hangingPunctuation: {
@@ -911,7 +1071,9 @@ export const cssFabricSheet = {
 			initial: 'none',
 			appliesTo: 'all elements',
 			fabric: {
-				'hanging-punctuation': 'hanging-punctuation: {hangingPunctuation}'
+				classNames: {
+					'hanging-punctuation': 'hanging-punctuation: {hangingPunctuation}'
+				}
 			}
 		},
 		initialLetterAlign: {
@@ -921,7 +1083,9 @@ export const cssFabricSheet = {
 			initial: 'auto',
 			appliesTo: 'all elements',
 			fabric: {
-				'initial-letter-align': 'initial-letter-align: {initialLetterAlign}'
+				classNames: {
+					'initial-letter-align': 'initial-letter-align: {initialLetterAlign}'
+				}
 			}
 		},
 		column: {
@@ -932,7 +1096,9 @@ export const cssFabricSheet = {
 				initial: 'auto',
 				appliesTo: 'all elements',
 				fabric: {
-					'column-count': 'column-count: {columnCount}'
+					classNames: {
+						'column-count': 'column-count: {columnCount}'
+					}
 				}
 			},
 			columnFill: {
@@ -942,7 +1108,9 @@ export const cssFabricSheet = {
 				initial: 'balance',
 				appliesTo: 'all elements',
 				fabric: {
-					'column-fill': 'column-fill: {columnFill}'
+					classNames: {
+						'column-fill': 'column-fill: {columnFill}'
+					}
 				}
 			},
 			columnGap: {
@@ -952,7 +1120,9 @@ export const cssFabricSheet = {
 				initial: 'normal',
 				appliesTo: 'all elements',
 				fabric: {
-					'column-gap': 'column-gap: {columnGap}'
+					classNames: {
+						'column-gap': 'column-gap: {columnGap}'
+					}
 				}
 			},
 			'column-rule': {
@@ -962,10 +1132,13 @@ export const cssFabricSheet = {
 				initial: 'medium none currentColor',
 				appliesTo: 'all elements',
 				fabric: {
-					'column-rule': 'column-rule: {column-rule-width} {column-rule-style} {column-rule-color}',
-					color: 'column-rule-color: {column-rule-color}',
-					style: 'column-rule-style: {column-rule-style}',
-					width: 'column-rule-width: {column-rule-width}'
+					classNames: {
+						'column-rule':
+							'column-rule: {column-rule-width} {column-rule-style} {column-rule-color}',
+						color: 'column-rule-color: {column-rule-color}',
+						style: 'column-rule-style: {column-rule-style}',
+						width: 'column-rule-width: {column-rule-width}'
+					}
 				}
 			},
 			columnRuleColor: {
@@ -975,7 +1148,9 @@ export const cssFabricSheet = {
 				initial: 'currentColor',
 				appliesTo: 'all elements',
 				fabric: {
-					'column-rule-color': 'column-rule-color: {columnRuleColor}'
+					classNames: {
+						'column-rule-color': 'column-rule-color: {columnRuleColor}'
+					}
 				}
 			},
 			columnRuleStyle: {
@@ -986,7 +1161,9 @@ export const cssFabricSheet = {
 				initial: 'none',
 				appliesTo: 'all elements',
 				fabric: {
-					'column-rule-style': 'column-rule-style: {columnRuleStyle}'
+					classNames: {
+						'column-rule-style': 'column-rule-style: {columnRuleStyle}'
+					}
 				}
 			},
 			columnRuleWidth: {
@@ -996,7 +1173,9 @@ export const cssFabricSheet = {
 				initial: 'medium',
 				appliesTo: 'all elements',
 				fabric: {
-					'column-rule-width': 'column-rule-width: {columnRuleWidth}'
+					classNames: {
+						'column-rule-width': 'column-rule-width: {columnRuleWidth}'
+					}
 				}
 			},
 			columnSpan: {
@@ -1006,7 +1185,9 @@ export const cssFabricSheet = {
 				initial: 'none',
 				appliesTo: 'all elements',
 				fabric: {
-					'column-span': 'column-span: {columnSpan}'
+					classNames: {
+						'column-span': 'column-span: {columnSpan}'
+					}
 				}
 			},
 			columnWidth: {
@@ -1016,7 +1197,9 @@ export const cssFabricSheet = {
 				initial: 'auto',
 				appliesTo: 'all elements',
 				fabric: {
-					'column-width': 'column-width: {columnWidth}'
+					classNames: {
+						'column-width': 'column-width: {columnWidth}'
+					}
 				}
 			}
 		}
@@ -1028,7 +1211,9 @@ export const cssFabricSheet = {
 		initial: 'auto',
 		appliesTo: 'all elements',
 		fabric: {
-			'z-index': 'z-index: {z-index}'
+			classNames: {
+				'z-index': 'z-index: {z-index}'
+			}
 		}
 	},
 	'tab-size': {
@@ -1038,7 +1223,9 @@ export const cssFabricSheet = {
 		initial: '8',
 		appliesTo: 'all elements',
 		fabric: {
-			'tab-size': 'tab-size: {tab-size}'
+			classNames: {
+				'tab-size': 'tab-size: {tab-size}'
+			}
 		}
 	},
 	table: {
@@ -1049,7 +1236,9 @@ export const cssFabricSheet = {
 			initial: 'auto',
 			appliesTo: 'table elements',
 			fabric: {
-				layout: 'table-layout: {table-layout}'
+				classNames: {
+					layout: 'table-layout: {table-layout}'
+				}
 			}
 		},
 		collapse: {
@@ -1060,7 +1249,9 @@ export const cssFabricSheet = {
 			initial: 'separate',
 			appliesTo: 'table elements',
 			fabric: {
-				collapse: 'border-collapse: {borderCollapse}'
+				classNames: {
+					collapse: 'border-collapse: {borderCollapse}'
+				}
 			}
 		},
 		'border-spacing': {
@@ -1070,7 +1261,9 @@ export const cssFabricSheet = {
 			initial: '0',
 			appliesTo: 'table elements',
 			fabric: {
-				'border-spacing': 'border-spacing: {border-spacing}'
+				classNames: {
+					'border-spacing': 'border-spacing: {border-spacing}'
+				}
 			}
 		},
 		'empty-cells': {
@@ -1081,7 +1274,9 @@ export const cssFabricSheet = {
 			initial: 'show',
 			appliesTo: 'table elements',
 			fabric: {
-				'empty-cells': 'empty-cells: {empty-cells}'
+				classNames: {
+					'empty-cells': 'empty-cells: {empty-cells}'
+				}
 			}
 		},
 		'caption-side': {
@@ -1091,7 +1286,9 @@ export const cssFabricSheet = {
 			initial: 'top',
 			appliesTo: 'table elements',
 			fabric: {
-				'caption-side': 'caption-side: {caption-side}'
+				classNames: {
+					'caption-side': 'caption-side: {caption-side}'
+				}
 			}
 		}
 	}

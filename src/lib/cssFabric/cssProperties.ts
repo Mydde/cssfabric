@@ -1,12 +1,13 @@
 import { cssFabricSheet } from './cssFabricSheet.js';
+import fsExtra from 'fs-extra';
 
-type CssFabricProperty = {
+type CssFabricFragment = {
 	description: string;
 	syntax: string; // contains | as separator
 	template: string;
 	initial: string;
 	appliesTo: string;
-	fabric: Record<string, string>;
+	fabric: Record<'classNames' | 'declinations', Record<string, string>>;
 };
 
 function camelToUnderscore(str: string) {
@@ -20,9 +21,9 @@ const syntaxDecodeTypeConfig: Record<
 	string,
 	[number, number, number, (string | [number, number])?, [number, number]?] | string[]
 > = {
-	length: [0, 48, 8, 'rem', [2, 16]],
+	length: [0, 52, 16, 'rem'],
 	width: [0, 256, 32, 'rem', [2, 16]],
-	'border-width': [0, 2, 0.5, 'rem', [2, 16]],
+	'border-width': [0, 2, 0.5, 'px', [2, 16]],
 	height: [0, 256, 32, 'rem', [2, 16]],
 	percentage: [0, 100, 10, '%', [2, 16]],
 	number: [0, 10, 1, 'px', [2, 16]],
@@ -48,14 +49,8 @@ class SyntaxDecode {
 		return rest.some((value) => Boolean(syntaxDecodeTypeConfig[value]));
 	}
 	static generateValues(...title: string[]) {
-		console.log(title);
 		let result: Record<string, any> = {};
 		let progression = syntaxDecodeTypeConfig[title[1]] ?? syntaxDecodeTypeConfig[title[0]];
-		// type progression :
-		// si tout les elements sont des string, alors progression avec presets
-		// sinon :
-		// si le dernier element est un tableau, alors progression avec ease
-		// l'unité est : le dernier ou l'avant dernier element du tableau, qui soit une string
 
 		if (progression?.every((value: unknown) => typeof value === 'string')) {
 			// presets iteration
@@ -65,22 +60,18 @@ class SyntaxDecode {
 			});
 		} else {
 			const unity = SyntaxDecode.getUnity(progression);
-			if (Array.isArray(progression?.[progression.length - 1])) {
-				// ease progression
-				progression.forEach((value: string) => {
-					let newKey = `${title[0]}-${value}`;
-					result[cleanSyntaxKey(newKey)] = value + unity;
-				});
-			} else {
-				// linear progression
-				console.log(title, progression);
-				progression.forEach((value: string) => {
-					let newKey = `${fabricTitle}-${value}`;
-					result[cleanSyntaxKey(newKey)] = value;
-				});
+			let [from, to, increment, unit, [ease = 0, trigger] = []] = progression;
+
+			for (
+				let i = from;
+				i <= to;
+				i += i < trigger || i >= to - trigger ? increment / ease : increment
+			) {
+				let newKey = `${title[0]}-${i}`;
+				result[cleanSyntaxKey(newKey)] = [i, unit];
 			}
 		}
-
+		// return value,unity
 		return result;
 	}
 	private static getUnity(arr: any[]): string | null {
@@ -94,8 +85,11 @@ class SyntaxDecode {
 }
 
 class DistributionType {
-	static detectDistributionType(fragment: any): string {
-		let fabricKeys = Object.keys(fragment.fabric);
+	static detectDistributionType(
+		fragment: CssFabricFragment,
+		fabricKey: 'classNames' | 'declinations'
+	): string {
+		let fabricKeys = Object.keys(fragment.fabric[fabricKey]);
 		let syntaxKeys = fragment.syntax.split('|').map((s: string) => s.trim());
 
 		if (!fabricKeys.some((key) => syntaxKeys.includes(key))) {
@@ -186,17 +180,45 @@ class CSSFormalSyntaxDecoder {
 		return decodedSyntax;
 	}
 
-	decodeAndGenerateValue(fragmentPiece: { [key: string]: CssFabricProperty }) {
+	decodeAndGenerateValue(fragmentPiece: { [key: string]: CssFabricFragment }) {
 		let result: Record<string, any> = {};
 		const fragmentTitle = Object.keys(fragmentPiece)[0];
 		const fragment = fragmentPiece[fragmentTitle];
-		const distributionType = DistributionType.detectDistributionType(fragment);
-		Object.keys(fragment.fabric).forEach((fabricKey) => {
-			let fabricTitle =
-				fragmentTitle == fabricKey ? fragmentTitle : `${fragmentTitle}-${fabricKey}`;
-			let syntax = fragment.syntax;
-			let title = fragmentTitle ?? fabricKey;
 
+		let out: Record<string, any> = {};
+		//
+		Object.keys(fragment?.fabric).forEach((fabricMode) => {
+			switch (fabricMode) {
+				case 'classNames':
+					console.log(fabricMode);
+					let classNames = this.applyClassNames(fragment, fabricMode);
+					Object.assign(result, classNames);
+					break;
+				case 'colors':
+					Object.assign(result, {});
+					break;
+			}
+		});
+
+		return result;
+	}
+
+	private applyClassNames(
+		fragment: CssFabricFragment,
+		fabricMode: 'classNames' | 'declinations' | 'colors'
+	): Record<string, any> {
+		let result: Record<string, any> = {};
+		const fragmentTitle = Object.keys(fragment.fabric[fabricMode])[0];
+		const fragmentPiece = fragment.fabric[fabricMode];
+		console.log(fragmentTitle);
+		const distributionType = DistributionType.detectDistributionType(fragment, fabricMode);
+
+		console.log(fragmentPiece);
+		Object.keys(fragmentPiece).forEach((fabricType) => {
+			//const distributionType = DistributionType.detectDistributionType(fragment, fabricType);
+			let syntax = fragment.syntax;
+			let fabricTitle =
+				fragmentTitle == fabricType ? fragmentTitle : `${fragmentTitle}-${fabricType}`;
 			let decodedSyntax = this.decodeFormalSyntax(syntax);
 
 			Object.keys(decodedSyntax).forEach((syntaxKey) => {
@@ -235,7 +257,10 @@ class CSSFormalSyntaxDecoder {
 								for (const [key, value] of Object.entries(
 									SyntaxDecode.generateValues(fabricTitle, syntaxKey)
 								)) {
-									generatedValues[`.${key}`] = value;
+									generatedValues[`.${key}`] = {
+										[`--${fabricTitle}-${value[0]}`]: `${value[0]}${value[1]};`,
+										[`${fabricTitle}`]: `var(--${fabricTitle}-${value[0]});`
+									};
 								}
 							}
 
@@ -253,17 +278,15 @@ class CSSFormalSyntaxDecoder {
 				}
 			});
 		});
-
-		return result;
+		return { [fabricMode]: result };
 	}
 }
 
-type CssFabricPropertyFragment = Record<string, CssFabricProperty>;
-type CssFabricPropertyCatalog = Record<string, CssFabricPropertyFragment | CssFabricProperty>;
+type CssFabricPropertyFragment = Record<string, CssFabricFragment>;
+type CssFabricPropertyCatalog = Record<string, CssFabricPropertyFragment | CssFabricFragment>;
 
 class CSSProperties {
 	private cssProperties: any;
-	private fragment: any;
 	private onlyKeys: string[];
 
 	constructor(cssProperties: any, onlyKeys: string[] = []) {
@@ -300,11 +323,11 @@ class CSSProperties {
 				key = camelToUnderscore(key);
 				const element = cssProperties[key];
 				if (typeof element === 'object') {
+					// migration to new syntax
 					if (element.fabric && this.onlyKeys.includes(key)) {
 						let decoder = new CSSFormalSyntaxDecoder();
 						let result = decoder.decodeAndGenerateValue({ [key]: element });
 						parent += key;
-						//out += `\r/* ${parent} */\r`;
 						out[parent] = result; //JSON.stringify(result); //cssFabricGenerate(element, parent);
 					} else {
 						out = { ...out, ...this.recursiveFabricSearch(element, parent) };
@@ -323,21 +346,54 @@ class CSSProperties {
 }
 
 const cssP = new CSSProperties(cssFabricSheet, [
-	'overflow',
+	'outline',
+	'contain'
+	/* 'margin',
+	'padding', */
+	/* 
+	,'overflow',
 	'list',
 	'flex',
-	'grid',
-	'margin',
-	'padding',
+	'grid', */
+	/* 'color',
+	'cursor' */
+	/* 'width',
+	'height', */
+	/* 'padding',
 	'container',
 	'column',
 	'text-shadow',
 	'box-shadow',
 	'scroll-snap-type',
 	'display',
-	'border',
 	'appearance',
-	'background'
+	'background' */
 ]);
 const cssF = cssP.generateCSS();
 console.log(JSON.stringify(cssF, null, 4));
+
+function modifyObject(obj: Record<string, any>, filepath: string) {
+	for (let key in obj) {
+		if (typeof obj[key] === 'object') {
+			if (obj[key].fabric && !obj[key].fabric.classNames) {
+				let tmp;
+				tmp = obj[key].fabric;
+				obj[key].fabric = {};
+				obj[key].fabric.classNames = tmp;
+			} else {
+				modifyObject(obj[key], filepath);
+			}
+		} else {
+		}
+	}
+}
+
+/* modifyObject(cssFabricSheet, 'here');
+console.log(cssFabricSheet);
+fsExtra.writeFile('here', JSON.stringify(cssFabricSheet), (err) => {
+	if (err) {
+		console.error(err);
+		return;
+	}
+	console.log('File created successfully.');
+}); */
