@@ -1,244 +1,216 @@
+import { cssFabricSheet } from './cssFabricSheet.js';
 import type { CssFabricFragment } from './cssProperties.js';
 import { colorConfig } from './index.js';
 
-type ConfigPiece = Record<ConfPieceTitle, Record<string, any>>;
-type ConfPieceTitle = string;
-/**
- * Generates CSS classes based on a configuration object.
- */
+type Variation =
+	| 'primary'
+	| 'secondary'
+	| 'accent'
+	| 'yellow'
+	| 'orange'
+	| 'discrete'
+	| 'error'
+	| 'dotted'
+	| 'dashed'
+	| 'solid'
+	| 'thin'
+	| 'medium'
+	| 'thick';
+
+type Model = {
+	[key: string]: ModelTags;
+};
+type CssProperty = ('root' | 'palette' | 'scheme') | ('color' | 'style' | 'width' | string);
+type Variations = Variation[];
+type CssBlock = Record<CssProperty, Variations>;
+type ModelTags = Record<CssProperty, Variations | CssBlock>;
+
+const model: Model = {
+	border: {
+		color: {
+			root: ['primary', 'secondary', 'accent'],
+			palette: ['yellow', 'orange'],
+			scheme: ['discrete', 'error']
+		},
+		style: ['dotted', 'dashed', 'solid'],
+		width: ['thin', 'medium', 'thick']
+	}
+};
+
 /*
 
-const conf = {
+from this object :
+title of this model is border
+so we have const mainTag = Object.keys(model)[0] 
+
+const model = {
 	border: {
 		color: {
-			root: ['primary', 'secondary', 'accent', 'neutral', 'error', 'gray'],
-			palette: ['yellow', 'orange', 'red', 'magenta', 'purple', 'green', 'teal', 'blue', 'dark'],
-			scheme: ['discrete', 'success', 'info', 'warning', 'alert', 'error']
+			root: 'primary'|'secondary',
+			palette: 'yellow'|'orange',
+			scheme: 'discrete'
 		},
 		style: ['dotted', 'dashed', 'solid'],
 		width: ['thin', 'medium', 'thick']
 	}
+}; 
+
+const model = {
+	border: {
+		color: {
+			root: ['primary', 'secondary'],
+			palette: ['yellow', 'orange'],
+			scheme: ['discrete'  ]
+		},
+		style: ['dotted', 'dashed', 'solid'],
+		width: ['thin', 'medium', 'thick']
+	}
+}; 
+
+make a javascript program to build this object:
+
+*/
+
+export type CssFabricBlock = {
+	[key: string]: {
+		initial: string;
+		syntax: string;
+		fabric: string;
+		variations: Record<string, string[] | string[][]>;
+	};
 };
 
-
-  */
-export class CssClassGenerator {
-	generate(model: Record<string, any>): any {
-		let classes = {};
-		let modelToParse: any = {};
-		modelToParse.title = Object.keys(model)[0];
-		modelToParse.variations = Object.values(model)[0];
-
-		for (let property in modelToParse.variations) {
-			this.generateCombinations(property, modelToParse.variations, modelToParse.title, {}, classes);
-		}
-
-		return classes;
+const delmoOut = {
+	border: {
+		color: ['blue', 'red', 'green', 'yellow', 'orange'],
+		width: ['thin', 'medium', 'thick'],
+		style: ['solid', 'dashed', 'dotted']
 	}
+};
 
-	/**
-	 * Generates combinations of CSS variations based on the provided parameters.
-	 *
-	 * @param property - The base CSS property.
-	 * @param variations - An object containing the variations for each property.
-	 * @param prefix - The prefix to be added to the CSS class names.
-	 * @param cssProperty - An object containing the CSS properties for each variation.
-	 * @param classes - An object reference to store the generated CSS classes.
-	 */
-	generateCombinations(
-		property: string,
-		variations: any,
-		prefix: string,
-		cssProperty: Record<string, any>,
-		classes: any
-	) {
-		console.log(variations);
-		for (let variation in variations) {
-			let remainingVariations = { ...variations };
-			delete remainingVariations[variation];
-
-			// If the variation is an object (and not an array), iterate over the sub-variations
-			if (typeof variations[variation] === 'object' && !Array.isArray(variations[variation])) {
-				for (let subVariation in variations[variation]) {
-					for (let cssValue of variations[variation][subVariation]) {
-						// create a new prefix for each sub-variation
-						let newPrefix =
-							subVariation === 'root'
-								? `${prefix}-${property}`
-								: `${prefix}-${property}-${subVariation}`;
-						console.log(newPrefix);
-						// create a new cssProperty for each sub-variation
-						let newCssProperty = { ...cssProperty };
-						// add the new cssProperty to the new prefix
-						newCssProperty[`${property}-${newPrefix}`] = cssValue;
-						// add the new prefix and cssProperty to the classes object
-						classes[newPrefix] = newCssProperty;
-						this.generateCombinations(
-							property,
-							remainingVariations,
-							newPrefix,
-							newCssProperty,
-							classes
-						);
-					}
-				}
-			} else {
-				// sub-parameters
-				for (let value of variations[variation]) {
-					let newPrefix = prefix ? `${prefix}-${value}` : `${property}-${value}`;
-					/* let newCssProperty = {
-						red: cssProperty ? `${cssProperty} ${value}` : `${property}:${value}`
-					}; */
-					let newCssProperty = { ...cssProperty };
-					classes[newPrefix] = newCssProperty;
-					/* this.generateCombinations(
-						property,
-						remainingVariations,
-						newPrefix,
-						newCssProperty,
-						classes
-					); */
-				}
-			}
-		}
-	}
-}
-
-class configConversion {
-	/**
-	 * Converts variationsBeforeConversion to variationsAfterConversion.
-	 * @param variationsBeforeConversion - The object containing variations before conversion.
-	 * @returns The object containing variations after conversion.
-	 */
-	static convertVariations(variationsBeforeConversion: {
-		[key: string]: Partial<CssFabricFragment>;
-	}) {
-		let variationsAfterConversion: Record<string, any> = {};
-
-		for (let property in variationsBeforeConversion) {
-			variationsAfterConversion[property] = {};
-			for (let variation in variationsBeforeConversion[property].variations) {
-				let fabricVariations = variationsBeforeConversion[property].variations[variation]
-					.replace(']', '')
-					.replace('[', '')
-					.split(',')
-					.map((item: string) => item.trim()); // Apply trim here
-
-				variationsAfterConversion[property][variation] = {};
-
-				for (let fabricVariation of fabricVariations) {
-					let isRoot = fabricVariation.startsWith('(') && fabricVariation.endsWith(')');
-					let key = isRoot ? fabricVariation.slice(1, -1) : fabricVariation;
-
-					switch (variation) {
-						case 'color':
-							if (colorConfig[key]) {
-								variationsAfterConversion[property][variation][key] = Object.keys(colorConfig[key]);
-								if (isRoot) {
-									variationsAfterConversion[property][variation].root =
-										variationsAfterConversion[property][variation][key];
-									delete variationsAfterConversion[property][variation][key];
-								}
-							}
-							break;
-						default:
-							variationsAfterConversion[property][variation] = fabricVariations;
-							break;
-					}
-				}
-			}
-		}
-
-		return variationsAfterConversion;
-	}
-}
-
-let variationsBeforeConversion = {
+const delmo = {
 	border: {
 		variations: {
-			color: `(theme), palette, scheme`,
-			style: `dotted, dashed, solid`,
-			width: `thin, medium, thick`
+			color: [['(cssFab.theme)'], ['cssFab.palette'], ['cssFab.status']],
+			width: ['thin', 'medium', 'thick'],
+			style: ['solid', 'dashed', 'dotted']
 		}
 	}
 };
-let generator = new CssClassGenerator();
-const converted = configConversion.convertVariations(variationsBeforeConversion); // generator.convertVariations(variationsBeforeConversion);
-console.log(converted);
-console.log(generator.generate(converted));
 
-/* class GenerateCssClasses {
-	classesCSS: any = {};
+// console.log(out);
 
-	generateCombinations(prefix: string, remainingVariations: any, appliedProperties: any) {
-		if (Object.keys(remainingVariations).length === 0) {
-			this.classesCSS[prefix] = appliedProperties;
-			return;
+function loop(fragmentObj: CssFabricBlock) {
+	const fragmentKey = Object.keys(fragmentObj)[0];
+	const fragment = Object.values(fragmentObj)[0];
+
+	let variations = fragment.variations;
+	let variationValues = Object.values(variations);
+	let firstVarKey = variationValues?.[0];
+	let firstKey = Object.keys(variations)?.[0];
+
+	let strap = firstVarKey?.[0];
+
+	let remainingVariations = Object.fromEntries(Object.entries(variations).slice(1));
+	// if first element key is an array of array
+	// then we have to loop on each array
+	if (Array.isArray(strap)) {
+		// loop on each array
+		for (const value of firstVarKey) {
+			console.log(value);
+			// create CssModel
+			value.forEach((element: string) => {
+				console.log(element);
+				// if enclosed by ()
+				const enclosedValue = element.match(/\((.*?)\)/)?.[1];
+				if (enclosedValue) {
+					console.log('will be root:', enclosedValue);
+				}
+				// if contains cssFab.
+				let modelData: Record<string, any> = {
+					[fragmentKey]: { [firstKey]: [], ...remainingVariations }
+				};
+
+				if (element.includes('cssFab.')) {
+					// replace with cssFab.theme
+					const fabTheme = element.split('cssFab.')[1].replace(')', '');
+					// modelData[fabTheme] = {};
+					console.log('fire: ', fragmentKey, fabTheme);
+					modelData[fragmentKey][firstKey] = Object.keys(colorConfig[fabTheme] ?? {});
+					const options = { [firstKey]: fabTheme };
+					console.log(options);
+				}
+
+				// create CssModel
+				console.log(modelData);
+			});
+		}
+	} else {
+		// create CssModel
+	}
+}
+loop(delmo);
+
+class CssModel {
+	verticalModel: Record<string, any>;
+	className: string;
+	insert: string;
+
+	constructor(model: Record<string, any>, insert: string = 'insert') {
+		[this.className, this.verticalModel] = Object.entries(model)[0];
+		this.insert = insert;
+	}
+
+	generateCss(prefix: string = '') {
+		this.generateRoot(this.verticalModel, prefix);
+		return this.generateCombinations(this.verticalModel, prefix);
+	}
+
+	private generateRoot(obj: Record<string, string[]>, prefix: string = '') {
+		let result: Record<string, any> = {};
+		result[`.${this.className}`] = 'thin solid blue';
+		const ref = Object.entries(obj).reduce(
+			(acc: Record<string, string[]>, [style, propertyValues]) => {
+				acc[style] = propertyValues;
+				return acc;
+			},
+			{}
+		);
+	}
+
+	private generateCombinations(
+		obj: Record<string, string[]>,
+		prefix: string = '',
+		remainingCombinations: Record<string, string> = {}
+	): Record<string, any> {
+		let result: Record<string, any> = {};
+
+		// Ajouter la combinaison actuelle au résultat si elle n'est pas vide
+		if (Object.keys(remainingCombinations).length > 0) {
+			result[prefix] = remainingCombinations;
 		}
 
-		for (let property in remainingVariations) {
-			let newVariations = { ...remainingVariations };
-			delete newVariations[property];
+		for (const key in obj) {
+			for (const value of obj[key]) {
+				const newPrefix = prefix + (prefix ? '-' : '.' + this.className + '-') + value;
+				let cssVar = `--var(${this.className}-${key},${value})`;
+				const newCombination = {
+					...remainingCombinations,
+					[`${this.className}-${key}`]: cssVar,
+					[`--${this.className}-${key}`]: value
+				};
 
-			for (let value of remainingVariations[property]) {
-				console.log(appliedProperties);
-				if (property in appliedProperties) {
-					continue;
-				}
-
-				let newPrefix = prefix;
-				if (property === 'root') {
-					newPrefix += '-' + value;
-				} else {
-					newPrefix += '-' + property + '-' + value;
-				}
-
-				let newAppliedProperties = { ...appliedProperties };
-				newAppliedProperties[property] = value;
-				this.generateCombinations(newPrefix, newVariations, newAppliedProperties);
+				const { [key]: _, ...remainingObj } = obj;
+				const subCombinations = this.generateCombinations(remainingObj, newPrefix, newCombination);
+				result = { ...result, ...subCombinations };
 			}
-		}
-	}
-
-	iteration(model: any) {
-		let modelToParse: any = {};
-		modelToParse.title = Object.keys(model)[0];
-		modelToParse.variations = Object.values(model)[0];
-
-		for (let rootProperty in modelToParse.variations) {
-			this.generateCombinations(modelToParse.title, modelToParse.variations[rootProperty], {});
+			// break; // S'arrêter après avoir traité la première clé
 		}
 
-		return this.classesCSS;
+		return result;
 	}
 }
 
-const red3 = new GenerateCssClasses();
-console.log(red3.iteration(converted)); */
-
-type Property = Record<string, string[]>;
-function createProperty(property: Property) {
-	const [propertyKey, propertyValues] = [Object.keys(property), Object.values(property)[0]];
-	console.log(propertyValues);
-}
-
-createProperty({ root: ['primary', 'secondary', 'accent', 'neutral', 'error', 'gray'] });
-
-['primary', 'secondary', 'accent', 'neutral', 'error', 'gray'].forEach((item1) => {
-	console.log(item1);
-	['primary', 'secondary', 'accent', 'neutral', 'error', 'gray'].forEach((itemLevel2) => {
-		console.log(itemLevel2);
-	});
-});
-
-const conf = {
-	border: {
-		color: {
-			root: ['primary', 'secondary', 'accent', 'neutral', 'error', 'gray'],
-			palette: ['yellow', 'orange', 'red', 'magenta', 'purple', 'green', 'teal', 'blue', 'dark'],
-			scheme: ['discrete', 'success', 'info', 'warning', 'alert', 'error']
-		},
-		style: ['dotted', 'dashed', 'solid'],
-		width: ['thin', 'medium', 'thick']
-	}
-};
+const cssModel = new CssModel(delmoOut);
+let results = cssModel.generateCss();
+console.log(results);

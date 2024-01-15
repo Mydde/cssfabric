@@ -5,8 +5,8 @@
 <script lang="ts">
   import Header from '$lib/../components/header/Header.svelte';
   import '../app.css';
-  import HeaderSiteTitle from "../components/HeaderSiteTitle.svelte";
-  import {fabricNavigation} from "../scripts/utils";
+  import HeaderSiteTitle from "../components/HeaderSiteTitle.svelte.js";
+  import {fabricNavigation} from "../scripts/utils.js";
 
   const links: string[] = fabricNavigation.getActiveLinks();
 

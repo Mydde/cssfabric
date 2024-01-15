@@ -29,7 +29,7 @@ export const colorConfig = {
 		blue: '#0078d4',
 		dark: '#323232'
 	},
-	scheme: {
+	status: {
 		discrete: '#ccc',
 		success: 'green',
 		info: '#FFDD57FF',

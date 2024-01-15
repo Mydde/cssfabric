@@ -370,27 +370,6 @@ export const cssFabricSheet = {
 				}
 			}
 		},
-		outline: {
-			description: 'Specifies the outline around an element',
-			syntax: 'outline-color | outline-style | outline-width',
-			template: '[outline: outline] | [{outlineColor} {outlineStyle} {outlineWidth}]',
-			initial: 'invert none medium',
-			appliesTo: 'all box elements',
-			fabric: {
-				classNames: {
-					color: 'outline-color: {outline-color}',
-					style: 'outline-style: {outline-style}',
-					width: 'outline-width: {outline-width}'
-				}
-			},
-			variations: {
-				color: 'theme | palette | status', // arrays of colors
-				style:
-					'auto | none | hidden | dotted | dashed | solid | double | groove | ridge | inset | outset',
-
-				width: 'thin | medium | thick'
-			}
-		},
 		contain: {
 			description: 'Specifies how the container should handle its content',
 			syntax: '[none | strict | content | size | layout | style | paint]',
@@ -799,6 +778,12 @@ export const cssFabricSheet = {
 				classNames: {
 					'border-style': 'border-style: {borderStyle}'
 				}
+			},
+			variations: {
+				color: '(cssFab.theme) | cssFab.palette  | cssFab.status',
+				style:
+					'auto | none | hidden | dotted | dashed | solid | double | groove | ridge | inset | outset',
+				width: 'thin | medium | thick'
 			}
 		},
 		borderColor: {
@@ -811,6 +796,27 @@ export const cssFabricSheet = {
 				classNames: {
 					'border-color': 'border-color: {border-color}'
 				}
+			}
+		},
+		outline: {
+			description: 'Specifies the outline around an element',
+			syntax: 'outline-color | outline-style | outline-width',
+			template: '[outline: outline] | [{outlineColor} {outlineStyle} {outlineWidth}]',
+			initial: 'invert none medium',
+			appliesTo: 'all box elements',
+			fabric: {
+				classNames: {
+					color: 'outline-color: {outline-color}',
+					style: 'outline-style: {outline-style}',
+					width: 'outline-width: {outline-width}'
+				}
+			},
+			variations: {
+				color: '(cssFab.theme) | cssFab.palette  | cssFab.status',
+				style:
+					'auto | none | hidden | dotted | dashed | solid | double | groove | ridge | inset | outset',
+
+				width: 'thin | medium | thick'
 			}
 		}
 	},

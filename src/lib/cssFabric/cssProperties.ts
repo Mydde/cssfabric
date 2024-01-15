@@ -283,8 +283,11 @@ class CSSFormalSyntaxDecoder {
 	}
 }
 
-type CssFabricPropertyFragment = Record<string, CssFabricFragment>;
-type CssFabricPropertyCatalog = Record<string, CssFabricPropertyFragment | CssFabricFragment>;
+export type CssFabricPropertyFragment = Record<string, CssFabricFragment>;
+export type CssFabricPropertyCatalog = Record<
+	string,
+	CssFabricPropertyFragment | CssFabricFragment
+>;
 
 class CSSProperties {
 	private cssProperties: any;
