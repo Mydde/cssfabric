@@ -1,5 +1,15 @@
 import { cssFabricSheet } from './cssFabricSheet.js';
-// import fsExtra from 'fs-extra';
+import fsExtra from 'fs-extra';
+import { CssFabricVariations } from './cssVariationsAi.js';
+
+export type CssFabricBlock = {
+	[key: string]: {
+		initial: string;
+		syntax: string;
+		fabric: Record<'classNames' | 'declinations' | 'variations', Record<string, string>>;
+		variations: Record<string, string[] | string[][]>;
+	};
+};
 
 export type CssFabricFragment = {
 	description: string;
@@ -7,7 +17,7 @@ export type CssFabricFragment = {
 	template: string;
 	initial: string;
 	appliesTo: string;
-	fabric: Record<'classNames' | 'declinations', Record<string, string>>;
+	fabric: Record<'classNames' | 'declinations' | 'variations', Record<string, string>>;
 	variations: Record<string, string>;
 };
 
@@ -16,7 +26,6 @@ function camelToUnderscore(str: string) {
 }
 
 type RenderMode = 'length' | 'percentage' | 'range' | 'number' | 'raw';
-type NoRaw = 'length' | 'percentage' | 'number' | 'width' | 'height' | 'color';
 
 const syntaxDecodeTypeConfig: Record<
 	string,
@@ -191,9 +200,29 @@ class CSSFormalSyntaxDecoder {
 		Object.keys(fragment?.fabric).forEach((fabricMode) => {
 			switch (fabricMode) {
 				case 'classNames':
-					console.log(fabricMode);
 					let classNames = this.applyClassNames(fragment, fabricMode);
-					Object.assign(result, classNames);
+					//console.log(classNames);
+
+					// Object.assign(result, classNames);
+					if (Object.keys(classNames.classNames).length > 0)
+						result = { ...result, ...classNames.classNames };
+
+					/* if (Object.keys(classNames.classNames).length == 0)
+						console.log(fragmentTitle, Object.keys(classNames.classNames).length); */
+					break;
+				case 'vertical':
+					console.log(fabricMode);
+					console.log(fragment.fabric);
+					break;
+				case 'variations':
+					const ouh = { [fragmentTitle]: fragment.fabric };
+
+					const tr = CSSFormalSyntaxDecoder.translateVariations(ouh);
+					//console.log(tr);
+					console.log(CssFabricVariations.loopVariations(tr));
+
+					const gf = { [fragmentTitle]: CssFabricVariations.loopVariations(tr) };
+					result = { ...result, ...gf };
 					break;
 				case 'colors':
 					Object.assign(result, {});
@@ -201,7 +230,19 @@ class CSSFormalSyntaxDecoder {
 			}
 		});
 
+		// console.log(result);
 		return result;
+	}
+
+	static translateVariations(cssBlock: CssFabricBlock) {
+		let out: Record<string, any> = { ...cssBlock };
+		const mdl = Object.keys(cssBlock)[0];
+
+		Object.entries(cssBlock[mdl].variations).forEach(([key, value]) => {
+			// console.log(value);
+			out[mdl].variations[key] = value.split('|').map((v) => v.trim());
+		});
+		return out;
 	}
 
 	private applyClassNames(
@@ -211,10 +252,10 @@ class CSSFormalSyntaxDecoder {
 		let result: Record<string, any> = {};
 		const fragmentTitle = Object.keys(fragment.fabric[fabricMode])[0];
 		const fragmentPiece = fragment.fabric[fabricMode];
-		console.log(fragmentTitle);
+		// console.log(fragmentTitle);
 		const distributionType = DistributionType.detectDistributionType(fragment, fabricMode);
 
-		console.log(fragmentPiece);
+		//console.log(fragmentPiece);
 		Object.keys(fragmentPiece).forEach((fabricType) => {
 			//const distributionType = DistributionType.detectDistributionType(fragment, fabricType);
 			let syntax = fragment.syntax;
@@ -251,7 +292,7 @@ class CSSFormalSyntaxDecoder {
 								};
 							}
 							if (SyntaxDecode.hasProgression(fabricTitle, syntaxKey)) {
-								console.log(SyntaxDecode.generateValues(fabricTitle, syntaxKey));
+								//console.log(SyntaxDecode.generateValues(fabricTitle, syntaxKey));
 
 								generatedValues = {};
 
@@ -289,7 +330,7 @@ export type CssFabricPropertyCatalog = Record<
 	CssFabricPropertyFragment | CssFabricFragment
 >;
 
-class CSSProperties {
+export class CSSProperties {
 	private cssProperties: any;
 	private onlyKeys: string[];
 
@@ -326,55 +367,45 @@ class CSSProperties {
 			if (this.chkValidity(cssProperties[key]) && cssProperties.hasOwnProperty(key)) {
 				key = camelToUnderscore(key);
 				const element = cssProperties[key];
+				const elementTitle = Object.keys(cssProperties)[0];
 				if (typeof element === 'object') {
 					// migration to new syntax
-					if (element.fabric && this.onlyKeys.includes(key)) {
-						let decoder = new CSSFormalSyntaxDecoder();
-						let result = decoder.decodeAndGenerateValue({ [key]: element });
-						parent += key;
-						out[parent] = result; //JSON.stringify(result); //cssFabricGenerate(element, parent);
+					if (element.fabric && (!this.onlyKeys.length || this.onlyKeys.includes(key))) {
+						try {
+							let decoder = new CSSFormalSyntaxDecoder();
+							let result = decoder.decodeAndGenerateValue({ [key]: element });
+							let oldParent = parent ?? parent;
+							parent += key;
+							if (!out[parent]) out[parent] = {};
+							// if (!out[parent][elementTitle]) out[parent][elementTitle] = {};
+							console.log(elementTitle);
+							out[parent] = { ...out[parent], ...result }; //JSON.stringify(result); //cssFabricGenerate(element, parent);
+							//cout[parent][elementTitle] = { ...out[parent][elementTitle], ...result }; //JSON.stringify(result); //cssFabricGenerate(element, parent);
+						} catch (err) {
+							//console.log(key, err);
+							out[parent] = { cssError: key };
+						}
 					} else {
 						out = { ...out, ...this.recursiveFabricSearch(element, parent) };
 						parent = '';
 					}
 				}
+			} else {
+				console.log(key);
 			}
 			parent = '';
 		}
 		return out;
 	}
 
-	public generateCSS(): string {
+	public generateCSS(): Record<string, any> {
 		return this.recursiveFabricSearch(this.cssProperties);
 	}
 }
 
-const cssP = new CSSProperties(cssFabricSheet, [
-	'outline',
-	'contain'
-	/* 'margin',
-	'padding', */
-	/* 
-	,'overflow',
-	'list',
-	'flex',
-	'grid', */
-	/* 'color',
-	'cursor' */
-	/* 'width',
-	'height', */
-	/* 'padding',
-	'container',
-	'column',
-	'text-shadow',
-	'box-shadow',
-	'scroll-snap-type',
-	'display',
-	'appearance',
-	'background' */
-]);
-const cssF = cssP.generateCSS();
-console.log(JSON.stringify(cssF, null, 4));
+/* const cssF = cssP.generateCSS();
+console.log(cssF); */
+// console.log(JSON.stringify(cssF, null, 4));
 
 function modifyObject(obj: Record<string, any>, filepath: string) {
 	for (let key in obj) {
@@ -391,13 +422,3 @@ function modifyObject(obj: Record<string, any>, filepath: string) {
 		}
 	}
 }
-
-/* modifyObject(cssFabricSheet, 'here');
-console.log(cssFabricSheet);
-fsExtra.writeFile('here', JSON.stringify(cssFabricSheet), (err) => {
-	if (err) {
-		console.error(err);
-		return;
-	}
-	console.log('File created successfully.');
-}); */

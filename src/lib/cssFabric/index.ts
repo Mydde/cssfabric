@@ -1,43 +1,15 @@
 import fsExtra from 'fs-extra';
 import { harmony } from 'simpler-color';
+import { colorConfig } from './config.js';
+import { CSSProperties } from './cssProperties.js';
+import { cssFabricSheet } from './cssFabricSheet.js';
 
 type Steps = [number, number, number];
-type Maskdd = [Ease, EaseTrigger];
 type Mask = string;
 type ToMask = string;
-type CssRule = string;
 type EaseTrigger = number;
 type Ease = number;
 
-export const colorConfig = {
-	theme: {
-		primary: '',
-		secondary: '',
-		accent: '',
-		neutral: '',
-		error: '',
-		gray: '#323130'
-	},
-	palette: {
-		yellow: '#ffb900',
-		orange: '#d83b01',
-		red: '#d13438',
-		magenta: '#b4009e',
-		purple: '#5c2d91',
-		green: '#107c10',
-		teal: '#008272',
-		blue: '#0078d4',
-		dark: '#323232'
-	},
-	status: {
-		discrete: '#ccc',
-		success: 'green',
-		info: '#FFDD57FF',
-		warning: 'hsl(48, 96%, 46%)',
-		alert: 'hsl(27, 100%, 50%)',
-		error: '#d13438'
-	}
-};
 class CssFabricExport {
 	private cssFabricModel: cssFabricModelType;
 
@@ -251,10 +223,11 @@ class CssFabricBuilder {
 
 	mainRule(vars: Record<string, any>, prefix: string) {
 		const collect: Record<string, any> = {};
-		Object.keys(vars).forEach((key) => {
-			const val = vars[key];
-			collect[key] = { [`${prefix}${key}`]: `${val};` };
-		});
+		if (vars)
+			Object.keys(vars).forEach((key) => {
+				const val = vars[key];
+				collect[key] = { [`${prefix}${key}`]: `${val};` };
+			});
 
 		return collect;
 	}
@@ -399,7 +372,10 @@ class CssFabric {
 		} as CssFabricBuilderParams;
 	}
 
-	create(...args: cssFabricModelKey[]): { export: CssFabricExport['export']; css: string } {
+	createCssFabricVarsColors(...args: cssFabricModelKey[]): {
+		export: CssFabricExport['export'];
+		css: string;
+	} {
 		args.forEach((modelKey) => {
 			switch (this.cleanModelKey(modelKey)) {
 				case 'base':
@@ -423,7 +399,7 @@ class CssFabric {
 					break;
 				case 'status':
 					this.cssFabricModel.status = this.cssFabricBuilder.mainRule(
-						this.cssFabricBuilderParams.config.scheme,
+						this.cssFabricBuilderParams.config.status,
 						this.vendor('status-')
 					);
 					break;
@@ -466,25 +442,29 @@ class CssFabric {
 			css: JSON.stringify(this.cssFabricModel)
 		};
 	}
-}
+	cssFabricSheet() {
+		const cssP = new CSSProperties(cssFabricSheet /* , ['overflow'] */);
+		const cssF = cssP.generateCSS();
 
-export const cssFabric = new CssFabric();
-
-/* const model = cssFabric.create('base', 'palette', 'presets', 'status', 'out', 'gray', 'out2');
-model.export({ css: './css-fabric.css', json: './cssFabric.json' }); */
-
-// receive a list of arguments as strings
-// transform it to enum
-class Utils {
-	static list<T>(...args: string[]) {
-		const enumObj: Record<string, string> = {};
-
-		args.forEach((arg: string, index) => {
-			enumObj[arg] = arg;
-		});
-
-		return enumObj;
+		return {
+			export: (options) => new CssFabricExport(cssF, options).export(options),
+			css: cssF
+		};
 	}
 }
+// overflow , text-overflow, text-decoration
 
-Utils.list('base', 'palette', 'presets', 'status', 'out', 'gray', 'out2');
+export const cssFabric = new CssFabric();
+const styleSheet = cssFabric.cssFabricSheet();
+styleSheet.export({ css: './css-fabric-sheet.css', json: './cssFabric-sheet.json' });
+
+/* const model = cssFabric.createCssFabricVarsColors(
+	'base',
+	'palette',
+	'presets',
+	'status',
+	'out',
+	'gray',
+	'out2'
+);
+model.export({ css: './css-fabric.css', json: './cssFabric.json' }); */

@@ -70,8 +70,8 @@ export const cssFabricSheet = {
 			}
 		}
 	},
-	list: {
-		'list-style': {
+	ol: {
+		list: {
 			description: 'Specifies the type of list-item marker',
 			syntax: 'list-style-type | list-style-position | list-style-image',
 			template:
@@ -79,24 +79,15 @@ export const cssFabricSheet = {
 			initial: 'disc outside none',
 			appliesTo: 'all elements',
 			fabric: {
-				classNames: {
-					style: 'list-style: {listStyleType} {listStylePosition} {listStyleImage}',
-					type: 'list-style-type: {listStyleType}',
-					position: 'list-style-position: {listStylePosition}',
-					image: 'list-style-image: {listStyleImage}'
+				variations: {
+					type: 'square | circle | disc | decimal | decimal-leading-zero | lower-roman | upper-roman | lower-greek | lower-latin | upper-latin | armenian | georgian | lower-alpha | upper-alpha ',
+					position: 'top | bottom | inside | outside',
+					image: 'none'
 				}
 			}
 		}
 	},
 	container: {
-		grid: {
-			description: 'Specifies the properties for a grid container',
-			syntax:
-				'grid-template-rows | grid-template-columns | grid-template-areas | grid-auto-rows | grid-auto-columns | grid-auto-flow | grid | grid-area | grid-row | grid-column | grid-row-start | grid-row-end | grid-column-start | grid-column-end',
-			template: 'grid: {grid}',
-			initial: 'none',
-			appliesTo: 'grid containers'
-		},
 		flex: {
 			description: 'Specifies the properties for a flex container',
 			syntax:
@@ -106,13 +97,22 @@ export const cssFabricSheet = {
 			initial: '0 1 auto',
 			appliesTo: 'flex containers',
 			fabric: {
-				classNames: {
-					direction: 'flex-direction: {flexDirection}',
-					wrap: 'flex-wrap: {flexWrap}',
-					flow: 'flex-flow: {flexFlow}'
+				variations: {
+					wrap: 'wrap | no-wrap',
+					direction: 'row | row-reverse | column | column-reverse'
+					//flow:
 				}
 			}
 		},
+		grid: {
+			description: 'Specifies the properties for a grid container',
+			syntax:
+				'grid-template-rows | grid-template-columns | grid-template-areas | grid-auto-rows | grid-auto-columns | grid-auto-flow | grid | grid-area | grid-row | grid-column | grid-row-start | grid-row-end | grid-column-start | grid-column-end',
+			template: 'grid: {grid}',
+			initial: 'none',
+			appliesTo: 'grid containers'
+		},
+
 		'align-content': {
 			description:
 				'Specifies the alignment between the lines inside a flexible container when the items do not use all available space',
@@ -122,7 +122,7 @@ export const cssFabricSheet = {
 			appliesTo: 'flex containers',
 			fabric: {
 				classNames: {
-					'align-content': 'align-content: {align-content}'
+					'flex-align-content': 'align-content: {align-content}'
 				}
 			}
 		},
@@ -329,8 +329,8 @@ export const cssFabricSheet = {
 			fabric: {
 				classNames: {
 					overflow: 'overflow: {overflow}',
-					x: 'overflow-x: {overflowX}',
-					y: 'overflow-y: {overflowY}'
+					x: 'overflow-x: {overflow-x}',
+					y: 'overflow-y: {overflow-y}'
 				}
 			}
 		},
@@ -453,17 +453,18 @@ export const cssFabricSheet = {
 		appliesTo: 'all elements',
 		fabric: {
 			classNames: {
-				'filter-blur': 'filter-blur: blur({blur})',
-				filterBrightness: 'filter-brightness: brightness({brightness})',
-				filterContrast: 'filter-contrast: contrast({contrast})',
-				filterDropShadow: 'filter-drop-shadow: drop-shadow({dropShadow})',
-				filterGrayscale: 'filter-grayscale: grayscale({grayscale})',
-				filterHueRotate: 'filter-hue-rotate: hue-rotate({hueRotate})',
-				filterInvert: 'filter-invert: invert({invert})',
-				filterOpacity: 'filter-opacity: opacity({opacity})',
-				filterSaturate: 'filter-saturate: saturate({saturate})',
-				filterSepia: 'filter-sepia: sepia({sepia})',
-				filterUrl: 'filter-url: url({url})'
+				none: 'filter-blur: none',
+				blur: 'filter-blur: blur({blur})',
+				brightness: 'filter-brightness: brightness({brightness})',
+				contrast: 'filter-contrast: contrast({contrast})',
+				'drop-shadow': 'filter-drop-shadow: drop-shadow({drop-shadow})',
+				grayscale: 'filter-grayscale: grayscale({grayscale})',
+				'hue-rotate': 'filter-hue-rotate: hue-rotate({hue-rotate})',
+				invert: 'filter-invert: invert({invert})',
+				opacity: 'filter-opacity: opacity({opacity})',
+				saturate: 'filter-saturate: saturate({saturate})',
+				sepia: 'filter-sepia: sepia({sepia})',
+				url: 'filter-url: url({url})'
 			}
 		}
 	},
@@ -733,10 +734,16 @@ export const cssFabricSheet = {
 			initial: 'medium none currentColor',
 			appliesTo: 'all box elements',
 			fabric: {
-				classNames: {
+				/* classNames: {
 					'border-width': 'border-width: {border-width}',
 					'border-style': 'border-style: {border-style}',
 					'border-color': 'border-color: {border-color}'
+				}, */
+				variations: {
+					color: '(cssFab.theme) | cssFab.palette  | cssFab.status',
+					style:
+						'auto | none | hidden | dotted | dashed | solid | double | groove | ridge | inset | outset',
+					width: 'thin | medium | thick'
 				}
 			}
 		},
@@ -778,12 +785,6 @@ export const cssFabricSheet = {
 				classNames: {
 					'border-style': 'border-style: {borderStyle}'
 				}
-			},
-			variations: {
-				color: '(cssFab.theme) | cssFab.palette  | cssFab.status',
-				style:
-					'auto | none | hidden | dotted | dashed | solid | double | groove | ridge | inset | outset',
-				width: 'thin | medium | thick'
 			}
 		},
 		borderColor: {
@@ -805,18 +806,18 @@ export const cssFabricSheet = {
 			initial: 'invert none medium',
 			appliesTo: 'all box elements',
 			fabric: {
-				classNames: {
+				/* classNames: {
 					color: 'outline-color: {outline-color}',
 					style: 'outline-style: {outline-style}',
 					width: 'outline-width: {outline-width}'
-				}
-			},
-			variations: {
-				color: '(cssFab.theme) | cssFab.palette  | cssFab.status',
-				style:
-					'auto | none | hidden | dotted | dashed | solid | double | groove | ridge | inset | outset',
+				}, */
+				variations: {
+					color: '(cssFab.theme) | cssFab.palette  | cssFab.status',
+					style:
+						'auto | none | hidden | dotted | dashed | solid | double | groove | ridge | inset | outset',
 
-				width: 'thin | medium | thick'
+					width: 'thin | medium | thick'
+				}
 			}
 		}
 	},
