@@ -204,11 +204,12 @@ class CSSFormalSyntaxDecoder {
 					//console.log(classNames);
 
 					// Object.assign(result, classNames);
-					if (Object.keys(classNames.classNames).length > 0)
-						result = { ...result, ...classNames.classNames };
+					if (Object.keys(classNames.classNames).length > 0) {
+						result = { ...result, classNames: classNames.classNames };
+						/* const gf = { [fragmentTitle]: { classNames: classNames.className } };
+						result = { ...result, ...gf }; */
+					}
 
-					/* if (Object.keys(classNames.classNames).length == 0)
-						console.log(fragmentTitle, Object.keys(classNames.classNames).length); */
 					break;
 				case 'vertical':
 					console.log(fabricMode);
@@ -219,9 +220,8 @@ class CSSFormalSyntaxDecoder {
 
 					const tr = CSSFormalSyntaxDecoder.translateVariations(ouh);
 					//console.log(tr);
-					console.log(CssFabricVariations.loopVariations(tr));
 
-					const gf = { [fragmentTitle]: CssFabricVariations.loopVariations(tr) };
+					const gf = { [fragmentTitle]: { classNames: CssFabricVariations.loopVariations(tr) } };
 					result = { ...result, ...gf };
 					break;
 				case 'colors':
