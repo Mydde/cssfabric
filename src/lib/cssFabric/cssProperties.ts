@@ -190,36 +190,37 @@ class CSSFormalSyntaxDecoder {
 		return decodedSyntax;
 	}
 
-	decodeAndGenerateValue(fragmentPiece: { [key: string]: CssFabricFragment }) {
+	decodeAndGenerateValue(
+		fragmentPiece: { [key: string]: CssFabricFragment },
+		key = '',
+		followUp = ''
+	) {
 		let result: Record<string, any> = {};
 		const fragmentTitle = Object.keys(fragmentPiece)[0];
 		const fragment = fragmentPiece[fragmentTitle];
 
 		let out: Record<string, any> = {};
 		//
+		// console.log('----------------------------------', key, fragmentTitle);
 		Object.keys(fragment?.fabric).forEach((fabricMode) => {
 			switch (fabricMode) {
 				case 'classNames':
 					let classNames = this.applyClassNames(fragment, fabricMode);
-					//console.log(classNames);
+					//console.log('followUp', followUp);
 
-					// Object.assign(result, classNames);
 					if (Object.keys(classNames.classNames).length > 0) {
-						result = { ...result, classNames: classNames.classNames };
-						/* const gf = { [fragmentTitle]: { classNames: classNames.className } };
-						result = { ...result, ...gf }; */
+						// result = { ...result, [fragmentTitle]: { classNames: classNames.classNames } };
+						result = { ...result, ...{ classNames: classNames.classNames } };
 					}
 
 					break;
 				case 'vertical':
-					console.log(fabricMode);
-					console.log(fragment.fabric);
+					/* console.log(fabricMode);
+					console.log(fragment.fabric); */
 					break;
 				case 'variations':
 					const ouh = { [fragmentTitle]: fragment.fabric };
-
 					const tr = CSSFormalSyntaxDecoder.translateVariations(ouh);
-					//console.log(tr);
 
 					const gf = { [fragmentTitle]: { classNames: CssFabricVariations.loopVariations(tr) } };
 					result = { ...result, ...gf };
@@ -360,45 +361,60 @@ export class CSSProperties {
 
 	private recursiveFabricSearch(
 		cssProperties: CssFabricPropertyCatalog,
-		parent: string = ''
+		parent: string = '',
+		followUp: string[] = []
 	): Record<string, any> {
 		let out: Record<string, any> = {};
 		for (let key in cssProperties) {
+			// if (key == 'box') console.log(key);
 			if (this.chkValidity(cssProperties[key]) && cssProperties.hasOwnProperty(key)) {
 				key = camelToUnderscore(key);
+				if (key == 'box') console.log(key, parent);
+
 				const element = cssProperties[key];
 				const elementTitle = Object.keys(cssProperties)[0];
 				if (typeof element === 'object') {
 					// migration to new syntax
 					if (element.fabric && (!this.onlyKeys.length || this.onlyKeys.includes(key))) {
+						console.log('done followUp', key);
+						followUp.push(key);
 						try {
 							let decoder = new CSSFormalSyntaxDecoder();
-							let result = decoder.decodeAndGenerateValue({ [key]: element });
-							let oldParent = parent ?? parent;
+							let result = decoder.decodeAndGenerateValue({ [key]: element }, key, followUp);
+
 							parent += key;
 							if (!out[parent]) out[parent] = {};
-							// if (!out[parent][elementTitle]) out[parent][elementTitle] = {};
-							console.log(elementTitle);
-							out[parent] = { ...out[parent], ...result }; //JSON.stringify(result); //cssFabricGenerate(element, parent);
-							//cout[parent][elementTitle] = { ...out[parent][elementTitle], ...result }; //JSON.stringify(result); //cssFabricGenerate(element, parent);
+
+							out[parent] = { ...out[parent], ...result };
+							//followUp = '';
 						} catch (err) {
-							//console.log(key, err);
 							out[parent] = { cssError: key };
+							// followUp = '';
 						}
+						// followUp = [];
 					} else {
-						out = { ...out, ...this.recursiveFabricSearch(element, parent) };
+						out = { ...out, ...this.recursiveFabricSearch(element, key, followUp) };
+						followUp = [];
 						parent = '';
+						//followUp = '';
 					}
 				}
 			} else {
-				console.log(key);
+				// console.log(key);
+				//console.log('done', followUp);
+				// followUp += key;
 			}
+			//console.log('done', followUp);
 			parent = '';
+			// followUp = '';
 		}
 		return out;
 	}
 
 	public generateCSS(): Record<string, any> {
+		// console.log('-----------------------------------------------------------------------');
+		// console.log(this.cssProperties);
+		console.log('-----------------------------------------------------------------------');
 		return this.recursiveFabricSearch(this.cssProperties);
 	}
 }

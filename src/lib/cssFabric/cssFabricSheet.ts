@@ -1,5 +1,5 @@
 export const cssFabricSheet = {
-	display: {
+	/* display: {
 		description: 'Specifies how an element is displayed',
 		syntax:
 			'[inline | block | contents | flex | grid | inline-block | inline-flex | inline-grid | inline-table | list-item | none | run-in | table | table-caption | table-cell | table-column | table-column-group | table-footer-group | table-header-group | table-row | table-row-group]',
@@ -31,7 +31,7 @@ export const cssFabricSheet = {
 				'table-row-group': 'display: table-row-group'
 			}
 		}
-	},
+	}, */
 	appearance: {
 		description: 'Specifies the appearance of an element',
 		syntax: 'auto | none',
