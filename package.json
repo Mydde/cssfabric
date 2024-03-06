@@ -1,7 +1,7 @@
 {
 	"name": "@medyll/cssfabric",
 	"scope": "@medyll",
-	"version": "0.2.1-beta.4",
+	"version": "0.2.1-beta.5",
 	"scripts": {
 		"dev": "vite dev",
 		"build": "vite build && npm run package",

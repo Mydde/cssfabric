@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.2.1-beta.5](https://github.com/medyll/cssfabric/compare/v0.2.1-beta.4...v0.2.1-beta.5) (2024-03-06)
+
+
+### Bug Fixes
+
+* missing exports for fabric sheet ([05e9eee](https://github.com/medyll/cssfabric/commit/05e9eee205809ad2d2691bfa23e0497593ad2543))
+
 ### [0.2.1-beta.4](https://github.com/medyll/cssfabric/compare/v0.2.1-beta.3...v0.2.1-beta.4) (2024-03-06)
 
 ### [0.2.1-beta.3](https://github.com/medyll/cssfabric/compare/v0.2.1-beta.2...v0.2.1-beta.3) (2024-03-06)
