@@ -23,32 +23,20 @@ export const cssfProcessor = postcss([myPlugin()]);
 cssfProcessor
 	.process(
 		`{
-			position  {
-				top: 4px 18px; 
-				margin: 0px 5px;
-			}  
-			box {
-				border: 4px 5px;
-				shadow: 4px 5px;
-				radius: 4px 5px 4px 5px;
-				overflow: hidden scroll;
+			
+			element {
+				position: top() left() right() bottom() margin();		
+				box: border() shadow() radius() overflow( x auto, y hidden);	
+				gutter: type() gap() padding();
+				size: width() height() ratio();
+				typography: font() size() style() underline() shadow();
+				color: text() bg() opacity();
+				animate: transition() all() duration() timing() delay();
 			}
-			gutter { 
-				padding: 4px 6px ;
-			}
-			size {
-				width: 100% 30px 20rem;
-				height: 100% 30px 20rem;
-				ratio : 16px 9px
-			}
-			position {
-				let: 20rem;
-				right: 20rem;
-				bottom: 20rem;
+			 
+			  
+			 
 
-
-
-			}
 		`
 	)
 	.then((result) => {
