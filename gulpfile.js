@@ -413,7 +413,7 @@ async function transformSass2css() {
 
 
 export function watchSass() {
-
+doIt()
     const watcher = chokidar.watch(fabricModuleDir + "/**/*.scss", {
         ignored: /(^|[\/\\])temp\.scss$/, // ignore temp.scss
         persistent: true,
