@@ -25,7 +25,7 @@ class FileProcessor {
 	_recursiveListSvelteFile(directory, target) {
 		const files = glob.sync(directory + '/*', {
 			ignore: [
-				directory + '/**index.ts',
+				// directory + '/index.ts',
 				directory + '/**.demo.*',
 				directory + '/**Demo.*',
 				directory + '/**preview.*',
@@ -93,7 +93,7 @@ class FileProcessor {
 }
 
 function main() {
-	new FileProcessor('./src/lib/cssf', '$lib/cssf').makeIndexFile();
+	new FileProcessor('./src/lib', '$lib').makeIndexFile();
 }
 
 main();

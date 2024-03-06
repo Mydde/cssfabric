@@ -1,4 +1,4 @@
-import { cssFabric } from '$lib/cssFabric/index.js';
+import { cssFabric } from '$lib/index.js';
 import type { PageServerLoad } from '../$types.js';
 import cssFabricSheet from '../../../cssFabric-sheet.json';
 
