@@ -1,10 +1,10 @@
 @use "../_utils";
 @use "sass:color";
-@use "../../cssfabric/modules/color/color-vars";
-@use "../../cssfabric/modules/color/color-build" as colorBuild;
-@use "../../cssfabric/modules/box/box-build" as boxBuild;
-@use "../../cssfabric/modules/theme/theme-build" as themeBuild;
-@use "../../cssfabric/modules/text/text-build" as textBuild;
+@use "./color/color-vars";
+@use "./color/color-build" as colorBuild;
+@use "./box/box-build" as boxBuild;
+@use "./theme/theme-build" as themeBuild;
+@use "./text/text-build" as textBuild;
 
 @import "cssfabric-config";
 
@@ -22,10 +22,9 @@ cssFabric vars
   @include boxBuild.pmbCssVars();
   /* shadows */
   @include boxBuild.shadowsCssVars();
-  
+
   // @include themeBuild.themeBaseVars($theme-color-foreground, $theme-color-background, $theme-color-paper);
 
-  
   &,
   [data-theme="light"] {
     @include themeBuild.themeBaseVars($theme-color-foreground, $theme-color-background, $theme-color-paper);

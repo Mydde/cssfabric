@@ -229,7 +229,7 @@ const doFabric = {
         // return ""
 
         let out = header;
-        out += "\r\n" + importExport + "\r\n";
+        out += "\r\n\r\n" + importExport + "\r\n\r\n" + importExport + "\r\n";
         out += footer;
 
         function makeHeader(path, module_name) {
@@ -422,11 +422,11 @@ doIt()
         console.log('watchSass, listening for changes')
 
     watcher
+        .on('start', (path) => doIt())
         .on('change', (path) => doIt())
         .on('unlink', (path) => doIt());
 
     function doIt() {
-        console.log('running')
         transformSass2css();
         task_varsExport_replacement();
         task_readme_new();

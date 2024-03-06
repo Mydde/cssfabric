@@ -1,6 +1,4 @@
 @use "sass:map";
-@use '../../../vendor/normalize/normalize.min.css';
-
 
 p {
   margin: auto;
@@ -24,7 +22,6 @@ p {
       display: none;
     }
   }
-
 }
 
 .block:not(:last-child) {
@@ -49,15 +46,13 @@ h6 {
 }
 
 .cell-padding {
-  & > *  {
+  & > * {
     padding: 0.25em;
   }
 }
 
 .cell-spacing {
-  & > *  {
+  & > * {
     margin: 0.25em;
   }
 }
-
-
