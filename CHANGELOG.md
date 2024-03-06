@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.2.1-beta.6](https://github.com/medyll/cssfabric/compare/v0.2.1-beta.5...v0.2.1-beta.6) (2024-03-06)
+
+
+### Bug Fixes
+
+* readme is back at latest version ([0ea0f16](https://github.com/medyll/cssfabric/commit/0ea0f16fc5ade5109b4c054245f6723628a1736e))
+
 ### [0.2.1-beta.5](https://github.com/medyll/cssfabric/compare/v0.2.1-beta.4...v0.2.1-beta.5) (2024-03-06)
 
 
