@@ -8,9 +8,7 @@ import dartSass from 'sass';
 import micromatch from "micromatch";
 import chokidar from "chokidar";
 
-const {
-    fabricRootDir, 
-    fabricConfDir,
+const { 
     fabricModuleDir,
     fabricGeneratedDir,
     fabricStylesDir
@@ -310,6 +308,7 @@ function task_varsExport_replacement() {
     let fileContents = `${start}${exp}${end}`
 
     // write to fabricGeneratedDir with fileName cssFabric.vars.json
+    fs.ensureFileSync(fabricGeneratedDir + '/cssFabric.vars.json');
     fs.writeFileSync(fabricGeneratedDir + '/cssFabric.vars.json', fileContents, { flag: 'w' });
 }
 

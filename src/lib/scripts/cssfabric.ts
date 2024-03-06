@@ -1,5 +1,5 @@
-import jsonConfig              from "../_generated/cssFabric.vars.json" ;
-import cssfabricClassNames from "./cssfabricClassNames";
+import jsonConfig from '../generated/cssFabric.vars.json';
+import cssfabricClassNames from './cssfabricClassNames.js';
 
 export type IFabricConfModulePart = Record<string, any>;
 export type IFabricConfModuleDataPart = Record<string, any>;
@@ -9,46 +9,44 @@ export type TFabricConfModuleDocsAttributesPart = Record<string, any>;
 
 //
 const getModuleList = (): Record<string, any> => {
-    return jsonConfig["cssfabric"]?.["modules"] || {};
+	return jsonConfig['cssfabric']?.['modules'] || {};
 };
 
 const getModuleConfig = (module?: string): IFabricConfModulePart => {
-    if (module) return jsonConfig["cssfabric"]?.["modules"]?.[module] || {};
-    return jsonConfig;
+	if (module) return jsonConfig['cssfabric']?.['modules']?.[module] || {};
+	return jsonConfig;
 };
 
 const getModuleData = (module?: string): IFabricConfModuleDataPart => {
-    if (module) return jsonConfig["cssfabric"]?.["modules"]?.[module]?.["_data"] || {};
-    return jsonConfig;
+	if (module) return jsonConfig['cssfabric']?.['modules']?.[module]?.['_data'] || {};
+	return jsonConfig;
 };
 
 const getModuleMetaData = (module?: string): IFabricConfModuleMetaDataPart => {
-    if (module)
-        return jsonConfig["cssfabric"]?.["modules"]?.[module]?.["_metadata"] || {};
-    return jsonConfig;
+	if (module) return jsonConfig['cssfabric']?.['modules']?.[module]?.['_metadata'] || {};
+	return jsonConfig;
 };
 
 const getModuleDocs = (module?: string): IFabricConfModuleDocsPart => {
-    if (module)
-        return jsonConfig["cssfabric"]?.["modules"]?.[module]?.["_docs"] || {};
-    return jsonConfig;
+	if (module) return jsonConfig['cssfabric']?.['modules']?.[module]?.['_docs'] || {};
+	return jsonConfig;
 };
 
 const getModuleDocsAttributes = (module?: string): TFabricConfModuleDocsAttributesPart => {
-    if (module)
-        return jsonConfig["cssfabric"]?.["modules"]?.[module]?.["_docs"]?.["attributes"] || {};
-    return jsonConfig;
+	if (module)
+		return jsonConfig['cssfabric']?.['modules']?.[module]?.['_docs']?.['attributes'] || {};
+	return jsonConfig;
 };
 
 export default {
-    getModuleList,
-    getModuleConfig,
-    getModuleData,
-    getModuleMetaData,
-    getModuleDocs,
-    getModuleDocsAttributes,
-    getClassNames: cssfabricClassNames,
-    getModuleClassNames: cssfabricClassNames,
-    getModuleTagClassNames: cssfabricClassNames.getModuleTagClassNames,
-    getModuleTagDebug: cssfabricClassNames.getModuleTagDebug,
+	getModuleList,
+	getModuleConfig,
+	getModuleData,
+	getModuleMetaData,
+	getModuleDocs,
+	getModuleDocsAttributes,
+	getClassNames: cssfabricClassNames,
+	getModuleClassNames: cssfabricClassNames,
+	getModuleTagClassNames: cssfabricClassNames.getModuleTagClassNames,
+	getModuleTagDebug: cssfabricClassNames.getModuleTagDebug
 };
