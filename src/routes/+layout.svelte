@@ -3,9 +3,8 @@
 </script>
 
 <script lang="ts">
-	import Header from '$lib/../components/header/Header.svelte';
 	import '../app.css';
-  import '../lib/styles/cssfabric.min.css';
+  import '../lib/css/cssfabric.min.css';
 	import HeaderSiteTitle from '../components/HeaderSiteTitle.svelte';
 	import { fabricNavigation } from '../scripts/utils.js';
 
