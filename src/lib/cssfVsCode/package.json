@@ -1,0 +1,40 @@
+{
+  "name": "cssf",
+  "displayName": "cssFabric",
+  "description": "loop cool",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.87.0"
+  },
+  "categories": [
+    "Programming Languages"
+  ],
+  "contributes": {
+    "languages": [
+      {
+        "id": "cssf",
+        "aliases": [
+          "CSSF",
+          "cssf"
+        ],
+        "extensions": [
+          ".cssf"
+        ],
+        "mimetypes": [
+          "text/css"
+        ],
+        "configuration": "./language-configuration.json"
+      }
+    ],
+    "grammars": [
+      {
+        "language": "cssf",
+        "scopeName": "source.cssf",
+        "path": "./syntaxes/cssf.tmLanguage.json",
+        "tokenTypes": {
+          "meta.function.url string.quoted": "other"
+        }
+      }
+    ]
+  }
+}
