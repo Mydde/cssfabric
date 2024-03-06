@@ -240,6 +240,7 @@ export class CssFabricBuilderParams {
 	config: typeof colorConfig = {} as typeof colorConfig;
 
 	constructor() {
+		// color , vendor
 		this.baseColors = harmony('#9e3902');
 		this.config = this.deepMerge<typeof colorConfig>(colorConfig, { theme: harmony('#9e3902') });
 

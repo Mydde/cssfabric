@@ -24,8 +24,9 @@ export class CssFabricExport {
 	}
 
 	private createCssFile() {
-		// cssFabricBuilder.parseModel(cssCollection
-		fsExtra.writeFile(this.exportPaths.css, this.cssFabricModel.toString(), (err) => {
+		//this.parseModel(this.cssFabricModel);
+		fsExtra.ensureFileSync(this.exportPaths.css);
+		fsExtra.writeFile(this.exportPaths.css, this.parseModel(this.cssFabricModel), (err) => {
 			if (err) {
 				console.error(err);
 				return;
@@ -34,6 +35,7 @@ export class CssFabricExport {
 		});
 	}
 	private createJsonModel() {
+		fsExtra.ensureFileSync(this.exportPaths.json);
 		fsExtra.writeFile(this.exportPaths.json, JSON.stringify(this.cssFabricModel), (err) => {
 			if (err) {
 				console.error(err);
@@ -41,5 +43,25 @@ export class CssFabricExport {
 			}
 			console.log('File created successfully.');
 		});
+	}
+
+	private parseModel(json: Record<string, any>, parentKey = '') {
+		let css = parse(json, parentKey);
+		return `:root{\n${css}}`;
+		function parse(json: Record<string, any>, parentKey = '', titre = '') {
+			let css = '';
+			for (const key in json) {
+				if (typeof json[key] === 'object') {
+					css += `\n/* ${key} */ `;
+					//titre += `/* ----${key}--- */ `;
+					css += parse(json[key], '', titre);
+				} else {
+					css += titre;
+					css += `\n${parentKey}${key}: ${json[key]}`;
+					titre = '';
+				}
+			}
+			return css;
+		}
 	}
 }

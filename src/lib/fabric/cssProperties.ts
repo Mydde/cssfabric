@@ -376,7 +376,6 @@ export class CSSProperties {
 				if (typeof element === 'object') {
 					// migration to new syntax
 					if (element.fabric && (!this.onlyKeys.length || this.onlyKeys.includes(key))) {
-						console.log('done followUp', key);
 						followUp.push(key);
 						try {
 							let decoder = new CSSFormalSyntaxDecoder();

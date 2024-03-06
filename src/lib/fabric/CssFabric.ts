@@ -4,7 +4,15 @@ import { cssFabricSheet } from './cssFabricSheet.js';
 import { CSSProperties } from './cssProperties.js';
 import type { cssFabricModelType, cssFabricModelKey } from './types.js';
 
+/**
+ * Represents a CSS Fabric class.
+ */
 export class CssFabric {
+	/**
+	 * The vendor method returns a string with the vendor name and an optional fragment.
+	 * @param fragment - Optional fragment to append to the vendor name.
+	 * @returns A string with the vendor name and the fragment.
+	 */
 	vendor = (fragment: string = '') => `${this.cssFabricBuilderParams.vendorName}${fragment}`;
 
 	cssFabricModel: cssFabricModelType = {} as cssFabricModelType;
@@ -16,10 +24,19 @@ export class CssFabric {
 		this.cssFabricBuilderParams = new CssFabricBuilderParams();
 	}
 
+	/**
+	 * Cleans the model key by removing single quotes.
+	 * @param modelKey - The model key to clean.
+	 * @returns The cleaned model key.
+	 */
 	private cleanModelKey(modelKey: string): string {
 		return modelKey.replace(/'/g, '');
 	}
 
+	/**
+	 * Sets the parameters for the CssFabricBuilder.
+	 * @param params - Partial parameters to set for the CssFabricBuilder.
+	 */
 	setParams(params: Partial<CssFabricBuilderParams>) {
 		this.cssFabricBuilderParams = {
 			...this.cssFabricBuilderParams,
@@ -27,6 +44,11 @@ export class CssFabric {
 		} as CssFabricBuilderParams;
 	}
 
+	/**
+	 * Creates CSS fabric variables and colors based on the provided model keys.
+	 * @param args - The model keys to create CSS fabric variables and colors for.
+	 * @returns An object with the export and css properties.
+	 */
 	createCssFabricVarsColors(...args: cssFabricModelKey[]): {
 		export: CssFabricExport['export'];
 		css: string;
@@ -97,6 +119,11 @@ export class CssFabric {
 			css: JSON.stringify(this.cssFabricModel)
 		};
 	}
+
+	/**
+	 * Generates the CSS fabric sheet.
+	 * @returns An object with the export and css properties.
+	 */
 	cssFabricSheet() {
 		const cssP = new CSSProperties(cssFabricSheet /* , ['overflow'] */);
 		const cssF = cssP.generateCSS();
