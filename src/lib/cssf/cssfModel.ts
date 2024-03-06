@@ -1,69 +1,63 @@
-export const cssfModelTypes = ['all', 'top', 'bottom', 'left', 'right', 'cssProp=CSSPropertyRule'];
 export type CssfModelTypes = typeof cssfModelTypes;
+export type cssfModelRoot = Record<string, cssfModelDeclaration>;
+export type cssfModelDeclaration = Record<string, any>;
+
+export const cssfModelTypes = [
+	'all',
+	'top',
+	'bottom',
+	'left',
+	'right',
+	'cssProp=CSSPropertyRule',
+	'overflow=string'
+];
+/**
+ * Display property of the outer element
+ */
 export const cssfModel = {
-	outer: {
-		display: {
-			types: ['flex', 'grid', 'string'],
-			description: 'Display property of the outer element'
-		},
-		flow: {
-			types: ['absolute', 'fixed', 'static', 'relative', 'string', 'inherit', 'initial', 'unset'],
-			description: ''
-		},
-		opacity: { types: ['string', 'number'], description: 'Opacity of the element from 0.0 to 1.0' }
+	/* outer: {
+		flow: ['absolute', 'fixed', 'static', 'relative']
+	}, */
+	gutter: {
+		type: ['flex', 'grid'],
+		gap: 'string',
+		padding: ['all', ['top', 'bottom'], ['top', 'bottom', 'left', 'right']]
 	},
 	position: {
-		left: { types: 'string', description: '' },
-		top: { types: 'string', description: '' },
-		right: { types: 'string', description: '' },
-		bottom: { types: 'string', description: '' },
-		margin: {
-			types: ['all', ['top', 'bottom'], ['top', 'bottom', 'left', 'right']],
-			description: ''
-		}
+		left: 'string',
+		top: 'string',
+		right: 'string',
+		bottom: 'string',
+		margin: ['all', ['top', 'bottom'], ['top', 'bottom', 'left', 'right']]
 	},
 	box: {
-		border: {
-			types: ['all', ['top', 'bottom'], ['top', 'bottom', 'left', 'right']],
-			description: ''
-		},
-		shadow: { types: ['string', 'string?', 'string?', 'string?'], description: '' },
-		radius: {
-			types: ['string', 'string?', 'string?', 'string?'],
-			description: 'Radius of the element'
-		}
+		border: ['all', ['top', 'bottom'], ['top', 'bottom', 'left', 'right']],
+		shadow: [[]],
+		radius: ['string', 'string?', 'string?', 'string?'],
+		overflow: [['visible | hidden', ['x', 'y']]]
 	},
 	size: {
-		width: { types: ['string', ' min?', 'max?'], description: '' },
-		height: { types: ['string', 'string?', 'string?'], description: '' },
-		ratio: { types: ['string', 'string?'], description: '' }
+		width: ['string', 'min?', 'max?'],
+		height: ['string', 'min?', 'max?'],
+		ratio: ['string , string?']
 	},
 	typography: {
-		font: { types: 'string', description: '' },
-		size: { types: 'string', description: '' },
-		style: { types: ['bold', 'italic', 'normal', 'string'], description: '' },
-		underline: {
-			types: ['none', 'dotted', 'dashed', 'solid', 'double', 'wavy', 'string'],
-			description: ''
-		},
-		shadow: { types: ['string', 'string?', 'string?', 'string?'], description: '' }
+		font: 'string',
+		size: 'string',
+		style: ['bold', 'italic', 'normal', 'string'],
+		underline: ['none', 'dotted', 'dashed', 'solid', 'double', 'wavy', 'string'],
+		shadow: ['string', 'string?', 'string?', 'string?']
 	},
-
 	color: {
-		text: { types: 'string', description: '' },
-		bg: { types: 'string', description: '' }
-	},
-	gutter: {
-		gap: { types: 'string', description: '' },
-		padding: { types: 'string', description: '' }
+		text: 'string',
+		bg: 'string',
+		opacity: ['string', 'number']
 	},
 	animate: {
-		transition: { types: [['duration', 'timing', 'delay']], description: '' },
-		all: { types: ['all', 'none', 'cssProp'], description: '' },
-		duration: { types: 'string', description: '' },
-		timing: { types: 'string', description: '' },
-		delay: { types: 'string', description: '' }
+		transition: [['duration', 'timing', 'delay']],
+		all: ['all', 'none', 'cssProp'],
+		duration: 'string',
+		timing: 'string',
+		delay: 'string'
 	}
-};
-
-console;
+} as cssfModelRoot;

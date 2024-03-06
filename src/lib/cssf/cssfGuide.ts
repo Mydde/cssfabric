@@ -3,13 +3,13 @@ import type { CssfModelTypes } from './cssfModel.js';
 export class CssGuide {
 	cssfModelTypes: CssfModelTypes;
 	interfaceName = 'CssfInterface';
-	className = 'CssfCkass';
+	className = 'CssfClass';
 
 	constructor(cssfModel: CssfModelTypes) {
 		this.cssfModelTypes = cssfModel;
 	}
 
-	generate(objModel: Record<string, any>) {
+	generate(objModel: Record<string, Record<string, any>>) {
 		const unify = (arr: string[] | string): string => {
 			const rr = Array.isArray(arr) ? arr : [arr];
 			function isType(val: any) {
@@ -18,31 +18,45 @@ export class CssGuide {
 			return rr.map((item) => (Array.isArray(item) ? `[${unify(item)}]` : `'${item}'`)).join(' | ');
 		};
 
-		let meta = `import postcss from 'postcss';\n`;
-		let interfaces = `export interface ${this.interfaceName} {\n`;
-		let classMethods = `export class ${this.className} {\n`;
+		let meta = `/** generated ! */\nimport postcss from 'postcss';\n\n\n\n`;
+		let interfaces = `export interface ${this.interfaceName} {\n{{interfaces}}\n}`;
+		let transformerTypes = `export interface ${this.interfaceName}T {\n{{transformer}}\n}`;
+		let classMethods = `export class ${this.className} {\n{{methods}}\n}`;
+		let classTypes = `/** generated types */\n{{types}}\n`;
+
+		let collectClassMethods: string = '';
+		let collectInterfaces: string = '';
+		let collectTypes: string = '';
+		let collectTransformerTypes: string = '';
 
 		for (const type of this.cssfModelTypes) {
 			const val = type.includes('=') ? type : type + ' = string | number';
-			meta += `type ${val};\n`;
+			collectTypes += `type ${val};\n`;
 		}
 
 		for (const [outerKey, value] of Object.entries(objModel)) {
-			interfaces += `  ${outerKey}: {\n`;
-			classMethods += `  ${outerKey}(decl: postcss.Declaration) {\n    return {\n`;
+			collectInterfaces += `  ${outerKey}: {\n`;
+			collectTransformerTypes += `  ${outerKey}: {\n`;
+			collectClassMethods += `  ${outerKey}(decl: postcss.Declaration) {\n    return {\n`;
 
 			for (const [key, val] of Object.entries(value)) {
-				interfaces += `    ${key}: ${unify(val.types)};\n`;
-				classMethods += `      ${key}: (value: ${this.interfaceName}['${outerKey}']['${key}']) => {},\n`;
+				collectInterfaces += `    ${key}: ${unify(val)};\n`;
+				collectTransformerTypes += `    ${key}: ( decl: postcss.Declaration, ...value: ${this.interfaceName}['${outerKey}']['${key}'][])=> void ;\n`;
+				collectClassMethods += `      ${key}: (...args: ${this.interfaceName}['${outerKey}']['${key}'][]) => {
+					return args;
+				},\n`;
 			}
 
-			interfaces += '  };\n';
-			classMethods += '    };\n  }\n';
+			collectInterfaces += '  };\n';
+			collectTransformerTypes += '  };\n';
+			collectClassMethods += '    };\n  }\n ';
 		}
 
-		interfaces += '}\n';
-		classMethods += '}\n';
+		classMethods = classMethods.replace('{{methods}}', collectClassMethods);
+		interfaces = interfaces.replace('{{interfaces}}', collectInterfaces);
+		transformerTypes = transformerTypes.replace('{{transformer}}', collectTransformerTypes);
+		classTypes = classTypes.replace('{{types}}', collectTypes);
 
-		return { meta, interfaces, classMethods };
+		return { meta, classTypes, transformerTypes, interfaces, classMethods };
 	}
 }

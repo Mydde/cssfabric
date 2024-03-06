@@ -57,9 +57,9 @@
   	position: absolute; /* a flow */
   	width: 0; /* a size */
   	top: -50px; /* a position */
-  	margin: -50px 20px; /* a position! **/ 
-  	gap: 20px; /* a margin */
-  	padding: 20px; /* a gap */
+  	margin: -50px 20px; /* a position! **/
+  	gap: 20px; /* a gutter */
+  	padding: 20px; /* a gutter */
   	display: inline; /* a flow */
   	display: none; /* a state */
   	display: flex; /* Inhaltsausrichtung ? */
@@ -83,11 +83,12 @@
 
   ```scss
   input {
-  	--at-apply: padding(top(4px) , left(8px)) gap(1);
-  	--at-apply: width(150px ,min(10px), max(auto)) height;
+  	--at-apply: padding gap;
+  	--at-apply: width height;
   	--at-apply: left top right bottom margin;
   	--at-apply: border shadow radius;
   	--at-apply: color bg;
+  	--at-apply: absolute fixed static sticky;
   	&:hover {
   		--at-apply: color bg;
   	}
@@ -105,7 +106,7 @@
   input {
   	margin: padding gap;
   	size: width height;
-  	position: left top right bottom margin;
+  	position: left top right bottom middle center margin;
   	box: border shadow radius;
   	theme: color bg;
   }
@@ -118,8 +119,11 @@
    I mean, like working on **padding** and switching to **border** :
 
   ```scss
-   /** css-verse reality border in the world of paddings */
+  /** css-verse reality border in the world of paddings */
   :css-verse {
+  	.earth-606 {
+  		padding: 10px 5px 2px 3rem;
+  	}
   	.reality {
   		border: 1px 2px 4px none;
   		border-color: red white orange blue;

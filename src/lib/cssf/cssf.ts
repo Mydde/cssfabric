@@ -9,7 +9,10 @@ processor.process('a { color: black; }').then((result) => {
 }); */
 
 const cssGuide = new CssGuide(cssfModelTypes);
-const { meta, interfaces, classMethods } = cssGuide.generate(cssfModel);
-console;
-
-fs.writeFileSync('src/lib/cssf/cssfLib.ts', meta + interfaces + classMethods);
+const { meta, interfaces, classMethods, classTypes, transformerTypes } =
+	cssGuide.generate(cssfModel);
+console.log(meta, interfaces, classMethods, classTypes, transformerTypes);
+fs.writeFileSync(
+	'src/lib/cssf/cssfLib.ts',
+	meta + classTypes + transformerTypes + interfaces + classMethods
+);
