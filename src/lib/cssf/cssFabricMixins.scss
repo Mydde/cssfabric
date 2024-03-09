@@ -1,0 +1,94 @@
+@use "sass:selector";
+
+@mixin width($width: auto, $min: auto, $max: auto) {
+    @if $width {
+        width: $width;
+    }
+    @if $min {
+        min-width: $min;
+    }
+    @if $max {
+        max-width: $max;
+    }
+}
+@mixin w($width: auto, $selector...) {
+    @if $width {
+        width: $width;
+    }
+    @for $i from 0 to length($selectors) {
+    }
+}
+@mixin height($width: auto, $min: auto, $max: auto) {
+    @if $width {
+        width: $width;
+    }
+    @if $min {
+        min-width: $min;
+    }
+    @if $max {
+        max-width: $max;
+    }
+}
+
+@mixin left($left: 0, $margin: 0) {
+    @if $left {
+        left: $left;
+    }
+}
+
+@mixin right($right: 0, $margin: 0) {
+    @if $right {
+        right: $right;
+    }
+}
+
+@mixin top($top: 0, $margin: 0) {
+    @if $top {
+        top: $top;
+    }
+}
+
+@mixin bottom($bottom: 0, $margin: 0) {
+    @if $bottom {
+        bottom: $bottom;
+    }
+}
+
+@mixin border($border: 1, $style: solid) {
+    @if $border {
+        border-width: $border;
+    }
+    @if $style {
+        border-style: $style;
+    }
+}
+
+@mixin shadow($shadow: none) {
+    @if $shadow {
+        box-shadow: $shadow;
+    }
+}
+
+@mixin radius($radius: 0) {
+    @if $radius {
+        border-radius: $radius;
+    }
+}
+
+@mixin color($color) {
+    @if $color {
+        color: $color;
+    }
+}
+
+@mixin background($color) {
+    @if $color {
+        background: $color;
+    }
+}
+
+@mixin contour($color) {
+    @if $border {
+        border-width: $border;
+    }
+}

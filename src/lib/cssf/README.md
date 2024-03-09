@@ -87,7 +87,7 @@
   	--at-apply: width height;
   	--at-apply: left top right bottom margin;
   	--at-apply: border shadow radius;
-  	--at-apply: color bg;
+  	--at-apply: color bg border;
   	--at-apply: absolute fixed static sticky;
   	&:hover {
   		--at-apply: color bg;
@@ -143,55 +143,9 @@
   - a parser : to walk trough the model
   - a transformer : to render back the rules.
 
-  the needed mental strength :
+  the needed mental rail :
 
   - a guide: bringing active solidity
   - a hole: there are some glitches to ditch in it, some properties to abandon, sadness to have
   - a goal: the browser is not the goal, could it be ?
 
-  Let's start with something else : the guide to ensure consistency
-
-  ```typescript
-  /**
-   * cssGuide :
-   * transforms the model to a ts declaration file and an associated class methods.
-   */
-  export class CssGuide {
-  	cssfModelTypes: CssfModelTypes;
-  	interfaceName = 'CssfInterface';
-  	className = 'CssfCkass';
-
-  	constructor(cssfModel: CssfModelTypes) {
-  		this.cssfModelTypes = cssfModel;
-  	}
-
-  	generate(objModel: Record<string, any>) {
-  		const unify = (arr: string[] | string): string => {
-  			return
-  		};
-
-  		let meta = `imports;\n`;
-  		let interfaces = `export interface ${this.interfaceName} {\n`;
-  		let classMethods = `export class ${this.className} {\n`;
-
-  		for (const type of this.cssfModelTypes) {
-  			meta += `type ${val};\n`;
-  		}
-
-  		for (const [outerKey, value] of Object.entries(objModel)) {
-  			interfaces += `${outerKey}: {\n`;
-  			classMethods += `${outerKey}(decl: postcss.Declaration) {\n    return {\n`;
-
-  			for (const [key, val] of Object.entries(value)) {...}
-
-  			interfaces += '  };\n';
-  			classMethods += '    };\n  }\n';
-  		}
-
-  		interfaces += '}\n';
-  		classMethods += '}\n';
-
-  		return { meta, interfaces, classMethods };
-  	}
-  }
-  ```
